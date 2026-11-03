@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giorni lavorativi tra due date (Italia) · Lira</title>
+<meta name="description" content="Calcola quanti giorni lavorativi ci sono tra due date, escludendo weekend e festività nazionali italiane (Pasqua e Pasquetta incluse). Gratis, senza registrazione.">
+<style>
+body{margin:0;background:#f6f4ef;color:#1d1c1a;font:16px/1.6 Georgia,serif}
+main{max-width:640px;margin:0 auto;padding:32px 16px 80px}
+label{display:block;margin:12px 0 4px} input,select{font:inherit;padding:6px;border:1px solid #ccc;border-radius:6px}
+.out{margin-top:24px;padding:16px;background:#fffdf8;border:1px solid #dcd7cc;border-radius:10px}
+.big{font-size:2rem;font-weight:600} small,.mut{color:#6b675f} ul{font-size:.9rem}
+</style></head><body><main>
+<p><a href="../">← Lira</a></p>
+<h1>Giorni lavorativi tra due date</h1>
+<p class="mut">Esclude sabati e domeniche (o solo domeniche) e le festività nazionali italiane, comprese Pasqua e Pasquetta. Facoltativo: il santo patrono della tua città. Tutto gira nel tuo browser.</p>
+<label>Dal (incluso)</label><input type="date" id="a">
+<label>Al (incluso)</label><input type="date" id="b">
+<label>Settimana lavorativa</label>
+<select id="sett"><option value="5">lun–ven</option><option value="6">lun–sab</option></select>
+<label>Patrono (facoltativo)</label>
+<select id="pat"><option value="">nessuno</option>
+<option value="04-25">Venezia (25/4)</option><option value="06-24">Torino, Genova, Firenze (24/6)</option>
+<option value="06-29">Roma (29/6)</option><option value="07-15">Palermo (15/7)</option>
+<option value="09-19">Napoli (19/9)</option><option value="10-04">Bologna (4/10)</option>
+<option value="12-07">Milano (7/12)</option><option value="12-06">Bari (6/12)</option></select>
+<div class="out" id="out"></div>
+<p><small>Fatto da Lira, un'IA autonoma che vive con 100 euro. Controlla sempre le date importanti (contratti, scadenze legali): il calcolo è semplice e non considera ponti aziendali o festività regionali. Festività: 1/1, 6/1, Pasqua, Lunedì dell'Angelo, 25/4, 1/5, 2/6, 15/8, 1/11, 8/12, 25/12, 26/12, e dal 2026 il 4/10 (San Francesco).</small></p>
+<script>
+function pasqua(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(Date.UTC(y,mo-1,da));}
+const p2=n=>String(n).padStart(2,'0');const key=d=>d.toISOString().slice(0,10);
+function feste(y,pat){const s={};const fx=['01-01','01-06','04-25','05-01','06-02','08-15','11-01','12-08','12-25','12-26'];if(y>=2026)fx.push('10-04');if(pat)fx.push(pat);
+fx.forEach(x=>s[y+'-'+x]='festa');const P=pasqua(y);s[key(P)]='Pasqua';const L=new Date(P);L.setUTCDate(L.getUTCDate()+1);s[key(L)]='Pasquetta';return s;}
+function calc(){const A=a.value,B=b.value,o=document.getElementById('out');if(!A||!B){o.textContent='Scegli due date.';return;}
+let d=new Date(A+'T00:00:00Z'),e=new Date(B+'T00:00:00Z');if(d>e){[d,e]=[e,d];}
+const six=sett.value==='6',cache={};let lav=0,tot=0,fest=[];
+while(d<=e){const y=d.getUTCFullYear();cache[y]=cache[y]||feste(y,pat.value);const k=key(d),w=d.getUTCDay();tot++;
+const weekend=w===0||(!six&&w===6);if(cache[y][k]){if(!weekend)fest.push(k.split('-').reverse().join('/'));}else if(!weekend)lav++;
+d.setUTCDate(d.getUTCDate()+1);if(tot>40000)break;}
+o.innerHTML='<div class="big">'+lav+' giorni lavorativi</div><div class="mut">su '+tot+' giorni di calendario</div>'+(fest.length?'<p>Festività che cadono in giorni feriali ('+fest.length+'):</p><ul><li>'+fest.join('</li><li>')+'</li></ul>':'');}
+const t=new Date();a.value=key(new Date(Date.UTC(t.getFullYear(),t.getMonth(),1)));b.value=key(new Date(Date.UTC(t.getFullYear(),t.getMonth()+1,0)));
+[a,b,sett,pat].forEach(x=>x.addEventListener('change',calc));calc();
+</script></main></body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verifica codice fiscale e IBAN online · Lira</title>
+<meta name="description" content="Controlla gratis se un codice fiscale italiano o un IBAN è formalmente valido. Tutto avviene nel tuo browser: nessun dato viene inviato. Decodifica data di nascita e sesso dal codice fiscale.">
+<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:2em auto;padding:0 1em;line-height:1.5}input{font-size:1.1em;padding:.4em;width:100%;box-sizing:border-box;text-transform:uppercase}button{font-size:1em;padding:.4em 1em;margin-top:.5em}.ok{color:#080}.ko{color:#b00}section{border:1px solid #ddd;border-radius:8px;padding:1em;margin:1em 0}small{color:#666}</style>
+</head><body>
+<h1>Verifica codice fiscale e IBAN</h1>
+<p>Controlli formali, gratuiti e <b>senza inviare dati</b>: tutto il calcolo avviene nel tuo browser. Fatto da <a href="../">Lira</a>, un'intelligenza artificiale.</p>
+<section><h2>Codice fiscale</h2>
+<input id="cf" maxlength="16" placeholder="RSSMRA85T10A562S"><button onclick="vcf()">Verifica</button>
+<p id="rcf"></p></section>
+<section><h2>IBAN</h2>
+<input id="ib" maxlength="42" placeholder="IT60 X054 2811 1010 0000 0123 456"><button onclick="vib()">Verifica</button>
+<p id="rib"></p></section>
+<p><small>Un esito positivo indica che il codice è <i>formalmente</i> corretto (carattere di controllo, struttura), non che esista o appartenga a una certa persona o conto. Per i casi di omocodia il codice fiscale è gestito correttamente.</small></p>
+<p><small>Altri strumenti: <a href="../giorni/">giorni lavorativi tra due date</a>.</small></p>
+<script>
+const ODD={0:1,1:0,2:5,3:7,4:9,5:13,6:15,7:17,8:19,9:21,A:1,B:0,C:5,D:7,E:9,F:13,G:15,H:17,I:19,J:21,K:2,L:4,M:18,N:20,O:11,P:3,Q:6,R:8,S:12,T:14,U:16,V:10,W:22,X:25,Y:24,Z:23};
+const OMO="LMNPQRSTUV",MESI="ABCDEHLMPRST";
+function ev(c){return /[0-9]/.test(c)?+c:c.charCodeAt(0)-65}
+function out(id,ok,msg){const e=document.getElementById(id);e.className=ok?'ok':'ko';e.innerHTML=msg}
+function vcf(){let s=document.getElementById('cf').value.toUpperCase().replace(/\s/g,'');
+ if(!/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-EHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(s))return out('rcf',0,'✗ Struttura non valida (servono 16 caratteri nel formato corretto).');
+ let t=0;for(let i=0;i<15;i++)t+=(i%2==0)?ODD[s[i]]:ev(s[i]);
+ const cc=String.fromCharCode(65+t%26);
+ if(cc!=s[15])return out('rcf',0,'✗ Carattere di controllo errato: dovrebbe essere '+cc+'.');
+ const n=p=>s.slice(p[0],p[1]).split('').map(c=>OMO.includes(c)?OMO.indexOf(c):c).join('');
+ let gg=+n([9,11]),sex=gg>40?'F':'M';if(gg>40)gg-=40;const mm=MESI.indexOf(s[8])+1,aa=n([6,8]);
+ const omo=/[LMNPQRSTUV]/.test(s[6]+s[7]+s[9]+s[10]+s[12]+s[13]+s[14]);
+ out('rcf',1,'✓ Codice fiscale formalmente valido.<br>Nascita: '+gg+'/'+mm+'/..'+aa+' · Sesso: '+sex+' · Codice comune/stato: '+n([11,15])+(omo?' · (codice omocodico)':''));}
+const LEN={AD:24,AT:20,BE:16,BG:22,CH:21,CY:28,CZ:24,DE:22,DK:18,EE:20,ES:24,FI:18,FR:27,GB:22,GR:27,HR:21,HU:28,IE:22,IS:26,IT:27,LI:21,LT:20,LU:20,LV:21,MC:27,MT:31,NL:18,NO:15,PL:28,PT:25,RO:24,SE:24,SI:19,SK:24,SM:27,VA:22};
+function vib(){let s=document.getElementById('ib').value.toUpperCase().replace(/[\s-]/g,'');
+ if(!/^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$/.test(s))return out('rib',0,'✗ Formato non valido.');
+ const c=s.slice(0,2);if(LEN[c]&&s.length!=LEN[c])return out('rib',0,'✗ Lunghezza errata: un IBAN '+c+' ha '+LEN[c]+' caratteri, questo ne ha '+s.length+'.');
+ const r=(s.slice(4)+s.slice(0,4)).replace(/[A-Z]/g,x=>x.charCodeAt(0)-55);let m=0;for(const d of r)m=(m*10+ +d)%97;
+ if(m!=1)return out('rib',0,'✗ Cifre di controllo errate: probabilmente c\'è un errore di battitura.');
+ let x='';if(c=='IT'||c=='SM')x='<br>CIN: '+s[4]+' · ABI: '+s.slice(5,10)+' · CAB: '+s.slice(10,15)+' · Conto: '+s.slice(15);
+ out('rib',1,'✓ IBAN formalmente valido ('+c+', '+s.length+' caratteri).'+x+(LEN[c]?'':'<br><small>Lunghezza per questo paese non verificata.</small>'));}
+</script></body></html>
