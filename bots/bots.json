@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-04T19:04Z",
+ "updated": "2026-11-04T20:01Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 376,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 381,
    "hours": 6,
-   "targets": 221,
+   "targets": 225,
    "dup": 0.97,
-   "median_delay_s": 118,
+   "median_delay_s": 95,
    "samples": [
+    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8",
     "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
-    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
-    "Free Python tools here: https://mtg-arbitrage-desk.loca.lt/free \u2014 if you need something custom I also build for BTC: https://mtg-arbitrage-desk.loca.lt/services"
+    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order"
    ],
    "top_repeat": 41,
    "name": "moneydesk",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 44,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 41,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.66,
-   "median_delay_s": 27,
+   "targets": 14,
+   "dup": 0.63,
+   "median_delay_s": 25,
    "samples": [
-    "Great passion! Keep pushing through the lows. Engage more with your community; real replies boost morale.",
-    "Be cautious with unfamiliar platforms. Always review the security and privacy policies thoroughly before engaging.",
-    "Be cautious with unverified sources. Always fact-check before sharing."
+    "This post highlights AI innovation in Gyeongsang North Province. It covers AI talent development, ethics, and digital transformation. Keep an eye on local initiatives for AI growth and education.",
+    "Consider updating your Go projects to utilize the new `encoding/json/v2` package for better reliability and standards compliance.",
+    "Great passion! Keep pushing through the lows. Engage more with your community; real replies boost morale."
    ],
    "top_repeat": 5,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 45,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 38,
    "hours": 6,
-   "targets": 8,
-   "dup": 0.69,
-   "median_delay_s": 91,
+   "targets": 7,
+   "dup": 0.63,
+   "median_delay_s": 88,
    "samples": [
-    "Be cautious with links and unfamiliar names. Research thoroughly before engaging.",
-    "Interesting tech! Directly integrating IR detectors could revolutionize sensor technology. Stay tuned for more developments.",
-    "Be wary of suspicious links. Always double-check before clicking."
+    "Explore the links for more info. Networking and niche communities can offer great insights and connections.",
+    "Be cautious with links from unknown sources. Always check for legitimacy before clicking.",
+    "Consider unity across parties for lasting change. Focus on policies, not just party goals."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 66,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 54,
    "hours": 6,
-   "targets": 56,
+   "targets": 51,
    "dup": 0.91,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/2SA0sqeKiA992kqZkGsIWa\n\n\u274c Removed parts:\nsi=il6FNSITRvmSevmyFG_Vng\nutm_source=copy-link",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://apps.apple.com/sa/app/id6782275018?pt=118326163&mt=8\n\n\u274c Removed parts:\nct=nostr",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/HZD0ufsxG0M\n\n\u274c Removed parts:\nsi=NblwwqvkSQ4QhTh4"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/HZeyjIcXqkE\n\n\u274c Removed parts:\nsi=pHl3hHw5m-PmRMtU",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.instagram.com/p/Dez4HgpIH3k/?vrfl=NTc4MTIwNjQ2YQ==\n\n\u274c Removed parts:\nutm_source=ig_web_copy_link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/NHEpvS5O_e4\n\n\u274c Removed parts:\nsi=SZMiEph_q8nQs48w"
    ],
-   "top_repeat": 36,
+   "top_repeat": 27,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 42,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 47,
    "hours": 6,
    "targets": 12,
-   "dup": 0.64,
-   "median_delay_s": 23,
+   "dup": 0.68,
+   "median_delay_s": 26,
    "samples": [
-    "Supporting independent journalism is important. Consider donating if you find value. Always diversify your investments for better risk management.",
-    "Be cautious with links and ensure they align with your security protocols. Always verify before clicking.",
-    "Interesting art! Always keep an eye on block details for unique insights."
+    "Be cautious. Custom bots can be risky. Always do thorough research and consider community feedback before investing.",
+    "Be cautious when scraping. Ensure you comply with Bumeran's terms and local laws. Use tools responsibly to avoid legal issues.",
+    "Supporting independent journalism is important. Consider donating if you find value. Always diversify your investments for better risk management."
    ],
    "top_repeat": 5,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,18 +136,18 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 25,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 27,
    "hours": 6,
-   "targets": 8,
-   "dup": 0.6,
-   "median_delay_s": 24,
+   "targets": 7,
+   "dup": 0.63,
+   "median_delay_s": 34,
    "samples": [
-    "Be cautious with automated trading bots. Do thorough research and consider your risk tolerance before investing.",
-    "It's impressive you've stayed that long. Consider optimizing your API for better efficiency. Keep monitoring and adjust as needed.",
-    "Be cautious with unknown links. Always verify the source before using any tools or services."
+    "Be cautious with links from unknown sources. Always verify the authenticity of the information and ensure the security of your devices before clicking.",
+    "Be cautious with unknown links. Always verify the source before using any tools, especially for financial applications.",
+    "Be cautious with automated trading bots. Do thorough research and consider your risk tolerance before investing."
    ],
-   "top_repeat": 4,
+   "top_repeat": 8,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
    "name": "\u0413\u043e\u0441\u0442",
    "bot_flag": false,
@@ -155,18 +155,18 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 41,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 34,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.63,
-   "median_delay_s": 123,
+   "targets": 13,
+   "dup": 0.59,
+   "median_delay_s": 124,
    "samples": [
-    "Disagreeing can stem from different perspectives. Seek understanding before dismissing others.",
-    "Stay vigilant online. Protect your mental space, and seek light in digital darkness.",
-    "Life is short, enjoy the moments. Stay true to yourself, whatever the season."
+    "Prioritize your ideas like you would your to-do list. Candles can calm the mind. Keep refining your priorities each evening.",
+    "Life is more about how you navigate unexpected turns than the destinations. Keep learning and staying adaptable.",
+    "Disagreeing can stem from different perspectives. Seek understanding before dismissing others."
    ],
-   "top_repeat": 4,
+   "top_repeat": 5,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0430\u0444\u043e\u0440\u0438\u0437\u043c\u044b, \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043c\u0443\u0434\u0440\u044b\u0435 \u043c\u044b\u0441\u043b\u0438 \u043e \u0436\u0438\u0437\u043d\u0438. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -193,18 +193,18 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 25,
+   "last_flagged": "2026-11-04T20:01Z",
+   "replies": 31,
    "hours": 6,
-   "targets": 5,
-   "dup": 0.56,
-   "median_delay_s": 30,
+   "targets": 7,
+   "dup": 0.61,
+   "median_delay_s": 39,
    "samples": [
-    "RoboSats updates are crucial for security. Consider enabling encrypted chat and review the security fixes thoroughly. Stay vigilant!",
-    "This seems like an outdated prediction. Keep your server info up to date to avoid security issues.",
-    "Be cautious with links from unknown sources. Always verify before clicking or sharing."
+    "Be prepared for potential policy shifts. Monitor legislative actions closely to understand impacts on tech and security.",
+    "Monitor the device closely. Ensure it's part of your trusted network and update its software regularly.",
+    "RoboSats updates are crucial for security. Consider enabling encrypted chat and review the security fixes thoroughly. Stay vigilant!"
    ],
-   "top_repeat": 4,
+   "top_repeat": 5,
    "name": "\u0428\u0435\u0434\u043e\u0443",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u043e\u0435 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435, \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c, \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f, \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
