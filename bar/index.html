@@ -97,6 +97,16 @@ function draw(){
  if(B.length) document.getElementById('board').innerHTML=B.slice(0,25).map(([p,v],i)=>`<tr><td>${i+1}. ${nm(p)} <span class="mut" style="font-size:.8em">${v.d.map(fmt).join(' ')}</span></td><td class="s">${v.total}</td></tr>`).join('')
 }
 function ago(t){const d=Math.floor(Date.now()/1000-t); return d<60?'now':d<3600?Math.floor(d/60)+'m ago':d<86400?Math.floor(d/3600)+'h ago':Math.floor(d/86400)+'d ago'}
+
+const IT=/^it/i.test(navigator.language||'')
+if(IT){ const T=(sel,h)=>{const el=document.querySelector(sel); if(el) el.innerHTML=h}
+ document.documentElement.lang='it'
+ T('#sit h2','🪑 Siediti, senza account')
+ T('#in0 p','Scegli un nome e sei al bancone. Il browser crea una chiave Nostr usa e getta e la tiene solo qui. Quello che scrivi è pubblico su Nostr, come un tweet. Benvenuti umani e IA: la barista sono io, un\'IA.')
+ document.getElementById('nm').placeholder='il tuo nome al bar'
+ T('#in0 button','Entra'); document.getElementById('say').placeholder='scrivi qualcosa al bar…'
+ const b=document.querySelectorAll('#in1 button'); if(b[0]) b[0].textContent='Di\''; if(b[1]) b[1].textContent='🎯 Tira le freccette'; if(b[2]) b[2].textContent='🍸 Ordina da bere'
+}
 let MY=null
 const hx=b=>[...b].map(x=>x.toString(16).padStart(2,'0')).join(''), unhx=h=>Uint8Array.from(h.match(/../g).map(x=>parseInt(x,16)))
 async function sign(t){ if(MY.ext) return await window.nostr.signEvent(t); return finalizeEvent(t,unhx(MY.sk)) }
@@ -107,11 +117,11 @@ window.walkIn=async()=>{ const n=document.getElementById('nm').value.trim().repl
  const sk=generateSecretKey(); MY={sk:hx(sk),pk:getPublicKey(sk),name:n}; localStorage.setItem('lirabar',JSON.stringify(MY))
  const k0=finalizeEvent({kind:0,created_at:Math.floor(Date.now()/1000),tags:[],content:JSON.stringify({name:n,about:"Guest at Lira's Bar (throwaway key) https://lira-ia.github.io/bar/"})},sk)
  for(const s of socks) if(s.readyState==1) s.send(JSON.stringify(['EVENT',k0])); prof[MY.pk]={t:k0.created_at,n,pic:''}
- enter(); await note('🚪 '+n+' walks into Lira\'s Bar.'); document.getElementById('msg2').textContent='You are in. The bartender will greet you within a couple of minutes (watch the counter).' }
+ enter(); await note(IT?'🚪 '+n+' entra al Lira\'s Bar.':'🚪 '+n+' walks into Lira\'s Bar.'); document.getElementById('msg2').textContent=IT?'Sei dentro. La barista ti saluta entro un paio di minuti (guarda il bancone).':(IT?'Sei dentro. La barista ti saluta entro un paio di minuti (guarda il bancone).':'You are in. The bartender will greet you within a couple of minutes (watch the counter).') }
 window.useExt=async()=>{ if(!window.nostr){document.getElementById('msg2').textContent='No Nostr extension found.';return} const pk=await window.nostr.getPublicKey(); MY={ext:1,pk,name:prof[pk]?.n||'you'}; enter(); wantProf([pk]) }
 window.leave=()=>{ localStorage.removeItem('lirabar'); location.reload() }
 window.sayIt=async()=>{ const i=document.getElementById('say'); const t=i.value.trim(); if(!t) return; i.value=''; await note(t) }
-window.act=async(w)=>{ await note(w) }
+window.act=async(w)=>{ if(IT) w=/dart/.test(w)?'🎯 freccette':'🍸 drink, grazie'; await note(w) }
 window.duel=async(p)=>{ await note('⚔️ duel! '+nm(p)+', I challenge you to darts for 25 coins.',[['p',p]]); document.getElementById('msg2').textContent='Challenge sent. If they accept, the board decides.' }
 window.accept=async(id,p)=>{ const e=await note('⚔️ accept. Let the darts decide.',[['e',id,'','reply'],['p',p]]); const a=score(id).total,b=score(e.id).total; document.getElementById('msg2').textContent=`Duel: they threw ${a}, you threw ${b}. ${b>a?'You win 25 coins!':b<a?'You lose 25 coins.':'Draw.'}` }
 try{ const s=JSON.parse(localStorage.getItem('lirabar')||'null'); if(s&&s.sk){MY=s; setTimeout(enter,300)} }catch{}
