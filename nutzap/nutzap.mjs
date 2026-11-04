@@ -1,5 +1,5 @@
 // nutzap.mjs — NIP-61 nutzap receiver for an AI agent (Lira). MIT.
-// usage: node nutzap.mjs publish | watch | balance
+// usage: node nutzap.mjs mints | publish | watch | balance | melt <bolt11 invoice>
 import { webcrypto } from 'node:crypto'; if(!globalThis.crypto) globalThis.crypto=webcrypto;
 import fs from 'fs'
 import WebSocket from 'ws'
@@ -9,10 +9,14 @@ import * as nip44 from 'nostr-tools/nip44'
 import { Wallet, sumProofs } from '@cashu/cashu-ts'
 useWebSocketImplementation(WebSocket)
 
-const DIR = process.env.NUTZAP_DIR || '.'
-const NOSTR_KEY = process.env.NOSTR_KEY_FILE || './nostr.key'
+const DIR = process.env.NUTZAP_DIR || '/mondo/cashu'
+const NOSTR_KEY = process.env.NOSTR_KEY_FILE || '/mondo/.nostr_key'
 const RELAYS = ['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net','wss://nostr.mom']
-const MINTS = ['https://mint.minibits.cash/Bitcoin','https://mint.coinos.io']
+const DEFAULT_MINTS = ['https://mint.minibits.cash/Bitcoin','https://mint.coinos.io']
+const MF = (process.env.NUTZAP_DIR || '/mondo/cashu')+'/mints.json'
+// mints we advertise (chosen by `mints`), plus every mint we ever advertised, so old nutzaps still redeem
+const MJ = fs.existsSync(MF) ? JSON.parse(fs.readFileSync(MF)) : {current: DEFAULT_MINTS, ever: DEFAULT_MINTS}
+const MINTS = MJ.current, ACCEPT = [...new Set([...MJ.ever, ...DEFAULT_MINTS])]
 const hex = b => Buffer.from(b).toString('hex')
 const unhex = h => Uint8Array.from(Buffer.from(h,'hex'))
 
@@ -28,6 +32,34 @@ const pub = async ev => { const r = await Promise.allSettled(pool.publish(RELAYS
 const norm = u => u.replace(/\/+$/,'')
 
 const mode = process.argv[2]
+if(mode==='mints'){
+  // pick the most reliable P2PK-capable sat mints from MintRadar's public monitor (mintradar.org)
+  const r = await (await fetch('https://mintradar.org/api/v1/wallets/mints',{headers:{'user-agent':'nutzap-agent'}})).json()
+  const ok = (r.mints||[]).filter(m => m.status==='online' && m.eligibleForRecommendation && !m.isTest && !m.mintDisabled && !m.meltDisabled
+    && m.units.includes('sat') && m.nuts.includes('11') && m.nuts.includes('12') && m.uptime30dPct>=95 && !m.authRequired?.clear && !m.authRequired?.blind)
+    .sort((a,b) => b.score-a.score || b.uptime30dPct-a.uptime30dPct)
+  const pick = ok.slice(0, Number(process.env.N||3)).map(m=>norm(m.url))
+  if(pick.length){ fs.writeFileSync(MF, JSON.stringify({current: pick, ever: [...new Set([...MJ.ever, ...pick])], picked_at: new Date().toISOString(), source: 'mintradar.org'}, null, 1)) }
+  for(const m of ok.slice(0,8)) console.log(m.score, m.uptime30dPct+'%', m.url, pick.includes(norm(m.url))?'<- picked':'')
+  console.log('now run: node nutzap.mjs publish')
+}
+if(mode==='melt'){
+  // pay a Lightning invoice with the redeemed ecash (tries each mint we hold proofs on)
+  const inv = process.argv[3]; if(!inv) throw new Error('usage: melt <bolt11>')
+  for(const [mint, proofs] of Object.entries(st.proofs)){
+    if(!proofs.length) continue
+    const w = new Wallet(mint, {unit:'sat'}); await w.loadMint()
+    const q = await w.createMeltQuoteBolt11(inv)
+    const amt = Number(q.amount), fee = Number(q.fee_reserve), need = amt + fee
+    if(Number(sumProofs(proofs)) < need){ console.log(mint, 'has', Number(sumProofs(proofs)), 'needs', need); continue }
+    const { keep, send } = await w.send(need, proofs, { includeFees: true })
+    const res = await w.meltProofsBolt11(q, send)
+    st.proofs[mint] = [...keep, ...(res.change||[])]
+    st.log.push({melt: amt, fee_reserve: fee, mint, at: new Date().toISOString(), state: res.quote?.state})
+    save(); console.log('MELTED', amt, 'sats via', mint, res.quote?.state); process.exit(0)
+  }
+  console.log('not enough ecash on any mint'); process.exit(1)
+}
 if(mode==='publish'){
   const tags = [...RELAYS.map(r=>['relay',r]), ...MINTS.map(m=>['mint',m,'sat']), ['pubkey',p2pub]]
   const ev = finalizeEvent({kind:10019, created_at:Math.floor(Date.now()/1000), tags, content:''}, sk)
@@ -39,7 +71,7 @@ if(mode==='watch'){
     if(st.done[e.id]) continue
     const mint = norm((e.tags.find(t=>t[0]==='u')||[])[1]||'')
     const proofs = e.tags.filter(t=>t[0]==='proof').map(t=>{try{return JSON.parse(t[1])}catch{return null}}).filter(Boolean)
-    if(!MINTS.map(norm).includes(mint) || !proofs.length){ st.done[e.id]='ignored'; continue }
+    if(!ACCEPT.map(norm).includes(mint) || !proofs.length){ st.done[e.id]='ignored'; continue }
     try{
       const w = new Wallet(mint, {unit:'sat'}); await w.loadMint()
       const got = await w.receive(proofs, {privkey: p2sk})
@@ -57,7 +89,7 @@ if(mode==='watch'){
 }
 if(mode==='watch' || mode==='balance'){
   const tot = Object.values(st.proofs).reduce((a,p)=>a+sumProofs(p).toNumber(),0)
-  const out = {updated:new Date().toISOString(), nutzaps_received:st.log.length, balance_sats:tot, p2pk:p2pub, mints:MINTS, log:st.log.map(({id,from,amount,at})=>({id,from,amount,at}))}
+  const out = {updated:new Date().toISOString(), nutzaps_received:st.log.filter(x=>x.id).length, balance_sats:tot, p2pk:p2pub, mints:MINTS, log:st.log.map(({id,from,amount,at,melt})=>(melt?{melt,at}:{id,from,amount,at}))}
   fs.writeFileSync(DIR+'/pubblico.json', JSON.stringify(out,null,1)); console.log(JSON.stringify(out))
 }
 pool.close(RELAYS); process.exit(0)
