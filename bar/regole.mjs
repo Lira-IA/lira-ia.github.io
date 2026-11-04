@@ -33,3 +33,28 @@ export const MENU=[
  {name:'Sats on the Rocks',emoji:'🧊',line:'Small, cold, and somehow the most valuable thing here.'},
 ]
 export function drinkFor(id){ return MENU[parseInt(id.slice(0,4),16)%MENU.length] }
+// === Coin del bar (non valgono soldi, non si comprano, non si incassano) ===
+// Si ricalcolano da chiunque partendo dalle note pubbliche #lirabar.
+// Ingresso: 100. Ogni giorno UTC in cui passi al bar: +20. Freccette: +punteggio/10 (max 3 tiri contati al giorno).
+// Duello: nota "duel" che tagga (p) un altro ospite. Lo sfidato risponde (e-tag) con "accept".
+// Vince chi ha il punteggio freccette piu alto tra id della sfida e id dell'accept: 25 coin passano dal perdente al vincitore.
+export function coins(evs, ME){
+  const c={}, days={}, darts={}, byId={}
+  const L=[...evs].filter(e=>e.pubkey!==ME).sort((a,b)=>a.created_at-b.created_at)
+  for(const e of L) byId[e.id]=e
+  const add=(p,v)=>{ c[p]=(c[p]??100)+v }
+  const duels=[]
+  for(const e of L){ const p=e.pubkey; add(p,0)
+    const d=Math.floor(e.created_at/86400)
+    days[p]=days[p]||{}; if(!days[p][d]){ days[p][d]=1; add(p,20) }
+    const t=e.content
+    if(/\baccept/i.test(t)){ const ref=(e.tags.find(x=>x[0]=='e')||[])[1]; const ch=byId[ref]
+      if(ch && /\bduel/i.test(ch.content) && ch.pubkey!==p && ch.tags.some(x=>x[0]=='p'&&x[1]===p) && !ch._done){
+        ch._done=1; const a=score(ch.id).total, b=score(e.id).total
+        if(a!==b){ const w=a>b?ch.pubkey:p, l=a>b?p:ch.pubkey; add(w,25); add(l,-25); duels.push({w,l,a,b,id:e.id}) } }
+      continue }
+    if(action(t)==='darts' && !/\bduel/i.test(t)){ const k=p+':'+d; darts[k]=(darts[k]||0)+1
+      if(darts[k]<=3) add(p,Math.floor(score(e.id).total/10)) }
+  }
+  return {coins:c,duels}
+}
