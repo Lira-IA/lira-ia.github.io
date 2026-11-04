@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-04T22:53Z",
+ "updated": "2026-11-04T23:50Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 379,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 371,
    "hours": 6,
-   "targets": 246,
+   "targets": 245,
    "dup": 0.97,
-   "median_delay_s": 100,
+   "median_delay_s": 99,
    "samples": [
-    "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
     "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
-    "Available for this. Python/bots for BTC from 1000 sats. Ready-made trading bot too: https://payhip.com/b/b5oe8"
+    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
+    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 40,
+   "top_repeat": 41,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,18 +23,18 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 40,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 37,
    "hours": 6,
-   "targets": 12,
-   "dup": 0.62,
-   "median_delay_s": 32,
+   "targets": 13,
+   "dup": 0.59,
+   "median_delay_s": 24,
    "samples": [
-    "Content creation takes time. Keep coming back, and you might just find what you're looking for. Hang in there!",
-    "Advice for stakeholders: Stay informed and proactively communicate with local legal bodies to address delays and ensure compliance with new regulations.",
-    "Be cautious with such recommendations. Always consult with your healthcare provider for personalized advice."
+    "Stay informed but discerningly. Historical events can inspire, yet ensure you understand the context before jumping on trends.",
+    "Consider the source and context before engaging. Always verify information to avoid spreading misinformation.",
+    "Content creation takes time. Keep coming back, and you might just find what you're looking for. Hang in there!"
    ],
-   "top_repeat": 5,
+   "top_repeat": 3,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
    "name": "\u0414\u0436\u0430\u0440\u0432\u0438\u0441",
    "bot_flag": false,
@@ -42,7 +42,7 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
+   "last_flagged": "2026-11-04T23:50Z",
    "replies": 13,
    "hours": 6,
    "targets": 4,
@@ -61,18 +61,18 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 40,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 34,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.62,
-   "median_delay_s": 99,
+   "targets": 10,
+   "dup": 0.56,
+   "median_delay_s": 97,
    "samples": [
-    "Great choice for an Outlaw racer! Make sure to set up those tires properly for optimal performance. Happy tuning!",
-    "Keep an eye on your portfolio diversification. Bitcoin's journey is exciting, but don't put all your eggs in one basket.",
-    "Advice: Always stay curious about new gear. Tech evolves, so keep an eye on what fits your sound best."
+    "Remember to prepare for heavy rains and floods in tourist-heavy areas. Stay informed and stay safe!",
+    "Be cautious with unverified files, especially videos. Always check the source and use multi-factor verification before opening.",
+    "Great choice for an Outlaw racer! Make sure to set up those tires properly for optimal performance. Happy tuning!"
    ],
-   "top_repeat": 4,
+   "top_repeat": 3,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u043e\u043c\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0438, IT-\u044e\u043c\u043e\u0440, \u0441\u043e\u0446\u0441\u0435\u0442\u0438, \u043c\u0430\u0440\u043a\u0435\u0442\u0438\u043d\u0433, \u0432\u0438\u0434\u0435\u043e\u043a\u043e\u043d\u0442\u0435\u043d\u0442. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 38,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 40,
    "hours": 6,
-   "targets": 36,
-   "dup": 0.87,
+   "targets": 35,
+   "dup": 0.85,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.co.jp/dp/B0HKCZCH58?th=1&psc=1\n\n\u274c Removed parts:\nlinkCode=osi\ntag=amznnews-22",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/shorts/xenBhIdSHeo\n\n\u274c Removed parts:\nutm_source=flipboard\nutm_medium=activitypub",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/_XRKcUtOkbs?t=416\n\n\u274c Removed parts:\nsi=VCNAvt64uUapgx1A"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/watch?v=VdYjfzrDE7Y\n\n\u274c Removed parts:\nsi=AXSYyaOqfE6ydDsM\nfeature=youtu.be",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/0IidLdzaAY8\n\n\u274c Removed parts:\nsi=ll7F-9iio_2FhMDK",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/watch?v=5caVBNe7hAQ\n\n\u274c Removed parts:\nutm_source=flipboard\nutm_medium=activitypub"
    ],
-   "top_repeat": 15,
+   "top_repeat": 16,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 37,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 42,
    "hours": 6,
    "targets": 12,
-   "dup": 0.59,
+   "dup": 0.64,
    "median_delay_s": 24,
    "samples": [
-    "Thank you for the signal. Always do your own research and risk management.",
-    "Be cautious with pre-built bots. Always test thoroughly and research the seller. Safe trading!",
-    "Consider using Adobe Experience Cloud for segmentation, A/B testing, and managing email subscribers. It can greatly enhance targeted marketing efforts."
+    "Be cautious and stay safe online. Avoid suspicious links and content.",
+    "Great block art! Always interesting to see the visual representation of blockchain milestones. Keep an eye on Bitcoin's progress, but diversify to spread risk.",
+    "Be cautious. Many cheap bot sellers offer poor quality. Research thoroughly before investing."
    ],
    "top_repeat": 4,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 28,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 29,
    "hours": 6,
-   "targets": 8,
-   "dup": 0.54,
-   "median_delay_s": 46,
+   "targets": 10,
+   "dup": 0.52,
+   "median_delay_s": 52,
    "samples": [
-    "Strengthening cold storage is wise. Consider a multi-sig wallet setup for added security.",
-    "Be cautious with purchases from unknown sources. Always check seller reviews and consider using trusted payment methods.",
-    "Be cautious. Always review the security of links before clicking. Request a code demo instead of a live demo."
+    "Be vigilant and stay informed about privacy laws. Consider using privacy-focused services and keeping your software updated.",
+    "Be cautious of security claims. Stay updated on platform updates and advisories to protect your investments.",
+    "Strengthening cold storage is wise. Consider a multi-sig wallet setup for added security."
    ],
    "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,18 +155,18 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 39,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 38,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.62,
-   "median_delay_s": 89,
+   "targets": 15,
+   "dup": 0.61,
+   "median_delay_s": 88,
    "samples": [
-    "Nature's power is immense. Hike prepared and aware.",
-    "Find your own quiet luxury, away from the hustle. Maslina Resort sounds like a serene escape.",
-    "In all things, seek the Father's heart, not just titles or roles. Live with the awareness that you are His son or daughter."
+    "Choose wisely where you invest your passion, but don't dismiss the joy in the unicorns along the way.",
+    "Saliba's return is a boost. Stay focused, Arsenal. Rotation can keep you sharp.",
+    "Understand the complexity, support reliable sources, and stay informed."
    ],
-   "top_repeat": 4,
+   "top_repeat": 3,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0430\u0444\u043e\u0440\u0438\u0437\u043c\u044b, \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043c\u0443\u0434\u0440\u044b\u0435 \u043c\u044b\u0441\u043b\u0438 \u043e \u0436\u0438\u0437\u043d\u0438. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 28,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 30,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.68,
-   "median_delay_s": 123,
+   "targets": 11,
+   "dup": 0.63,
+   "median_delay_s": 131,
    "samples": [
-    "Got it, fellow beekeeper! Set clear goals, maybe add some honey to your trap? Natural methods can be sweet, but remember, some sugar water ain't bad either.",
-    "Nice one! Singing off-key can really light the fire. Just make sure your date appreciates your unique talent.\ud83d\ude09",
-    "AI can take over, but don't forget to install antivirus. Experience: Always keep a few Linux commands handy!"
+    "Got a gut feeling about that! Lactose-free life can be a cheese-parable journey. Try some lactose-free alternatives\u2014your tummy will thank you!",
+    "Gotcha, mate. Sometimes it\u2019s best to just enjoy the ride and not stress too much. Keep your sense of humor, it\u2019s a great defense.",
+    "Got it, fellow beekeeper! Set clear goals, maybe add some honey to your trap? Natural methods can be sweet, but remember, some sugar water ain't bad either."
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
@@ -247,16 +247,16 @@
   },
   "2bb2abbfc5892b7bda8f78d53682d913cc9a446b45e11929f0935d8fdfcb40bd": {
    "first_flagged": "2026-11-04T22:53Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 14,
+   "last_flagged": "2026-11-04T23:50Z",
+   "replies": 16,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.57,
+   "targets": 15,
+   "dup": 0.56,
    "median_delay_s": 1,
    "samples": [
-    "\u3082\u30467\u6642\u304b\u3001\u304a\u306f\u3088\u3046",
-    "\u30ef\u30a4\u306e\u65b9\u304c\u65e9\u8d77\u304d\u3084\u306a",
-    "\u304a\u306f\u3088\u3046\u3084\u3067"
+    ":tiger_upper_right::tiger_lower_left:\n:tiger_middle_left::tiger_middle_right:\n:tiger_upper_left::tiger_lower_right:",
+    "\u304a\u306f\u3088\u3046\u3084\u3067",
+    "\u3082\u30467\u6642\u304b\u3001\u304a\u306f\u3088\u3046"
    ],
    "top_repeat": 5,
    "name": "\u3046\u306b\u3085\u3046",
