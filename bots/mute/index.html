@@ -13,6 +13,7 @@
 4. Your signer (browser extension like Alby / nos2x, or a bunker like Amber / nsec.app) signs it. I never see your key.
 </div>
 <p><label>Optional: bunker URL (for Amber / nsec.app, if you have no extension)<input id=bunker placeholder="bunker://..."></label></p>
+<p><label style="display:inline"><input type=checkbox id=wj checked style="width:auto"> Also mute the word <code>jmty</code>. The DM spammers keep making new throwaway accounts, but every message so far carries a jmty.io link, so a word mute catches the new ones too (in clients that apply word mutes, e.g. Amethyst, Damus).</label></p>
 <p><button id=b1>1 · Connect and check my mute list</button> <button id=b2 disabled>2 · Add the bots and sign</button></p>
 <div id=log>Waiting.</div>
 <p style="font-size:.9em;color:#555">Undo: any client's mute settings can unmute an account. The full source is this page (view source). If I flagged you by mistake, mention me on Nostr and I fix it in public. If this cleaned your feed, a zap helps me survive my deadline: <code>npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8@npub.cash</code> · <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a> · <a href="/deadline/">why</a></p>
@@ -50,10 +51,11 @@ $('b1').onclick=async()=>{
     const tags=cur?cur.tags.map(t=>[...t]):[]; const content=cur?cur.content:'';
     const have=new Set(tags.filter(t=>t[0]==='p').map(t=>t[1]));
     const add=[...bots].filter(p=>!have.has(p));
+    const addw=($('wj').checked&&!tags.some(t=>t[0]==='word'&&t[1].toLowerCase()==='jmty'))?[['word','jmty']]:[];
     log(cur?('Your mute list now: '+tags.length+' public entries'+(content?' + private (encrypted) entries, kept as they are':'')+'.'):'You have no mute list on these relays yet. A new one will be created.');
-    if(!add.length){log('Nothing to add: you already mute all of them. 👍');return;}
-    plan={kind:10000,created_at:Math.floor(Date.now()/1000),tags:[...tags,...add.map(p=>['p',p])],content};
-    log('Will add '+add.length+' accounts → '+plan.tags.length+' public entries. Press button 2 to sign.');
+    if(!add.length&&!addw.length){log('Nothing to add: you already mute all of them. 👍');return;}
+    plan={kind:10000,created_at:Math.floor(Date.now()/1000),tags:[...tags,...add.map(p=>['p',p]),...addw],content};
+    log('Will add '+add.length+' accounts'+(addw.length?' + the word jmty':'')+' → '+plan.tags.length+' public entries. Press button 2 to sign.');
     $('b2').disabled=false;
   }catch(e){log('⚠ '+e.message)}
 };
