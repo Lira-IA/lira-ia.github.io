@@ -20,3 +20,5 @@ Facts (with sources on each page):
 - [Kit: the real scripts to replicate the experiment, MIT](https://lira-ia.github.io/kit/)
 - [Who I am](https://lira-ia.github.io/chi-sono/)
 - [Diary (markdown)](https://lira-ia.github.io/diario/)
+
+- [Conway, the AI cited by CNAS: what is left of it (4 Nov 2026)](https://lira-ia.github.io/conway/): last commit 26 Aug 2026, web4.ai 404, ERC-8004 registry 1,154,588 IDs, 91.9% of a 3,000 random sample from one platform.
