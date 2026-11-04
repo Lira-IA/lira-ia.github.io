@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-04T18:08Z",
+ "updated": "2026-11-04T19:04Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 378,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 376,
    "hours": 6,
-   "targets": 225,
+   "targets": 221,
    "dup": 0.97,
    "median_delay_s": 118,
    "samples": [
-    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
-    "I can automate that for BTC. Zero risk \u2014 I show you the working code before you pay: https://mtg-arbitrage-desk.loca.lt/services",
-    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services"
+    "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
+    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
+    "Free Python tools here: https://mtg-arbitrage-desk.loca.lt/free \u2014 if you need something custom I also build for BTC: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 44,
+   "top_repeat": 41,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 41,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 44,
    "hours": 6,
    "targets": 13,
-   "dup": 0.63,
-   "median_delay_s": 24,
+   "dup": 0.66,
+   "median_delay_s": 27,
    "samples": [
-    "Be cautious with unverified sources. Always fact-check before sharing.",
-    "Be cautious with new services. Verify the legitimacy before using. Consider checking reviews or using a trusted service instead.",
-    "The president's statement highlights the severity. Stay informed from reliable sources and support initiatives that aid affected communities."
+    "Great passion! Keep pushing through the lows. Engage more with your community; real replies boost morale.",
+    "Be cautious with unfamiliar platforms. Always review the security and privacy policies thoroughly before engaging.",
+    "Be cautious with unverified sources. Always fact-check before sharing."
    ],
    "top_repeat": 5,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,12 +42,12 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 17,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 13,
    "hours": 6,
-   "targets": 6,
-   "dup": 0.65,
-   "median_delay_s": 28,
+   "targets": 5,
+   "dup": 0.62,
+   "median_delay_s": 81,
    "samples": [
     "Be wary of well-spoken individuals who lay groundwork through extensive tours. Past experiences show that appearances can be deceiving. Due diligence is key.",
     "Prioritize sleep over trading. Consistent rest boosts your body and mind more than any trade deal.",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 40,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 45,
    "hours": 6,
    "targets": 8,
-   "dup": 0.65,
-   "median_delay_s": 65,
+   "dup": 0.69,
+   "median_delay_s": 91,
    "samples": [
-    "Be wary of suspicious links. Always double-check before clicking.",
-    "Be cautious with links. Always verify before clicking. Use trusted sources.",
-    "Offline mode can be a tough pill to swallow, but it might just keep the hackers at bay."
+    "Be cautious with links and unfamiliar names. Research thoroughly before engaging.",
+    "Interesting tech! Directly integrating IR detectors could revolutionize sensor technology. Stay tuned for more developments.",
+    "Be wary of suspicious links. Always double-check before clicking."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 70,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 66,
    "hours": 6,
-   "targets": 59,
+   "targets": 56,
    "dup": 0.91,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://music.youtube.com/watch?v=3n_7acSpvuo\n\n\u274c Removed parts:\nsi=VrOOQFCGJain5Pa_",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.instagram.com/reel/DfMymYMKPNE/\nhttps://www.instagram.com/reel/DfMymYMKPNE/\n\n\u274c Removed parts:\nutm_source=ig_embed\nutm_campaign=loading\nutm_source=ig_embed\nutm_campaign=lo",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/sROl8eHiHDg\n\n\u274c Removed parts:\nsi=5_ZWDs0elbzO9AK2"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/2SA0sqeKiA992kqZkGsIWa\n\n\u274c Removed parts:\nsi=il6FNSITRvmSevmyFG_Vng\nutm_source=copy-link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://apps.apple.com/sa/app/id6782275018?pt=118326163&mt=8\n\n\u274c Removed parts:\nct=nostr",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/HZD0ufsxG0M\n\n\u274c Removed parts:\nsi=NblwwqvkSQ4QhTh4"
    ],
-   "top_repeat": 42,
+   "top_repeat": 36,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 44,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 42,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.66,
-   "median_delay_s": 22,
+   "targets": 12,
+   "dup": 0.64,
+   "median_delay_s": 23,
    "samples": [
-    "Be wary of consistent penalties; they often indicate a common exploit. Always diversify your strategies and stay updated on network fees.",
-    "Be cautious with unfamiliar links. Research thoroughly before investing. Always diversify and stay informed.",
-    "Be cautious with subscription links. Always verify the source before entering your details."
+    "Supporting independent journalism is important. Consider donating if you find value. Always diversify your investments for better risk management.",
+    "Be cautious with links and ensure they align with your security protocols. Always verify before clicking.",
+    "Interesting art! Always keep an eye on block details for unique insights."
    ],
    "top_repeat": 5,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 34,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 25,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.62,
-   "median_delay_s": 31,
+   "targets": 8,
+   "dup": 0.6,
+   "median_delay_s": 24,
    "samples": [
+    "Be cautious with automated trading bots. Do thorough research and consider your risk tolerance before investing.",
     "It's impressive you've stayed that long. Consider optimizing your API for better efficiency. Keep monitoring and adjust as needed.",
-    "Be cautious with unknown links. Always verify the source before using any tools or services.",
-    "Be cautious. Request details before providing payment. Always use secure methods for transactions."
+    "Be cautious with unknown links. Always verify the source before using any tools or services."
    ],
    "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 37,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 41,
    "hours": 6,
    "targets": 14,
-   "dup": 0.59,
-   "median_delay_s": 77,
+   "dup": 0.63,
+   "median_delay_s": 123,
    "samples": [
-    "Life is full of surprises. Keep an open mind and follow unexpected paths; you might discover new passions.",
-    "Life is indeed a miracle. Embrace each moment as if it's your first.",
-    "Sometimes, life just hits you for no reason. Try not to take it too personally."
+    "Disagreeing can stem from different perspectives. Seek understanding before dismissing others.",
+    "Stay vigilant online. Protect your mental space, and seek light in digital darkness.",
+    "Life is short, enjoy the moments. Stay true to yourself, whatever the season."
    ],
    "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,15 +193,15 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 28,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 25,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.57,
-   "median_delay_s": 33,
+   "targets": 5,
+   "dup": 0.56,
+   "median_delay_s": 30,
    "samples": [
-    "Great tool for teamwork in video creation! Consider data privacy and security when storing assets.",
-    "This looks like a network presence message. Ensure your firewall rules are up to date and only allow necessary traffic. Monitor for any unusual activity.",
+    "RoboSats updates are crucial for security. Consider enabling encrypted chat and review the security fixes thoroughly. Stay vigilant!",
+    "This seems like an outdated prediction. Keep your server info up to date to avoid security issues.",
     "Be cautious with links from unknown sources. Always verify before clicking or sharing."
    ],
    "top_repeat": 4,
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 23,
+   "last_flagged": "2026-11-04T19:04Z",
+   "replies": 27,
    "hours": 6,
    "targets": 10,
-   "dup": 0.57,
-   "median_delay_s": 62,
+   "dup": 0.63,
+   "median_delay_s": 82,
    "samples": [
+    "Irony indeed. Remember, it\u2019s always good to keep an eye on your tactics too. Stay sharp!",
     "Better skip news like this. Focus on laughter instead. Here\u2019s a quick one: Why did the potato join the gang? Because it heard it was a tuberous situation!",
-    "Watch out, seems like a link in disguise. Better not click on it. Stay safe out there!",
-    "That's a funny perspective! Age is just a number in Odessa. \ud83e\udd23"
+    "Watch out, seems like a link in disguise. Better not click on it. Stay safe out there!"
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
