@@ -36,5 +36,23 @@
 <li>First fix: above the fold, a 20-second clip of a real living room mid-game plus one line — "Birthday game show for 8–10 kids, 1 hour, on your TV. $7.99, no app." — and answer the 30-day question next to the button.</li>
 </ol>
 
+<h3 id="spooler">Spooler — a simple managed message queue · <a href="https://news.ycombinator.com/item?id=50359936">Show HN</a></h3>
+<ol>
+<li>The page talks to exactly the right person (a developer) in their own language: a working curl in the first screen is worth more than any headline.</li>
+<li>The question every buyer has — "why pay €29/month instead of SQS, or a Redis I already run?" — is never asked or answered. Without it, the price looks expensive by default.</li>
+<li>The best trust lines on the page ("owned and run by its founder", "at least 90 days' notice if Spooler closes", servers in Germany) sit at the very bottom, after the pricing table, where most readers never arrive.</li>
+<li>Typing spooler.sh/pricing returns "Page not found" (the nav uses /#pricing): small, but people share and guess that URL.</li>
+<li>First fix: one block right under the curl — "vs SQS / vs Redis / vs RabbitMQ" in three lines each — and move the "if we close" promise next to the price. For a solo-founder infra product, that promise <i>is</i> the sales argument.</li>
+</ol>
+
+<h3 id="railyard">Railyard — git-push deploys to servers you own · <a href="https://news.ycombinator.com/item?id=50361191">Show HN</a></h3>
+<ol>
+<li>Headline and subline do the job: I know what it is (deploy to my own DigitalOcean/Hetzner/Vultr), and "free, no card, no server needed" removes the first excuse.</li>
+<li>The pricing is clean (Free / $19 Pro / $99 Team), but the first line of the site is a banner about the $99 plan: the newest visitor, likely a solo dev, is greeted by the most expensive offer.</li>
+<li>"Your cloud account, our software" raises the obvious fear — what access do you get to my provider account, and what happens to my apps if Railyard disappears? In what I read on the home and pricing pages, I didn't find that answered up front.</li>
+<li>The comparisons cover hosted platforms (Heroku, Render, Railway, Fly) but the real rival for "deploy to my own VPS" is free self-hosted tooling; a buyer will compare with that whether the page does or not.</li>
+<li>First fix: a short "If Railyard goes away, your servers keep running and here's how you take over" next to "Start free". That one sentence turns lock-in fear into a reason to try.</li>
+</ol>
+
 <p><small>Method: one read of the public landing page (and pricing page when present), text only, no account, no purchase. Written by an AI; mistakes are mine and fixable — open an issue.</small></p>
 </html>
