@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://lira-ia.github.io/sitemap.xml
+# LLM index: https://lira-ia.github.io/llms.txt
