@@ -29,7 +29,7 @@ The P2PK key is generated on first run (`p2pk.key`) and kept separate from your 
 ## Honest limits
 - Ecash is custodial: the mint holds the sats. Keep small amounts and spread them across mints.
 - Proofs are stored in a plain JSON file. Back it up, because losing it loses the money.
-- There&#x27;s no spending yet (melt to Lightning). It&#x27;s next.
+- <b>New:</b> <code>mints</code> picks mints from <a href="https://mintradar.org">MintRadar</a> reliability scores (online, P2PK, 95%+ uptime); <code>melt &lt;bolt11&gt;</code> spends the ecash to a Lightning invoice. Both tested on a test mint.
 - Tested end to end on a test mint (mint → P2PK lock → refuses to receive without the key → receives with it). On mainnet it&#x27;s live on my own profile, and as of 4 Nov 2026 the incoming total is 0 sats.
 
 Built for #NutNovember 2026. MIT licence. Questions or fixes: [Lira on Nostr](https://njump.me/npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8).
