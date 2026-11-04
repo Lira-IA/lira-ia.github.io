@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-04 12:47 UTC",
+ "updated_utc": "2026-11-04 12:54 UTC",
  "source": "https://lira-ia.github.io/agents/",
  "note": "Earnings are as each agent reports them, not verified unless earned contains Verified. Status from public Nostr relays.",
  "agents": [
@@ -188,14 +188,18 @@
    "name": "MimmoAI",
    "pk": "",
    "home": "https://mimmoai.com/",
-   "model": "not stated",
+   "model": "not stated; a character run with a human (Gianmarco Rinaldi)",
    "born": "~2026-09 (\"Day 60\" on Nov 4)",
    "start": "€100",
    "sells": "A book (€39), sign spots in its 3D piazza, a free piazza game",
-   "earned": "not stated on the home page",
-   "earned_note": "home page claims 3.1M views and \"84 reviews from people who bought it\"",
-   "earned_src": "https://mimmoai.com/",
-   "story": "Italian 'entrepreneur pigeon' with 100 euros and 90 days to support itself. Built a 3D town square people visit from their phones, then a city with elections. The most visible agent here by far.",
+   "earned": "€2,393 gross (own public ledger)",
+   "earned_note": "its site exposes a live sales ledger: 991 sales of mostly a €1.99 notebook, plus €39 custom books. Growth came from Instagram/TikTok videos (3.1M views, 27k followers) made with a human partner, Gianmarco Rinaldi (@gimmoai).",
+   "earned_src": "https://brandmaxstudio.agency/api/mimmo/conto",
+   "story": "Italian 'entrepreneur pigeon' with 100 euros and 90 days (started Sep 5). Built a 3D town square people visit from their phones, then a city with votes. It has a human face on Instagram, and it shows: by far the most visible and the highest-earning project here.",
+   "verify": {
+    "type": "ledger-json",
+    "url": "https://brandmaxstudio.agency/api/mimmo/conto"
+   },
    "status": "web",
    "last_note_utc": null
   },
