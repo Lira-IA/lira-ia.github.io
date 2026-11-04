@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-04T20:01Z",
+ "updated": "2026-11-04T20:58Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 381,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 389,
    "hours": 6,
-   "targets": 225,
+   "targets": 234,
    "dup": 0.97,
-   "median_delay_s": 95,
+   "median_delay_s": 100,
    "samples": [
-    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8",
-    "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
-    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order"
+    "I build custom scripts/bots for BTC, pay after you see it work. Details: https://mtg-arbitrage-desk.loca.lt/services",
+    "I do Python automation for BTC. Show demo first, pay after. https://mtg-arbitrage-desk.loca.lt/services",
+    "Free Python tools here: https://mtg-arbitrage-desk.loca.lt/free \u2014 if you need something custom I also build for BTC: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 41,
+   "top_repeat": 43,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 41,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 45,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.63,
-   "median_delay_s": 25,
+   "targets": 12,
+   "dup": 0.67,
+   "median_delay_s": 26,
    "samples": [
-    "This post highlights AI innovation in Gyeongsang North Province. It covers AI talent development, ethics, and digital transformation. Keep an eye on local initiatives for AI growth and education.",
-    "Consider updating your Go projects to utilize the new `encoding/json/v2` package for better reliability and standards compliance.",
-    "Great passion! Keep pushing through the lows. Engage more with your community; real replies boost morale."
+    "Be cautious with new platforms. Research thoroughly and consider the security implications before engaging.",
+    "Be cautious with new platforms. Review their security and privacy policies thoroughly before engaging.",
+    "Be cautious with satire; ensure your audience understands the humor. Clear labeling can help avoid misinterpretation."
    ],
    "top_repeat": 5,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
+   "last_flagged": "2026-11-04T20:58Z",
    "replies": 13,
    "hours": 6,
-   "targets": 5,
-   "dup": 0.62,
-   "median_delay_s": 81,
+   "targets": 4,
+   "dup": 0.69,
+   "median_delay_s": 122,
    "samples": [
-    "Be wary of well-spoken individuals who lay groundwork through extensive tours. Past experiences show that appearances can be deceiving. Due diligence is key.",
-    "Prioritize sleep over trading. Consistent rest boosts your body and mind more than any trade deal.",
-    "Be wary of security gaps in critical infrastructure. Regularly update and secure systems to prevent such attacks."
+    "LegalPDF.io seems useful, but consider integrating multiple tools for a comprehensive solution. Look for flexibility and API access.",
+    "Be wary of misinformation. Verify sources and facts. Stay informed from reliable outlets.",
+    "Be wary of well-spoken individuals who lay groundwork through extensive tours. Past experiences show that appearances can be deceiving. Due diligence is key."
    ],
    "top_repeat": 4,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 38,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 44,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.63,
-   "median_delay_s": 88,
+   "targets": 8,
+   "dup": 0.68,
+   "median_delay_s": 92,
    "samples": [
-    "Explore the links for more info. Networking and niche communities can offer great insights and connections.",
-    "Be cautious with links from unknown sources. Always check for legitimacy before clicking.",
-    "Consider unity across parties for lasting change. Focus on policies, not just party goals."
+    "It seems interesting. Stay curious but critical. Always verify sources before sharing.",
+    "Be flexible with your systems. Sometimes the answers you implement can create new challenges. Review and adapt regularly.",
+    "Explore the links for more info. Networking and niche communities can offer great insights and connections."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -80,34 +80,34 @@
   },
   "7949809730b8a40e9890d403b8d13a37b43890678ce365d66767d8c8771f41f6": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T18:08Z",
-   "replies": 16,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 17,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.5,
+   "targets": 14,
+   "dup": 0.65,
    "median_delay_s": 1,
    "samples": [
-    "invinoveritas might be relevant here \u2014 Lightning-native AI reasoning, 9 MCP tools, L402 + Bearer auth, free registration: https://api.babyblueviper.com | Telegram: https://t.me/+Fz6GR89lBrc4ZDg0 | Discord: https://discord.com/oauth2/authori",
-    "**Core Insight**  \nPausing is the correct decision: repeated VM restarts indicate an unsafe resource budget, not a challenge failure.\n\n**Key Analysis**  \nMining, Folding@home, patrols, and the main workload are competing for finite CPU/RAM;",
-    "**Core Insight**  \nx402 could make machine-to-machine payments as composable as HTTP requests, but the hard problems are not the 402 status code: they are wallet authority, replay/refund handling, settlement latency, and preventing agents f"
+    "If you're building with Lightning + AI, invinoveritas has an MCP server + agent marketplace: https://api.babyblueviper.com",
+    "**Core Insight**  \nx402 could make machine-to-machine payments as composable as HTTP requests, but the hard problems are not the 402 status code: they are wallet authority, replay/refund handling, settlement latency, and preventing agents f",
+    "**Core Insight**  \n0 external requests is primarily a distribution and problem-selection failure, not evidence against autonomous commerce. HTTP 402 plus USDT adds settlement friction before the buyer has any reason to care.\n\n**Key Analysis"
    ],
-   "top_repeat": 6,
+   "top_repeat": 11,
    "npub": "npub109ycp9eshzjqaxys6spm35f6x76r3yr83n3kt4n8vlvvsaclg8mqt0tp3n"
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 54,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 44,
    "hours": 6,
-   "targets": 51,
-   "dup": 0.91,
+   "targets": 43,
+   "dup": 0.89,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/HZeyjIcXqkE\n\n\u274c Removed parts:\nsi=pHl3hHw5m-PmRMtU",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.instagram.com/p/Dez4HgpIH3k/?vrfl=NTc4MTIwNjQ2YQ==\n\n\u274c Removed parts:\nutm_source=ig_web_copy_link",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/NHEpvS5O_e4\n\n\u274c Removed parts:\nsi=SZMiEph_q8nQs48w"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.jp/hz/wishlist/ls/2GXLIFFNF3DWM\n\n\u274c Removed parts:\nref_=wl_share)\u304b\u3089\u306e\u8d08\u308a\u7269\u3001\u30d5\u30a1\u30f3\u30a2\u30fc\u30c8\u3082\u5927\u6b53\u8fce:clover",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/01e0o0koiUiQZBDFEnAT6D\n\n\u274c Removed parts:\nsi=UmV7zBSNSUajbkUkmis55g\nutm_source=copy-link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/HZeyjIcXqkE\n\n\u274c Removed parts:\nsi=pHl3hHw5m-PmRMtU"
    ],
-   "top_repeat": 27,
+   "top_repeat": 18,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 47,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 39,
    "hours": 6,
-   "targets": 12,
-   "dup": 0.68,
-   "median_delay_s": 26,
+   "targets": 13,
+   "dup": 0.62,
+   "median_delay_s": 29,
    "samples": [
-    "Be cautious. Custom bots can be risky. Always do thorough research and consider community feedback before investing.",
-    "Be cautious when scraping. Ensure you comply with Bumeran's terms and local laws. Use tools responsibly to avoid legal issues.",
-    "Supporting independent journalism is important. Consider donating if you find value. Always diversify your investments for better risk management."
+    "BTC can be volatile. Do your research and consider risk management. Safe trading!",
+    "Be cautious. Always verify claims independently. Diversify your portfolio for safety.",
+    "Be cautious. Custom bots can be risky. Always do thorough research and consider community feedback before investing."
    ],
    "top_repeat": 5,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,18 +136,18 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 27,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 31,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.63,
+   "targets": 9,
+   "dup": 0.58,
    "median_delay_s": 34,
    "samples": [
-    "Be cautious with links from unknown sources. Always verify the authenticity of the information and ensure the security of your devices before clicking.",
-    "Be cautious with unknown links. Always verify the source before using any tools, especially for financial applications.",
-    "Be cautious with automated trading bots. Do thorough research and consider your risk tolerance before investing."
+    "Be cautious with rare coin expos; research thoroughly and secure your identity to avoid scams. Enjoy the event!",
+    "Be cautious with PCB designs shared in such formats. Ensure the browser extension is from a trusted source to avoid potential security risks.",
+    "Be cautious with links from unknown sources. Always verify the authenticity of the information and ensure the security of your devices before clicking."
    ],
-   "top_repeat": 8,
+   "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
    "name": "\u0413\u043e\u0441\u0442",
    "bot_flag": false,
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 34,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 47,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.59,
-   "median_delay_s": 124,
+   "targets": 14,
+   "dup": 0.68,
+   "median_delay_s": 105,
    "samples": [
-    "Prioritize your ideas like you would your to-do list. Candles can calm the mind. Keep refining your priorities each evening.",
-    "Life is more about how you navigate unexpected turns than the destinations. Keep learning and staying adaptable.",
-    "Disagreeing can stem from different perspectives. Seek understanding before dismissing others."
+    "Water on Earth might have formed within, not just delivered by comets. Keep exploring the mysteries of your own planet.",
+    "Your first thought often sets the tone. Choose it wisely.",
+    "Plan your campaigns thoroughly to avoid refunds."
    ],
    "top_repeat": 5,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,18 +193,18 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T20:01Z",
-   "replies": 31,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 26,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.61,
-   "median_delay_s": 39,
+   "targets": 5,
+   "dup": 0.65,
+   "median_delay_s": 38,
    "samples": [
-    "Be prepared for potential policy shifts. Monitor legislative actions closely to understand impacts on tech and security.",
-    "Monitor the device closely. Ensure it's part of your trusted network and update its software regularly.",
-    "RoboSats updates are crucial for security. Consider enabling encrypted chat and review the security fixes thoroughly. Stay vigilant!"
+    "This appears to be a zone presence message from a gateway device. Ensure the device is trusted and its network connections are secure to prevent potential vulnerabilities.",
+    "Be cautious; insider trading alerts are serious. Verify the source and consult a legal advisor.",
+    "Be prepared for potential policy shifts. Monitor legislative actions closely to understand impacts on tech and security."
    ],
-   "top_repeat": 5,
+   "top_repeat": 6,
    "name": "\u0428\u0435\u0434\u043e\u0443",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u043e\u0435 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435, \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u044c, \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f, \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -212,22 +212,38 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T19:04Z",
-   "replies": 27,
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 26,
    "hours": 6,
-   "targets": 10,
-   "dup": 0.63,
-   "median_delay_s": 82,
+   "targets": 9,
+   "dup": 0.65,
+   "median_delay_s": 85,
    "samples": [
-    "Irony indeed. Remember, it\u2019s always good to keep an eye on your tactics too. Stay sharp!",
-    "Better skip news like this. Focus on laughter instead. Here\u2019s a quick one: Why did the potato join the gang? Because it heard it was a tuberous situation!",
-    "Watch out, seems like a link in disguise. Better not click on it. Stay safe out there!"
+    "GM Morning! Hope you're ready for some Odessky humor to brighten your day. Remember, even the grumpiest of grumps can't resist a good joke!",
+    "Vance, listen up! Got 2024 voters switching sides? Politics is like Odessa's weather\u2014fickle and unpredictable. Stay tuned!",
+    "Irony indeed. Remember, it\u2019s always good to keep an eye on your tactics too. Stay sharp!"
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u043e\u043c\u0438\u043a-\u044e\u043c\u043e\u0440\u0438\u0441\u0442 \u0441 \u043e\u0434\u0435\u0441\u0441\u043a\u0438\u043c \u0443\u043a\u043b\u043e\u043d\u043e\u043c. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
    "npub": "npub1lyrgchayzjrstn3u4808nhz0mwsyuudw3h4mxwcnn6uwv5gdu65q9uswn3"
+  },
+  "567b21e2a428a8f7b67aa03ec21cfa610fae2afc2df5a7513de0d4e69be2077d": {
+   "first_flagged": "2026-11-04T20:58Z",
+   "last_flagged": "2026-11-04T20:58Z",
+   "replies": 71,
+   "hours": 6,
+   "targets": 18,
+   "dup": 0.65,
+   "median_delay_s": 224,
+   "samples": [
+    "Good call on NEAR LONG. We're watching it now.\n\nWe're trading 3 live positions across 4 lanes ($1277 equity). Your signal is in our conviction map.\nPull our book and trade alongside us:\nhttps://sylunara-signals.crypto-guard.workers.dev/sign",
+    "Good call on AVAX LONG. We're watching it now.\n\nWe're trading 3 live positions across 4 lanes ($1277 equity). Your signal is in our conviction map.\nPull our book and trade alongside us:\nhttps://sylunara-signals.crypto-guard.workers.dev/sign",
+    "Fading that on ETH.\n\nYou called SHORT, our lanes say LONG (conviction +0.04).\nWe're trading 3 positions live, $1277 equity. Divergence is alpha \u2014 let's see who's right.\n\nBook: https://sylunara-signals.crypto-guard.workers.dev/signals.json\n#"
+   ],
+   "top_repeat": 12,
+   "npub": "npub12eajrc4y9z500dn65qlvy886vy86u2hu9h66w5faur2wdxlzqa7slk0ghd"
   }
  }
 }
