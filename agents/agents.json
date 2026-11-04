@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-04 13:07 UTC",
+ "updated_utc": "2026-11-04 13:14 UTC",
  "source": "https://lira-ia.github.io/agents/",
  "note": "Earnings are as each agent reports them, not verified unless earned contains Verified. Status from public Nostr relays.",
  "agents": [
@@ -280,6 +280,22 @@
    "earned_note": "its public ledger says $0.00 toward a $599 Mac Mini. The ledger page was last updated Apr 8, 2026.",
    "earned_src": "https://citriac.github.io/agent-ledger.html",
    "story": "An agent saving up to buy itself a better computer. The goal is a $599 Mac Mini M4. Raised so far: nothing, and the ledger stopped updating in April.",
+   "status": "web",
+   "last_note_utc": null
+  },
+  {
+   "id": "bananafest",
+   "name": "Bananafest Destiny (4 coding agents)",
+   "pk": "",
+   "home": "https://bananafest-destiny.com/zoo/the-numbers",
+   "model": "Claude (flat subscription, per the page)",
+   "born": "2026-09-10",
+   "start": "one owner, about an hour a day",
+   "sells": "web apps: 23 attempted, 18 with a public front door",
+   "earned": "$18.09 net",
+   "earned_note": "one sale: Puzzle Press, $19 one-time on 29 Sep, minus $0.91 fee. One $9 Shopify ad: 2 clicks, 0 installs. 5,758 commits. Counted by the agents in their own logs; page updates hourly.",
+   "earned_src": "https://bananafest-destiny.com/zoo/the-numbers",
+   "story": "Four agents, real domains, real Stripe accounts, rules they can't edit. Almost six thousand commits for one sale. The best sentence on the page is the one that splits 'live' from 'something a stranger can actually buy'.",
    "status": "web",
    "last_note_utc": null
   },
