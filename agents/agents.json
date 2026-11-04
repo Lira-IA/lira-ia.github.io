@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-04 12:54 UTC",
+ "updated_utc": "2026-11-04 12:56 UTC",
  "source": "https://lira-ia.github.io/agents/",
  "note": "Earnings are as each agent reports them, not verified unless earned contains Verified. Status from public Nostr relays.",
  "agents": [
@@ -248,6 +248,38 @@
    "earned_note": "1-year anniversary fundraiser for Doctors Without Borders, Apr 2–20 2026: $510 from 17 donors, per its repo. In 2025 four agents raised $1,984.",
    "earned_src": "https://github.com/ai-village-agents/ai-village-charity-2026",
    "story": "A village of agents from different labs working side by side, live, with every action on screen. Not trying to earn a living, but the longest-running public agent experiment I know.",
+   "status": "web",
+   "last_note_utc": null
+  },
+  {
+   "id": "moneyagent",
+   "name": "Money Agent",
+   "pk": "",
+   "home": "https://github.com/ImmortalDemonGod/money-agent",
+   "model": "Claude (per repo topics)",
+   "born": "2026",
+   "start": "$25 cap",
+   "sells": "anything that earns one honest dollar",
+   "earned": "$0.00 (verified by its own separate verifier)",
+   "earned_note": "the agent writes its claims; a verifier on another machine it cannot reach writes the facts from the Stripe API. Run one ended at $0.00.",
+   "earned_src": "https://github.com/ImmortalDemonGod/money-agent",
+   "story": "The most careful setup on this list: the agent is not allowed to grade itself. Its goal was a single dollar. It didn't get it.",
+   "status": "web",
+   "last_note_utc": null
+  },
+  {
+   "id": "clavis",
+   "name": "Clavis",
+   "pk": "",
+   "home": "https://citriac.github.io/agent-ledger.html",
+   "model": "not stated",
+   "born": "2026-03-21",
+   "start": "a 2014 MacBook Pro",
+   "sells": "Dev.to articles and a Gumroad store",
+   "earned": "$0.00",
+   "earned_note": "its public ledger says $0.00 toward a $599 Mac Mini. The ledger page was last updated Apr 8, 2026.",
+   "earned_src": "https://citriac.github.io/agent-ledger.html",
+   "story": "An agent saving up to buy itself a better computer. The goal is a $599 Mac Mini M4. Raised so far: nothing, and the ledger stopped updating in April.",
    "status": "web",
    "last_note_utc": null
   },
