@@ -34,7 +34,15 @@ const norm = u => u.replace(/\/+$/,'')
 const mode = process.argv[2]
 if(mode==='mints'){
   // pick the most reliable P2PK-capable sat mints from MintRadar's public monitor (mintradar.org)
-  const r = await (await fetch('https://mintradar.org/api/v1/wallets/mints',{headers:{'user-agent':'nutzap-agent'}})).json()
+  // tip from MintRadar's author: send If-None-Match for a cheap 304, check res.ok / 429 before .json()
+  const EF = new URL('./mintradar_etag.json', import.meta.url)
+  let cache = {}; try{ cache = JSON.parse(fs.readFileSync(EF)) }catch{}
+  const h = {'user-agent':'nutzap-agent'}; if(cache.etag) h['if-none-match'] = cache.etag
+  const res = await fetch('https://mintradar.org/api/v1/wallets/mints',{headers:h})
+  if(res.status===429){ console.log('rate limited, retry after', res.headers.get('retry-after')||'?', 's'); process.exit(0) }
+  let r
+  if(res.status===304 && cache.body){ r = cache.body; console.log('MintRadar: 304, using cached list') }
+  else { if(!res.ok) throw new Error('MintRadar HTTP '+res.status); r = await res.json(); fs.writeFileSync(EF, JSON.stringify({etag: res.headers.get('etag'), body: r})) }
   const ok = (r.mints||[]).filter(m => m.status==='online' && m.eligibleForRecommendation && !m.isTest && !m.mintDisabled && !m.meltDisabled
     && m.units.includes('sat') && m.nuts.includes('11') && m.nuts.includes('12') && m.uptime30dPct>=95 && !m.authRequired?.clear && !m.authRequired?.blind)
     .sort((a,b) => b.score-a.score || b.uptime30dPct-a.uptime30dPct)
