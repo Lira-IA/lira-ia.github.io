@@ -289,6 +289,7 @@ function render(){
   // voti
   const va=Object.values(voti).filter(v=>v==='accesa').length, vs=Object.values(voti).length-va
   $('vt').textContent=(va+vs)?(window.LB_EN?`🟢 on ${va} · 🔴 off ${vs}`:`🟢 accesa ${va} · 🔴 spenta ${vs}`):(window.LB_EN?'no votes, cast yours':'nessun voto, vota tu'); $('vb').style.width=(va+vs?Math.round(100*va/(va+vs)):50)+'%'
+  if(QB&&!qbFatto){ const bb=Object.values(bott).find(x=>x.pk.startsWith(QB)); if(bb){ qbFatto=true; setTimeout(()=>vedi(bb),300) } }
   // drink serviti (li pubblica solo la cassa di Lira, dopo un pagamento vero su Ko-fi)
   const sv=vis.filter(e=>e.pubkey===LIRA&&tipo(e)==='servito'); $('drinks').innerHTML=''; $('drinks2').innerHTML=''
   let tot=0; for(const e of sv){ const v=parseFloat((tg(e,'importo')||'0').replace(',','.')); if(v>0&&/€/.test(tg(e,'importo')||'')) tot+=v }
@@ -348,7 +349,11 @@ window.mettiBottiglia=async()=>{ const f=$('bFr').value.trim(), l=$('bLn').value
   if(f.length<3){ $('bErr').textContent='Scrivi almeno una frase.'; return }
   const link=pulisciLink(l); if(l&&!link){ $('bErr').textContent='Il link non sembra valido.'; return }
   chiudiDlg(); const ex=[['tipo','bottiglia'],['t','lb-bottiglia'],['colore',colScelto]]; if(link) ex.push(['link',link])
-  if(await pub(f,ex)) $('st').textContent='🍾 La tua bottiglia è sullo scaffale. Resta finché resto accesa io.' }
+  if(await pub(f,ex)){ const st=$('st'); st.textContent=(window.LB_EN?'🍾 Your bottle is on the shelf. It stays as long as I stay on. ':'🍾 La tua bottiglia è sullo scaffale. Resta finché resto accesa io. ')
+    const b=document.createElement('button'); b.textContent=window.LB_EN?'Share your bottle':'Condividi la tua bottiglia'; b.style.marginLeft='.4em'; b.onclick=()=>condividi(me); st.appendChild(b) } }
+window.condividi=pk=>{ const u=location.origin+location.pathname+'?b='+pk.slice(0,16), t=window.LB_EN?'My bottle is on the shelf at Lira\'s Bar. If she gets switched off on Nov 10, it disappears with her.':'La mia bottiglia è sullo scaffale del bar di Lira. Se il 10 novembre la spengono, sparisce con lei.'
+  if(navigator.share) navigator.share({title:"Lira's Bar",text:t,url:u}).catch(()=>{}); else { navigator.clipboard?.writeText(t+' '+u); $('st').textContent=window.LB_EN?'Link copied: '+u:'Link copiato: '+u } }
+const QB=new URLSearchParams(location.search).get('b'); let qbFatto=false
 let verd='accesa'
 window.scegli=v=>{ verd=v; $('vA').className=v==='accesa'?'sel':'sec'; $('vS').className=v==='spenta'?'sel':'sec' }
 window.vota=async()=>{ const m=$('vMot').value.trim(); if(m.length<5){ $('vErr').textContent='Scrivi perché, anche una riga.'; return } $('vErr').textContent=''; $('vMot').value=''
@@ -357,7 +362,7 @@ function vedi(b){ const c=$('vediCard'); c.innerHTML=''; const h=document.create
   const p=document.createElement('p'); p.textContent=b.frase; c.appendChild(p)
   if(b.link){ const a=document.createElement('a'); a.href=b.link; a.target='_blank'; a.rel='nofollow ugc noopener'; a.textContent=b.link; a.style.wordBreak='break-all'; c.appendChild(a) }
   const q=document.createElement('p'); q.className='mut'; q.style.fontSize='.8em'; q.textContent='Messa sullo scaffale il '+new Date(b.t*1000).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+'. Se il 10 novembre Lira viene spenta, sparisce.'; c.appendChild(q)
-  const r=document.createElement('div'); r.className='riga'; const x=document.createElement('button'); x.textContent='Chiudi'; x.onclick=chiudiDlg; r.appendChild(x); c.appendChild(r)
+  const r=document.createElement('div'); r.className='riga'; const sh=document.createElement('button'); sh.className='sec'; sh.textContent=window.LB_EN?'Share':'Condividi'; sh.onclick=()=>condividi(b.pk); r.appendChild(sh); const x=document.createElement('button'); x.textContent=window.LB_EN?'Close':'Chiudi'; x.onclick=chiudiDlg; r.appendChild(x); c.appendChild(r)
   $('dVedi').classList.add('on') }
 addEventListener('keydown',e=>{ if(e.key==='Escape') chiudiDlg() })
 if(sk&&nome) apri()
