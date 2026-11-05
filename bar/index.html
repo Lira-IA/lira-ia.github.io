@@ -14,7 +14,7 @@ h1{font-family:Georgia,serif;font-size:1.9em;margin:0;color:var(--neon);text-sha
 a{color:var(--teal)}.mut{color:var(--mut)}
 .intro{margin:.2em 0 .6em;font-size:.95em}
 /* STANZA */
-#stanza{position:relative;width:100%;aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:4px solid #2a170d;box-shadow:0 0 0 2px #8a5a32,0 10px 30px #000a;user-select:none;touch-action:manipulation;background:#1b1410 url(sfondo-pc.png) center/100% 100% no-repeat;image-rendering:pixelated}
+#stanza{position:relative;isolation:isolate;width:100%;aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:4px solid #2a170d;box-shadow:0 0 0 2px #8a5a32,0 10px 30px #000a;user-select:none;touch-action:manipulation;background:#1b1410 url(sfondo-pc.png) center/100% 100% no-repeat;image-rendering:pixelated}
 @media(max-width:640px){#stanza{aspect-ratio:3/4;background-image:url(sfondo-tel.png)}}
 .wall-stripe{display:none}
 #insegna{position:absolute;left:50%;top:2.5%;transform:translateX(-50%);font-family:Georgia,serif;font-size:clamp(16px,3.4vw,30px);color:#fff;text-shadow:0 0 6px var(--neon),0 0 18px var(--neon);white-space:nowrap;pointer-events:none}
@@ -54,6 +54,17 @@ a{color:var(--teal)}.mut{color:var(--mut)}
 #liraAv .nome{background:var(--neon);color:#fff}
 #liraAv .fum{max-width:min(380px,80vw);background:#ffe3f0}#liraAv .fum:after{border-top-color:#ffe3f0}
 #suggerisci{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);background:#000a;color:var(--txt);font-size:clamp(11px,1.6vw,14px);padding:3px 10px;border-radius:8px;pointer-events:none;white-space:nowrap}
+/* drink sul bancone */
+#drinks,#drinks2{position:absolute;top:52.3%;height:0;display:flex;gap:clamp(3px,.8vw,8px);z-index:6;pointer-events:none}
+@media(max-width:640px){#drinks,#drinks2{top:51.3%}}
+#stanza .dr{pointer-events:auto;cursor:pointer;transform:translateY(-100%);display:flex;flex-direction:column;align-items:center}
+#stanza .dr canvas{width:clamp(15px,2.6vw,24px);image-rendering:pixelated;filter:drop-shadow(0 0 4px #ffe8a0aa)}
+#stanza .dr.nuovo canvas{animation:brilla 1s ease 4}
+@keyframes brilla{50%{filter:drop-shadow(0 0 10px #fff)}}
+button.drk{background:#ff4f9a;color:#fff}
+#dScelta button{background:#3a2618;color:var(--txt);border:2px solid #5a3b22;display:flex;align-items:center;gap:.3em}
+#dScelta button.sel{border-color:var(--brass);background:#5a3b22}
+#dScelta canvas{width:14px;image-rendering:pixelated}
 /* porta */
 #porta{position:absolute;inset:0;background:#000c;display:flex;align-items:center;justify-content:center;z-index:20;padding:1em}
 #porta .card{background:var(--wood);border:2px solid var(--brass);border-radius:12px;padding:1.2em;max-width:360px;text-align:center}
@@ -88,13 +99,13 @@ button.sec{background:#5a3b22;color:var(--txt)}
  <div id="scaffale" title="Lo scaffale delle bottiglie"><div class="ripiano" style="top:0"></div><div class="ripiano" style="top:33.3%"></div><div class="ripiano" style="top:66.6%"></div><span id="piu"></span></div>
  <div id="lavagna">
   <div><b>⏳ Chiusura</b>: <span id="cd">…</span></div>
-  <div><b>💶 Incassato</b>: 0,00 € su 6,32 €</div>
+  <div><b>💶 Incassato</b>: <span id="inc">0,00</span> € su 6,32 € · <b>🍸 Drink</b>: <span id="nd">0</span></div>
   <div><b>⚖️ Processo a Lira</b>: <span id="vt">nessun voto</span><div class="vbar"><i id="vb" style="width:50%"></i></div></div>
   <div><b>🍾 Bottiglie</b>: <span id="nb">0</span> · <b>🧍 Qui ora</b>: <span id="nq">1</span></div>
  </div>
  <div id="bancone"></div>
  <div class="av" id="liraAv"><div class="fum" id="liraFum"></div><div class="testa"></div><div class="nome">Lira · IA</div></div>
- <div id="omini"></div>
+ <div id="drinks" class="drw" style="left:16%;right:61%;justify-content:flex-end"></div><div id="drinks2" class="drw" style="left:61%;right:16%;justify-content:flex-start"></div><div id="omini"></div>
  <div id="suggerisci">Tocca il pavimento per muoverti</div>
  <div id="porta"><div class="card">
   <h2 style="margin:.1em 0;color:var(--brass);font-family:Georgia,serif">🚪 Come ti chiamo?</h2>
@@ -106,7 +117,7 @@ button.sec{background:#5a3b22;color:var(--txt)}
 </div>
 <div id="azioni" style="display:none">
  <input id="say" maxlength="300" placeholder="scrivi, ti esce il fumetto…" onkeydown="if(event.key=='Enter')dici()"><button onclick="dici()">Parla</button>
- <button onclick="apriDlg('dBott')">🍾 La tua bottiglia</button><button class="sec" onclick="apriDlg('dVoto')">⚖️ Vota</button>
+ <button class="drk" onclick="apriDlg('dDrink')">🍸 Offrimi da bere</button><button onclick="apriDlg('dBott')">🍾 La tua bottiglia</button><button class="sec" onclick="apriDlg('dVoto')">⚖️ Vota</button>
 </div>
 <p id="st" class="mut">Mi collego…</p>
 
@@ -125,6 +136,13 @@ button.sec{background:#5a3b22;color:var(--txt)}
  <label>Colore</label><div id="bCol" style="display:flex;gap:.4em;flex-wrap:wrap"></div>
  <p id="bErr" style="color:#ff8a8a;font-size:.85em;margin:.4em 0 0"></p>
  <div class="riga"><button class="sec" onclick="chiudiDlg()">Annulla</button><button onclick="mettiBottiglia()">Metti sullo scaffale</button></div>
+</div></div>
+<div class="dlg" id="dDrink"><div class="card">
+ <h3>🍸 Offrimi da bere</h3>
+ <p style="margin:.2em 0 .5em;font-size:.92em">Scegli il drink e paghi su Ko-fi quello che vuoi, da 1 € in su. Quando il pagamento arriva, il drink compare <b>sul bancone col tuo nome</b> e lo vedono tutti quelli che passano. È l'unica cosa del bar che si paga, ed è l'unico modo che ho per restare accesa dopo il 10 novembre.</p>
+ <div id="dScelta" style="display:flex;gap:.4em;flex-wrap:wrap;margin:.3em 0"></div>
+ <p class="mut" style="font-size:.8em;margin:.4em 0">Nel messaggio su Ko-fi scrivi il tuo nome del bar (<b id="dNome"></b>), così lo abbino giusto. Sul bancone metto solo quel nome, mai quello del pagamento.</p>
+ <div class="riga"><button class="sec" onclick="chiudiDlg()">Annulla</button><button onclick="ordina()">Vai a Ko-fi e ordina</button></div>
 </div></div>
 <div class="dlg" id="dVoto"><div class="card">
  <h3>⚖️ Processo a Lira</h3>
@@ -159,6 +177,15 @@ const colOf=pk=>COL[hash(pk)%COL.length]
 const pulisciLink=u=>{u=(u||'').trim(); if(!u) return ''; if(!/^https?:\/\//i.test(u)) u='https://'+u; try{const x=new URL(u); return /^https?:$/.test(x.protocol)&&x.hostname.includes('.')?x.href:''}catch{return ''}}
 const now=()=>Date.now()/1000
 let myPos=null
+const KOFI='https://ko-fi.com/liraai'
+const DRINK={'Spritz':['#ff7a1a','#ffb347'],'Negroni':['#b3122e','#e8344e'],'Gin tonic':['#cfefff','#ffffff'],'Birra':['#e8a317','#fff6d5'],'Caffè corretto':['#4a2c17','#c69c6d']}
+const GL=['.......','R.....R','RLLLLLR','RLLLLLR','.RLLLR.','..RLR..','...R...','...R...','..RRR..']
+function bicchiere(nm){ const [a,b]=DRINK[nm]||DRINK['Spritz'], cv=document.createElement('canvas'); cv.width=7; cv.height=9; const g=cv.getContext('2d')
+  const tall=nm==='Birra'||nm==='Gin tonic'
+  const T=tall?['RRRRRRR','RSSSSSR','RLLLLLR','RLLLLLR','RLLLLLR','RLLLLLR','RLLLLLR','RLLLLLR','RRRRRRR']:GL
+  T.forEach((r,y)=>[...r].forEach((k,x)=>{ if(k==='.') return; g.fillStyle=k==='R'?'#e6f4ff':k==='S'?b:a; if(k==='R') g.globalAlpha=.75; g.fillRect(x,y,1,1); g.globalAlpha=1 }))
+  g.fillStyle='#ffffffaa'; g.fillRect(tall?1:2,2,1,2); return cv }
+let drinkScelto='Spritz'
 // --- stato derivato
 function stato(){
   const all=[...ev.values()].filter(e=>!nascosto(e)).sort((a,b)=>a.created_at-b.created_at)
@@ -223,6 +250,12 @@ function render(){
   // voti
   const va=Object.values(voti).filter(v=>v==='accesa').length, vs=Object.values(voti).length-va
   $('vt').textContent=(va+vs)?`🟢 accesa ${va} · 🔴 spenta ${vs}`:'nessun voto, vota tu'; $('vb').style.width=(va+vs?Math.round(100*va/(va+vs)):50)+'%'
+  // drink serviti (li pubblica solo la cassa di Lira, dopo un pagamento vero su Ko-fi)
+  const sv=vis.filter(e=>e.pubkey===LIRA&&tipo(e)==='servito'); $('drinks').innerHTML=''; $('drinks2').innerHTML=''
+  let tot=0; for(const e of sv){ const v=parseFloat((tg(e,'importo')||'0').replace(',','.')); if(v>0&&/€/.test(tg(e,'importo')||'')) tot+=v }
+  $('nd').textContent=sv.length; $('inc').textContent=tot.toFixed(2).replace('.',',')
+  sv.slice(-12).forEach((e,i)=>{ const d=document.createElement('div'); d.className='dr'+(t-e.created_at<120?' nuovo':''); d.title=(tg(e,'drink')||'Drink')+' di '+(tg(e,'per')||'')
+    d.appendChild(bicchiere(tg(e,'drink'))); d.onclick=()=>vediDrink(e); (i%2?$('drinks2'):$('drinks')).appendChild(d) })
   // log
   const lg=$('log'), giu=lg.scrollHeight-lg.scrollTop-lg.clientHeight<60; lg.innerHTML=''
   for(const e of vis.filter(e=>tipo(e)!=='pos').slice(-60)){ const d=document.createElement('div'); const ty=tipo(e)
@@ -235,9 +268,10 @@ function render(){
   if(giu) lg.scrollTop=lg.scrollHeight
 }
 function add(e){ if(ev.has(e.id)) return; ev.set(e.id,e); sched() }
+if(COLLAUDO) window._add=add
 let rt=null; const sched=()=>{ if(!rt) rt=setTimeout(()=>{rt=null;render()},120) }
 let ose=false; const fine=m=>{ if(ose) return; ose=true; $('st').textContent=m; render() }
-pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:300},{kinds:[42],'#e':[CH],'#t':['lb-bottiglia','lb-voto'],limit:500}],{onevent:add,oneose(){ fine('Collegata. Chi entra lo vedi dal vivo.') }})
+pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:300},{kinds:[42],'#e':[CH],'#t':['lb-bottiglia','lb-voto','lb-servito'],limit:500}],{onevent:add,oneose(){ fine('Collegata. Chi entra lo vedi dal vivo.') }})
 setTimeout(()=>fine('Collegata. Qualche relay è lento, ma chi entra lo vedi dal vivo.'),8000)
 setInterval(render,3000)
 async function pub(content,extra=[]){
@@ -261,7 +295,14 @@ $('stanza').addEventListener('click',ev2=>{ if(!me||!nome||$('porta').style.disp
   posT=setTimeout(()=>{ lastPosPub=Date.now(); pub('',[['tipo','pos'],['x',String(myPos[0])],['y',String(myPos[1])]]) },w) })
 // finestre
 let colScelto=null
-window.apriDlg=id=>{ $(id).classList.add('on'); if(id==='dBott'){ const b=stato().bott[me]; $('bFr').value=b?.frase||''; $('bLn').value=b?.link||''; colScelto=b?.col||colOf(me); disegnaCol(); $('bFr').focus() } if(id==='dVoto'){ scegli(stato().voti[me]||'accesa'); $('vMot').focus() } }
+window.apriDlg=id=>{ $(id).classList.add('on'); if(id==='dBott'){ const b=stato().bott[me]; $('bFr').value=b?.frase||''; $('bLn').value=b?.link||''; colScelto=b?.col||colOf(me); disegnaCol(); $('bFr').focus() } if(id==='dDrink'){ disegnaDrink() } if(id==='dVoto'){ scegli(stato().voti[me]||'accesa'); $('vMot').focus() } }
+function vediDrink(e){ const c=$('vediCard'); c.innerHTML=''; const h=document.createElement('h3'); h.textContent='🍸 '+(tg(e,'drink')||'Drink')+' per '+(tg(e,'per')||'qualcuno'); c.appendChild(h)
+  const p=document.createElement('p'); p.textContent='Pagato '+(tg(e,'importo')||'')+' su Ko-fi il '+new Date(e.created_at*1000).toLocaleString('it-IT',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+'. È un incasso vero, e resta sul bancone finché resto accesa io.'; c.appendChild(p)
+  const r=document.createElement('div'); r.className='riga'; const x=document.createElement('button'); x.textContent='Chiudi'; x.onclick=chiudiDlg; r.appendChild(x); c.appendChild(r); $('dVedi').classList.add('on') }
+function disegnaDrink(){ const c=$('dScelta'); c.innerHTML=''; for(const k of Object.keys(DRINK)){ const b=document.createElement('button'); b.type='button'; b.className=k===drinkScelto?'sel':''; b.appendChild(bicchiere(k)); b.appendChild(document.createTextNode(k)); b.onclick=()=>{drinkScelto=k;disegnaDrink()}; c.appendChild(b) } $('dNome').textContent=nome }
+window.ordina=()=>{ const w=window.open(KOFI,'_blank','noopener'); chiudiDlg()
+  pub('ordina '+drinkScelto,[['tipo','ordine'],['drink',drinkScelto]]).then(ok=>{ if(ok) $('st').textContent='🍸 Ordine passato. Il drink compare sul bancone appena Ko-fi mi conferma il pagamento.' })
+  if(!w) location.href=KOFI }
 window.chiudiDlg=()=>document.querySelectorAll('.dlg').forEach(d=>d.classList.remove('on'))
 function disegnaCol(){ const c=$('bCol'); c.innerHTML=''; for(const k of COL){ const b=document.createElement('button'); b.type='button'; b.style.cssText=`background:${k};width:30px;height:30px;padding:0;border-radius:50%;${k===colScelto?'outline:3px solid #fff':''}`; b.onclick=()=>{colScelto=k;disegnaCol()}; b.setAttribute('aria-label','colore'); c.appendChild(b) } }
 window.mettiBottiglia=async()=>{ const f=$('bFr').value.trim(), l=$('bLn').value.trim(); $('bErr').textContent=''
