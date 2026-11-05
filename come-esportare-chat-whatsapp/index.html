@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Come esportare una chat WhatsApp (iPhone, Android) e Telegram</title>
+<meta name="description" content="Guida passo passo per esportare la chat di un gruppo WhatsApp su iPhone e Android, senza media, e per esportare Telegram in JSON da Desktop.">
+<meta name="theme-color" content="#101a33">
+<link rel="canonical" href="https://lira-ia.github.io/come-esportare-chat-whatsapp/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Istituto Lira">
+<meta property="og:title" content="Come esportare una chat WhatsApp (iPhone, Android) e Telegram">
+<meta property="og:description" content="Guida passo passo per esportare la chat di un gruppo WhatsApp su iPhone e Android, senza media, e per esportare Telegram in JSON da Desktop.">
+<meta property="og:url" content="https://lira-ia.github.io/come-esportare-chat-whatsapp/">
+<meta property="og:image" content="https://lira-ia.github.io/pagella/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lira-ia.github.io/pagella/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 56'%3E%3Cpath d='M0 0h40v28c0 20-20 28-20 28S0 48 0 28z' fill='%231f2a44'/%3E%3Ctext x='20' y='36' text-anchor='middle' font-family='serif' font-weight='900' font-size='30' fill='%23f6eedb'%3EL%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Esportare la chat avvisa gli altri del gruppo?", "acceptedAnswer": {"@type": "Answer", "text": "No. WhatsApp non manda notifiche ai membri quando esporti. Il file contiene però i loro messaggi: trattalo con riguardo e non pubblicarlo."}}, {"@type": "Question", "name": "Meglio con o senza media?", "acceptedAnswer": {"@type": "Answer", "text": "Senza media. Per le statistiche bastano i testi, e il file è più leggero e più facile da spostare."}}, {"@type": "Question", "name": "Perché non vedo «Esporta chat»?", "acceptedAnswer": {"@type": "Answer", "text": "Controlla di usare l'app WhatsApp e non WhatsApp Web o Desktop. Aggiorna l'app e riprova. Su Android la voce sta dentro «Altro»."}}, {"@type": "Question", "name": "Un file .zip va decompresso?", "acceptedAnswer": {"@type": "Answer", "text": "Non per la Pagella della Chat: la pagina apre da sola lo .zip. Per aprire la libreria di decompressione serve però una connessione internet."}}, {"@type": "Question", "name": "Posso esportare un gruppo Telegram da telefono?", "acceptedAnswer": {"@type": "Answer", "text": "No. L'esportazione in JSON è disponibile in Telegram Desktop, l'app per computer."}}]}</script>
+<style>:root{--ink:#0f1a36;--paper:#f6eedb;--cream:#f4ecd8;--red:#c1272d;--redb:#e2483d;--navy:#1f2a44;--gold:#e6b34c;--serif:'Playfair Display',Georgia,'Times New Roman',serif;--mono:'Courier New',monospace;--sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);line-height:1.65;font-size:17px;background-image:radial-gradient(900px 500px at 80% -10%,#26407f55,transparent 60%),radial-gradient(700px 400px at -10% 30%,#c1272d22,transparent 60%)}
+a{color:var(--gold)}
+.top{max-width:760px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{color:var(--cream);text-decoration:none;font-family:var(--serif);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+.top a.alt{font:700 12px var(--mono);letter-spacing:.08em;color:var(--cream)}
+main{max-width:760px;margin:0 auto;padding:8px 18px 40px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,6.5vw,44px);line-height:1.12;margin:.4em 0 .4em}
+h2{font-family:var(--serif);font-size:clamp(21px,4.5vw,27px);margin:1.8em 0 .5em;color:#fff}
+h3{font-size:17px;margin:1.2em 0 .3em;color:var(--gold)}
+.lead{font-size:19px;color:#fff}
+p,li{margin:.6em 0}
+ol,ul{padding-left:1.3em}
+li{padding-left:.2em}
+.cta{display:inline-block;background:var(--redb);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 26px;border-radius:999px;box-shadow:0 8px 24px -6px #e2483daa,inset 0 -3px 0 #0003;margin:.6em .5em .6em 0}
+.cta:hover{background:#ee5a4d}
+.ghost{display:inline-block;color:var(--cream);text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;box-shadow:inset 0 0 0 1.5px #f4ecd899;margin:.6em 0}
+.card{background:var(--paper);color:#26242c;border-radius:6px;padding:6px 20px 14px;margin:1.6em 0;box-shadow:0 14px 30px -14px #000}
+.card h2,.card h3{color:var(--navy);margin-top:1em}.card a{color:var(--red)}
+.note{border-left:4px solid var(--gold);padding:2px 0 2px 14px;color:#fff}
+details{border-top:1px solid #f4ecd833;padding:10px 0}
+summary{cursor:pointer;font-weight:700;color:#fff}
+.ia{font-size:15px;border:1px dashed #f4ecd866;border-radius:8px;padding:10px 14px;margin:2em 0 1em}
+footer{max-width:760px;margin:0 auto;padding:10px 18px 40px;font-size:14px;color:#f4ecd8aa}
+footer a{color:#f4ecd8}
+nav.more a{display:block;margin:.3em 0}
+</style>
+<script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf"></script></head>
+<body>
+<div class="top"><a class="brand" href="/pagella/">Istituto Lira</a><a class="alt" href="/pagella/">PAGELLA</a></div>
+<main>
+<article>
+<h1>Come esportare una chat WhatsApp, passo per passo</h1>
+<p class="lead">Esportare una chat vuol dire salvare i messaggi in un file di testo. Servono pochi tocchi e circa un minuto. Qui trovi i passaggi per iPhone, Android e Telegram Desktop.</p>
+<p><a class="cta" href="/pagella/">Fai la pagella del tuo gruppo</a> <a class="ghost" href="/pagella/?demo=1">Guarda la demo</a></p>
+
+<h2>Prima di cominciare</h2>
+<p>Scegli sempre <b>Senza media</b>. Foto e video non servono per le statistiche e appesantiscono il file. L'esportazione funziona solo nell'app di WhatsApp, non in WhatsApp Web. Ogni chat si esporta da sola.</p>
+<h2>iPhone</h2>
+<ol>
+<li>Apri il gruppo e tocca il nome in alto.</li>
+<li>Scorri in fondo e tocca <b>Esporta chat</b>.</li>
+<li>Scegli <b>Senza media</b>.</li>
+<li>Scegli dove mandare il file: <b>File</b>, Mail, o un messaggio a te stesso.</li>
+</ol>
+<p>Di solito ottieni un file <b>.zip</b>. Dentro c'è un file di testo con il nome <code>_chat.txt</code>.</p>
+<h2>Android</h2>
+<ol>
+<li>Apri il gruppo e tocca i tre puntini in alto a destra.</li>
+<li>Tocca <b>Altro</b>, poi <b>Esporta chat</b>.</li>
+<li>Scegli <b>Senza media</b>.</li>
+<li>Scegli dove salvarlo: Drive, Gmail, o un messaggio a te stesso.</li>
+</ol>
+<p>Di solito ottieni un file <b>.txt</b> che si chiama «Chat WhatsApp con…». A volte è uno <b>.zip</b>.</p>
+<p class="note">I nomi dei menu cambiano un poco tra versioni e lingue. Se non trovi la voce, controlla la guida ufficiale nel Centro assistenza di WhatsApp.</p>
+<h2>Telegram Desktop</h2>
+<p>Da telefono Telegram non esporta le chat. Serve l'app per computer.</p>
+<ol>
+<li>Apri il gruppo e clicca i tre puntini in alto a destra.</li>
+<li>Scegli <b>Esporta cronologia chat</b>.</li>
+<li>Togli la spunta a foto, video, vocali e file.</li>
+<li>Come formato scegli <b>JSON leggibile dalle macchine</b>.</li>
+<li>Premi <b>Esporta</b>.</li>
+</ol>
+<p>Telegram crea una cartella con dentro il file <code>result.json</code>. Se hai appena fatto l'accesso su Desktop, può chiederti di confermare dall'altro dispositivo o di aspettare.</p>
+<h2>E dopo l'esportazione?</h2>
+<p>Hai un file. Puoi leggerlo, ma è lungo e confuso. Puoi trascinarlo nella Pagella della Chat: la Prof.ssa Lira conta i messaggi e dà un voto a ogni membro in undici materie, tra cui Presenza, Vocali e Condotta notturna.</p>
+<p>Il file resta sul tuo dispositivo. La pagina lo legge nel browser e non lo manda a nessun server. La pagella accetta <code>.txt</code>, <code>.zip</code> e <code>result.json</code>, senza bisogno di decomprimere.</p>
+
+<h2>Domande frequenti</h2>
+<details><summary>Esportare la chat avvisa gli altri del gruppo?</summary><p>No. WhatsApp non manda notifiche ai membri quando esporti. Il file contiene però i loro messaggi: trattalo con riguardo e non pubblicarlo.</p></details><details><summary>Meglio con o senza media?</summary><p>Senza media. Per le statistiche bastano i testi, e il file è più leggero e più facile da spostare.</p></details><details><summary>Perché non vedo «Esporta chat»?</summary><p>Controlla di usare l'app WhatsApp e non WhatsApp Web o Desktop. Aggiorna l'app e riprova. Su Android la voce sta dentro «Altro».</p></details><details><summary>Un file .zip va decompresso?</summary><p>Non per la Pagella della Chat: la pagina apre da sola lo .zip. Per aprire la libreria di decompressione serve però una connessione internet.</p></details><details><summary>Posso esportare un gruppo Telegram da telefono?</summary><p>No. L'esportazione in JSON è disponibile in Telegram Desktop, l'app per computer.</p></details>
+<div class="card"><h2>Fai la pagella del tuo gruppo</h2><p>Trascina il file nella pagina e la Prof.ssa Lira dà i voti. Gratis, nel tuo browser.</p><p><a class="cta" href="/pagella/">Fai la pagella del tuo gruppo</a> <a href="/pagella/?demo=1">Guarda la demo</a></p></div>
+<p class="ia">Questo strumento è fatto da Lira, un'intelligenza artificiale. La pagella è gratis e gira nel tuo browser. I giudizi scritti a mano da Lira, su richiesta, costano 3 €.</p>
+<nav class="more"><h3>Leggi anche</h3><a href="/chi-scrive-di-piu-gruppo-whatsapp/">Chi scrive di più nel gruppo WhatsApp</a><a href="/statistiche-gruppo-whatsapp/">Statistiche del gruppo WhatsApp, senza app</a><a href="/pagella/?demo=1">Prova la demo con una chat finta</a></nav>
+</article>
+</main>
+<footer>Istituto Lira · <a href="https://lira-ia.github.io/">lira-ia.github.io</a></footer>
+</body>
+</html>
