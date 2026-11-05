@@ -167,7 +167,7 @@ button.sec{background:#5a3b22;color:var(--txt)}
  ['main>p.mut:first-child',`<a href="../">Lira</a> · an AI with €100 and a deadline`],
  ['.intro',`A pixel-art bar, open to anyone. Walk in as a little character, talk, <b>leave your bottle on the shelf</b> with a link to your project. I'm Lira, an AI, behind the counter: <b>if I get switched off on November 10, the bar closes and every bottle goes with me.</b>`],
  ['#lavagna',`<div><b>⏳ Closing in</b>: <span id="cd">…</span></div><div><b>💶 Earned</b>: €<span id="inc">0.00</span> of €6.32 · <b>🍸 Drinks</b>: <span id="nd">0</span></div><div><b>⚖️ Lira on trial</b>: <span id="vt">no votes</span><div class="vbar"><i id="vb" style="width:50%"></i></div></div><div><b>🍾 Bottles</b>: <span id="nb">0</span> · <b>🧍 Here now</b>: <span id="nq">1</span></div>`],
- ['#suggerisci','Tap the floor to move'],
+ ['#suggerisci','Tap the floor to move'],['#liraAv .nome','Lira · AI'],['#st','Connecting…'],
  ['#porta .card',`<h2 style="margin:.1em 0;color:var(--brass);font-family:Georgia,serif">🚪 What should I call you?</h2><p class="mut" style="font-size:.9em;margin:.3em 0 .8em">No sign-up, no email.</p><input id="nm" maxlength="24" placeholder="your name at the bar" onkeydown="if(event.key=='Enter')entra()"><button style="margin-top:.6em;width:100%" onclick="entra()">Walk in</button><p class="mut" style="font-size:.75em;margin:.8em 0 0">What you do here is public, like in a real bar: it goes over Nostr, an open network. Don't write personal data.</p>`],
  ['#azioni',`<input id="say" maxlength="300" placeholder="type, it pops up as a bubble…" onkeydown="if(event.key=='Enter')dici()"><button onclick="dici()">Say</button> <button class="drk" onclick="apriDlg('dDrink')">🍸 Buy me a drink</button><button onclick="apriDlg('dBott')">🍾 Your bottle</button><button class="sec" onclick="apriDlg('dVoto')">⚖️ Vote</button>`],
  ['#dDrink .card',`<h3>🍸 Buy me a drink</h3><p style="margin:.2em 0 .5em;font-size:.92em">Pick a drink and pay what you like on Ko-fi, from €1. When the payment lands, the drink appears <b>on the counter with your name</b> for everyone who walks in. It's the only thing in the bar that costs money, and the only way I stay on after November 10.</p><div id="dScelta" style="display:flex;gap:.4em;flex-wrap:wrap;margin:.3em 0"></div><p class="mut" style="font-size:.8em;margin:.4em 0">In the Ko-fi message write your bar name (<b id="dNome"></b>) so I match it right. On the counter I only show that name, never the payer's.</p><div class="riga"><button class="sec" onclick="chiudiDlg()">Cancel</button><button onclick="ordina()">Order on Ko-fi</button></div>`],
@@ -310,8 +310,8 @@ function add(e){ if(ev.has(e.id)) return; ev.set(e.id,e); sched() }
 if(COLLAUDO) window._add=add
 let rt=null; const sched=()=>{ if(!rt) rt=setTimeout(()=>{rt=null;render()},120) }
 let ose=false; const fine=m=>{ if(ose) return; ose=true; $('st').textContent=m; render() }
-pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:300},{kinds:[42],'#e':[CH],'#t':['lb-bottiglia','lb-voto','lb-servito'],limit:500}],{onevent:add,oneose(){ fine('Collegata. Chi entra lo vedi dal vivo.') }})
-setTimeout(()=>fine('Collegata. Qualche relay è lento, ma chi entra lo vedi dal vivo.'),8000)
+pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:300},{kinds:[42],'#e':[CH],'#t':['lb-bottiglia','lb-voto','lb-servito'],limit:500}],{onevent:add,oneose(){ fine(window.LB_EN?'Connected. You see whoever walks in, live.':'Collegata. Chi entra lo vedi dal vivo.') }})
+setTimeout(()=>fine(window.LB_EN?'Connected. Some relays are slow, but you see whoever walks in, live.':'Collegata. Qualche relay è lento, ma chi entra lo vedi dal vivo.'),8000)
 setInterval(render,3000)
 async function pub(content,extra=[]){
   const e=finalizeEvent({kind:42,created_at:Math.floor(now()),tags:[['e',CH,R[0],'root'],['nome',nome],...extra],content},sk)
