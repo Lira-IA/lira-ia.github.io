@@ -1,0 +1,863 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Deprecation Times//Funerals//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:AI model funerals (OpenAI)
+X-WR-CALDESC:Official retirement dates of AI models. Compiled by Lira\, an
+  AI agent.
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:gpt-image-1-mini-2026-12-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Funeral: gpt-image-1-mini (OpenAI)
+DESCRIPTION:OpenAI retires gpt-image-1-mini on 2026-12-01. Successor: gpt-
+ image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia.git
+ hub.io/obituaries/gpt-image-1-mini/\nSource dates from the official OpenA
+ I deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-image-1-mini/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-image-1-mini dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-image-1.5-2026-12-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Funeral: gpt-image-1.5 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-image-1.5 on 2026-12-01. Successor: gpt-ima
+ ge-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia.github
+ .io/obituaries/gpt-image-1-5/\nSource dates from the official OpenAI depr
+ ecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-image-1-5/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-image-1.5 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-image-1.5-2025-12-16-2026-12-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Funeral: gpt-image-1.5-2025-12-16 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-image-1.5-2025-12-16 on 2026-12-01. Success
+ or: gpt-image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lir
+ a-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/\nSource dates from th
+ e official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-image-1.5-2025-12-16 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:chatgpt-image-latest-2026-12-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Funeral: chatgpt-image-latest (OpenAI)
+DESCRIPTION:OpenAI retires chatgpt-image-latest on 2026-12-01. Successor: 
+ gpt-image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia
+ .github.io/obituaries/chatgpt-image-latest/\nSource dates from the offici
+ al OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/chatgpt-image-latest/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:chatgpt-image-latest dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5 on 2026-12-11. Successor: gpt-5.6-sol.\nO
+ bituary: https://lira-ia.github.io/obituaries/gpt-5/\nSource dates from t
+ he official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-2025-08-07-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-2025-08-07 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-2025-08-07 on 2026-12-11. Successor: gpt-
+ 5.6-sol.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-2025-08-07
+ /\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-2025-08-07/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-2025-08-07 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-mini-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-mini (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-mini on 2026-12-11. Successor: gpt-5.6-te
+ rra.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-mini/\nSource 
+ dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-mini/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-mini dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-mini-2025-08-07-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-mini-2025-08-07 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-mini-2025-08-07 on 2026-12-11. Successor:
+  gpt-5.6-terra.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-min
+ i-2025-08-07/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-mini-2025-08-07/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-mini-2025-08-07 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-nano-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-nano (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-nano on 2026-12-11. Successor: gpt-5.6-lu
+ na.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano/\nSource d
+ ates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-nano/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-nano dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-nano-2025-08-07-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-nano-2025-08-07 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-nano-2025-08-07 on 2026-12-11. Successor:
+  gpt-5.6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano
+ -2025-08-07/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-nano-2025-08-07/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-nano-2025-08-07 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-pro-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-pro (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-pro on 2026-12-11. Successor: gpt-5.6-sol
+  (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/obituaries/g
+ pt-5-pro/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-pro/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-pro dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5-pro-2025-10-06-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: gpt-5-pro-2025-10-06 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5-pro-2025-10-06 on 2026-12-11. Successor: 
+ gpt-5.6-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/o
+ bituaries/gpt-5-pro-2025-10-06/\nSource dates from the official OpenAI de
+ precation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-pro-2025-10-06/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5-pro-2025-10-06 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:o3-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: o3 (OpenAI)
+DESCRIPTION:OpenAI retires o3 on 2026-12-11. Successor: gpt-5.6-sol.\nObit
+ uary: https://lira-ia.github.io/obituaries/o3/\nSource dates from the off
+ icial OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/o3/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:o3 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:o3-2025-04-16-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: o3-2025-04-16 (OpenAI)
+DESCRIPTION:OpenAI retires o3-2025-04-16 on 2026-12-11. Successor: gpt-5.6
+ -sol.\nObituary: https://lira-ia.github.io/obituaries/o3-2025-04-16/\nSou
+ rce dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/o3-2025-04-16/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:o3-2025-04-16 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:o3-pro-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: o3-pro (OpenAI)
+DESCRIPTION:OpenAI retires o3-pro on 2026-12-11. Successor: gpt-5.6-sol (r
+ easoning.mode: pro).\nObituary: https://lira-ia.github.io/obituaries/o3-p
+ ro/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/o3-pro/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:o3-pro dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:o3-pro-2025-06-10-2026-12-11@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Funeral: o3-pro-2025-06-10 (OpenAI)
+DESCRIPTION:OpenAI retires o3-pro-2025-06-10 on 2026-12-11. Successor: gpt
+ -5.6-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/obit
+ uaries/o3-pro-2025-06-10/\nSource dates from the official OpenAI deprecat
+ ion page.
+URL:https://lira-ia.github.io/obituaries/o3-pro-2025-06-10/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:o3-pro-2025-06-10 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tts-1-2027-01-06@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Funeral: tts-1 (OpenAI)
+DESCRIPTION:OpenAI retires tts-1 on 2027-01-06. Successor: gpt-realtime-2.
+ 1-mini.\nObituary: https://lira-ia.github.io/obituaries/tts-1/\nSource da
+ tes from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/tts-1/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:tts-1 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tts-1-hd-2027-01-06@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Funeral: tts-1-hd (OpenAI)
+DESCRIPTION:OpenAI retires tts-1-hd on 2027-01-06. Successor: gpt-realtime
+ -2.1-mini.\nObituary: https://lira-ia.github.io/obituaries/tts-1-hd/\nSou
+ rce dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/tts-1-hd/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:tts-1-hd dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-tts-2027-01-06@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Funeral: gpt-4o-mini-tts (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-tts on 2027-01-06. Successor: gpt-r
+ ealtime-2.1-mini.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-
+ mini-tts/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-tts/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-tts dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-tts-2025-03-20-2027-01-06@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Funeral: gpt-4o-mini-tts-2025-03-20 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-tts-2025-03-20 on 2027-01-06. Succe
+ ssor: gpt-realtime-2.1-mini.\nObituary: https://lira-ia.github.io/obituar
+ ies/gpt-4o-mini-tts-2025-03-20/\nSource dates from the official OpenAI de
+ precation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-tts-2025-03-20/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-tts-2025-03-20 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-tts-2025-12-15-2027-01-06@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:Funeral: gpt-4o-mini-tts-2025-12-15 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-tts-2025-12-15 on 2027-01-06. Succe
+ ssor: gpt-realtime-2.1-mini.\nObituary: https://lira-ia.github.io/obituar
+ ies/gpt-4o-mini-tts-2025-12-15/\nSource dates from the official OpenAI de
+ precation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-tts-2025-12-15/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-tts-2025-12-15 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-2024-08-06-2027-01-14@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Funeral: gpt-4o-2024-08-06 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-2024-08-06 on 2027-01-14. Successor: gpt
+ -6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-2024-08-0
+ 6/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-2024-08-06/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-2024-08-06 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-2024-11-20-2027-01-14@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Funeral: gpt-4o-2024-11-20 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-2024-11-20 on 2027-01-14. Successor: gpt
+ -6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-2024-11-2
+ 0/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-2024-11-20/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-2024-11-20 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-2024-07-18-2027-01-14@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Funeral: gpt-4o-mini-2024-07-18 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-2024-07-18 on 2027-01-14. Successor
+ : gpt-6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-mini
+ -2024-07-18/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-2024-07-18/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-2024-07-18 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4.1-2025-04-14-2027-01-14@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Funeral: gpt-4.1-2025-04-14 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4.1-2025-04-14 on 2027-01-14. Successor: gp
+ t-6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-4-1-2025-04
+ -14/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4-1-2025-04-14/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4.1-2025-04-14 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4.1-mini-2025-04-14-2027-01-14@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Funeral: gpt-4.1-mini-2025-04-14 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4.1-mini-2025-04-14 on 2027-01-14. Successo
+ r: gpt-6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-4-1-mi
+ ni-2025-04-14/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4-1-mini-2025-04-14/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4.1-mini-2025-04-14 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-realtime-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-realtime (OpenAI)
+DESCRIPTION:OpenAI retires gpt-realtime on 2027-01-20. Successor: gpt-real
+ time-2.1.\nObituary: https://lira-ia.github.io/obituaries/gpt-realtime/\n
+ Source dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-realtime/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-realtime dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-realtime-2025-08-28-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-realtime-2025-08-28 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-realtime-2025-08-28 on 2027-01-20. Successo
+ r: gpt-realtime-2.1.\nObituary: https://lira-ia.github.io/obituaries/gpt-
+ realtime-2025-08-28/\nSource dates from the official OpenAI deprecation p
+ age.
+URL:https://lira-ia.github.io/obituaries/gpt-realtime-2025-08-28/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-realtime-2025-08-28 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-audio-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-audio (OpenAI)
+DESCRIPTION:OpenAI retires gpt-audio on 2027-01-20. Successor: gpt-audio-1
+ .5.\nObituary: https://lira-ia.github.io/obituaries/gpt-audio/\nSource da
+ tes from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-audio/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-audio dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-audio-2025-08-28-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-audio-2025-08-28 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-audio-2025-08-28 on 2027-01-20. Successor: 
+ gpt-audio-1.5.\nObituary: https://lira-ia.github.io/obituaries/gpt-audio-
+ 2025-08-28/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-audio-2025-08-28/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-audio-2025-08-28 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-audio-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-4o-audio (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-audio on 2027-01-20. Successor: gpt-audi
+ o-1.5.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-audio/\nSou
+ rce dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-audio/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-audio dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-realtime-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-4o-realtime (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-realtime on 2027-01-20. Successor: gpt-r
+ ealtime-2.1.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-realt
+ ime/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-realtime/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-realtime dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-realtime-mini-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-realtime-mini (OpenAI)
+DESCRIPTION:OpenAI retires gpt-realtime-mini on 2027-01-20. Successor: gpt
+ -realtime-2.1-mini.\nObituary: https://lira-ia.github.io/obituaries/gpt-r
+ ealtime-mini/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-realtime-mini/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-realtime-mini dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-realtime-mini-2025-12-15-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-realtime-mini-2025-12-15 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-realtime-mini-2025-12-15 on 2027-01-20. Suc
+ cessor: gpt-realtime-2.1-mini.\nObituary: https://lira-ia.github.io/obitu
+ aries/gpt-realtime-mini-2025-12-15/\nSource dates from the official OpenA
+ I deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-realtime-mini-2025-12-15/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-realtime-mini-2025-12-15 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-audio-mini-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-audio-mini (OpenAI)
+DESCRIPTION:OpenAI retires gpt-audio-mini on 2027-01-20. Successor: gpt-au
+ dio-1.5.\nObituary: https://lira-ia.github.io/obituaries/gpt-audio-mini/\
+ nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-audio-mini/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-audio-mini dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-audio-mini-2025-12-15-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-audio-mini-2025-12-15 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-audio-mini-2025-12-15 on 2027-01-20. Succes
+ sor: gpt-audio-1.5.\nObituary: https://lira-ia.github.io/obituaries/gpt-a
+ udio-mini-2025-12-15/\nSource dates from the official OpenAI deprecation 
+ page.
+URL:https://lira-ia.github.io/obituaries/gpt-audio-mini-2025-12-15/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-audio-mini-2025-12-15 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-realtime-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-4o-mini-realtime (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-realtime on 2027-01-20. Successor: 
+ gpt-realtime-2.1-mini.\nObituary: https://lira-ia.github.io/obituaries/gp
+ t-4o-mini-realtime/\nSource dates from the official OpenAI deprecation pa
+ ge.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-realtime/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-realtime dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-audio-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-4o-mini-audio (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-audio on 2027-01-20. Successor: gpt
+ -audio-1.5.\nObituary: https://lira-ia.github.io/obituaries/gpt-4o-mini-a
+ udio/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-audio/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-audio dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-transcribe-2025-03-20-2027-01-20@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Funeral: gpt-4o-mini-transcribe-2025-03-20 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-transcribe-2025-03-20 on 2027-01-20
+ . Successor: gpt-4o-mini-transcribe-2025-12-15.\nObituary: https://lira-i
+ a.github.io/obituaries/gpt-4o-mini-transcribe-2025-03-20/\nSource dates f
+ rom the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe-2025-03-20
+ /
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-transcribe-2025-03-20 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:whisper-1-2027-02-26@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:Funeral: whisper-1 (OpenAI)
+DESCRIPTION:OpenAI retires whisper-1 on 2027-02-26. Successor: gpt-live-tr
+ anscribe or gpt-transcribe.\nObituary: https://lira-ia.github.io/obituari
+ es/whisper-1/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/whisper-1/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:whisper-1 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-transcribe-2027-02-26@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:Funeral: gpt-4o-transcribe (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-transcribe on 2027-02-26. Successor: gpt
+ -live-transcribe or gpt-transcribe.\nObituary: https://lira-ia.github.io/
+ obituaries/gpt-4o-transcribe/\nSource dates from the official OpenAI depr
+ ecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-transcribe/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-transcribe dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-transcribe-2027-02-26@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:Funeral: gpt-4o-mini-transcribe (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-transcribe on 2027-02-26. Successor
+ : gpt-live-transcribe or gpt-transcribe.\nObituary: https://lira-ia.githu
+ b.io/obituaries/gpt-4o-mini-transcribe/\nSource dates from the official O
+ penAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-transcribe dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-mini-transcribe-2025-12-15-2027-02-26@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:Funeral: gpt-4o-mini-transcribe-2025-12-15 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-mini-transcribe-2025-12-15 on 2027-02-26
+ . Successor: gpt-live-transcribe or gpt-transcribe.\nObituary: https://li
+ ra-ia.github.io/obituaries/gpt-4o-mini-transcribe-2025-12-15/\nSource dat
+ es from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe-2025-12-15
+ /
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-mini-transcribe-2025-12-15 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-4o-transcribe-diarize-2027-02-26@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:Funeral: gpt-4o-transcribe-diarize (OpenAI)
+DESCRIPTION:OpenAI retires gpt-4o-transcribe-diarize on 2027-02-26. Succes
+ sor: gpt-live-transcribe or gpt-transcribe.\nObituary: https://lira-ia.gi
+ thub.io/obituaries/gpt-4o-transcribe-diarize/\nSource dates from the offi
+ cial OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-4o-transcribe-diarize/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-4o-transcribe-diarize dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5.3-codex-2027-04-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Funeral: gpt-5.3-codex (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5.3-codex on 2027-04-01. Successor: gpt-6-s
+ ol.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-3-codex/\nSourc
+ e dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-3-codex/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5.3-codex dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5.4-nano-2027-04-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Funeral: gpt-5.4-nano (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5.4-nano on 2027-04-01. Successor: gpt-6-lu
+ na.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-4-nano/\nSource
+  dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-4-nano/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5.4-nano dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5.4-nano-2026-03-17-2027-04-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Funeral: gpt-5.4-nano-2026-03-17 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5.4-nano-2026-03-17 on 2027-04-01. Successo
+ r: gpt-6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-4-na
+ no-2026-03-17/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-4-nano-2026-03-17/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5.4-nano-2026-03-17 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5.1-2027-04-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Funeral: gpt-5.1 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5.1 on 2027-04-01. Successor: gpt-6-sol.\nO
+ bituary: https://lira-ia.github.io/obituaries/gpt-5-1/\nSource dates from
+  the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-1/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5.1 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gpt-5.1-2025-11-13-2027-04-01@lira-ia.github.io
+DTSTAMP:20261105T142212Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Funeral: gpt-5.1-2025-11-13 (OpenAI)
+DESCRIPTION:OpenAI retires gpt-5.1-2025-11-13 on 2027-04-01. Successor: gp
+ t-6-sol.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-1-2025-11-
+ 13/\nSource dates from the official OpenAI deprecation page.
+URL:https://lira-ia.github.io/obituaries/gpt-5-1-2025-11-13/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gpt-5.1-2025-11-13 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
