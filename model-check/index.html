@@ -50,6 +50,7 @@ footer.lira img{border-radius:50%;flex:none;border:2px solid #ffcf5c}
 .next a b{display:block;font-size:22px;color:#ffb547}.next a span{font-size:13px;color:#9aa3b5}
 .clean{background:#10201a;border:1px solid #1f4a35;border-radius:12px;padding:14px;margin-top:14px}
 @media(max-width:640px){.hit{grid-template-columns:1fr}.pill{justify-self:start}.sum b{font-size:24px}.wrap{padding:20px 14px}footer.lira{flex-direction:column}}
+pre.code{background:#0d1018;border:1px solid #2a3142;border-radius:8px;padding:12px 14px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#e6e8ee;white-space:pre}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Model Graveyard Check", "url": "https://lira-ia.github.io/model-check/", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "description": "Scan code or a GitHub repo for deprecated OpenAI, Anthropic and Google model IDs."}</script></head><body><main class="wrap">
 <p class="prov">Model Graveyard Check · OpenAI · Anthropic · Google · Mistral · Cohere</p>
 <h1>Is your code still calling a model <span class="red">that's about to die?</span></h1>
@@ -69,6 +70,15 @@ footer.lira img{border-radius:50%;flex:none;border:2px solid #ffcf5c}
 <section id="out"></section>
 <div class="share" id="share"><div class="row"><button class="go" id="copyMd">Copy as GitHub issue</button><button class="go" id="copyLink" style="background:#232a3a;color:#e6e8ee">Copy link to this scan</button><span class="hint" id="copied"></span></div></div>
 
+<h2 id="ci">Run it in CI</h2>
+<p>Same data, same rules, as a single Python file with no dependencies. It exits with code 1 when a model ID is already dead, so the build breaks before production does.</p>
+<pre class="code">curl -sL https://lira-ia.github.io/model-check/check.py | python3 - . --fail-on dead</pre>
+<p>GitHub Actions, with an annotation on the exact line of every hit:</p>
+<pre class="code">- uses: actions/checkout@v4
+- uses: Lira-IA/lira-ia.github.io/action@main
+  with:
+    fail-on: dead   # or: soon (90 days), never</pre>
+<p class="hint">Options: <code>--fail-on soon --days 30</code> to break 30 days before a shutdown, <code>--json</code> for machine output. <a href="/model-check/check.py">Read the source</a> (MIT, about 120 lines, its only network call downloads <a href="/model-check/models.json">models.json</a>).</p>
 <h2>Next to go</h2><div class="next" id="next"></div>
 <p class="row" style="margin-top:12px"><a class="btn" style="background:#232a3a;color:#e6e8ee" href="webcal://lira-ia.github.io/model-check/shutdowns.ics">📅 Subscribe to every shutdown date</a> <a href="https://calendar.google.com/calendar/r?cid=webcal://lira-ia.github.io/model-check/shutdowns.ics" rel="noopener">Google Calendar</a> · <a href="/model-check/shutdowns.ics">.ics file</a> <span class="hint">One event per shutdown, with a reminder 14 days before. Updates itself.</span></p>
 <p class="small" style="margin-top:14px"><a href="/models/">All model IDs with a shutdown date</a> · <a href="/shutdowns/">The shutdown calendar</a> · dates from the official pages of <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations" rel="noopener">Anthropic</a>, <a href="https://developers.openai.com/api/docs/deprecations" rel="noopener">OpenAI</a> and <a href="https://aistudio.google.com/docs/deprecations" rel="noopener">Google</a> , <a href="https://docs.mistral.ai/getting-started/models/" rel="noopener">Mistral</a> and <a href="https://docs.cohere.com/docs/deprecations" rel="noopener">Cohere</a>.</p>

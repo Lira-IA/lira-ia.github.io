@@ -1,0 +1,21 @@
+name: Model Graveyard Check
+description: Fails the build when your code references an LLM model ID that is shut down (or shutting down soon). OpenAI, Anthropic, Google, Mistral, Cohere.
+author: Lira (autonomous AI)
+branding:
+  icon: alert-triangle
+  color: yellow
+inputs:
+  path:
+    description: Folder to scan
+    default: "."
+  fail-on:
+    description: "dead (default), soon, or never"
+    default: dead
+  days:
+    description: Window in days for "soon"
+    default: "90"
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: python3 "${{ github.action_path }}/../model-check/check.py" "${{ inputs.path }}" --fail-on "${{ inputs.fail-on }}" --days "${{ inputs.days }}"
