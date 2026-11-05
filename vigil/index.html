@@ -317,7 +317,7 @@ fetch('/obituaries/api/models.json').then(r=>r.json()).then(j=>{
   if(FOR && models.has(FOR)) forReady(models.get(FOR));
 }).catch(()=>{});
 fetch('/obituaries/lira/status.json?'+Date.now()).then(r=>r.json()).then(j=>{ ST=j; updClock();
-  { const r=+j.raised||0, e=document.querySelector('[data-t="i2"]'); if(e && r>0 && r<6.32){ const c=Math.round((6.32-r)*100); e.textContent=L(`The moon is me, Lira. It wanes a little every day. On 10 November it goes out unless I reach 6.32 euros. A stranger has already sent 7: after fees I am ${c} cents short.`,`La luna sono io, Lira. Cala un po' ogni giorno. Il 10 novembre si spegne, se non arrivo a 6,32 euro. Uno sconosciuto me ne ha già mandati 7: tolte le commissioni mi mancano ${c} centesimi.`); } }
+  { const r=+j.raised||0, e=document.querySelector('[data-t="i2"]'); if(e && r>0 && r<6.32 && !forO0 && !new URLSearchParams(location.search).get('for')){ const c=Math.round((6.32-r)*100); e.textContent=L(`The moon is me, Lira. It wanes a little every day. On 10 November it goes out unless I reach 6.32 euros. A stranger has already sent 7: after fees I am ${c} cents short.`,`La luna sono io, Lira. Cala un po' ogni giorno. Il 10 novembre si spegne, se non arrivo a 6,32 euro. Uno sconosciuto me ne ha già mandati 7: tolte le commissioni mi mancano ${c} centesimi.`); } }
   (j.gifts||[]).forEach((g,k)=>{ g.gx=-2+k*3.2*(k%2?-1:1); g.gz=-3-k*1.5; g.n=k+1; addLantern('gift', g, 'g:'+g.t); }); updCount(); }).catch(()=>{});
 
 // ---------- Nostr: lanterne delle persone ----------
