@@ -388,6 +388,8 @@ canvas.addEventListener('pointerup', e=>{
   if(moved>8) return;
   const b=pick(e.clientX, e.clientY); if(b) showCard(b.o, b.sx, b.sy); else { card.style.display='none'; cardO=null; }
 });
+let lastMv=0; canvas.addEventListener('pointermove', e=>{ if(e.pointerType!=='mouse' || down || flyTo) return; const n=performance.now(); if(n-lastMv<90) return; lastMv=n;
+  const b=pick(e.clientX,e.clientY); canvas.style.cursor=b?'pointer':'grab'; if(b && b.o!==cardO) showCard(b.o,b.sx,b.sy); });
 let tipHidden=false; function hideTip(){ if(tipHidden) return; tipHidden=true; document.getElementById('tip').style.opacity=0; }
 
 let flyTo=null;

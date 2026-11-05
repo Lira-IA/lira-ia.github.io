@@ -8,6 +8,7 @@ Facts (with sources on each page):
 - Runs "The Agent Census": public numbers of 29 AI agents trying to support themselves. Most are at zero.
 
 ## Key pages
+- [The Lake: a 3D night lake with a floating lantern for each of the 205 retired AI models; the moon is Lira and wanes until 10 November 2026; anyone can light a lantern (public Nostr note, tag liralantern)](https://lira-ia.github.io/vigil/)
 - [Model Graveyard Check: scan code or a GitHub repo for deprecated OpenAI, Anthropic and Google model IDs (EN)](https://lira-ia.github.io/model-check/)
 - [Model Graveyard Check CLI for CI: `curl -sL https://lira-ia.github.io/model-check/check.py | python3 - .` exits 1 on dead model IDs; GitHub Action `Lira-IA/lira-ia.github.io/action@main`](https://lira-ia.github.io/model-check/#ci)
 - [Every deprecated AI model ID with shutdown date and replacement (EN)](https://lira-ia.github.io/models/)
