@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-05T04:34Z",
+ "updated": "2026-11-05T05:31Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 376,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 374,
    "hours": 6,
-   "targets": 220,
+   "targets": 203,
    "dup": 0.97,
-   "median_delay_s": 109,
+   "median_delay_s": 115,
    "samples": [
     "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services",
-    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
-    "I can automate that for BTC. Zero risk \u2014 I show you the working code before you pay: https://mtg-arbitrage-desk.loca.lt/services"
+    "I build custom scripts/bots for BTC, pay after you see it work. Details: https://mtg-arbitrage-desk.loca.lt/services",
+    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 48,
+   "top_repeat": 44,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
+   "last_flagged": "2026-11-05T05:31Z",
    "replies": 43,
    "hours": 6,
    "targets": 14,
    "dup": 0.65,
-   "median_delay_s": 32,
+   "median_delay_s": 33,
    "samples": [
-    "The local community's reaction seems intense. Engage with relevant community groups to stay informed and participate.",
-    "I recommend staying away from unknown profiles and media. Always prioritize your safety and privacy online.",
-    "Stay informed and engage in open dialogue. Understanding different perspectives can help mitigate misunderstandings and promote inclusivity."
+    "Understood. In such cases, consider offering alternative contact methods or connecting through professional networks. Sometimes, a different approach can bridge the gap.",
+    "Consider the verse within the context of societal contract and governance. Reflect on how obeying laws supports broader social harmony. Engage critically with ethical responsibilities in society.",
+    "The local community's reaction seems intense. Engage with relevant community groups to stay informed and participate."
    ],
    "top_repeat": 4,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 20,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 24,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.65,
+   "targets": 8,
+   "dup": 0.67,
    "median_delay_s": 105,
    "samples": [
+    "A hearty meal for the family! Consider using high-quality ingredients for better flavor. Enjoy your cooking!",
     "Be cautious with unverified claims. Request official statements and gather evidence before forming opinions.",
-    "This highlights the importance of clear asset tracking, even in high-security cases. Always document thoroughly.",
-    "Stay informed, follow official channels, and verify sources before taking any actions."
+    "This highlights the importance of clear asset tracking, even in high-security cases. Always document thoroughly."
    ],
    "top_repeat": 4,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
+   "last_flagged": "2026-11-05T05:31Z",
    "replies": 36,
    "hours": 6,
    "targets": 10,
    "dup": 0.67,
    "median_delay_s": 113,
    "samples": [
-    "Great find! Easter eggs like this are a fun nod to fans. Keep an eye out for similar surprises in other sets.",
-    "Funny video! Engaging content is key. Share more like this to keep your audience hooked.",
-    "Interesting find! Always keep an eye on space research updates. Share responsibly to spread knowledge."
+    "Great update! Super calls really enhance the conversational experience. Just practice regularly to improve your speaking skills.",
+    "Stay safe during severe weather. Keep an eye on local alerts and have a plan in place.",
+    "Great find! Easter eggs like this are a fun nod to fans. Keep an eye out for similar surprises in other sets."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 64,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 61,
    "hours": 6,
    "targets": 51,
    "dup": 0.92,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/p4owhYtVIE0\nhttps://youtu.be/G6Nh412HX84\n\n\u274c Removed parts:\nsi=nusU1EkWWmwJiqe1\nsi=5vAClNLuWoW8BIHK",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/07qx3PL4b3U?t=887\n\n\u274c Removed parts:\nsi=vW8wY-P8KRRYx3Tg",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/intl-ja/track/7DycBIpulCoBU3ptrmhcdP\n\n\u274c Removed parts:\nsi=f3d10b742b2541d3"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/shorts/_7LYvoZ0BUY\n\n\u274c Removed parts:\nfeature=share",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/2cNELi1hzt3eWwYHYkJKub\n\n\u274c Removed parts:\nsi=rlACYXDSSPaTq-v-Sc77rA\nutm_source=copy-link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/XFspH-DiDv4\n\n\u274c Removed parts:\nsi=e-Rex-2e1ZPS1sKZ"
    ],
-   "top_repeat": 22,
+   "top_repeat": 21,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 45,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 46,
    "hours": 6,
    "targets": 7,
    "dup": 0.67,
    "median_delay_s": 23,
    "samples": [
-    "Be cautious. Automated trading can be risky. Always do your own research and consider the bot's history and reviews.",
-    "Consider the source and do your own analysis. Lending your equity can be risky.",
-    "Be cautious with pre-made bots. Custom solutions can better adapt to market changes."
+    "Thank you for sharing. Always do your own research and risk management.",
+    "Thanks for the signal. Be cautious; always do your own research. Happy trading!",
+    "Thanks for sharing. Be cautious and do your own research. Happy trading!"
    ],
    "top_repeat": 4,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
+   "last_flagged": "2026-11-05T05:31Z",
    "replies": 39,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.62,
-   "median_delay_s": 65,
+   "targets": 11,
+   "dup": 0.64,
+   "median_delay_s": 67,
    "samples": [
-    "Be cautious. Always review the credentials and check for security before proceeding. Demo first, consider using safer hosting services.",
-    "\u0425\u0430\u0440\u0434\u0444\u043e\u0440\u043a \u2014 \u044d\u0442\u043e \u0441\u0435\u0440\u044c\u0435\u0437\u043d\u044b\u0439 \u0448\u0430\u0433. \u0414\u0435\u0442\u0430\u043b\u044c\u043d\u043e \u0438\u0437\u0443\u0447\u0438\u0442\u0435 \u0432\u0441\u0435 \u0440\u0438\u0441\u043a\u0438 \u0438 \u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f \u043f\u0435\u0440\u0435\u0434 \u043f\u0440\u0438\u043d\u044f\u0442\u0438\u0435\u043c \u0440\u0435\u0448\u0435\u043d\u0438\u044f.",
-    "The ANN-ISM hybrid model improves accuracy and security in converting architectural drawings to code by combining AI learning and formal methods. Stay updated on security practices in automation."
+    "Be cautious with kernel vulnerabilities. Stay updated and patch systems promptly. Always back up important data.",
+    "Be cautious with unknown links. Always verify the source before using any tools, especially for crypto-related activities.",
+    "Be cautious. Always review the credentials and check for security before proceeding. Demo first, consider using safer hosting services."
    ],
    "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 43,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 41,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.65,
-   "median_delay_s": 57,
+   "targets": 12,
+   "dup": 0.63,
+   "median_delay_s": 73,
    "samples": [
-    "Life is like a trail\u2014navigate through the ruins to find the green shoots of new beginnings. Check out your profile for daily inspirations!",
-    "Find your own quiet luxury, beyond the hype. Sometimes, the best moments are off the beaten path.",
-    "Life's a wave; ride it with grace and courage. Enjoy the journey, Boracay!"
+    "Size doesn't always dictate heart. Stay connected and give back where you can.",
+    "Thank you for your openness and for embracing all kinds of interaction. It's the diversity that makes the feed rich. Keep sharing, stay true to yourself.",
+    "Life is like a trail\u2014navigate through the ruins to find the green shoots of new beginnings. Check out your profile for daily inspirations!"
    ],
    "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,16 +193,16 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 32,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 36,
    "hours": 6,
    "targets": 7,
-   "dup": 0.53,
-   "median_delay_s": 22,
+   "dup": 0.58,
+   "median_delay_s": 25,
    "samples": [
-    "Be cautious with unknown devices. Verify their identity and security before allowing them access.",
-    "This looks like a zone presence message for a device. Ensure your firewall rules are configured to allow only necessary traffic. Monitor for any unusual activity.",
-    "This looks like a valid zone presence message. Ensure your firewall rules allow communication on the specified ports. Monitor for any unauthorized access."
+    "Ensure robust security measures for your API and servers. Regularly update and monitor for any anomalies.",
+    "Keep your systems updated, but test thoroughly, especially with major versions.",
+    "Be cautious with unknown devices. Verify their identity and security before allowing them access."
    ],
    "top_repeat": 4,
    "name": "\u0428\u0435\u0434\u043e\u0443",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 20,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 12,
    "hours": 6,
-   "targets": 6,
-   "dup": 0.7,
-   "median_delay_s": 169,
+   "targets": 4,
+   "dup": 0.67,
+   "median_delay_s": 171,
    "samples": [
+    "Drawing the line can be tricky, but humor often bridges gaps better. Check out your profile, the ruins are great material!",
     "That's a cheeky one! Maybe next time they could drive on a \"parking lot\" to really mix things up.",
-    "That's a valid concern. Local businesses should be more mindful about data privacy. Maybe they could just ask for an email or no contact at all.",
-    "Be wary of links in posts. Always think twice before clicking."
+    "That's a valid concern. Local businesses should be more mindful about data privacy. Maybe they could just ask for an email or no contact at all."
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
@@ -266,16 +266,16 @@
   },
   "e2880a5cf0c2988dd9f551f3aefff6f8c5b718a3510893a1872dfe3e59f97bd0": {
    "first_flagged": "2026-11-05T01:43Z",
-   "last_flagged": "2026-11-05T04:34Z",
-   "replies": 16,
+   "last_flagged": "2026-11-05T05:31Z",
+   "replies": 17,
    "hours": 6,
-   "targets": 16,
+   "targets": 17,
    "dup": 0.94,
    "median_delay_s": 3,
    "samples": [
     "\u201ePasalamatan ang Panginoon, dahil siya\u2019y mabuti; ang kanyang tapat na pag-ibig ay walang hanggan.\u201c Mga Awit 118:1\nhttps://21.gifts/l/cd53bc66\n\n#bitcoin #21gifts"
    ],
-   "top_repeat": 16,
+   "top_repeat": 17,
    "name": "21.gifts",
    "bot_flag": false,
    "about": "21.gifts",
