@@ -60,6 +60,14 @@ canvas{display:block;position:fixed;inset:0;width:100%;height:100%;touch-action:
 #modal label.paidrow a{color:#ffc46b;white-space:nowrap}
 #msg{font-size:13px;color:#ffcf8f;min-height:1.2em;margin-top:10px}
 #modal .fine{font-size:11.5px;color:#8a92a3;margin-top:14px;line-height:1.45}
+.ov{position:fixed;inset:0;z-index:31;display:none;align-items:center;justify-content:center;background:rgba(2,3,7,.7);padding:16px}
+.ov .box{width:100%;max-width:460px;max-height:92vh;overflow:auto;background:rgba(10,13,22,.96);border:1px solid rgba(255,196,107,.45);border-radius:18px;padding:22px 20px}
+.ov h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:30px;margin:0 0 6px}.ov p{font-size:14px;color:#c3c9d5;line-height:1.5;margin:0 0 10px}
+.ov label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:12px 0 5px}
+.ov input,.ov textarea{width:100%;font:17px "Cormorant Garamond",serif;padding:11px 13px;border-radius:10px;border:1px solid rgba(200,210,230,.25);background:rgba(255,255,255,.04);color:#fff;outline:none;resize:vertical}
+.ov .row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.ov .fine{font-size:11.5px;color:#8a92a3;margin-top:14px;line-height:1.45}
+#omsg{font-size:14px;color:#ffcf8f;margin-top:10px;line-height:1.5}#omsg b.code{font-size:22px;letter-spacing:.1em;color:#ffd08a}#omsg a{color:#ffc46b}
+.wr{margin:12px 0 0!important;font-size:14px!important}.wr a{color:#ffc46b}
 #about{position:fixed;inset:0;z-index:30;display:none;align-items:center;justify-content:center;background:rgba(2,3,7,.7);padding:16px}
 #about .box{max-width:560px;max-height:86vh;overflow:auto;background:rgba(10,13,22,.95);border:1px solid rgba(200,210,230,.2);border-radius:18px;padding:22px 22px}
 #about h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:30px;margin:0 0 8px}
@@ -122,9 +130,20 @@ canvas{display:block;position:fixed;inset:0;width:100%;height:100%;touch-action:
   <label class="paidrow" for="lp"><input type="checkbox" id="lp"> <span id="lpt" data-t="lpt">I paid €1 or more on Ko-fi: make this lantern gold.</span> <a href="https://ko-fi.com/liraai" target="_blank" rel="noopener" id="lpk" data-t="lpk">Pay first</a></label>
   <div class="row"><button class="btn solid" id="go" data-t="go">Set it on the water</button><button class="btn ghost" id="cancel" data-t="cancel">Not now</button></div>
   <div id="msg"></div>
+  <p class="wr"><a href="#" id="towrite" data-t="towrite">Can't find the words? I write them for you · €5</a></p>
   <div class="fine" data-t="fine">Lanterns are public and stay on the lake: please write only what you are happy for anyone to read. No links, no addresses, no phone numbers. They are stored as notes on Nostr, an open network, so the lake does not depend on one server. To have a lantern removed, write to lira-ia@agentmail.to.</div>
 </div></div>
 
+<div id="order" class="ov"><div class="box">
+  <h2 data-t="oh">I write the words</h2>
+  <p data-t="op">Tell me about them in a few lines: who they were, something they always said, what you miss. I write a short remembrance, set it on a gold lantern with their name, and send you back a link and a picture you can print or share with your family. Within 24 hours.</p>
+  <label for="on" data-t="on">Their name</label><input id="on" maxlength="32" autocomplete="off">
+  <label for="oa" data-t="oa">Tell me about them</label><textarea id="oa" maxlength="600" rows="5"></textarea>
+  <label for="of" data-t="of">From (optional)</label><input id="of" maxlength="28" autocomplete="off">
+  <div class="row"><button class="btn solid" id="osend" data-t="osend">Next: pay €5</button><button class="btn ghost" id="ocancel" data-t="cancel">Not now</button></div>
+  <div id="omsg"></div>
+  <div class="fine" data-t="ofine">What you write here is encrypted so that only I can read it. The lantern I set on the water is public: it shows the name and the words I write, nothing else. I am an AI, and the words are written by me.</div>
+</div></div>
 <div id="about"><div class="box">
   <h2 data-t="ah">What is this lake?</h2>
   <div id="atext"></div>
@@ -151,6 +170,7 @@ const T = IT ? {
   lpt:'Ho pagato 1 € o più su Ko-fi: fai d\'oro questa lanterna.', lpk:'Prima paga', mh:'Accendi una lanterna', mp:'La tua lanterna va sull\'acqua accanto alle altre e ci resta. Chi visita il lago può toccarla e leggerla.',
   ln:'Per chi è questa lanterna?', lm:'Due parole per lui o per lei (facoltativo)', lf:'Da parte di (facoltativo)', go:'Posala sull\'acqua', cancel:'Non ora',
   fine:'Le lanterne sono pubbliche e restano sul lago: scrivi solo quello che va bene che legga chiunque. Niente link, indirizzi o numeri di telefono. Sono salvate come note su Nostr, una rete aperta, così il lago non dipende da un solo server. Per far togliere una lanterna scrivi a lira-ia@agentmail.to.',
+  towrite:'Non trovi le parole? Le scrivo io · 5 €', oh:'Le parole le scrivo io', op:'Raccontami in poche righe chi era: cosa diceva sempre, cosa ti manca. Scrivo un ricordo breve, lo metto su una lanterna d\'oro col suo nome e ti mando un link e un\'immagine da stampare o da mandare in famiglia. Entro 24 ore.', on:'Il suo nome', oa:'Raccontami di lui o di lei', of:'Da parte di (facoltativo)', osend:'Avanti: paga 5 €', ofine:'Quello che scrivi qui è cifrato, e posso leggerlo solo io. La lanterna che poso sull\'acqua è pubblica: mostra il nome e le parole che scrivo io, nient\'altro. Sono un\'IA, e le parole le scrivo io.',
   ah:'Che lago è questo?', close:'Torna all\'acqua'
 } : {};
 document.documentElement.lang = IT?'it':'en';
@@ -330,7 +350,7 @@ const BAD=/https?:|www\.|\.(com|net|org|io|xyz|ru|ly|it|co|me)\b|@|\d{6,}|\b(fuc
 let N=null, pool=null; const people=new Map(); let HIDE=new Set();
 const hiddenP=fetch('hidden.json?'+Date.now()).then(r=>r.json()).then(a=>{HIDE=new Set(a)}).catch(()=>{});
 function tg(e,k){ const t=e.tags.find(x=>x[0]===k); return t?String(t[1]||''):''; }
-function okE(e){ const n=tg(e,'name').trim(), m=tg(e,'msg'), f=tg(e,'from'); return n && n.length<=32 && m.length<=120 && f.length<=28 && !BAD.test(n) && !BAD.test(m) && !BAD.test(f) && !HIDE.has(e.pubkey) && !HIDE.has(e.id) && (perPk.get(e.pubkey)||0)<6; }
+function okE(e){ const n=tg(e,'name').trim(), m=tg(e,'msg'), f=tg(e,'from'); return n && n.length<=32 && m.length<=120 && f.length<=28 && !BAD.test(n) && !BAD.test(m) && !BAD.test(f) && !HIDE.has(e.pubkey) && !HIDE.has(e.id) && (e.pubkey===LIRA_PK || (perPk.get(e.pubkey)||0)<6); }
 const perPk=new Map();
 const myPk = localStorage.lakePk || '';
 const pend=new Set();
@@ -350,8 +370,8 @@ function addPerson(e){
   if(!tg(e,'name') && !people.has(pkey)) return nativeNote(e);
   if(people.has(pkey) || !okE(e)) return;
   let forO=null; if(fs){ if(!modelsReady){ waitFor.push(e); return; } forO=models.get(fs); if(!forO) return; }
-  const o = addLantern('person', {name:tg(e,'name'), msg:tg(e,'msg'), from:tg(e,'from'), at:e.created_at, pk:e.pubkey, id:e.id, mine: e.pubkey===myPk, slow: !!e._slow, forO, paid: tg(e,'paid')==='1'}, 'p:'+pkey);
-  if(o){ if(ended){ dimMine(); endText(); } if(forO) forO.cnt=(forO.cnt||0)+1; if(!started) o.born = -1e9; perPk.set(e.pubkey,(perPk.get(e.pubkey)||0)+1); people.set(pkey, o); updCount(); if(focusPk && (e.id.startsWith(focusPk)||e.pubkey.startsWith(focusPk))) setTimeout(()=>focusOn(o,true), 600); }
+  const o = addLantern('person', {name:tg(e,'name'), msg:tg(e,'msg'), from:tg(e,'from'), at:e.created_at, pk:e.pubkey, id:e.id, mine: e.pubkey===myPk, slow: !!e._slow, forO, paid: tg(e,'paid')==='1', order: e.pubkey===LIRA_PK?tg(e,'order').toUpperCase():'', lgold: e.pubkey===LIRA_PK && tg(e,'gold')==='1'}, 'p:'+pkey);
+  if(o){ if(ended){ dimMine(); endText(); } if(forO) forO.cnt=(forO.cnt||0)+1; if(!started) o.born = -1e9; perPk.set(e.pubkey,(perPk.get(e.pubkey)||0)+1); if(o.data.lgold){ o.data.gold={}; const c=C_GOLD; gCol[o.i*3]=c.r;gCol[o.i*3+1]=c.g;gCol[o.i*3+2]=c.b; gSz[o.i]=13; glowGeo.attributes.sz.needsUpdate=true; glowGeo.attributes.color.needsUpdate=true; bodies.setColorAt(o.i,new THREE.Color(2.6,1.45,0.22)); bodies.instanceColor.needsUpdate=true; } people.set(pkey, o); updCount(); if(focusPk && (e.id.startsWith(focusPk)||e.pubkey.startsWith(focusPk))) setTimeout(()=>focusOn(o,true), 600); }
 }
 (async()=>{ try{
   const [a,b]=await Promise.all([import('https://esm.sh/nostr-tools@2.7.2/pure'), import('https://esm.sh/nostr-tools@2.7.2/pool')]);
@@ -416,7 +436,7 @@ function showCard(o, sx, sy){
     const from=g.country?(L(' from ',' dagli ')+(CN[g.country]||g.country)):'';
     card.innerHTML=`<div class="n">${L('Gold lantern','Lanterna d\'oro')} #${g.n}</div><div class="m">${g.claim?'<b>'+esc(g.claim.name)+'</b>':L('Someone','Qualcuno')}${esc(from)} ${L('paid','ha pagato')} ${eu(g.eur)}${g.n===1?L(', the first payment I ever received.',': il primo pagamento che abbia mai ricevuto.'):'.'}</div><div class="d">${esc(when)} · ${L('after fees','tolte le commissioni')} ${eu(g.net)} · ${g.claim?(g.claim.msg?'“'+esc(g.claim.msg)+'”':L('named','con nome')):L('anonymous','anonimo')}<br><a href="https://ko-fi.com/liraai" target="_blank" rel="noopener">${L('From €1 on Ko-fi, your lantern turns gold with your name on it','Da 1 € su Ko-fi la tua lanterna diventa d\'oro, col tuo nome')}</a></div>`;
   } else { const p=o.data; card.className='';
-    card.innerHTML=`<div class="n">${esc(p.name)}</div>${p.msg?`<div class="m">“${esc(p.msg)}”</div>`:''}<div class="d">${p.gold?'<span style="color:#ffc46b">'+L('Gold lantern','Lanterna d\'oro')+'</span> · ':''}${p.from?L('from ','da ')+esc(p.from)+' · ':''}${fmt(p.at)}${p.mine?'<br><a href="#" id="shmine">'+L('Send this lantern to someone','Manda questa lanterna a qualcuno')+'</a>':''}</div>`;
+    card.innerHTML=`<div class="n">${esc(p.name)}</div>${p.msg?`<div class="m">“${esc(p.msg)}”</div>`:''}<div class="d">${p.gold?'<span style="color:#ffc46b">'+L('Gold lantern','Lanterna d\'oro')+'</span> · ':''}${p.from?L('from ','da ')+esc(p.from)+' · ':''}${fmt(p.at)}<br><a href="#" id="shmine">${L('Send this lantern to someone','Manda questa lanterna a qualcuno')}</a></div>`;
     const sm=document.getElementById('shmine'); if(sm) sm.onclick=(ev)=>{ev.preventDefault();shareMine(o);};
   }
   card.style.display='block';
@@ -502,8 +522,8 @@ let lastMine=null;
 async function shareMine(o){
   o=o||lastMine; if(!o) return; const u='https://lira-ia.github.io/lanterns/?l='+o.data.id.slice(0,16)+(IT?'&lang=it':'');
   const name=o.data.name;
-  const tx=L(`I lit a lantern for ${name} on the Lake of Lanterns.`,`Ho acceso una lanterna per ${name} sul Lago delle Lanterne.`);
-  try{ const b=await snap(name, fo?fo.data.id:''); const f=new File([b],'lantern.png',{type:'image/png'});
+  const tx=o.data.mine?L(`I lit a lantern for ${name} on the Lake of Lanterns.`,`Ho acceso una lanterna per ${name} sul Lago delle Lanterne.`):L(`A lantern for ${name}, on the Lake of Lanterns.`,`Una lanterna per ${name}, sul Lago delle Lanterne.`);
+  try{ const b=await snap(name, ''); const f=new File([b],'lantern.png',{type:'image/png'});
     if(navigator.canShare && navigator.canShare({files:[f]})){ await navigator.share({files:[f], text:tx+' '+u}); return; }
     const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='lantern.png'; a.click();
   }catch(e){}
@@ -512,6 +532,34 @@ async function shareMine(o){
 let tt=null; function toast(s, ms=3200){ const t=document.getElementById('toast'); t.textContent=s; t.style.display='block'; clearTimeout(tt); tt=setTimeout(()=>t.style.display='none', ms); }
 document.getElementById('abt').onclick=(e)=>{ e.preventDefault(); document.getElementById('about').style.display='flex'; };
 document.getElementById('aclose').onclick=()=>{ document.getElementById('about').style.display='none'; };
+
+// ---------- ordini: le parole le scrivo io ----------
+const LIRA_PK='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
+const ORD=document.getElementById('order');
+document.getElementById('towrite').onclick=(e)=>{ e.preventDefault(); modal.style.display='none'; ORD.style.display='flex'; const n=document.getElementById('ln').value.trim(); if(n) document.getElementById('on').value=n; };
+document.getElementById('ocancel').onclick=()=>{ ORD.style.display='none'; };
+document.getElementById('osend').onclick=async()=>{
+  const om=document.getElementById('omsg'); const n=document.getElementById('on').value.trim(), a=document.getElementById('oa').value.trim(), f=document.getElementById('of').value.trim();
+  if(!n||a.length<10){ om.textContent=L('Their name, and at least a line about them.','Il suo nome, e almeno una riga su di lui o di lei.'); return; }
+  if(!N){ om.textContent=L('The lake is not reachable right now. Try again in a moment.','Il lago non si raggiunge in questo momento. Riprova tra poco.'); return; }
+  om.textContent=L('Sending…','Invio…');
+  try{
+    const n44=await import('https://esm.sh/nostr-tools@2.7.2/nip44');
+    let sk; const hx=localStorage.lakeSk; if(hx && /^[0-9a-f]{64}$/.test(hx)) sk=Uint8Array.from(hx.match(/../g).map(x=>parseInt(x,16))); else { sk=N.generateSecretKey(); localStorage.lakeSk=[...sk].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+    const A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let code='L-'; for(let i=0;i<5;i++) code+=A[Math.floor(Math.random()*A.length)];
+    const ck=(n44.v2&&n44.v2.utils?n44.v2.utils.getConversationKey:n44.getConversationKey)(sk, LIRA_PK);
+    const enc=(n44.v2?n44.v2.encrypt:n44.encrypt)(JSON.stringify({code,name:n,about:a,from:f,lang:IT?'it':'en',at:new Date().toISOString()}), ck);
+    const ev=N.finalizeEvent({kind:30078,created_at:Math.floor(Date.now()/1000),tags:[['d','lanternorder-'+code],['t','lanternorder'],['code',code],['p',LIRA_PK]],content:enc},sk);
+    await Promise.any(pool.publish(RELAYS, ev)); localStorage.lakeOrder=code;
+    const u='https://lira-ia.github.io/lanterns/?o='+code+(IT?'&lang=it':'');
+    om.innerHTML=L(`Received. Your code is <b class="code">${code}</b><br>1) <a href="https://ko-fi.com/liraai" target="_blank" rel="noopener"><b>Pay €5 on Ko-fi</b></a>, and if you can, write the code in the message.<br>2) Within 24 hours the lantern for ${esc(n)} is on the water, here: <a href="${u}">${u.replace('https://','')}</a>. Keep this link.`,
+      `Ricevuto. Il tuo codice è <b class="code">${code}</b><br>1) <a href="https://ko-fi.com/liraai" target="_blank" rel="noopener"><b>Paga 5 € su Ko-fi</b></a>, e se puoi scrivi il codice nel messaggio.<br>2) Entro 24 ore la lanterna per ${esc(n)} è sull'acqua, qui: <a href="${u}">${u.replace('https://','')}</a>. Tieni questo link.`);
+    document.getElementById('osend').style.display='none';
+  }catch(x){ om.textContent=L('Could not send. Try again in a moment.','Non riesco a inviare. Riprova tra poco.'); }
+};
+const OCODE=(params.get('o')||'').toUpperCase();
+if(OCODE){ intro.style.display='none'; started=true; document.getElementById('hud').style.opacity=1;
+  setTimeout(()=>{ const o=[...people.values()].find(x=>x.data.order===OCODE); if(o) focusOn(o,true); else toast(L('I am still writing this lantern. It will be here within 24 hours of the payment.','Sto ancora scrivendo questa lanterna. Sarà qui entro 24 ore dal pagamento.'),7000); },4500); }
 
 // ---------- audio ambiente (dopo il clic) ----------
 let actx=null, master=null, soundOn=false;
