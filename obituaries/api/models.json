@@ -9,6 +9,7 @@
    "retires": "2028-05-14",
    "retired": false,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-embedding-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-embedding-001.svg"
   },
@@ -18,6 +19,7 @@
    "retires": "2027-05-07",
    "retired": false,
    "successor": "gemini-3.5-flash-lite",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-lite/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-lite.svg"
   },
@@ -27,6 +29,7 @@
    "retires": "2027-04-30",
    "retired": false,
    "successor": "Mistral Large 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-medium-3-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-medium-3-5.svg"
   },
@@ -36,6 +39,7 @@
    "retires": "2027-04-30",
    "retired": false,
    "successor": "Voxtral TTS 3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/voxtral-mini-tts-2603/",
    "badge": "https://lira-ia.github.io/obituaries/badge/voxtral-mini-tts-2603.svg"
   },
@@ -45,6 +49,7 @@
    "retires": "2027-04-30",
    "retired": false,
    "successor": "Mistral Large 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-large-2512/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-large-2512.svg"
   },
@@ -54,6 +59,7 @@
    "retires": "2027-04-30",
    "retired": false,
    "successor": "Voxtral Mini Transcribe 3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/voxtral-mini-2602/",
    "badge": "https://lira-ia.github.io/obituaries/badge/voxtral-mini-2602.svg"
   },
@@ -63,6 +69,7 @@
    "retires": "2027-04-30",
    "retired": false,
    "successor": "Voxtral Mini Transcribe Realtime 3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/voxtral-mini-transcribe-realtime-2602/",
    "badge": "https://lira-ia.github.io/obituaries/badge/voxtral-mini-transcribe-realtime-2602.svg"
   },
@@ -72,6 +79,7 @@
    "retires": "2027-04-01",
    "retired": false,
    "successor": "gpt-6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-3-codex/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-3-codex.svg"
   },
@@ -81,6 +89,7 @@
    "retires": "2027-04-01",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-4-nano/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-4-nano.svg"
   },
@@ -90,6 +99,7 @@
    "retires": "2027-04-01",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-4-nano-2026-03-17/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-4-nano-2026-03-17.svg"
   },
@@ -99,6 +109,7 @@
    "retires": "2027-04-01",
    "retired": false,
    "successor": "gpt-6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1.svg"
   },
@@ -108,6 +119,7 @@
    "retires": "2027-04-01",
    "retired": false,
    "successor": "gpt-6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1-2025-11-13/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-2025-11-13.svg"
   },
@@ -117,6 +129,7 @@
    "retires": "2027-03-15",
    "retired": false,
    "successor": "gemini-3.1-flash-lite-image",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-image/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-image.svg"
   },
@@ -126,6 +139,7 @@
    "retires": "2027-02-26",
    "retired": false,
    "successor": "gpt-live-transcribe or gpt-transcribe",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/whisper-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/whisper-1.svg"
   },
@@ -135,6 +149,7 @@
    "retires": "2027-02-26",
    "retired": false,
    "successor": "gpt-live-transcribe or gpt-transcribe",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-transcribe/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-transcribe.svg"
   },
@@ -144,6 +159,7 @@
    "retires": "2027-02-26",
    "retired": false,
    "successor": "gpt-live-transcribe or gpt-transcribe",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-transcribe.svg"
   },
@@ -153,6 +169,7 @@
    "retires": "2027-02-26",
    "retired": false,
    "successor": "gpt-live-transcribe or gpt-transcribe",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe-2025-12-15/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-transcribe-2025-12-15.svg"
   },
@@ -162,6 +179,7 @@
    "retires": "2027-02-26",
    "retired": false,
    "successor": "gpt-live-transcribe or gpt-transcribe",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-transcribe-diarize/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-transcribe-diarize.svg"
   },
@@ -171,6 +189,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-realtime/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-realtime.svg"
   },
@@ -180,6 +199,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-realtime-2025-08-28/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-realtime-2025-08-28.svg"
   },
@@ -189,6 +209,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-audio/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-audio.svg"
   },
@@ -198,6 +219,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-audio-2025-08-28/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-audio-2025-08-28.svg"
   },
@@ -207,6 +229,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-audio/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-audio.svg"
   },
@@ -216,6 +239,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-realtime/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-realtime.svg"
   },
@@ -225,6 +249,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-realtime-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-realtime-mini.svg"
   },
@@ -234,6 +259,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-realtime-mini-2025-12-15/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-realtime-mini-2025-12-15.svg"
   },
@@ -243,6 +269,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-audio-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-audio-mini.svg"
   },
@@ -252,6 +279,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-audio-mini-2025-12-15/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-audio-mini-2025-12-15.svg"
   },
@@ -261,6 +289,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-realtime/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-realtime.svg"
   },
@@ -270,6 +299,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-audio/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-audio.svg"
   },
@@ -279,6 +309,7 @@
    "retires": "2027-01-20",
    "retired": false,
    "successor": "gpt-4o-mini-transcribe-2025-12-15",
+   "successor_id": "gpt-4o-mini-transcribe-2025-12-15",
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-transcribe-2025-03-20/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-transcribe-2025-03-20.svg"
   },
@@ -288,6 +319,7 @@
    "retires": "2027-01-14",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-2024-08-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-2024-08-06.svg"
   },
@@ -297,6 +329,7 @@
    "retires": "2027-01-14",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-2024-11-20/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-2024-11-20.svg"
   },
@@ -306,6 +339,7 @@
    "retires": "2027-01-14",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-2024-07-18/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-2024-07-18.svg"
   },
@@ -315,6 +349,7 @@
    "retires": "2027-01-14",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1-2025-04-14/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1-2025-04-14.svg"
   },
@@ -324,6 +359,7 @@
    "retires": "2027-01-14",
    "retired": false,
    "successor": "gpt-6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1-mini-2025-04-14/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1-mini-2025-04-14.svg"
   },
@@ -333,6 +369,7 @@
    "retires": "2027-01-06",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/tts-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/tts-1.svg"
   },
@@ -342,6 +379,7 @@
    "retires": "2027-01-06",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/tts-1-hd/",
    "badge": "https://lira-ia.github.io/obituaries/badge/tts-1-hd.svg"
   },
@@ -351,6 +389,7 @@
    "retires": "2027-01-06",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-tts/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-tts.svg"
   },
@@ -360,6 +399,7 @@
    "retires": "2027-01-06",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-tts-2025-03-20/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-tts-2025-03-20.svg"
   },
@@ -369,6 +409,7 @@
    "retires": "2027-01-06",
    "retired": false,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-tts-2025-12-15/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-tts-2025-12-15.svg"
   },
@@ -378,6 +419,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5.svg"
   },
@@ -387,6 +429,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-2025-08-07.svg"
   },
@@ -396,6 +439,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-mini.svg"
   },
@@ -405,6 +449,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-mini-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-mini-2025-08-07.svg"
   },
@@ -414,6 +459,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-nano/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-nano.svg"
   },
@@ -423,6 +469,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-nano-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-nano-2025-08-07.svg"
   },
@@ -432,6 +479,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-pro.svg"
   },
@@ -441,6 +489,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-pro-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-pro-2025-10-06.svg"
   },
@@ -450,6 +499,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3.svg"
   },
@@ -459,6 +509,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-2025-04-16/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-2025-04-16.svg"
   },
@@ -468,6 +519,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-pro.svg"
   },
@@ -477,6 +529,7 @@
    "retires": "2026-12-11",
    "retired": false,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-pro-2025-06-10/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-pro-2025-06-10.svg"
   },
@@ -486,6 +539,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-mini.svg"
   },
@@ -495,6 +549,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-5.svg"
   },
@@ -504,6 +559,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-5-2025-12-16.svg"
   },
@@ -513,6 +569,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/chatgpt-image-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/chatgpt-image-latest.svg"
   },
@@ -522,6 +579,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gemini-3.8-flash (requests auto-route to it from Dec 1, 2026)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro.svg"
   },
@@ -531,6 +589,7 @@
    "retires": "2026-12-01",
    "retired": false,
    "successor": "gemini-3.5-flash-lite (requests auto-route to it from Dec 1, 2026)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash.svg"
   },
@@ -540,6 +599,7 @@
    "retires": "2026-11-30",
    "retired": false,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-5-20250929/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-5-20250929.svg"
   },
@@ -549,6 +609,7 @@
    "retires": "2026-11-30",
    "retired": false,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-5.svg"
   },
@@ -558,6 +619,7 @@
    "retires": "2026-11-17",
    "retired": false,
    "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-tts-preview.svg"
   },
@@ -567,6 +629,7 @@
    "retires": "2026-11-17",
    "retired": false,
    "successor": "gemini-3.8-live",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-live-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-live-preview.svg"
   },
@@ -576,6 +639,7 @@
    "retires": "2026-11-17",
    "retired": false,
    "successor": "gemini-3.8-live",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-native-audio-preview-12-2025/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-native-audio-preview-12-2025.svg"
   },
@@ -585,6 +649,7 @@
    "retires": "2026-11-17",
    "retired": false,
    "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-preview-tts.svg"
   },
@@ -594,6 +659,7 @@
    "retires": "2026-11-17",
    "retired": false,
    "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-tts.svg"
   },
@@ -603,6 +669,7 @@
    "retires": "2026-10-31",
    "retired": true,
    "successor": "Z.ai GLM 5.3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/zai-glm-5-2/",
    "badge": "https://lira-ia.github.io/obituaries/badge/zai-glm-5-2.svg"
   },
@@ -612,6 +679,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-0125/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-0125.svg"
   },
@@ -621,6 +689,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo.svg"
   },
@@ -630,6 +699,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-0613/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-0613.svg"
   },
@@ -639,6 +709,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4.svg"
   },
@@ -648,6 +719,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1106-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1106-preview.svg"
   },
@@ -657,6 +729,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-turbo/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-turbo.svg"
   },
@@ -666,6 +739,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-turbo-2024-04-09/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-turbo-2024-04-09.svg"
   },
@@ -675,6 +749,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1-nano/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1-nano.svg"
   },
@@ -684,6 +759,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-luna",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1-nano-2025-04-14/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1-nano-2025-04-14.svg"
   },
@@ -693,6 +769,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-2024-05-13/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-2024-05-13.svg"
   },
@@ -702,6 +779,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1.svg"
   },
@@ -711,6 +789,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o1-2024-12-17/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1-2024-12-17.svg"
   },
@@ -720,6 +799,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1.svg"
   },
@@ -729,6 +809,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o1-pro-2025-03-19/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1-pro-2025-03-19.svg"
   },
@@ -738,6 +819,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o1-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1-pro.svg"
   },
@@ -747,6 +829,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-mini-2025-01-31/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-mini-2025-01-31.svg"
   },
@@ -756,6 +839,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-mini.svg"
   },
@@ -765,6 +849,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o4-mini-2025-04-16/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o4-mini-2025-04-16.svg"
   },
@@ -774,6 +859,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o4-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o4-mini.svg"
   },
@@ -783,6 +869,7 @@
    "retires": "2026-10-23",
    "retired": true,
    "successor": "deep-research-preview-04-2026",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/deep-research-pro-preview-12-2025/",
    "badge": "https://lira-ia.github.io/obituaries/badge/deep-research-pro-preview-12-2025.svg"
   },
@@ -792,6 +879,7 @@
    "retires": "2026-10-22",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-1-lite-generate-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-1-lite-generate-preview.svg"
   },
@@ -801,6 +889,7 @@
    "retires": "2026-10-22",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-1-generate-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-1-generate-preview.svg"
   },
@@ -810,6 +899,7 @@
    "retires": "2026-10-22",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-1-fast-generate-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-1-fast-generate-preview.svg"
   },
@@ -819,6 +909,7 @@
    "retires": "2026-10-22",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-omni-flash-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-omni-flash-preview.svg"
   },
@@ -828,6 +919,7 @@
    "retires": "2026-10-05",
    "retired": true,
    "successor": "antigravity-preview-09-2026",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/antigravity-preview-05-2026/",
    "badge": "https://lira-ia.github.io/obituaries/badge/antigravity-preview-05-2026.svg"
   },
@@ -837,6 +929,7 @@
    "retires": "2026-10-01",
    "retired": true,
    "successor": "the most capable cyber model available to you",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-4-cyber/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-4-cyber.svg"
   },
@@ -846,6 +939,7 @@
    "retires": "2026-09-30",
    "retired": true,
    "successor": "not listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/labs-leanstral-1-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/labs-leanstral-1-5.svg"
   },
@@ -855,6 +949,7 @@
    "retires": "2026-09-30",
    "retired": true,
    "successor": "OCR 4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-ocr-4-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-ocr-4-0.svg"
   },
@@ -864,6 +959,7 @@
    "retires": "2026-09-28",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-instruct/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-instruct.svg"
   },
@@ -873,6 +969,7 @@
    "retires": "2026-09-28",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/babbage-002/",
    "badge": "https://lira-ia.github.io/obituaries/badge/babbage-002.svg"
   },
@@ -882,6 +979,7 @@
    "retires": "2026-09-28",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/davinci-002/",
    "badge": "https://lira-ia.github.io/obituaries/badge/davinci-002.svg"
   },
@@ -891,6 +989,7 @@
    "retires": "2026-09-28",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-1106/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-1106.svg"
   },
@@ -900,6 +999,7 @@
    "retires": "2026-09-24",
    "retired": true,
    "successor": "none listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/sora-2/",
    "badge": "https://lira-ia.github.io/obituaries/badge/sora-2.svg"
   },
@@ -909,6 +1009,7 @@
    "retires": "2026-09-24",
    "retired": true,
    "successor": "none listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/sora-2-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/sora-2-pro.svg"
   },
@@ -918,6 +1019,7 @@
    "retires": "2026-09-24",
    "retired": true,
    "successor": "none listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/sora-2-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/sora-2-2025-10-06.svg"
   },
@@ -927,6 +1029,7 @@
    "retires": "2026-09-24",
    "retired": true,
    "successor": "none listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/sora-2-2025-12-08/",
    "badge": "https://lira-ia.github.io/obituaries/badge/sora-2-2025-12-08.svg"
   },
@@ -936,6 +1039,7 @@
    "retires": "2026-09-24",
    "retired": true,
    "successor": "none listed",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/sora-2-pro-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/sora-2-pro-2025-10-06.svg"
   },
@@ -945,6 +1049,7 @@
    "retires": "2026-08-31",
    "retired": true,
    "successor": "gemini-robotics-er-2-preview",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-robotics-er-1-6-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-robotics-er-1-6-preview.svg"
   },
@@ -954,6 +1059,7 @@
    "retires": "2026-08-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-medium-2508/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-medium-2508.svg"
   },
@@ -963,6 +1069,7 @@
    "retires": "2026-08-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-medium-2505/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-medium-2505.svg"
   },
@@ -972,6 +1079,7 @@
    "retires": "2026-08-17",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-4-0-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-4-0-generate-001.svg"
   },
@@ -981,6 +1089,7 @@
    "retires": "2026-08-17",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-4-0-ultra-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-4-0-ultra-generate-001.svg"
   },
@@ -990,6 +1099,7 @@
    "retires": "2026-08-17",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-4-0-fast-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-4-0-fast-generate-001.svg"
   },
@@ -999,6 +1109,7 @@
    "retires": "2026-08-10",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-2-chat-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-2-chat-latest.svg"
   },
@@ -1008,6 +1119,7 @@
    "retires": "2026-08-10",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-3-chat-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-3-chat-latest.svg"
   },
@@ -1017,6 +1129,7 @@
    "retires": "2026-08-10",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-embedding-2-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-embedding-2-preview.svg"
   },
@@ -1026,6 +1139,7 @@
    "retires": "2026-08-05",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-opus-4-1-20250805/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-opus-4-1-20250805.svg"
   },
@@ -1035,6 +1149,7 @@
    "retires": "2026-08-05",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-opus-4-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-opus-4-1.svg"
   },
@@ -1044,6 +1159,7 @@
    "retires": "2026-07-31",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-small-2506/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-small-2506.svg"
   },
@@ -1053,6 +1169,7 @@
    "retires": "2026-07-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/devstral-2512/",
    "badge": "https://lira-ia.github.io/obituaries/badge/devstral-2512.svg"
   },
@@ -1062,6 +1179,7 @@
    "retires": "2026-07-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-medium-2509/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-medium-2509.svg"
   },
@@ -1071,6 +1189,7 @@
    "retires": "2026-07-31",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-small-2509/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-small-2509.svg"
   },
@@ -1080,6 +1199,7 @@
    "retires": "2026-07-31",
    "retired": true,
    "successor": "Ministral 3 8B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/open-mistral-nemo-2407/",
    "badge": "https://lira-ia.github.io/obituaries/badge/open-mistral-nemo-2407.svg"
   },
@@ -1089,6 +1209,7 @@
    "retires": "2026-07-28",
    "retired": true,
    "successor": "gemini-3.8-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-computer-use-preview-10-2025/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-computer-use-preview-10-2025.svg"
   },
@@ -1098,6 +1219,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/computer-use-preview-2025-03-11/",
    "badge": "https://lira-ia.github.io/obituaries/badge/computer-use-preview-2025-03-11.svg"
   },
@@ -1107,6 +1229,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/computer-use-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/computer-use-preview.svg"
   },
@@ -1116,6 +1239,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-search-preview-2025-03-11/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-search-preview-2025-03-11.svg"
   },
@@ -1125,6 +1249,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-search-preview-2025-03-11/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-search-preview-2025-03-11.svg"
   },
@@ -1134,6 +1259,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-chat-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-chat-latest.svg"
   },
@@ -1143,6 +1269,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-codex/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-codex.svg"
   },
@@ -1152,6 +1279,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1-chat-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-chat-latest.svg"
   },
@@ -1161,6 +1289,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1-codex/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-codex.svg"
   },
@@ -1170,6 +1299,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1-codex-max/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-codex-max.svg"
   },
@@ -1179,6 +1309,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-terra",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-1-codex-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-codex-mini.svg"
   },
@@ -1188,6 +1319,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-audio-mini-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-audio-mini-2025-10-06.svg"
   },
@@ -1197,6 +1329,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-realtime-2.1-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-realtime-mini-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-realtime-mini-2025-10-06.svg"
   },
@@ -1206,6 +1339,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-deep-research-2025-06-26/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-deep-research-2025-06-26.svg"
   },
@@ -1215,6 +1349,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-deep-research/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-deep-research.svg"
   },
@@ -1224,6 +1359,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o4-mini-deep-research-2025-06-26/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o4-mini-deep-research-2025-06-26.svg"
   },
@@ -1233,6 +1369,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o4-mini-deep-research/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o4-mini-deep-research.svg"
   },
@@ -1242,6 +1379,7 @@
    "retires": "2026-07-23",
    "retired": true,
    "successor": "gpt-5.6-sol",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-2-codex/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-2-codex.svg"
   },
@@ -1251,6 +1389,7 @@
    "retires": "2026-06-30",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-0-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-0-generate-001.svg"
   },
@@ -1260,6 +1399,7 @@
    "retires": "2026-06-30",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-0-fast-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-0-fast-generate-001.svg"
   },
@@ -1269,6 +1409,7 @@
    "retires": "2026-06-30",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-2-0-generate-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-2-0-generate-001.svg"
   },
@@ -1278,6 +1419,7 @@
    "retires": "2026-06-30",
    "retired": true,
    "successor": "Leanstral 1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/labs-leanstral-2603/",
    "badge": "https://lira-ia.github.io/obituaries/badge/labs-leanstral-2603.svg"
   },
@@ -1287,6 +1429,7 @@
    "retires": "2026-06-30",
    "retired": true,
    "successor": "Mistral Moderation 2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-moderation-2411/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-moderation-2411.svg"
   },
@@ -1296,6 +1439,7 @@
    "retires": "2026-06-25",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-image-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-image-preview.svg"
   },
@@ -1305,6 +1449,7 @@
    "retires": "2026-06-25",
    "retired": true,
    "successor": "gemini-3-pro-image",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-pro-image-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-pro-image-preview.svg"
   },
@@ -1314,6 +1459,7 @@
    "retires": "2026-06-15",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-20250514/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-20250514.svg"
   },
@@ -1323,6 +1469,7 @@
    "retires": "2026-06-15",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-opus-4-20250514/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-opus-4-20250514.svg"
   },
@@ -1332,6 +1479,7 @@
    "retires": "2026-06-15",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-0.svg"
   },
@@ -1341,6 +1489,7 @@
    "retires": "2026-06-15",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-opus-4-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-opus-4-0.svg"
   },
@@ -1350,6 +1499,7 @@
    "retires": "2026-06-01",
    "retired": true,
    "successor": "gemini-3.6-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash.svg"
   },
@@ -1359,6 +1509,7 @@
    "retires": "2026-06-01",
    "retired": true,
    "successor": "gemini-3.6-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-001.svg"
   },
@@ -1368,6 +1519,7 @@
    "retires": "2026-06-01",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-lite/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-lite.svg"
   },
@@ -1377,6 +1529,7 @@
    "retires": "2026-06-01",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-lite-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-lite-001.svg"
   },
@@ -1386,6 +1539,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "Voxtral Mini Transcribe 2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/voxtral-mini-2507/",
    "badge": "https://lira-ia.github.io/obituaries/badge/voxtral-mini-2507.svg"
   },
@@ -1395,6 +1549,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/devstral-medium-2507/",
    "badge": "https://lira-ia.github.io/obituaries/badge/devstral-medium-2507.svg"
   },
@@ -1404,6 +1559,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/devstral-small-2507/",
    "badge": "https://lira-ia.github.io/obituaries/badge/devstral-small-2507.svg"
   },
@@ -1413,6 +1569,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "OCR 4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-ocr-2505/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-ocr-2505.svg"
   },
@@ -1422,6 +1579,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-large-2411/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-large-2411.svg"
   },
@@ -1431,6 +1589,7 @@
    "retires": "2026-05-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/pixtral-large-2411/",
    "badge": "https://lira-ia.github.io/obituaries/badge/pixtral-large-2411.svg"
   },
@@ -1440,6 +1599,7 @@
    "retires": "2026-05-25",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-lite-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-lite-preview.svg"
   },
@@ -1449,6 +1609,7 @@
    "retires": "2026-05-12",
    "retired": true,
    "successor": "gpt-image-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/dall-e-2/",
    "badge": "https://lira-ia.github.io/obituaries/badge/dall-e-2.svg"
   },
@@ -1458,6 +1619,7 @@
    "retires": "2026-05-12",
    "retired": true,
    "successor": "gpt-image-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/dall-e-3/",
    "badge": "https://lira-ia.github.io/obituaries/badge/dall-e-3.svg"
   },
@@ -1467,6 +1629,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-realtime-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-realtime-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-realtime-preview.svg"
   },
@@ -1476,6 +1639,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-realtime-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-realtime-preview-2025-06-03/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-realtime-preview-2025-06-03.svg"
   },
@@ -1485,6 +1649,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-realtime-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-realtime-preview-2024-12-17/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-realtime-preview-2024-12-17.svg"
   },
@@ -1494,6 +1659,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-realtime-mini",
+   "successor_id": "gpt-realtime-mini",
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-realtime-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-realtime-preview.svg"
   },
@@ -1503,6 +1669,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-audio-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-audio-preview.svg"
   },
@@ -1512,6 +1679,7 @@
    "retires": "2026-05-07",
    "retired": true,
    "successor": "gpt-audio-mini",
+   "successor_id": "gpt-audio-mini",
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-mini-audio-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-audio-preview.svg"
   },
@@ -1521,6 +1689,7 @@
    "retires": "2026-04-30",
    "retired": true,
    "successor": "gemini-robotics-er-2-preview",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-robotics-er-1-5-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-robotics-er-1-5-preview.svg"
   },
@@ -1530,6 +1699,7 @@
    "retires": "2026-04-30",
    "retired": true,
    "successor": "Ministral 3 8B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/labs-mistral-small-creative/",
    "badge": "https://lira-ia.github.io/obituaries/badge/labs-mistral-small-creative.svg"
   },
@@ -1539,6 +1709,7 @@
    "retires": "2026-04-20",
    "retired": true,
    "successor": "claude-haiku-4-5-20251001",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-haiku-20240307/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-haiku-20240307.svg"
   },
@@ -1548,6 +1719,7 @@
    "retires": "2026-04-04",
    "retired": true,
    "successor": "embed-v4.0",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/embed-english-v2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/embed-english-v2-0.svg"
   },
@@ -1557,6 +1729,7 @@
    "retires": "2026-04-04",
    "retired": true,
    "successor": "embed-v4.0",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/embed-english-light-v2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/embed-english-light-v2-0.svg"
   },
@@ -1566,6 +1739,7 @@
    "retires": "2026-04-04",
    "retired": true,
    "successor": "embed-v4.0",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/embed-multilingual-v2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/embed-multilingual-v2-0.svg"
   },
@@ -1575,6 +1749,7 @@
    "retires": "2026-04-04",
    "retired": true,
    "successor": "command-a-03-2025 or command-r7b-12-2024",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/c4ai-aya-expanse-8b/",
    "badge": "https://lira-ia.github.io/obituaries/badge/c4ai-aya-expanse-8b.svg"
   },
@@ -1584,6 +1759,7 @@
    "retires": "2026-04-04",
    "retired": true,
    "successor": "command-a-03-2025 or command-r7b-12-2024",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/c4ai-aya-vision-8b/",
    "badge": "https://lira-ia.github.io/obituaries/badge/c4ai-aya-vision-8b.svg"
   },
@@ -1593,6 +1769,7 @@
    "retires": "2026-03-31",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-lite-preview-09-2025/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-lite-preview-09-2025.svg"
   },
@@ -1602,6 +1779,7 @@
    "retires": "2026-03-31",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/labs-devstral-small-2512/",
    "badge": "https://lira-ia.github.io/obituaries/badge/labs-devstral-small-2512.svg"
   },
@@ -1611,6 +1789,7 @@
    "retires": "2026-03-26",
    "retired": true,
    "successor": "gpt-5 or gpt-4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-0314/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-0314.svg"
   },
@@ -1620,6 +1799,7 @@
    "retires": "2026-03-26",
    "retired": true,
    "successor": "gpt-5 or gpt-4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-0125-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-0125-preview.svg"
   },
@@ -1629,6 +1809,7 @@
    "retires": "2026-03-26",
    "retired": true,
    "successor": "gpt-5 or gpt-4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-turbo-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-turbo-preview.svg"
   },
@@ -1638,6 +1819,7 @@
    "retires": "2026-03-09",
    "retired": true,
    "successor": "gemini-3.1-pro-preview",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-3-pro-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-pro-preview.svg"
   },
@@ -1647,6 +1829,7 @@
    "retires": "2026-02-19",
    "retired": true,
    "successor": "claude-haiku-4-5-20251001",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-5-haiku-20241022/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-5-haiku-20241022.svg"
   },
@@ -1656,6 +1839,7 @@
    "retires": "2026-02-19",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-7-sonnet-20250219/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-7-sonnet-20250219.svg"
   },
@@ -1665,6 +1849,7 @@
    "retires": "2026-02-19",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-7-sonnet-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-7-sonnet-latest.svg"
   },
@@ -1674,6 +1859,7 @@
    "retires": "2026-02-19",
    "retired": true,
    "successor": "claude-haiku-4-5-20251001",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-5-haiku-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-5-haiku-latest.svg"
   },
@@ -1683,6 +1869,7 @@
    "retires": "2026-02-17",
    "retired": true,
    "successor": "gpt-5.1-chat-latest",
+   "successor_id": "gpt-5.1-chat-latest",
    "notice": "https://lira-ia.github.io/obituaries/chatgpt-4o-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/chatgpt-4o-latest.svg"
   },
@@ -1692,6 +1879,7 @@
    "retires": "2026-02-17",
    "retired": true,
    "successor": "gemini-3.6-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-09-2025/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-preview-09-2025.svg"
   },
@@ -1701,6 +1889,7 @@
    "retires": "2026-02-17",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-4-0-generate-preview-06-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-4-0-generate-preview-06-06.svg"
   },
@@ -1710,6 +1899,7 @@
    "retires": "2026-02-17",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-4-0-ultra-generate-preview-06-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-4-0-ultra-generate-preview-06-06.svg"
   },
@@ -1719,6 +1909,7 @@
    "retires": "2026-02-12",
    "retired": true,
    "successor": "gpt-5-codex-mini",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/codex-mini-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/codex-mini-latest.svg"
   },
@@ -1728,6 +1919,7 @@
    "retires": "2026-01-15",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-image-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-image-preview.svg"
   },
@@ -1737,6 +1929,7 @@
    "retires": "2026-01-14",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/text-embedding-004/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-embedding-004.svg"
   },
@@ -1746,6 +1939,7 @@
    "retires": "2026-01-05",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-opus-20240229/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-opus-20240229.svg"
   },
@@ -1755,6 +1949,7 @@
    "retires": "2026-01-05",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-opus-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-opus-latest.svg"
   },
@@ -1764,6 +1959,7 @@
    "retires": "2025-12-31",
    "retired": true,
    "successor": "OCR 4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-ocr-2503/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-ocr-2503.svg"
   },
@@ -1773,6 +1969,7 @@
    "retires": "2025-12-31",
    "retired": true,
    "successor": "Ministral 3 3B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/ministral-3b-2410/",
    "badge": "https://lira-ia.github.io/obituaries/badge/ministral-3b-2410.svg"
   },
@@ -1782,6 +1979,7 @@
    "retires": "2025-12-31",
    "retired": true,
    "successor": "Ministral 3 8B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/ministral-8b-2410/",
    "badge": "https://lira-ia.github.io/obituaries/badge/ministral-8b-2410.svg"
   },
@@ -1791,6 +1989,7 @@
    "retires": "2025-12-31",
    "retired": true,
    "successor": "Ministral 3 14B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/pixtral-12b-2409/",
    "badge": "https://lira-ia.github.io/obituaries/badge/pixtral-12b-2409.svg"
   },
@@ -1800,6 +1999,7 @@
    "retires": "2025-12-09",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-lite-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-lite-preview.svg"
   },
@@ -1809,6 +2009,7 @@
    "retires": "2025-12-09",
    "retired": true,
    "successor": "gemini-3.1-flash-lite",
+   "successor_id": "gemini-3.1-flash-lite",
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-lite-preview-02-05/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-lite-preview-02-05.svg"
   },
@@ -1818,6 +2019,7 @@
    "retires": "2025-12-09",
    "retired": true,
    "successor": "gemini-3.8-live",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-live-2-5-flash-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-live-2-5-flash-preview.svg"
   },
@@ -1827,6 +2029,7 @@
    "retires": "2025-12-09",
    "retired": true,
    "successor": "gemini-3.8-live",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-live-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-live-001.svg"
   },
@@ -1836,6 +2039,7 @@
    "retires": "2025-12-02",
    "retired": true,
    "successor": "gemini-3.8-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-03-25/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-03-25.svg"
   },
@@ -1845,6 +2049,7 @@
    "retires": "2025-12-02",
    "retired": true,
    "successor": "gemini-3.8-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-05-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-05-06.svg"
   },
@@ -1854,6 +2059,7 @@
    "retires": "2025-12-02",
    "retired": true,
    "successor": "gemini-3.8-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-06-05/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-06-05.svg"
   },
@@ -1863,6 +2069,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-medium-2507/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-medium-2507.svg"
   },
@@ -1872,6 +2079,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-small-2507/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-small-2507.svg"
   },
@@ -1881,6 +2089,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-medium-2506/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-medium-2506.svg"
   },
@@ -1890,6 +2099,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/magistral-small-2506/",
    "badge": "https://lira-ia.github.io/obituaries/badge/magistral-small-2506.svg"
   },
@@ -1899,6 +2109,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/devstral-small-2505/",
    "badge": "https://lira-ia.github.io/obituaries/badge/devstral-small-2505.svg"
   },
@@ -1908,6 +2119,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-small-2503/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-small-2503.svg"
   },
@@ -1917,6 +2129,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-small-2501/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-small-2501.svg"
   },
@@ -1926,6 +2139,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Codestral (latest)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/codestral-2501/",
    "badge": "https://lira-ia.github.io/obituaries/badge/codestral-2501.svg"
   },
@@ -1935,6 +2149,7 @@
    "retires": "2025-11-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-small-2409/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-small-2409.svg"
   },
@@ -1944,6 +2159,7 @@
    "retires": "2025-11-18",
    "retired": true,
    "successor": "gemini-3.6-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-05-20/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-preview-05-20.svg"
   },
@@ -1953,6 +2169,7 @@
    "retires": "2025-11-14",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-2-0-flash-preview-image-generation/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-0-flash-preview-image-generation.svg"
   },
@@ -1962,6 +2179,7 @@
    "retires": "2025-11-12",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-0-generate-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-0-generate-preview.svg"
   },
@@ -1971,6 +2189,7 @@
    "retires": "2025-11-12",
    "retired": true,
    "successor": "gemini-omni-1.1-flash",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/veo-3-0-fast-generate-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/veo-3-0-fast-generate-preview.svg"
   },
@@ -1980,6 +2199,7 @@
    "retires": "2025-11-10",
    "retired": true,
    "successor": "gemini-nano-banana-2.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/imagen-3-0-generate-002/",
    "badge": "https://lira-ia.github.io/obituaries/badge/imagen-3-0-generate-002.svg"
   },
@@ -1989,6 +2209,7 @@
    "retires": "2025-10-30",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/embedding-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/embedding-001.svg"
   },
@@ -1998,6 +2219,7 @@
    "retires": "2025-10-30",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/embedding-gecko-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/embedding-gecko-001.svg"
   },
@@ -2007,6 +2229,7 @@
    "retires": "2025-10-30",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-embedding-exp-03-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-embedding-exp-03-07.svg"
   },
@@ -2016,6 +2239,7 @@
    "retires": "2025-10-30",
    "retired": true,
    "successor": "gemini-embedding-2",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gemini-embedding-exp/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gemini-embedding-exp.svg"
   },
@@ -2025,6 +2249,7 @@
    "retires": "2025-10-28",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-5-sonnet-20240620/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-5-sonnet-20240620.svg"
   },
@@ -2034,6 +2259,7 @@
    "retires": "2025-10-28",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-5-sonnet-20241022/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-5-sonnet-20241022.svg"
   },
@@ -2043,6 +2269,7 @@
    "retires": "2025-10-28",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-5-sonnet-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-5-sonnet-latest.svg"
   },
@@ -2052,6 +2279,7 @@
    "retires": "2025-10-27",
    "retired": true,
    "successor": "omni-moderation",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/text-moderation-007/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-moderation-007.svg"
   },
@@ -2061,6 +2289,7 @@
    "retires": "2025-10-27",
    "retired": true,
    "successor": "omni-moderation",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/text-moderation-stable/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-moderation-stable.svg"
   },
@@ -2070,6 +2299,7 @@
    "retires": "2025-10-27",
    "retired": true,
    "successor": "omni-moderation",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/text-moderation-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-moderation-latest.svg"
   },
@@ -2079,6 +2309,7 @@
    "retires": "2025-10-27",
    "retired": true,
    "successor": "o4-mini",
+   "successor_id": "o4-mini",
    "notice": "https://lira-ia.github.io/obituaries/o1-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1-mini.svg"
   },
@@ -2088,6 +2319,7 @@
    "retires": "2025-10-10",
    "retired": true,
    "successor": "gpt-realtime-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-realtime-preview-2024-10-01/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-realtime-preview-2024-10-01.svg"
   },
@@ -2097,6 +2329,7 @@
    "retires": "2025-10-10",
    "retired": true,
    "successor": "gpt-audio-1.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4o-audio-preview-2024-10-01/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-audio-preview-2024-10-01.svg"
   },
@@ -2106,6 +2339,7 @@
    "retires": "2025-09-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-saba-2502/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-saba-2502.svg"
   },
@@ -2115,6 +2349,7 @@
    "retires": "2025-09-15",
    "retired": true,
    "successor": "command-a-03-2025",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/command-r-03-2024/",
    "badge": "https://lira-ia.github.io/obituaries/badge/command-r-03-2024.svg"
   },
@@ -2124,6 +2359,7 @@
    "retires": "2025-09-15",
    "retired": true,
    "successor": "command-a-03-2025",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/command-r/",
    "badge": "https://lira-ia.github.io/obituaries/badge/command-r.svg"
   },
@@ -2133,6 +2369,7 @@
    "retires": "2025-09-15",
    "retired": true,
    "successor": "command-a-03-2025",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/command-r-plus-04-2024/",
    "badge": "https://lira-ia.github.io/obituaries/badge/command-r-plus-04-2024.svg"
   },
@@ -2142,6 +2379,7 @@
    "retires": "2025-09-15",
    "retired": true,
    "successor": "command-a-03-2025",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/command-r-plus/",
    "badge": "https://lira-ia.github.io/obituaries/badge/command-r-plus.svg"
   },
@@ -2151,6 +2389,7 @@
    "retires": "2025-09-15",
    "retired": true,
    "successor": "command-a-03-2025",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/command-light/",
    "badge": "https://lira-ia.github.io/obituaries/badge/command-light.svg"
   },
@@ -2160,6 +2399,7 @@
    "retires": "2025-07-28",
    "retired": true,
    "successor": "o3",
+   "successor_id": "o3",
    "notice": "https://lira-ia.github.io/obituaries/o1-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o1-preview.svg"
   },
@@ -2169,6 +2409,7 @@
    "retires": "2025-07-21",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-2-0.svg"
   },
@@ -2178,6 +2419,7 @@
    "retires": "2025-07-21",
    "retired": true,
    "successor": "claude-opus-4-8",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-2-1/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-2-1.svg"
   },
@@ -2187,6 +2429,7 @@
    "retires": "2025-07-21",
    "retired": true,
    "successor": "claude-sonnet-5-5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-3-sonnet-20240229/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-3-sonnet-20240229.svg"
   },
@@ -2196,6 +2439,7 @@
    "retires": "2025-07-14",
    "retired": true,
    "successor": "gpt-4.1",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-5-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-5-preview.svg"
   },
@@ -2205,6 +2449,7 @@
    "retires": "2025-06-16",
    "retired": true,
    "successor": "Codestral (latest)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/codestral-2405/",
    "badge": "https://lira-ia.github.io/obituaries/badge/codestral-2405.svg"
   },
@@ -2214,6 +2459,7 @@
    "retires": "2025-06-16",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-small-2402/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-small-2402.svg"
   },
@@ -2223,6 +2469,7 @@
    "retires": "2025-06-16",
    "retired": true,
    "successor": "Mistral Large 3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-large-2402/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-large-2402.svg"
   },
@@ -2232,6 +2479,7 @@
    "retires": "2025-06-16",
    "retired": true,
    "successor": "Mistral Medium 3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-medium-2312/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-medium-2312.svg"
   },
@@ -2241,6 +2489,7 @@
    "retires": "2025-06-06",
    "retired": true,
    "successor": "gpt-4o",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-32k/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-32k.svg"
   },
@@ -2250,6 +2499,7 @@
    "retires": "2025-06-06",
    "retired": true,
    "successor": "gpt-4o",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-32k-0613/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-32k-0613.svg"
   },
@@ -2259,6 +2509,7 @@
    "retires": "2025-06-06",
    "retired": true,
    "successor": "gpt-4o",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-32k-0314/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-32k-0314.svg"
   },
@@ -2268,6 +2519,7 @@
    "retires": "2025-06-06",
    "retired": true,
    "successor": "Codestral (latest)",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/open-codestral-mamba/",
    "badge": "https://lira-ia.github.io/obituaries/badge/open-codestral-mamba.svg"
   },
@@ -2277,6 +2529,7 @@
    "retires": "2025-04-30",
    "retired": true,
    "successor": "rerank-v3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/rerank-english-v2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/rerank-english-v2-0.svg"
   },
@@ -2286,6 +2539,7 @@
    "retires": "2025-04-30",
    "retired": true,
    "successor": "rerank-v3.5",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/rerank-multilingual-v2-0/",
    "badge": "https://lira-ia.github.io/obituaries/badge/rerank-multilingual-v2-0.svg"
   },
@@ -2295,6 +2549,7 @@
    "retires": "2025-03-30",
    "retired": true,
    "successor": "Mistral Large 3",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/mistral-large-2407/",
    "badge": "https://lira-ia.github.io/obituaries/badge/mistral-large-2407.svg"
   },
@@ -2304,6 +2559,7 @@
    "retires": "2025-03-30",
    "retired": true,
    "successor": "Ministral 3 8B",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/open-mistral-7b/",
    "badge": "https://lira-ia.github.io/obituaries/badge/open-mistral-7b.svg"
   },
@@ -2313,6 +2569,7 @@
    "retires": "2025-03-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/open-mixtral-8x22b/",
    "badge": "https://lira-ia.github.io/obituaries/badge/open-mixtral-8x22b.svg"
   },
@@ -2322,6 +2579,7 @@
    "retires": "2025-03-30",
    "retired": true,
    "successor": "Mistral Small 4",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/open-mixtral-8x7b/",
    "badge": "https://lira-ia.github.io/obituaries/badge/open-mixtral-8x7b.svg"
   },
@@ -2331,6 +2589,7 @@
    "retires": "2024-12-06",
    "retired": true,
    "successor": "gpt-4o",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-vision-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-vision-preview.svg"
   },
@@ -2340,6 +2599,7 @@
    "retires": "2024-12-06",
    "retired": true,
    "successor": "gpt-4o",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-4-1106-vision-preview/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4-1106-vision-preview.svg"
   },
@@ -2349,6 +2609,7 @@
    "retires": "2024-11-06",
    "retired": true,
    "successor": "claude-haiku-4-5-20251001",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-instant-1-2/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-instant-1-2.svg"
   },
@@ -2358,6 +2619,7 @@
    "retires": "2024-11-06",
    "retired": true,
    "successor": "claude-haiku-4-5-20251001",
+   "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-1-3/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-1-3.svg"
   },
@@ -2367,6 +2629,7 @@
    "retires": "2024-09-13",
    "retired": true,
    "successor": "gpt-3.5-turbo",
+   "successor_id": "gpt-3.5-turbo",
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-0613/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-0613.svg"
   },
@@ -2376,6 +2639,7 @@
    "retires": "2024-09-13",
    "retired": true,
    "successor": "gpt-3.5-turbo",
+   "successor_id": "gpt-3.5-turbo",
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-16k-0613/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-16k-0613.svg"
   },
@@ -2385,6 +2649,7 @@
    "retires": "2024-09-13",
    "retired": true,
    "successor": "gpt-3.5-turbo",
+   "successor_id": "gpt-3.5-turbo",
    "notice": "https://lira-ia.github.io/obituaries/gpt-3-5-turbo-0301/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-3-5-turbo-0301.svg"
   },
@@ -2394,6 +2659,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/text-davinci-003/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-davinci-003.svg"
   },
@@ -2403,6 +2669,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/text-davinci-002/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-davinci-002.svg"
   },
@@ -2412,6 +2679,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/code-davinci-002/",
    "badge": "https://lira-ia.github.io/obituaries/badge/code-davinci-002.svg"
   },
@@ -2421,6 +2689,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/text-curie-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-curie-001.svg"
   },
@@ -2430,6 +2699,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/text-babbage-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-babbage-001.svg"
   },
@@ -2439,6 +2709,7 @@
    "retires": "2024-01-04",
    "retired": true,
    "successor": "gpt-3.5-turbo-instruct",
+   "successor_id": "gpt-3.5-turbo-instruct",
    "notice": "https://lira-ia.github.io/obituaries/text-ada-001/",
    "badge": "https://lira-ia.github.io/obituaries/badge/text-ada-001.svg"
   }
