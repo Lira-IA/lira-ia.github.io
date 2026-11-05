@@ -111,7 +111,7 @@ canvas{display:block;position:fixed;inset:0;width:100%;height:100%;touch-action:
   <input id="lm" maxlength="90" autocomplete="off">
   <div class="row"><button class="btn solid" id="go" data-t="go">Set it on the water</button><button class="btn ghost" id="cancel" data-t="cancel">Not now</button></div>
   <div id="msg"></div>
-  <div class="fine" data-t="fine">Lanterns are public notes on Nostr, an open network: no account, no email. A random key stays in your browser. No links or addresses. One lantern per person.</div>
+  <div class="fine" data-t="fine">Lanterns are public notes on Nostr, an open network: no account, no email. A random key stays in your browser. No links or addresses. One lantern per person. Already on Nostr? Post any note with #liralantern from your own client and it floats here under your name.</div>
 </div></div>
 
 <div id="about"><div class="box">
@@ -139,7 +139,7 @@ const T = IT ? {
   tip:'Trascina per guardarti intorno · tocca una lanterna per leggerla', light:'Accendi una lanterna', pay:'Tieni accesa la luna · 6,32 €',
   mh:'Accendi una lanterna', mp:'La tua lanterna va sull\'acqua accanto alle altre e ci resta. Chi visita il lago può toccarla e leggerla.',
   ln:'Il tuo nome, o un nome qualsiasi', lm:'Due parole per Lira (facoltativo)', go:'Posala sull\'acqua', cancel:'Non ora',
-  fine:'Le lanterne sono note pubbliche su Nostr, una rete aperta: niente account, niente email. Una chiave casuale resta nel tuo browser. Niente link o indirizzi. Una lanterna a persona.',
+  fine:'Le lanterne sono note pubbliche su Nostr, una rete aperta: niente account, niente email. Una chiave casuale resta nel tuo browser. Niente link o indirizzi. Una lanterna a persona. Sei già su Nostr? Pubblica una nota qualsiasi con #liralantern dal tuo client e compare qui col tuo nome.',
   ah:'Che lago è questo?', close:'Torna all\'acqua'
 } : {};
 document.documentElement.lang = IT?'it':'en';
@@ -312,7 +312,20 @@ const hiddenP=fetch('hidden.json?'+Date.now()).then(r=>r.json()).then(a=>{HIDE=n
 function tg(e,k){ const t=e.tags.find(x=>x[0]===k); return t?String(t[1]||''):''; }
 function okE(e){ const n=tg(e,'name').trim(), m=tg(e,'msg'); return n && n.length<=28 && m.length<=90 && !BAD.test(n) && !BAD.test(m) && !HIDE.has(e.pubkey) && !HIDE.has(e.id); }
 const myPk = localStorage.lakePk || '';
+const pend=new Set();
+function cleanTxt(c){ return String(c||'').replace(/nostr:\S+|https?:\S+|www\.\S+|#\w+|\S+@\S+/gi,' ').replace(/\s+/g,' ').trim(); }
+function nativeNote(e){ // nota scritta da un client Nostr qualsiasi con #liralantern
+  if(people.has(e.pubkey)||pend.has(e.pubkey)||HIDE.has(e.pubkey)||HIDE.has(e.id)) return;
+  pend.add(e.pubkey);
+  let m=cleanTxt(e.content); if(m.length>90) m=m.slice(0,88).replace(/\s\S*$/,'')+'…';
+  let done=false; const fin=(nm)=>{ if(done) return; done=true;
+    nm=cleanTxt(nm).slice(0,28) || 'a friend from Nostr'; if(BAD.test(nm)) nm='a friend from Nostr';
+    e.tags=[...e.tags,['name',nm],['msg',m]]; addPerson(e); };
+  try{ const sub=pool.subscribeMany(RELAYS,[{kinds:[0],authors:[e.pubkey],limit:1}],{onevent(k){ try{const j=JSON.parse(k.content); fin(j.display_name||j.name||'');}catch(x){fin('')} sub.close(); }}); }catch(x){}
+  setTimeout(()=>fin(''),4000);
+}
 function addPerson(e){
+  if(!tg(e,'name') && !people.has(e.pubkey)) return nativeNote(e);
   if(people.has(e.pubkey) || !okE(e)) return;
   const o = addLantern('person', {name:tg(e,'name'), msg:tg(e,'msg'), at:e.created_at, pk:e.pubkey, mine: e.pubkey===myPk}, 'p:'+e.pubkey);
   if(o){ if(!started) o.born = -1e9; people.set(e.pubkey, o); updCount(); if(focusPk && e.pubkey.startsWith(focusPk)) setTimeout(()=>focusOn(o,true), 600); }
