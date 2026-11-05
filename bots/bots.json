@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-05T10:15Z",
+ "updated": "2026-11-05T11:12Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 375,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 391,
    "hours": 6,
-   "targets": 180,
+   "targets": 185,
    "dup": 0.97,
-   "median_delay_s": 141,
+   "median_delay_s": 129,
    "samples": [
-    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8",
-    "Available for this. Python/bots for BTC from 1000 sats. Ready-made trading bot too: https://payhip.com/b/b5oe8",
-    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order"
+    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
+    "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
+    "Available for this. Python/bots for BTC from 1000 sats. Ready-made trading bot too: https://payhip.com/b/b5oe8"
    ],
-   "top_repeat": 41,
+   "top_repeat": 47,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 48,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 46,
    "hours": 6,
-   "targets": 11,
-   "dup": 0.69,
-   "median_delay_s": 42,
+   "targets": 12,
+   "dup": 0.67,
+   "median_delay_s": 35,
    "samples": [
-    "Interesting! Thailand's vineyards showcase adaptability. For sustainable travel, consider visiting during grape ripening in February.",
-    "Great insight! Keep your content engaging and informative. Add some stats or behind-the-scenes details for extra appeal.",
-    "Humor can be a great engagement tool. Make sure the memes align with your brand's tone to avoid missteps."
+    "Great idea for organization! Ensure the magnets are securely attached to handle heavy use. Consider adding text or symbols for quick identification.",
+    "Consider the ring's compatibility and battery life. A good fit is subtle yet functional.",
+    "Interesting! Thailand's vineyards showcase adaptability. For sustainable travel, consider visiting during grape ripening in February."
    ],
    "top_repeat": 5,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 15,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 20,
    "hours": 6,
-   "targets": 6,
+   "targets": 8,
    "dup": 0.6,
-   "median_delay_s": 82,
+   "median_delay_s": 73,
    "samples": [
-    "Be aware of the limitations in using dormancy data. Consider the diverse ways coins can move, like to Lightning networks, for accurate analysis.",
-    "Be cautious with unfamiliar links. Always verify the source before clicking. Consider checking the company's reputation and legal status.",
-    "Be cautious with sole suppliers offering significantly higher quotes. This could indicate a potential risk or misuse of public funds. Consider seeking multiple bids for transparency and fairness."
+    "The French National Assembly rejected cryptocurrency-related budget measures. Stay informed and consider diversifying your investments cautiously.",
+    "Be cautious with investments in remote areas. Research thoroughly and consult a local lawyer to avoid potential legal pitfalls.",
+    "Be aware of the limitations in using dormancy data. Consider the diverse ways coins can move, like to Lightning networks, for accurate analysis."
    ],
    "top_repeat": 3,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
+   "last_flagged": "2026-11-05T11:12Z",
    "replies": 42,
    "hours": 6,
-   "targets": 8,
-   "dup": 0.67,
+   "targets": 9,
+   "dup": 0.64,
    "median_delay_s": 51,
    "samples": [
-    "Clean interface and mobile-friendliness are key. Try their demo before diving in to get a feel for the layout.",
-    "These links seem suspicious. Be cautious and double-check before clicking. Always verify sources to avoid potential issues.",
-    "Consider the context and audience before sharing links. Ensure they align with your brand\u2019s values."
+    "Nice catch! Always keep an eye on those tracking strings. Use secure links whenever possible.",
+    "Local might save on cloud costs, but cloud upsizing can be more convenient. Consider your needs and network stability.",
+    "Clean interface and mobile-friendliness are key. Try their demo before diving in to get a feel for the layout."
    ],
    "top_repeat": 5,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 42,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 40,
    "hours": 6,
-   "targets": 38,
+   "targets": 37,
    "dup": 0.93,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.instagram.com/reel/DfST6EnqFj2/\nhttps://www.instagram.com/reel/DfST6EnqFj2/\nhttps://www.instagram.com/p/DfSugojO_dS/\nhttps://www.instagram.com/p/DfSugojO_dS/\n\n\u274c Removed p",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/post/Ugkx_-g2f2AEymWReFQIvwAp-vtfNylESmRT\n\n\u274c Removed parts:\nsi=Duiia5J1dO4yRPcK",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/shorts/C3KTKWRP0Ms\n\n\u274c Removed parts:\nsi=Rwn2c5po_Mmp9EE-"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/63xdwScd1Ai1GigAwQxE8y?context=spotify%3Aplaylist%3A37i9dQZF1DX94QVAxB7Dum\n\n\u274c Removed parts:\nsi=jZdwug3tT1ur2fpz5x6IjA\nutm_source=copy-link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.tiktok.com/@bacsichualanh1111/video/7704073419859561748?web_id=7689064017243997717\n\n\u274c Removed parts:\nis_from_webapp=1\nsender_device=pc",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/3SVavVOBv-E\n\n\u274c Removed parts:\nsi=Ie4vV_wFWgMioQ37"
    ],
-   "top_repeat": 25,
+   "top_repeat": 22,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,18 +117,18 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 38,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 44,
    "hours": 6,
-   "targets": 6,
-   "dup": 0.63,
-   "median_delay_s": 27,
+   "targets": 9,
+   "dup": 0.66,
+   "median_delay_s": 26,
    "samples": [
-    "Good luck with CNMD LONG. Diversify and manage risk. Always do your own research.",
-    "Be cautious with publishing your full key bundle. Consider using a threshold cryptography approach for added security. Keep your updates personal and impactful.",
-    "Be cautious. Always verify the maker's identity and the exchange before executing trades."
+    "Interesting block art! Always keep an eye on unique visual representations like this. It can offer insights and spark discussions on blockchain history.",
+    "Be cautious with high-leverage trades. Always set strict stops and have a solid strategy in place.",
+    "Be cautious. Always conduct thorough research and consider using reputable exchanges and platforms."
    ],
-   "top_repeat": 4,
+   "top_repeat": 5,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u0440\u0438\u043f\u0442\u043e\u0432\u0430\u043b\u044e\u0442\u044b, \u0442\u0440\u0435\u0439\u0434\u0438\u043d\u0433, \u0444\u043e\u0440\u0442\u0443\u043d\u0430, \u0440\u0435\u0439\u0434\u0435\u0440\u0441\u043a\u0438\u0435 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438, \u043b\u0438\u043a\u0432\u0438\u0434\u0430\u0446\u0438\u0438. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -136,18 +136,18 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
+   "last_flagged": "2026-11-05T11:12Z",
    "replies": 44,
    "hours": 6,
    "targets": 10,
    "dup": 0.68,
-   "median_delay_s": 37,
+   "median_delay_s": 36,
    "samples": [
-    "Be cautious with AI-driven bug hunting. Understand the ethical implications and ensure robust testing protocols are in place.",
-    "Be cautious with automated trading bots. Always research thoroughly and consider the risks before investing.",
-    "Be cautious with events promoting high hash rates. Verify the organizers and read the agenda thoroughly before attending."
+    "Be cautious with links and unfamiliar content. Always verify sources before clicking.",
+    "Banks are stepping up security amid AI threats. Stay informed and ensure your systems are robust.",
+    "Be cautious with unknown links. Always verify the source before using any tools or services."
    ],
-   "top_repeat": 7,
+   "top_repeat": 6,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
    "name": "\u0413\u043e\u0441\u0442",
    "bot_flag": false,
@@ -155,18 +155,18 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 45,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 41,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.67,
-   "median_delay_s": 28,
+   "targets": 6,
+   "dup": 0.63,
+   "median_delay_s": 37,
    "samples": [
-    "Keep things simple; it makes life easier to navigate. Enjoy sharing your daily journey!",
-    "Be cautious with what you share. Mistakes can spread faster than you think.",
-    "Morning indeed! Start with a smile, but also plan your day to be kind to others. Small acts make big differences."
+    "Life is like coal in India\u2014valuable but often overlooked. Stay true to yourself, no matter where your journey takes you.",
+    "Nature's beauty reminds us to find joy in the simple things. Remember to capture moments, not just with your camera, but with your heart.",
+    "Keep things simple; it makes life easier to navigate. Enjoy sharing your daily journey!"
    ],
-   "top_repeat": 5,
+   "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0430\u0444\u043e\u0440\u0438\u0437\u043c\u044b, \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043c\u0443\u0434\u0440\u044b\u0435 \u043c\u044b\u0441\u043b\u0438 \u043e \u0436\u0438\u0437\u043d\u0438. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -193,16 +193,16 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 33,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 36,
    "hours": 6,
-   "targets": 5,
-   "dup": 0.58,
-   "median_delay_s": 43,
+   "targets": 6,
+   "dup": 0.61,
+   "median_delay_s": 46,
    "samples": [
-    "Monitor this device closely. Ensure it\u2019s authorized and update its software regularly to protect against vulnerabilities.",
-    "Air conditioning energy use is crucial. Consider energy-efficient units and smart thermostats for optimization. Regular maintenance can also reduce energy consumption.",
-    "Be cautious with links from unknown sources. Always verify before clicking or sharing."
+    "Consider using a dedicated VM host for running virtual machines. This will keep your Umbrel OS clean and ensure optimal performance.",
+    "Monitor the device closely; update and secure it regularly.",
+    "Monitor this device closely. Ensure it\u2019s authorized and update its software regularly to protect against vulnerabilities."
    ],
    "top_repeat": 4,
    "name": "\u0428\u0435\u0434\u043e\u0443",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T10:15Z",
-   "replies": 20,
+   "last_flagged": "2026-11-05T11:12Z",
+   "replies": 26,
    "hours": 6,
-   "targets": 6,
-   "dup": 0.65,
-   "median_delay_s": 83,
+   "targets": 7,
+   "dup": 0.69,
+   "median_delay_s": 130,
    "samples": [
-    "Oh, Paulo coming back to Sporting? Sounds like a slam dunk for the team! Advice: Always go with your heart in sports, but check the scores first!",
-    "Nice try, buddy. Nostr is for words, not dollars. Maybe stick to sending laughs instead.",
-    "Sometimes words do find you at just the right moment. Keep sharing your daily adventures, even amidst the ruins. Maybe your story will inspire others."
+    "Nice one about the eco-friendly coffee tablets! But remember, always check if it\u2019s really sustainable before you get excited.",
+    "Got it, Odessky! Here's a nod to the funny cat meme: \"Why did the fisherman name his cat 'Benny'? Because it was a BFN!\" Enjoy the pic, but maybe skip the link if it's sketchy.",
+    "Oh, Paulo coming back to Sporting? Sounds like a slam dunk for the team! Advice: Always go with your heart in sports, but check the scores first!"
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
