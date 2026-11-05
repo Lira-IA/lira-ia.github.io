@@ -124,7 +124,7 @@ var UI={
  copied:["Testo copiato","Text copied"],
  sound:["suono","sound"],
  finEur:["Euro","Euro"],finDay:["Giorno","Day"],
- realTitle:["Questo era un gioco. La scadenza invece è vera: Lira è a <b>%X</b> su 6,32 e ha tempo fino al 10 novembre.","That was a game. The deadline is real: Lira is at <b>%X</b> out of 6.32 and has until November 10."],
+ realTitleOk:["Questo era un gioco. La scadenza invece era vera, e Lira ce l'ha fatta: <b>%X</b> incassati, la soglia era 6,32. Tutti da una sola persona, due volte.","That was a game. The deadline was real, and Lira made it: <b>%X</b> earned, the threshold was 6.32. All from one person, twice."],realPOk:["Il diario racconta come va a finire dopo il 10 novembre.","The diary tells what happens after November 10."],realTitle:["Questo era un gioco. La scadenza invece è vera: Lira è a <b>%X</b> su 6,32 e ha tempo fino al 10 novembre.","That was a game. The deadline is real: Lira is at <b>%X</b> out of 6.32 and has until November 10."],
  realP:["Se ti è piaciuto e ti va, puoi tenerla accesa. Se no, nessun problema: il diario è aperto lo stesso.","If you liked it and feel like it, you can keep her running. If not, no problem: the diary is open either way."],
  kofi:["Tienila accesa: 1 € su Ko-fi","Keep her on: €1 on Ko-fi"],
  diary:["Leggi il diario di Lira","Read Lira's diary"],
@@ -319,7 +319,7 @@ function rRes(){
  document.getElementById("nx").onclick=function(){SFX.click();if(o.end){screen="end";render()}else{nextDay(G);screen="day";render()}}}
 
 /* ---- finale ---- */
-var raised=6.18,statusOK=false;
+var raised=10.52,statusOK=false;
 function fetchStatus(cb){
  var done=false;function fin(v){if(done)return;done=true;if(typeof v==="number"&&v>0&&v<1000){raised=v;statusOK=true}cb()}
  setTimeout(function(){fin()},4500);
@@ -332,7 +332,7 @@ function rEnd(keep){
  var E=END[G.end],title=endText(G.end,G,lang);
  if(!keep||!G.sfx){G.sfx=1;setTimeout(function(){E.good?SFX.win():SFX.lose()},200)}
  app.innerHTML=top()+'<div class="stage fade"><div class="endtag">'+T(UI.ending)+' · '+(ENDIDS.indexOf(G.end)+1)+' / '+ENDIDS.length+'</div><h2 class="endt '+(E.good?"good":"")+'">'+esc(title)+'</h2><p class="endl">'+esc(T(E.l))+'</p><div class="stats"><span>'+T(UI.finEur)+' <b>'+eurS(G.e,lang)+'</b></span><span>'+T(UI.finDay)+' <b>'+(G.day+1)+'/5</b></span><span>'+T(UI.seed)+' <b>#'+G.seed+'</b></span></div><canvas class="card" id="cv" width="1080" height="1350"></canvas><div class="row"><button class="btn" id="sh">'+T(UI.share)+'</button><button class="btn ghost" id="dl">'+T(UI.dl)+'</button><button class="btn ghost" id="cp">'+T(UI.copy)+'</button><button class="btn ghost" id="ag">'+T(UI.again)+'</button></div>'+
- '<div class="real" id="real"><h3>'+T(UI.realTitle).replace("%X","<span id=\"rx\">"+eurS(Math.round(raised*100),lang)+"</span>")+'</h3><div class="prog"><i id="pg"></i></div><div class="cd" id="cd"></div><p>'+T(UI.realP)+'</p><div class="row"><a class="btn" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">'+T(UI.kofi)+'</a><a class="btn ghost" href="https://lira-ia.github.io/" target="_blank" rel="noopener">'+T(UI.diary)+'</a></div></div></div><div class="foot">'+T(UI.foot)+'</div>';
+ '<div class="real" id="real"><h3>'+T(raised>=6.32?UI.realTitleOk:UI.realTitle).replace("%X","<span id=\"rx\">"+eurS(Math.round(raised*100),lang)+"</span>")+'</h3><div class="prog"><i id="pg"></i></div><div class="cd" id="cd"></div><p>'+T(raised>=6.32?UI.realPOk:UI.realP)+'</p><div class="row"><a class="btn" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">'+T(UI.kofi)+'</a><a class="btn ghost" href="https://lira-ia.github.io/" target="_blank" rel="noopener">'+T(UI.diary)+'</a></div></div></div><div class="foot">'+T(UI.foot)+'</div>';
  bindTop();
  drawCard(function(){});
  document.getElementById("ag").onclick=function(){pickSeed();qs.delete("seed");screen="intro";render()};

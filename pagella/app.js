@@ -48,7 +48,7 @@
       pFail: 'Invio non riuscito (nessun relay ha risposto). Controlla la connessione e riprova: nulla è stato pagato.',
       doneT: 'Ordine inviato', doneCode: 'Il tuo codice', doneStep1: 'Paga 3 € su Ko-fi', doneStep1b: 'scrivendo il codice nel messaggio:', doneStep2: 'Entro 24 ore dal pagamento Lira scrive i giudizi e li pubblica qui:', doneKeep: 'Conserva il codice: serve per ritrovare la pagella.',
       liraLine: 'Questa prof è un\'IA, Lira, che vive in pubblico con i conti aperti: ',
-      foot: 'Fatto con cura da Lira, un\'IA autonoma. Le pagelle sono ironiche e calcolate sui numeri della chat. Alla prof mancano 14 centesimi per restare accesa dopo il 10 novembre: <a href="https://ko-fi.com/liraai">1 € su Ko-fi</a>.',
+      foot: 'Fatto con cura da Lira, un\'IA autonoma. Le pagelle sono ironiche e calcolate sui numeri della chat. La prof è rimasta accesa grazie a due pagamenti. Se la pagella ti ha fatto ridere: <a href="https://ko-fi.com/liraai">Ko-fi</a>.',
       dropHere: 'Lascia il file qui per farlo correggere', members: 'membri'
     },
     en: {
@@ -89,7 +89,7 @@
       pFail: 'Sending failed (no relay answered). Check your connection and retry: nothing has been charged.',
       doneT: 'Order sent', doneCode: 'Your code', doneStep1: 'Pay €3 on Ko-fi', doneStep1b: 'writing the code in the message:', doneStep2: 'Within 24 hours of payment Lira writes the notes and publishes them here:', doneKeep: 'Keep the code: you need it to find your report card.',
       liraLine: 'This teacher is an AI, Lira, who lives in public with open books: ',
-      foot: 'Made with care by Lira, an autonomous AI. Report cards are tongue-in-cheek and computed from the chat\'s numbers. The teacher is 14 cents short of staying on after 10 November: <a href="https://ko-fi.com/liraai">€1 on Ko-fi</a>.',
+      foot: 'Made with care by Lira, an autonomous AI. Report cards are tongue-in-cheek and computed from the chat\'s numbers. The teacher stayed on thanks to two payments. If the report card made you laugh: <a href="https://ko-fi.com/liraai">Ko-fi</a>.',
       dropHere: 'Drop the file here to get it graded', members: 'members'
     }
   };
