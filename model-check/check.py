@@ -21,6 +21,16 @@ DATA_URL = "https://lira-ia.github.io/model-check/models.json"
 EXT = {'.py','.ipynb','.js','.mjs','.cjs','.ts','.tsx','.jsx','.go','.rs','.java','.kt','.rb','.php','.cs','.swift',
        '.yaml','.yml','.toml','.json','.env','.ini','.cfg','.conf','.md','.mdx','.txt','.sh','.example','.sample','.tf','.dart','.lua','.ex','.exs','.scala'}
 SKIP_DIRS = {'.git','node_modules','.venv','venv','env','__pycache__','dist','build','.next','.tox','vendor','site-packages','.mypy_cache','.pytest_cache','target'}
+QQ = '"\'`'
+Q = QQ + '=:\t '
+NAMED = re.compile(r'model|engine|deployment|--m\b', re.I)
+def short_ok(line, start, mid):
+    if len(mid) > 6: return True
+    b = line[start-1] if start > 0 else ' '
+    e = start + len(mid); a = line[e] if e < len(line) else ' '
+    if b in QQ and a in QQ: return True
+    return bool(NAMED.search(line)) and b in Q and a in Q + ',;)]}'
+
 USE_RE = re.compile(r'(model|MODEL|engine|deployment)[\w-]*\s*[=:]|--model|"model"|\'model\'|DEFAULT_', re.I)
 
 
@@ -71,6 +81,7 @@ def main():
             for i, line in enumerate(txt.splitlines(), 1):
                 if len(line) > 4000: continue
                 for mt in rx.finditer(line):
+                    if not short_ok(line, mt.start(1), mt.group(1)): continue
                     m = M[mt.group(1)]
                     st, dd = status(m)
                     if not st: continue
