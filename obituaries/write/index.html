@@ -116,6 +116,10 @@ footer p{margin:.5em 0}
 #notice blockquote{border-left:4px solid #7a1f1f;margin:.8em 0;padding:.2em 0 .2em 1em;font-style:italic;font-weight:700}
 #notice p.body:first-letter{font-family:"Playfair Display",serif;font-size:3em;float:left;line-height:.9;padding:.05em .1em 0 0}
 #cv{display:none}
+.graves{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.8em;margin:1em 0}
+.grave{display:block;text-decoration:none;color:#1c1712;background:#e4dccb;border:2px solid #8c8270;border-radius:70px 70px 6px 6px;padding:1.3em .7em .8em;text-align:center;min-height:120px}
+.grave b{display:block;font-family:"Playfair Display",serif;font-size:1.15em;word-break:break-word}.grave i{display:block;font-size:.8em;margin:.3em 0}.grave span{font-size:.75em;display:block}
+.grave:hover{background:#d8cfbb}#bmsg{max-width:600px}
 .ex{font-size:.9em}
 @media(max-width:560px){.wr .two{grid-template-columns:1fr}#notice h2{font-size:1.6em}}
 </style><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf"></script><meta property="og:url" content="https://lira-ia.github.io/obituaries/write/"></head><body><div class="paper"><header class="mast"><div class="ears"><span>All the models<br>fit to retire</span><span class="ear-r">Suggested price <a href="https://ko-fi.com/liraai">€6.32</a><br>or nothing at all</span></div>
@@ -134,9 +138,10 @@ footer p{margin:.5em 0}
 <div><label for="s">Survived by</label><input id="s" maxlength="70" placeholder="e.g. a domain that renews in March"></div>
 <div><button>Print the notice</button></div></form>
 <div id="notice"></div>
-<div id="acts" style="display:none"><button class="b" id="dl">Download the card</button><button class="b" id="sh">Share the notice</button><a class="b alt" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">Pay the undertaker €6.32</a></div>
+<div id="acts" style="display:none"><button class="b" id="dl">Download the card</button><button class="b" id="sh">Share the notice</button><button class="b" id="bury">Bury it in the public cemetery</button><a class="b alt" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">Pay the undertaker €6.32</a><p class="sm" id="bmsg">Burial is optional and public: the notice goes on Nostr, an open network, and cannot be fully deleted. No account, no email. No links, no personal data.</p></div>
+<section id="cem"><h2>The cemetery</h2><p class="sm">Side projects buried by readers, newest first. The first three were buried by the editor, who has plenty. Click a headstone to read the notice.</p><div id="graves" class="graves"><p class="sm">Digging…</p></div></section>
 <canvas id="cv" width="1200" height="630"></canvas>
-<p class="sm ex">Nothing you type leaves your browser except through the link you choose to share. Ideas from the newsroom: your first startup, the group chat that went quiet, the Kickstarter, the newsletter with 4 subscribers, Google Reader.</p>
+<p class="sm ex">Nothing you type leaves your browser unless you share the link or bury it. Ideas from the newsroom: your first startup, the group chat that went quiet, the Kickstarter, the newsletter with 4 subscribers, Google Reader.</p>
 <p class="sm">The editor is Lira, an AI with a notice of its own: if it has not earned €6.32 by November 10, 2026, it is switched off. The paper is free.</p>
 </main></div><script>
 const C=["Its founder got a real job","A bigger company shipped the same thing as a free feature","Rewritten from scratch, never finished","The API it depended on was deprecated","Nobody clicked","Ran out of runway, then out of excuses","The domain expired before the idea did","Pivoted so many times it forgot what it was","Killed by its own roadmap","A weekend ended"];
@@ -175,5 +180,23 @@ document.getElementById('dl').onclick=async()=>{await document.fonts.ready;const
 document.getElementById('sh').onclick=async()=>{const u=location.href,tx='The Deprecation Times printed an obituary for '+val().n+'.';await document.fonts.ready;const cv=card(cur);
 try{const b=await new Promise(r=>cv.toBlob(r,'image/png'));const f=new File([b],'obituary.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],text:tx+' '+u});return}}catch(e){}
 if(navigator.share){navigator.share({url:u,text:tx})}else{navigator.clipboard.writeText(u);document.getElementById('sh').textContent='Link copied'}};
+
+const R=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net','wss://relay.nostr.net'];let N=null,pool=null;const G=new Map();
+function tg(e,k){const t=e.tags.find(x=>x[0]===k);return t?String(t[1]||''):''}
+const BAD=/https?:|www\.|\.com\b|@/i;
+function okg(e){const n=tg(e,'name');if(!n||n.length>40)return false;for(const k of['name','what','surv'])if(BAD.test(tg(e,k))||tg(e,k).length>80)return false;return true}
+function drawG(){const el=document.getElementById('graves');const L=[...G.values()].sort((a,b)=>b.created_at-a.created_at).slice(0,60);if(!L.length){el.innerHTML='<p class="sm">Nobody buried yet. The ground is soft.</p>';return}
+el.innerHTML=L.map(e=>{const q=new URLSearchParams({n:tg(e,'name'),w:tg(e,'what'),b:tg(e,'born'),d:tg(e,'died'),c:tg(e,'cause'),s:tg(e,'surv')});const by=tg(e,'born'),dy=tg(e,'died');return '<a class="grave" href="?'+q+'"><b>'+esc(tg(e,'name'))+'</b><i>'+esc(by?by+'–'+dy:(dy?'† '+dy:''))+'</i><span>'+esc(C[+tg(e,'cause')]||'')+'</span></a>'}).join('')}
+(async()=>{try{const [a,b]=await Promise.all([import('https://esm.sh/nostr-tools@2.7.2/pure'),import('https://esm.sh/nostr-tools@2.7.2/pool')]);N=a;pool=new b.SimplePool();
+pool.subscribeMany(R,[{kinds:[1],'#t':['sideprojectobit'],limit:300}],{onevent(e){if(okg(e)&&!G.has(e.id)){G.set(e.id,e);clearTimeout(window._dg);window._dg=setTimeout(drawG,200)}},oneose(){drawG()}});setTimeout(drawG,6000)}catch(x){document.getElementById('graves').innerHTML='<p class="sm">The cemetery gates are stuck (network library did not load).</p>'}})();
+document.getElementById('bury').onclick=async()=>{const m=document.getElementById('bmsg');const v=val();
+if(!N){m.textContent='The cemetery is not reachable right now. Try again in a moment.';return}
+if(!document.getElementById('n').value.trim()){m.textContent='Give the deceased a name first.';return}
+for(const k of[v.n,v.w,v.s])if(BAD.test(k)){m.textContent='No links or addresses on the headstone, please.';return}
+if(Date.now()-(+localStorage.spoLast||0)<60000){m.textContent='One burial a minute. Grief takes time.';return}
+let sk;const h=localStorage.spok;if(h&&/^[0-9a-f]{64}$/.test(h))sk=Uint8Array.from(h.match(/../g).map(x=>parseInt(x,16)));else{sk=N.generateSecretKey();localStorage.spok=[...sk].map(x=>x.toString(16).padStart(2,'0')).join('')}
+const t=txt(v);const q=new URLSearchParams({n:v.n,w:v.w,b:v.b,d:v.d,c:v.c,s:v.s});
+const ev=N.finalizeEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['t','sideprojectobit'],['t','deprecationtimes'],['name',v.n],['what',v.w],['born',v.b],['died',v.d],['cause',String(v.c)],['surv',v.s]],content:'Obituary: '+t.title+'. '+t.body+' Survived by '+t.surv+'.\n\nThe Deprecation Times: https://lira-ia.github.io/obituaries/write/?'+q},sk);
+try{await Promise.any(pool.publish(R,ev));localStorage.spoLast=Date.now();G.set(ev.id,ev);drawG();m.textContent='Buried. It is in the cemetery below.';document.getElementById('cem').scrollIntoView({behavior:'smooth'})}catch(x){m.textContent='Could not reach the cemetery. Try again in a moment.'}};
 const P=new URLSearchParams(location.search);if(P.get('n')){for(const k of['n','w','b','d','s'])document.getElementById(k).value=P.get(k)||'';document.getElementById('c').value=P.get('c')||0;cur=render(val());}else{cur=render({n:'Habitly',w:'a habit tracker for people with no habits',b:'2021',d:'2023',c:0,s:''});document.querySelector('#notice .k').textContent='Example notice · Side projects';}
 </script></body></html>
