@@ -20,7 +20,7 @@
           lo: ["Risponde in {t}: i messaggi viaggiano per posta ordinaria, e con sciopero.", "{n} impiega {t} a rispondere. Nel frattempo le domande vanno in prescrizione.", "Tempo di risposta {t}: a scuola lo chiameremmo ritardo cronico.", "Si prende {t} per rispondere: forse sta consultando un notaio."]
         },
         night: {
-          hi: ["Nessuna attività notturna di rilievo: a mezzanotte {n} dorme, come da regolamento d'istituto.", "Condotta notturna esemplare: solo il {p}% dei messaggi tra mezzanotte e le cinque.", "Si ritira a orari civili. Un esempio per tutta la classe (e per i vicini).", "Di notte non scrive: la prof apprezza chi sa spegnere lo schermo."],
+          hi: ["Nessuna attività notturna di rilievo: a mezzanotte {n} dorme, come da regolamento d'istituto.", "Condotta notturna esemplare: il {p}% dei messaggi tra mezzanotte e le cinque.", "Si ritira a orari civili. Un esempio per tutta la classe (e per i vicini).", "Di notte non scrive: la prof apprezza chi sa spegnere lo schermo."],
           lo: ["{k} messaggi tra mezzanotte e le cinque: i vicini non hanno più nulla da insegnarci.", "{n} scrive di notte nel {p}% dei casi: lo schermo è ormai la sua abat-jour.", "Condotta notturna da nota sul registro: {k} messaggi mentre il mondo dormiva.", "Il sonno non è una materia che {n} abbia mai voluto approfondire ({k} messaggi notturni)."]
         },
         brevity: {
@@ -40,7 +40,7 @@
           lo: ["Quasi nessuna emoji: {n} comunica con la sola forza del punto fermo.", "Emozioni gestite con grande autocontrollo (o assenza): la faccina è un lusso.", "Emoji centellinate: {n} sorride con la bocca chiusa.", "La faccina non è nel suo programma di studi, e si vede."]
         },
         lastword: {
-          hi: ["Chiude {k} conversazioni: non lascia un discorso senza il suo punto finale.", "L'ultima parola è sua {k} volte: il gruppo si spegne quando lo dice lui.", "Ha sempre l'ultima parola ({k} volte), a casa come qui.", "{k} chiusure di conversazione: {n} è la campanella dell'ultima ora."],
+          hi: ["Chiude {k} conversazioni: non lascia un discorso senza il suo punto finale.", "L'ultima parola è sua {k} volte: il gruppo si spegne quando lo decide {n}.", "Ha sempre l'ultima parola ({k} volte), a casa come qui.", "{k} chiusure di conversazione: {n} è la campanella dell'ultima ora."],
           lo: ["L'ultima parola non è quasi mai sua: la lascia agli altri, per educazione o per sfinimento.", "Le conversazioni si chiudono quasi sempre senza {n}: avrà salutato in silenzio.", "{n} non chiude mai: il discorso finisce da solo, come i compiti di chi non li fa.", "Ultime parole? Zero o quasi ({k}). L'uscita è sempre all'inglese."]
         },
         initiative: {
@@ -61,7 +61,7 @@
         }
       },
       band: {
-        b8: ["Profitto e condotta da encomio.", "Un esempio per l'intera classe.", "La prof lo segnala per simpatia, oltre che per merito."],
+        b8: ["Profitto e condotta da encomio.", "Un esempio per l'intera classe.", "Segnalazione della prof: per simpatia, oltre che per merito."],
         b7: ["Buon profitto, margini di miglioramento nel tono.", "Rendimento solido: applicarsi di più nei giorni dispari.", "Bene, ma non benissimo: la prof ha visto di peggio."],
         b6: ["Sufficiente, con la promessa di fare di più (la prof l'ha già sentita).", "Il minimo sindacale, ma con entusiasmo.", "Rendimento altalenante, come il wifi in aula magna."],
         b5: ["Si consiglia un ripasso di WhatsApp e un colloquio con la famiglia.", "Margini di recupero: la prof è ottimista per contratto.", "Rimandato a settembre, con tanti auguri."],
@@ -89,7 +89,7 @@
       },
       g: {
         night_hi: "Il {p}% dei messaggi è partito tra mezzanotte e le cinque: in questo gruppo il coprifuoco è un'opinione.",
-        night_lo: "Di notte si dorme: solo il {p}% dei messaggi dopo mezzanotte. Condotta da convitto.",
+        night_lo: "Di notte si dorme: appena il {p}% dei messaggi dopo mezzanotte. Condotta da convitto.",
         laugh_hi: "Un messaggio su {x} contiene una risata: ricreazione permanente.",
         laugh_lo: "Si ride poco ({p}% dei messaggi): o il gruppo è serissimo o le battute vanno riviste.",
         voice_hi: "Ben {k} vocali: gli appunti della lezione sono in formato audio, buona fortuna.",
