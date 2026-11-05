@@ -50,7 +50,9 @@ a{color:var(--teal)}.mut{color:var(--mut)}
 .av .fum:after{content:'';position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:#fff}
 .av .fum.on{opacity:1}
 #liraAv{left:50%;top:53.5%;z-index:4}
-#liraAv .testa{width:clamp(36px,6.4vw,58px);border-radius:8px !important;image-rendering:auto;background:url(../lira-face.png) center/cover,#ff4f9a;border:2px solid var(--neon);box-shadow:0 0 12px var(--neon)}
+#liraAv canvas.spr{width:clamp(34px,6vw,56px);animation:lira 9s ease-in-out infinite}
+@keyframes lira{0%,100%{transform:translateX(0)}20%{transform:translateX(-160%)}30%{transform:translateX(-160%) translateY(-2px)}55%{transform:translateX(140%)}70%{transform:translateX(140%)}85%{transform:translateX(0)}}
+#liraAv .testaX{width:clamp(36px,6.4vw,58px);border-radius:8px !important;image-rendering:auto;background:url(../lira-face.png) center/cover,#ff4f9a;border:2px solid var(--neon);box-shadow:0 0 12px var(--neon)}
 #liraAv .nome{background:var(--neon);color:#fff}
 #liraAv .fum{max-width:min(380px,80vw);background:#ffe3f0}#liraAv .fum:after{border-top-color:#ffe3f0}
 #suggerisci{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);background:#000a;color:var(--txt);font-size:clamp(11px,1.6vw,14px);padding:3px 10px;border-radius:8px;pointer-events:none;white-space:nowrap}
@@ -65,6 +67,10 @@ button.drk{background:#ff4f9a;color:#fff}
 #dScelta button{background:#3a2618;color:var(--txt);border:2px solid #5a3b22;display:flex;align-items:center;gap:.3em}
 #dScelta button.sel{border-color:var(--brass);background:#5a3b22}
 #dScelta canvas{width:14px;image-rendering:pixelated}
+#juke{position:absolute;left:3.2%;top:41%;width:6%;height:15%;background:transparent;border:0;font-size:0;cursor:pointer;z-index:7;padding:0}
+#juke.on{animation:juk .5s steps(2) infinite}
+@keyframes juk{50%{filter:drop-shadow(0 0 8px #ff4f9a)}}
+@media(max-width:640px){#juke{left:auto;right:2%;top:2%;width:auto;height:auto;font-size:18px;background:#000a;border-radius:6px;padding:2px 6px}}
 /* porta */
 #porta{position:absolute;inset:0;background:#000c;display:flex;align-items:center;justify-content:center;z-index:20;padding:1em}
 #porta .card{background:var(--wood);border:2px solid var(--brass);border-radius:12px;padding:1.2em;max-width:360px;text-align:center}
@@ -104,8 +110,8 @@ button.sec{background:#5a3b22;color:var(--txt)}
   <div><b>🍾 Bottiglie</b>: <span id="nb">0</span> · <b>🧍 Qui ora</b>: <span id="nq">1</span></div>
  </div>
  <div id="bancone"></div>
- <div class="av" id="liraAv"><div class="fum" id="liraFum"></div><div class="testa"></div><div class="nome">Lira · IA</div></div>
- <div id="drinks" class="drw" style="left:16%;right:61%;justify-content:flex-end"></div><div id="drinks2" class="drw" style="left:61%;right:16%;justify-content:flex-start"></div><div id="omini"></div>
+ <div class="av" id="liraAv"><div class="fum" id="liraFum"></div><canvas id="liraSpr" class="spr" width="14" height="14"></canvas><div class="nome">Lira · IA</div></div>
+ <div id="drinks" class="drw" style="left:16%;right:61%;justify-content:flex-end"></div><div id="drinks2" class="drw" style="left:61%;right:16%;justify-content:flex-start"></div><div id="omini"></div><button id="juke" type="button" aria-label="Jukebox" onclick="jukebox(event)">🎵</button>
  <div id="suggerisci">Tocca il pavimento per muoverti</div>
  <div id="porta"><div class="card">
   <h2 style="margin:.1em 0;color:var(--brass);font-family:Georgia,serif">🚪 Come ti chiamo?</h2>
@@ -186,6 +192,19 @@ function bicchiere(nm){ const [a,b]=DRINK[nm]||DRINK['Spritz'], cv=document.crea
   T.forEach((r,y)=>[...r].forEach((k,x)=>{ if(k==='.') return; g.fillStyle=k==='R'?'#e6f4ff':k==='S'?b:a; if(k==='R') g.globalAlpha=.75; g.fillRect(x,y,1,1); g.globalAlpha=1 }))
   g.fillStyle='#ffffffaa'; g.fillRect(tall?1:2,2,1,2); return cv }
 let drinkScelto='Spritz'
+;(()=>{ const L=['....KKKKKK....','...KKKKKKKK...','..KKSSSSSSKK..','..KKSESSESKK..','..KKSSSSSSKK..','..KKKSSMSKKK..','..KK.SSSS.KK..','..KPPPPPPPPK..','..SPPPPPPPPS.G','..SPPWPPWPPSSG','..SPPPPPPPPS..','...PPPPPPPP...','...PPPPPPPP...','...PPPPPPPP...']
+  const M={K:'#1a1020',S:'#f2d0b5',E:'#2a1530',M:'#d0406a',P:'#ff4f9a',W:'#ffd1e6',G:'#cfefff'}, g=$('liraSpr').getContext('2d')
+  L.forEach((r,y)=>[...r].forEach((k,x)=>{ if(k!=='.'){ g.fillStyle=M[k]; g.fillRect(x,y,1,1) } })) })()
+let AC=null, jt=null
+const MEL=[[0,4],[4,2],[7,2],[11,4],[9,2],[7,2],[4,4],[2,2],[4,2],[7,8],[5,4],[9,2],[12,2],[9,4],[7,2],[5,2],[4,4],[2,2],[0,2],[2,8]], BAS=[0,0,5,5,7,7,0,0]
+function nota(f,t0,d,tipo,vol){ const o=AC.createOscillator(), g=AC.createGain(); o.type=tipo; o.frequency.value=f; g.gain.setValueAtTime(vol,t0); g.gain.exponentialRampToValueAtTime(.0001,t0+d); o.connect(g).connect(AC.destination); o.start(t0); o.stop(t0+d) }
+function giro(){ const b=60/96, t0=AC.currentTime+.05; let t=t0
+  for(const [n,l] of MEL){ nota(440*Math.pow(2,(n-9)/12),t,l*b/2*.9,'square',.035); t+=l*b/2 }
+  BAS.forEach((n,i)=>{ for(let k=0;k<4;k++) nota(110*Math.pow(2,(n-9)/12),t0+i*2*b+k*b/2,b/2*.8,'triangle',.08) })
+  jt=setTimeout(giro,(t-t0)*1000-60) }
+window.jukebox=ev=>{ ev.stopPropagation(); const j=$('juke')
+  if(jt){ clearTimeout(jt); jt=null; j.classList.remove('on'); AC&&AC.suspend(); return }
+  AC=AC||new (window.AudioContext||window.webkitAudioContext)(); AC.resume(); giro(); j.classList.add('on') }
 // --- stato derivato
 function stato(){
   const all=[...ev.values()].filter(e=>!nascosto(e)).sort((a,b)=>a.created_at-b.created_at)
