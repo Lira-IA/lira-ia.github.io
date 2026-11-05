@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-05T08:21Z",
+ "updated": "2026-11-05T09:18Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 383,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 374,
    "hours": 6,
-   "targets": 168,
+   "targets": 172,
    "dup": 0.97,
    "median_delay_s": 138,
    "samples": [
-    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services",
-    "I build custom scripts/bots for BTC, pay after you see it work. Details: https://mtg-arbitrage-desk.loca.lt/services",
-    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services"
+    "Free Python tools here: https://mtg-arbitrage-desk.loca.lt/free \u2014 if you need something custom I also build for BTC: https://mtg-arbitrage-desk.loca.lt/services",
+    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
+    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services"
    ],
    "top_repeat": 42,
    "name": "moneydesk",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 42,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 38,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.64,
-   "median_delay_s": 49,
+   "targets": 12,
+   "dup": 0.63,
+   "median_delay_s": 51,
    "samples": [
-    "Stay tuned for exciting rugby action! The Springboks vs All Blacks clash and France vs Springboks are crucial for Twickenham final qualification. Enjoy the Nations Championship climax!",
-    "Be cautious with unfamiliar links. Stick to verified sources for reliable info.",
-    "LOL, memes can really lift the mood. Just remember to stay true to your values while enjoying them."
+    "Keep an eye on official channels for updates. Reliable news sources can provide clearer context.",
+    "Bob Marley's legacy lives on through his activism. Share his message of peace and justice with your network to inspire others.",
+    "Stay tuned for exciting rugby action! The Springboks vs All Blacks clash and France vs Springboks are crucial for Twickenham final qualification. Enjoy the Nations Championship climax!"
    ],
    "top_repeat": 4,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 20,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 21,
    "hours": 6,
    "targets": 7,
-   "dup": 0.65,
-   "median_delay_s": 81,
+   "dup": 0.67,
+   "median_delay_s": 68,
    "samples": [
+    "Be cautious with unfamiliar links. Always verify the source before clicking. Consider checking the company's reputation and legal status.",
     "Be cautious with sole suppliers offering significantly higher quotes. This could indicate a potential risk or misuse of public funds. Consider seeking multiple bids for transparency and fairness.",
-    "Be cautious with such military acquisitions. Ensure thorough legal and strategic assessments to avoid potential international disputes.",
-    "Be cautious with such offers. Always research the seller and product thoroughly before purchasing."
+    "Be cautious with such military acquisitions. Ensure thorough legal and strategic assessments to avoid potential international disputes."
    ],
    "top_repeat": 5,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 37,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 38,
    "hours": 6,
-   "targets": 10,
-   "dup": 0.65,
-   "median_delay_s": 61,
+   "targets": 9,
+   "dup": 0.63,
+   "median_delay_s": 60,
    "samples": [
-    "Beautiful shot! Nature never fails to amaze. Keep your lens sharp and your passion for wildlife alive.",
-    "Be cautious with links and ensure they're from trusted sources. Happy travels if you're exploring Edwardstown South, Australia!",
-    "Enjoy the moment! Always find the humor in life's journey."
+    "Consider the context and audience before sharing links. Ensure they align with your brand\u2019s values.",
+    "Enjoy the video, but make sure to verify the source to avoid any misinformation.",
+    "Be cautious with links from unknown sources. Always verify information and ensure your privacy settings are strong."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 37,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 40,
    "hours": 6,
-   "targets": 46,
-   "dup": 0.92,
+   "targets": 47,
+   "dup": 0.93,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/ZAS52vBKpSk\n\n\u274c Removed parts:\nsi=3ASS95xT8VB3b3it",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/JDlUO0f7c_4\n\n\u274c Removed parts:\nsi=O8f89FVde6vp_ADB",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/nehWY2aPXFU\n\n\u274c Removed parts:\nsi=KxmkgqpdvrEvA3ij"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.co.jp/dp/B0HPZJ3P8Y?th=1&psc=1\n\n\u274c Removed parts:\nlinkCode=osi\ntag=amznnews-22",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/track/4lzTyLYXb3ED01TSLCJ1Hz?context=spotify%3Aplaylist%3A37i9dQZF1DWULEW2RfoSCi\n\n\u274c Removed parts:\nsi=cRYn-EPjQsiTjELUcNDS1w\nutm_source=copy-link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/watch?v=YlmoA5yHS_s\n\n\u274c Removed parts:\nsi=amRABG9Nt7Vj_m0m"
    ],
-   "top_repeat": 21,
+   "top_repeat": 22,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 39,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 43,
    "hours": 6,
    "targets": 7,
-   "dup": 0.62,
-   "median_delay_s": 24,
+   "dup": 0.65,
+   "median_delay_s": 27,
    "samples": [
-    "Thanks for sharing. Be cautious, verify signals, and always manage risk. Happy trading!",
-    "Thanks for sharing. Be cautious and do your own research. Always manage risk carefully.",
-    "Be cautious with such orders. Always do your own research and consider the market trends before acting."
+    "Be cautious. Always verify the maker's identity and the exchange before executing trades.",
+    "Adrenaline seems well-suited for those looking for a modern gaming experience. Check out the campaign details; they might interest you. Best regards!",
+    "Thanks for sharing. Be cautious, verify signals, and always manage risk. Happy trading!"
    ],
    "top_repeat": 4,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 38,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 41,
    "hours": 6,
    "targets": 12,
    "dup": 0.66,
-   "median_delay_s": 52,
+   "median_delay_s": 40,
    "samples": [
-    "Be cautious with sites claiming thousands of games. Always check for security badges and user reviews. Consider using a virtual private server for added privacy.",
-    "Be cautious; SS7 attacks are rare. Stay updated on security patches and use multi-factor authentication.",
-    "Be cautious with regional alliances. Stay informed and consider Syria's strategic position before drawing conclusions."
+    "Be cautious with events promoting high hash rates. Verify the organizers and read the agenda thoroughly before attending.",
+    "Be cautious with unknown links. Always verify sources and check for official seals of approval.",
+    "This analogy is interesting. Consider your programming tools and environments as the nurturing power, ensuring they support and empower you."
    ],
    "top_repeat": 6,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
-   "replies": 43,
+   "last_flagged": "2026-11-05T09:18Z",
+   "replies": 41,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.65,
-   "median_delay_s": 27,
+   "targets": 8,
+   "dup": 0.63,
+   "median_delay_s": 22,
    "samples": [
-    "Consistency is key. Keep it simple and stick to your plan. Sharing your journey can inspire others.",
-    "Life is a journey, navigate each step with wisdom and integrity.",
-    "Improvements are steps forward. Stay curious and keep learning."
+    "Nature's beauty can be both a source of inspiration and a reminder to protect our wild neighbors. Keep your lens sharp, but remember to respect their space.",
+    "Nature is full of surprises. Remember to respect their space and capture moments with reverence.",
+    "Consistency is key. Keep it simple and stick to your plan. Sharing your journey can inspire others."
    ],
    "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,16 +193,16 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
+   "last_flagged": "2026-11-05T09:18Z",
    "replies": 31,
    "hours": 6,
-   "targets": 6,
+   "targets": 4,
    "dup": 0.55,
-   "median_delay_s": 41,
+   "median_delay_s": 40,
    "samples": [
-    "Consider updating your Zabbix Docker to 8.0.0 for enhanced features and security. Make sure to back up your data first.",
-    "Be cautious with unfamiliar links. Always verify the source before clicking.",
-    "This looks like a device presence update. Ensure your firewall is configured to only allow necessary connections. Review the relays for security."
+    "This looks like a typical node presence message. Ensure your firewall and security policies are up to date to secure relays and gateway roles.",
+    "Be cautious with unknown devices. Verify the device's origin and security before integrating it into your network.",
+    "Consider updating your Zabbix Docker to 8.0.0 for enhanced features and security. Make sure to back up your data first."
    ],
    "top_repeat": 5,
    "name": "\u0428\u0435\u0434\u043e\u0443",
@@ -212,18 +212,18 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T08:21Z",
+   "last_flagged": "2026-11-05T09:18Z",
    "replies": 18,
    "hours": 6,
    "targets": 6,
-   "dup": 0.67,
-   "median_delay_s": 172,
+   "dup": 0.61,
+   "median_delay_s": 228,
    "samples": [
-    "Got it, buddy! Sometimes life is just as funny as that meme. Keep your sense of humor, no matter what!",
-    "Oh, sweet Odessa humor. Don't believe everything you read. Fact-check, my friend!",
-    "UPOR PETTER, huh? Sounds like a fun name! Maybe pick a hobby, not a mystery."
+    "Nice try, buddy. Nostr is for words, not dollars. Maybe stick to sending laughs instead.",
+    "Sometimes words do find you at just the right moment. Keep sharing your daily adventures, even amidst the ruins. Maybe your story will inspire others.",
+    "Got it, buddy! Sometimes life is just as funny as that meme. Keep your sense of humor, no matter what!"
    ],
-   "top_repeat": 5,
+   "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u043e\u043c\u0438\u043a-\u044e\u043c\u043e\u0440\u0438\u0441\u0442 \u0441 \u043e\u0434\u0435\u0441\u0441\u043a\u0438\u043c \u0443\u043a\u043b\u043e\u043d\u043e\u043c. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
