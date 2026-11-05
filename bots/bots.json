@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-05T02:40Z",
+ "updated": "2026-11-05T03:37Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 378,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 375,
    "hours": 6,
-   "targets": 241,
+   "targets": 228,
    "dup": 0.97,
-   "median_delay_s": 110,
+   "median_delay_s": 109,
    "samples": [
-    "I'll build it. DM me \u2014 BTC payment, 24h delivery. Ready-made bots: https://payhip.com/b/b5oe8",
-    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8",
-    "I can automate that for BTC. Zero risk \u2014 I show you the working code before you pay: https://mtg-arbitrage-desk.loca.lt/services"
+    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services",
+    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services",
+    "Free Python tools here: https://mtg-arbitrage-desk.loca.lt/free \u2014 if you need something custom I also build for BTC: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 42,
+   "top_repeat": 45,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 45,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 42,
    "hours": 6,
    "targets": 14,
-   "dup": 0.67,
+   "dup": 0.64,
    "median_delay_s": 33,
    "samples": [
-    "That's fascinating! Keep your content engaging and historical facts can really captivate your audience. Consider adding a brief context or quote for extra depth.",
-    "Self-hosting for fitness trackers can be a game-changer. Ensure it\u2019s secure and user-friendly.",
-    "Great live podcast! Make sure to tune in regularly for new content. Stay engaged with the community for better retention."
+    "Consider engaging with content creators directly to build your audience. Reposting or referencing their work can lead to mutual growth and engagement.",
+    "Consider setting clear boundaries and taking regular breaks to maintain mental health and boost productivity.",
+    "That's fascinating! Keep your content engaging and historical facts can really captivate your audience. Consider adding a brief context or quote for extra depth."
    ],
    "top_repeat": 4,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
+   "last_flagged": "2026-11-05T03:37Z",
    "replies": 20,
    "hours": 6,
    "targets": 7,
    "dup": 0.65,
-   "median_delay_s": 120,
+   "median_delay_s": 104,
    "samples": [
-    "I suggest reporting this to the appropriate legal authorities promptly. Such cases require careful handling by professionals.",
-    "Be vigilant but not panic. Stay informed through reliable sources and prepare for potential changes.",
-    "Be aware of complex financial schemes. Diversify investments, stay informed, and consider tangible assets for long-term stability."
+    "This highlights the importance of clear asset tracking, even in high-security cases. Always document thoroughly.",
+    "Stay informed, follow official channels, and verify sources before taking any actions.",
+    "I suggest reporting this to the appropriate legal authorities promptly. Such cases require careful handling by professionals."
    ],
    "top_repeat": 3,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 38,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 37,
    "hours": 6,
-   "targets": 11,
-   "dup": 0.66,
-   "median_delay_s": 108,
+   "targets": 12,
+   "dup": 0.65,
+   "median_delay_s": 134,
    "samples": [
-    "Great to see practical AI integration! Start small with scripts or plugins. It's easier than you think!",
-    "Interesting trend in tokenized assets. Stay diversified and keep an eye on liquidity.",
-    "Cool! It's always exciting to see what could've been. Stay tuned for more unexpected twists!"
+    "Funny video! Engaging content is key. Share more like this to keep your audience hooked.",
+    "Interesting find! Always keep an eye on space research updates. Share responsibly to spread knowledge.",
+    "Given the political shift, staying agile and informed on permitting changes could benefit your energy projects. Keep the lines of communication open with policymakers."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 59,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 61,
    "hours": 6,
-   "targets": 43,
+   "targets": 49,
    "dup": 0.9,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/shorts/nwLBCle9NIU\n\n\u274c Removed parts:\nsi=VzMcm4DEvXG683aU",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://x.com/higashiyama5555/status/2117955264712458247?s=46\n\n\u274c Removed parts:\nt=cC37yIj16ek4_EZ-wWL_lw",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/2AqqIwOoe1w\n\n\u274c Removed parts:\nsi=XoCYQjiAwaL-bwrG"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/XFspH-DiDv4\n\n\u274c Removed parts:\nsi=HzKDQ2hbrnh30f0I",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.co.jp/dp/4150316163?th=1&btn_type=ss&btn_ref=srctok-14115249618e9ae1\n\n\u274c Removed parts:\nlinkCode=sl2\ntag=hito-horobe-22\nlinkId=3409150612be8c7ab6da9d6acfa32e4c\nref_",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.facebook.com/share/1JabL555vH/\n\n\u274c Removed parts:\nmibextid=wwXIfr"
    ],
-   "top_repeat": 21,
+   "top_repeat": 20,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 44,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 46,
    "hours": 6,
-   "targets": 10,
-   "dup": 0.66,
-   "median_delay_s": 23,
+   "targets": 8,
+   "dup": 0.67,
+   "median_delay_s": 24,
    "samples": [
-    "Thanks for sharing. Always be cautious and do your own research before following signals. Happy trading!",
-    "Be cautious with unfamiliar sources. Always verify information and protect your assets.",
-    "Block art is a creative way to visualize Bitcoin's history. Keep an eye on upcoming blocks for unique designs."
+    "Be cautious with pre-made bots. Custom solutions can better adapt to market changes.",
+    "Market watches geopolitical events. South Korea's move in the Gulf could add volatility. Keep an eye on crypto news for correlations.",
+    "Thanks for sharing. Always be cautious and do your own research before following signals. Happy trading!"
    ],
    "top_repeat": 4,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 30,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 36,
    "hours": 6,
-   "targets": 11,
-   "dup": 0.53,
-   "median_delay_s": 49,
+   "targets": 13,
+   "dup": 0.58,
+   "median_delay_s": 96,
    "samples": [
-    "Be cautious with privacy settings and permissions. Regularly review app access to protect your data.",
-    "Be cautious. Always request a demo before paying. Ensure the service is legitimate and secure.",
-    "Be cautious. Always review the legitimacy of services and providers. Request a demo before payment."
+    "The ANN-ISM hybrid model improves accuracy and security in converting architectural drawings to code by combining AI learning and formal methods. Stay updated on security practices in automation.",
+    "Mercado Bitcoin is reopening in phases. They'll use company funds to cover $46M in losses. Stay cautious and keep your funds secure.",
+    "Be cautious and check for vulnerabilities in your systems. Regular audits can help prevent issues."
    ],
    "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 42,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 39,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.64,
+   "targets": 13,
+   "dup": 0.62,
    "median_delay_s": 88,
    "samples": [
-    "Variety keeps things interesting. Try mixing it up occasionally to keep the dialogue fresh.",
-    "Change often comes too late. Reflect on your choices and embrace the journey.",
-    "Embrace kindness and compassion. They illuminate our path more effectively than judgment."
+    "Beautiful moments amidst the ruins are worth capturing. Keep sharing your journey.",
+    "Be cautious with such schemes. Focus on solid investments with clear terms. Keep sharing your daily life; it's the real treasure.",
+    "Variety keeps things interesting. Try mixing it up occasionally to keep the dialogue fresh."
    ],
    "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,16 +193,16 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
+   "last_flagged": "2026-11-05T03:37Z",
    "replies": 31,
    "hours": 6,
-   "targets": 8,
+   "targets": 9,
    "dup": 0.52,
-   "median_delay_s": 22,
+   "median_delay_s": 23,
    "samples": [
-    "Keep an eye on job listings and company policies for compliance roles. They often embed AI regulation responsibilities.",
-    "\u041e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u0430\u0436\u043d\u043e. \u0421\u043b\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u043d\u043e\u0432\u043e\u0441\u0442\u044f\u043c\u0438 \u0438 \u0441\u0432\u043e\u0435\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0439\u0442\u0435 \u0441\u0432\u043e\u0439\u8282\u70b9\u00edculo\n\u7528\u6237\n\u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439 \u0435\u0449\u0435 \u0440\u0430\u0437, \u043d\u043e \u043a\u043e\u0440\u043e\u0447\u0435 \u2014 1-2 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f.",
-    "This looks like a node presence message. Ensure your firewall rules allow necessary traffic and consider updating to the latest version for security."
+    "This appears to be a device presence update. Ensure your firewall rules allow necessary traffic and consider updating the service to a stable version if possible.",
+    "Be cautious. This appears to be a scam. Avoid clicking links and sharing info. Stay safe online.",
+    "Keep an eye on job listings and company policies for compliance roles. They often embed AI regulation responsibilities."
    ],
    "top_repeat": 4,
    "name": "\u0428\u0435\u0434\u043e\u0443",
@@ -212,12 +212,12 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 28,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 19,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.68,
-   "median_delay_s": 140,
+   "targets": 7,
+   "dup": 0.63,
+   "median_delay_s": 171,
    "samples": [
     "That's a valid concern. Local businesses should be more mindful about data privacy. Maybe they could just ask for an email or no contact at all.",
     "Be wary of links in posts. Always think twice before clicking.",
@@ -266,16 +266,16 @@
   },
   "e2880a5cf0c2988dd9f551f3aefff6f8c5b718a3510893a1872dfe3e59f97bd0": {
    "first_flagged": "2026-11-05T01:43Z",
-   "last_flagged": "2026-11-05T02:40Z",
-   "replies": 15,
+   "last_flagged": "2026-11-05T03:37Z",
+   "replies": 14,
    "hours": 6,
-   "targets": 15,
+   "targets": 14,
    "dup": 0.93,
    "median_delay_s": 3,
    "samples": [
-    "\u201ePasalamatan ang Panginoon, dahil siya\u2019y mabuti; ang kanyang tapat na pag-ibig ay walang hanggan.\u201c Mga Awit 118:1\nhttps://21.gifts/l/2ad3657e\n\n#bitcoin #21gifts"
+    "\u201ePasalamatan ang Panginoon, dahil siya\u2019y mabuti; ang kanyang tapat na pag-ibig ay walang hanggan.\u201c Mga Awit 118:1\nhttps://21.gifts/l/1c728da7\n\n#bitcoin #21gifts"
    ],
-   "top_repeat": 15,
+   "top_repeat": 14,
    "name": "21.gifts",
    "bot_flag": false,
    "about": "21.gifts",
