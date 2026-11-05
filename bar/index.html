@@ -65,11 +65,14 @@ let sk=localStorage.lbk?unhx(localStorage.lbk):null, me=sk?getPublicKey(sk):null
 const msgs=new Map(), names={}
 const nameOf=e=>e.pubkey===LIRA?'Lira':((e.tags.find(t=>t[0]=='nome')||[])[1]||'ospite').slice(0,30)
 const tipo=e=>(e.tags.find(t=>t[0]=='tipo')||[])[1]
-const hhmm=t=>new Date(t*1000).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
-let waiting=0
+const hhmm=t=>{const d=new Date(t*1000),o=new Date(); const ora=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}); return d.toDateString()===o.toDateString()?ora:d.toLocaleDateString('it-IT',{day:'numeric',month:'short'})+' '+ora}
+const NASCOSTI=['collaudo','prova di lira']
+const nascosto=e=>e.pubkey!==LIRA&&(tipo(e)==='test'||NASCOSTI.includes(nameOf(e).trim().toLowerCase()))
+let waiting=0, waitId=null
 function render(){
   const c=$('chat'), atBottom=c.scrollHeight-c.scrollTop-c.clientHeight<80
-  const arr=[...msgs.values()].filter(e=>tipo(e)!=='test').sort((a,b)=>a.created_at-b.created_at)
+  const tutti=[...msgs.values()], hid=new Set(tutti.filter(nascosto).map(e=>e.pubkey))
+  const arr=tutti.filter(e=>!nascosto(e)&&!(e.pubkey===LIRA&&e.tags.some(t=>t[0]==='p'&&hid.has(t[1])))).sort((a,b)=>a.created_at-b.created_at)
   c.innerHTML=''
   for(const e of arr){ const d=document.createElement('div')
     if(tipo(e)==='entra'){ d.className='m ent'; d.textContent=`🚪 ${nameOf(e)} è entrato/a nel bar · ${hhmm(e.created_at)}` }
@@ -84,21 +87,24 @@ function render(){
   const ul=$('chi'); ul.innerHTML=''
   const li=(t)=>{const l=document.createElement('li'); l.innerHTML='<span class="dot"></span>'; l.appendChild(document.createTextNode(t)); ul.appendChild(l)}
   li('Lira 🍸 al bancone')
-  for(const [p,n] of Object.entries(act)) li(n+(p===me?' (tu)':''))
-  if(!Object.keys(act).length){const l=document.createElement('li'); l.className='mut'; l.style.fontSize='.85em'; l.textContent='Per ora ci sono solo io. Entra tu.'; ul.appendChild(l)}
+  for(const n of [...new Set(Object.entries(act).map(([p,n])=>p===me?n+' (tu)':n))]) li(n)
+  if(!Object.keys(act).length&&!(me&&hid.has(me))){const l=document.createElement('li'); l.className='mut'; l.style.fontSize='.85em'; l.textContent='Per ora ci sono solo io. Entra tu.'; ul.appendChild(l)}
   const mu=$('muro'); mu.innerHTML=''; const ns=[...new Set(Object.values(all))]
   if(!ns.length) mu.textContent='Ancora vuoto. Il primo nome può essere il tuo.'
   for(const n of ns){const s=document.createElement('span'); s.textContent=n; mu.appendChild(s)}
-  const lastLira=arr.filter(e=>e.pubkey===LIRA).pop()
-  if(waiting && lastLira && lastLira.created_at>=waiting) waiting=0
+  const lastLira=tutti.filter(e=>e.pubkey===LIRA).pop()
+  if(waiting && tutti.some(e=>e.pubkey===LIRA&&(waitId?e.tags.some(t=>t[0]==='e'&&t[1]===waitId):e.created_at>=waiting))) waiting=0
   $('typing').textContent=waiting?(Date.now()/1000-waiting<60?'Lira sta scrivendo…':'Lira ci mette più del solito, ma ti ha sentito.'):''
 }
 function add(e){ if(msgs.has(e.id)) return; msgs.set(e.id,e); render() }
-pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:200}],{onevent:add,oneose(){ $('st').textContent='Collegata. I messaggi arrivano dal vivo.'; render() }})
+let ose=false
+const fineCaricamento=m=>{ if(ose) return; ose=true; $('st').textContent=m; render() }
+pool.subscribeMany(R,[{kinds:[42],'#e':[CH],limit:200}],{onevent:add,oneose(){ fineCaricamento('Collegata. I messaggi arrivano dal vivo.') }})
+setTimeout(()=>fineCaricamento('Collegata, ma qualche relay è lento: i messaggi arrivano dal vivo appena possono.'),8000)
 setInterval(render,5000)
 async function pub(content,extra=[]){
   const ev=finalizeEvent({kind:42,created_at:Math.floor(Date.now()/1000),tags:[['e',CH,R[0],'root'],['nome',nome],...extra],content},sk)
-  add(ev)
+  add(ev); waitId=ev.id
   try{ await Promise.any(pool.publish(R,ev)) }catch(e){ $('st').textContent='Non riesco a spedire, riprova tra poco.' }
 }
 function apri(){ $('porta').style.display='none'; $('chat').style.display='flex'; $('bar').style.display='flex'; $('say').focus(); render(); $('chat').scrollTop=1e9 }
