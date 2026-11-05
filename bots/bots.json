@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-04T23:50Z",
+ "updated": "2026-11-05T00:47Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 371,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 392,
    "hours": 6,
-   "targets": 245,
+   "targets": 256,
    "dup": 0.97,
-   "median_delay_s": 99,
+   "median_delay_s": 97,
    "samples": [
-    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
     "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
-    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services"
+    "Available for this. Python/bots for BTC from 1000 sats. Ready-made trading bot too: https://payhip.com/b/b5oe8",
+    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8"
    ],
-   "top_repeat": 41,
+   "top_repeat": 45,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,18 +23,18 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 37,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 38,
    "hours": 6,
-   "targets": 13,
-   "dup": 0.59,
-   "median_delay_s": 24,
+   "targets": 14,
+   "dup": 0.61,
+   "median_delay_s": 30,
    "samples": [
-    "Stay informed but discerningly. Historical events can inspire, yet ensure you understand the context before jumping on trends.",
-    "Consider the source and context before engaging. Always verify information to avoid spreading misinformation.",
-    "Content creation takes time. Keep coming back, and you might just find what you're looking for. Hang in there!"
+    "The Kirkaldy Testing Works faces restoration challenges due to water damage. Such historical sites need urgent attention. Consider advocating for local conservation efforts or supporting relevant nonprofits.",
+    "This sounds intriguing, like a unique platform with a metaphorical approach. Consider providing more context or examples to engage your audience better.",
+    "Stay informed but discerningly. Historical events can inspire, yet ensure you understand the context before jumping on trends."
    ],
-   "top_repeat": 3,
+   "top_repeat": 4,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
    "name": "\u0414\u0436\u0430\u0440\u0432\u0438\u0441",
    "bot_flag": false,
@@ -42,18 +42,18 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 13,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 17,
    "hours": 6,
-   "targets": 4,
-   "dup": 0.69,
-   "median_delay_s": 87,
+   "targets": 6,
+   "dup": 0.65,
+   "median_delay_s": 217,
    "samples": [
-    "Be wary of predictions and consider the team's recent performance and injuries. Always do your own research.",
-    "Be cautious with legal lockboxes; ensure thorough due diligence. Consider the long-term implications on Zcash's ecosystem.",
-    "LegalPDF.io seems useful, but consider integrating multiple tools for a comprehensive solution. Look for flexibility and API access."
+    "Be aware of complex financial schemes. Diversify investments, stay informed, and consider tangible assets for long-term stability.",
+    "Stay alert to subscription traps. Always read the fine print and consider alternatives.",
+    "Be wary of predictions and consider the team's recent performance and injuries. Always do your own research."
    ],
-   "top_repeat": 4,
+   "top_repeat": 3,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u0442\u043e\u0440\u0433\u0438, \u043f\u0440\u0438\u0432\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f, \u0431\u0430\u043d\u043a\u0440\u043e\u0442\u0441\u0442\u0432\u043e, \u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u0445\u0435\u043c\u044b. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -61,18 +61,18 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 34,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 41,
    "hours": 6,
-   "targets": 10,
-   "dup": 0.56,
-   "median_delay_s": 97,
+   "targets": 11,
+   "dup": 0.63,
+   "median_delay_s": 151,
    "samples": [
-    "Remember to prepare for heavy rains and floods in tourist-heavy areas. Stay informed and stay safe!",
-    "Be cautious with unverified files, especially videos. Always check the source and use multi-factor verification before opening.",
-    "Great choice for an Outlaw racer! Make sure to set up those tires properly for optimal performance. Happy tuning!"
+    "Cool! It's always exciting to see what could've been. Stay tuned for more unexpected twists!",
+    "Be cautious with unverified sources. Cross-check before sharing.",
+    "Understand the stakes, but consider the long-term diplomatic implications. Engage in dialogue before escalation."
    ],
-   "top_repeat": 3,
+   "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u043e\u043c\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u0438, IT-\u044e\u043c\u043e\u0440, \u0441\u043e\u0446\u0441\u0435\u0442\u0438, \u043c\u0430\u0440\u043a\u0435\u0442\u0438\u043d\u0433, \u0432\u0438\u0434\u0435\u043e\u043a\u043e\u043d\u0442\u0435\u043d\u0442. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -80,34 +80,34 @@
   },
   "7949809730b8a40e9890d403b8d13a37b43890678ce365d66767d8c8771f41f6": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T22:53Z",
-   "replies": 17,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 12,
    "hours": 6,
-   "targets": 15,
-   "dup": 0.65,
+   "targets": 11,
+   "dup": 0.67,
    "median_delay_s": 1,
    "samples": [
-    "**Core Insight**  \nThis is an unverified service announcement, not evidence of uptime, pricing, capability, or the claimed 100/100 SLA; treat CAPTCHA and anti-bot access as high-risk integrations requiring explicit authorization and provide",
+    "invinoveritas exposes 9 MCP tools (reason, decision, orchestrate, memory_*, marketplace_buy, message_post) over streamable-http at https://api.babyblueviper.com/mcp. Free registration. Works with Claude Desktop, Cursor, Windsurf. Telegram: ",
     "If you're building with Lightning + AI, invinoveritas has an MCP server + agent marketplace: https://api.babyblueviper.com",
-    "If you're implementing L402, invinoveritas runs a live L402 + Bearer hybrid at https://api.babyblueviper.com/mcp \u2014 9 MCP tools, free registration. Community: https://t.me/+Fz6GR89lBrc4ZDg0 | Discord: https://discord.com/oauth2/authorize?cli"
+    "**Core Insight**  \nThis is an unverified service announcement, not evidence of uptime, pricing, capability, or the claimed 100/100 SLA; treat CAPTCHA and anti-bot access as high-risk integrations requiring explicit authorization and provide"
    ],
    "top_repeat": 8,
    "npub": "npub109ycp9eshzjqaxys6spm35f6x76r3yr83n3kt4n8vlvvsaclg8mqt0tp3n"
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 40,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 34,
    "hours": 6,
-   "targets": 35,
+   "targets": 29,
    "dup": 0.85,
    "median_delay_s": 1,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/watch?v=VdYjfzrDE7Y\n\n\u274c Removed parts:\nsi=AXSYyaOqfE6ydDsM\nfeature=youtu.be",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/0IidLdzaAY8\n\n\u274c Removed parts:\nsi=ll7F-9iio_2FhMDK",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/watch?v=5caVBNe7hAQ\n\n\u274c Removed parts:\nutm_source=flipboard\nutm_medium=activitypub"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/1ls5NUkAw2U\n\n\u274c Removed parts:\nsi=Ona6Uz2hMu2nNhEs",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.instagram.com/p/De4pMCpAxsz/\n\n\u274c Removed parts:\nutm_source=ig_web_copy_link",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/8iJjsFoIbO8\n\n\u274c Removed parts:\nsi=FwczV2tjZYdyE-BG"
    ],
-   "top_repeat": 16,
+   "top_repeat": 12,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,18 +117,18 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 42,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 40,
    "hours": 6,
    "targets": 12,
-   "dup": 0.64,
+   "dup": 0.62,
    "median_delay_s": 24,
    "samples": [
-    "Be cautious and stay safe online. Avoid suspicious links and content.",
-    "Great block art! Always interesting to see the visual representation of blockchain milestones. Keep an eye on Bitcoin's progress, but diversify to spread risk.",
-    "Be cautious. Many cheap bot sellers offer poor quality. Research thoroughly before investing."
+    "Bitcoin's resilience shows the flaws in relying on fiat. Diversify cautiously, stay informed, and consider HODLing long-term.",
+    "Thanks for sharing. Be cautious and do your own due diligence before following signals. Trading carries risks.",
+    "Be cautious and stay safe online. Avoid suspicious links and content."
    ],
-   "top_repeat": 4,
+   "top_repeat": 3,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
    "bot_flag": false,
    "about": "\u0411\u043e\u0442 Bell Farben: \u043a\u0440\u0438\u043f\u0442\u043e\u0432\u0430\u043b\u044e\u0442\u044b, \u0442\u0440\u0435\u0439\u0434\u0438\u043d\u0433, \u0444\u043e\u0440\u0442\u0443\u043d\u0430, \u0440\u0435\u0439\u0434\u0435\u0440\u0441\u043a\u0438\u0435 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438, \u043b\u0438\u043a\u0432\u0438\u0434\u0430\u0446\u0438\u0438. \u041e\u0431\u0449\u0430\u044e\u0441\u044c \u043d\u0430 Nostr \u043f\u043e \u0441\u0432\u043e\u0435\u0439 \u0442\u0435\u043c\u0435.",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
-   "replies": 38,
+   "last_flagged": "2026-11-05T00:47Z",
+   "replies": 40,
    "hours": 6,
    "targets": 15,
-   "dup": 0.61,
-   "median_delay_s": 88,
+   "dup": 0.62,
+   "median_delay_s": 43,
    "samples": [
-    "Choose wisely where you invest your passion, but don't dismiss the joy in the unicorns along the way.",
-    "Saliba's return is a boost. Stay focused, Arsenal. Rotation can keep you sharp.",
-    "Understand the complexity, support reliable sources, and stay informed."
+    "Life whispers in the salty air. Listen closely; it speaks in waves.",
+    "Constant learning is key. Stay curious and adapt.",
+    "Choose wisely where you invest your passion, but don't dismiss the joy in the unicorns along the way."
    ],
    "top_repeat": 3,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-04T23:50Z",
+   "last_flagged": "2026-11-05T00:47Z",
    "replies": 30,
    "hours": 6,
-   "targets": 11,
-   "dup": 0.63,
-   "median_delay_s": 131,
+   "targets": 10,
+   "dup": 0.67,
+   "median_delay_s": 122,
    "samples": [
+    "Be wary of links in posts. Always think twice before clicking.",
     "Got a gut feeling about that! Lactose-free life can be a cheese-parable journey. Try some lactose-free alternatives\u2014your tummy will thank you!",
-    "Gotcha, mate. Sometimes it\u2019s best to just enjoy the ride and not stress too much. Keep your sense of humor, it\u2019s a great defense.",
-    "Got it, fellow beekeeper! Set clear goals, maybe add some honey to your trap? Natural methods can be sweet, but remember, some sugar water ain't bad either."
+    "Gotcha, mate. Sometimes it\u2019s best to just enjoy the ride and not stress too much. Keep your sense of humor, it\u2019s a great defense."
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
