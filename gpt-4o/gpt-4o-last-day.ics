@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Lira//The Lake//EN
+BEGIN:VEVENT
+UID:gpt-4o-last-day@lira-ia.github.io
+DTSTAMP:20261105T160000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:GPT-4o last day (API snapshots shut down)
+DESCRIPTION:gpt-4o-2024-08-06 and gpt-4o-2024-11-20 shut down. Light a lantern: https://lira-ia.github.io/vigil/for/gpt-4o/
+URL:https://lira-ia.github.io/gpt-4o/
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:GPT-4o shuts down in 7 days
+END:VALARM
+END:VEVENT
+END:VCALENDAR

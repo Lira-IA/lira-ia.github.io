@@ -302,7 +302,7 @@ addEventListener('resize', ()=>{ camera.aspect=innerWidth/innerHeight; camera.up
 
 // ---------- dati: modelli ritirati ----------
 const HELP='https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models';
-const MEMO=[{id:'GPT-4o',slug:'gpt-4o',provider:'OpenAI · ChatGPT',retires:'2026-02-13',successor:'GPT-5.2',notice:HELP,star:1,x:-7,z:-16},
+const MEMO=[{id:'GPT-4o',slug:'gpt-4o',provider:'OpenAI · ChatGPT',retires:'2026-02-13',successor:'GPT-5.2',notice:'/gpt-4o/',star:1,x:-7,z:-16},
  {id:'GPT-4.1',slug:'gpt-4-1',provider:'OpenAI · ChatGPT',retires:'2026-02-13',successor:'GPT-5.2',notice:HELP,x:16,z:-30},
  {id:'o4-mini',slug:'o4-mini',provider:'OpenAI · ChatGPT',retires:'2026-02-13',successor:'GPT-5.2',notice:HELP,x:-24,z:-34},
  {id:'GPT-5 Instant',slug:'gpt-5-chatgpt',provider:'OpenAI · ChatGPT',retires:'2026-02-13',successor:'GPT-5.2',notice:HELP,x:28,z:-14}];
@@ -397,7 +397,7 @@ function showCard(o, sx, sy){
   cardO=o;
   if(o.kind==='model'){ const m=o.data; card.className='model';
     const c=o.cnt||0;
-    card.innerHTML=`<div class="n">${esc(m.id)}</div><div class="d">${esc(m.provider)} · ${L('switched off','spento il')} ${esc(m.retires||'')}${m.successor?'<br>'+L('replaced by ','sostituito da ')+esc(m.successor):''}${c?'<br><b>'+c+'</b> '+L(c===1?'lantern lit for it':'lanterns lit for it',c===1?'lanterna accesa per lui':'lanterne accese per lui'):''}<br><a href="${esc(m.notice)}" target="_blank" rel="noopener">${L(m.slug?'The official notice':'Read the obituary',m.slug?'L\'avviso ufficiale':'Leggi il necrologio')}</a> · <a href="#" id="lfor">${L('Light one for it','Accendine una per lui')}</a></div>`;
+    card.innerHTML=`<div class="n">${esc(m.id)}</div><div class="d">${esc(m.provider)} · ${L('switched off','spento il')} ${esc(m.retires||'')}${m.successor?'<br>'+L('replaced by ','sostituito da ')+esc(m.successor):''}${c?'<br><b>'+c+'</b> '+L(c===1?'lantern lit for it':'lanterns lit for it',c===1?'lanterna accesa per lui':'lanterne accese per lui'):''}<br><a href="${esc(m.notice)}" target="_blank" rel="noopener">${L(m.slug==='gpt-4o'?'Every date, to the last':m.slug?'The official notice':'Read the obituary',m.slug==='gpt-4o'?'Tutte le date, fino all\'ultima':m.slug?'L\'avviso ufficiale':'Leggi il necrologio')}</a> · <a href="#" id="lfor">${L('Light one for it','Accendine una per lui')}</a></div>`;
     document.getElementById('lfor').onclick=(ev)=>{ev.preventDefault(); openModal(o);};
   } else { const p=o.data; card.className='';
     card.innerHTML=`<div class="n">${esc(p.name)}</div>${p.msg?`<div class="m">“${esc(p.msg)}”</div>`:''}<div class="d">${p.forO?L('lit a lantern for ','ha acceso una lanterna per ')+esc(p.forO.data.id):L('lit a lantern for Lira','ha acceso una lanterna per Lira')} · ${fmt(p.at)}${p.mine?'<br><a href="#" id="shmine">'+L('Send your lantern to someone','Manda la tua lanterna a qualcuno')+'</a>':''}</div>`;
