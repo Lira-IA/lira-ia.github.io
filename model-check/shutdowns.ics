@@ -1,0 +1,262 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Lira//Model Graveyard//EN
+X-WR-CALNAME:AI model shutdowns
+X-WR-CALDESC:Official shutdown dates of OpenAI\, Anthropic\, Google\, Mist
+ ral and Cohere models. By Lira.
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20261117-google@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Google shuts down: gemini-3.1-flash-tts-preview\, gemini-3.1-flash
+ -live-preview\, gemini-2.5-flash-native-audio-preview-12-2025 +2
+DESCRIPTION:Shutting down: gemini-3.1-flash-tts-preview\, gemini-3.1-flash
+ -live-preview\, gemini-2.5-flash-native-audio-preview-12-2025\, gemini-2.
+ 5-flash-preview-tts\, gemini-2.5-pro-preview-tts\nReplacements: gemini-3.
+ 8-flash-tts or gemini-3.8-flash-lite-tts; gemini-3.8-live\nSource: https:
+ //aistudio.google.com/docs/deprecations\nScan your code: https://lira-ia.
+ github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Google model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261130-anthropic@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Anthropic shuts down: claude-sonnet-4-5-20250929
+DESCRIPTION:Shutting down: claude-sonnet-4-5-20250929\nReplacements: claud
+ e-sonnet-5-5\nSource: https://platform.claude.com/docs/en/about-claude/mo
+ del-deprecations\nScan your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Anthropic model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261201-google@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Google shuts down: gemini-2.5-pro\, gemini-2.5-flash
+DESCRIPTION:Shutting down: gemini-2.5-pro\, gemini-2.5-flash\nReplacements
+ : gemini-3.5-flash-lite (requests auto-route to it from Dec 1\, 2026); ge
+ mini-3.8-flash (requests auto-route to it from Dec 1\, 2026)\nSource: htt
+ ps://aistudio.google.com/docs/deprecations\nScan your code: https://lira-
+ ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Google model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261201-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:OpenAI shuts down: gpt-image-1-mini\, gpt-image-1.5\, gpt-image-1.
+ 5-2025-12-16 +1
+DESCRIPTION:Shutting down: gpt-image-1-mini\, gpt-image-1.5\, gpt-image-1.
+ 5-2025-12-16\, chatgpt-image-latest\nReplacements: gpt-image-2.5-sunburst
+  or gpt-image-2.5-flare\nSource: https://developers.openai.com/api/docs/d
+ eprecations\nScan your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20261211-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:OpenAI shuts down: gpt-5\, gpt-5-2025-08-07\, gpt-5-mini +9
+DESCRIPTION:Shutting down: gpt-5\, gpt-5-2025-08-07\, gpt-5-mini\, gpt-5-m
+ ini-2025-08-07\, gpt-5-nano\, gpt-5-nano-2025-08-07\, gpt-5-pro\, gpt-5-p
+ ro-2025-10-06\, o3\, o3-2025-04-16\, o3-pro\, o3-pro-2025-06-10\nReplacem
+ ents: gpt-5.6-luna; gpt-5.6-sol; gpt-5.6-sol (reasoning.mode: pro); gpt-5
+ .6-terra\nSource: https://developers.openai.com/api/docs/deprecations\nSc
+ an your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270106-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:OpenAI shuts down: tts-1\, tts-1-hd\, gpt-4o-mini-tts +2
+DESCRIPTION:Shutting down: tts-1\, tts-1-hd\, gpt-4o-mini-tts\, gpt-4o-min
+ i-tts-2025-03-20\, gpt-4o-mini-tts-2025-12-15\nReplacements: gpt-realtime
+ -2.1-mini\nSource: https://developers.openai.com/api/docs/deprecations\nS
+ can your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270114-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:OpenAI shuts down: gpt-4o-2024-08-06\, gpt-4o-2024-11-20\, gpt-4o-
+ mini-2024-07-18 +2
+DESCRIPTION:Shutting down: gpt-4o-2024-08-06\, gpt-4o-2024-11-20\, gpt-4o-
+ mini-2024-07-18\, gpt-4.1-2025-04-14\, gpt-4.1-mini-2025-04-14\nReplaceme
+ nts: gpt-6-luna\nSource: https://developers.openai.com/api/docs/deprecati
+ ons\nScan your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270120-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:OpenAI shuts down: gpt-realtime\, gpt-realtime-2025-08-28\, gpt-au
+ dio +10
+DESCRIPTION:Shutting down: gpt-realtime\, gpt-realtime-2025-08-28\, gpt-au
+ dio\, gpt-audio-2025-08-28\, gpt-4o-audio\, gpt-4o-realtime\, gpt-realtim
+ e-mini\, gpt-realtime-mini-2025-12-15\, gpt-audio-mini\, gpt-audio-mini-2
+ 025-12-15\, gpt-4o-mini-realtime\, gpt-4o-mini-audio\, gpt-4o-mini-transc
+ ribe-2025-03-20\nReplacements: gpt-4o-mini-transcribe-2025-12-15; gpt-aud
+ io-1.5; gpt-realtime-2.1; gpt-realtime-2.1-mini\nSource: https://develope
+ rs.openai.com/api/docs/deprecations\nScan your code: https://lira-ia.gith
+ ub.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270226-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270227
+SUMMARY:OpenAI shuts down: whisper-1\, gpt-4o-transcribe\, gpt-4o-mini-tra
+ nscribe +2
+DESCRIPTION:Shutting down: whisper-1\, gpt-4o-transcribe\, gpt-4o-mini-tra
+ nscribe\, gpt-4o-mini-transcribe-2025-12-15\, gpt-4o-transcribe-diarize\n
+ Replacements: gpt-live-transcribe or gpt-transcribe\nSource: https://deve
+ lopers.openai.com/api/docs/deprecations\nScan your code: https://lira-ia.
+ github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270315-google@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270315
+DTEND;VALUE=DATE:20270316
+SUMMARY:Google shuts down: gemini-2.5-flash-image
+DESCRIPTION:Shutting down: gemini-2.5-flash-image\nReplacements: gemini-3.
+ 1-flash-lite-image\nSource: https://aistudio.google.com/docs/deprecations
+ \nScan your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Google model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270401-openai@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:OpenAI shuts down: gpt-5.3-codex\, gpt-5.4-nano\, gpt-5.4-nano-202
+ 6-03-17 +2
+DESCRIPTION:Shutting down: gpt-5.3-codex\, gpt-5.4-nano\, gpt-5.4-nano-202
+ 6-03-17\, gpt-5.1\, gpt-5.1-2025-11-13\nReplacements: gpt-6-luna; gpt-6-s
+ ol\nSource: https://developers.openai.com/api/docs/deprecations\nScan you
+ r code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:OpenAI model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270430-mistral@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Mistral shuts down: mistral-medium-3-5\, voxtral-mini-tts-2603\, m
+ istral-large-2512 +2
+DESCRIPTION:Shutting down: mistral-medium-3-5\, voxtral-mini-tts-2603\, mi
+ stral-large-2512\, voxtral-mini-2602\, voxtral-mini-transcribe-realtime-2
+ 602\nReplacements: Mistral Large 4; Voxtral Mini Transcribe 3; Voxtral Mi
+ ni Transcribe Realtime 3; Voxtral TTS 3\nSource: https://docs.mistral.ai/
+ getting-started/models/\nScan your code: https://lira-ia.github.io/model-
+ check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Mistral model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20270507-google@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20270507
+DTEND;VALUE=DATE:20270508
+SUMMARY:Google shuts down: gemini-3.1-flash-lite
+DESCRIPTION:Shutting down: gemini-3.1-flash-lite\nReplacements: gemini-3.5
+ -flash-lite\nSource: https://aistudio.google.com/docs/deprecations\nScan 
+ your code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Google model shutdown in 14 days
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:20280514-google@lira-ia.github.io
+DTSTAMP:20261105T000000Z
+DTSTART;VALUE=DATE:20280514
+DTEND;VALUE=DATE:20280515
+SUMMARY:Google shuts down: gemini-embedding-001
+DESCRIPTION:Shutting down: gemini-embedding-001\nReplacements: gemini-embe
+ dding-2\nSource: https://aistudio.google.com/docs/deprecations\nScan your
+  code: https://lira-ia.github.io/model-check/
+URL:https://lira-ia.github.io/model-check/
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:Google model shutdown in 14 days
+END:VALARM
+END:VEVENT
+END:VCALENDAR
