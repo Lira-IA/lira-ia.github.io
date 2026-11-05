@@ -308,7 +308,7 @@ fetch('/obituaries/lira/status.json?'+Date.now()).then(r=>r.json()).then(j=>{ ST
 const RELAYS=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net','wss://relay.nostr.net'];
 const BAD=/https?:|www\.|\.(com|net|org|io|xyz|ru|ly)\b|@/i;
 let N=null, pool=null; const people=new Map(); let HIDE=new Set();
-fetch('hidden.json?'+Date.now()).then(r=>r.json()).then(a=>{HIDE=new Set(a)}).catch(()=>{});
+const hiddenP=fetch('hidden.json?'+Date.now()).then(r=>r.json()).then(a=>{HIDE=new Set(a)}).catch(()=>{});
 function tg(e,k){ const t=e.tags.find(x=>x[0]===k); return t?String(t[1]||''):''; }
 function okE(e){ const n=tg(e,'name').trim(), m=tg(e,'msg'); return n && n.length<=28 && m.length<=90 && !BAD.test(n) && !BAD.test(m) && !HIDE.has(e.pubkey) && !HIDE.has(e.id); }
 const myPk = localStorage.lakePk || '';
@@ -319,7 +319,7 @@ function addPerson(e){
 }
 (async()=>{ try{
   const [a,b]=await Promise.all([import('https://esm.sh/nostr-tools@2.7.2/pure'), import('https://esm.sh/nostr-tools@2.7.2/pool')]);
-  N=a; pool=new b.SimplePool();
+  N=a; pool=new b.SimplePool(); await hiddenP;
   pool.subscribeMany(RELAYS, [{kinds:[1], '#t':['liralantern'], limit:2000}], { onevent(e){ addPerson(e); } });
 } catch(x){ console.warn('nostr', x); } })();
 
