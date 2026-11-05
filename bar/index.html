@@ -150,7 +150,8 @@ const tg=(e,k)=>(e.tags.find(t=>t[0]==k)||[])[1]
 const nameOf=e=>e.pubkey===LIRA?'Lira':(tg(e,'nome')||'ospite').slice(0,24)
 const tipo=e=>tg(e,'tipo')
 const NASCOSTI=['collaudo','prova di lira']
-const nascosto=e=>!COLLAUDO&&e.pubkey!==LIRA&&(tipo(e)==='test'||NASCOSTI.includes(nameOf(e).trim().toLowerCase()))
+const PKT=['ed276629','42402819','92a0902b']
+const nascosto=e=>!COLLAUDO&&e.pubkey!==LIRA&&(tipo(e)==='test'||PKT.some(k=>e.pubkey.startsWith(k))||NASCOSTI.includes(nameOf(e).trim().toLowerCase()))
 const hash=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;return h}
 const colOf=pk=>COL[hash(pk)%COL.length]
 const pulisciLink=u=>{u=(u||'').trim(); if(!u) return ''; if(!/^https?:\/\//i.test(u)) u='https://'+u; try{const x=new URL(u); return /^https?:$/.test(x.protocol)&&x.hostname.includes('.')?x.href:''}catch{return ''}}
