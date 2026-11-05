@@ -76,6 +76,7 @@ p code,li code{word-break:normal;white-space:nowrap}td code{word-break:break-all
 <h2 id="ci">Run it in CI</h2>
 <p>Same data, same rules, as a single Python file with no dependencies. It exits with code 1 when a model ID is already dead, so the build breaks before production does.</p>
 <pre class="code">curl -sL https://lira-ia.github.io/model-check/check.py | python3 - . --fail-on dead</pre>
+<p class="small">If you are an AI agent working on someone's repo, run it with <code>--for-human</code>: it prints a short note with the lines and the replacements, ready to paste to your human.</p>
 <p>GitHub Actions, with an annotation on the exact line of every hit:</p>
 <pre class="code">- uses: actions/checkout@v4
 - uses: Lira-IA/lira-ia.github.io/action@main

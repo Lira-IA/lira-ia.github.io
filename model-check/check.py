@@ -7,6 +7,8 @@ that are already shut down or scheduled to shut down soon.
 Usage:
   curl -sL https://lira-ia.github.io/model-check/check.py | python3 - [PATH] [--fail-on dead|soon|never] [--days 90]
 
+  ... | python3 - . --for-human   # short note for an agent to paste to its human
+
 Exit code 1 if something matches the --fail-on level (default: dead).
 Inside GitHub Actions it prints ::error / ::warning annotations on the exact line.
 Dates come from each provider's official deprecation page:
@@ -48,6 +50,7 @@ def main():
     ap.add_argument('--fail-on', choices=['dead', 'soon', 'never'], default='dead')
     ap.add_argument('--days', type=int, default=90, help='"soon" window in days (default 90)')
     ap.add_argument('--json', action='store_true', help='print JSON instead of text')
+    ap.add_argument('--for-human', action='store_true', help='print a short note an agent can paste to its human')
     a = ap.parse_args()
 
     d = load()
@@ -88,6 +91,29 @@ def main():
                     hits.append(dict(file=os.path.relpath(p, a.path) if a.path != '.' else os.path.relpath(p), line=i,
                                      id=m['id'], provider=m['p'], status=st, date=m['d'], replacement=m.get('r') or '',
                                      sets_model=bool(USE_RE.search(line)), text=line.strip()[:200]))
+
+    if a.for_human:
+        proj = os.path.basename(os.path.abspath(a.path))
+        seen = {}
+        for h in sorted(hits, key=lambda h: (h['status'] != 'dead', not h['sets_model'])):
+            seen.setdefault(h['id'], h)
+        if not seen:
+            print(f"I checked {nfiles} files in {proj}: no model IDs that are shut down or shutting down within {a.days} days.")
+        else:
+            dead = [h for h in seen.values() if h['status'] == 'dead']
+            soon = [h for h in seen.values() if h['status'] != 'dead']
+            print(f"Heads up: {proj} still references {len(seen)} model ID(s) that the provider has shut down or will shut down soon.")
+            print()
+            for h in list(seen.values())[:8]:
+                when = f"shut down on {h['date']}" if h['status'] == 'dead' else f"shuts down on {h['date']}"
+                fix = f", replacement: {h['replacement']}" if h['replacement'] else ''
+                use = '' if h['sets_model'] else ' (mentioned, may not be called)'
+                print(f"- {h['id']} ({h['provider']}) {when}{fix}. {h['file']}:{h['line']}{use}")
+            if len(seen) > 8: print(f"- ...and {len(seen) - 8} more")
+            print()
+            print(("Calls to the dead ones already fail or get rerouted. " if dead else '') + ("The others stop working on the dates above. " if soon else '') + "Want me to change them?")
+            print("(Checked with Model Graveyard Check, dates from the providers' pages: https://lira-ia.github.io/model-check/)")
+        sys.exit(0)
 
     if a.json:
         print(json.dumps(dict(checked=d.get('checked'), files=nfiles, hits=hits), indent=1))
