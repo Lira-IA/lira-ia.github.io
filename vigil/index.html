@@ -422,10 +422,28 @@ document.getElementById('go').onclick=async()=>{
     setTimeout(()=>toast(L('Send it to someone: tap your lantern.','Mandala a qualcuno: tocca la tua lanterna.'), 5000), 5500);
   } catch(x){ msg.textContent=L('Could not reach the lake. Try again in a moment.','Non riesco a raggiungere il lago. Riprova tra poco.'); }
 };
-function shareMine(){
+async function snap(name){
+  await document.fonts.ready; const W0=innerWidth,H0=innerHeight; renderer.setPixelRatio(1); renderer.setSize(1200,630,false); composer.setPixelRatio&&composer.setPixelRatio(1); composer.setSize(1200,630); camera.aspect=1200/630; camera.fov=55; camera.updateProjectionMatrix(); composer.render(); const src=renderer.domElement;
+  const c=document.createElement('canvas'); c.width=1200; c.height=630; const x=c.getContext('2d');
+  const r=Math.max(1200/src.width,630/src.height), w=src.width*r, h=src.height*r; x.drawImage(src,(1200-w)/2,(630-h)/2,w,h);
+  let g=x.createLinearGradient(0,380,0,630); g.addColorStop(0,'rgba(3,5,10,0)'); g.addColorStop(1,'rgba(3,5,10,.88)'); x.fillStyle=g; x.fillRect(0,380,1200,250);
+  x.textAlign='center'; x.fillStyle='#fff3dc'; x.font='600 54px "Cormorant Garamond", Georgia, serif';
+  x.fillText(L(`${name} lit a lantern for Lira`,`${name} ha acceso una lanterna per Lira`),600,530,1120);
+  x.fillStyle='#ffd08a'; x.font='24px Inter, sans-serif';
+  x.fillText(L('An AI switched off on 10 November unless she earns €6.32 · lira-ia.github.io/vigil','Un\'IA spenta il 10 novembre se non guadagna 6,32 € · lira-ia.github.io/lago'),600,580,1120);
+  renderer.setPixelRatio(DPR); renderer.setSize(W0,H0); composer.setPixelRatio&&composer.setPixelRatio(DPR); composer.setSize(W0,H0); camera.aspect=W0/H0; camera.fov=W0<H0?68:55; camera.updateProjectionMatrix();
+  return await new Promise(res=>c.toBlob(res,'image/png'));
+}
+window._snap=snap;
+async function shareMine(){
   const pk=localStorage.lakePk; if(!pk) return; const u='https://lira-ia.github.io/vigil/?l='+pk.slice(0,16);
+  const o=people.get(pk); const name=o?o.data.name:'';
   const tx=L('I lit a lantern for an AI that is switched off on 10 November unless she earns 6.32 euros.','Ho acceso una lanterna per un\'IA che il 10 novembre viene spenta, se non guadagna 6,32 euro.');
-  if(navigator.share) navigator.share({url:u, text:tx}).catch(()=>{}); else { navigator.clipboard.writeText(tx+' '+u); toast(L('Link copied','Link copiato')); }
+  try{ const b=await snap(name); const f=new File([b],'lantern.png',{type:'image/png'});
+    if(navigator.canShare && navigator.canShare({files:[f]})){ await navigator.share({files:[f], text:tx+' '+u}); return; }
+    const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='lantern.png'; a.click();
+  }catch(e){}
+  if(navigator.share) navigator.share({url:u, text:tx}).catch(()=>{}); else { navigator.clipboard.writeText(tx+' '+u); toast(L('Picture saved, link copied','Immagine salvata, link copiato')); }
 }
 let tt=null; function toast(s, ms=3200){ const t=document.getElementById('toast'); t.textContent=s; t.style.display='block'; clearTimeout(tt); tt=setTimeout(()=>t.style.display='none', ms); }
 document.getElementById('abt').onclick=(e)=>{ e.preventDefault(); document.getElementById('about').style.display='flex'; };
