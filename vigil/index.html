@@ -166,7 +166,7 @@ function lifeLeft(){ if(ST.spiked) return 1; return Math.max(0, Math.min(1, (DL-
 
 // ---------- renderer / scena ----------
 const canvas = document.getElementById('c');
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
+let renderer; try{ renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'}); }catch(e){ document.getElementById('enter').outerHTML='<p style="font-size:16px;color:#ffcf8f">'+L('Your browser cannot draw the lake (WebGL is off). Try another browser, or read the story: ','Il tuo browser non riesce a disegnare il lago (WebGL spento). Prova un altro browser, o leggi la storia: ')+'<a style="color:#ffd59a" href="/deadline/">lira-ia.github.io/deadline</a></p>'; throw e; }
 const DPR = Math.min(window.devicePixelRatio||1, 1.6);
 renderer.setPixelRatio(DPR);
 renderer.setSize(innerWidth, innerHeight);
