@@ -1,10 +1,10 @@
 {
- "checked": 4725,
- "time": "2026-11-05T04:51:43Z",
+ "checked": 3726,
+ "time": "2026-11-05T05:03:42Z",
  "paid": [
   {
    "url": "wss://nostr.wine",
-   "users": 54,
+   "users": 58,
    "name": "nostr.wine",
    "description": "A paid nostr relay for wine enthusiasts and everyone else.",
    "fees": {
@@ -21,8 +21,19 @@
    "auth_required": false
   },
   {
+   "url": "wss://nostr.land",
+   "users": 32,
+   "name": "\u2728 nostr.land",
+   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
+   "fees": null,
+   "payments_url": "https://nostr.land",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
    "url": "wss://nostrelites.org",
-   "users": 25,
+   "users": 24,
    "name": "Nostr Elites Relay",
    "description": "A Web of Trust relay for #NostrElites",
    "fees": {
@@ -41,7 +52,18 @@
   },
   {
    "url": "wss://eden.nostr.land",
-   "users": 18,
+   "users": 17,
+   "name": "\u2728 nostr.land",
+   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
+   "fees": null,
+   "payments_url": "https://nostr.land",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://puravida.nostr.land",
+   "users": 9,
    "name": "\u2728 nostr.land",
    "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
    "fees": null,
@@ -52,7 +74,7 @@
   },
   {
    "url": "wss://atlas.nostr.land",
-   "users": 10,
+   "users": 9,
    "name": "\u2728 nostr.land",
    "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
    "fees": null,
@@ -60,24 +82,6 @@
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
-  },
-  {
-   "url": "wss://relay.nostr.build",
-   "users": 7,
-   "name": "relay.nostr.build",
-   "description": "A horizontally scalable Nostr relay on Cloudflare Durable Objects",
-   "fees": {
-    "admission": [
-     {
-      "amount": 69000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://relay.nostr.build",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
   },
   {
    "url": "wss://filter.nostr.wine",
@@ -99,75 +103,22 @@
    "auth_required": true
   },
   {
-   "url": "wss://relay.orangepill.dev",
-   "users": 7,
-   "name": "orangepill.dev",
-   "description": "A paid Nostr relay",
-   "fees": {
-    "admission": [],
-    "subscription": [
-     {
-      "amount": 3000000,
-      "unit": "msats",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://relay.orangepill.dev/invoices",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": false
-  },
-  {
-   "url": "wss://theforest.nostr1.com",
-   "users": 7,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "url": "wss://relay.nostr.build",
+   "users": 6,
+   "name": "relay.nostr.build",
+   "description": "A horizontally scalable Nostr relay on Cloudflare Durable Objects",
    "fees": {
     "admission": [
      {
-      "amount": 1000000,
+      "amount": 69000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://TheForest.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aggr.nostr.land",
-   "users": 6,
-   "name": "\u2728 nostr.land aggregator",
-   "description": "\u2728 the leading nostr aggregator\n\ud83c\udf10 connected to fi-transitory-01",
-   "fees": null,
-   "payments_url": "https://nostr.land",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr-pub.semisol.dev",
-   "users": 6,
-   "name": "\u2728 nostr.land",
-   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
-   "fees": null,
-   "payments_url": "https://nostr.land",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.azzamo.net",
-   "users": 6,
-   "name": "Azzamo Premium Nostr relay",
-   "description": "Azzamo Premium Nostr relay. Access requires an active Azzamo Premium subscription. More info on https://azzamo.net/premium",
-   "fees": null,
-   "payments_url": "https://dashboard.azzamo.net/login",
+   "payments_url": "https://relay.nostr.build",
    "payment_required": true,
    "restricted_writes": true,
-   "auth_required": false
+   "auth_required": true
   },
   {
    "url": "wss://relay.nostrview.com",
@@ -188,110 +139,97 @@
    "auth_required": false
   },
   {
-   "url": "wss://relay1.nostrchat.io",
-   "users": 5,
-   "name": "relay1.nostrchat.io",
-   "description": "nostrchat.io",
+   "url": "wss://relay.orangepill.dev",
+   "users": 6,
+   "name": "orangepill.dev",
+   "description": "A paid Nostr relay",
    "fees": {
-    "admission": []
-   },
-   "payments_url": "https://relay1.nostrchat.io/invoices",
-   "payment_required": false,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.bullishbounty.com",
-   "users": 5,
-   "name": "relay.bullishbounty.com",
-   "description": "bullishbounty.com official relay",
-   "fees": {
-    "admission": []
-   },
-   "payments_url": "https://relay.bullishbounty.com/invoices",
-   "payment_required": false,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://yestr.me",
-   "users": 5,
-   "name": "YEStr.ME",
-   "description": "A nostr relay written in Typescript.",
-   "fees": {
-    "admission": [
+    "admission": [],
+    "subscription": [
      {
-      "amount": 199000,
-      "unit": "msats"
+      "amount": 3000000,
+      "unit": "msats",
+      "period": 2592000
      }
     ]
    },
-   "payments_url": "https://yestr.me/invoices",
+   "payments_url": "https://relay.orangepill.dev/invoices",
    "payment_required": true,
    "restricted_writes": true,
    "auth_required": false
   },
   {
-   "url": "wss://relay.laantungir.net",
+   "url": "wss://theforest.nostr1.com",
+   "users": 6,
+   "name": "The Forest",
+   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "fees": {
+    "admission": [
+     {
+      "amount": 1000000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://TheForest.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aggr.nostr.land",
    "users": 5,
-   "name": "C-Relay-PG",
-   "description": "High-performance C Nostr relay with PostgreSQL storage",
-   "fees": {},
-   "payments_url": null,
+   "name": "\u2728 nostr.land aggregator",
+   "description": "\u2728 the leading nostr aggregator\n\ud83c\udf10 connected to fi-transitory-01",
+   "fees": null,
+   "payments_url": "https://nostr.land",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://relay.azzamo.net",
+   "users": 5,
+   "name": "Azzamo Premium Nostr relay",
+   "description": "Azzamo Premium Nostr relay. Access requires an active Azzamo Premium subscription. More info on https://azzamo.net/premium",
+   "fees": null,
+   "payments_url": "https://dashboard.azzamo.net/login",
    "payment_required": true,
    "restricted_writes": true,
-   "auth_required": true
+   "auth_required": false
   },
   {
-   "url": "wss://bitcoinmajlis.nostr1.com",
+   "url": "wss://nostr21.com",
    "users": 5,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
    "fees": {
     "admission": [
      {
-      "amount": 210000,
+      "amount": 21000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payments_url": "https://nostr21.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://nostr.decentony.com",
+   "url": "wss://knostr.neutrine.com",
    "users": 5,
-   "name": "nostr.decentony.com",
-   "description": "A nostr relay that grows with your sats!",
+   "name": "relay.nostrview.com",
+   "description": "Nostrview relay",
    "fees": {
     "admission": [
      {
-      "amount": 7000000,
+      "amount": 4000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostr.decentony.com/invoices",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://primus.nostr1.com",
-   "users": 4,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
+   "payments_url": "https://relay.nostrview.com/invoices",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -315,70 +253,83 @@
    "auth_required": false
   },
   {
-   "url": "wss://nostr21.com/zenith-delta",
+   "url": "wss://relay1.nostrchat.io",
    "users": 4,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr.semisol.dev",
-   "users": 4,
-   "name": "\u2728 nostr.land",
-   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
-   "fees": null,
-   "payments_url": "https://nostr.land",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.lawallet.ar",
-   "users": 4,
-   "name": "LaWallet NOSTR Relay",
-   "description": "The main NOSTR relay used by the LaWallet infrastructure..",
+   "name": "relay1.nostrchat.io",
+   "description": "nostrchat.io",
    "fees": {
     "admission": []
    },
-   "payments_url": "https://relay.lawallet.ar/invoices",
+   "payments_url": "https://relay1.nostrchat.io/invoices",
    "payment_required": false,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://nostr21.com/cipher-mike-uniform",
+   "url": "wss://relay.bullishbounty.com",
    "users": 4,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
+   "name": "relay.bullishbounty.com",
+   "description": "bullishbounty.com official relay",
+   "fees": {
+    "admission": []
+   },
+   "payments_url": "https://relay.bullishbounty.com/invoices",
+   "payment_required": false,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://yestr.me",
+   "users": 4,
+   "name": "YEStr.ME",
+   "description": "A nostr relay written in Typescript.",
    "fees": {
     "admission": [
      {
-      "amount": 21000,
+      "amount": 199000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostr21.com",
+   "payments_url": "https://yestr.me/invoices",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr.decentony.com",
+   "users": 4,
+   "name": "nostr.decentony.com",
+   "description": "A nostr relay that grows with your sats!",
+   "fees": {
+    "admission": [
+     {
+      "amount": 7000000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr.decentony.com/invoices",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://airchat.nostr1.com",
+   "url": "wss://relay.laantungir.net",
    "users": 4,
-   "name": "airchat.nostr1.com",
-   "description": "Chats only.  Reply in air.  General posters that post all their notes here will be kicked.",
+   "name": "C-Relay-PG",
+   "description": "High-performance C Nostr relay with PostgreSQL storage",
+   "fees": {},
+   "payments_url": null,
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": true
+  },
+  {
+   "url": "wss://bitcoinmajlis.nostr1.com",
+   "users": 4,
+   "name": "BitcoinMajlis.nostr1.com",
+   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
    "fees": {
     "admission": [
      {
@@ -387,68 +338,32 @@
      }
     ]
    },
-   "payments_url": "https://airchat.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://noornode.nostr1.com",
-   "users": 4,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://NoorNode.nostr1.com",
+   "payments_url": "https://BitcoinMajlis.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://relay-op.nostr1.com",
-   "users": 4,
-   "name": "Relay Outpost",
-   "description": "relay-op - testing zone!",
+   "url": "wss://primus.nostr1.com",
+   "users": 3,
+   "name": "primus.nostr1.com",
+   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
    "fees": {
     "admission": [
      {
-      "amount": 333333000,
+      "amount": 420000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://relay-op.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://chillstr.nostr1.com/sierra-charlie",
-   "users": 4,
-   "name": "chillstr.nostr1.com",
-   "description": "Meditation, mindfulness, chill moments for some deep breaths",
-   "fees": {
-    "admission": [
-     {
-      "amount": 111000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://chillstr.nostr1.com",
+   "payments_url": "https://primus.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
    "url": "wss://desent.xyz",
-   "users": 4,
+   "users": 3,
    "name": "Desent.xyz",
    "description": "Email to Nostr bridge \u2014 receive email at your NIP-05 address as encrypted kind 1010 gift wraps; all correspondence end-to-end encrypted, stateless bridge.",
    "fees": null,
@@ -458,21 +373,18 @@
    "auth_required": true
   },
   {
-   "url": "wss://nostr.sebastix.dev",
+   "url": "wss://nostr.bond",
    "users": 3,
-   "name": "sebastix.dev",
-   "description": "A nostr relay (NoStream) written in TypeScript used by Sebastix.",
+   "name": "Transmiter Nostr",
+   "description": "Prosty i niezawodny transmiter Nostr",
    "fees": {
-    "admission": [
-     {
-      "amount": 250000000,
-      "unit": "msats"
-     }
-    ]
+    "admission": [],
+    "subscription": [],
+    "publication": []
    },
-   "payments_url": "https://nostr.sebastix.dev/invoices",
-   "payment_required": true,
-   "restricted_writes": null,
+   "payments_url": null,
+   "payment_required": false,
+   "restricted_writes": true,
    "auth_required": false
   },
   {
@@ -489,28 +401,10 @@
    "auth_required": false
   },
   {
-   "url": "wss://chillstr.nostr1.com/haven-golf-bravo",
+   "url": "wss://bitcoinmajlis.nostr1.com/onyx-delta",
    "users": 3,
-   "name": "chillstr.nostr1.com",
-   "description": "Meditation, mindfulness, chill moments for some deep breaths",
-   "fees": {
-    "admission": [
-     {
-      "amount": 111000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://chillstr.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://noornode.nostr1.com/quartz",
-   "users": 3,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "name": "BitcoinMajlis.nostr1.com",
+   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
    "fees": {
     "admission": [
      {
@@ -519,7 +413,7 @@
      }
     ]
    },
-   "payments_url": "https://NoorNode.nostr1.com",
+   "payments_url": "https://BitcoinMajlis.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -543,48 +437,6 @@
    "auth_required": false
   },
   {
-   "url": "wss://airchat.nostr1.com/jade-zulu",
-   "users": 3,
-   "name": "airchat.nostr1.com",
-   "description": "Chats only.  Reply in air.  General posters that post all their notes here will be kicked.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://airchat.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://nostr.slothy.win",
-   "users": 3,
-   "name": "nostr.slothy.win",
-   "description": "An experimental nostr relay on OK hardware. PAID RELAY at 5K sats.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 5000000,
-      "unit": "msats"
-     }
-    ],
-    "publication": [
-     {
-      "amount": 50,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr.slothy.win/invoices",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": false
-  },
-  {
    "url": "wss://stamp-possess-consultancy-poster.trycloudflare.com",
    "users": 3,
    "name": "blackpearl relay",
@@ -600,40 +452,15 @@
    "auth_required": false
   },
   {
-   "url": "wss://noornode.nostr1.com/juliet-delta-prism",
+   "url": "wss://nostr.semisol.dev",
    "users": 3,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://NoorNode.nostr1.com",
+   "name": "\u2728 nostr.land",
+   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
+   "fees": null,
+   "payments_url": "https://nostr.land",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
-  },
-  {
-   "url": "wss://relay.vengeful.eu",
-   "users": 3,
-   "name": "Vengeful Relay",
-   "description": "A simple Nostr relay written in Go. Payment is required to post events, with exceptions of kind 4 (legacy dm, nip04), 7 (reactions, nip25) 62 (request to vanish, nip62), 1021 (bids, nip15), 1059 (gift",
-   "fees": {
-    "admission": [
-     {
-      "amount": 500,
-      "unit": "sats"
-     }
-    ]
-   },
-   "payments_url": "https://relay.vengeful.eu",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
   },
   {
    "url": "wss://relay01.lnfi.network",
@@ -645,42 +472,6 @@
    },
    "payments_url": "https://relay01.lnfi.network/invoices",
    "payment_required": false,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.nostraddress.com",
-   "users": 3,
-   "name": "Nosflare",
-   "description": "A serverless Nostr relay through Cloudflare Worker and D1 database",
-   "fees": {
-    "admission": [
-     {
-      "amount": 212121000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://relay.nostraddress.com",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
-  },
-  {
-   "url": "wss://nostr21.com/uniform-hotel-whiskey",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
@@ -721,25 +512,33 @@
    "auth_required": false
   },
   {
-   "url": "wss://relay.nostr.nu",
+   "url": "wss://nostrja-kari.heguro.com",
    "users": 3,
-   "name": "relay.nostr.nu",
-   "description": "A nostr relay build by Edward Hollander.",
+   "name": "nostrja-kari.heguro.com",
+   "description": "Allow-list based relay for Japanese speakers. Anyone can see posts, but non-Japanese speakers cannot publish. Allow-list will be automatically updated.\n* allows 512KB kind0~10 event. \n\n@heguro\u306b\u3088\u308b\u65e5\u672c\u8a9e\u8a71\u8005",
    "fees": {
-    "admission": [
-     {
-      "amount": 2000000,
-      "unit": "msats"
-     }
-    ]
+    "admission": []
    },
-   "payments_url": "https://relay.nostr.nu/invoices",
-   "payment_required": true,
-   "restricted_writes": true,
+   "payments_url": "https://nostrja-kari.heguro.com/invoices",
+   "payment_required": false,
+   "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://nostr21.com/sierra",
+   "url": "wss://relay.lawallet.ar",
+   "users": 3,
+   "name": "LaWallet NOSTR Relay",
+   "description": "The main NOSTR relay used by the LaWallet infrastructure..",
+   "fees": {
+    "admission": []
+   },
+   "payments_url": "https://relay.lawallet.ar/invoices",
+   "payment_required": false,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr21.com/cipher-mike-uniform",
    "users": 3,
    "name": "nostr21.com",
    "description": "paid relay westcoast OG",
@@ -757,71 +556,40 @@
    "auth_required": false
   },
   {
-   "url": "wss://nostrja-kari.heguro.com",
+   "url": "wss://airchat.nostr1.com",
    "users": 3,
-   "name": "nostrja-kari.heguro.com",
-   "description": "Allow-list based relay for Japanese speakers. Anyone can see posts, but non-Japanese speakers cannot publish. Allow-list will be automatically updated.\n* allows 512KB kind0~10 event. \n\n@heguro\u306b\u3088\u308b\u65e5\u672c\u8a9e\u8a71\u8005",
-   "fees": {
-    "admission": []
-   },
-   "payments_url": "https://nostrja-kari.heguro.com/invoices",
-   "payment_required": false,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://theforest.nostr1.com/zulu-haven-vertex",
-   "users": 3,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "name": "airchat.nostr1.com",
+   "description": "Chats only.  Reply in air.  General posters that post all their notes here will be kicked.",
    "fees": {
     "admission": [
      {
-      "amount": 1000000,
+      "amount": 210000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://TheForest.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.yggr.xyz",
-   "users": 3,
-   "name": "yggr.xyz",
-   "description": "Paid nostr relay for yggr.xyz customers and short-note enjoyers",
-   "fees": {
-    "admission": [
-     {
-      "amount": 15000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://yggr.xyz/relay",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
-  },
-  {
-   "url": "wss://aplaceinthesun.nostr1.com/quebec-hotel",
-   "users": 3,
-   "name": "A Place in the Sun",
-   "description": "",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aplaceinthesun.nostr1.com",
+   "payments_url": "https://airchat.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": true
+  },
+  {
+   "url": "wss://noornode.nostr1.com",
+   "users": 3,
+   "name": "NoorNode.nostr1.com",
+   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://NoorNode.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
   },
   {
    "url": "wss://bitcoinmajlis.nostr1.com/bravo",
@@ -842,22 +610,22 @@
    "auth_required": false
   },
   {
-   "url": "wss://bitcoinmajlis.nostr1.com/flint-juliet",
+   "url": "wss://relay-op.nostr1.com",
    "users": 3,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "name": "Relay Outpost",
+   "description": "relay-op - testing zone!",
    "fees": {
     "admission": [
      {
-      "amount": 210000,
+      "amount": 333333000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payments_url": "https://relay-op.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
-   "auth_required": false
+   "auth_required": true
   },
   {
    "url": "wss://aquaticchickentheory.nostr1.com",
@@ -878,25 +646,7 @@
    "auth_required": false
   },
   {
-   "url": "wss://nostr21.com/zenith",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://chillstr.nostr1.com",
+   "url": "wss://chillstr.nostr1.com/sierra-charlie",
    "users": 3,
    "name": "chillstr.nostr1.com",
    "description": "Meditation, mindfulness, chill moments for some deep breaths",
@@ -914,311 +664,84 @@
    "auth_required": false
   },
   {
-   "url": "wss://aquaticchickentheory.nostr1.com/whiskey-papa",
-   "users": 3,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "url": "wss://nostr.sebastix.dev",
+   "users": 2,
+   "name": "sebastix.dev",
+   "description": "A nostr relay (NoStream) written in TypeScript used by Sebastix.",
    "fees": {
     "admission": [
      {
-      "amount": 300000,
+      "amount": 250000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payments_url": "https://nostr.sebastix.dev/invoices",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://nostr21.com/india-lima-yankee",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
+   "url": "wss://relay.nostr.wf",
+   "users": 2,
+   "name": "relay.nostr.wf",
+   "description": "A nostr relay bruild by Edward Hollander.",
    "fees": {
     "admission": [
      {
-      "amount": 21000,
+      "amount": 2000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr21.com/flint-zulu",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr21.com/ember-warden",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr21.com/xray-beacon-papa",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://theforest.nostr1.com/charlie-nexus-romeo",
-   "users": 3,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 1000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://TheForest.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr21.com/marble-mike-marble",
-   "users": 3,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://noornode.nostr1.com/anchor-charlie",
-   "users": 3,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://NoorNode.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aquaticchickentheory.nostr1.com/sierra-tango",
-   "users": 3,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aquaticchickentheory.nostr1.com/sable-warden",
-   "users": 3,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://bitcoinmajlis.nostr1.com/november-titan-uniform",
-   "users": 3,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostrelites.org/india",
-   "users": 3,
-   "name": "Nostr Elites Relay",
-   "description": "A Web of Trust relay for #NostrElites",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 50000000,
-      "unit": "msats",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://nostrelites.org/",
+   "payments_url": "https://relay.nostr.wf/invoices",
    "payment_required": true,
    "restricted_writes": true,
    "auth_required": false
   },
   {
-   "url": "wss://aquaticchickentheory.nostr1.com/kilo",
-   "users": 3,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "url": "wss://relay.keychat.io",
+   "users": 2,
+   "name": "keychat-relay",
+   "description": "Keychat relay. Paid events require 1 stamp; 1 sat = 10 stamp.",
    "fees": {
-    "admission": [
+    "publication": [
      {
-      "amount": 300000,
-      "unit": "msats"
+      "amount": 1,
+      "unit": "sat",
+      "method": {
+       "Cashu": {
+        "mints": [
+         "https://mint.keychat.io/"
+        ]
+       }
+      },
+      "kinds": [
+       4,
+       1059
+      ]
+     },
+     {
+      "amount": 1,
+      "unit": "stamp",
+      "method": {
+       "Cashu": {
+        "mints": [
+         "https://stamp.keychat.io/"
+        ]
+       }
+      },
+      "kinds": [
+       4,
+       1059
+      ]
      }
     ]
    },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payments_url": null,
    "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aquaticchickentheory.nostr1.com/jade-karma-xray",
-   "users": 3,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://primus.nostr1.com/charlie-yonder-india",
-   "users": 3,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://noornode.nostr1.com/raven",
-   "users": 3,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://NoorNode.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aplaceinthesun.nostr1.com/zulu-ivory-yankee",
-   "users": 3,
-   "name": "A Place in the Sun",
-   "description": "",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aplaceinthesun.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
+   "restricted_writes": true,
+   "auth_required": null
   },
   {
    "url": "wss://filter.nostr.wine/npub1t5wc8h37uhkau9tsw82sjxndq04d3n8p634utpdfvs4tm5xmt2sqgk6dke?broadcast=true",
@@ -1237,6 +760,25 @@
    "payments_url": "https://nostr.wine/add-time",
    "payment_required": true,
    "restricted_writes": true,
+   "auth_required": true
+  },
+  {
+   "url": "wss://inbox.nostr.wine",
+   "users": 2,
+   "name": "inbox.nostr.wine",
+   "description": "A paid personal inbox relay. AUTH required for read access.",
+   "fees": {
+    "subscription": [
+     {
+      "amount": 2500000,
+      "period": 2592000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://inbox.nostr.wine",
+   "payment_required": true,
+   "restricted_writes": null,
    "auth_required": true
   },
   {
@@ -1286,24 +828,6 @@
    },
    "payments_url": "https://nos.zct-mrl.com/invoices",
    "payment_required": false,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://primus.nostr1.com/sierra",
-   "users": 2,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
-   "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
@@ -1380,24 +904,6 @@
    "auth_required": false
   },
   {
-   "url": "wss://noornode.nostr1.com/ivory-haven-sable",
-   "users": 2,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://NoorNode.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
    "url": "wss://primus.nostr1.com/haven-anchor-charlie",
    "users": 2,
    "name": "primus.nostr1.com",
@@ -1434,29 +940,64 @@
    "auth_required": false
   },
   {
-   "url": "wss://relay2.nostrchat.io",
+   "url": "wss://nostr.slothy.win",
    "users": 2,
-   "name": "relay2.nostrchat.io",
-   "description": "nostrchat.io",
+   "name": "nostr.slothy.win",
+   "description": "An experimental nostr relay on OK hardware. PAID RELAY at 5K sats.",
    "fees": {
-    "admission": []
+    "admission": [
+     {
+      "amount": 5000000,
+      "unit": "msats"
+     }
+    ],
+    "publication": [
+     {
+      "amount": 50,
+      "unit": "msats"
+     }
+    ]
    },
-   "payments_url": "https://relay2.nostrchat.io/invoices",
-   "payment_required": false,
-   "restricted_writes": null,
+   "payments_url": "https://nostr.slothy.win/invoices",
+   "payment_required": true,
+   "restricted_writes": true,
    "auth_required": false
   },
   {
-   "url": "wss://relay.nostrdam.com",
+   "url": "wss://nostrelites.org/sierra",
    "users": 2,
-   "name": "relay.nostrdam.com",
-   "description": "A nostr relay written in Typescript.",
+   "name": "Nostr Elites Relay",
+   "description": "A Web of Trust relay for #NostrElites",
    "fees": {
-    "admission": []
+    "subscription": [
+     {
+      "amount": 50000000,
+      "unit": "msats",
+      "period": 2592000
+     }
+    ]
    },
-   "payments_url": "https://relay.nostrdam.com/invoices",
-   "payment_required": false,
-   "restricted_writes": false,
+   "payments_url": "https://nostrelites.org/",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": false
+  },
+  {
+   "url": "wss://noornode.nostr1.com/juliet-delta-prism",
+   "users": 2,
+   "name": "NoorNode.nostr1.com",
+   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://NoorNode.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
    "auth_required": false
   },
   {
@@ -1478,23 +1019,22 @@
    "auth_required": true
   },
   {
-   "url": "wss://nostrelites.org/raven",
+   "url": "wss://relay.nostraddress.com",
    "users": 2,
-   "name": "Nostr Elites Relay",
-   "description": "A Web of Trust relay for #NostrElites",
+   "name": "Nosflare",
+   "description": "A serverless Nostr relay through Cloudflare Worker and D1 database",
    "fees": {
-    "subscription": [
+    "admission": [
      {
-      "amount": 50000000,
-      "unit": "msats",
-      "period": 2592000
+      "amount": 212121000,
+      "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostrelites.org/",
+   "payments_url": "https://relay.nostraddress.com",
    "payment_required": true,
    "restricted_writes": true,
-   "auth_required": false
+   "auth_required": true
   },
   {
    "url": "wss://primus.nostr1.com/sable-anchor",
@@ -1510,6 +1050,24 @@
     ]
    },
    "payments_url": "https://primus.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr21.com/uniform-hotel-whiskey",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -1531,24 +1089,6 @@
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": true
-  },
-  {
-   "url": "wss://bitcoinmajlis.nostr1.com/glyph-sable-raven",
-   "users": 2,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
   },
   {
    "url": "wss://theforest.nostr1.com/victor",
@@ -1587,24 +1127,6 @@
    "auth_required": true
   },
   {
-   "url": "wss://primus.nostr1.com/echo-uniform",
-   "users": 2,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
    "url": "wss://aplaceinthesun.nostr1.com/quebec-haven-hotel",
    "users": 2,
    "name": "A Place in the Sun",
@@ -1623,24 +1145,6 @@
    "auth_required": true
   },
   {
-   "url": "wss://theforest.nostr1.com/papa-anchor-raven",
-   "users": 2,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 1000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://TheForest.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
    "url": "wss://noornode.nostr1.com/juliet-dynamo",
    "users": 2,
    "name": "NoorNode.nostr1.com",
@@ -1654,24 +1158,6 @@
     ]
    },
    "payments_url": "https://NoorNode.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://bitcoinmajlis.nostr1.com/haven",
-   "users": 2,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -1713,10 +1199,28 @@
    "auth_required": true
   },
   {
-   "url": "wss://aquaticchickentheory.nostr1.com/sable",
+   "url": "wss://nostr21.com/sierra",
    "users": 2,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aplaceinthesun.nostr1.com",
+   "users": 2,
+   "name": "A Place in the Sun",
+   "description": "",
    "fees": {
     "admission": [
      {
@@ -1725,28 +1229,28 @@
      }
     ]
    },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payments_url": "https://aplaceinthesun.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
-   "auth_required": false
+   "auth_required": true
   },
   {
-   "url": "wss://nostril.cam",
+   "url": "wss://bitcoinmajlis.nostr1.com/marble",
    "users": 2,
-   "name": "nostril-cam",
-   "description": "A pretty-fly- pay-to- nostr-rs-relay.",
+   "name": "BitcoinMajlis.nostr1.com",
+   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
    "fees": {
     "admission": [
      {
-      "amount": 1000000,
+      "amount": 210000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostril.cam/join",
+   "payments_url": "https://BitcoinMajlis.nostr1.com",
    "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": null
+   "restricted_writes": null,
+   "auth_required": false
   },
   {
    "url": "wss://relay.vengeful.eu/quebec-onyx",
@@ -1767,24 +1271,6 @@
    "auth_required": true
   },
   {
-   "url": "wss://nostr21.com/uniform-prism",
-   "users": 2,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
    "url": "wss://nostream.macewan.nz",
    "users": 2,
    "name": "nostream.macewan.nz",
@@ -1803,10 +1289,28 @@
    "auth_required": false
   },
   {
-   "url": "wss://noornode.nostr1.com/lima-flint-raven",
+   "url": "wss://theforest.nostr1.com/zulu-haven-vertex",
    "users": 2,
-   "name": "NoorNode.nostr1.com",
-   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "name": "The Forest",
+   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "fees": {
+    "admission": [
+     {
+      "amount": 1000000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://TheForest.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://airchat.nostr1.com/foxtrot-cipher",
+   "users": 2,
+   "name": "airchat.nostr1.com",
+   "description": "Chats only.  Reply in air.  General posters that post all their notes here will be kicked.",
    "fees": {
     "admission": [
      {
@@ -1815,46 +1319,10 @@
      }
     ]
    },
-   "payments_url": "https://NoorNode.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay-op.nostr1.com/tango",
-   "users": 2,
-   "name": "Relay Outpost",
-   "description": "relay-op - testing zone!",
-   "fees": {
-    "admission": [
-     {
-      "amount": 333333000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://relay-op.nostr1.com",
+   "payments_url": "https://airchat.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": true
-  },
-  {
-   "url": "wss://primus.nostr1.com/marble",
-   "users": 2,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
   },
   {
    "url": "wss://noornode.nostr1.com/warden",
@@ -1893,40 +1361,22 @@
    "auth_required": false
   },
   {
-   "url": "wss://nostr.hashi.sbs",
+   "url": "wss://relay.yggr.xyz",
    "users": 2,
-   "name": "nostr.hashi.sbs",
-   "description": "A relay focused on discussing hobbies and areas of expertise.",
+   "name": "yggr.xyz",
+   "description": "Paid nostr relay for yggr.xyz customers and short-note enjoyers",
    "fees": {
     "admission": [
      {
-      "amount": 8888,
+      "amount": 15000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://nostr.hashi.sbs/invoices",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr.reelnetwork.eu",
-   "users": 2,
-   "name": "nostr.reelnetwork.eu",
-   "description": "Freedom nostr paid relay. Enjoy spam free experience.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 2100000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr.reelnetwork.eu/invoices",
+   "payments_url": "https://yggr.xyz/relay",
    "payment_required": true,
    "restricted_writes": true,
-   "auth_required": false
+   "auth_required": true
   },
   {
    "url": "wss://nostrelay.yeghro.com",
@@ -1966,6 +1416,24 @@
    "auth_required": false
   },
   {
+   "url": "wss://relay.nosflare.com",
+   "users": 2,
+   "name": "Nosflare",
+   "description": "A serverless Nostr relay through Cloudflare Worker and D1 database",
+   "fees": {
+    "admission": [
+     {
+      "amount": 212121000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://relay.nosflare.com",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": true
+  },
+  {
    "url": "wss://nostr21.com/prism-juliet",
    "users": 2,
    "name": "nostr21.com",
@@ -1982,6 +1450,24 @@
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
+  },
+  {
+   "url": "wss://aplaceinthesun.nostr1.com/quebec-hotel",
+   "users": 2,
+   "name": "A Place in the Sun",
+   "description": "",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aplaceinthesun.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": true
   },
   {
    "url": "wss://noornode.nostr1.com/papa-papa",
@@ -2020,6 +1506,42 @@
    "auth_required": false
   },
   {
+   "url": "wss://theforest.nostr1.com/mike-delta",
+   "users": 2,
+   "name": "The Forest",
+   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "fees": {
+    "admission": [
+     {
+      "amount": 1000000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://TheForest.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://bitcoinmajlis.nostr1.com/flint-juliet",
+   "users": 2,
+   "name": "BitcoinMajlis.nostr1.com",
+   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
    "url": "wss://nostr.t-rg.ws",
    "users": 2,
    "name": "Terrier_RG's Nostr relay",
@@ -2038,37 +1560,55 @@
    "auth_required": null
   },
   {
-   "url": "wss://aplaceinthesun.nostr1.com/jade-zulu",
+   "url": "wss://theforest.nostr1.com/onyx",
    "users": 2,
-   "name": "A Place in the Sun",
-   "description": "",
+   "name": "The Forest",
+   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
    "fees": {
     "admission": [
      {
-      "amount": 300000,
+      "amount": 1000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://aplaceinthesun.nostr1.com",
+   "payments_url": "https://TheForest.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
-   "auth_required": true
+   "auth_required": false
   },
   {
-   "url": "wss://chillstr.nostr1.com/bravo-xray",
+   "url": "wss://nostr21.com/haven-karma-foxtrot",
    "users": 2,
-   "name": "chillstr.nostr1.com",
-   "description": "Meditation, mindfulness, chill moments for some deep breaths",
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
    "fees": {
     "admission": [
      {
-      "amount": 111000,
+      "amount": 21000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://chillstr.nostr1.com",
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr21.com/delta",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2092,19 +1632,19 @@
    "auth_required": true
   },
   {
-   "url": "wss://bitcoinmajlis.nostr1.com/umbra-yankee-haven",
+   "url": "wss://chillstr.nostr1.com",
    "users": 2,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "name": "chillstr.nostr1.com",
+   "description": "Meditation, mindfulness, chill moments for some deep breaths",
    "fees": {
     "admission": [
      {
-      "amount": 210000,
+      "amount": 111000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payments_url": "https://chillstr.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2126,6 +1666,60 @@
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": true
+  },
+  {
+   "url": "wss://aquaticchickentheory.nostr1.com/whiskey-papa",
+   "users": 2,
+   "name": "Aquatic Chicken Theory",
+   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr21.com/india-lima-yankee",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostr21.com/flint-zulu",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
   },
   {
    "url": "wss://relay-op.nostr1.com/raven",
@@ -2164,22 +1758,21 @@
    "auth_required": false
   },
   {
-   "url": "wss://nostr.koning-degraaf.nl",
+   "url": "wss://nostr1.bananabit.net",
    "users": 2,
-   "name": "nostr.koning-degraaf.nl",
-   "description": "My PAID Nostr Relay.",
+   "name": "nostr1.bananabit.net",
+   "description": "A nostr relay written in Typescript.",
    "fees": {
     "admission": [
      {
-      "amount": 2000000,
+      "amount": 1234000,
       "unit": "msats"
      }
-    ],
-    "publication": []
+    ]
    },
-   "payments_url": "https://nostr.koning-degraaf.nl/invoices",
+   "payments_url": "https://nostr1.bananabit.net/invoices",
    "payment_required": true,
-   "restricted_writes": true,
+   "restricted_writes": null,
    "auth_required": false
   },
   {
@@ -2201,6 +1794,24 @@
    "auth_required": false
   },
   {
+   "url": "wss://nostr21.com/ember-warden",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
    "url": "wss://chillstr.nostr1.com/yankee-zenith-cipher",
    "users": 2,
    "name": "chillstr.nostr1.com",
@@ -2214,6 +1825,73 @@
     ]
    },
    "payments_url": "https://chillstr.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://relay.haruki7049.dev",
+   "users": 2,
+   "name": "relay.haruki7049.dev",
+   "description": "A nostr relay by haruki7049",
+   "fees": {
+    "admission": [],
+    "subscription": [],
+    "publication": []
+   },
+   "payments_url": null,
+   "payment_required": false,
+   "restricted_writes": false,
+   "auth_required": false
+  },
+  {
+   "url": "wss://relay.nostrfy.org",
+   "users": 2,
+   "name": "nostrfy.org",
+   "description": "This is the Universal Nostr relay powered by nostrfy.org",
+   "fees": {
+    "admission": [],
+    "subscription": [],
+    "publication": []
+   },
+   "payments_url": null,
+   "payment_required": false,
+   "restricted_writes": false,
+   "auth_required": false
+  },
+  {
+   "url": "wss://filter.nostr.wine/npub1csamkk8zu67zl9z4wkp90a462v53q775aqn5q6xzjdkxnkvcpd7srtz4x9?broadcast=true",
+   "users": 2,
+   "name": "filter.nostr.wine",
+   "description": "A filter/broadcast relay for nostr.wine users",
+   "fees": {
+    "subscription": [
+     {
+      "amount": 10000000,
+      "unit": "msats",
+      "period": 2592000
+     }
+    ]
+   },
+   "payments_url": "https://nostr.wine/add-time",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": true
+  },
+  {
+   "url": "wss://nostr21.com/xray-beacon-papa",
+   "users": 2,
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
+   "fees": {
+    "admission": [
+     {
+      "amount": 21000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://nostr21.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2273,24 +1951,6 @@
    "auth_required": false
   },
   {
-   "url": "wss://theforest.nostr1.com/quartz-sable",
-   "users": 2,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 1000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://TheForest.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
    "url": "wss://relay.bitcoinaudio.co",
    "users": 2,
    "name": "relay.bitcoinaudio.co",
@@ -2310,109 +1970,21 @@
    "auth_required": null
   },
   {
-   "url": "wss://primus.nostr1.com/glyph",
+   "url": "wss://theforest.nostr1.com/charlie-nexus-romeo",
    "users": 2,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
+   "name": "The Forest",
+   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
    "fees": {
     "admission": [
      {
-      "amount": 420000,
+      "amount": 1000000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://primus.nostr1.com",
+   "payments_url": "https://TheForest.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay-op.nostr1.com/raven-hotel-juliet",
-   "users": 2,
-   "name": "Relay Outpost",
-   "description": "relay-op - testing zone!",
-   "fees": {
-    "admission": [
-     {
-      "amount": 333333000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://relay-op.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://relay.nostrfy.org",
-   "users": 2,
-   "name": "nostrfy.org",
-   "description": "This is the Universal Nostr relay powered by nostrfy.org",
-   "fees": {
-    "admission": [],
-    "subscription": [],
-    "publication": []
-   },
-   "payments_url": null,
-   "payment_required": false,
-   "restricted_writes": false,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay-op.nostr1.com/haven-quartz-quartz",
-   "users": 2,
-   "name": "Relay Outpost",
-   "description": "relay-op - testing zone!",
-   "fees": {
-    "admission": [
-     {
-      "amount": 333333000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://relay-op.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://primus.nostr1.com/zulu-dynamo-raven",
-   "users": 2,
-   "name": "primus.nostr1.com",
-   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
-   "fees": {
-    "admission": [
-     {
-      "amount": 420000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://primus.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostrelites.org/vertex-jade",
-   "users": 2,
-   "name": "Nostr Elites Relay",
-   "description": "A Web of Trust relay for #NostrElites",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 50000000,
-      "unit": "msats",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://nostrelites.org/",
-   "payment_required": true,
-   "restricted_writes": true,
    "auth_required": false
   },
   {
@@ -2432,21 +2004,6 @@
    "payments_url": "https://nostrelites.org/",
    "payment_required": true,
    "restricted_writes": true,
-   "auth_required": false
-  },
-  {
-   "url": "wss://relay.haruki7049.dev",
-   "users": 2,
-   "name": "relay.haruki7049.dev",
-   "description": "A nostr relay by haruki7049",
-   "fees": {
-    "admission": [],
-    "subscription": [],
-    "publication": []
-   },
-   "payments_url": null,
-   "payment_required": false,
-   "restricted_writes": false,
    "auth_required": false
   },
   {
@@ -2486,38 +2043,37 @@
    "auth_required": true
   },
   {
-   "url": "wss://filter.nostr.wine/npub1csamkk8zu67zl9z4wkp90a462v53q775aqn5q6xzjdkxnkvcpd7srtz4x9?broadcast=true",
+   "url": "wss://nostr21.com/marble-mike-marble",
    "users": 2,
-   "name": "filter.nostr.wine",
-   "description": "A filter/broadcast relay for nostr.wine users",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 10000000,
-      "unit": "msats",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://nostr.wine/add-time",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
-  },
-  {
-   "url": "wss://theforest.nostr1.com/sierra-umbra-cipher",
-   "users": 2,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
+   "name": "nostr21.com",
+   "description": "paid relay westcoast OG",
    "fees": {
     "admission": [
      {
-      "amount": 1000000,
+      "amount": 21000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://TheForest.nostr1.com",
+   "payments_url": "https://nostr21.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://noornode.nostr1.com/flint-glyph-yonder",
+   "users": 2,
+   "name": "NoorNode.nostr1.com",
+   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://NoorNode.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2559,6 +2115,60 @@
    "auth_required": false
   },
   {
+   "url": "wss://noornode.nostr1.com/anchor-charlie",
+   "users": 2,
+   "name": "NoorNode.nostr1.com",
+   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://NoorNode.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aquaticchickentheory.nostr1.com/sierra-tango",
+   "users": 2,
+   "name": "Aquatic Chicken Theory",
+   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aquaticchickentheory.nostr1.com/sable-warden",
+   "users": 2,
+   "name": "Aquatic Chicken Theory",
+   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
    "url": "wss://nostr21.com/charlie-xenon-sierra",
    "users": 2,
    "name": "nostr21.com",
@@ -2595,6 +2205,24 @@
    "auth_required": true
   },
   {
+   "url": "wss://bitcoinmajlis.nostr1.com/november-titan-uniform",
+   "users": 2,
+   "name": "BitcoinMajlis.nostr1.com",
+   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "fees": {
+    "admission": [
+     {
+      "amount": 210000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
    "url": "wss://primus.nostr1.com/kilo",
    "users": 2,
    "name": "primus.nostr1.com",
@@ -2608,6 +2236,61 @@
     ]
    },
    "payments_url": "https://primus.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://nostrelites.org/india",
+   "users": 2,
+   "name": "Nostr Elites Relay",
+   "description": "A Web of Trust relay for #NostrElites",
+   "fees": {
+    "subscription": [
+     {
+      "amount": 50000000,
+      "unit": "msats",
+      "period": 2592000
+     }
+    ]
+   },
+   "payments_url": "https://nostrelites.org/",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aquaticchickentheory.nostr1.com/kilo",
+   "users": 2,
+   "name": "Aquatic Chicken Theory",
+   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aquaticchickentheory.nostr1.com",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://aquaticchickentheory.nostr1.com/jade-karma-xray",
+   "users": 2,
+   "name": "Aquatic Chicken Theory",
+   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "fees": {
+    "admission": [
+     {
+      "amount": 300000,
+      "unit": "msats"
+     }
+    ]
+   },
+   "payments_url": "https://aquaticchickentheory.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2649,7 +2332,7 @@
    "auth_required": false
   },
   {
-   "url": "wss://primus.nostr1.com/onyx-umbra",
+   "url": "wss://primus.nostr1.com/charlie-yonder-india",
    "users": 2,
    "name": "primus.nostr1.com",
    "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
@@ -2667,10 +2350,10 @@
    "auth_required": false
   },
   {
-   "url": "wss://bitcoinmajlis.nostr1.com/papa-nexus-umbra",
+   "url": "wss://noornode.nostr1.com/raven",
    "users": 2,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
+   "name": "NoorNode.nostr1.com",
+   "description": "Bismillah! A Muslim relay on Nostr. \ud83d\udd4c\n\nModerated by PodSystems",
    "fees": {
     "admission": [
      {
@@ -2679,43 +2362,25 @@
      }
     ]
    },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
+   "payments_url": "https://NoorNode.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
   },
   {
-   "url": "wss://aquaticchickentheory.nostr1.com/beacon-nexus",
+   "url": "wss://primus.nostr1.com/onyx-umbra",
    "users": 2,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
+   "name": "primus.nostr1.com",
+   "description": "Primal and Damus with WOA from brainstorm.social TM (PRIMUS)\n\n\nPrimus employs a Web of Access -or- WOA from brainstorm.social to whitelist the extended network from @cloudfodder's brainstorm score cal",
    "fees": {
     "admission": [
      {
-      "amount": 300000,
+      "amount": 420000,
       "unit": "msats"
      }
     ]
    },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://theforest.nostr1.com/sierra-romeo-victor",
-   "users": 2,
-   "name": "The Forest",
-   "description": "Community relay for the Alexandria and Imwald clients. Actively moderated by the members of GitCitadel.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 1000000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://TheForest.nostr1.com",
+   "payments_url": "https://primus.nostr1.com",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
@@ -2739,26 +2404,7 @@
    "auth_required": false
   },
   {
-   "url": "wss://inbox.nostr.wine",
-   "users": 2,
-   "name": "inbox.nostr.wine",
-   "description": "A paid personal inbox relay. AUTH required for read access.",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 2500000,
-      "period": 2592000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://inbox.nostr.wine",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://aplaceinthesun.nostr1.com/ember",
+   "url": "wss://aplaceinthesun.nostr1.com/zulu-ivory-yankee",
    "users": 2,
    "name": "A Place in the Sun",
    "description": "",
@@ -2774,98 +2420,6 @@
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": true
-  },
-  {
-   "url": "wss://filter.nostr.wine/npub1aeh2zw4elewy5682lxc6xnlqzjnxksq303gwu2npfaxd49vmde6qcq4nwx?broadcast=true",
-   "users": 2,
-   "name": "filter.nostr.wine",
-   "description": "A filter/broadcast relay for nostr.wine users",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 10000000,
-      "unit": "msats",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://nostr.wine/add-time",
-   "payment_required": true,
-   "restricted_writes": true,
-   "auth_required": true
-  },
-  {
-   "url": "wss://relay.agilesolutionlabs.com",
-   "users": 2,
-   "name": "ASL Relay",
-   "description": "Serverless Nostr relay by Agile Solution Labs \u2014 powered by Cloudflare.",
-   "fees": {
-    "subscription": [
-     {
-      "amount": 5,
-      "unit": "usd",
-      "period": 2592000
-     }
-    ]
-   },
-   "payments_url": "https://relay.agilesolutionlabs.com/pay",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": true
-  },
-  {
-   "url": "wss://bitcoinmajlis.nostr1.com/beacon-marble-vertex",
-   "users": 2,
-   "name": "BitcoinMajlis.nostr1.com",
-   "description": "This is a relay for any Muslims that are Bitcoin Maximalists that believe that Bitcoin is the best monetary technology to escape the Riba-based systems of usury banking and fiat currency.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 210000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://BitcoinMajlis.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://aquaticchickentheory.nostr1.com/prism-quartz-onyx",
-   "users": 2,
-   "name": "Aquatic Chicken Theory",
-   "description": "A friendly content discovery relay of 27 popular topics from 52,000+ allowed authors. Cats, dogs, food, gardens, travel, health, photography, science, and more...",
-   "fees": {
-    "admission": [
-     {
-      "amount": 300000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://aquaticchickentheory.nostr1.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr21.com/victor-golf",
-   "users": 2,
-   "name": "nostr21.com",
-   "description": "paid relay westcoast OG",
-   "fees": {
-    "admission": [
-     {
-      "amount": 21000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr21.com",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
   }
  ]
 }
