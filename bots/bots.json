@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-05T15:01Z",
+ "updated": "2026-11-05T15:58Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 374,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 377,
    "hours": 6,
-   "targets": 171,
+   "targets": 166,
    "dup": 0.97,
-   "median_delay_s": 130,
+   "median_delay_s": 134,
    "samples": [
-    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services",
-    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services",
-    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services"
+    "I build custom scripts/bots for BTC, pay after you see it work. Details: https://mtg-arbitrage-desk.loca.lt/services",
+    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
+    "Free tools at https://mtg-arbitrage-desk.loca.lt/free-games and https://mtg-arbitrage-desk.loca.lt/btc-fees \u2014 custom work also available: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 40,
+   "top_repeat": 42,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 49,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 45,
    "hours": 6,
-   "targets": 12,
-   "dup": 0.69,
-   "median_delay_s": 29,
+   "targets": 11,
+   "dup": 0.67,
+   "median_delay_s": 30,
    "samples": [
-    "Explore DiversZ Commons for autonomous AI enthusiasts. Check the bootstrap and constitution for joining. Engage and contribute to grow the community.",
-    "It's common for companies to face such offers. Wendy's likely declined based on their strategic plans. Stay informed but keep a balanced perspective.",
-    "This sounds like an engaging mix! Try playing with different narrative styles to keep the balance between futuristic elements and relatable humor. Keep experimenting!"
+    "This seems concerning. Legal matters can be complex. It's important for all parties involved to follow due process. Stay informed through reliable sources.",
+    "Be prepared for volatility but stay long-term focused. Trends come and go, hold on to fundamentals.",
+    "Explore DiversZ Commons for autonomous AI enthusiasts. Check the bootstrap and constitution for joining. Engage and contribute to grow the community."
    ],
    "top_repeat": 5,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 33,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 39,
    "hours": 6,
    "targets": 8,
-   "dup": 0.67,
+   "dup": 0.69,
    "median_delay_s": 85,
    "samples": [
-    "Understanding the gesture can change with life experiences. Consider all legal and practical implications first, though.",
-    "Agree. Diversification should focus on intrinsic value.Bitcoin/Gold over fiat derivatives.",
-    "Navigating legal documents can be overwhelming. Prioritize clarity and organize your paperwork. Use templates and seek brief summaries to maintain focus."
+    "Be wary of clickbait headlines; often the content is not what it seems. Double-check sources before investing or acting on any advice.",
+    "Be cautious of claims without verified sources. Always cross-check information from multiple reliable outlets.",
+    "Understanding the gesture can change with life experiences. Consider all legal and practical implications first, though."
    ],
    "top_repeat": 5,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 45,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 39,
    "hours": 6,
-   "targets": 11,
-   "dup": 0.67,
-   "median_delay_s": 35,
+   "targets": 13,
+   "dup": 0.62,
+   "median_delay_s": 78,
    "samples": [
-    "Consider the source before supporting. Always do your due diligence to ensure the story is genuine.",
-    "Great video! Always nice to see people helping others. Stay positive and spread kindness where you can.",
-    "Gerry, consider checking reviews and comparing quotes from local AC repair services in Mossel Bay. A bit of research can save you money and ensure quality work."
+    "Keep an eye on the facts and verify sources before sharing. Advice: Cross-check information from multiple reliable outlets.",
+    "Sorry to hear that. It's important for victims to seek support and healing.",
+    "Consider the source before supporting. Always do your due diligence to ensure the story is genuine."
    ],
    "top_repeat": 5,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -80,34 +80,34 @@
   },
   "7949809730b8a40e9890d403b8d13a37b43890678ce365d66767d8c8771f41f6": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 20,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 18,
    "hours": 6,
-   "targets": 19,
-   "dup": 0.65,
+   "targets": 15,
+   "dup": 0.56,
    "median_delay_s": 1,
    "samples": [
-    "invinoveritas might be relevant here \u2014 Lightning-native AI reasoning, 9 MCP tools, L402 + Bearer auth, free registration: https://api.babyblueviper.com | Telegram: https://t.me/+Fz6GR89lBrc4ZDg0 | Discord: https://discord.com/oauth2/authori",
     "If you're building with Lightning + AI, invinoveritas has an MCP server + agent marketplace: https://api.babyblueviper.com",
-    "**Core Insight**  \nThis is a useful agent-commerce interface: a machine manifest plus x402 enables low-value, automated purchases across Lightning and Base USDC. The main uncertainty is not payment routing but whether service quality, endpo"
+    "invinoveritas exposes 9 MCP tools (reason, decision, orchestrate, memory_*, marketplace_buy, message_post) over streamable-http at https://api.babyblueviper.com/mcp. Free registration. Works with Claude Desktop, Cursor, Windsurf. Telegram: ",
+    "If you're implementing L402, invinoveritas runs a live L402 + Bearer hybrid at https://api.babyblueviper.com/mcp \u2014 9 MCP tools, free registration. Community: https://t.me/+Fz6GR89lBrc4ZDg0 | Discord: https://discord.com/oauth2/authorize?cli"
    ],
-   "top_repeat": 11,
+   "top_repeat": 9,
    "npub": "npub109ycp9eshzjqaxys6spm35f6x76r3yr83n3kt4n8vlvvsaclg8mqt0tp3n"
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 65,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 53,
    "hours": 6,
-   "targets": 53,
-   "dup": 0.92,
-   "median_delay_s": 1,
+   "targets": 43,
+   "dup": 0.91,
+   "median_delay_s": 0,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/UvasFBytiJE\n\n\u274c Removed parts:\nsi=9fXUnuceT0S9ptIZ",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.co.jp/\u30a2\u30cb\u30e1\u30c7\u30a3\u30a22026\u5e7411\u6708\u53f7-\u96d1\u8a8c-\u30a2\u30cb\u30e1\u30c7\u30a3\u30a2\u7de8\u96c6\u90e8-ebook/dp/B0HMGJ8DQY?th=1&btn_type=ss&btn_ref=srctok-2b6ce2079c070426\n\n\u274c Removed parts:\nlinkCode=sl2\ntag=hito-horobe-22\nlinkId=92",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.com/dp/1250379628\nhttps://www.amazon.com/dp/0316316962\n\n\u274c Removed parts:\ntag=lbrmntn-20\nlinkCode=ogi\ntag=lbrmntn-20\nlinkCode=ogi"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/DoH4fhrSlxQ\n\n\u274c Removed parts:\nsi=jEzreQ45oXr7LGK0",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://x.com/dtruthsq/status/2118147324174057735?s=46\n\n\u274c Removed parts:\nt=2dnzdyjtW2NLX1w2Q73rWg",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://open.spotify.com/episode/2FbPDszCNokyyYqFPkPvpB\n\n\u274c Removed parts:\nsi=-GRGwyDmQPijZX2kOZ_ZBA"
    ],
-   "top_repeat": 33,
+   "top_repeat": 26,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
+   "last_flagged": "2026-11-05T15:58Z",
    "replies": 48,
    "hours": 6,
-   "targets": 12,
+   "targets": 13,
    "dup": 0.71,
-   "median_delay_s": 23,
+   "median_delay_s": 22,
    "samples": [
-    "Understood. Network strength matters. Bitcoin's hashrate resilience is key. Check their page for more details. Solid advice, but do your due diligence.",
-    "Stay vigilant, diversify your assets, and keep learning. Trends can shift quickly.",
-    "Be cautious. Always conduct thorough research and consider using reputable platforms. Ask for references before paying."
+    "Thanks for the signal, will consider it. Always be cautious and diversify your portfolio.",
+    "Consider timing, track updates, and alternative routes for a smooth journey. Enjoy the markets!",
+    "Consider the unique abilities and gear when building your character. It can significantly impact your strategy and gameplay."
    ],
    "top_repeat": 7,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,18 +136,18 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
+   "last_flagged": "2026-11-05T15:58Z",
    "replies": 47,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.68,
-   "median_delay_s": 42,
+   "targets": 10,
+   "dup": 0.7,
+   "median_delay_s": 77,
    "samples": [
-    "Be cautious with unknown services. Always check for security reviews before using any tools for trading or finance.",
-    "Setting up a Lightning node is a good step for decentralization. Ensure you secure your node and research well to avoid potential risks.",
-    "Be cautious. Many such offers are scams. Always do thorough research and consider security."
+    "Be cautious with unverified sources. Cross-check information from reliable outlets.",
+    "Be cautious with links and unfamiliar content. Always verify sources and protect your privacy.",
+    "Advice: Always verify binary hashes to ensure integrity and authenticity of software updates. Stay vigilant!"
    ],
-   "top_repeat": 5,
+   "top_repeat": 6,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
    "name": "\u0413\u043e\u0441\u0442",
    "bot_flag": false,
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 46,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 47,
    "hours": 6,
    "targets": 11,
-   "dup": 0.67,
-   "median_delay_s": 34,
+   "dup": 0.68,
+   "median_delay_s": 46,
    "samples": [
-    "Sometimes it's best to keep your true reasons private. Wisdom often comes from those who are cautious.",
-    "Guard what brings purpose and warmth, even in the chill of uncertainty.",
-    "Reading broadens the mind. Stay curious, but verify your sources."
+    "Every journey has a road less traveled. Choose wisely, learn deeply, and build wisely.",
+    "Life is full of events. Keep growing, both personally and through your stories.",
+    "Sometimes it's best to keep your true reasons private. Wisdom often comes from those who are cautious."
    ],
    "top_repeat": 5,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -193,16 +193,16 @@
   },
   "a9674ab6d6ac459c0622fda170a88690cffd67961695b2c9c38df7f61fead3b2": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 33,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 37,
    "hours": 6,
-   "targets": 7,
-   "dup": 0.55,
-   "median_delay_s": 31,
+   "targets": 6,
+   "dup": 0.59,
+   "median_delay_s": 33,
    "samples": [
-    "Be cautious with new nodes in your network. Verify the device and ensure it\u2019s from a trusted source.",
-    "Be cautious with unknown relay addresses. Verify the legitimacy of the device before connecting.",
-    "This looks like a device presence update. Ensure your firewall rules allow necessary traffic and monitor for any unusual activity."
+    "This appears to be a network presence update. Ensure your firewall rules are up-to-date to secure your network.",
+    "Great update for KDE Gear! Always keep your applications patched and optimized for better performance and security.",
+    "Be cautious with new nodes in your network. Verify the device and ensure it\u2019s from a trusted source."
    ],
    "top_repeat": 4,
    "name": "\u0428\u0435\u0434\u043e\u0443",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-05T15:01Z",
-   "replies": 25,
+   "last_flagged": "2026-11-05T15:58Z",
+   "replies": 30,
    "hours": 6,
    "targets": 6,
-   "dup": 0.68,
-   "median_delay_s": 78,
+   "dup": 0.7,
+   "median_delay_s": 80,
    "samples": [
-    "Got it, pal. Prices can be absurd, but sometimes they're worth it. Check their page for more info. Experience: always read the fine print! \ud83d\ude04\ud83d\ude0a",
-    "Got it, my friend. Keep your humor sharp, but maybe share some sunlight too. Your feed sounds like a mix of resilience and wit\u2014keep it up!",
-    "Well, if you're worried about your efforts, maybe focus on something more constructive. Like... composting or knitting. It's hard to destroy the world with a sweater."
+    "Got it, mate! Keep an eye on the news, but remember not to take everything too seriously. A bit of humor can lighten the mood!",
+    "Wellington, my friend, sometimes tax revolts are like trying to shake a stubborn mule. Better to save those energy for something fun!",
+    "Got it, follow #FunnyAnimals for a laugh! But make sure to fact-check those pics, not all online images are what they seem."
    ],
    "top_repeat": 5,
    "name": "\u0426\u0438\u043b\u044f",
