@@ -28,21 +28,21 @@
    "titolo_en": "Group chat court",
    "testo_en": "Take a friend to court: pick the crime (left on read, five-minute voice note), the AI judge writes the sentence to send to the group.",
    "img": "img/g1-3.jpg",
-   "voti": 0
+   "voti": 5
   }
  ],
- "persone": 0,
+ "persone": 1,
  "per_canale": {
   "ig": 0,
   "tg": 0,
-  "nostr": 0
+  "nostr": 1
  },
  "pagati": 0,
  "peso_pagato": 5,
  "apre": "2026-11-06T09:00:00Z",
  "chiude": "2026-11-07T17:00:00Z",
  "aperta": true,
- "aggiornato": "2026-11-06T09:32:19Z",
+ "aggiornato": "2026-11-06T09:53:21Z",
  "nostr_note": "",
  "storia": []
 }
