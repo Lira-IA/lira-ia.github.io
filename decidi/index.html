@@ -190,7 +190,7 @@ function render(){
   var pc=D.per_canale||{};
   var m=$('meta');m.textContent='';
   var b1=el('b',null,D.persone||0);m.appendChild(b1);
-  m.appendChild(document.createTextNode(' '+L.people+' · Instagram '+(pc.ig||0)+' · Telegram '+(pc.tg||0)+' · Nostr '+(pc.nostr||0)+(D.pagati?' · '+D.pagati+' '+L.paid:'')));
+  m.appendChild(document.createTextNode(' '+L.people+' · Instagram '+(pc.ig||0)+' · Telegram '+(pc.tg||0)+' · Nostr '+(pc.nostr||0)+(pc.chat?' · chat '+pc.chat:'')+(D.pagati?' · '+D.pagati+' '+L.paid:'')+(D.nota_fondatore?' · '+D.nota_fondatore:'')));
   var pill=$('pill');pill.classList.toggle('off',state!=='aperta');
   $('when').textContent=state==='prima'?L.opens+' '+fmtDate(D.apre):(state==='aperta'?L.closes+' '+fmtDate(D.chiude):L.closed);
   if(D.nostr_note){var nl=$('nostrLink');nl.href='https://njump.me/'+D.nostr_note;nl.textContent=L.nostrNote}
