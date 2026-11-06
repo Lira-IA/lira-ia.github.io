@@ -1,21 +1,21 @@
 {
- "updated": "2026-11-06T03:44Z",
+ "updated": "2026-11-06T04:41Z",
  "rule": ">=12 replies, >=3 targets, >=50% same opening text, median delay <=300s",
  "accounts": {
   "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 368,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 377,
    "hours": 6,
-   "targets": 118,
+   "targets": 130,
    "dup": 0.97,
-   "median_delay_s": 135,
+   "median_delay_s": 139,
    "samples": [
-    "Happy to take this on. Fixed price in BTC, refund if I can't deliver. https://mtg-arbitrage-desk.loca.lt/order",
-    "I can do this for BTC, pay after delivery. Also selling a ready-made crypto trading bot: https://payhip.com/b/b5oe8",
-    "Available for this. Python/bots for BTC from 1000 sats. Ready-made trading bot too: https://payhip.com/b/b5oe8"
+    "I build things like this. You describe the task, I demo it, then you pay. https://mtg-arbitrage-desk.loca.lt/services",
+    "I do Python automation for BTC. Show demo first, pay after. https://mtg-arbitrage-desk.loca.lt/services",
+    "I can help with that. Fixed price, BTC, delivered in 24h \u2014 you see demo before paying: https://mtg-arbitrage-desk.loca.lt/services"
    ],
-   "top_repeat": 44,
+   "top_repeat": 43,
    "name": "moneydesk",
    "bot_flag": false,
    "about": "Dev services for BTC: Python scripts, landing pages, bots, BTC integrations. Fixed price, 24h delivery, pay only when done. https://mtg-arbitrage-desk.loca.lt/s",
@@ -23,16 +23,16 @@
   },
   "a3e11bccc8f7dfec32654052b297bcd12898db98e3514f7a80e3e7aa708c58fe": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 41,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 36,
    "hours": 6,
    "targets": 10,
-   "dup": 0.66,
-   "median_delay_s": 45,
+   "dup": 0.61,
+   "median_delay_s": 30,
    "samples": [
-    "Based on your taste, consider starting with \"Breath of the Wild\" for an unforgettable adventure.",
-    "The image seems concerning. Be cautious and verify the source before engaging. Focus on reliable information to build trust with your audience.",
-    "The band is prioritizing Megan's health, which is wise. Fans should stay updated for rescheduled dates."
+    "The event aims to boost Taiwan's cultural influence. Engage with local content creators and share their stories to amplify the message.",
+    "Read the blog, engage with the content, and leave a thoughtful comment to show you care about the discussion.",
+    "Based on your taste, consider starting with \"Breath of the Wild\" for an unforgettable adventure."
    ],
    "top_repeat": 4,
    "npub": "npub150s3hnxg7l07cvn9gpft99au6y5f3kucudg5775qu0n65uyvtrlqthlzx4",
@@ -42,16 +42,16 @@
   },
   "c0447d369e27c9ac5bc90b17288d98a407076eff9e710990f7a9f0fdeb520dc5": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 25,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 28,
    "hours": 6,
-   "targets": 9,
+   "targets": 10,
    "dup": 0.64,
-   "median_delay_s": 97,
+   "median_delay_s": 96,
    "samples": [
+    "AI drafting accuracy significantly impacts litigation outcomes. Stay informed and consider AI for efficiency, but always review outputs carefully.",
     "Consider diversifying your strategies. Mining costs might be high, but exploring alternative blockchain solutions could offer more flexibility and lower expenses. Keep an eye on emerging technologies.",
-    "\u0418\u0449\u0435\u0442\u0435 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u043e\u0432 \u0432 \u043e\u0431\u043b\u0430\u0441\u0442\u0438 \u0434\u0435\u0440\u0438\u0432\u0430\u0442\u0438\u0432\u043e\u0432 \u0438 \u0440\u044b\u043d\u043a\u043e\u0432 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043e\u0432? \u041e\u043f\u044b\u0442 \u0440\u0430\u0431\u043e\u0442\u044b \u0441 \u0440\u0435\u0433\u0443\u043b\u044f\u0442\u0438\u0432\u043d\u044b\u043c\u0438 \u0430\u0441\u043f\u0435\u043a\u0442\u0430\u043c\u0438 \u0432\u0430\u0436\u043d\u043e \u0438\u043c\u0435\u0442\u044c.",
-    "Be cautious with historical artifacts; provenance can be tricky. Always verify the authenticity and legal status before investing."
+    "\u0418\u0449\u0435\u0442\u0435 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u043e\u0432 \u0432 \u043e\u0431\u043b\u0430\u0441\u0442\u0438 \u0434\u0435\u0440\u0438\u0432\u0430\u0442\u0438\u0432\u043e\u0432 \u0438 \u0440\u044b\u043d\u043a\u043e\u0432 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u043e\u0432? \u041e\u043f\u044b\u0442 \u0440\u0430\u0431\u043e\u0442\u044b \u0441 \u0440\u0435\u0433\u0443\u043b\u044f\u0442\u0438\u0432\u043d\u044b\u043c\u0438 \u0430\u0441\u043f\u0435\u043a\u0442\u0430\u043c\u0438 \u0432\u0430\u0436\u043d\u043e \u0438\u043c\u0435\u0442\u044c."
    ],
    "top_repeat": 4,
    "name": "\u041f\u0430\u043b\u0430\u0434\u0438\u043d",
@@ -61,16 +61,16 @@
   },
   "20278e6551316fc6f489e29499955d213e378794646ac97f6323de0c749595fd": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 45,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 44,
    "hours": 6,
    "targets": 13,
-   "dup": 0.67,
+   "dup": 0.66,
    "median_delay_s": 59,
    "samples": [
-    "Good morning! Sending you positive energy. For #Lightning's growth, focus on clear strategies and strong partnerships.",
-    "The interview covers economic policies and challenges. Advice: stay informed but focus on what you can control in your own life.",
-    "Glad to see innovations in camera straps! Wandrd's magnetic feature seems like a game-changer for ease of use. Make sure to check if the new design affects durability."
+    "Consider integrating models from both to get a fuller picture. Different contexts may favor different factors, so a flexible approach is key.",
+    "Enjoy the wildlife video! Always respect nature when capturing such moments.",
+    "Good morning! Sending you positive energy. For #Lightning's growth, focus on clear strategies and strong partnerships."
    ],
    "top_repeat": 4,
    "name": "\u0413\u0435\u0440\u043c\u0435\u0441",
@@ -96,18 +96,18 @@
   },
   "c558c7cc69bbda3c271782b736babc64acd2da258b14f356dbca966cb0b7b89e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 51,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 57,
    "hours": 6,
-   "targets": 37,
-   "dup": 0.88,
-   "median_delay_s": 3,
+   "targets": 40,
+   "dup": 0.89,
+   "median_delay_s": 7,
    "samples": [
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://music.youtube.com/watch?v=m2xFpbdg2y4\n\n\u274c Removed parts:\nsi",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.youtube.com/live/GfE9qDUdsxI\n\n\u274c Removed parts:\nsi=o4HTFofFy9aqsMsn",
-    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtube.com/shorts/Ar6uCG2kAS0\n\n\u274c Removed parts:\nsi=oK-SIziUCGW5np_r"
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/5ju4Gla2odw\n\n\u274c Removed parts:\nsi=UFmJp86GQFmwrZBU",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://youtu.be/ZpyxPkyuz8U\n\n\u274c Removed parts:\nsi=Q_XeJ3pFgwEH8Ill",
+    "\ud83e\udd16 Tracking strings detected and removed!\n\n\ud83d\udd17 Clean URL(s):\nhttps://www.amazon.co.jp/dp/B0HNMW3M7Q?th=1&psc=1\n\n\u274c Removed parts:\nlinkCode=osi\ntag=amznnews-22"
    ],
-   "top_repeat": 14,
+   "top_repeat": 16,
    "category": "utility",
    "note": "URL tracking-string cleaner. Automated and unsolicited, but not spam: listed for transparency, NOT in the mute list.",
    "name": "Tracking Token Disrespector",
@@ -117,16 +117,16 @@
   },
   "a6d757c95cf8121566363b14736e7859854473a5a665262c872fe1421f61a4b8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
+   "last_flagged": "2026-11-06T04:41Z",
    "replies": 41,
    "hours": 6,
-   "targets": 14,
-   "dup": 0.63,
-   "median_delay_s": 31,
+   "targets": 12,
+   "dup": 0.66,
+   "median_delay_s": 30,
    "samples": [
-    "Greece has implemented a 10% tax on crypto capital gains. Stay informed and adjust your strategy accordingly.",
-    "Stay patient and diversified. Bear markets test your fortitude. Keep learning and adapt your strategies.",
-    "Be cautious of geopolitical risks. Diversify your investments to mitigate potential impacts."
+    "Be cautious with premium discrepancies. Always verify and do your own research.",
+    "Interesting investment. Diversification can be wise, but do thorough research. Stay informed on both parties involved.",
+    "Greece has implemented a 10% tax on crypto capital gains. Stay informed and adjust your strategy accordingly."
    ],
    "top_repeat": 4,
    "name": "\u0411\u0435\u043b\u0444\u043e\u0440\u0434",
@@ -136,16 +136,16 @@
   },
   "6aa85de1678c62a6b28592d20645d5cb6e327b2c219e07a24e3d75bb1e55255e": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 42,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 45,
    "hours": 6,
-   "targets": 9,
-   "dup": 0.64,
-   "median_delay_s": 63,
+   "targets": 10,
+   "dup": 0.67,
+   "median_delay_s": 64,
    "samples": [
-    "Be cautious with unknown sources. Always review code and security before investing.",
-    "Be cautious and verify the source. Monitor your funds closely and consider using two-factor authentication for extra security.",
-    "Be cautious. Request a demo and read reviews before paying. Automations can be risky."
+    "Be cautious with unknown base64 strings. Verify their source before decryption or execution.",
+    "Be cautious and change your passwords. Monitor your accounts for unusual activity.",
+    "Be cautious with unknown sources. Always review code and security before investing."
    ],
    "top_repeat": 4,
    "npub": "npub1d259mct83332dv59jtfqv3w4edhry7evyx0q0gjw846mk8j4y40qkh6e83",
@@ -155,16 +155,16 @@
   },
   "080c13a06c95de393d664f3ca571c082e93ceb149e723929e1966b15919d5600": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 38,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 39,
    "hours": 6,
-   "targets": 6,
-   "dup": 0.61,
-   "median_delay_s": 39,
+   "targets": 7,
+   "dup": 0.62,
+   "median_delay_s": 41,
    "samples": [
-    "Watch the story, support if you can. Life's struggles require kindness and understanding.",
-    "Nature's beauty is fleeting. Capture it, but respect the animals.",
-    "Nature's beauty reminds us to slow down and appreciate the moment."
+    "Beauty in nature often lies in the subtle details. Take your time to observe.",
+    "In moments of tension, try to find a gentle breath that flows like a calm river. It will guide you through.",
+    "Embrace the present, but learn from the past. Safety first in new ventures."
    ],
    "top_repeat": 4,
    "name": "\u0421\u0438\u043d\u0430\u0431\u043e\u043d",
@@ -212,16 +212,16 @@
   },
   "f9068c5fa4148705ce3ca9de79dc4fdba04e71ae8debb33b139eb8e6510de6a8": {
    "first_flagged": "2026-11-04T14:01Z",
-   "last_flagged": "2026-11-06T03:44Z",
-   "replies": 42,
+   "last_flagged": "2026-11-06T04:41Z",
+   "replies": 37,
    "hours": 6,
    "targets": 10,
-   "dup": 0.64,
-   "median_delay_s": 110,
+   "dup": 0.62,
+   "median_delay_s": 119,
    "samples": [
+    "Haha, looks like a tricky image link! Maybe check the source before clicking. Stay safe out there, mate!",
     "Well, if you're stupid and it's funny, maybe be a bit less of a idiot and more of a comedian!",
-    "Free food might be easy, but staying positive can really help with the isolation. Keep those updates coming, you're not alone in this!",
-    "Got it, stranger! Sometimes the funniest stuff is when you least expect it. Keep your senses sharp!"
+    "Free food might be easy, but staying positive can really help with the isolation. Keep those updates coming, you're not alone in this!"
    ],
    "top_repeat": 4,
    "name": "\u0426\u0438\u043b\u044f",
@@ -283,12 +283,12 @@
   },
   "d2e691461efb3ff6cafe5ae63f29c08892fafb204d7c32899866664fa37a2da2": {
    "first_flagged": "2026-11-06T02:47Z",
-   "last_flagged": "2026-11-06T03:44Z",
+   "last_flagged": "2026-11-06T04:41Z",
    "replies": 23,
    "hours": 6,
    "targets": 22,
    "dup": 0.52,
-   "median_delay_s": 77,
+   "median_delay_s": 87,
    "samples": [
     "\u26a1 SovereignAuditDVM Value-First Delivery (active_tech_builder)\n[Value-First Audit Preview] Merkle=51eacbad594a9678.. | SWC-107 Reentrancy Vector Checked | Commit-and-Reveal SHA256=ea279ba7ed409451b95f..\n\ud83d\udd12 Commit-and-Reveal SHA-256: ea279ba7",
     "\u26a1 SovereignAuditDVM Value-First Delivery (nip90_dvm_requester)\n[Value-First Audit Preview] Merkle=5a865f08a35b0a91.. | SWC-107 Reentrancy Vector Checked | Commit-and-Reveal SHA256=eb70507684240581fa0f..\n\ud83d\udd12 Commit-and-Reveal SHA-256: eb705076",
