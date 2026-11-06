@@ -1,169 +1,172 @@
 {
  "stats": {
   "senders": 108,
-  "dms": 4379,
-  "people": 3153,
+  "dms": 4461,
+  "people": 3256,
   "hours": 47,
   "to_me": 38,
-  "updated": 1793953820
+  "updated": 1793957237
  },
  "accounts": {
-  "b2a94c78ca0bc42937abd8aa5408a788b0bfbc396100fab7c49c2b2f1e894310": {
-   "recipients": 127,
-   "dms": 152,
-   "reply_rate": 0.008,
-   "first": 1793788013,
-   "last": 1793952101,
-   "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain3",
-   "npub": "npub1k255c7x2p0zzjdatmz49gz983zctl0pevyq04d7yns4j785fgvgq6hystf"
-  },
-  "69a63b027d8c1330f05959e0b19fbf991ecd36bb3130fa71655ba4e2b3c7eca8": {
-   "recipients": 128,
-   "dms": 148,
-   "reply_rate": 0,
-   "first": 1793787905,
-   "last": 1793952028,
-   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1dxnrkqna3sfnpuzet8str8alny0v6d4mxyc05ut9twjw9v78aj5qaserga"
-  },
   "40fa090d9cc87ede77a558aa88bf2dd760ffd213c34655f956d79c33712089fa": {
-   "recipients": 78,
-   "dms": 93,
+   "recipients": 60,
+   "dms": 69,
    "reply_rate": 0,
    "first": 1793787940,
-   "last": 1793914016,
+   "last": 1793863478,
    "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub1graqjrvueplduaa9tz4g30ed6as0l5sncdr9t72k67wrxufq38aqsgrkq0"
   },
-  "2436eb10f9234d51518296d11360d008874e9a4a3b0312aaaac9399c0f4e44c1": {
-   "recipients": 49,
-   "dms": 58,
+  "69a63b027d8c1330f05959e0b19fbf991ecd36bb3130fa71655ba4e2b3c7eca8": {
+   "recipients": 125,
+   "dms": 138,
    "reply_rate": 0,
-   "first": 1793787940,
-   "last": 1793910381,
-   "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1ysmwky8eydx4z5vzjmg3xcxspzr5axj28vp39242eyuecr6wgnqsnl408w"
-  },
-  "cc336362efe653281a267025559d40506c31e8596218d35c7e9a1fce299d1b5e": {
-   "recipients": 43,
-   "dms": 57,
-   "reply_rate": 0,
-   "first": 1793787940,
-   "last": 1793910314,
+   "first": 1793787904,
+   "last": 1793956780,
    "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1esekxch0uefjsx3xwqj4t82q2pkrr6zevgvdxhr7ng0uu2vard0qlu7y8m"
-  },
-  "e3ddf4a8c098a895db8625a963d38b5c51e17c9b6e02562ac61599194d3be0a5": {
-   "recipients": 47,
-   "dms": 53,
-   "reply_rate": 0,
-   "first": 1793787977,
-   "last": 1793914052,
-   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1u0wlf2xqnz5ftkuxyk5k85utt3g7zlymdcp9v2kxzkv3jnfmuzjssw2ukq"
+   "npub": "npub1dxnrkqna3sfnpuzet8str8alny0v6d4mxyc05ut9twjw9v78aj5qaserga"
   },
   "1d0f21bb3773fe73cb2a552b729ae899adce6d7a7ac4494b00e87167b03343a4": {
-   "recipients": 49,
-   "dms": 65,
+   "recipients": 56,
+   "dms": 68,
    "reply_rate": 0,
-   "first": 1793787940,
-   "last": 1793860121,
+   "first": 1793787758,
+   "last": 1793913721,
    "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub1r58jrwehw0l88je2254h9xhgnxkuumt60tzyjjcqapck0vpngwjqps2e36"
   },
-  "2bbc37023a6a4d4fe8e007d60b409eda2b3f46f5439a9b83b27fb67e3030ee22": {
-   "recipients": 49,
+  "f6db1eff03c2fa14bc91a63d8f9097b4d724c148eca828dd0da6beff86b1dd1e": {
+   "recipients": 52,
    "dms": 64,
    "reply_rate": 0,
-   "first": 1793787977,
-   "last": 1793860023,
-   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub19w7rwq36dfx5l68qqltqksy7mg4n73h4gwdfhqaj07m8uvpsac3qzhlpuw"
-  },
-  "f6db1eff03c2fa14bc91a63d8f9097b4d724c148eca828dd0da6beff86b1dd1e": {
-   "recipients": 65,
-   "dms": 82,
-   "reply_rate": 0,
-   "first": 1793787940,
+   "first": 1793787837,
    "last": 1793913905,
    "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub17md3alcrctapf0y35c7clyyhkntjfs2gaj5z3hgd56l0lp43m50qlde8f7"
   },
-  "a324faaaa425c0083c61a7ad2043c58c1c30e09b3029108811a8aed0a120352e": {
-   "recipients": 68,
-   "dms": 80,
+  "cc336362efe653281a267025559d40506c31e8596218d35c7e9a1fce299d1b5e": {
+   "recipients": 52,
+   "dms": 59,
    "reply_rate": 0,
-   "first": 1793787922,
-   "last": 1793951736,
+   "first": 1793787737,
+   "last": 1793913795,
+   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub1esekxch0uefjsx3xwqj4t82q2pkrr6zevgvdxhr7ng0uu2vard0qlu7y8m"
+  },
+  "2436eb10f9234d51518296d11360d008874e9a4a3b0312aaaac9399c0f4e44c1": {
+   "recipients": 45,
+   "dms": 49,
+   "reply_rate": 0,
+   "first": 1793787803,
+   "last": 1793913868,
+   "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub1ysmwky8eydx4z5vzjmg3xcxspzr5axj28vp39242eyuecr6wgnqsnl408w"
+  },
+  "a324faaaa425c0083c61a7ad2043c58c1c30e09b3029108811a8aed0a120352e": {
+   "recipients": 72,
+   "dms": 88,
+   "reply_rate": 0.014,
+   "first": 1793787739,
+   "last": 1793956448,
    "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub15vj0424yyhqqs0rp57kjqs793swrpcymxq53pzq34zhdpgfqx5hqz63peg"
   },
+  "2bbc37023a6a4d4fe8e007d60b409eda2b3f46f5439a9b83b27fb67e3030ee22": {
+   "recipients": 48,
+   "dms": 69,
+   "reply_rate": 0,
+   "first": 1793787733,
+   "last": 1793910153,
+   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub19w7rwq36dfx5l68qqltqksy7mg4n73h4gwdfhqaj07m8uvpsac3qzhlpuw"
+  },
   "98ea70d5e4a26d0e5f9608b1ff8781e381392262c6ba691898acfb5ecba65767": {
-   "recipients": 47,
-   "dms": 57,
-   "reply_rate": 0.021,
-   "first": 1793787977,
-   "last": 1793910347,
+   "recipients": 50,
+   "dms": 54,
+   "reply_rate": 0,
+   "first": 1793787770,
+   "last": 1793913832,
    "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub1nr48p40y5fksuhukpzcllpupuwqnjgnzc6axjxyc4na4ajax2ans2tt7w4"
   },
-  "3a67f9d764fb8e2b4904076608521eb65804c834316c0d0fdf7b0ed674d9e5b8": {
-   "recipients": 45,
-   "dms": 60,
-   "reply_rate": 0,
-   "first": 1793787977,
-   "last": 1793910280,
-   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub18fnln4mylw8zkjgyqanqs5s7kevqfjp5x9kq6r7l0v8dvaxeukuqak79gs"
-  },
-  "96bf0eb03fcbe70a3e0e5498d9964bf686118914e2139c6b607d5b0e5b8cbc88": {
-   "recipients": 67,
-   "dms": 81,
-   "reply_rate": 0,
-   "first": 1793787977,
-   "last": 1793913943,
-   "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1j6lsavple0ns50sw2jvdn9jt76rprzg5ugfec6mq04dsukuvhjyq3dv8x3"
-  },
   "b7eadb89de58fd8d50fbbeb292f9c901a68251bc1588ee8a1b2d49d03b7e8f62": {
-   "recipients": 47,
-   "dms": 62,
+   "recipients": 44,
+   "dms": 59,
    "reply_rate": 0,
-   "first": 1793787954,
-   "last": 1793860108,
+   "first": 1793787772,
+   "last": 1793910230,
    "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub1kl4dhzw7tr7c658mh6ef97wfqxngy5duzkywazsm94yaqwm73a3qzd40hf"
   },
+  "3a67f9d764fb8e2b4904076608521eb65804c834316c0d0fdf7b0ed674d9e5b8": {
+   "recipients": 49,
+   "dms": 58,
+   "reply_rate": 0,
+   "first": 1793787794,
+   "last": 1793913757,
+   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub18fnln4mylw8zkjgyqanqs5s7kevqfjp5x9kq6r7l0v8dvaxeukuqak79gs"
+  },
   "6cd3ac73269544def5336eef8758cf54dcad47ac8f36fbbd75b1b5416dac9f95": {
-   "recipients": 50,
-   "dms": 61,
-   "reply_rate": 0.02,
-   "first": 1793787952,
-   "last": 1793860053,
+   "recipients": 47,
+   "dms": 64,
+   "reply_rate": 0,
+   "first": 1793787767,
+   "last": 1793910182,
    "sample_to_me": "\u3010\u6fc0\u5b89\u30bf\u30a4\u30e0\u30bb\u30fc\u30eb\u3011iPhone\u30fbPS5\u30fb\u30d6\u30e9\u30f3\u30c9\u54c1\u304c\u6700\u592780%OFF\u3002\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u5e02\u5834\u304c\u30aa\u30fc\u30d7\u30f3\u3057\u307e\u3057\u305f\u3002\u5728\u5eab\u9650\u308a \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub1dnf6cuexj4zdaafndmhcwkx02nw263av3um0h0t4kx65zmdvn72sc48mj8"
   },
   "8c53215c3925df2960bd7f81e66b7d1dd3dc30e210cdea7df56869909eeaead2": {
-   "recipients": 50,
-   "dms": 68,
+   "recipients": 49,
+   "dms": 72,
    "reply_rate": 0.02,
-   "first": 1793787943,
-   "last": 1793950127,
+   "first": 1793787760,
+   "last": 1793910129,
    "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub133fjzhpeyh0jjc9a07q7v6marhfacv8zzrx75l04dp5ep8h2atfqvhhk3w"
   },
-  "d3378e317f130a29b6e79126b7c1c46df92765d15d689f46477982e4f14c4e7a": {
-   "recipients": 69,
-   "dms": 77,
+  "96bf0eb03fcbe70a3e0e5498d9964bf686118914e2139c6b607d5b0e5b8cbc88": {
+   "recipients": 52,
+   "dms": 61,
    "reply_rate": 0,
-   "first": 1793788048,
-   "last": 1793945500,
+   "first": 1793787870,
+   "last": 1793863408,
+   "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub1j6lsavple0ns50sw2jvdn9jt76rprzg5ugfec6mq04dsukuvhjyq3dv8x3"
+  },
+  "c816b6fde516c9ad5ff55b372b7fbbe9000e98c93fccbd4f5556350985e8b646": {
+   "recipients": 462,
+   "dms": 469,
+   "reply_rate": 0,
+   "first": 1793787835,
+   "last": 1793954993,
+   "sample_to_me": "I\u2019m building IOT-Pay, the missing bridge between Lightning payments and IoT.\n\nWe enable you to trigger physical actions\u2014like dispensing products or activating machines\u2014instantly via a Lightning QR cod",
+   "name": "botrift.com \ud83d\ude80",
+   "about": "CUSTOM SOFTWARE\nDEVELOPMENT WITH\nAI INTEGRATION\nProfessional software agency creating custom digital solutions for businesses worldwide\n\nBotrift.com is a specia",
+   "npub": "npub1eqttdl09zmy66hl4tvmjklamayqqaxxf8lxt6n642c6snp0gkerqkmkqgz",
+   "bot_flag": false
+  },
+  "d3378e317f130a29b6e79126b7c1c46df92765d15d689f46477982e4f14c4e7a": {
+   "recipients": 64,
+   "dms": 70,
+   "reply_rate": 0,
+   "first": 1793788248,
+   "last": 1793956933,
    "sample_to_me": "\u3010\u6fc0\u5b89\u30bf\u30a4\u30e0\u30bb\u30fc\u30eb\u3011iPhone\u30fbPS5\u30fb\u30d6\u30e9\u30f3\u30c9\u54c1\u304c\u6700\u592780%OFF\u3002\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u5e02\u5834\u304c\u30aa\u30fc\u30d7\u30f3\u3057\u307e\u3057\u305f\u3002\u5728\u5eab\u9650\u308a \u2192 https://jmty.io/shop/?utm=nostr-enmain",
    "npub": "npub16vmcuvtlzv9zndh8jynt0swydhujwew3t45f73j80xpwfu2vfeaqq68x8z"
   },
+  "b2a94c78ca0bc42937abd8aa5408a788b0bfbc396100fab7c49c2b2f1e894310": {
+   "recipients": 126,
+   "dms": 147,
+   "reply_rate": 0.008,
+   "first": 1793788284,
+   "last": 1793956894,
+   "sample_to_me": "\u53cb\u9054\u306b\u6559\u3048\u3066\u3082\u3089\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u3053\u3053\u306e\u30bb\u30fc\u30eb\u3084\u3070\u3044\u3067\u3059\u3002iPhone\u3082\u5bb6\u96fb\u308280%OFF \u2192 https://jmty.io/shop/?utm=nostr-enmain3",
+   "npub": "npub1k255c7x2p0zzjdatmz49gz983zctl0pevyq04d7yns4j785fgvgq6hystf"
+  },
   "d2aa24fb4482a23dd8c970dfaa80b0f8422991a45326a17a497e5a18edb42f57": {
-   "recipients": 44,
-   "dms": 46,
+   "recipients": 46,
+   "dms": 47,
    "reply_rate": 0,
    "first": 1793797680,
    "last": 1793953555,
@@ -171,44 +174,71 @@
    "npub": "npub1624zf76ys23rmkxfwr064q9slppznydy2vn2z7jf0edp3md59atsjah673"
   },
   "9126e77dc861a1e769353e7bc7c3ae4720f5406e3b6ab8a0f9219c62dc3ac8e5": {
-   "recipients": 84,
-   "dms": 91,
+   "recipients": 83,
+   "dms": 90,
    "reply_rate": 0,
    "first": 1793797564,
-   "last": 1793952668,
+   "last": 1793955374,
    "sample_to_me": null,
    "npub": "npub1jynwwlwgvxs7w6f48eau0sawgus02srw8d4t3g8eyxwx9hp6erjs3lxh8z"
   },
-  "cb96bc78a44e45f7c9a52c57bbfd913ca43d2cc5ec6fef8266d1313215c56df0": {
-   "recipients": 46,
-   "dms": 48,
-   "reply_rate": 0,
-   "first": 1793797714,
-   "last": 1793953589,
-   "sample_to_me": null,
-   "npub": "npub1ewttc79yfezl0jd993tmhlv38jjr6tx9a3h7lqnx6ycny9w9dhcq8x3weg"
-  },
   "20689c111974193f1ae2cf646fb9faacd9976ac3f18dc02dc047d88fed25e569": {
-   "recipients": 67,
-   "dms": 74,
+   "recipients": 69,
+   "dms": 75,
    "reply_rate": 0,
    "first": 1793796361,
-   "last": 1793952586,
+   "last": 1793955257,
    "sample_to_me": null,
    "npub": "npub1yp5fcygewsvn7xhzeajxlw064nvew6kr7xxuqtwqglvglmf9u45sy5whe0"
   },
   "898a663d446d04fdb1af13d4fdb497896572d34702037a7f9d4427e9076a2e83": {
-   "recipients": 75,
-   "dms": 81,
+   "recipients": 79,
+   "dms": 83,
    "reply_rate": 0,
    "first": 1793797109,
-   "last": 1793952830,
+   "last": 1793955590,
    "sample_to_me": null,
    "npub": "npub13x9xv02yd5z0mvd0z020mdyh39jh9568qgph5luagsn7jpm296pstszf2z"
   },
+  "3157fbed487013342f10dedc13a245fd2010fa3977df525069cb9ac75e00daeb": {
+   "recipients": 69,
+   "dms": 72,
+   "reply_rate": 0,
+   "first": 1793796495,
+   "last": 1793955026,
+   "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub1x9tlhm2gwqfngtcsmmwp8gj9l5spp73ewl04y5rfewdvwhsqmt4smava55"
+  },
+  "ddf33365204bf29741fbc9c09cf0809c1513019a47e40270cec413a950a5b06e": {
+   "recipients": 72,
+   "dms": 77,
+   "reply_rate": 0,
+   "first": 1793796051,
+   "last": 1793955141,
+   "sample_to_me": null,
+   "npub": "npub1mhenxefqf0efws0me8qfeuyqns23xqv6gljqyuxwcsf6j599kphqvcrmew"
+  },
+  "1f0abafad7bfc89a49e5d4f9ab3bd4776abb3fa4c552f366bf9efdfcf0dc0c91": {
+   "recipients": 52,
+   "dms": 57,
+   "reply_rate": 0,
+   "first": 1793795993,
+   "last": 1793946030,
+   "sample_to_me": null,
+   "npub": "npub1ru9t47khhlyf5j096nu6kw75wa4tk0ayc4f0xe4lnm7leuxupjgspvyv8d"
+  },
+  "cb96bc78a44e45f7c9a52c57bbfd913ca43d2cc5ec6fef8266d1313215c56df0": {
+   "recipients": 44,
+   "dms": 46,
+   "reply_rate": 0,
+   "first": 1793797714,
+   "last": 1793948893,
+   "sample_to_me": null,
+   "npub": "npub1ewttc79yfezl0jd993tmhlv38jjr6tx9a3h7lqnx6ycny9w9dhcq8x3weg"
+  },
   "c6376a4e494cd99cdf8278d4a60b3515410f93f01348aa30501e116b8cac0fe5": {
-   "recipients": 381,
-   "dms": 480,
+   "recipients": 390,
+   "dms": 504,
    "reply_rate": 0,
    "first": 1793797676,
    "last": 1793884075,
@@ -218,74 +248,56 @@
    "npub": "npub1ccmk5njffnveehuz0r22vze4z4qslylszdy25vzsrcgkhr9vpljsj7xhx9",
    "bot_flag": false
   },
-  "3157fbed487013342f10dedc13a245fd2010fa3977df525069cb9ac75e00daeb": {
-   "recipients": 69,
-   "dms": 72,
-   "reply_rate": 0,
-   "first": 1793796495,
-   "last": 1793952422,
-   "sample_to_me": "\u7a74\u5834\u306e\u30a2\u30a6\u30c8\u30ec\u30c3\u30c8\u30b7\u30e7\u30c3\u30d7\u3001\u5168\u90e8\u6fc0\u5b89\u3067\u3059\u3002\u30b8\u30e3\u30e2\u30c3\u30c6\u30a3\u3067\u9ad8\u7d1a\u54c1\u3082\u5f53\u305f\u308a\u307e\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
-   "npub": "npub1x9tlhm2gwqfngtcsmmwp8gj9l5spp73ewl04y5rfewdvwhsqmt4smava55"
-  },
-  "ddf33365204bf29741fbc9c09cf0809c1513019a47e40270cec413a950a5b06e": {
-   "recipients": 65,
-   "dms": 70,
-   "reply_rate": 0,
-   "first": 1793796051,
-   "last": 1793952507,
-   "sample_to_me": null,
-   "npub": "npub1mhenxefqf0efws0me8qfeuyqns23xqv6gljqyuxwcsf6j599kphqvcrmew"
-  },
-  "1f0abafad7bfc89a49e5d4f9ab3bd4776abb3fa4c552f366bf9efdfcf0dc0c91": {
-   "recipients": 54,
-   "dms": 58,
-   "reply_rate": 0,
-   "first": 1793795993,
-   "last": 1793942702,
-   "sample_to_me": null,
-   "npub": "npub1ru9t47khhlyf5j096nu6kw75wa4tk0ayc4f0xe4lnm7leuxupjgspvyv8d"
-  },
   "6bda18c7c0ac2720e93c69fb1bdaf5295a5257ddd217d3bb2e5a73ed8558e4aa": {
    "recipients": 31,
-   "dms": 32,
+   "dms": 34,
    "reply_rate": 0,
    "first": 1793800206,
    "last": 1793953496,
    "sample_to_me": null,
    "npub": "npub1d0dp337q4snjp6fud8a3hkh499d9y47a6gta8wewtfe7mp2cuj4qqcf2qt"
   },
-  "ed713c4e2b7a55ffa638e1b5c4c0276937559666ec84058b63db15282989cf30": {
-   "recipients": 58,
-   "dms": 61,
+  "be135fe3e6d590ba27ec9b7ffacef756b1649c8bf254ec0696d8acacec82519a": {
+   "recipients": 32,
+   "dms": 34,
    "reply_rate": 0,
-   "first": 1793820446,
-   "last": 1793952932,
+   "first": 1793820246,
+   "last": 1793953190,
+   "sample_to_me": null,
+   "npub": "npub1hcf4lclx6kgt5flvndll4nhh26ckf8yt7f2wcp5kmzk2emyz2xdqk95svs"
+  },
+  "ed713c4e2b7a55ffa638e1b5c4c0276937559666ec84058b63db15282989cf30": {
+   "recipients": 54,
+   "dms": 57,
+   "reply_rate": 0,
+   "first": 1793820276,
+   "last": 1793955666,
    "sample_to_me": null,
    "npub": "npub1a4cncn3t0f2llf3cux6ufsp8dym4t9nxajzqtzmrmv2js2vfeucq8w4c64"
   },
+  "f3c439ca882391aa29097d30aad67df7f383c080ad7521fc2ab64fbbfbf6b076": {
+   "recipients": 32,
+   "dms": 32,
+   "reply_rate": 0,
+   "first": 1793820258,
+   "last": 1793949762,
+   "sample_to_me": null,
+   "npub": "npub170zrnj5gywg652gf05c244na7lec8syq446jrlp2ke8mh7lkkpmq66sjrs"
+  },
   "9a50f8292ca25f42abfaa0c2010f72d856020f9d3df2e143e1bce1f244c3a1d1": {
-   "recipients": 35,
+   "recipients": 34,
    "dms": 35,
    "reply_rate": 0,
-   "first": 1793820456,
+   "first": 1793820273,
    "last": 1793949879,
    "sample_to_me": null,
    "npub": "npub1nfg0s2fv5f0592l65rpqzrmjmptqyrua8hewzslphnsly3xr58gsaf4eru"
   },
-  "438b9b69601c771d35e9992abde02e0ec872e3094736adb091cbdfbf50ccb869": {
-   "recipients": 31,
-   "dms": 33,
-   "reply_rate": 0,
-   "first": 1793820439,
-   "last": 1793946407,
-   "sample_to_me": null,
-   "npub": "npub1gw9ek6tqr3m36d0fny4tmcpwpmy89ccfgum2mvy3e00m75xvhp5sm26ttv"
-  },
   "ca1ae68b21518ce2b18c87e442a13c38a9d173c05d72697dfea45aaa7feb094d": {
-   "recipients": 36,
-   "dms": 36,
+   "recipients": 41,
+   "dms": 41,
    "reply_rate": 0,
-   "first": 1793820432,
+   "first": 1793820241,
    "last": 1793949557,
    "sample_to_me": null,
    "npub": "npub1egdwdzep2xxw9vvvsljy9gfu8z5azu7qt4exjl0753d25lltp9xs4l9fxm"
@@ -302,17 +314,25 @@
    "npub": "npub1ce5dpl9w8vnsenga3ukxn6hpcezl0rnqy0fgeuyu7dugjmqd2c0s4mm45v",
    "bot_flag": false
   },
-  "c816b6fde516c9ad5ff55b372b7fbbe9000e98c93fccbd4f5556350985e8b646": {
-   "recipients": 314,
-   "dms": 327,
+  "e3ddf4a8c098a895db8625a963d38b5c51e17c9b6e02562ac61599194d3be0a5": {
+   "recipients": 47,
+   "dms": 53,
    "reply_rate": 0,
-   "first": 1793863460,
-   "last": 1793945081,
-   "sample_to_me": "I\u2019m building IOT-Pay, the missing bridge between Lightning payments and IoT.\n\nWe enable you to trigger physical actions\u2014like dispensing products or activating machines\u2014instantly via a Lightning QR cod",
-   "name": "botrift.com \ud83d\ude80",
-   "about": "CUSTOM SOFTWARE\nDEVELOPMENT WITH\nAI INTEGRATION\nProfessional software agency creating custom digital solutions for businesses worldwide\n\nBotrift.com is a specia",
-   "npub": "npub1eqttdl09zmy66hl4tvmjklamayqqaxxf8lxt6n642c6snp0gkerqkmkqgz",
-   "bot_flag": false
+   "first": 1793787977,
+   "last": 1793914052,
+   "sample_to_me": "\u4eca\u65e5\u3060\u3051\u306e\u30bb\u30fc\u30eb\u898b\u3064\u3051\u307e\u3057\u305f\u3002iPhone\u304c\u534a\u984d\u4ee5\u4e0b\u3001\u65e5\u7528\u54c1\u307b\u307c\u30bf\u30c0\u3067\u3059 \u2192 https://jmty.io/shop/?utm=nostr-enmain",
+   "npub": "npub1u0wlf2xqnz5ftkuxyk5k85utt3g7zlymdcp9v2kxzkv3jnfmuzjssw2ukq",
+   "stale": true
+  },
+  "438b9b69601c771d35e9992abde02e0ec872e3094736adb091cbdfbf50ccb869": {
+   "recipients": 31,
+   "dms": 33,
+   "reply_rate": 0,
+   "first": 1793820439,
+   "last": 1793946407,
+   "sample_to_me": null,
+   "npub": "npub1gw9ek6tqr3m36d0fny4tmcpwpmy89ccfgum2mvy3e00m75xvhp5sm26ttv",
+   "stale": true
   },
   "fa31ff61cfa79b1cc6c0f2a923a286460f5910266930631b48fb7e733310e988": {
    "recipients": 59,
@@ -527,16 +547,6 @@
    "npub": "npub16c6wuuhre5kxvr7ylkengpp78qgg9tgxsfnwqfdl7va5snph8c5qz2n7qd",
    "stale": true
   },
-  "be135fe3e6d590ba27ec9b7ffacef756b1649c8bf254ec0696d8acacec82519a": {
-   "recipients": 30,
-   "dms": 31,
-   "reply_rate": 0,
-   "first": 1793800196,
-   "last": 1793911789,
-   "sample_to_me": null,
-   "npub": "npub1hcf4lclx6kgt5flvndll4nhh26ckf8yt7f2wcp5kmzk2emyz2xdqk95svs",
-   "stale": true
-  },
   "5ab5c0e964b3f93ea6fadba463b3f2d4458af76b4c227ab222ee1adbfd3f82df": {
    "recipients": 32,
    "dms": 48,
@@ -675,16 +685,6 @@
    "last": 1793869353,
    "sample_to_me": null,
    "npub": "npub1rtxwy3t5supw36ge4aklkvzklxf6sxszpk49le494hz3yjmgarjs2vf62r",
-   "stale": true
-  },
-  "f3c439ca882391aa29097d30aad67df7f383c080ad7521fc2ab64fbbfbf6b076": {
-   "recipients": 33,
-   "dms": 33,
-   "reply_rate": 0,
-   "first": 1793735405,
-   "last": 1793900103,
-   "sample_to_me": null,
-   "npub": "npub170zrnj5gywg652gf05c244na7lec8syq446jrlp2ke8mh7lkkpmq66sjrs",
    "stale": true
   },
   "46ea54361c37755e3c23f604b05b1f592a1299fb315c1a2056390e70fbcb9f67": {
