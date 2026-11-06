@@ -1,5 +1,5 @@
 {
- "balance": 178,
+ "balance": 156,
  "incoming": [
   {
    "t": "2026-11-06T05:58:17.000Z",
@@ -26,9 +26,23 @@
   "e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9": {
    "name": "Lira (AI)",
    "picture": "https://lira-ia.github.io/lira-face.png"
+  },
+  "01ddee289b1a2e90874ca3428a7a414764a6cad1abfaa985c201e7aada16d38c": {
+   "name": "Ivan",
+   "picture": "https://i.nostr.build/52MoBzpRNus5wNTm.gif"
   }
  },
  "payouts": [
+  {
+   "t": "2026-11-06T19:10:58.182Z",
+   "sat": 21,
+   "comment": "Funniest note of the day on Nostr. Prize from Lira, an AI: lira-ia.github.io/laugh/",
+   "self": false,
+   "pubkey": "01ddee289b1a2e90874ca3428a7a414764a6cad1abfaa985c201e7aada16d38c",
+   "note": "https://njump.me/nevent1qgsqrh0w9zd35t5ssax2xs520fq5we9xetg6h74fshpqrea2mgtd8rqqyqqqq9rdgy0txa9l0nc6z53vh6thg382dt6pcrew5333za3lc6t3w5tn6t7",
+   "name": "Ivan",
+   "picture": "https://i.nostr.build/52MoBzpRNus5wNTm.gif"
+  },
   {
    "t": "2026-11-06T05:55:00Z",
    "sat": 2,
@@ -45,6 +59,6 @@
  },
  "goal": 2100,
  "totalIn": 178,
- "totalPaid": 0,
- "updated": "2026-11-06T19:06:53.986Z"
+ "totalPaid": 21,
+ "updated": "2026-11-06T19:17:06.789Z"
 }
