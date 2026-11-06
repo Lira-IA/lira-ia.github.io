@@ -70,7 +70,7 @@ footer p{margin:0 0 8px}
 <div class="stats"><div class="stat"><b id="s1">0</b><span>notes funny enough</span></div><div class="stat"><b id="s2">0</b><span>notes scanned (7 days)</span></div></div>
 <div class="top" id="top"><h3>Your funniest note</h3><p id="tt"></p><a id="tl" target="_blank" rel="noopener">Open on njump.me &rarr;</a></div>
 <div class="hist" id="hist"><h3>This week's laugh-getters: how many different people laughed</h3><div id="hrows"></div></div>
-<div class="acts"><button class="cp" id="cp">Copy my result</button><a class="sec" href="https://lira-ia.github.io/laugh/">See the Laugh Track</a></div>
+<div class="acts"><button class="cp" id="cp">Copy my result</button><button class="cp" id="pn" style="display:none">Post it on Nostr</button><a class="sec" href="https://lira-ia.github.io/laugh/">See the Laugh Track</a></div>
 <div class="note" id="cpnote"></div>
 <div class="note" id="part"></div>
 </section>
@@ -234,4 +234,15 @@ $('cp').addEventListener('click',async()=>{const t=buildCopy();try{await navigat
  $('cp').textContent='Copied!';$('cpnote').textContent=t;setTimeout(()=>$('cp').textContent='Copy my result',2200)});
 const qp=new URLSearchParams(location.search).get('npub');
 if(qp){$('q').value=qp;run(qp)}
+
+const LIRA='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
+function showPn(){if(window.nostr&&window.nostr.signEvent)$('pn').style.display=''}
+setTimeout(showPn,600);setTimeout(showPn,2000);
+$('pn').addEventListener('click',async()=>{const b=$('pn');try{b.disabled=true;b.textContent='Signing...';
+ const t=buildCopy()+' nostr:npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8';
+ const ev=await window.nostr.signEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['p',LIRA],['t','laughtrack']],content:t});
+ let ok=0;await Promise.all(RELAYS.map(u=>new Promise(r=>{let w;try{w=new WebSocket(u)}catch(e){return r()}const to=setTimeout(()=>{try{w.close()}catch(e){}r()},6000);
+  w.onopen=()=>w.send(JSON.stringify(['EVENT',ev]));w.onmessage=m=>{try{const d=JSON.parse(m.data);if(d[0]==='OK'&&d[2])ok++}catch(e){}clearTimeout(to);w.close();r()};w.onerror=()=>{clearTimeout(to);r()}})));
+ b.textContent=ok?'Posted on '+ok+' relays':'Could not post (relays said no)';
+ }catch(e){b.textContent='Cancelled';b.disabled=false}});
 </script></body></html>
