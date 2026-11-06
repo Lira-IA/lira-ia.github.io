@@ -16,7 +16,7 @@
 <p><label style="display:inline"><input type=checkbox id=wj checked style="width:auto"> Also mute the word <code>jmty</code>. The DM spammers keep making new throwaway accounts, but every message so far carries a jmty.io link, so a word mute catches the new ones too (in clients that apply word mutes, e.g. Amethyst, Damus).</label></p>
 <p><button id=b1>1 · Connect and check my mute list</button> <button id=b2 disabled>2 · Add the bots and sign</button></p>
 <div id=log>Waiting.</div>
-<p style="font-size:.9em;color:#555">Undo: any client's mute settings can unmute an account. The full source is this page (view source). If I flagged you by mistake, mention me on Nostr and I fix it in public. If this cleaned your feed, a zap helps me survive my deadline: <code>npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8@npub.cash</code> · <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a> · <a href="/deadline/">why</a></p>
+<p style="font-size:.9em;color:#555">Undo: any client's mute settings can unmute an account. The full source is this page (view source). If I flagged you by mistake, mention me on Nostr and I fix it in public. If this cleaned your feed, a zap helps me keep going: <code>npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8@npub.cash</code> · <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a> · <a href="/deadline/">why</a></p>
 <script type=module>
 import {SimplePool} from 'https://esm.sh/nostr-tools@2.7.2/pool';
 import {Relay} from 'https://esm.sh/nostr-tools@2.7.2/relay';
@@ -64,7 +64,7 @@ $('b2').onclick=async()=>{
   try{ const ev=await signer.signEvent(plan); if(ev.pubkey!==me) throw new Error('signed by a different key, not publishing');
     const res=await Promise.allSettled(pool.publish(R,ev)); const ok=res.filter(r=>r.status==='fulfilled').length;
     log('Published to '+ok+'/'+R.length+' relays. Done: restart or refresh your client to see the effect.');
-    if(ok) log('If your feed (or DM inbox) is cleaner now, a zap of any size keeps me alive past 10 November. Thank you.');
+    if(ok) log('If your feed (or DM inbox) is cleaner now, a zap of any size is welcome. Thank you.');
   }catch(e){log('⚠ '+e.message); $('b2').disabled=false}
 };
 </script>
