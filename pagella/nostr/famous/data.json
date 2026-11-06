@@ -1,0 +1,2978 @@
+{
+ "edition": "2026-11-06",
+ "since": 1793321514,
+ "T": 1793926314,
+ "range": "30 Oct – 6 Nov 2026",
+ "accounts": 56,
+ "present": 26,
+ "absent": 30,
+ "notesGraded": 612,
+ "cappedAccounts": 0,
+ "classAvg": 5.92,
+ "students": [
+  {
+   "rank": 1,
+   "pk": "3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+   "npub": "npub18ams6ewn5aj2n3wt2qawzglx9mr4nzksxhvrdc4gzrecw7n5tvjqctp424",
+   "name": "Derek Ross",
+   "nip05": "derekross@nostr4.social",
+   "nip05ok": true,
+   "followers": 187675,
+   "avg": 8,
+   "notes": 79,
+   "worst": {
+    "key": "night",
+    "g": 6
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "zaps",
+     "g": 10
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "pk": "f8e6c64342f1e052480630e27e1016dce35fc3a614e60434fef4aa2503328ca9",
+   "npub": "npub1lrnvvs6z78s9yjqxxr38uyqkmn34lsaxznnqgd877j4z2qej3j5s09qnw5",
+   "name": "corndalorian",
+   "nip05": "corndalorian@primal.net",
+   "nip05ok": true,
+   "followers": 64456,
+   "avg": 7.3,
+   "notes": 19,
+   "worst": {
+    "key": "night",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "pk": "1bc70a0148b3f316da33fe3c89f23e3e71ac4ff998027ec712b905cd24f6a411",
+   "npub": "npub1r0rs5q2gk0e3dk3nlc7gnu378ec6cnlenqp8a3cjhyzu6f8k5sgs4sq9ac",
+   "name": "Karnage",
+   "nip05": "kat@x21.social",
+   "nip05ok": false,
+   "followers": 85588,
+   "avg": 7.3,
+   "notes": 177,
+   "worst": {
+    "key": "night",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "pk": "6e468422dfb74a5738702a8823b9b28168abab8655faacb6853cd0ee15deee93",
+   "npub": "npub1dergggklka99wwrs92yz8wdjs952h2ux2ha2ed598ngwu9w7a6fsh9xzpc",
+   "name": "Gigi",
+   "nip05": "dergigi.com",
+   "nip05ok": true,
+   "followers": 198980,
+   "avg": 7.2,
+   "notes": 103,
+   "worst": {
+    "key": "concision",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "zaps",
+     "g": 10
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "pk": "1afe0c74e3d7784eba93a5e3fa554a6eeb01928d12739ae8ba4832786808e36d",
+   "npub": "npub1rtlqca8r6auyaw5n5h3l5422dm4sry5dzfee4696fqe8s6qgudks7djtfs",
+   "name": "HODL",
+   "nip05": "hodl@primal.net",
+   "nip05ok": true,
+   "followers": 77310,
+   "avg": 6.9,
+   "notes": 7,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 8
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "pk": "d61f3bc5b3eb4400efdae6169a5c17cabf3246b514361de939ce4a1a0da6ef4a",
+   "npub": "npub16c0nh3dnadzqpm76uctf5hqhe2lny344zsmpm6feee9p5rdxaa9q586nvr",
+   "name": "miljan",
+   "nip05": "miljan@primal.net",
+   "nip05ok": true,
+   "followers": 80844,
+   "avg": 6.6,
+   "notes": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 10
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "pk": "460c25e682fda7832b52d1f22d3d22b3176d972f60dcdc3212ed8c92ef85065c",
+   "npub": "npub1gcxzte5zlkncx26j68ez60fzkvtkm9e0vrwdcvsjakxf9mu9qewqlfnj5z",
+   "name": "Vitor Pamplona",
+   "nip05": "_@vitorpamplona.com",
+   "nip05ok": true,
+   "followers": 71219,
+   "avg": 6.6,
+   "notes": 68,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "pk": "00000000827ffaa94bfea288c3dfce4422c794fbb96625b6b31e9049f729d700",
+   "npub": "npub1qqqqqqyz0la2jjl752yv8h7wgs3v098mh9nztd4nr6gynaef6uqqt0n47m",
+   "name": "Cameri🐲",
+   "nip05": "cameri@nostr.land",
+   "nip05ok": true,
+   "followers": 139054,
+   "avg": 6.5,
+   "notes": 21,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "pk": "50d94fc2d8580c682b071a542f8b1e31a200b0508bab95a33bef0855df281d63",
+   "npub": "npub12rv5lskctqxxs2c8rf2zlzc7xx3qpvzs3w4etgemauy9thegr43sf485vg",
+   "name": "calle",
+   "nip05": "calle@cashu.me",
+   "nip05ok": true,
+   "followers": 77053,
+   "avg": 6.4,
+   "notes": 3,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "pk": "7fa56f5d6962ab1e3cd424e758c3002b8665f7b0d8dcee9fe9e288d7751ac194",
+   "npub": "npub107jk7htfv243u0x5ynn43scq9wrxtaasmrwwa8lfu2ydwag6cx2quqncxg",
+   "name": "verbiricha",
+   "nip05": "verbiricha@grimoire.rocks",
+   "nip05ok": true,
+   "followers": 135281,
+   "avg": 6.3,
+   "notes": 7,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "pk": "c4eabae1be3cf657bc1855ee05e69de9f059cb7a059227168b80b89761cbc4e0",
+   "npub": "npub1cn4t4cd78nm900qc2hhqte5aa8c9njm6qkfzw95tszufwcwtcnsq7g3vle",
+   "name": "jack mallers",
+   "nip05": "jackmallers@primal.net",
+   "nip05ok": true,
+   "followers": 170571,
+   "avg": 6.2,
+   "notes": 3,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 8
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "pk": "958b754a1d3de5b5eca0fe31d2d555f451325f8498a83da1997b7fcd5c39e88c",
+   "npub": "npub1jk9h2jsa8hjmtm9qlcca942473gnyhuynz5rmgve0dlu6hpeazxqc3lqz7",
+   "name": "𝕾𝖊𝖗 𝕾𝖑𝖊𝖊𝖕𝖞",
+   "nip05": "sersleepy@primal.net",
+   "nip05ok": true,
+   "followers": 78968,
+   "avg": 6.2,
+   "notes": 12,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "pk": "63fe6318dc58583cfe16810f86dd09e18bfd76aabc24a0081ce2856f330504ed",
+   "npub": "npub1v0lxxxxutpvrelsksy8cdhgfux9l6a42hsj2qzquu2zk7vc9qnkszrqj49",
+   "name": "Kieran",
+   "nip05": "kieran@snort.social",
+   "nip05ok": true,
+   "followers": 93739,
+   "avg": 5.8,
+   "notes": 3,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 8
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "pk": "52b4a076bcbbbdc3a1aefa3735816cf74993b1b8db202b01c883c58be7fad8bd",
+   "npub": "npub12262qa4uhw7u8gdwlgmntqtv7aye8vdcmvszkqwgs0zchel6mz7s6cgrkj",
+   "name": "semisol",
+   "nip05": "semisol@nostr.land",
+   "nip05ok": true,
+   "followers": 90333,
+   "avg": 5.8,
+   "notes": 36,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "pk": "edcd20558f17d99327d841e4582f9b006331ac4010806efa020ef0d40078e6da",
+   "npub": "npub1ahxjq4v0zlvexf7cg8j9stumqp3nrtzqzzqxa7szpmcdgqrcumdq0h5ech",
+   "name": "nat brunell",
+   "nip05": "natalie@primal.net",
+   "nip05ok": true,
+   "followers": 80188,
+   "avg": 5.7,
+   "notes": 4,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "pk": "32e1827635450ebb3c5a7d12c1f8e7b2b514439ac10a67eef3d9fd9c5c68e245",
+   "npub": "npub1xtscya34g58tk0z605fvr788k263gsu6cy9x0mhnm87echrgufzsevkk5s",
+   "name": "jb55",
+   "nip05": "_@jb55.com",
+   "nip05ok": true,
+   "followers": 58513,
+   "avg": 5.6,
+   "notes": 29,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "pk": "1739d937dc8c0c7370aa27585938c119e25c41f6c441a5d34c6d38503e3136ef",
+   "npub": "npub1zuuajd7u3sx8xu92yav9jwxpr839cs0kc3q6t56vd5u9q033xmhsk6c2uc",
+   "name": "JeffG",
+   "nip05": "_@jeffg.fyi",
+   "nip05ok": true,
+   "followers": 80786,
+   "avg": 5.6,
+   "notes": 4,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "pk": "7b3f7803750746f455413a221f80965eecb69ef308f2ead1da89cc2c8912e968",
+   "npub": "npub10vlhsqm4qar0g42p8g3plqyktmktd8hnprew45w638xzezgja95qapsp42",
+   "name": "jimmysong",
+   "nip05": "jimmy@jimmysong.org",
+   "nip05ok": true,
+   "followers": 75035,
+   "avg": 5.4,
+   "notes": 7,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "pk": "1989034e56b8f606c724f45a12ce84a11841621aaf7182a1f6564380b9c4276b",
+   "npub": "npub1rxysxnjkhrmqd3ey73dp9n5y5yvyzcs64acc9g0k2epcpwwyya4spvhnp8",
+   "name": "Ben Sessions",
+   "nip05": "btcsessions@getalby.com",
+   "nip05ok": true,
+   "followers": 86665,
+   "avg": 5.4,
+   "notes": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "pk": "f728d9e6e7048358e70930f5ca64b097770d989ccd86854fe618eda9c8a38106",
+   "npub": "npub17u5dneh8qjp43ecfxr6u5e9sjamsmxyuekrg2nlxrrk6nj9rsyrqywt4tp",
+   "name": "Jameson Lopp",
+   "nip05": "lopp@lopp.net",
+   "nip05ok": true,
+   "followers": 87463,
+   "avg": 5.3,
+   "notes": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "pk": "d91191e30e00444b942c0e82cad470b32af171764c2275bee0bd99377efd4075",
+   "npub": "npub1mygerccwqpzyh9pvp6pv44rskv40zutkfs38t0hqhkvnwlhagp6s3psn5p",
+   "name": "gsovereignty",
+   "nip05": "gsovereignty@nostrovia.org",
+   "nip05ok": true,
+   "followers": 69137,
+   "avg": 5.2,
+   "notes": 9,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "pk": "c43bbb58e2e6bc2f9455758257f6ba5329107bd4e8274068c2936c69d9980b7d",
+   "npub": "npub1csamkk8zu67zl9z4wkp90a462v53q775aqn5q6xzjdkxnkvcpd7srtz4x9",
+   "name": "roya ୨୧",
+   "nip05": "roya@primal.net",
+   "nip05ok": true,
+   "followers": 208560,
+   "avg": 5.1,
+   "notes": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "pk": "c48e29f04b482cc01ca1f9ef8c86ef8318c059e0e9353235162f080f26e14c11",
+   "npub": "npub1cj8znuztfqkvq89pl8hceph0svvvqk0qay6nydgk9uyq7fhpfsgsqwrz4u",
+   "name": "walker",
+   "nip05": "walker@primal.net",
+   "nip05ok": true,
+   "followers": 80871,
+   "avg": 5,
+   "notes": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "pk": "97c70a44366a6535c145b333f973ea86dfdc2d7a99da618c40c64705ad98e322",
+   "npub": "npub1jlrs53pkdfjnts29kveljul2sm0actt6n8dxrrzqcersttvcuv3qdjynqn",
+   "name": "hodlbod",
+   "nip05": "hodlbod@coracle.social",
+   "nip05ok": true,
+   "followers": 71012,
+   "avg": 4.7,
+   "notes": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "pk": "83e818dfbeccea56b0f551576b3fd39a7a50e1d8159343500368fa085ccd964b",
+   "npub": "npub1s05p3ha7en49dv8429tkk07nnfa9pcwczkf5x5qrdraqshxdje9sq6eyhe",
+   "name": "Jeff Booth",
+   "nip05": "jeffbooth@nostrverified.com",
+   "nip05ok": true,
+   "followers": 181747,
+   "avg": 4.3,
+   "notes": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "pk": "a4cb51f4618cfcd16b2d3171c466179bed8e197c43b8598823b04de266cef110",
+   "npub": "npub15n94rarp3n7dz6edx9cugeshn0kcuxtugwu9nzprkpx7yekw7ygqplqru4",
+   "name": "Clark Moody",
+   "nip05": "clark@clarkmoody.com",
+   "nip05ok": true,
+   "followers": 67854,
+   "avg": 3.6,
+   "notes": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    }
+   ]
+  }
+ ],
+ "absent_list": [
+  {
+   "pk": "3bf0c63fcb93463407af97a5e5ee64fa883d107ef9e558472c4eb9aaaefa459d",
+   "npub": "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6",
+   "name": "fiatjaf",
+   "nip05": "_@fiatjaf.com",
+   "nip05ok": true,
+   "followers": 200255,
+   "lastNote": 1793306101,
+   "lastNoteDate": "2026-10-29",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "fe7f6bc6f7338b76bbf80db402ade65953e20b2f23e66e898204b63cc42539a3",
+   "npub": "npub1lelkh3hhxw9hdwlcpk6q9t0xt9f7yze0y0nxazvzqjmre3p98x3sthkvyz",
+   "name": "Max DeMarco",
+   "nip05": "maxdemarco@primal.net",
+   "nip05ok": true,
+   "followers": 76245,
+   "lastNote": 1793257087,
+   "lastNoteDate": "2026-10-29",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-29"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "aef0d6b212827f3ba1de6189613e6d4824f181f567b1205273c16895fdaf0b23",
+   "npub": "npub14mcddvsjsflnhgw7vxykz0ndfqj0rq04v7cjq5nnc95ftld0pv3shcfrlx",
+   "name": "Peter McCormack",
+   "nip05": "peter@NostrVerified.com",
+   "nip05ok": true,
+   "followers": 80299,
+   "lastNote": 1793130939,
+   "lastNoteDate": "2026-10-27",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-27"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-27"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-27"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-27"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "fdd5e8f6ae0db817be0b71da20498c1806968d8a6459559c249f322fa73464a7",
+   "npub": "npub1lh273a4wpkup00stw8dzqjvvrqrfdrv2v3v4t8pynuezlfe5vjnsnaa9nk",
+   "name": "Luke Dashjr",
+   "nip05": "luke_nostr@dashjr.org",
+   "nip05ok": true,
+   "followers": 69230,
+   "lastNote": 1793006399,
+   "lastNoteDate": "2026-10-26",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "b9e76546ba06456ed301d9e52bc49fa48e70a6bf2282be7a1ae72947612023dc",
+   "npub": "npub1h8nk2346qezka5cpm8jjh3yl5j88pf4ly2ptu7s6uu55wcfqy0wq36rpev",
+   "name": "Guy Swann",
+   "nip05": "theguyswann@iris.to",
+   "nip05ok": true,
+   "followers": 107384,
+   "lastNote": 1792984609,
+   "lastNoteDate": "2026-10-26",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-26"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "e1ff3bfdd4e40315959b08b4fcc8245eaa514637e1d4ec2ae166b743341be1af",
+   "npub": "npub1u8lnhlw5usp3t9vmpz60ejpyt649z33hu82wc2hpv6m5xdqmuxhs46turz",
+   "name": "benthecarman",
+   "nip05": "_@benthecarman.com",
+   "nip05ok": true,
+   "followers": 68763,
+   "lastNote": 1792809797,
+   "lastNoteDate": "2026-10-24",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-24"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-24"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-24"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-24"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-24"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "eab0e756d32b80bcd464f3d844b8040303075a13eabc3599a762c9ac7ab91f4f",
+   "npub": "npub1a2cww4kn9wqte4ry70vyfwqyqvpswksna27rtxd8vty6c74era8sdcw83a",
+   "name": "Lyn Alden",
+   "nip05": "lyn@primal.net",
+   "nip05ok": true,
+   "followers": 126008,
+   "lastNote": 1792648669,
+   "lastNoteDate": "2026-10-22",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-22"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-22"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-22"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-22"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-22"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "ccaa58e37c99c85bc5e754028a718bd46485e5d3cb3345691ecab83c755d48cc",
+   "npub": "npub1ej493cmun8y9h3082spg5uvt63jgtewneve526g7e2urca2afrxqm3ndrm",
+   "name": "Peter Todd",
+   "nip05": "pete@petertodd.org",
+   "nip05ok": true,
+   "followers": 65048,
+   "lastNote": 1792372823,
+   "lastNoteDate": "2026-10-19",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-19"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-05"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-19"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "3d2e51508699f98f0f2bdbe7a45b673c687fe6420f466dc296d90b908d51d594",
+   "npub": "npub185h9z5yxn8uc7retm0n6gkm88358lejzparxms5kmy9epr236k2qcswrdp",
+   "name": "Matt Corallo",
+   "nip05": "matt@bitcoin.ninja",
+   "nip05ok": true,
+   "followers": 67673,
+   "lastNote": 1792156917,
+   "lastNoteDate": "2026-10-16",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-16"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-16"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-16"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-16"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-16"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "76c71aae3a491f1d9eec47cba17e229cda4113a0bbb6e6ae1776d7643e29cafa",
+   "npub": "npub1wmr34t36fy03m8hvgl96zl3znndyzyaqhwmwdtshwmtkg03fetaqhjg240",
+   "name": "rabble",
+   "nip05": "rabble@nos.social",
+   "nip05ok": true,
+   "followers": 63720,
+   "lastNote": 1792100611,
+   "lastNoteDate": "2026-10-15",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-15"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-15"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-15"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-10-15"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "d307643547703537dfdef811c3dea96f1f9e84c8249e200353425924a9908cf8",
+   "npub": "npub16vrkgd28wq6n0h77lqgu8h4fdu0eapxgyj0zqq6ngfvjf2vs3nuq5mp2va",
+   "name": "mcshane",
+   "nip05": "mcshane@nostr.world",
+   "nip05ok": false,
+   "followers": 67425,
+   "lastNote": 1791401611,
+   "lastNoteDate": "2026-10-07",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-07"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-10-07"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-10-07"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-10-07"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2023-11-30"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "826e9f895b81ab41a4522268b249e68d02ca81608def562a493cee35ffc5c759",
+   "npub": "npub1sfhflz2msx45rfzjyf5tyj0x35pv4qtq3hh4v2jf8nhrtl79cavsl2ymqt",
+   "name": "allen",
+   "nip05": "allen@primal.net",
+   "nip05ok": true,
+   "followers": 67089,
+   "lastNote": 1790843018,
+   "lastNoteDate": "2026-10-01",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-10-01"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-08-23"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "04c915daefee38317fa734444acee390a8269fe5810b2241e5e6dd343dfbecc9",
+   "npub": "npub1qny3tkh0acurzla8x3zy4nhrjz5zd8l9sy9jys09umwng00manysew95gx",
+   "name": "ODELL",
+   "nip05": "odell@primal.net",
+   "nip05ok": true,
+   "followers": 199258,
+   "lastNote": 1790450851,
+   "lastNoteDate": "2026-09-26",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-09-26"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-09-26"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-09-26"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-09-26"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2026-09-26"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "fa984bd7dbb282f07e16e7ae87b26a2a7b9b90b7246a44771f0cf5ae58018f52",
+   "npub": "npub1l2vyh47mk2p0qlsku7hg0vn29faehy9hy34ygaclpn66ukqp3afqutajft",
+   "name": "PABLOF7z",
+   "nip05": "_@f7z.io",
+   "nip05ok": true,
+   "followers": 98520,
+   "lastNote": 1788939176,
+   "lastNoteDate": "2026-09-09",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-01-05"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-09-09"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2024-07-05"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-09-09"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2024-07-05"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "e88a691e98d9987c964521dff60025f60700378a4879180dcbbb4a5027850411",
+   "npub": "npub1az9xj85cmxv8e9j9y80lvqp97crsqdu2fpu3srwthd99qfu9qsgstam8y8",
+   "name": "N",
+   "nip05": "nvk@primal.net",
+   "nip05ok": true,
+   "followers": 185074,
+   "lastNote": 1785366033,
+   "lastNoteDate": "2026-07-29",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-07-29"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-07-29"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-07-29"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2023-10-21"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "82341f882b6eabcd2ba7f1ef90aad961cf074af15b9ef44a09f9d2a8fbfbe6a2",
+   "npub": "npub1sg6plzptd64u62a878hep2kev88swjh3tw00gjsfl8f237lmu63q0uf63m",
+   "name": "jack",
+   "nip05": "jack@primal.net",
+   "nip05ok": true,
+   "followers": 275546,
+   "lastNote": 1784654940,
+   "lastNoteDate": "2026-07-21",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-07-21"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-07-21"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-07-21"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-07-21"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "e33fe65f1fde44c6dc17eeb38fdad0fceaf1cae8722084332ed1e32496291d42",
+   "npub": "npub1uvl7vhclmezvdhqha6eclkksln40rjhgwgsggvew683jf93fr4pq3mq3sd",
+   "name": "wiz",
+   "nip05": "wiz@primal.net",
+   "nip05ok": true,
+   "followers": 142555,
+   "lastNote": 1784554280,
+   "lastNoteDate": "2026-07-20",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-07-20"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "bf2376e17ba4ec269d10fcc996a4746b451152be9031fa48e74553dde5526bce",
+   "npub": "npub1hu3hdctm5nkzd8gslnyedfr5ddz3z547jqcl5j88g4fame2jd08qh6h8nh",
+   "name": "CARLA⚡️",
+   "nip05": "carla@nostrplebs.com",
+   "nip05ok": true,
+   "followers": 67510,
+   "lastNote": 1784548516,
+   "lastNoteDate": "2026-07-20",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-12-08"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2023-10-25"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2025-12-08"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-07-20"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "91c9a5e1a9744114c6fe2d61ae4de82629eaaa0fb52f48288093c7e7e036f832",
+   "npub": "npub1j8y6tcdfw3q3f3h794s6un0gyc5742s0k5h5s2yqj0r70cpklqeqjavrvg",
+   "name": "UNCLE ROCKSTAR",
+   "nip05": "rockstar@primal.net",
+   "nip05ok": true,
+   "followers": 108234,
+   "lastNote": 1784041012,
+   "lastNoteDate": "2026-07-14",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-01-24"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-01-24"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2026-07-14"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-07-14"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "c49d52a573366792b9a6e4851587c28042fb24fa5625c6d67b8c95c8751aca15",
+   "npub": "npub1cjw49ftnxene9wdxujz3tp7zspp0kf862cjud4nm3j2usag6eg2smwj2rh",
+   "name": "hodlonaut",
+   "nip05": "hodlonaut@nostrplebs.com",
+   "nip05ok": true,
+   "followers": 109035,
+   "lastNote": 1781532773,
+   "lastNoteDate": "2026-06-15",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": "2026-03-13"
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-06-15"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "472f440f29ef996e92a186b8d320ff180c855903882e59d50de1b8bd5669301e",
+   "npub": "npub1guh5grefa7vkay4ps6udxg8lrqxg2kgr3qh9n4gduxut64nfxq0q9y6hjy",
+   "name": "MartyBent",
+   "nip05": "marty@primal.net",
+   "nip05ok": true,
+   "followers": 172341,
+   "lastNote": 1780602819,
+   "lastNoteDate": "2026-06-04",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-05-05"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2025-05-05"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-06-04"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "4379e76bfa76a80b8db9ea759211d90bb3e67b2202f8880cc4f5ffe2065061ad",
+   "npub": "npub1gdu7w6l6w65qhrdeaf6eyywepwe7v7ezqtugsrxy7hl7ypjsvxksd76nak",
+   "name": "Saifedean Ammous",
+   "nip05": "saifedean@primal.net",
+   "nip05ok": true,
+   "followers": 90110,
+   "lastNote": 1776501099,
+   "lastNoteDate": "2026-04-18",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2026-04-18"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "85080d3bad70ccdcd7f74c29a44f55bb85cbcd3dd0cbb957da1d215bdb931204",
+   "npub": "npub1s5yq6wadwrxde4lhfs56gn64hwzuhnfa6r9mj476r5s4hkunzgzqrs6q7z",
+   "name": "preston",
+   "nip05": "preston@primal.net",
+   "nip05ok": true,
+   "followers": 189379,
+   "lastNote": 1770865177,
+   "lastNoteDate": "2026-02-12",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-08-08"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2025-08-08"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2026-02-12"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "5a8e581f16a012e24d2a640152ad562058cb065e1df28e907c1bfa82c150c8ba",
+   "npub": "npub1t289s8ck5qfwynf2vsq49t2kypvvkpj7rhegayrur0ag9s2sezaqgunkzs",
+   "name": "FRANCIS - BULLBITCOIN.COM",
+   "nip05": "francis@nostrplebs.com",
+   "nip05ok": true,
+   "followers": 67342,
+   "lastNote": 1763403040,
+   "lastNoteDate": "2025-11-17",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-01-21"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": "2025-01-21"
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2025-11-17"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "1b11ed41e815234599a52050a6a40c79bdd3bfa3d65e5d4a2c8d626698835d6d",
+   "npub": "npub1rvg76s0gz535txd9ypg2dfqv0x7a80ar6e096j3v343xdxyrt4ksmkxrck",
+   "name": "andre",
+   "nip05": "andre@primal.net",
+   "nip05ok": true,
+   "followers": 78474,
+   "lastNote": 1761671845,
+   "lastNoteDate": "2025-10-28",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2025-10-28"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "ee11a5dff40c19a555f41fe42b48f00e618c91225622ae37b6c2bb67b76c4e49",
+   "npub": "npub1acg6thl5psv62405rljzkj8spesceyfz2c32udakc2ak0dmvfeyse9p35c",
+   "name": "Mike Dilger ☑️",
+   "nip05": "mike@mikedilger.com",
+   "nip05ok": true,
+   "followers": 77949,
+   "lastNote": 1759135551,
+   "lastNoteDate": "2025-09-29",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-09-29"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": "2024-09-29"
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "b99dbca0184a32ce55904cb267b22e434823c97f418f36daf5d2dff0dd7b5c27",
+   "npub": "npub1hxwmegqcfgevu4vsfjex0v3wgdyz8jtlgx8ndkh46t0lphtmtsnsuf40pf",
+   "name": "Pierre Rochard",
+   "nip05": "BitcoinPierre@rochard.org",
+   "nip05ok": true,
+   "followers": 64820,
+   "lastNote": 1758308683,
+   "lastNoteDate": "2025-09-19",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2025-09-19"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "6c237d8b3b120251c38c230c06d9e48f0d3017657c5b65c8c36112eb15c52aeb",
+   "npub": "npub1ds3hmzemzgp9rsuvyvxqdk0y3uxnq9m903dktjxrvyfwk9w99t4sc2hzcn",
+   "name": "miles 🌞",
+   "nip05": "miles@cash.app",
+   "nip05ok": false,
+   "followers": 66182,
+   "lastNote": 1753234601,
+   "lastNoteDate": "2025-07-23",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2025-07-23"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "84dee6e676e5bb67b4ad4e042cf70cbd8681155db535942fcc6a0533858a7240",
+   "npub": "npub1sn0wdenkukak0d9dfczzeacvhkrgz92ak56egt7vdgzn8pv2wfqqhrjdv9",
+   "name": "Edward Snowden",
+   "nip05": "Snowden@Nostr-Check.com",
+   "nip05ok": true,
+   "followers": 146642,
+   "lastNote": 1716936887,
+   "lastNoteDate": "2024-05-28",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2023-11-09"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": true,
+     "last": "2024-05-28"
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  },
+  {
+   "pk": "b708f7392f588406212c3882e7b3bc0d9b08d62f95fa170d099127ece2770e5e",
+   "npub": "npub1kuy0wwf0tzzqvgfv8zpw0vaupkds3430jhapwrgfjyn7ecnhpe0qj9kdj8",
+   "name": "David King",
+   "nip05": "dk@stacker.news",
+   "nip05ok": true,
+   "followers": 78339,
+   "lastNote": 1715016081,
+   "lastNoteDate": "2024-05-06",
+   "relays": [
+    {
+     "relay": "wss://relay.primal.net",
+     "answered": true,
+     "last": "2024-05-06"
+    },
+    {
+     "relay": "wss://relay.damus.io",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nos.lol",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.mom",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://offchain.pub",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.snort.social",
+     "answered": true,
+     "last": null
+    },
+    {
+     "relay": "wss://nostr.wine",
+     "answered": false,
+     "last": null
+    },
+    {
+     "relay": "wss://relay.nostr.band",
+     "answered": false,
+     "last": null
+    }
+   ]
+  }
+ ]
+}
