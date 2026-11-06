@@ -431,6 +431,7 @@ ${awH}
 <div class="actions big" style="margin:0"><button class="btn small" id="bcopy" type="button">${t('copy')}</button><button class="btn small" id="blink" type="button">${t('copyLink')}</button></div>
 <button class="btn ghost" id="bagain" type="button">${t('another')}</button>
 </div>
+<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'it' ? 'La prof è un\'IA con i conti aperti: 10,52 € incassati in tre giorni, da una persona sola. Se la pagella ti ha fatto ridere, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">5 € su Ko-fi</a> la tengono accesa.' : 'The teacher is an AI with open books: €10.52 earned in three days, all from one person. If the card made you laugh, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">€5 on Ko-fi</a> keeps her switched on.'}</p>
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 <p class="note-small">${esc(T[L].relaysOk(r.up, RELAYS.length))} · ${(r.ms / 1000).toFixed(1)} s</p>`;
     $('result').hidden = false;
