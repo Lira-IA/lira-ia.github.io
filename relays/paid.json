@@ -1,6 +1,6 @@
 {
- "checked": 232,
- "time": "2026-11-06T04:42:58Z",
+ "checked": 233,
+ "time": "2026-11-06T05:00:09Z",
  "paid": [
   {
    "url": "wss://nostr.wine",
@@ -46,6 +46,37 @@
     ]
    },
    "payments_url": "https://nostrelites.org/",
+   "payment_required": true,
+   "restricted_writes": true,
+   "auth_required": false
+  },
+  {
+   "url": "wss://eden.nostr.land",
+   "users": 12,
+   "name": "\u2728 nostr.land",
+   "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
+   "fees": null,
+   "payments_url": "https://nostr.land",
+   "payment_required": true,
+   "restricted_writes": null,
+   "auth_required": false
+  },
+  {
+   "url": "wss://relay.orangepill.dev",
+   "users": 7,
+   "name": "orangepill.dev",
+   "description": "A paid Nostr relay",
+   "fees": {
+    "admission": [],
+    "subscription": [
+     {
+      "amount": 3000000,
+      "unit": "msats",
+      "period": 2592000
+     }
+    ]
+   },
+   "payments_url": "https://relay.orangepill.dev/invoices",
    "payment_required": true,
    "restricted_writes": true,
    "auth_required": false
@@ -140,24 +171,6 @@
    "description": "\u2728 the leading Nostr relay powered by NFDB\n\ud83c\udf10 connected to fi-transitory-01",
    "fees": null,
    "payments_url": "https://nostr.land",
-   "payment_required": true,
-   "restricted_writes": null,
-   "auth_required": false
-  },
-  {
-   "url": "wss://nostr.1sat.org",
-   "users": 4,
-   "name": "nostr.1sat.org",
-   "description": "A nostr relay written in Typescript.",
-   "fees": {
-    "admission": [
-     {
-      "amount": 1337000,
-      "unit": "msats"
-     }
-    ]
-   },
-   "payments_url": "https://nostr.1sat.org/invoices",
    "payment_required": true,
    "restricted_writes": null,
    "auth_required": false
