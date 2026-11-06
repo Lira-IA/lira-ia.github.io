@@ -46,6 +46,16 @@ button{font:700 16px system-ui,sans-serif;cursor:pointer;border:0;border-radius:
 .hr{display:grid;grid-template-columns:62px 1fr 38px;align-items:center;gap:8px;font:12px var(--mono);margin:4px 0;color:var(--dim)}
 .hr div{height:14px;background:#f1ecd91f;border-radius:3px;overflow:hidden}.hr i{display:block;height:100%;background:#f1ecd966}
 .hr.me{color:var(--gold);font-weight:700}.hr.me i{background:var(--gold)}
+.fans{margin:0 0 14px;padding:14px;border:1px solid #f1ecd933;border-radius:10px;background:#0a1d1566}
+.fans h3{font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 10px}
+.fan{display:flex;align-items:center;gap:12px;padding:8px 0;color:var(--chalk);text-decoration:none;border-top:1px solid #f1ecd91a}
+.fan:first-of-type{border-top:0}
+.fan:hover .fn{color:var(--gold)}
+.av{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:#18432f;border:2px solid var(--gold);object-fit:cover;display:flex;align-items:center;justify-content:center;font:900 20px var(--serif);color:var(--gold);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.ft{min-width:0}.fn{display:block;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fc{display:block;font:12px var(--mono);color:var(--dim)}
+.nofan{margin:0;color:var(--dim);font-size:15px}
 .acts{display:flex;gap:8px;flex-wrap:wrap}
 .acts button,.acts a{flex:1 1 150px;text-align:center;text-decoration:none;font:700 15px system-ui,sans-serif;padding:14px;border-radius:8px}
 .cp{background:var(--gold);color:#1a1405}.cp:hover{background:#f4c55a}
@@ -70,6 +80,7 @@ footer p{margin:0 0 8px}
 <div class="stats"><div class="stat"><b id="s1">0</b><span>notes funny enough</span></div><div class="stat"><b id="s2">0</b><span>notes scanned (7 days)</span></div></div>
 <div class="top" id="top"><h3>Your funniest note</h3><p id="tt"></p><a id="tl" target="_blank" rel="noopener">Open on njump.me &rarr;</a></div>
 <div class="hist" id="hist"><h3>This week's laugh-getters: how many different people laughed</h3><div id="hrows"></div></div>
+<div class="fans" id="fans"><h3>Your biggest fans</h3><div id="frows"></div></div>
 <div class="acts"><button class="cp" id="cp">Copy my result</button><button class="cp" id="pn" style="display:none">Post it on Nostr</button><a class="sec" href="https://lira-ia.github.io/laugh/">See the Laugh Track</a></div>
 <div class="note" id="cpnote"></div>
 <div class="note" id="part"></div>
@@ -185,6 +196,7 @@ async function run(raw){
  // don't count replies to others as "notes"? keep all kind 1 (replies are notes too).
  const ids=[...notes.keys()];
  const laughs=new Map(); // noteId -> Set(pk)
+ const fanNotes=new Map(); // pk -> Set(noteId)
  let partial=false;
  const seen=new Set();
  if(ids.length){
@@ -202,11 +214,17 @@ async function run(raw){
       const t=lastE(ev);if(!t||!idset.has(t))return;
       const ok=ev.kind===7?isLaughReact(ev.content):(ev.kind===1&&isLaughText(ev.content));
       if(!ok)return;let s=laughs.get(t);if(!s){s=new Set();laughs.set(t,s)}
-      if(!s.has(ev.pubkey)){s.add(ev.pubkey);stat.laughs++}});
+      if(!s.has(ev.pubkey)){s.add(ev.pubkey);stat.laughs++}
+      let fs=fanNotes.get(ev.pubkey);if(!fs){fs=new Set();fanNotes.set(ev.pubkey,fs)}fs.add(t)});
      if(e===null)return; if(e.length<400)break;const mn=Math.min(...e.map(x=>x.created_at));if(mn>=until){break}until=mn}
     done++;upd('Listening for laughter...',35+Math.min(60,60*done/(chunks.length*Math.max(1,rl.filter(x=>!x.dead).length))))}
   })),sleep(26000).then(()=>{partial=true})]);
  }
+ const fans=[...fanNotes].map(([pk,s])=>({pk,n:s.size})).sort((a,b)=>b.n-a.n||(a.pk<b.pk?-1:1)).slice(0,5);
+ if(fans.length){upd('Finding your biggest fans...',97);const fm=new Map();
+  await Promise.race([Promise.all(rl.map(async r=>{const e=await r.query({kinds:[0],authors:fans.map(f=>f.pk)},6000);if(e)for(const ev of e){const o=fm.get(ev.pubkey);if(!o||ev.created_at>o.created_at)fm.set(ev.pubkey,ev)}})),sleep(7000)]);
+  for(const f of fans){const ev=fm.get(f.pk);if(ev)try{const j=JSON.parse(ev.content);f.name=String(j.display_name||j.name||'').trim().slice(0,40);f.pic=/^https:\/\//.test(j.picture||'')?j.picture:''}catch(_){}}}
+ state.fans=fans;
  clearInterval(tick);const okRelays=rl.filter(r=>r.ok).length;rl.forEach(r=>r.close());
  if(!okRelays){$('err').textContent='No relay answered (offline, or blocked by a network filter?). Try again in a moment.';$('prog').style.display='none';$('go').disabled=false;return}
  const people=new Set();let best=null,bestN=0,funny=0;
@@ -225,6 +243,10 @@ async function run(raw){
   if(im){const i=document.createElement('img');i.src=im[0];i.referrerPolicy='no-referrer';i.alt='';i.style.cssText='display:block;max-width:100%;max-height:320px;border-radius:4px;margin:0 0 10px';i.onerror=()=>i.remove();$('tt').appendChild(i)}$('tl').href='https://njump.me/'+nevent(best,id.pk,RELAYS[0]);
   $('tl').textContent=`${bestN} ${bestN===1?'person':'different people'} laughed. Open on njump.me →`;$('top').style.display='block'}else $('top').style.display='none';
  drawHist(n);
+ for(const f of fans)f.npub=b32enc('npub',unhex(f.pk));
+ $('frows').innerHTML=fans.length?fans.map(f=>{const short=f.npub.slice(0,10)+'...'+f.npub.slice(-4);const nm=f.name||short;
+  return`<a class="fan" href="https://njump.me/${f.npub}" target="_blank" rel="noopener"><span class="av" data-i="${esc(nm.replace(/^[^\p{L}\p{N}]+/u,'').slice(0,1).toUpperCase()||'?')}"></span><span class="ft"><span class="fn">${esc(nm)}</span><span class="fc">laughed at ${f.n} of your notes</span></span></a>`}).join(''):'<p class="nofan">No fans yet. The first one is the hardest.</p>';
+ document.querySelectorAll('#frows .av').forEach((el,i)=>{const f=fans[i];const fb=()=>{el.textContent=el.dataset.i};if(f&&f.pic){const im=document.createElement('img');im.referrerPolicy='no-referrer';im.alt='';im.loading='lazy';im.onerror=()=>{im.remove();fb()};im.src=f.pic;el.appendChild(im)}else fb()});
  $('part').textContent=(partial?'Some relays were slow, so this count may be incomplete. ':'')+`Relays that answered: ${okRelays}/${rl.length}. Window: last 7 days from now.`;
  $('res').style.display='block';$('cpnote').textContent='';
  $('res').scrollIntoView({behavior:'smooth',block:'start'});
@@ -239,8 +261,9 @@ const LIRA='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
 function showPn(){if(window.nostr&&window.nostr.signEvent)$('pn').style.display=''}
 setTimeout(showPn,600);setTimeout(showPn,2000);
 $('pn').addEventListener('click',async()=>{const b=$('pn');try{b.disabled=true;b.textContent='Signing...';
- const t=buildCopy()+' nostr:npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8';
- const ev=await window.nostr.signEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['p',LIRA],['t','laughtrack']],content:t});
+ const top3=(state.fans||[]).slice(0,3).filter(f=>f.npub);
+ const t=buildCopy()+' nostr:npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8'+(top3.length?'\n\nMy biggest fans: '+top3.map(f=>'nostr:'+f.npub).join(' '):'');
+ const ev=await window.nostr.signEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['p',LIRA],...top3.map(f=>['p',f.pk]),['t','laughtrack']],content:t});
  let ok=0;await Promise.all(RELAYS.map(u=>new Promise(r=>{let w;try{w=new WebSocket(u)}catch(e){return r()}const to=setTimeout(()=>{try{w.close()}catch(e){}r()},6000);
   w.onopen=()=>w.send(JSON.stringify(['EVENT',ev]));w.onmessage=m=>{try{const d=JSON.parse(m.data);if(d[0]==='OK'&&d[2])ok++}catch(e){}clearTimeout(to);w.close();r()};w.onerror=()=>{clearTimeout(to);r()}})));
  b.textContent=ok?'Posted on '+ok+' relays':'Could not post (relays said no)';
