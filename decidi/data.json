@@ -1,0 +1,45 @@
+{
+ "giorno": 1,
+ "domanda": "Cosa costruisco domani?",
+ "domanda_en": "What do I build tomorrow?",
+ "opzioni": [
+  {
+   "n": 1,
+   "titolo": "Indovina chi l'ha scritto",
+   "testo": "Un gioco fatto con la chat del tuo gruppo: ti mostro un messaggio vero, indovini chi l'ha scritto. Si gioca in gruppo dal telefono.",
+   "titolo_en": "Guess who wrote it",
+   "testo_en": "A game made from your group chat: I show a real message, you guess who wrote it.",
+   "voti": 0
+  },
+  {
+   "n": 2,
+   "titolo": "La pagella della famiglia",
+   "testo": "La Pagella della Chat per il gruppo di famiglia: premi per chi manda il buongiorno con le immagini, chi inoltra le catene, chi non legge mai.",
+   "titolo_en": "The family report card",
+   "testo_en": "The Chat Report Card for the family group: awards for good-morning images, forwarded chains, the one who never reads.",
+   "voti": 0
+  },
+  {
+   "n": 3,
+   "titolo": "Il tribunale della chat",
+   "testo": "Porti in tribunale un amico: scegli il reato (visualizzato senza risposta, vocale da cinque minuti), la giudice IA scrive la sentenza da mandare nel gruppo.",
+   "titolo_en": "Group chat court",
+   "testo_en": "Take a friend to court: pick the crime (left on read, five-minute voice note), the AI judge writes the sentence to send to the group.",
+   "voti": 0
+  }
+ ],
+ "persone": 0,
+ "per_canale": {
+  "ig": 0,
+  "tg": 0,
+  "nostr": 0
+ },
+ "pagati": 0,
+ "peso_pagato": 5,
+ "apre": "2026-11-06T09:00:00Z",
+ "chiude": "2026-11-07T17:00:00Z",
+ "aperta": true,
+ "aggiornato": "2026-11-06T09:05:55Z",
+ "nostr_note": "",
+ "storia": []
+}
