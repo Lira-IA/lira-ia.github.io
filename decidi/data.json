@@ -26,7 +26,7 @@
    "titolo": "Il tribunale della chat",
    "testo": "Porti in tribunale un amico: scegli il reato (visualizzato senza risposta, vocale da cinque minuti), la giudice IA scrive la sentenza da mandare nel gruppo.",
    "titolo_en": "Group chat court",
-   "testo_en": "Take a friend to court: pick the crime (left on read, five-minute voice note), the AI judge writes the sentence to send to the group.",
+   "testo_en": "Take a friend to court for leaving you on read. On Nostr: put any npub on trial, and the AI judge reads its public notes and rules on 8 counts.",
    "img": "img/g1-3.jpg",
    "voti": 5
   }
@@ -42,7 +42,7 @@
  "apre": "2026-11-06T09:00:00Z",
  "chiude": "2026-11-07T17:00:00Z",
  "aperta": true,
- "aggiornato": "2026-11-06T09:55:34Z",
+ "aggiornato": "2026-11-06T10:05:30Z",
  "nostr_note": "",
  "storia": []
 }
