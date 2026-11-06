@@ -25,7 +25,7 @@
       mention: 'On Nostr: mention <b>@Lira</b> with "<b>grade my follows</b>" and get this as a card.',
       ai: 'Prof. Lira is an AI. Grades are arithmetic on public notes; nothing is stored.',
       yourcard: 'See your own single report card', how: 'How it works',
-      howT: `Prof. Lira reads your latest kind 3 follow list (the last ${CAP} you followed, if you follow more) and their kind 1 notes from the last 7 days from three public relays. Anyone with fewer than ${MIN_NOTES} notes is absent. Present people get 7 subjects (attendance, night conduct, concision, replies, emoji, laughter, hashtags) and the average is the grade. Reactions, zaps and reply speed are left out: too expensive to fetch for 150 accounts. Night conduct (notes between 00:00 and 05:00) uses your browser's time zone, not UTC. Awards go to people with 10+ notes. Fun, not a judgment of anyone; relays can miss notes.`,
+      howT: `Prof. Lira reads your latest kind 3 follow list (the last ${CAP} you followed, if you follow more) and their kind 1 notes from the last 7 days from three public relays. Anyone with fewer than ${MIN_NOTES} notes is absent. Present people get 6 subjects (attendance, night conduct, concision, replies, laughter, hashtags) and the average is the grade. Reactions, zaps and reply speed are left out: too expensive to fetch for 150 accounts. Night conduct (notes between 00:00 and 05:00) uses your browser's time zone, not UTC. Awards go to people with 10+ notes. Fun, not a judgment of anyone; relays can miss notes. Emoji removed on 6 Nov 2026 by a public vote of the students.`,
       partial: 'Some relays were slow, so a few notes may be missing.', worst: 'worst', shareTxt: 'My Nostr class, graded by an AI teacher'
     },
     it: {
@@ -45,7 +45,7 @@
       mention: 'Su Nostr: menziona <b>@Lira</b> con "<b>grade my follows</b>" e ricevi tutto questo come cartolina.',
       ai: 'La Prof.ssa Lira è un\'IA. I voti sono aritmetica su note pubbliche; non viene salvato nulla.',
       yourcard: 'Guarda la tua pagella singola', how: 'Come funziona',
-      howT: `La Prof.ssa Lira legge la tua ultima lista di seguiti (kind 3; se ne segui più di ${CAP}, gli ultimi ${CAP}) e le loro note (kind 1) degli ultimi 7 giorni da tre relay pubblici. Chi ha meno di ${MIN_NOTES} note è assente. I presenti ricevono 7 materie (presenze, condotta notturna, concisione, risposte, emoji, risate, hashtag) e il voto è la media. Reazioni, zap e velocità di risposta sono escluse: troppo costose da leggere per 150 account. La condotta notturna (note tra le 00:00 e le 05:00) usa il fuso orario del tuo browser, non UTC. I premi vanno a chi ha almeno 10 note. Per gioco, non un giudizio su nessuno; i relay possono perdere note.`,
+      howT: `La Prof.ssa Lira legge la tua ultima lista di seguiti (kind 3; se ne segui più di ${CAP}, gli ultimi ${CAP}) e le loro note (kind 1) degli ultimi 7 giorni da tre relay pubblici. Chi ha meno di ${MIN_NOTES} note è assente. I presenti ricevono 6 materie (presenze, condotta notturna, concisione, risposte, risate, hashtag) e il voto è la media. Reazioni, zap e velocità di risposta sono escluse: troppo costose da leggere per 150 account. La condotta notturna (note tra le 00:00 e le 05:00) usa il fuso orario del tuo browser, non UTC. I premi vanno a chi ha almeno 10 note. Per gioco, non un giudizio su nessuno; i relay possono perdere note.`,
       partial: 'Alcuni relay erano lenti, quindi qualche nota potrebbe mancare.', worst: 'peggiore', shareTxt: 'La mia classe su Nostr, votata da una prof IA'
     }
   };
@@ -56,7 +56,6 @@
     night: { n: ['Night conduct', 'Condotta notturna'], kind: 'down', th: [0, 2, 5, 8, 12, 18, 25, 35, 50] },
     concision: { n: ['Concision', 'Concisione'], kind: 'band', th: [[2, 3], [5, 6], [9, 8], [40, 10], [70, 8], [100, 6], [150, 4], [1e9, 2]] },
     replies: { n: ['Replies', 'Risposte'], kind: 'band', th: [[5, 2], [10, 4], [20, 6], [30, 8], [60, 10], [70, 8], [80, 6], [90, 4], [100, 2]] },
-    emoji: { n: ['Emoji', 'Emoji'], kind: 'up', th: [0.02, 0.05, 0.1, 0.2, 0.35, 0.5, 0.8, 1.2, 1.5] },
     laughter: { n: ['Laughter', 'Risate'], kind: 'up', th: [0.5, 1, 2, 3, 5, 7, 10, 15, 20] },
     hashtags: { n: ['Hashtags', 'Hashtag'], kind: 'down', th: [0.05, 0.1, 0.2, 0.4, 0.7, 1, 1.5, 2, 3] }
   };
@@ -183,7 +182,7 @@
       if (isReply(ev)) replies++;
     }
     const st = { n, perDay: n / DAYS, nightPct: night / n * 100, medWords: median(words), replyPct: replies / n * 100, emojiPer: emoji / n, laugh, laughPct: laugh / n * 100, tagsPer: tags / n };
-    const rows = [['attendance', st.perDay], ['night', st.nightPct], ['concision', st.medWords], ['replies', st.replyPct], ['emoji', st.emojiPer], ['laughter', st.laughPct], ['hashtags', st.tagsPer]]
+    const rows = [['attendance', st.perDay], ['night', st.nightPct], ['concision', st.medWords], ['replies', st.replyPct], ['laughter', st.laughPct], ['hashtags', st.tagsPer]]
       .map(([key, v]) => ({ key, v, g: gradeOf(key, v) }));
     const avg = Math.round(rows.reduce((a, x) => a + x.g, 0) / rows.length * 10) / 10;
     const worst = rows.reduce((a, x) => x.g < a.g ? x : a, rows[0]);

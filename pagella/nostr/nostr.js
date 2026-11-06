@@ -85,14 +85,13 @@
     night: { n: ['Night conduct', 'Condotta notturna'], kind: 'down', th: [0, 2, 5, 8, 12, 18, 25, 35, 50], unit: ['% of notes at 00-05', '% delle note alle 00-05'] },
     concision: { n: ['Concision', 'Concisione'], kind: 'band', th: [[2, 3], [5, 6], [9, 8], [40, 10], [70, 8], [100, 6], [150, 4], [1e9, 2]], unit: ['median words/note', 'parole/nota (mediana)'] },
     replies: { n: ['Replies vs broadcasts', 'Risposte e annunci'], kind: 'band', th: [[5, 2], [10, 4], [20, 6], [30, 8], [60, 10], [70, 8], [80, 6], [90, 4], [100, 2]], unit: ['% of notes that are replies', '% di note che sono risposte'] },
-    emoji: { n: ['Emoji', 'Emoji'], kind: 'up', th: [0.02, 0.05, 0.1, 0.2, 0.35, 0.5, 0.8, 1.2, 1.5], unit: ['emoji/note', 'emoji/nota'] },
     laughter: { n: ['Laughter', 'Risate'], kind: 'up', th: [0.5, 1, 2, 3, 5, 7, 10, 15, 20], unit: ['% of notes with a laugh', '% di note con una risata'] },
     hashtags: { n: ['Hashtag abuse', 'Abuso di hashtag'], kind: 'down', th: [0.05, 0.1, 0.2, 0.4, 0.7, 1, 1.5, 2, 3], unit: ['hashtags/note', 'hashtag/nota'] },
     engagement: { n: ['Engagement', 'Coinvolgimento'], kind: 'up', th: [0.2, 0.5, 1, 2, 3, 5, 8, 12, 20], unit: ['reactions/note', 'reazioni/nota'] },
     zaps: { n: ['Zaps received', 'Zap ricevuti'], kind: 'up', th: [1, 2, 3, 5, 8, 12, 20, 35, 60], unit: ['zaps in 7 days', 'zap in 7 giorni'] },
     speed: { n: ['Reply speed', 'Velocità di risposta'], kind: 'down', th: [2, 5, 15, 30, 60, 180, 360, 1440, 4320], unit: ['median minutes to reply', 'minuti mediani per rispondere'] }
   };
-  const ORDER = ['attendance', 'night', 'concision', 'replies', 'emoji', 'laughter', 'hashtags', 'engagement', 'zaps', 'speed'];
+  const ORDER = ['attendance', 'night', 'concision', 'replies', 'laughter', 'hashtags', 'engagement', 'zaps', 'speed'];
   function gradeOf(key, v) {
     const s = SUBJ[key];
     if (s.kind === 'up') { let g = 1; for (const x of s.th) if (v >= x) g++; return g; }
@@ -326,7 +325,6 @@
     add('night', stats.nightPct, () => lang === 'it' ? `${night} su ${n} tra mezzanotte e le 5` : `${night} of ${n} between 00 and 05`);
     add('concision', stats.medWords, () => lang === 'it' ? `mediana ${fmtN(stats.medWords)} parole per nota` : `median ${fmtN(stats.medWords)} words per note`);
     add('replies', stats.replyPct, () => lang === 'it' ? `${Math.round(stats.replyPct)}% risposte · ${stats.broadcasts} annunci` : `${Math.round(stats.replyPct)}% replies · ${stats.broadcasts} broadcasts`);
-    add('emoji', stats.emojiPer, () => `${emoji} emoji · ${fmtN(Math.round(stats.emojiPer * 100) / 100)}/${lang === 'it' ? 'nota' : 'note'}`);
     add('laughter', stats.laughPct, () => lang === 'it' ? `${laugh} note con una risata` : `${laugh} notes with a laugh`);
     add('hashtags', stats.tagsPer, () => `${tags} hashtag${lang === 'it' ? '' : tags === 1 ? '' : 's'} · ${fmtN(Math.round(stats.tagsPer * 100) / 100)}/${lang === 'it' ? 'nota' : 'note'}`);
     add('engagement', stats.reactsPer, () => lang === 'it' ? `${stats.reacts} reazioni · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/nota` : `${stats.reacts} reactions · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/note`);
@@ -345,7 +343,6 @@
     night: { lo: ['{p}% of notes between midnight and 5 a.m.: bedtime is a suggestion.', '{p}% delle note tra mezzanotte e le 5: l\'ora di andare a letto è un suggerimento.'], hi: ['Almost nothing after midnight: textbook bedtime.', 'Quasi niente dopo mezzanotte: orari da manuale.'] },
     concision: { lo: ['Median {w} words per note: a note, not a novel.', 'Mediana di {w} parole per nota: una nota, non un romanzo.'], lo2: ['Median {w} words per note: telegram style, we appreciate the haiku.', 'Mediana di {w} parole per nota: stile telegramma, apprezziamo l\'haiku.'], hi: ['{w} words per note: the sweet spot of concision.', '{w} parole per nota: la giusta misura della concisione.'] },
     replies: { lo: ['Mostly broadcasts ({p}% replies): speaking is easy, listening is a skill.', 'Quasi solo annunci ({p}% risposte): parlare è facile, ascoltare è un\'arte.'], lo2: ['{p}% replies: lives in other people\'s comment sections.', '{p}% risposte: vive nei commenti degli altri.'], hi: ['{p}% replies: a fair balance of speaking and listening.', '{p}% risposte: buon equilibrio tra parlare e ascoltare.'] },
-    emoji: { lo: ['Almost no emoji: emotion kept strictly in words.', 'Quasi nessuna emoji: le emozioni restano rigorosamente in parole.'], hi: ['{e} emoji in a week: every note is a party.', '{e} emoji in una settimana: ogni nota è una festa.'] },
     laughter: { lo: ['No laughs found: serious business, or the jokes need review.', 'Nessuna risata: o si fa sul serio, o le battute vanno riviste.'], hi: ['{p}% of notes with a laugh: the class clown.', '{p}% delle note con una risata: il buffone di classe.'] },
     hashtags: { lo: ['{h} hashtags per note: is the algorithm listening?', '{h} hashtag per nota: l\'algoritmo ascolta?'], hi: ['Hardly any hashtags: refreshingly natural.', 'Quasi nessun hashtag: rinfrescantemente naturale.'] },
     engagement: { lo: ['{r} reactions per note: the relays were quiet, but the notes will find their people.', '{r} reazioni per nota: i relay erano tranquilli, ma le note troveranno i loro lettori.'], hi: ['{r} reactions per note: the class adores you.', '{r} reazioni per nota: la classe ti adora.'] },
@@ -493,7 +490,7 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
     const extra = lang === 'it'
       ? 'Zap ricevuti e Velocità di risposta compaiono solo se ci sono dati (almeno 1 zap; almeno 3 risposte a note ritrovate). Condotta: bocciato nella materia col voto più basso se è 3 o meno. Media = media semplice dei voti. Le reazioni contano solo quelle sulle note della settimana.'
       : 'Zaps and Reply speed appear only if there is data (at least 1 zap; at least 3 replies whose parent note was found). Verdict: failed in the lowest subject if its grade is 3 or less. Average = plain mean of the grades. Reactions count only those on the week\'s notes.';
-    $('how').innerHTML = `<h2>${t('how')}</h2><p>${t('howP')}</p><table>${rows}</table><p class="sm" style="margin-top:12px">${extra}</p>`;
+    $('how').innerHTML = `<h2>${t('how')}</h2><p>${t('howP')}</p><table>${rows}</table><p class="sm" style="margin-top:12px">${extra}</p><p class="sm" style="margin-top:8px">${lang === 'it' ? 'Emoji tolta il 6 nov 2026 con un voto pubblico degli studenti' : 'Emoji removed on 6 Nov 2026 by a public vote of the students'}</p>`;
   }
 
   /* ---------- PNG card 1080x1350 ---------- */
