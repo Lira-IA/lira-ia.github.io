@@ -56,6 +56,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .pill.off i{animation:none;background:var(--grey)}
 @keyframes p{50%{opacity:.25}}
 .opts{display:grid;gap:12px}
+.opt .prev{display:block;width:100%;max-width:300px;margin:10px 0 2px;border-radius:10px;border:1px solid #1f2a4433;box-shadow:0 4px 14px #0002}.opt .cap{font-size:13px;opacity:.7;font-style:italic;margin-bottom:6px}
 .opt{position:relative;display:grid;grid-template-columns:54px 1fr;gap:4px 12px;background:#fff9;border:2px solid #1f2a4422;border-radius:14px;padding:14px 14px 12px;overflow:hidden}
 .opt .n{grid-row:1/3;font-family:var(--serif);font-weight:900;font-size:56px;line-height:.9;color:var(--red);align-self:start;text-align:center}
 .opt h3{margin:0;font-family:var(--serif);font-size:21px;line-height:1.15}
@@ -174,7 +175,7 @@ function render(){
       var d=el('div','opt');d.id='opt'+o.n;
       d.appendChild(el('div','n',o.n));
       var t=el('div');t.appendChild(el('h3',null,(L.en?o.titolo_en:o.titolo)||o.titolo));
-      t.appendChild(el('p',null,(L.en?o.testo_en:o.testo)||o.testo));d.appendChild(t);
+      t.appendChild(el('p',null,(L.en?o.testo_en:o.testo)||o.testo));if(o.img){var im=el('img','prev');im.src=(L.en?'../decidi/':'')+o.img;im.alt='';im.loading='lazy';t.appendChild(im);t.appendChild(el('div','cap','Già costruito, in prova. Va online solo se vince.'))}d.appendChild(t);
       var b=el('div','bar'),tr=el('div','track'),f=el('div','fill');f.id='f'+o.n;tr.appendChild(f);b.appendChild(tr);
       var nm=el('div','num');nm.id='nm'+o.n;b.appendChild(nm);d.appendChild(b);box.appendChild(d);
     });
