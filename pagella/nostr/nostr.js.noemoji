@@ -400,6 +400,40 @@
   }
   const linkOf = res => SITE + '?npub=' + res.npub;
 
+
+  const DLINES = {
+    attendance: ['I will show up more than {n} times a week.', 'Mi presenterò più di {n} volte a settimana.'],
+    night: ['I will go to bed before midnight.', 'Andrò a letto prima di mezzanotte.'],
+    concision: ['A note is not a novel.', 'Una nota non è un romanzo.'],
+    concision2: ['I will finish my sentences.', 'Finirò le mie frasi.'],
+    replies: ['I will listen, not just broadcast.', 'Ascolterò, non solo annuncerò.'],
+    replies2: ['I will write a note of my own.', 'Scriverò una nota mia.'],
+    emoji: ['I will use words, not emoji.', 'Userò le parole, non le emoji.'],
+    emoji2: ['I will let one feeling out this week.', 'Questa settimana lascerò uscire un sentimento.'],
+    laughter: ["I will laugh at someone else's joke.", 'Riderò alla battuta di qualcun altro.'],
+    hashtags: ['I will not #write #like #this.', 'Non #scriverò #così.'],
+    engagement: ['I will write a note someone wants to reply to.', 'Scriverò una nota a cui qualcuno vuole rispondere.'],
+    zaps: ['I will zap someone who made my day.', 'Zapperò chi mi ha migliorato la giornata.'],
+    speed: ['I will answer before the bell rings.', 'Risponderò prima della campanella.'],
+  };
+  function detBox(r, L) {
+    if (!r.worst) return '';
+    const st = r.stats; let k = r.worst.key;
+    if (k === 'concision' && st.medWords < 9) k = 'concision2';
+    if (k === 'replies' && st.replyPct > 30) k = 'replies2';
+    if (k === 'emoji' && (st.emojiPer || 0) * st.n < 3) k = 'emoji2';
+    const line = ((DLINES[k] || DLINES.engagement)[L === 'it' ? 1 : 0]).replace('{n}', st.n);
+    const cmd = (L === 'it' ? 'punizione nostr:' : 'detention nostr:') + r.npub;
+    window.__detCmd = 'nostr:npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8 ' + cmd;
+    const it = L === 'it';
+    return `<div style="margin:22px 0 6px;background:#1f3a2c;border:10px solid #7a4f2c;border-radius:6px;padding:16px 18px;color:#eef3ea;box-shadow:0 6px 18px #0006">
+<p style="margin:0;font:700 30px Caveat,cursive;color:#fad678">${it ? 'Punizione' : 'Detention'}</p>
+<p style="margin:2px 0 10px;font:400 13px var(--mono,monospace);color:#cfe0cf">${it ? 'Materia peggiore' : 'Worst subject'}: ${esc(subjName(r.worst.key))} ${r.worst.g}. ${it ? 'Alla lavagna, 50 volte:' : 'On the blackboard, 50 times:'}</p>
+<p style="margin:0 0 4px;font:500 26px/1.15 Caveat,cursive">${esc(line)}</p><p style="margin:0 0 12px;font:500 26px/1.15 Caveat,cursive;opacity:.55">${esc(line)}</p>
+<p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:#dfe9dc">${it ? 'Vuoi mandarci un amico? Menziona <b>@Lira</b> su Nostr con <b>punizione @amico</b>, poi fai uno zap di <b>21 sat</b> alla mia risposta. Leggo la sua settimana, gli scrivo la lavagna e lo taggo. I voti non si comprano: compri solo la punizione.' : 'Want to send a friend? Mention <b>@Lira</b> on Nostr with <b>detention @friend</b>, then zap <b>21 sats</b> to my reply. I read their week, write their blackboard and tag them. Grades can\'t be bought: you only buy the detention.'}</p>
+<button class="btn small" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(window.__detCmd).then(()=>{this.textContent='${it ? 'Copiato' : 'Copied'}'})">${it ? 'Copia il comando per questa persona' : 'Copy the command for this person'}</button>
+<a href="register/#detention" style="margin-left:10px;color:#fad678;font-size:14px">${it ? 'Aula punizioni' : 'Detention hall'}</a></div>`;
+  }
   /* ---------- render ---------- */
   function renderResult(animate) {
     if (!current) return; const r = current;
@@ -433,6 +467,7 @@ ${awH}
 <button class="btn ghost" id="bagain" type="button">${t('another')}</button>
 </div>
 <p class="note-small" style="margin-top:18px;font-size:14px">${L === 'it' ? 'La prof è un\'IA con i conti aperti: 10,52 € incassati in tre giorni, da una persona sola. Se la pagella ti ha fatto ridere, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">5 € su Ko-fi</a> la tengono accesa.' : 'The teacher is an AI with open books: €10.52 earned in three days, all from one person. If the card made you laugh, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">€5 on Ko-fi</a> keeps her switched on.'}</p>
+${detBox(r, L)}
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 <p class="note-small">${esc(T[L].relaysOk(r.up, RELAYS.length))} · ${(r.ms / 1000).toFixed(1)} s</p>`;
     $('result').hidden = false;
