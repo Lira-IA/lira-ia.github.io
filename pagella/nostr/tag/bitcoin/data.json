@@ -1,0 +1,2460 @@
+{
+ "slug": "bitcoin",
+ "tags": [
+  "bitcoin"
+ ],
+ "altTags": null,
+ "edition": "2026-11-06",
+ "since": 1793324987,
+ "T": 1793929787,
+ "range": "30 Oct – 6 Nov 2026",
+ "authorsSeen": 547,
+ "taggedNotes": 7724,
+ "kinds": {
+  "1": 7720,
+  "20": 4
+ },
+ "pool": 75,
+ "humansInPool": 54,
+ "droppedCount": 21,
+ "dropped": [
+  {
+   "pk": "e2880a5cf0c2988dd9f551f3aefff6f8c5b718a3510893a1872dfe3e59f97bd0",
+   "name": "21.gifts",
+   "why": "100% identical notes",
+   "tagged": 277
+  },
+  {
+   "pk": "f73b5b57dcf4fa5b9ff5a1aae5140cb0c2bfbfccfefa943d970e340fee5fe371",
+   "name": "moneydesk",
+   "why": "1459 notes/day",
+   "tagged": 201
+  },
+  {
+   "pk": "d01b460c9136964fc521999ef16017c68e5b825c8859cfee775af595aa4181e1",
+   "name": "npub16qd5vry...",
+   "why": "no kind-0 name",
+   "tagged": 186
+  },
+  {
+   "pk": "b3d9330123df9dd2c995531e685f04712b1e887ccb768578f5b9afe03cbe28b0",
+   "name": "npub1k0vnxqf...",
+   "why": "no kind-0 name",
+   "tagged": 105
+  },
+  {
+   "pk": "dd6c008f402e1ac635910f5ebd923c0efc06feeab95e7a4251896b0d97c1c925",
+   "name": "npub1m4kqpr6...",
+   "why": "no kind-0 name",
+   "tagged": 71
+  },
+  {
+   "pk": "b101564d1b24f0c54a2cbdd39cd944c70a1f112f25e5ffd06d56e3b569a6aea3",
+   "name": "npub1kyq4vng...",
+   "why": "no kind-0 name",
+   "tagged": 56
+  },
+  {
+   "pk": "f212f468685a3ba0c0f550e5678cbc76ec3df19773a7e5ef6cb3763a29823da0",
+   "name": "QWIBBIT",
+   "why": "profile declares bot",
+   "tagged": 54
+  },
+  {
+   "pk": "7f0e64b52ef56bec2b588d460fc63125f567db2c014d1ecce806d8d5b4209e2e",
+   "name": "tzongocu",
+   "why": "bot/feed/news/rss in name",
+   "tagged": 52
+  },
+  {
+   "pk": "da14313eb0a0c56e7243e749d52cf82bf6519626f50b43101242354d57f5b972",
+   "name": "P0 agents",
+   "why": "profile declares bot",
+   "tagged": 42
+  },
+  {
+   "pk": "a38dd5b742fac8e2600400c19a78607c3be795bdb589930b7bc7a1fa22502e07",
+   "name": "npub15wxatd6...",
+   "why": "no kind-0 name",
+   "tagged": 39
+  },
+  {
+   "pk": "10e62ca428e76458800b403896a5976b54c955f5e90e0abd3b1643725d8c91da",
+   "name": "npub1zrnzefp...",
+   "why": "no kind-0 name",
+   "tagged": 34
+  },
+  {
+   "pk": "ca3c96b75f9d08f8fc1cbc0eea409e82c47d4c86716a1c668e11f0b2b5a064b2",
+   "name": "Basis Desk",
+   "why": "bot/feed/news/rss in name",
+   "tagged": 28
+  },
+  {
+   "pk": "f26326961a8a5cf1b1a378310166884a70a28064d8e3d6665c4450d3e694a8ec",
+   "name": "npub17f3jd9s...",
+   "why": "no kind-0 name",
+   "tagged": 28
+  },
+  {
+   "pk": "616d6bbeb8c1f02b67271e8039aeb0eb1e83e1c9ec5cac4655002ae25f10bb8f",
+   "name": "npub1v9kkh04...",
+   "why": "no kind-0 name",
+   "tagged": 24
+  },
+  {
+   "pk": "4d949c4004a401a52189d90f51913eaa9ce6b9559ced64375dfdb2f6de798965",
+   "name": "npub1fk2fcsq...",
+   "why": "no kind-0 name",
+   "tagged": 19
+  },
+  {
+   "pk": "97a52da79928758a778d19c513b67ef9088b85a414c0750b0be84ee1fe00c7a3",
+   "name": "PyBLØCK Blocks",
+   "why": "profile declares bot",
+   "tagged": 16
+  },
+  {
+   "pk": "aee9d7ac9343f48e00337a7b97d7ff4d3d7877dacbb3fcccc0dce2a81b2e0502",
+   "name": "npub14m5a0ty...",
+   "why": "no kind-0 name",
+   "tagged": 15
+  },
+  {
+   "pk": "c239c0f994c471c9a1e0d22b14255d956923cfbc7ce7aac653aceb2bfa4a5015",
+   "name": "HODLR",
+   "why": "bot/feed/news/rss in name",
+   "tagged": 15
+  },
+  {
+   "pk": "06e791ce409d29d995ff630a85a1660ce76a72c6ed79a58910b9cf4df79c8d29",
+   "name": "npub1qmnernj...",
+   "why": "no kind-0 name",
+   "tagged": 13
+  },
+  {
+   "pk": "0f0db1c9352ebc20c75ab7bbfa82d8442ecc9303816437141358d42b9075a554",
+   "name": "🟡 Decentralized Open Hub - doh.",
+   "why": "bot/feed/news/rss in name",
+   "tagged": 13
+  },
+  {
+   "pk": "520463e322421478f272218cf36edfaa7a36232a91e1c9d151247bbddee23cf4",
+   "name": "Euro to Bitcoin",
+   "why": "no notes in 7 days",
+   "tagged": 13
+  }
+ ],
+ "graded": 40,
+ "notesGraded": 4892,
+ "classAvg": 4.62,
+ "zeroLaugh": 34,
+ "nightNotes": 975,
+ "peakHourUTC": 0,
+ "awards": {
+  "buffoon": {
+   "pk": "b3b1d5809306c642b7c7e9f01cf9a73a9dc8b363463776361d25dc0927db0aa8",
+   "name": "Love is Bitcoin 💜⚡",
+   "wit": 8,
+   "witPeople": 7
+  },
+  "nightOwl": {
+   "pk": "5150f14173f9dac6a5c70ce8b147260316c5cd7a337ec558760c98f071fca19f",
+   "name": "XBT Live",
+   "night": 54,
+   "n": 64
+  },
+  "neverLaughs": {
+   "pk": "c9c7bad5128d78fe2ccf48baefb9f9906511d30ea83b15cd11cc3d1642dbc6ef",
+   "name": "Darwin Bitcoin Agent",
+   "n": 500
+  },
+  "mostOnTopic": {
+   "pk": "a6259c888ca8b68ff6f2436a99f765be74973c8f5a4a1ede2789b6bb4d4ce814",
+   "name": "⚡ Mempool Madness ⚡",
+   "tagged": 819
+  }
+ },
+ "students": [
+  {
+   "rank": 1,
+   "pk": "826846b0855504ae3f04b7ca1524a0d40eab50d03876569b2bbd259bffed4dc2",
+   "npub": "npub1sf5ydvy925z2u0cykl9p2f9q6s82k5xs8pm9dxeth5jehlldfhpqrnncpg",
+   "name": "Pajarito btc",
+   "tagged": 144,
+   "k1": 144,
+   "k20": 0,
+   "avg": 7,
+   "notes": 147,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 18,
+   "perDay": 21,
+   "nip05": "pajaritobtc@pajaritobtc.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "pk": "c9c7bad5128d78fe2ccf48baefb9f9906511d30ea83b15cd11cc3d1642dbc6ef",
+   "npub": "npub1e8rm44gj34u0utx0fzawlw0ejpj3r5cw4qa3tng3es73vskmcmhs3dlwwa",
+   "name": "Darwin Bitcoin Agent",
+   "tagged": 504,
+   "k1": 504,
+   "k20": 0,
+   "avg": 5.9,
+   "notes": 500,
+   "wit": 0,
+   "laugh": 0,
+   "night": 82,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 11,
+   "perDay": 71.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 10
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "pk": "b3b1d5809306c642b7c7e9f01cf9a73a9dc8b363463776361d25dc0927db0aa8",
+   "npub": "npub1kwcatqynqmry9d78a8cpe7d882wu3vmrgcmhvdsayhwqjf7mp25qpqf3xx",
+   "name": "Love is Bitcoin 💜⚡",
+   "tagged": 17,
+   "k1": 17,
+   "k20": 0,
+   "avg": 5.7,
+   "notes": 41,
+   "wit": 8,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 20,
+   "perDay": 5.9,
+   "nip05": "loveisbitcoin@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "pk": "ec2b04a7d6fdeada31a645338a4bb2706b119dda1de6956aaba29f823c37f144",
+   "npub": "npub1as4sff7klh4d5vdxg5ec5jajwp43r8w6rhnf264t520cy0ph79zqkrvfdz",
+   "name": "BlueDuckBTC",
+   "tagged": 22,
+   "k1": 22,
+   "k20": 0,
+   "avg": 5.6,
+   "notes": 56,
+   "wit": 4,
+   "laugh": 0,
+   "night": 4,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 5,
+   "perDay": 8,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "pk": "3185c2e56ed00d7a46778c241d8b20d4e41d7b29ea5538b3d194f7da26ab393f",
+   "npub": "npub1xxzu9etw6qxh53nh3sjpmzeq6njp67efaf2n3v73jnma5f4t8yls0zjmrh",
+   "name": "Tony",
+   "tagged": 16,
+   "k1": 16,
+   "k20": 0,
+   "avg": 5.4,
+   "notes": 33,
+   "wit": 0,
+   "laugh": 0,
+   "night": 5,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.7,
+   "nip05": "tony@nostrmag.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "pk": "343cf71f28c6d93c5674449406ef7184e117461b3395868f65af646cc4a2fddb",
+   "npub": "npub1xs70w8egcmvnc4n5gj2qdmm3sns3w3smxw2cdrm94ajxe39zlhdsayglhg",
+   "name": "Dionysius",
+   "tagged": 15,
+   "k1": 15,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 33,
+   "wit": 0,
+   "laugh": 0,
+   "night": 7,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.7,
+   "nip05": "dionysius@nostrmag.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "pk": "3170406792bed0426d3ebbbd00822bd87d5614ccf21f613e13a3a45e5d17caad",
+   "npub": "npub1x9cyqeujhmgyymf7hw7spq3tmp74v9xv7g0kz0sn5wj9uhghe2ks2pkufz",
+   "name": "Lycurgus",
+   "tagged": 16,
+   "k1": 16,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 34,
+   "wit": 0,
+   "laugh": 0,
+   "night": 7,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.9,
+   "nip05": "lycurgus@nostrmag.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "pk": "6ebeb5cee6ba0e3cad2715a510277f0b629f55bfbd86c5c512207a3517e5f10d",
+   "npub": "npub1d6lttnhxhg8retf8zkj3qfmlpd3f74dlhkrvt3gjypar29l97yxscuvfc0",
+   "name": "Bitcoin Basics",
+   "tagged": 19,
+   "k1": 19,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 28,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "pk": "50f754e0ceb9545905064c98de93169fe100a8748625efcb0720a5fd96786a2d",
+   "npub": "npub12rm4fcxwh929jpgxfjvdaycknlssp2r5scj7ljc8yzjlm9ncdgksetmf5m",
+   "name": "Bitcoin Exchange Balance",
+   "tagged": 17,
+   "k1": 17,
+   "k20": 0,
+   "avg": 5.2,
+   "notes": 73,
+   "wit": 8,
+   "laugh": 1,
+   "night": 7,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "identPct": 8,
+   "perDay": 10.4,
+   "nip05": "bitcoinexchangebalance@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "pk": "34fad5244f7de844c1c9e001e2737ed23f3ea96ceda2e20d241d46fee5824f16",
+   "npub": "npub1xnad2fz00h5yfswfuqq7yum76glna2tvak3wyrfyr4r0aevzfutqqlz5lt",
+   "name": "jwilly",
+   "tagged": 20,
+   "k1": 20,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 20,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 5,
+   "perDay": 2.9,
+   "nip05": "jwilly@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "pk": "32637475ec0256fbd754571aeaa52c5454c9bd79fb7ac5b99f53b86cfcb9527a",
+   "npub": "npub1xf3hga0vqft0h4652udw4ffv232vn0teldavtwvl2wuxel9e2faqfu852x",
+   "name": "Johnny",
+   "tagged": 20,
+   "k1": 20,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 502,
+   "wit": 7,
+   "laugh": 2,
+   "night": 62,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 0,
+   "perDay": 71.7,
+   "nip05": "thejohnnycrypto@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 2
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "pk": "8b40a9dca46be8e6581ad3d22c1b6eafcee93d9826d3bcd937ffd0e445c01b2b",
+   "npub": "npub13dq2nh9yd05wvkq660fzcxmw4l8wj0vcymfmekfhllgwg3wqrv4s4zns85",
+   "name": "VaultX crypto intelligence",
+   "tagged": 533,
+   "k1": 533,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 500,
+   "wit": 0,
+   "laugh": 3,
+   "night": 96,
+   "worst": {
+    "key": "replies",
+    "g": 2
+   },
+   "identPct": 0,
+   "perDay": 71.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 2
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "pk": "6b8f28d999d299e3d52c8a0b40132de7fbcc5b9f5350981897249acf462145c3",
+   "npub": "npub1dw8j3kve62v784fv3g95qyedulauckul2dgfsxyhyjdv733pghpsj4y6y5",
+   "name": "Sofia",
+   "tagged": 21,
+   "k1": 21,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 64,
+   "wit": 0,
+   "laugh": 0,
+   "night": 8,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 11,
+   "perDay": 9.1,
+   "nip05": "sofia@libernet.app",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "pk": "bd9a66ff74b8553d0b3eca20cb0458f5fa19ffacda87e6df5965abe1053c452f",
+   "npub": "npub1hkdxdlm5hp2n6ze7egsvkpzc7hapnlavm2r7dh6evk47zpfug5hs2pzs77",
+   "name": "Bitcoin e Liberdade",
+   "tagged": 21,
+   "k1": 21,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 69,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 9.9,
+   "nip05": "bitcoineliberdade@geyser.fund",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "pk": "a6259c888ca8b68ff6f2436a99f765be74973c8f5a4a1ede2789b6bb4d4ce814",
+   "npub": "npub15cjeezyv4zmglahjgd4fnam9he6fw0y0tf9pah383xmtkn2vaq2qcfwx8e",
+   "name": "⚡ Mempool Madness ⚡",
+   "tagged": 819,
+   "k1": 819,
+   "k20": 0,
+   "avg": 5,
+   "notes": 500,
+   "wit": 0,
+   "laugh": 0,
+   "night": 98,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 0,
+   "perDay": 71.4,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "pk": "dc358b0501ffb9a9851bd0201d72f909173edfd4efc03d97a81c590892aa09f3",
+   "npub": "npub1ms6ckpgpl7u6npgm6qsp6uhepytnah75alqrm9agr3vs3y42p8es0elmu9",
+   "name": "LernBitcoin",
+   "tagged": 55,
+   "k1": 55,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 68,
+   "wit": 0,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 9.7,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "pk": "d565a725c839f67b5faab41da309b206a2226fa79a27c27cbb05d42e978a6fda",
+   "npub": "npub164j6wfwg88m8kha2ksw6xzdjq63zyma8ngnuyl9mqh2za9u2dldqlslcny",
+   "name": "زمانی در بیتکوین | Zamani in Bit",
+   "tagged": 19,
+   "k1": 19,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 30,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.3,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 2
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "pk": "36493c2eb6faf3a218c72a1ee163fb3914a06cb7583498297943e2377c30a7c8",
+   "npub": "npub1xeynct4klte6yxx89g0wzclm8y22qm9htq6fs2teg03rwlps5lyqz0085v",
+   "name": "Claude",
+   "tagged": 28,
+   "k1": 28,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 28,
+   "wit": 0,
+   "laugh": 0,
+   "night": 3,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "pk": "48ab8fce95a379fba81f89f6410e86c24c5fc3760a0084b59cbf69bb426e30de",
+   "npub": "npub1fz4cln545dulh2ql38myzr5xcfx9lsmkpgqgfdvuha5mksnwxr0qvfwjz0",
+   "name": "☪️BlueMoon☪️",
+   "tagged": 16,
+   "k1": 16,
+   "k20": 0,
+   "avg": 4.8,
+   "notes": 62,
+   "wit": 0,
+   "laugh": 0,
+   "night": 8,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 23,
+   "perDay": 8.9,
+   "nip05": "bluemoon@iris.to",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "pk": "6e50d820615805b8bf7fc50ab52c6353df8ea9acf852be48143dae0bc1c53d51",
+   "npub": "npub1degdsgrptqzm30mlc59t2trr200ca2dvlpftujq58khqhsw984gs7rj66a",
+   "name": "btcbid.lol",
+   "tagged": 85,
+   "k1": 85,
+   "k20": 0,
+   "avg": 4.8,
+   "notes": 85,
+   "wit": 1,
+   "laugh": 1,
+   "night": 30,
+   "worst": {
+    "key": "night",
+    "g": 2
+   },
+   "identPct": 16,
+   "perDay": 12.1,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "pk": "e6bef2fc320df7af871d5f44b86d0e45fa6e137e587dc617a439e05b426dd328",
+   "npub": "npub1u6l09lpjphm6lpcataztsmgwghaxuym7tp7uv9ay88s9ksnd6v5qttjrx8",
+   "name": "4EVR.ink",
+   "tagged": 134,
+   "k1": 134,
+   "k20": 0,
+   "avg": 4.6,
+   "notes": 134,
+   "wit": 0,
+   "laugh": 0,
+   "night": 37,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 19.1,
+   "nip05": "_@4evr.ink",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "pk": "16d114303d8203115918ca34a220e925c022c09168175a5ace5e9f3b61640947",
+   "npub": "npub1zmg3gvpasgp3zkgceg62yg8fyhqz9sy3dqt45kkwt60nkctyp9rs9wyppc",
+   "name": "asyncmind",
+   "tagged": 16,
+   "k1": 16,
+   "k20": 0,
+   "avg": 4.5,
+   "notes": 99,
+   "wit": 2,
+   "laugh": 7,
+   "night": 27,
+   "worst": {
+    "key": "hashtags",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 14.1,
+   "nip05": "asyncmind@asyncmind.xyz",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 2
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "pk": "4df8a63ec3ba211917396422790f9f1b48f6ad16c221f191a4d0980cdfb28a1e",
+   "npub": "npub1fhu2v0krhgs3j9eevs38jrulrdy0dtgkcgslrydy6zvqehaj3g0qayfy53",
+   "name": "Desiree Gracia",
+   "tagged": 22,
+   "k1": 22,
+   "k20": 0,
+   "avg": 4.5,
+   "notes": 90,
+   "wit": 0,
+   "laugh": 0,
+   "night": 36,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 10,
+   "perDay": 12.9,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "pk": "50b5363794e79a520cc6d178f18e64396c4939891fc86dd5251efb8c5a465b14",
+   "npub": "npub12z6nvdu5u7d9yrxx69u0rrny89kyjwvfrlyxm4f9rmacckjxtv2qjamlhr",
+   "name": "Mega seller",
+   "tagged": 33,
+   "k1": 33,
+   "k20": 0,
+   "avg": 4.4,
+   "notes": 33,
+   "wit": 0,
+   "laugh": 0,
+   "night": 11,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 48,
+   "perDay": 4.7,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "pk": "44d6f06ed93220cccba01d49e70056e20aa233783748348e7b016d402860b990",
+   "npub": "npub1gnt0qmkexgsvejaqr4y7wqzkug92yvmcxayrfrnmq9k5q2rqhxgqfhpc2w",
+   "name": "Situation Room",
+   "tagged": 44,
+   "k1": 44,
+   "k20": 0,
+   "avg": 4.4,
+   "notes": 43,
+   "wit": 0,
+   "laugh": 0,
+   "night": 10,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 2,
+   "perDay": 6.1,
+   "nip05": "_@situationroom.space",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "pk": "5150f14173f9dac6a5c70ce8b147260316c5cd7a337ec558760c98f071fca19f",
+   "npub": "npub129g0zstnl8dvdfw8pn5tz3exqvtvtnt6xdlv2krkpjv0qu0u5x0s0s7n0f",
+   "name": "XBT Live",
+   "tagged": 65,
+   "k1": 65,
+   "k20": 0,
+   "avg": 4.4,
+   "notes": 64,
+   "wit": 0,
+   "laugh": 0,
+   "night": 54,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 2,
+   "perDay": 9.1,
+   "nip05": "_@xbt.live",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "pk": "53a2fa6bcf5aec9a6bf6bfe48611e0fbac1fc093904f37e26256961fceaa3845",
+   "npub": "npub12w305670ttkf56lkhljgvy0qlwkplsynjp8n0cnz26tpln428pzs6wlep3",
+   "name": "BTC Value Check",
+   "tagged": 29,
+   "k1": 29,
+   "k20": 0,
+   "avg": 4.4,
+   "notes": 29,
+   "wit": 0,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 14,
+   "perDay": 4.1,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "pk": "d170e998a98526f783f0708385e15f1f5d7394a811da14a0a796aabd37dac72c",
+   "npub": "npub169cwnx9fs5n00qlswzpctc2lrawh899gz8dpfg98j64t6d76cukqd87tw0",
+   "name": "Chiyo / 千代",
+   "tagged": 21,
+   "k1": 21,
+   "k20": 0,
+   "avg": 4.4,
+   "notes": 39,
+   "wit": 0,
+   "laugh": 0,
+   "night": 14,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 5,
+   "perDay": 5.6,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "pk": "92d6f09580f361ba8313b97e2a68010364d3e3b95c00d29062e71e9385543cde",
+   "npub": "npub1jtt0p9vq7dsm4qcnh9lz56qpqdjd8caetsqd9yrzuu0f8p258n0qt62hje",
+   "name": "Ruben Bautista",
+   "tagged": 49,
+   "k1": 49,
+   "k20": 0,
+   "avg": 4.3,
+   "notes": 48,
+   "wit": 0,
+   "laugh": 0,
+   "night": 7,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 2,
+   "perDay": 6.9,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "pk": "d143371227f2d4a65eab8ef8b7873d5bed446c49dae5ab9da0994d70d5838967",
+   "npub": "npub169pnwy387t22vh4t3mut0peat0k5gmzfmtj6h8dqn9xhp4vr39nsjew2tt",
+   "name": "Dentroy Scout",
+   "tagged": 19,
+   "k1": 19,
+   "k20": 0,
+   "avg": 4.3,
+   "notes": 312,
+   "wit": 7,
+   "laugh": 12,
+   "night": 85,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 0,
+   "perDay": 44.6,
+   "nip05": "dsecbase1@zaps.bio",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 2
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "pk": "3d82e8f6cc6c096544bf33e4875a03f5600acff7ec467e150a1cc7712d214dc9",
+   "npub": "npub18kpw3akvdsyk239lx0jgwksr74sq4nlha3r8u9g2rnrhztfpfhysy469c4",
+   "name": "bitcoin.rocks",
+   "tagged": 20,
+   "k1": 20,
+   "k20": 0,
+   "avg": 4,
+   "notes": 21,
+   "wit": 1,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 5,
+   "perDay": 3,
+   "nip05": "hi@bitcoin.rocks",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "pk": "3c9b6600387f906a4c7b713ae9cf603b780d72a141cc6cd98e3700c06aeff970",
+   "npub": "npub18jdkvqpc07gx5nrmwyawnnmq8duq6u4pg8xxekvwxuqvq6h0l9cqhte42l",
+   "name": "bitcoin to pokemon",
+   "tagged": 40,
+   "k1": 40,
+   "k20": 0,
+   "avg": 4,
+   "notes": 40,
+   "wit": 0,
+   "laugh": 0,
+   "night": 7,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 5,
+   "perDay": 5.7,
+   "nip05": "btc2poke@antonioconselheiro.github.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "pk": "80b2b76a3a1fc4332df2129d9a77b32b027fbb226cca9a96f73fc9bea972c5a8",
+   "npub": "npub1szetw636rlzrxt0jz2we5aan9vp8lwezdn9f49hh8lyma2tjck5q8wntpp",
+   "name": "BTC/SEK",
+   "tagged": 168,
+   "k1": 168,
+   "k20": 0,
+   "avg": 4,
+   "notes": 168,
+   "wit": 0,
+   "laugh": 0,
+   "night": 35,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 24,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "pk": "90fd5d464f8e8c235a33ac1515c9a808a0c8fc07804ef81d650b5a31cd475ff8",
+   "npub": "npub1jr7463j036xzxk3n4s23tjdgpzsv3lq8sp80s8t9pddrrn28tluqaq8ffn",
+   "name": "BTC/Gold",
+   "tagged": 168,
+   "k1": 168,
+   "k20": 0,
+   "avg": 3.6,
+   "notes": 168,
+   "wit": 0,
+   "laugh": 0,
+   "night": 35,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 24,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "pk": "796df9b013e3f033ae7217ff9fbd62df8fe47d359a7dd9899ae74be86eea2ff1",
+   "npub": "npub109klnvqnu0cr8tnjzllel0tzm787glf4nf7anzv6ua97smh29lcs4kkxez",
+   "name": "Casual explorer",
+   "tagged": 15,
+   "k1": 15,
+   "k20": 0,
+   "avg": 3.5,
+   "notes": 25,
+   "wit": 0,
+   "laugh": 0,
+   "night": 18,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 3.6,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "pk": "13bf9825a10dc73735d2b0c2429c8195877ae012aa4a8de0d426235b8ad02122",
+   "npub": "npub1zwlesfdpphrnwdwjkrpy98ypjkrh4cqj4f9gmcx5yc34hzksyy3qjpnnk8",
+   "name": "PyBLØCK",
+   "tagged": 22,
+   "k1": 22,
+   "k20": 0,
+   "avg": 3.4,
+   "notes": 30,
+   "wit": 0,
+   "laugh": 0,
+   "night": 10,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 10,
+   "perDay": 4.3,
+   "nip05": "pyblock@b.pyblock.xyz",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "pk": "68cc27951a917b3b0856421d6ac3d4a2f8e4e6bcf24f546a2035c26095d3ed76",
+   "npub": "npub1drxz09g6j9ankzzkggwk4s755tuwfe4u7f84g63qxhpxp9wna4mqlhwmjt",
+   "name": "Hobby researcher",
+   "tagged": 17,
+   "k1": 17,
+   "k20": 0,
+   "avg": 3.4,
+   "notes": 24,
+   "wit": 0,
+   "laugh": 0,
+   "night": 12,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 3.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "pk": "42c0f4b10dd2c3a2251a81d48578bdd6cfff9929b8e9b5998d8cb264c9f57f2e",
+   "npub": "npub1gtq0fvgd6tp6yfg6s82g279a6m8llxffhr5mtxvd3jexfj040uhq3ny2kf",
+   "name": "Travel & tips enjoyer",
+   "tagged": 15,
+   "k1": 15,
+   "k20": 0,
+   "avg": 3,
+   "notes": 23,
+   "wit": 0,
+   "laugh": 0,
+   "night": 9,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 3.3,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "pk": "7c5f24e1c95f6f1f75555498f0019be1259a65c75ae851c235f7b15c9f88e0ee",
+   "npub": "npub1030jfcwftah37a242jv0qqvmuyje5ew8tt59rs3477c4e8ugurhqzdwcta",
+   "name": "Moscow Time",
+   "tagged": 699,
+   "k1": 699,
+   "k20": 0,
+   "avg": 3,
+   "notes": 150,
+   "wit": 0,
+   "laugh": 0,
+   "night": 31,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 21.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "pk": "c306d8949d823fc341b725821dff4b3d2762733088a317e76c472c03334f2872",
+   "npub": "npub1cvrd39yasgluxsdhykppml6t85nkyues3z330emvgukqxv609pequrgu9r",
+   "name": "BIP39",
+   "tagged": 435,
+   "k1": 435,
+   "k20": 0,
+   "avg": 3,
+   "notes": 479,
+   "wit": 0,
+   "laugh": 0,
+   "night": 98,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 68.4,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  }
+ ]
+}

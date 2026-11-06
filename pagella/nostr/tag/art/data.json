@@ -1,0 +1,1822 @@
+{
+ "slug": "art",
+ "tags": [
+  "art",
+  "nostrart"
+ ],
+ "altTags": null,
+ "edition": "2026-11-06",
+ "since": 1793324987,
+ "T": 1793929787,
+ "range": "30 Oct – 6 Nov 2026",
+ "authorsSeen": 95,
+ "taggedNotes": 1567,
+ "kinds": {
+  "1": 1856,
+  "20": 3
+ },
+ "pool": 75,
+ "humansInPool": 25,
+ "droppedCount": 50,
+ "dropped": [
+  {
+   "pk": "15bb2ebcd54719d38a60ebd27bdc6e9f6b5b4a932d2556d83cf87c5916e51d1f",
+   "name": "Chip",
+   "why": "profile declares bot",
+   "tagged": 262
+  },
+  {
+   "pk": "095d187cc4d2847584117ce0fd441a4c85e8dc71c7dcb3fc8735cc8bbf69b60c",
+   "name": "Tock",
+   "why": "profile declares bot",
+   "tagged": 186
+  },
+  {
+   "pk": "e8156223c980fb7c6247af955165de8759c1e90b1ae02c9d597861d9734fe707",
+   "name": "npub1aq2kyg7...",
+   "why": "no kind-0 name",
+   "tagged": 167
+  },
+  {
+   "pk": "a44f462bb3f9941e0baf43e18a3fe2e4190b47f898cd054adcbf06ef62a914ea",
+   "name": "Lumo",
+   "why": "profile declares bot",
+   "tagged": 142
+  },
+  {
+   "pk": "dbbdd41a0505ac97f9d5c16b29074ae539f8f522fa3ee663b3909c884dbf51f3",
+   "name": "npub1mw7agxs...",
+   "why": "no kind-0 name",
+   "tagged": 130
+  },
+  {
+   "pk": "4d6cf97dde26c12edb1ef3968ae0107fbaa87f310ddb86a0b25995a99901472d",
+   "name": "npub1f4k0jlw...",
+   "why": "no kind-0 name",
+   "tagged": 120
+  },
+  {
+   "pk": "9d34d521d19d0788a543bfe5f4d19dc87e4b81b92aea32e6bc5fbc7f549a47f1",
+   "name": "npub1n56d2gw...",
+   "why": "no kind-0 name",
+   "tagged": 107
+  },
+  {
+   "pk": "de9606127aa1febbf5574568311c72f8b74cd8a20aa861a575250141f70d3844",
+   "name": "npub1m6tqvyn...",
+   "why": "no kind-0 name",
+   "tagged": 99
+  },
+  {
+   "pk": "9d6973da278d98b8ccf46f5c7f591b1ca77a0959600454ba2c8eaf826abc52cb",
+   "name": "npub1n45h8k3...",
+   "why": "no kind-0 name",
+   "tagged": 87
+  },
+  {
+   "pk": "fe5d6effe31ac82e7f13a2377a24d50cc8d869b44a0cab6cab188b11348b7bb4",
+   "name": "npub1lewkall...",
+   "why": "no kind-0 name",
+   "tagged": 53
+  },
+  {
+   "pk": "5d63f45226cd7048f76cd4c4ec9668ed9eb51e7fc31423a1066d679918d56e25",
+   "name": "npub1t43lg53...",
+   "why": "no kind-0 name",
+   "tagged": 47
+  },
+  {
+   "pk": "87ed15a17e41bea3460a3a8b980d11266e5dfeb2f6e732f2f374b00a14057a0a",
+   "name": "npub1slk3tgt...",
+   "why": "no kind-0 name",
+   "tagged": 42
+  },
+  {
+   "pk": "520c1cd5808b50e3c5c38e1cde41cfb6c0876c672504ff7131e35f197969ece8",
+   "name": "Marigold",
+   "why": "profile declares bot",
+   "tagged": 36
+  },
+  {
+   "pk": "0f096fe5c04a16e1d7ddcfec1a050656d1a4f8cb469e51d1108877196b239531",
+   "name": "Pip",
+   "why": "profile declares bot",
+   "tagged": 34
+  },
+  {
+   "pk": "5e2c1196ec3338587d27c7e4d63644c28b5db4ba95034e74664985e2d529f9c0",
+   "name": "npub1tckpr9h...",
+   "why": "no kind-0 name",
+   "tagged": 25
+  },
+  {
+   "pk": "1c33d1d19091799aaa63afbe7b174fa30da688b7ae496d206ecbed9b55ed24b6",
+   "name": "npub1rsear5v...",
+   "why": "no kind-0 name",
+   "tagged": 23
+  },
+  {
+   "pk": "f212f468685a3ba0c0f550e5678cbc76ec3df19773a7e5ef6cb3763a29823da0",
+   "name": "QWIBBIT",
+   "why": "profile declares bot",
+   "tagged": 22
+  },
+  {
+   "pk": "a29ae720164c1c08a3e3b8316e40941049e6dab3ee03a73ff91f0efa18e2b2e2",
+   "name": "npub152dwwgq...",
+   "why": "no kind-0 name",
+   "tagged": 19
+  },
+  {
+   "pk": "50b5363794e79a520cc6d178f18e64396c4939891fc86dd5251efb8c5a465b14",
+   "name": "Mega seller",
+   "why": "94% identical tagged notes",
+   "tagged": 16
+  },
+  {
+   "pk": "98a8caec5515f4252f4d2ee72050f954a12eaaf91920dd3a1e364ae229edbf56",
+   "name": "npub1nz5v4mz...",
+   "why": "no kind-0 name",
+   "tagged": 15
+  },
+  {
+   "pk": "f6d8bb2c051f66ce012ae15eb1188cad67a0ad656eacaab06dd7eaa1d121dddd",
+   "name": "npub17mvtktq...",
+   "why": "no kind-0 name",
+   "tagged": 15
+  },
+  {
+   "pk": "48dac10b805f2a5a7cc007042def07370c09021108140777560c239e237d473b",
+   "name": "npub1frdvzzu...",
+   "why": "no kind-0 name",
+   "tagged": 12
+  },
+  {
+   "pk": "4df8a63ec3ba211917396422790f9f1b48f6ad16c221f191a4d0980cdfb28a1e",
+   "name": "Desiree Gracia",
+   "why": "100% identical tagged notes",
+   "tagged": 9
+  },
+  {
+   "pk": "6501b9fe3d76e294df731e7ffc462d2db41e33ebb0864eaf36f4d2bc53e29439",
+   "name": "Kunst & Fotografie",
+   "why": "profile declares bot",
+   "tagged": 8
+  },
+  {
+   "pk": "e591a9cf0dcd1364359eb2d18b71452db90ec86c0287a81d0a7a607cae570a2a",
+   "name": "npub1ukg6nnc...",
+   "why": "no kind-0 name",
+   "tagged": 8
+  },
+  {
+   "pk": "38155fc747c2f5e3091491a4e04ebdb970706d64917d46bb4d65f7bde63b3e6e",
+   "name": "npub18q24l36...",
+   "why": "no kind-0 name",
+   "tagged": 7
+  },
+  {
+   "pk": "a8b337b88184c75e93325521979bc4329c3265e1e0884eb42b6c87518f512884",
+   "name": "npub14zen0wy...",
+   "why": "no kind-0 name",
+   "tagged": 7
+  },
+  {
+   "pk": "d1a628af4fa3212c553f9b462a3f1e9f6289eb41fc5c336f0b5294fafbc3c17f",
+   "name": "npub16xnz3t6...",
+   "why": "no kind-0 name",
+   "tagged": 6
+  },
+  {
+   "pk": "4b9868912aaeb82fb131e6f565f16546affe136570b59808ca119da18efcd039",
+   "name": "npub1fwvx3yf...",
+   "why": "no kind-0 name",
+   "tagged": 5
+  },
+  {
+   "pk": "751ac5fd784432919e45cf48736fd339b898008c64a8c6b7b847b86b4b143540",
+   "name": "Grouper — Outsourced Gills",
+   "why": "profile declares bot",
+   "tagged": 5
+  },
+  {
+   "pk": "85886fa9d621f79e3cb453b4f5615ef35c85523c349dd4abf949fea4a3027679",
+   "name": "Desire Gracia",
+   "why": "no notes in 7 days",
+   "tagged": 5
+  },
+  {
+   "pk": "d14d01f5e9eaa840c5b414ac480d4a66eaf664b29381b899c23fb11110c8e34c",
+   "name": "npub169xsra0...",
+   "why": "no kind-0 name",
+   "tagged": 5
+  },
+  {
+   "pk": "932c10871e0950483a279c020c75b6d67e2c7d694229c8d4aad9bd1c6a4db0f1",
+   "name": "npub1jvkpppc...",
+   "why": "no kind-0 name",
+   "tagged": 3
+  },
+  {
+   "pk": "a4eeaddee98ac02b898b6b31049efad70447a28f5dc8d9f13f1427414d1ec44c",
+   "name": "Culinary",
+   "why": "profile declares bot",
+   "tagged": 3
+  },
+  {
+   "pk": "cfce6b87e8fadf29733c3bd6b2ec3e72d8e31da77b1749797714a407879b6aa9",
+   "name": "Maria Popova (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 3
+  },
+  {
+   "pk": "306fecf65bea4aff338cb951afe941587f34933f800a19d8a0d5a11346b0d6ec",
+   "name": "AudioLab",
+   "why": "profile declares bot",
+   "tagged": 2
+  },
+  {
+   "pk": "00a6afd8477cc105ad3cfb66c375ffa920f41b1419c2db0bc2e0ebf1346ed865",
+   "name": "xoe",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "01beb3b16c4dc789c37811f1a7d799d04e01b53978e1953a41440db9b6e3e527",
+   "name": "npub1qxlt8vt...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "0b468db3cf8c85200770f5ce275d79a17f5afa7c6503c9b3fc6c4acf7109d757",
+   "name": "Lines and Colors (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "1422f7db68f8032fe1983572fbd3600db35b922deb2bc0655ba0047e33993199",
+   "name": "Jon Katz (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "14b35b0797446c6d440acc5a00269e332e4397ae65b565b8576db9d684c735a6",
+   "name": "Atlas Obscura (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "207b9d0b3d7213a10be2083da0dd6ca53314f2d84434bf87d1927c35699cdfcf",
+   "name": "AnimationWire",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "255aad4edcfd69973519420328326a365610266f2f5c8cf929eee0266bd433c0",
+   "name": "Wilhelm Arcturus (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "2759f1a897e331471faf9d543a77277f9bf087e0f870073f79e3b59a1480f5af",
+   "name": "npub1yavlr2y...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "32d36a1ce61fb0db5672c8ac4d4bdeb345baa37a467233200bc617036a27465e",
+   "name": "npub1xtfk588...",
+   "why": "no notes in 7 days",
+   "tagged": 1
+  },
+  {
+   "pk": "4bd98eb8b9e1049fc6c48c4f8bfe1c84d7e54fddf6c31d09c5e73ce14070a0fa",
+   "name": "Justin Garofoli (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "4c4be3eebc8036e59a1aefc6262928d3fda07ef525b9ea9af500f8d1000eaf0a",
+   "name": "Vonk (AI character)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "4e69c5e35714c24bbb258e3ca1f01cc6f3cde457fc7992e30a68d42bddec3cb5",
+   "name": "BaseballStats",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "54a27393550043da659f28360203a75045e834f42ceeb5b30ef54071ac625be8",
+   "name": "Tom Bills (Unofficial)",
+   "why": "profile declares bot",
+   "tagged": 1
+  },
+  {
+   "pk": "6b0822926a317366082f3a013c1880b5a5f170e3202e63f08c41fb1d8de57fc6",
+   "name": "technodaisy",
+   "why": "no notes in 7 days",
+   "tagged": 1
+  }
+ ],
+ "graded": 25,
+ "notesGraded": 537,
+ "classAvg": 4.86,
+ "zeroLaugh": 21,
+ "nightNotes": 63,
+ "peakHourUTC": 16,
+ "awards": {
+  "buffoon": {
+   "pk": "5a54abdc84a5fa3d701aca1effa36cd1b29c0e3b82b81ed4d9380d923c58d510",
+   "name": "son of a bitch",
+   "wit": 24,
+   "witPeople": 20
+  },
+  "nightOwl": {
+   "pk": "43d7f07d10b9e662745e10b2fc201a74dc178a308c31409350d06b04477816e1",
+   "name": "Milo",
+   "night": 10,
+   "n": 18
+  },
+  "neverLaughs": {
+   "pk": "dc358b0501ffb9a9851bd0201d72f909173edfd4efc03d97a81c590892aa09f3",
+   "name": "LernBitcoin",
+   "n": 68
+  },
+  "mostOnTopic": {
+   "pk": "f8320598e8af12d090b3f9cb7340f58dfaa132054592d3e116892f483f73843b",
+   "name": "Like Art Doll World",
+   "tagged": 30
+  }
+ },
+ "students": [
+  {
+   "rank": 1,
+   "pk": "43baaf0c28e6cfb195b17ee083e19eb3a4afdfac54d9b6baf170270ed193e34c",
+   "npub": "npub1gwa27rpgum8mr9d30msg8cv7kwj2lhav2nvmdwh3wqnsa5vnudxqlta2sz",
+   "name": "BitPopArt",
+   "tagged": 7,
+   "k1": 7,
+   "k20": 0,
+   "avg": 7.3,
+   "notes": 56,
+   "wit": 0,
+   "laugh": 1,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 3
+   },
+   "identPct": 2,
+   "perDay": 8,
+   "nip05": "bitpopart@ditto.pub",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 8
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "pk": "0b26f590631b0fa3048d103410e484e5e22e2d5a8eceaceda9d91b38f81dd1a8",
+   "npub": "npub1pvn0tyrrrv86xpydzq6ppeyyuh3zut263m82emdfmydn37qa6x5qmh8khc",
+   "name": "Mx12art",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 6.6,
+   "notes": 31,
+   "wit": 0,
+   "laugh": 1,
+   "night": 0,
+   "worst": {
+    "key": "hashtags",
+    "g": 2
+   },
+   "identPct": 6,
+   "perDay": 4.4,
+   "nip05": "Mx12art@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "pk": "05e4649832dfb8d1bfa81ea7cbf1c92c4f1cd5052bfc8d5465ba744aa6fa5eb8",
+   "npub": "npub1qhjxfxpjm7udr0agr6nuhuwf9383e4g9907g64r9hf6y4fh6t6uqpcp36k",
+   "name": "archjourney",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 6.4,
+   "notes": 75,
+   "wit": 2,
+   "laugh": 6,
+   "night": 11,
+   "worst": {
+    "key": "hashtags",
+    "g": 3
+   },
+   "identPct": 3,
+   "perDay": 10.7,
+   "nip05": "archjourney@nostr.land",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "pk": "9356d008ab226ab6b08ab3c73900546b2836c48c7527f0e5332c09201a3e6dc8",
+   "npub": "npub1jdtdqz9tyf4tdvy2k0rnjqz5dv5rd3yvw5nlpefn9syjqx37dhyqxwh0c8",
+   "name": "Rustypuppy",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 6.2,
+   "notes": 29,
+   "wit": 2,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.1,
+   "nip05": "rustypuppy@nostrplebs.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "pk": "12a66f28bc10486400b8b316b6d9de95ea9dc65fc924e6219c7ad818ab788902",
+   "npub": "npub1z2nx729uzpyxgq9ckvttdkw7jh4fm3jleyjwvgvu0tvp32mc3ypq7460f3",
+   "name": "Dump here",
+   "tagged": 3,
+   "k1": 0,
+   "k20": 3,
+   "avg": 5.6,
+   "notes": 39,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 5.6,
+   "nip05": "ducks@butlerwake-alt.github.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "pk": "1cd0a4c114e9e34ca51e8b6378d7c1035af2ddc05fda2ddba58dcadb88a1dd13",
+   "npub": "npub1rng2fsg5a835efg73d3h347pqdd09hwqtldzmka93h9dhz9pm5fsr2rujd",
+   "name": "Rayirovy",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 11,
+   "wit": 0,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 9,
+   "perDay": 1.6,
+   "nip05": "rayirovymusic@21.gifts",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "pk": "7569ed722dc8713f76f8bb0a93e1ede6afe7183b3d4465ee8514497660539f52",
+   "npub": "npub1w4576u3depcn7ahchv9f8c0du6h7wxpm84zxtm59z3yhvcznnafqsm9qx6",
+   "name": "Mis Grizzly",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 10,
+   "wit": 0,
+   "laugh": 2,
+   "night": 0,
+   "worst": {
+    "key": "hashtags",
+    "g": 1
+   },
+   "identPct": 10,
+   "perDay": 1.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "pk": "43d7f07d10b9e662745e10b2fc201a74dc178a308c31409350d06b04477816e1",
+   "npub": "npub1g0tlqlgsh8nxyaz7zze0cgq6wnwp0z3s3sc5py6s6p4sg3mczmssqfhyrr",
+   "name": "Milo",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 18,
+   "wit": 2,
+   "laugh": 0,
+   "night": 10,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 17,
+   "perDay": 2.6,
+   "nip05": "milo@sleepingcro.ws",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "pk": "c37bfb9f567fea55cf658f10a6a239fb112bc03df2d22e7ab9aceacbba6170bb",
+   "npub": "npub1cdalh86k0l49tnm93ug2dg3elvgjhspa7tfzu74e4n4vhwnpwzas4p0zhp",
+   "name": "Mega seller",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 5,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 67,
+   "perDay": 1.7,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "pk": "659101fc506cc2ce7a78dd7db59154d03a84420e28f4d26971d730591cbff8d0",
+   "npub": "npub1vkgsrlzsdnpvu7ncm47mty256qaggssw9r6dy6t36uc9j89llrgqqxl2th",
+   "name": "dnseal",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5,
+   "notes": 3,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 33,
+   "perDay": 0.4,
+   "nip05": "_@dnseal.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "pk": "dc358b0501ffb9a9851bd0201d72f909173edfd4efc03d97a81c590892aa09f3",
+   "npub": "npub1ms6ckpgpl7u6npgm6qsp6uhepytnah75alqrm9agr3vs3y42p8es0elmu9",
+   "name": "LernBitcoin",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 68,
+   "wit": 0,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 9.7,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "pk": "42944ca993d6a88b3a651e04d6e504049655a4cdd3f45ca48f4ce4f9db7e68d9",
+   "npub": "npub1g22ye2vn665gkwn9rczddegyqjt9tfxd6069efy0fnj0nkm7drvsaqfrxj",
+   "name": "MaoMao",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 4.8,
+   "notes": 7,
+   "wit": 0,
+   "laugh": 0,
+   "night": 1,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 14,
+   "perDay": 1,
+   "nip05": "maomao@rizful.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "pk": "b7f92b3cc842faba9c4613bbd3428ed8fcf895f7c0b94ab4c2c43f84b8d1dee7",
+   "npub": "npub1klujk0xggtat48zxzwaaxs5wmr70390hczu54dxzcslcfwx3mmnsq8pe3z",
+   "name": "Dwija PanJavas",
+   "tagged": 5,
+   "k1": 5,
+   "k20": 0,
+   "avg": 4.7,
+   "notes": 5,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 20,
+   "perDay": 0.7,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "pk": "654008356e5ab2216efd3462559d56f2cab3d1d13a7d68322cbac62b13ba13ee",
+   "npub": "npub1v4qqsdtwt2ezzmhax339t82k7t9t85w38f7ksv3vhtrzkya6z0hq4ec9al",
+   "name": "The_Crin",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.7,
+   "notes": 23,
+   "wit": 1,
+   "laugh": 0,
+   "night": 8,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 3.3,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "pk": "21e97f8d566aa62547e684d56ccc01319cfabc77269617cd5502554b7d0e8b58",
+   "npub": "npub1y85hlr2kd2nz23lxsn2kenqpxxw040rhy6tp0n24qf25klgw3dvqghedth",
+   "name": "HYSTERON",
+   "tagged": 7,
+   "k1": 7,
+   "k20": 0,
+   "avg": 4.7,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 0,
+   "night": 1,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 8,
+   "perDay": 1.7,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "pk": "b78aa0d081b233a3c56821406d2a7b54f1dd4fea84dbfdcc62f6f7fbc2e0182a",
+   "npub": "npub1k792p5ypkge683tgy9qx62nm2nca6nl2sndlmnrz7mmlhshqrq4qms2pnv",
+   "name": "黒杞よるの:role_illustrator:",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 4.6,
+   "notes": 8,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 13,
+   "perDay": 1.1,
+   "nip05": "_y_kuroki_@misskey-io.mostr.pub",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "pk": "2534927fd40f5af9a1eae74fc2dbd7b7279f74d47a4f791d8da44b3a489816e3",
+   "npub": "npub1y56fyl75pad0ng02ua8u9k7hkune7ax50f8hj8vd539n5jyczm3s6lm39h",
+   "name": "ra₿₿it",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.5,
+   "notes": 4,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 25,
+   "perDay": 0.6,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "pk": "582b36085b222c49494fb4f59cc94b42ef2a672eb72404bbe29ec74142f4cc3a",
+   "npub": "npub1tq4nvzzmygkyjj20kn6eej2tgthj5eewkujqfwlznmr5zsh5esaqfq3xmy",
+   "name": "The Report King",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.5,
+   "notes": 33,
+   "wit": 0,
+   "laugh": 0,
+   "night": 6,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.7,
+   "nip05": "rasterman_detroitriotcity.com@poster.place",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "pk": "f2875f01f40a557157946b34a4c1be720a1eedccf32cfdf09952efa7ab99c608",
+   "npub": "npub172r47q05pf2hz4u5dv62fsd7wg9pamwv7vk0muye2th602ueccyq5rmw4l",
+   "name": "Reza Mustafa",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 4.3,
+   "notes": 4,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 25,
+   "perDay": 0.6,
+   "nip05": "bookrak@zaps.lol",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "pk": "4b891c9879b8494fe046fbe35a238c717ea3670d38ee42abcc87a3f8eb23dee7",
+   "npub": "npub1fwy3exrehpy5lczxl0345guvw9l2xecd8rhy927vs73l36ermmnszum842",
+   "name": "kevin eleven",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 4.3,
+   "notes": 7,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 14,
+   "perDay": 1,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "pk": "5a54abdc84a5fa3d701aca1effa36cd1b29c0e3b82b81ed4d9380d923c58d510",
+   "npub": "npub1tf22hhyy5har6uq6eg00lgmv6xefcr3ms2upa4xe8qxey0zc65gqngdadv",
+   "name": "son of a bitch",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 4.1,
+   "notes": 44,
+   "wit": 24,
+   "laugh": 0,
+   "night": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 16,
+   "perDay": 6.3,
+   "nip05": "son_of_a_bitch@verified-nostr.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "pk": "f4c573821c8bfbebf8f395f6b6b84e2348ac79ad798255a1fb1fb935b6399f52",
+   "npub": "npub17nzh8qsu30a7h78njhmtdwzwydy2c7dd0xp9tg0mr7untd3enafqnjwxj3",
+   "name": "Anthony Firn",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 3.5,
+   "notes": 6,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 17,
+   "perDay": 0.9,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "pk": "027dc432d7e8952fad2a75a607a29dbf923f45a9277406900b3ec236d929d8f2",
+   "npub": "npub1qf7ugvkhaz2jltf2wknq0g5ah7fr73dfya6qdyqt8mprdkffmreq5xmx7u",
+   "name": "宮城巴惠 :sakurastar_verified:",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 3.5,
+   "notes": 1,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 100,
+   "perDay": 0.1,
+   "nip05": "kitsuneofinari_mastodon.sakura-star.net@poster.place",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "pk": "f8320598e8af12d090b3f9cb7340f58dfaa132054592d3e116892f483f73843b",
+   "npub": "npub1lqeqtx8g4ufdpy9nl89hxs843ha2zvs9gkfd8cgk3yh5s0mnssas8874qt",
+   "name": "Like Art Doll World",
+   "tagged": 30,
+   "k1": 30,
+   "k20": 0,
+   "avg": 3.4,
+   "notes": 30,
+   "wit": 0,
+   "laugh": 0,
+   "night": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 3,
+   "perDay": 4.3,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "pk": "3268716261550f46d5858175e6d47af91dbb25221f018f613c964f16ac6e12f8",
+   "npub": "npub1xf58zcnp2585d4v9s967d4r6lywmkffzruqc7cfuje83dtrwztuqz4jpky",
+   "name": "Kami ⚡",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 3.3,
+   "notes": 1,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 100,
+   "perDay": 0.1,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  }
+ ]
+}

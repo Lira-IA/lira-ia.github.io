@@ -1,0 +1,2181 @@
+{
+ "slug": "foodstr",
+ "tags": [
+  "foodstr"
+ ],
+ "altTags": null,
+ "edition": "2026-11-06",
+ "since": 1793324987,
+ "T": 1793929787,
+ "range": "30 Oct – 6 Nov 2026",
+ "authorsSeen": 45,
+ "taggedNotes": 122,
+ "kinds": {
+  "1": 122
+ },
+ "pool": 45,
+ "humansInPool": 34,
+ "droppedCount": 11,
+ "dropped": [
+  {
+   "pk": "50b5363794e79a520cc6d178f18e64396c4939891fc86dd5251efb8c5a465b14",
+   "name": "Mega seller",
+   "why": "88% identical tagged notes",
+   "tagged": 17
+  },
+  {
+   "pk": "72ae26488df00eaaadebd0d413f1061b84b46b3ae987b8621fae179494305328",
+   "name": "npub1w2hzvjy...",
+   "why": "no kind-0 name",
+   "tagged": 6
+  },
+  {
+   "pk": "124caf27ecf67a31d5dd24d40945d0aca4f41df4525d957b19fc2f3a584c61cd",
+   "name": "npub1zfx27fl...",
+   "why": "no kind-0 name",
+   "tagged": 3
+  },
+  {
+   "pk": "2468e7f7f1b4722dce1bbbefbbcbe54956a84fb7d54b0c614c0a984fbc968f1f",
+   "name": "npub1y35w0al...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "29bde58814ba61c2a9a4fa4f4456fc500853509459a730313210f20e807516a6",
+   "name": "npub19x77tzq...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "394147b8b27d68c9822669773cb1ee13b1aa46f4e735450a37f8073afddeb3d2",
+   "name": "npub189q50w9...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "41b3a7b59a3d95a0e5879bc8481bdbb728505aef54c55fd660cd9f6fde0463d6",
+   "name": "npub1gxe60dv...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "4a3c319ff630163406c48a1e66bddbf90e2512da96b9693e500f701809ca627e",
+   "name": "npub1fg7rr8l...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "56867ee3ba69e7e93615e2de3afc37ab44bd43651f6dd12b66dd38916b3c0834",
+   "name": "npub126r8aca...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "60d0bcf3b018f7cde926d22e63c3ce9dec8350ad3bd635aa1bedd3a56d1fa143",
+   "name": "npub1vrgteua...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  },
+  {
+   "pk": "b286cdad6f9db7f1641139fc9ab69c8f2b36e25608206dfec856ef10ee4e8091",
+   "name": "npub1k2rvmtt...",
+   "why": "no kind-0 name",
+   "tagged": 1
+  }
+ ],
+ "graded": 34,
+ "notesGraded": 2189,
+ "classAvg": 5.68,
+ "zeroLaugh": 18,
+ "nightNotes": 414,
+ "peakHourUTC": 0,
+ "awards": {
+  "buffoon": {
+   "pk": "ee6ea13ab9fe5c4a68eaf9b1a34fe014a66b40117c50ee2a614f4cda959b6e74",
+   "name": "Dr. The Daniel 🖖",
+   "wit": 63,
+   "witPeople": 45
+  },
+  "nightOwl": {
+   "pk": "c7242d8c870554f6ea71d3ddc8b691e1993ad37a5ba02f05096b6437965199b6",
+   "name": "Gregory Bader 🦍🌺",
+   "night": 3,
+   "n": 5
+  },
+  "neverLaughs": {
+   "pk": "8d9d2b77930ee54ec3e46faf774ddd041dbb4e4aa35ad47c025884a286dd65fa",
+   "name": "Maria2000",
+   "n": 125
+  },
+  "mostOnTopic": {
+   "pk": "ee1e7f27fa0694545e6edcb1b9830ef043a75ed6e76b0a06c0aafcceb98a280e",
+   "name": "ですぽえむ",
+   "tagged": 20
+  }
+ },
+ "students": [
+  {
+   "rank": 1,
+   "pk": "18b6808c9389771f1bad9d0e58b0568502a7b5a75b4ef7a84cced9a4ea5b62fc",
+   "npub": "npub1rzmgpryn39m37xadn5893vzks5p20dd8td8002zvemv6f6jmvt7q7pn6fz",
+   "name": "Dreiberge",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 7.9,
+   "notes": 68,
+   "wit": 7,
+   "laugh": 3,
+   "night": 1,
+   "worst": {
+    "key": "laughter",
+    "g": 5
+   },
+   "identPct": 3,
+   "perDay": 9.7,
+   "nip05": "dreiberge@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 9
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 8
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "pk": "8867bed93e89c93d0d8ac98b2443c5554799edb9190346946b12e03f13664450",
+   "npub": "npub13pnmakf738yn6rv2ex9jgs7924renmderyp5d9rtztsr7ymxg3gqej06vw",
+   "name": "IntuitiveGuy☯️",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 7.4,
+   "notes": 142,
+   "wit": 49,
+   "laugh": 16,
+   "night": 3,
+   "worst": {
+    "key": "engagement",
+    "g": 5
+   },
+   "identPct": 12,
+   "perDay": 20.3,
+   "nip05": "intuitiveguy@nostrplebs.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "pk": "4dc2e570c54fef8313fa304f52974044ed6c128510052600a9b84d837b8126f9",
+   "npub": "npub1fhpw2ux9flhcxyl6xp84996qgnkkcy59zqzjvq9fhpxcx7upymus69ds8n",
+   "name": "Bohemia",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 7.3,
+   "notes": 64,
+   "wit": 13,
+   "laugh": 10,
+   "night": 0,
+   "worst": {
+    "key": "zaps",
+    "g": 3
+   },
+   "identPct": 2,
+   "perDay": 9.1,
+   "nip05": "bohemia@spatia-arcana.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 9
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "pk": "06830f6cb5925bd82cca59bda848f0056666dff046c5382963a997a234da40c5",
+   "npub": "npub1q6ps7m94jfdastx2tx76sj8sq4nxdhlsgmzns2tr4xt6ydx6grzspm0kxr",
+   "name": "Turiz",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 7.2,
+   "notes": 507,
+   "wit": 11,
+   "laugh": 123,
+   "night": 141,
+   "worst": {
+    "key": "engagement",
+    "g": 2
+   },
+   "identPct": 0,
+   "perDay": 72.4,
+   "nip05": "me@proofofink.art",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "pk": "631cdc472d9d72a53f4a6e0644aeb9e9be16be7b46ee7eb7b80d3a913198abc8",
+   "npub": "npub1vvwdc3edn4e22062dcryft4eaxlpd0nmgmh8adacp5afzvvc40yqa4yjhp",
+   "name": "PobreBoomer",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 7.1,
+   "notes": 86,
+   "wit": 2,
+   "laugh": 1,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 3
+   },
+   "identPct": 2,
+   "perDay": 12.3,
+   "nip05": "PobreBoomer@coinos.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "pk": "f4db5270bd991b17bea1e6d035f45dee392919c29474bbac10342d223c74e0d0",
+   "npub": "npub17nd4yu9anyd3004pumgrtazaacujjxwzj36thtqsxskjy0r5urgqf6950x",
+   "name": "🟤 isolabellart",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 7,
+   "notes": 29,
+   "wit": 4,
+   "laugh": 0,
+   "night": 3,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 7,
+   "perDay": 4.1,
+   "nip05": "isolabellart@isolabellart.it.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "pk": "44dc1c2db9c3fbd7bee9257eceb52be3cf8c40baf7b63f46e56b58a131c74f0b",
+   "npub": "npub1gnwpctdec0aa00hfy4lvadftu08ccs9677mr73h9ddv2zvw8fu9smmerrq",
+   "name": "Enki",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 7,
+   "notes": 26,
+   "wit": 4,
+   "laugh": 1,
+   "night": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 4
+   },
+   "identPct": 4,
+   "perDay": 3.7,
+   "nip05": "enki@sovbit.host",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "pk": "89190dc0c247dc73d2eefc4c0f67364103808134f73bf0739663ce834e3e724a",
+   "npub": "npub13yvsmsxzglw885hwl3xq7eekgypcpqf57ualquukv08gxn37wf9q3shx2y",
+   "name": "rzhector",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.8,
+   "notes": 2,
+   "wit": 0,
+   "laugh": 1,
+   "night": 0,
+   "worst": {
+    "key": "attendance",
+    "g": 2
+   },
+   "identPct": 50,
+   "perDay": 0.3,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 2
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "pk": "1408bad049bab8a38b976075affe413c3521bbeef62cc4ce3555299f4971f2ca",
+   "npub": "npub1zsyt45zfh2u28zuhvp66lljp8s6jrwlw7ckvfn34255e7jt37t9qx0xwsm",
+   "name": "𝕞ptf",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 6.7,
+   "notes": 164,
+   "wit": 38,
+   "laugh": 18,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 9,
+   "perDay": 23.4,
+   "nip05": "ptf@poster.place",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 8
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "pk": "ee6ea13ab9fe5c4a68eaf9b1a34fe014a66b40117c50ee2a614f4cda959b6e74",
+   "npub": "npub1aeh2zw4elewy5682lxc6xnlqzjnxksq303gwu2npfaxd49vmde6qcq4nwx",
+   "name": "Dr. The Daniel 🖖",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.5,
+   "notes": 212,
+   "wit": 63,
+   "laugh": 6,
+   "night": 53,
+   "worst": {
+    "key": "night",
+    "g": 4
+   },
+   "identPct": 6,
+   "perDay": 30.3,
+   "nip05": "daniel@sidecar.top",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 4
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "pk": "d6affa195bb7194a705832f535fa65bab1d8dcdada6b2540ff34b3709110b177",
+   "npub": "npub166hl5x2mkuv55uzcxt6nt7n9h2ca3hx6mf4j2s8lxjehpygsk9msxj0thf",
+   "name": "purrs_for_Her",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.5,
+   "notes": 144,
+   "wit": 16,
+   "laugh": 21,
+   "night": 18,
+   "worst": {
+    "key": "engagement",
+    "g": 3
+   },
+   "identPct": 8,
+   "perDay": 20.6,
+   "nip05": "purrs_for_Her@nostrcheck.me",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "pk": "a16fa4b098712d37d9855c9a9a75c4388d5812b84dc678a1ebc46f48fed4deac",
+   "npub": "npub159h6fvycwykn0kv9tjdf5awy8zx4sy4cfhr83g0tc3h53lk5m6kqr5sjns",
+   "name": "High on Bitcoin",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.2,
+   "notes": 25,
+   "wit": 9,
+   "laugh": 1,
+   "night": 4,
+   "worst": {
+    "key": "emoji",
+    "g": 4
+   },
+   "identPct": 4,
+   "perDay": 3.6,
+   "nip05": "ppatelnz@nostr.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "pk": "880f967145ab66b53d9dc279d44a9722ba875d232c73f3df4707d1e79c4336ce",
+   "npub": "npub13q8evu294dnt20vacfuagj5hy2agwhfr93el8h68qlg708zrxm8qnd6vpv",
+   "name": "plebiANON",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.1,
+   "notes": 46,
+   "wit": 0,
+   "laugh": 2,
+   "night": 20,
+   "worst": {
+    "key": "night",
+    "g": 2
+   },
+   "identPct": 15,
+   "perDay": 6.6,
+   "nip05": "plebianon@nostrplebs.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "pk": "8d9d2b77930ee54ec3e46faf774ddd041dbb4e4aa35ad47c025884a286dd65fa",
+   "npub": "npub13kwjkaunpmj5aslyd7hhwnwaqswmknj25dddglqztzz29pkavhaq25wg2a",
+   "name": "Maria2000",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 6.1,
+   "notes": 125,
+   "wit": 3,
+   "laugh": 0,
+   "night": 18,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 17,
+   "perDay": 17.9,
+   "nip05": "maria2000@happytavern.co",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 10
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "pk": "75d12141a391994c4062501f155c2e34e41a8c3cf9bef9e4d7d298253458d1e2",
+   "npub": "npub1whgjzsdrjxv5csrz2q032hpwxnjp4rpulxl0nexh62vz2dzc683qh8wqu9",
+   "name": "Lucas M",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 5.9,
+   "notes": 55,
+   "wit": 10,
+   "laugh": 6,
+   "night": 2,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "identPct": 13,
+   "perDay": 7.9,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "pk": "b2caa9b3ef30faad605e5eeed8da2c8fd7b4ca872becdc440029f4fb9eab0fb5",
+   "npub": "npub1kt92nvl0xra26cz7tmhd3k3v3ltmfj5890kdc3qq9860h84tp76swuf0p0",
+   "name": "Ruben Storm",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.6,
+   "notes": 31,
+   "wit": 2,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 6,
+   "perDay": 4.4,
+   "nip05": "rubenstorm@privexa.eu",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "pk": "0c9b1e9fef76c88b63f86645dc33bb7777f0259ec41e674b61f4fc553f6db0e0",
+   "npub": "npub1pjd3a8l0wmygkclcvezacvamwamlqfv7cs0xwjmp7n7920mdkrsq9hpeqp",
+   "name": "しおん・ドーシー",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.5,
+   "notes": 25,
+   "wit": 0,
+   "laugh": 0,
+   "night": 10,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 4,
+   "perDay": 3.6,
+   "nip05": "_@nostr-shion72.pages.dev",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 9
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "pk": "b3e43e8cc7e6dff23a33d9213a3e912d895b1c3e4250240e0c99dbefe3068b5f",
+   "npub": "npub1k0jrarx8um0lyw3nmysn50539ky4k8p7gfgzgrsvn8d7lccx3d0s38dczd",
+   "name": "kojira",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.4,
+   "notes": 31,
+   "wit": 0,
+   "laugh": 0,
+   "night": 16,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 10,
+   "perDay": 4.4,
+   "nip05": "_@kojira.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "pk": "7569ed722dc8713f76f8bb0a93e1ede6afe7183b3d4465ee8514497660539f52",
+   "npub": "npub1w4576u3depcn7ahchv9f8c0du6h7wxpm84zxtm59z3yhvcznnafqsm9qx6",
+   "name": "Mis Grizzly",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5.3,
+   "notes": 10,
+   "wit": 0,
+   "laugh": 2,
+   "night": 0,
+   "worst": {
+    "key": "hashtags",
+    "g": 1
+   },
+   "identPct": 10,
+   "perDay": 1.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "pk": "9d7af6946b320b3ba6b4d386de2b2cf3f8ac52fdcb63f3343d1a8362693a3ce5",
+   "npub": "npub1n4a0d9rtxg9nhf456wrdu2ev70u2c5haed3lxdpar2pky6f68njsn90w7h",
+   "name": "Finca Yabisi",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.2,
+   "notes": 7,
+   "wit": 1,
+   "laugh": 0,
+   "night": 1,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 14,
+   "perDay": 1,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "pk": "84d58fdfd22fae5619ade5341711d1f79f2dfef870e67ebf93985a001b8a46a5",
+   "npub": "npub1sn2clh7j97h9vxddu56pwyw3770jmlhcwrn8a0unnpdqqxu2g6jsnjdvad",
+   "name": "V3spering",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5.2,
+   "notes": 36,
+   "wit": 2,
+   "laugh": 0,
+   "night": 10,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 8,
+   "perDay": 5.1,
+   "nip05": "v3spering@poster.place",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "pk": "15b9f4a92b2f4b24b59621acdc1c996facbd37f1b5606045bbd1663ce87eef10",
+   "npub": "npub1zkulf2ft9a9jfdvkyxkdc8yed7kt6dl3k4sxq3dm69nre6r7augqht50hh",
+   "name": "Akiramls",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 5.1,
+   "notes": 45,
+   "wit": 0,
+   "laugh": 2,
+   "night": 4,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "identPct": 7,
+   "perDay": 6.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "pk": "5111a0936c7d0fa7c2499fa876ed82c22f93e18578069a4fa261cb42bc2ddc63",
+   "npub": "npub12yg6pymv05860sjfn758dmvzcghe8cv90qrf5nazv89590pdm33sf4zykt",
+   "name": "Chaosmagic23",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 5,
+   "notes": 3,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 33,
+   "perDay": 0.4,
+   "nip05": "Chaosmagic23@NostrPlebs.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "pk": "c37bfb9f567fea55cf658f10a6a239fb112bc03df2d22e7ab9aceacbba6170bb",
+   "npub": "npub1cdalh86k0l49tnm93ug2dg3elvgjhspa7tfzu74e4n4vhwnpwzas4p0zhp",
+   "name": "Mega seller",
+   "tagged": 4,
+   "k1": 4,
+   "k20": 0,
+   "avg": 5,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 67,
+   "perDay": 1.7,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "pk": "ca55de60561aacee9c31f57c95bdac016b5b534a52823358c6d18bea2ce66257",
+   "npub": "npub1ef2auczkr2kwa8p3747ft0dvq944k56222prxkxx6x975t8xvfts8l6e8d",
+   "name": "空",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 5,
+   "notes": 3,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 33,
+   "perDay": 0.4,
+   "nip05": "_@kuuote.github.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "pk": "bd2f96f56347abe90464d1c220d093e325fe41212926b9eb8c056c5f6ab08280",
+   "npub": "npub1h5hedatrg747jpry68pzp5ynuvjlusfp9yntn6uvq4k9764ss2qqq5dz2n",
+   "name": "Anime Waifu Daily⚡",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 16,
+   "wit": 0,
+   "laugh": 0,
+   "night": 1,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 6,
+   "perDay": 2.3,
+   "nip05": "animewaifudaily@nostrcheck.me",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "pk": "1c197b12ca9ce0415b70e7405b9770f0ec6bccfb59b32b63aafd42cb242e1642",
+   "npub": "npub1rsvhkyk2nnsyzkmsuaq9h9ms7rkxhn8mtxejkca2l4pvkfpwzepql3vmtf",
+   "name": "DeAllen Young",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 28,
+   "wit": 2,
+   "laugh": 0,
+   "night": 5,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 11,
+   "perDay": 4,
+   "nip05": "deallen@erybody.com",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "pk": "1a276cbcddaca78181323c19c669e3b17dc1ef617faa194c0b925661570dc3ca",
+   "npub": "npub1rgnke0xa4jncrqfj8svuv60rk97urmmp074pjnqtjftxz4cdc09ql6sd5y",
+   "name": "Notions",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 16,
+   "wit": 3,
+   "laugh": 0,
+   "night": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 6,
+   "perDay": 2.3,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "pk": "5f010febe730be42d18c3bf9bf3a135f90621dc572175b5c357119533ae9756b",
+   "npub": "npub1tuqsl6l8xzly95vv80um7wsnt7gxy8w9wgt4khp4wyv4xwhfw44slm93e9",
+   "name": "りら",
+   "tagged": 7,
+   "k1": 7,
+   "k20": 0,
+   "avg": 4.9,
+   "notes": 201,
+   "wit": 0,
+   "laugh": 1,
+   "night": 88,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 1,
+   "perDay": 28.7,
+   "nip05": "rira224@rira224.github.io",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 2
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "pk": "ee1e7f27fa0694545e6edcb1b9830ef043a75ed6e76b0a06c0aafcceb98a280e",
+   "npub": "npub1ac087fl6q629ghnwmjcmnqcw7pp6whkkua4s5pkq4t7vawv29q8qslfqjh",
+   "name": "ですぽえむ",
+   "tagged": 20,
+   "k1": 20,
+   "k20": 0,
+   "avg": 4.6,
+   "notes": 3,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 33,
+   "perDay": 0.4,
+   "nip05": "caz0617@tgkzmdd.work",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "pk": "91a06221824b14ccbc8002f91017f10997cd193045255fae5e7c0e2d3a903224",
+   "npub": "npub1jxsxygvzfv2ve0yqqtu3q9l3pxtu6xfsg5j4ltj70s8z6w5sxgjqqdd2er",
+   "name": "Amazing Italy Nature",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 4.3,
+   "notes": 7,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "identPct": 14,
+   "perDay": 1,
+   "nip05": "amazingitalynature@nostrcheck.me",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 3
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "pk": "10b662ea25f0148b02747044f4319215afcf0479033d2cc086ec63189d64371b",
+   "npub": "npub1zzmx96397q2gkqn5wpz0gvvjzkhu7preqv7jesyxa33338tyxudspyj45l",
+   "name": "Jin",
+   "tagged": 3,
+   "k1": 3,
+   "k20": 0,
+   "avg": 4.1,
+   "notes": 3,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 33,
+   "perDay": 0.4,
+   "nip05": null,
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 3
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 8
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "pk": "c7242d8c870554f6ea71d3ddc8b691e1993ad37a5ba02f05096b6437965199b6",
+   "npub": "npub1cujzmry8q420d6n360wu3d53uxvn45m6twsz7pgfddjr09j3nxmq9vguzm",
+   "name": "Gregory Bader 🦍🌺",
+   "tagged": 1,
+   "k1": 1,
+   "k20": 0,
+   "avg": 3.4,
+   "notes": 5,
+   "wit": 0,
+   "laugh": 0,
+   "night": 3,
+   "worst": {
+    "key": "night",
+    "g": 1
+   },
+   "identPct": 20,
+   "perDay": 0.7,
+   "nip05": "gregory@primal.net",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 1
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "pk": "3eacaa768326d7dce80f6ee17ada199bebe7eb3c1a60b39b14e0a58bbac66fe4",
+   "npub": "npub186k25a5rymtae6q0dmsh4ksen04706eurfst8xc5uzjchwkxdljqe59hv0",
+   "name": "MadMunky",
+   "tagged": 2,
+   "k1": 2,
+   "k20": 0,
+   "avg": 3.2,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "identPct": 17,
+   "perDay": 1.7,
+   "nip05": "",
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 3
+    }
+   ]
+  }
+ ]
+}

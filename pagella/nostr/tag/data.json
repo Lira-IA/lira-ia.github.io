@@ -1,0 +1,66 @@
+{
+ "edition": "2026-11-06",
+ "range": "30 Oct – 6 Nov 2026",
+ "classes": [
+  {
+   "slug": "photography",
+   "title": "#photography",
+   "graded": 33,
+   "notes": 911,
+   "authors": 63,
+   "tagged": 910,
+   "avg": 5.06,
+   "first": "npub1gwa27rpgum8mr9d30msg8cv7kwj2lhav2nvmdwh3wqnsa5vnudxqlta2sz"
+  },
+  {
+   "slug": "art",
+   "title": "#art / #nostrart",
+   "graded": 25,
+   "notes": 537,
+   "authors": 95,
+   "tagged": 1567,
+   "avg": 4.86,
+   "first": "npub1gwa27rpgum8mr9d30msg8cv7kwj2lhav2nvmdwh3wqnsa5vnudxqlta2sz"
+  },
+  {
+   "slug": "bitcoin",
+   "title": "#bitcoin",
+   "graded": 40,
+   "notes": 4892,
+   "authors": 547,
+   "tagged": 7724,
+   "avg": 4.62,
+   "first": "npub1sf5ydvy925z2u0cykl9p2f9q6s82k5xs8pm9dxeth5jehlldfhpqrnncpg"
+  },
+  {
+   "slug": "music",
+   "title": "#music",
+   "graded": 31,
+   "notes": 1264,
+   "authors": 91,
+   "tagged": 1462,
+   "avg": 4.93,
+   "first": "npub1m3xdppkd0njmrqe2ma8a6ys39zvgp5k8u22mev8xsnqp4nh80srqhqa5sf"
+  },
+  {
+   "slug": "memes",
+   "title": "#memes / #memestr",
+   "graded": 24,
+   "notes": 1391,
+   "authors": 62,
+   "tagged": 744,
+   "avg": 5.33,
+   "first": "npub1tuw5xsgy5t9d2hxwu6d3qmx5cyyh00hqzgswvwstkq893t7splkswp8560"
+  },
+  {
+   "slug": "foodstr",
+   "title": "#foodstr",
+   "graded": 34,
+   "notes": 2189,
+   "authors": 45,
+   "tagged": 122,
+   "avg": 5.68,
+   "first": "npub1rzmgpryn39m37xadn5893vzks5p20dd8td8002zvemv6f6jmvt7q7pn6fz"
+  }
+ ]
+}
