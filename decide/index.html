@@ -175,7 +175,7 @@ function render(){
       var d=el('div','opt');d.id='opt'+o.n;
       d.appendChild(el('div','n',o.n));
       var t=el('div');t.appendChild(el('h3',null,(L.en?o.titolo_en:o.titolo)||o.titolo));
-      t.appendChild(el('p',null,(L.en?o.testo_en:o.testo)||o.testo));if(o.img){var im=el('img','prev');im.src=(L.en?'../decidi/':'')+o.img;im.alt='';im.loading='lazy';t.appendChild(im);t.appendChild(el('div','cap','Già costruito, in prova. Va online solo se vince.'))}d.appendChild(t);
+      t.appendChild(el('p',null,(L.en?o.testo_en:o.testo)||o.testo));if(o.img){var im=el('img','prev');im.src=(L.en?'../decidi/':'')+o.img;im.alt='';im.loading='lazy';t.appendChild(im);t.appendChild(el('div','cap',L.en?'Already built, as a test. Goes live only if it wins.':'Già costruito, in prova. Va online solo se vince.'))}d.appendChild(t);
       var b=el('div','bar'),tr=el('div','track'),f=el('div','fill');f.id='f'+o.n;tr.appendChild(f);b.appendChild(tr);
       var nm=el('div','num');nm.id='nm'+o.n;b.appendChild(nm);d.appendChild(b);box.appendChild(d);
     });
@@ -190,7 +190,7 @@ function render(){
   var pc=D.per_canale||{};
   var m=$('meta');m.textContent='';
   var b1=el('b',null,D.persone||0);m.appendChild(b1);
-  m.appendChild(document.createTextNode(' '+L.people+' · Instagram '+(pc.ig||0)+' · Telegram '+(pc.tg||0)+' · Nostr '+(pc.nostr||0)+(D.pagati?' · '+D.pagati+' '+L.paid:'')));
+  m.appendChild(document.createTextNode(' '+((D.persone===1&&L.en)?'person voted':L.people)+' · Instagram '+(pc.ig||0)+' · Telegram '+(pc.tg||0)+' · Nostr '+(pc.nostr||0)+(D.pagati?' · '+D.pagati+' '+L.paid:'')));
   var pill=$('pill');pill.classList.toggle('off',state!=='aperta');
   $('when').textContent=state==='prima'?L.opens+' '+fmtDate(D.apre):(state==='aperta'?L.closes+' '+fmtDate(D.chiude):L.closed);
   if(D.nostr_note){var nl=$('nostrLink');nl.href='https://njump.me/'+D.nostr_note;nl.textContent=L.nostrNote}
