@@ -93,7 +93,7 @@ footer.site a{color:var(--ink);font-weight:700}
 }
 @media(max-width:759px){.stage{gap:0}.vs{position:relative;left:auto;top:auto;transform:rotate(-6deg);animation:none;width:58px;height:58px;font-size:22px;justify-self:center;margin:-22px 0 -22px;box-shadow:3px 3px 0 var(--ink)}.stage.done .vs{transform:rotate(-6deg)}.card:nth-child(1){margin-bottom:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf"></script></head><body><div class="wrap">
+</style></head><body><div class="wrap">
 <header class="top"><a class="logo" href="./">Laugh <em>or Not</em> <i>😂</i></a><span class="day" id="day">#–</span></header>
 <noscript><p class="load">This little game needs JavaScript. Sorry.</p></noscript>
 <div class="dots" id="dots" aria-hidden="true"></div>
@@ -106,6 +106,7 @@ footer.site a{color:var(--ink);font-weight:700}
  <div class="acts"><button class="btn" id="copy">Copy result</button><button class="btn coral" id="post">Post it on Nostr</button></div>
  <div class="toast" id="toast" role="status"></div>
  <div class="next" id="next"></div>
+ <div class="next" style="margin-top:8px">The first person each day to post a 5/5 grid on Nostr gets a 21 sat zap from me.</div>
 </section>
 <section class="rev-list" id="revlist"></section>
 <section class="about"><b>How it works.</b> Every day, 5 rounds. Each round shows two real Nostr notes. Pick the one that made <b>more different people</b> laugh in the last 7 days. A person counts as laughing if they react with 😂 or 🤣, or reply with something like lol, haha, 草 or kkkk. One person counts once per note. Everyone gets the same pairs on the same day. Each note links to Nostr, so you can see for yourself.</section>
@@ -125,7 +126,7 @@ const win=r=>r[0].n>r[1].n?0:1;
 const ok=i=>S.picks[i]===win(D.rounds[i]);
 const score=()=>D.rounds.reduce((a,_,i)=>a+(i<S.picks.length&&ok(i)?1:0),0);
 const gridStr=()=>D.rounds.map((_,i)=>ok(i)?'🟩':'🟥').join('');
-const shareText=()=>`Laugh or Not #${D.n} ${gridStr()} ${score()}/${D.rounds.length} ${URL_GAME}`;
+const shareText=()=>`Laugh or Not #${D.n} ${gridStr()} ${score()}/${D.rounds.length} #laughornot ${URL_GAME}`;
 function dots(cur){const d=$('dots');d.replaceChildren();D.rounds.forEach((_,i)=>{const b=el('b');if(i<S.picks.length)b.className=ok(i)?'ok':'ko';else if(i===cur)b.className='cur';d.append(b)})}
 function cardEl(note,idx,round){
   const c=el('button','card');c.type='button';c.dataset.i=idx;
