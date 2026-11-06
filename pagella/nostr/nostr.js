@@ -411,7 +411,7 @@
     const awH = aw.length ? `<div class="badges">${aw.map(a => `<span>${a.ic} ${esc(a.name)}</span>`).join('')}</div>` : '';
     const notes = [];
     if (r.capped) notes.push(t('capped')); r.omitted.forEach(k => notes.push(t(k)));
-    const nameFs = r.name.length > 18 ? 'font-size:26px' : '';
+    const _lw = Math.max(...r.name.split(/\s+/).map(w => w.length)); const nameFs = (r.name.length > 18 || _lw > 11) ? 'font-size:' + (_lw > 15 ? 22 : 26) + 'px' : '';
     $('result').innerHTML = `
 <p class="eyebrow">Nostr · ${esc(periodText())}</p>
 <div class="stats"><div><b>${r.avg.toFixed(1)}</b><small>${t('avgLbl')}</small></div><div><b>${r.stats.n}</b><small>${t('notes7')}</small></div></div>
