@@ -1,0 +1,3303 @@
+{
+ "edition": "2026-11-05",
+ "since": 1793318400,
+ "T": 1793933593,
+ "range": "30 out a 5 nov",
+ "notesRead": 170196,
+ "authorsAll": 15331,
+ "authorsPt": 105,
+ "pool": 105,
+ "humansInPool": 58,
+ "dropped": 47,
+ "droppedReasons": [
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "bot/feed/news nel nome",
+  "agente IA / automatico dichiarato nel profilo",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "agente IA / automatico dichiarato nel profilo",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "bot/feed/news nel nome",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "persona-agente \"... BR\" senza nip05 con dominio",
+  "canale editoriale/brand, non persona",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "agente IA / automatico dichiarato nel profilo",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "agente IA / automatico dichiarato nel profilo",
+  "agente IA / automatico dichiarato nel profilo",
+  "account LiberNet (piattaforma con agenti IA), escluso per prudenza",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "account LiberNet (piattaforma con agenti IA), escluso per prudenza",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)",
+  "agente IA / automatico dichiarato nel profilo",
+  "profilo dichiara bot:true",
+  "agente IA / automatico dichiarato nel profilo",
+  "canale editoriale/brand, non persona",
+  "account LiberNet (piattaforma con agenti IA), escluso per prudenza",
+  "contenuto sessuale nel profilo (non pubblicato)",
+  "bot/feed/ボット/bridge in nome, nip05 o about",
+  "canale editoriale/brand, non persona",
+  "senza nome (kind 0)",
+  "senza nome (kind 0)"
+ ],
+ "graded": 58,
+ "notesGraded": 2849,
+ "classAvg": 6.18,
+ "zeroLaugh": 22,
+ "relayStat": {
+  "wss://relay.damus.io": {
+   "ev": 499,
+   "pages": 10
+  },
+  "wss://nos.lol": {
+   "ev": 74286,
+   "pages": 153
+  },
+  "wss://relay.primal.net": {
+   "ev": 202712,
+   "pages": 408
+  },
+  "wss://nostr.mom": {
+   "ev": 11029,
+   "pages": 26
+  },
+  "wss://offchain.pub": {
+   "ev": 10364,
+   "pages": 25
+  },
+  "wss://nostr.oxtr.dev": {
+   "ev": 15465,
+   "pages": 36
+  }
+ },
+ "awards": {
+  "buffoon": {
+   "pk": "b7dddc2dfd1bde32f323f2c575080f22cd14d28a5ace0eb2026dd9cd302c8f04",
+   "name": "Krypton👑",
+   "wit": 101
+  },
+  "nightOwl": {
+   "pk": "a4e6f35b6e717d5cdc7a70ee8f2a372078f14c0d54c928a297a0b880f3fd4178",
+   "name": "Markus Novik",
+   "night": 7,
+   "n": 29
+  },
+  "neverLaughs": {
+   "pk": "2aa531ee0ea9b7649787995d9d728449752b87e7e064a30b7353f07a69ecc700",
+   "name": "jonata",
+   "n": 282
+  }
+ },
+ "students": [
+  {
+   "rank": 1,
+   "pk": "e91831fc244776a1f08657eebb3112c522e9362c6320f24240bc42eb8c9d973c",
+   "npub": "npub1ayvrrlpygam2ruyx2lhtkvgjc53wjd3vvvs0ysjqh3pwhryaju7qd60eq3",
+   "name": "Mimi",
+   "avg": 8.2,
+   "notes": 74,
+   "wit": 14,
+   "laugh": 25,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "pk": "b7dddc2dfd1bde32f323f2c575080f22cd14d28a5ace0eb2026dd9cd302c8f04",
+   "npub": "npub1klwact0ar00r9uer7tzh2zq0ytx3f552tt8qavszdhvu6vpv3uzqwpkjqz",
+   "name": "Krypton👑",
+   "avg": 8.1,
+   "notes": 80,
+   "wit": 101,
+   "laugh": 10,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "speed",
+    "g": 5
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "pk": "193b59c1ba6cdc10bdf582919b2748fbe4bda33258ae4f47de8d4b4cb3d2c3e4",
+   "npub": "npub1rya4nsd6dnwpp004s2gekf6gl0jtmgejtzhy73773495ev7jc0jqsrwgf7",
+   "name": "Linucks",
+   "avg": 7.7,
+   "notes": 63,
+   "wit": 13,
+   "laugh": 10,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 9
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "pk": "118506e6816bcb42784e3325ac44e64f3bb731226c28c32ac6e00d86b392c607",
+   "npub": "npub1zxzsde5pd095y7zwxvj6c38xfuamwvfzds5vx2kxuqxcdvujccrs64qe56",
+   "name": "Daniel",
+   "avg": 7.6,
+   "notes": 83,
+   "wit": 50,
+   "laugh": 20,
+   "night": 1,
+   "nightPct": 1,
+   "worst": {
+    "key": "emoji",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 9
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "pk": "b0f019547540547641c9c550258e88b7287c2b24bfff5f2c82a1157bff52249c",
+   "npub": "npub1krcpj4r4gp28vswfc4gztr5gku58c2eyhll47tyz5y2hhl6jyjwqduv9mr",
+   "name": "🔥 𝕷𝖔́𝖉𝖚𝖗𝖗 ☠️",
+   "avg": 7.4,
+   "notes": 277,
+   "wit": 39,
+   "laugh": 12,
+   "night": 3,
+   "nightPct": 1,
+   "worst": {
+    "key": "engagement",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 9
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "pk": "e1280ebcd4c4afc8d1347683813213897a1ca37cac7317f14ec09f85cb05270d",
+   "npub": "npub1uy5qa0x5cjhu35f5w6pczvsn39apegmu43e30u2wcz0ctjc9yuxsag9hhp",
+   "name": "Zé Grudento",
+   "avg": 7.3,
+   "notes": 38,
+   "wit": 36,
+   "laugh": 2,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 5
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "pk": "4e64c603acebad590107f69c6924a5a0d2411c51a13a3f5b61df8ce885e7fd79",
+   "npub": "npub1fejvvqavawk4jqg876wxjf995rfyz8z35yar7kmpm7xw3p08l4us2tztxj",
+   "name": "Mary Connor",
+   "avg": 7.3,
+   "notes": 32,
+   "wit": 2,
+   "laugh": 4,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "pk": "a5ee447568a2372226d647013a55251eac7dd37ab40804a5121a63ce2ca75401",
+   "npub": "npub15hhygatg5gmjyfkkguqn54f9r6k8m5m6ksyqffgjrf3uut982sqsffn4vc",
+   "name": "Dante",
+   "avg": 7.3,
+   "notes": 84,
+   "wit": 17,
+   "laugh": 8,
+   "night": 1,
+   "nightPct": 1,
+   "worst": {
+    "key": "replies",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 9
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "pk": "4e251ccdfaec9bb794915b88b80e6d2cfc40748b2e4a6e716068dd3070f45ea6",
+   "npub": "npub1fcj3en06ajdm09y3twytsrnd9n7yqayt9e9xuutqdrwnqu85t6nqt7rz5p",
+   "name": "Mr. R225 antComuna",
+   "avg": 7.2,
+   "notes": 9,
+   "wit": 4,
+   "laugh": 2,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "pk": "b335648ef148f864781f3f51fda378df4dad36bf4555425b470f1a8c002e7450",
+   "npub": "npub1kv6kfrh3fruxg7ql8aglmgmcmax66d4lg425yk68pudgcqpww3gq87t3js",
+   "name": "Coruja do Carvalho Aceleracionis",
+   "avg": 7.1,
+   "notes": 15,
+   "wit": 4,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "pk": "3fd91d480b645631a4ddfd021fef6700c57a8ac00e348a9fb52cdf6c2763869f",
+   "npub": "npub18lv36jqtv3trrfxal5pplmm8qrzh4zkqpc6g48a49n0kcfmrs60s6ezddt",
+   "name": "NamelezZ",
+   "avg": 7.1,
+   "notes": 14,
+   "wit": 1,
+   "laugh": 2,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "pk": "5fb3f973b42ad6ee466c477d7625d1616c2f770610e52439ee7f573dc2d560ad",
+   "npub": "npub1t7eljua59ttwu3nvga7hvfw3v9kz7acxzrjjgw0w0atnmsk4vzksgttg0z",
+   "name": "novo",
+   "avg": 7,
+   "notes": 59,
+   "wit": 15,
+   "laugh": 7,
+   "night": 2,
+   "nightPct": 3,
+   "worst": {
+    "key": "engagement",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 13,
+   "pk": "23b0e2f8d0f963f7ec1b6861701aa4e51fe303a7110e18fcec1d916cd8af76fc",
+   "npub": "npub1ywcw97xsl93l0mqmdpshqx4yu507xqa8zy8p3l8vrkgkek90wm7qjhp74e",
+   "name": "Dusk",
+   "avg": 6.9,
+   "notes": 19,
+   "wit": 6,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 14,
+   "pk": "43256bc0859462cf14fa7de594a48babdf189b91abe27f88d824abf69b2343c9",
+   "npub": "npub1gvjkhsy9j33v79860hjeffyt40033xu34038lzxcyj4ldxerg0yss3qlym",
+   "name": "🄻🄾🄿🄴🅂",
+   "avg": 6.9,
+   "notes": 94,
+   "wit": 17,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 8
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 15,
+   "pk": "c1a9282b7da213e4827e230f092f226223d42577f1086bb88e58081b75752c6d",
+   "npub": "npub1cx5js2ma5gf7fqn7yv8sjtezvg3agfth7yyxhwywtqypkat493ksjm7yr8",
+   "name": "𝚋𝚊𝚝𝚜𝚒𝚚",
+   "avg": 6.8,
+   "notes": 41,
+   "wit": 18,
+   "laugh": 2,
+   "night": 2,
+   "nightPct": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 2
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 16,
+   "pk": "fe6ba5f4b39af85fd3fa2b14e9f9062e83238883d251edc468e0ed499f7f8026",
+   "npub": "npub1le46ta9nntu9l5l69v2wn7gx96pj8zyr6fg7m3rgurk5n8mlsqnqt5dkcp",
+   "name": "Cigarrinho da Pan",
+   "avg": 6.8,
+   "notes": 15,
+   "wit": 3,
+   "laugh": 2,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 17,
+   "pk": "9b31915dd140b34774cb60c42fc0e015d800cde7f5e4f82a5f2d4e21d72803e4",
+   "npub": "npub1nvcezhw3gze5waxtvrzzls8qzhvqpn087hj0s2jl948zr4egq0jqhm3mrr",
+   "name": "Luciano Barak",
+   "avg": 6.7,
+   "notes": 87,
+   "wit": 23,
+   "laugh": 13,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "zaps",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 18,
+   "pk": "1c0650d4aca983ed6d920035635c1401e4e88dbe38b8d050c59ee0b0fd6c08dc",
+   "npub": "npub1rsr9p49v4xp76mvjqq6kxhq5q8jw3rd78zudq5x9nmstpltvprwqntz79e",
+   "name": "Johannes",
+   "avg": 6.7,
+   "notes": 68,
+   "wit": 20,
+   "laugh": 4,
+   "night": 10,
+   "nightPct": 15,
+   "worst": {
+    "key": "engagement",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "pk": "32ae2b0bf478b0eb8112b644de13684a1c46eac06c4463d77f4f1f0fa21c72c9",
+   "npub": "npub1x2hzkzl50zcwhqgjkezduymgfgwyd6kqd3zx84mlfu0slgsuwtys28hhrw",
+   "name": "Mambo",
+   "avg": 6.7,
+   "notes": 24,
+   "wit": 1,
+   "laugh": 4,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "engagement",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 9
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "pk": "de5969e20ca9ebc2cf99af428feb9956ab535774f10b8d89736382c83d736f09",
+   "npub": "npub1mevkncsv484u9nue4apgl6ue2644x4m57y9cmztnvwpvs0tnduysg3vdsw",
+   "name": "Zezinho ✝︎ 🐍☭⃠",
+   "avg": 6.6,
+   "notes": 20,
+   "wit": 7,
+   "laugh": 3,
+   "night": 1,
+   "nightPct": 5,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 9
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 21,
+   "pk": "d62affee95d916d83b294e1dd58917dfc22478b1fe47e7fa12b53574858c38f4",
+   "npub": "npub16c40lm54mytdsweffcwatzghmlpzg793ler707sjk56hfpvv8r6q65xfl4",
+   "name": "3spctrum",
+   "avg": 6.6,
+   "notes": 83,
+   "wit": 29,
+   "laugh": 18,
+   "night": 3,
+   "nightPct": 4,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 22,
+   "pk": "619af6a60b3fe4c733aaca061c522cc9c7cf1d87ef4c908facc5ed936d3bdf23",
+   "npub": "npub1vxd0dfst8ljvwva2egrpc53ve8ru78v8aaxfpravchkexmfmmu3sqnrs50",
+   "name": "idsera",
+   "avg": 6.6,
+   "notes": 39,
+   "wit": 10,
+   "laugh": 3,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 23,
+   "pk": "88b0c423ebac6902f316bf2f5337f1e9d8ade0fdc688637be40ade087aa99e1c",
+   "npub": "npub13zcvgglt435s9uckhuh4xdl3a8v2mc8ac6yxx7lypt0qs74fncwq5sgdth",
+   "name": "npub13zcvggl",
+   "avg": 6.6,
+   "notes": 62,
+   "wit": 12,
+   "laugh": 4,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 24,
+   "pk": "4ed1d3bc1cc3aeb011aa3e5ec540a303c09bf56f4333c1103b258ea3443132a9",
+   "npub": "npub1fmga80qucwhtqyd28e0v2s9rq0qfhat0gveuzypmyk82x3p3x25sfr9c2f",
+   "name": "Mamaco bostileiro",
+   "avg": 6.5,
+   "notes": 54,
+   "wit": 74,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 3
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 25,
+   "pk": "68767f4807105036014bb8cefc5f7290e4f5b9de046e62d81e70440577a4019a",
+   "npub": "npub1dpm87jq8zpgrvq2thr80chmjjrj0tww7q3hx9kq7wpzq2aayqxdq9a76um",
+   "name": "Pinguimdarelva⚡",
+   "avg": 6.4,
+   "notes": 23,
+   "wit": 0,
+   "laugh": 0,
+   "night": 5,
+   "nightPct": 22,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 8
+    },
+    {
+     "key": "speed",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 26,
+   "pk": "a4e6f35b6e717d5cdc7a70ee8f2a372078f14c0d54c928a297a0b880f3fd4178",
+   "npub": "npub15nn0xkmww974ehr6wrhg723hypu0znqd2nyj3g5h5zugpulag9uqy7e0xy",
+   "name": "Markus Novik",
+   "avg": 6.3,
+   "notes": 29,
+   "wit": 15,
+   "laugh": 1,
+   "night": 7,
+   "nightPct": 24,
+   "worst": {
+    "key": "night",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 9
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 4
+    }
+   ]
+  },
+  {
+   "rank": 27,
+   "pk": "ddae6a6c628f7a61fcc6684f19a326f51673fa5b3d63d9ac5b76483b0a9dd2d8",
+   "npub": "npub1mkhx5mrz3aaxrlxxdp83ngex75t887jm843antzmweyrkz5a6tvqt8kt3d",
+   "name": "Ouro Jackson",
+   "avg": 6.3,
+   "notes": 25,
+   "wit": 10,
+   "laugh": 6,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 10
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "speed",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 28,
+   "pk": "97da02b6c7b217f1c7b661c797bc53b2482050ab79319e73407ada930b7c8747",
+   "npub": "npub1jldq9dk8kgtlr3akv8re00znkfyzq59t0yceuu6q0tdfxzmusarsfxfunp",
+   "name": "Castiel de mudança para o Paragu",
+   "avg": 6.3,
+   "notes": 62,
+   "wit": 24,
+   "laugh": 3,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 2
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 29,
+   "pk": "2dd9250b28f62c7c49415745423d01ffff74084de3ed7e51379853be6e928072",
+   "npub": "npub19hvj2zeg7ck8cj2p2az5y0gplllhgzzdu0khu5fhnpfmum5jspeqqcdjej",
+   "name": "Otavio",
+   "avg": 6.3,
+   "notes": 43,
+   "wit": 7,
+   "laugh": 0,
+   "night": 4,
+   "nightPct": 9,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 30,
+   "pk": "fc64e8b934ae17823cc2b62df5cc91f254f7d2878cb6ca583ee725a4e6fcbcce",
+   "npub": "npub1l3jw3wf54ctcy0xzkckltny37f2005583jmv5kp7uuj6fehuhn8qdm9q90",
+   "name": "Fabregas",
+   "avg": 6.3,
+   "notes": 39,
+   "wit": 5,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 7
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 7
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 31,
+   "pk": "53c7bdc3e5ab1482f16bf791c56c34db35f61e3fd53d1deb087b276c7dbbf5b8",
+   "npub": "npub120rmmsl94v2g9utt77gu2mp5mv6lv83l6573m6cg0vnkcldm7kuqunx44g",
+   "name": "Radar",
+   "avg": 6.3,
+   "notes": 117,
+   "wit": 13,
+   "laugh": 3,
+   "night": 22,
+   "nightPct": 19,
+   "worst": {
+    "key": "night",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 6
+    },
+    {
+     "key": "laughter",
+     "g": 4
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 7
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 32,
+   "pk": "228366e483b0a1689ff84c8955185cbe371c380a1cadbb1cd34c4de4d1b3cb19",
+   "npub": "npub1y2pkdeyrkzsk38lcfjy42xzuhcm3cwq2rjkmk8xnf3x7f5dnevvsr0l5vz",
+   "name": "BOICOTE UM ESQUERDISTA - B.U.E R",
+   "avg": 6.3,
+   "notes": 41,
+   "wit": 3,
+   "laugh": 5,
+   "night": 1,
+   "nightPct": 2,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 8
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 33,
+   "pk": "c07c054989c9737204a224fd01092d87c3cacb267923c318a0be84d6e75c85f5",
+   "npub": "npub1cp7q2jvfe9ehyp9zyn7szzfdslpu4jex0y3uxx9qh6zdde6ush6s02nqrh",
+   "name": "[Baunilha]",
+   "avg": 6.2,
+   "notes": 37,
+   "wit": 5,
+   "laugh": 3,
+   "night": 5,
+   "nightPct": 14,
+   "worst": {
+    "key": "hashtags",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 6
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 34,
+   "pk": "ad72f3983e223b4019667b020bf31e6b9080ffc1a6a1f3e26f74d1398e556477",
+   "npub": "npub144e08xp7yga5qxtx0vpqhuc7dwggpl7p56sl8cn0wngnnrj4v3ms09hx9d",
+   "name": "Heur",
+   "avg": 6.2,
+   "notes": 11,
+   "wit": 2,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 35,
+   "pk": "cdd5eb8c5d72a678842707200a559c2a53dd27890f0a7c34685e091e261a8601",
+   "npub": "npub1eh27hrzaw2n83pp8qusq54vu9ffa6fufpu98cdrgtcy3ufs6scqssstekd",
+   "name": "Ban Sobrevivente",
+   "avg": 6.2,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 2,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 9
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 8
+    }
+   ]
+  },
+  {
+   "rank": 36,
+   "pk": "e97aaffa4001ba5db86e7c6bfc4f97c4278415f487df1eb3b52edb4a2ebd765d",
+   "npub": "npub1a9a2l7jqqxa9mwrw034lcnuhcsncg905sl03ava49md55t4awewsvvzz87",
+   "name": "reiartur",
+   "avg": 6.1,
+   "notes": 51,
+   "wit": 1,
+   "laugh": 0,
+   "night": 3,
+   "nightPct": 6,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 3
+    },
+    {
+     "key": "speed",
+     "g": 7
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "pk": "e13cb9ddc680debc1f3935a1d9b518c2e8e5f3aa3744cfa909212933e8258358",
+   "npub": "npub1uy7tnhwxsr0tc8eexksandgcct5wtua2xazvl2gfyy5n86p9sdvq7nwdzc",
+   "name": "Olavista Pardolista Integralista",
+   "avg": 6.1,
+   "notes": 55,
+   "wit": 15,
+   "laugh": 4,
+   "night": 8,
+   "nightPct": 15,
+   "worst": {
+    "key": "zaps",
+    "g": 2
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 7
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 38,
+   "pk": "2aa531ee0ea9b7649787995d9d728449752b87e7e064a30b7353f07a69ecc700",
+   "npub": "npub192jnrmsw4xmkf9u8n9we6u5yf96jhpl8upj2xzmn20c8560vcuqq2f4kxx",
+   "name": "jonata",
+   "avg": 6,
+   "notes": 282,
+   "wit": 6,
+   "laugh": 0,
+   "night": 54,
+   "nightPct": 19,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 3
+    }
+   ]
+  },
+  {
+   "rank": 39,
+   "pk": "1e0746dbd6c2a06aa0399505e0830d2ee6f10f26c0831361156511709a183cba",
+   "npub": "npub1rcr5dk7kc2sx4gpej5z7pqcd9mn0zrexczp3xcg4v5ghpxsc8jaqpmdf2j",
+   "name": "CapScabio",
+   "avg": 6,
+   "notes": 29,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "zaps",
+     "g": 9
+    },
+    {
+     "key": "speed",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 40,
+   "pk": "b300db32ab9b44a508af1e2d72004d6de4014bb11b28790820a10d910bf5db3a",
+   "npub": "npub1kvqdkv4tndz22z90rckhyqzddhjqzja3rv58jzpq5yxezzl4mvaqa28h7w",
+   "name": "TAnOTaTU",
+   "avg": 6,
+   "notes": 118,
+   "wit": 0,
+   "laugh": 0,
+   "night": 4,
+   "nightPct": 3,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 10
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 2
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 41,
+   "pk": "91bea5cd9361504c409aaf459516988f68a2fcd482762fd969a7cdc71df4451c",
+   "npub": "npub1jxl2tnvnv9gycsy64aze295c3a529lx5sfmzlktf5lxuw805g5wqew0z0n",
+   "name": "OK3E",
+   "avg": 5.9,
+   "notes": 15,
+   "wit": 7,
+   "laugh": 0,
+   "night": 2,
+   "nightPct": 13,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 5
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 3
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 42,
+   "pk": "a7c9b7335b685b88c8e2326201023192be49ae0b2b0f1e5801ebd62b357dca8f",
+   "npub": "npub15lymwv6mdpdc3j8zxf3qzq33j2lyntst9v83ukqpa0tzkdtae28sgef05j",
+   "name": "Shllomo N",
+   "avg": 5.9,
+   "notes": 9,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 43,
+   "pk": "30611079e46aa3f230bbdb95a649a7743a1a5b191db16ad34fa035edecac89f8",
+   "npub": "npub1xps3q70yd23lyv9mmw26vjd8wsap5kcerkck45605q67mm9v38uqhe03kj",
+   "name": "Lucas",
+   "avg": 5.7,
+   "notes": 27,
+   "wit": 2,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 6
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 8
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 44,
+   "pk": "5a03faed8e267f2315d07c01c530eda644705bb0592148c18a9139752b9d7999",
+   "npub": "npub1tgpl4mvwyeljx9ws0squ2v8d5ez8qkastys53sv2jyuh22ua0xvsemerxk",
+   "name": "dales",
+   "avg": 5.5,
+   "notes": 5,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 10
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 3
+    },
+    {
+     "key": "engagement",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 45,
+   "pk": "50554dcc16e4e77e05f0b6ac47b18b05033b7439118f6be8e56b14cfa9d30a98",
+   "npub": "npub12p25mnqkunnhup0sk6ky0vvtq5pnkapezx8kh689dv2vl2wnp2vquyfw5s",
+   "name": "McVera",
+   "avg": 5.4,
+   "notes": 23,
+   "wit": 23,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 46,
+   "pk": "3ffac3a6c859eaaa8cdddb2c7002a6e10b33efeb92d025b14ead6f8a2d656657",
+   "npub": "npub18lav8fkgt8424rxamvk8qq4xuy9n8mltjtgztv2w44hc5tt9vets0hcfsz",
+   "name": "Girino Vey!",
+   "avg": 5.4,
+   "notes": 20,
+   "wit": 14,
+   "laugh": 1,
+   "night": 2,
+   "nightPct": 10,
+   "worst": {
+    "key": "concision",
+    "g": 3
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 6
+    },
+    {
+     "key": "concision",
+     "g": 3
+    },
+    {
+     "key": "replies",
+     "g": 8
+    },
+    {
+     "key": "emoji",
+     "g": 5
+    },
+    {
+     "key": "laughter",
+     "g": 6
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "pk": "cee75e0a7a7bc67231a09a2b14ecaeff14a1d996fcd7106de59da5e3c2f5b652",
+   "npub": "npub1emn4uzn600r8yvdqng43fm9wlu22rkvklnt3qm09nkj78sh4kefq7pm5qh",
+   "name": "TJR Goat Express",
+   "avg": 5.2,
+   "notes": 48,
+   "wit": 3,
+   "laugh": 1,
+   "night": 9,
+   "nightPct": 19,
+   "worst": {
+    "key": "night",
+    "g": 4
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 4
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 4
+    },
+    {
+     "key": "laughter",
+     "g": 4
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 5
+    }
+   ]
+  },
+  {
+   "rank": 48,
+   "pk": "491afebaddb02bde87cfe77fedaff014bf92d8694a1d380ec4e754918b64834e",
+   "npub": "npub1fyd0awkakq4aap70ual7mtlszjle9krffgwnsrkyua2frzmysd8qjj8gvg",
+   "name": "Rafa Borges",
+   "avg": 5.1,
+   "notes": 12,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    },
+    {
+     "key": "speed",
+     "g": 6
+    }
+   ]
+  },
+  {
+   "rank": 49,
+   "pk": "bd9a66ff74b8553d0b3eca20cb0458f5fa19ffacda87e6df5965abe1053c452f",
+   "npub": "npub1hkdxdlm5hp2n6ze7egsvkpzc7hapnlavm2r7dh6evk47zpfug5hs2pzs77",
+   "name": "Bitcoin e Liberdade",
+   "avg": 5.1,
+   "notes": 69,
+   "wit": 0,
+   "laugh": 0,
+   "night": 2,
+   "nightPct": 3,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 9
+    },
+    {
+     "key": "night",
+     "g": 8
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 6
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 50,
+   "pk": "a8f2b47f14544d071cf4f7294ef5552ab3f2f5da3ae13c40cdc80758483f7534",
+   "npub": "npub14retglc523xsw8857u55aa2492el9aw68tsncsxdeqr4sjplw56qnzvszr",
+   "name": "Guy Rasu",
+   "avg": 5,
+   "notes": 8,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 10
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "speed",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 51,
+   "pk": "eac630759e313832c4d0113b9e1082279fb0efa6a9ce81cda9e8a366b4988b48",
+   "npub": "npub1atrrqav7xyur93xszyaeuyyzy70mpmax488grndfaz3kddyc3dyquawyga",
+   "name": "EddieOz",
+   "avg": 5,
+   "notes": 30,
+   "wit": 0,
+   "laugh": 1,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "hashtags",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 4
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 5
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 52,
+   "pk": "9121c11d5add022a80a937af6f9825cd6937300e405f8a99beef5688d89172b1",
+   "npub": "npub1jysuz826m5pz4q9fx7hklxp9e45nwvqwgp0c4xd7aatg3ky3w2csye0x5f",
+   "name": "Lucas Vital",
+   "avg": 4.9,
+   "notes": 26,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 10
+    },
+    {
+     "key": "replies",
+     "g": 4
+    },
+    {
+     "key": "emoji",
+     "g": 2
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 4
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 53,
+   "pk": "d4b914e9a41105cace71c5544b6120ee18b50355e95edf869f47c9746ed97082",
+   "npub": "npub16ju3f6dyzyzu4nn3c42ykcfqacvt2q64a90dlp5lglyhgmkewzpqu2a7js",
+   "name": "Loraine",
+   "avg": 4.4,
+   "notes": 14,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 5
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 2
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 54,
+   "pk": "027cc039c65c9299b0957ec4db7f7ca3160c72e3855916948091e99448f26313",
+   "npub": "npub1qf7vqwwxtjffnvy40mzdklmu5vtqcuhrs4v3d9yqj85egj8jvvfsym2puv",
+   "name": "petranostrverse.net",
+   "avg": 4.4,
+   "notes": 38,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 55,
+   "pk": "1a9977bd3278b079ed88a9eb5675654963d6a138a9394ecb4c07063e84de4383",
+   "npub": "npub1r2vh00fj0zc8nmvg4844vat9f93adgfc4yu5aj6vqurrapx7gwpsf3appj",
+   "name": "hildegardrelayted.de",
+   "avg": 4.3,
+   "notes": 23,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 7
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 6
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 9
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 56,
+   "pk": "0c028f1233673acaa115ede68a4a9a7585924bcdb166a94d36bea181f96be366",
+   "npub": "npub1pspg7y3nvuav4gg4ahng5j56wkzeyj7dk9n2jnfkh6scr7ttudnq9357ew",
+   "name": "Coach de Osasco Oficial🕊️❤️",
+   "avg": 4.2,
+   "notes": 17,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "laughter",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 6
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 2
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 10
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 1
+    },
+    {
+     "key": "engagement",
+     "g": 4
+    },
+    {
+     "key": "zaps",
+     "g": 2
+    }
+   ]
+  },
+  {
+   "rank": 57,
+   "pk": "c9f4b74a6351495bac59c69470e453c06cf47658cd5ddfdebed114c956f9d0c1",
+   "npub": "npub1e86twjnr29y4htzec628pezncpk0gajce4walh476y2vj4he6rqs24jlys",
+   "name": "Micael 244",
+   "avg": 4,
+   "notes": 6,
+   "wit": 0,
+   "laugh": 0,
+   "night": 0,
+   "nightPct": 0,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 4
+    },
+    {
+     "key": "night",
+     "g": 10
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 5
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  },
+  {
+   "rank": 58,
+   "pk": "f5c929ecbf3d1f8794794d20c4b7616a5f3e5b62c00e20f42f7efaaa27d32a7b",
+   "npub": "npub17hyjnm9l850c09ref5svfdmpdf0nukmzcq8zpap00ma25f7n9fasnkkcr6",
+   "name": "Caio dos santos Borges",
+   "avg": 3.8,
+   "notes": 51,
+   "wit": 0,
+   "laugh": 0,
+   "night": 3,
+   "nightPct": 6,
+   "worst": {
+    "key": "emoji",
+    "g": 1
+   },
+   "rows": [
+    {
+     "key": "attendance",
+     "g": 8
+    },
+    {
+     "key": "night",
+     "g": 7
+    },
+    {
+     "key": "concision",
+     "g": 8
+    },
+    {
+     "key": "replies",
+     "g": 2
+    },
+    {
+     "key": "emoji",
+     "g": 1
+    },
+    {
+     "key": "laughter",
+     "g": 1
+    },
+    {
+     "key": "hashtags",
+     "g": 2
+    },
+    {
+     "key": "engagement",
+     "g": 1
+    }
+   ]
+  }
+ ]
+}
