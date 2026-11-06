@@ -249,7 +249,7 @@
       const pk = await resolveInput(raw);
       setLoader(true, t('loadRead'), t('step'));
       const since = Math.floor(Date.now() / 1000) - DAYS * 86400;
-      const notes = new Map(), reacts = new Map(), zaps = new Map(); let prof = null, capped = false;
+      const notes = new Map(), reacts = new Map(), zaps = new Map(), ments = new Map(); let prof = null, capped = false;
       const upd = () => chips(relays);
       relays = RELAYS.map(u => new Relay(u, upd));
       const dl = Date.now() + PHASE1_MS;
@@ -258,7 +258,8 @@
         return Promise.all([
           r.sub('p', { kinds: [0], authors: [pk], limit: 1 }, ev => { if (ev.pubkey === pk && ev.kind === 0 && (!prof || ev.created_at > prof.created_at)) prof = ev; }, dl),
           r.sub('n', { kinds: [1], authors: [pk], since, limit: LIMIT }, ev => { if (ev.pubkey === pk && ev.kind === 1 && ev.created_at >= since) { notes.set(ev.id, ev); counts.n++; } }, dl),
-          r.sub('r', { kinds: [7, 9735], '#p': [pk], since, limit: LIMIT }, ev => { counts.r++; (ev.kind === 7 ? reacts : zaps).set(ev.id, ev); }, dl)
+          r.sub('r', { kinds: [7, 9735], '#p': [pk], since, limit: LIMIT }, ev => { counts.r++; (ev.kind === 7 ? reacts : zaps).set(ev.id, ev); }, dl),
+          r.sub('m', { kinds: [1], '#p': [pk], since, limit: LIMIT }, ev => { if (ev.kind === 1 && ev.pubkey !== pk) ments.set(ev.id, ev); }, dl)
         ]).then(() => { if (counts.n >= LIMIT - 5 || counts.r >= LIMIT - 5) capped = true; });
       });
       await new Promise(res => {
@@ -280,7 +281,7 @@
       }
       relays.forEach(r => r.close());
       setLoader(true, t('loadGrade'), '');
-      const res = analyze({ pk, prof, list, reacts: [...reacts.values()], zaps: [...zaps.values()], parents, capped, up, ms: Date.now() - t0 });
+      const res = analyze({ pk, prof, list, reacts: [...reacts.values()], zaps: [...zaps.values()], ments: [...ments.values()], parents, capped, up, ms: Date.now() - t0 });
       current = res; setLoader(false); renderResult(true); history.replaceState(null, '', '?npub=' + res.npub);
       $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
@@ -310,11 +311,14 @@
       if (p) { replies++; const pe = d.parents.get(p); if (pe && ev.created_at >= pe.created_at) spd.push((ev.created_at - pe.created_at) / 60); }
     }
     const reacts = d.reacts.filter(r => r.pubkey !== d.pk && r.content !== '-' && r.tags.some(x => x[0] === 'e' && noteIds.has(x[1])));
+    const LR = /^(?:\u{1F602}|\u{1F923}|\u{1F639}|\u{1F606})+$/u, witSet = new Set(), witP = new Set(), witN = new Set();
+    for (const r of reacts) { const c = (r.content || '').trim(); if (LR.test(c) || LAUGH_RE.test(c)) { const e = r.tags.filter(x => x[0] === 'e' && noteIds.has(x[1])).pop(); if (e) { witSet.add(r.pubkey + e[1]); witP.add(r.pubkey); witN.add(e[1]); } } }
+    for (const m of (d.ments || [])) { if (m.pubkey === d.pk) continue; const p = replyParent(m); if (p && noteIds.has(p) && LAUGH_RE.test(m.content.replace(URL_RE, ' '))) { witSet.add(m.pubkey + p); witP.add(m.pubkey); witN.add(p); } }
     const zaps = d.zaps; let sats = 0; zaps.forEach(z => { const b = z.tags.find(x => x[0] === 'bolt11'); if (b) sats += bolt11Sats(b[1]); });
     const stats = {
       n, perDay: n / DAYS, night, nightPct: night / n * 100, medWords: median(words), replies, replyPct: replies / n * 100, broadcasts: n - replies,
       emoji, emojiPer: emoji / n, laugh, laughPct: laugh / n * 100, tags, tagsPer: tags / n, reacts: reacts.length, reactsPer: reacts.length / n,
-      zaps: zaps.length, sats, speedN: spd.length, speed: median(spd)
+      zaps: zaps.length, sats, speedN: spd.length, speed: median(spd), wit: witSet.size, witPeople: witP.size, witNotes: witN.size
     };
     const rows = [];
     const add = (key, v, det) => rows.push({ key, v, g: gradeOf(key, v), det });
@@ -422,7 +426,7 @@
 ${awH}
 <div class="gh"><span>${t('subject')}</span><span>${t('grade')}</span></div>
 <ol class="grid">${rowsH}</ol>
-<div class="jud"><span class="lbl">${t('teacher')}</span><p class="hand ink">${esc(teacherNote(r))}</p></div>
+<div class="jud"><span class="lbl">${t('teacher')}</span><p class="hand ink">${esc(teacherNote(r))}</p><p style="margin:10px 0 0;font:400 13px var(--mono);color:#5a5246">${L === 'it' ? `Arguzia (prova, fuori media): ${r.stats.witPeople} persone hanno riso a ${r.stats.witNotes} tue note.` : `Wit (beta, not in the average): ${r.stats.witPeople} ${r.stats.witPeople === 1 ? 'person' : 'people'} laughed at ${r.stats.witNotes} of your notes.`}</p></div>
 <div class="foot"><p class="esito">${t('verdict')}: <b>${esc(verdictTxt)}</b><small>${esc(r.npub.slice(0, 14))}...${esc(r.npub.slice(-6))}</small></p><div class="sig"><svg class="stampsvg" aria-hidden="true"><use href="#stamp"/></svg><span class="hand">Lira</span><small>${t('profText')}</small></div></div>
 </div></article></div>
 <div class="vs" aria-hidden="true" style="margin-top:22px"><i><u style="left:${avgPos}%"></u></i><small><span>1</span><span>${t('avgLbl')} ${r.avg.toFixed(1)}</span><span>10</span></small></div>
