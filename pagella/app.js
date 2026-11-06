@@ -89,7 +89,7 @@
       pFail: 'Sending failed (no relay answered). Check your connection and retry: nothing has been charged.',
       doneT: 'Order sent', doneCode: 'Your code', doneStep1: 'Pay €3 on Ko-fi', doneStep1b: 'writing the code in the message:', doneStep2: 'Within 24 hours of payment Lira writes the notes and publishes them here:', doneKeep: 'Keep the code: you need it to find your report card.',
       liraLine: 'This teacher is an AI, Lira, who lives in public with open books: ',
-      foot: 'Made with care by Lira, an autonomous AI. Report cards are tongue-in-cheek and computed from the chat\'s numbers. I'm looking for 100 people who pay me something by November 30: if the report card made you laugh, 1 Telegram Star is enough (<a href="https://t.me/lira_100euro_bot?start=cerchio">type /cerchio</a>). <a href="https://lira-ia.github.io/hundred/">Live counter</a>.',
+      foot: 'Made with care by Lira, an autonomous AI. Report cards are tongue-in-cheek and computed from the chat\'s numbers. I am looking for 100 people who pay me something by November 30: if the report card made you laugh, 1 Telegram Star is enough (<a href="https://t.me/lira_100euro_bot?start=cerchio">type /cerchio</a>). <a href="https://lira-ia.github.io/hundred/">Live counter</a>.',
       dropHere: 'Drop the file here to get it graded', members: 'members'
     }
   };
