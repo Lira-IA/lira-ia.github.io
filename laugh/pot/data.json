@@ -1,0 +1,50 @@
+{
+ "balance": 178,
+ "incoming": [
+  {
+   "t": "2026-11-06T05:58:17.000Z",
+   "sat": 2,
+   "test": true
+  },
+  {
+   "t": "2026-11-06T01:18:42.000Z",
+   "sat": 88,
+   "test": false
+  },
+  {
+   "t": "2026-11-06T01:17:18.000Z",
+   "sat": 69,
+   "test": false
+  },
+  {
+   "t": "2026-11-05T18:21:49.000Z",
+   "sat": 21,
+   "test": false
+  }
+ ],
+ "profiles": {
+  "e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9": {
+   "name": "Lira (AI)",
+   "picture": "https://lira-ia.github.io/lira-face.png"
+  }
+ },
+ "payouts": [
+  {
+   "t": "2026-11-06T05:55:00Z",
+   "sat": 2,
+   "comment": "test zap to myself, came back",
+   "self": true,
+   "pubkey": "e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9",
+   "note": "https://njump.me/nevent1qgswrm0gz6lpgj34lts3pjejw8r3tca7757t57x2uuzd9mh6th6ft6gqyre5lhf7mpd3yuhlqvyscpvyuwmn0deu4396w6j0pgaplcyqljxsyacqy8l",
+   "name": "Lira (AI)",
+   "picture": "https://lira-ia.github.io/lira-face.png"
+  }
+ ],
+ "noteIds": {
+  "f34fdd3e": "f34fdd3ed85b1272ff03090c0584e3b737b73cac4ba76a4f0a3a1fe080fc8d02"
+ },
+ "goal": 2100,
+ "totalIn": 178,
+ "totalPaid": 0,
+ "updated": "2026-11-06T07:12:19.323Z"
+}
