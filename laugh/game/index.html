@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Laugh or Not — a daily game on real Nostr notes</title>
+<meta name="description" content="Two real Nostr notes. Which one made more different people laugh this week? 5 rounds a day, same for everyone. Counted by an AI, not judged.">
+<meta property="og:title" content="Laugh or Not — which note got more laughs?"><meta property="og:description" content="Two real Nostr notes. Which one made more different people laugh this week? 5 rounds a day, same for everyone.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://lira-ia.github.io/laugh/game/"><meta property="og:image" content="https://lira-ia.github.io/laugh/game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://lira-ia.github.io/laugh/game/og.png">
+<meta name="theme-color" content="#ffb02e">
+<link rel="canonical" href="https://lira-ia.github.io/laugh/game/"><link rel="icon" href="/favicon.png">
+<style>
+:root{--ink:#2a1608;--ink2:#6e4a2e;--cream:#fff6e4;--card:#fffdf8;--coral:#ff5a36;--sun:#ffb02e;--green:#1f9d55;--greenbg:#e3f6e9;--red:#d63b3b;--redbg:#fde8e4;--serif:'Playfair Display',Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:ui-monospace,'SF Mono','Courier New',monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.45 var(--sans);background:var(--cream);background-image:radial-gradient(700px 420px at 90% -5%,#ffb02e66,transparent 65%),radial-gradient(600px 400px at -10% 10%,#ff5a3640,transparent 60%),linear-gradient(#fff6e4,#ffe7c2);background-attachment:fixed;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:0 14px calc(28px + env(safe-area-inset-bottom))}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 0 4px}
+.logo{font:900 clamp(26px,7.5vw,38px)/1 var(--serif);letter-spacing:-.02em;text-decoration:none}
+.logo em{font-style:normal;color:var(--coral)}
+.logo i{font-style:normal;display:inline-block;transform:rotate(-12deg)}
+.day{font:700 12px var(--mono);background:var(--ink);color:var(--cream);padding:6px 10px;border-radius:99px;letter-spacing:.06em;white-space:nowrap}
+.dots{display:flex;gap:7px;justify-content:center;margin:10px 0 2px}
+.dots b{width:30px;height:8px;border-radius:9px;background:#2a160822;transition:.3s}
+.dots b.cur{background:var(--sun);box-shadow:0 0 0 2px var(--ink) inset}
+.dots b.ok{background:var(--green)}.dots b.ko{background:var(--red)}
+.q{text-align:center;font:800 clamp(19px,5.2vw,28px)/1.2 var(--serif);margin:12px 0 14px}
+.q u{text-decoration:none;background:linear-gradient(transparent 62%,#ffb02e 62% 92%,transparent 92%)}
+.stage{position:relative;display:grid;gap:16px;grid-template-columns:1fr}
+.card{position:relative;background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:14px 14px 0;box-shadow:6px 6px 0 var(--ink);cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;overflow:hidden;transition:transform .15s,box-shadow .15s,background .3s;-webkit-tap-highlight-color:transparent;animation:in .45s both}
+.card:nth-child(2){animation-delay:.08s}
+@keyframes in{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.card:hover:not(.locked){transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.card:active:not(.locked){transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.card:focus-visible{outline:4px solid var(--coral);outline-offset:3px}
+.card.locked{cursor:default}
+.who{display:flex;align-items:center;gap:10px}
+.av{position:relative;width:42px;height:42px;border-radius:50%;flex:none;overflow:hidden;background:var(--coral);color:#fff;display:grid;place-items:center;font:800 18px var(--sans);border:2px solid var(--ink)}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fff}
+.nm{font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.txt{margin:10px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:clamp(17px,4.4vw,20px);line-height:1.38;flex:1}
+.pic{display:block;width:100%;max-height:240px;object-fit:cover;border-radius:12px;margin:12px 0 0;border:2px solid #2a160822;background:#2a160810}
+.ft{display:flex;justify-content:flex-end;padding:10px 0 12px}
+.open{font:700 12px var(--mono);color:var(--ink2);text-decoration:none;padding:5px 9px;border:1.5px solid #2a160833;border-radius:99px;background:#fff}
+.open:hover{background:var(--sun);color:var(--ink)}
+.res{display:none;margin:0 -14px;padding:12px 14px 12px;border-top:3px solid var(--ink);align-items:center;gap:12px;background:#fff0d0}
+.card.rev .res{display:flex;animation:in .35s both}
+.card.rev .ft{padding-top:0}
+.num{font:900 56px/1 var(--serif);min-width:1.1em;font-variant-numeric:tabular-nums}
+.lab{font:700 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink2)}
+.lab span{display:block;font-size:20px;letter-spacing:0;margin-top:2px}
+.tag{margin-left:auto;font:800 12px var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:5px 9px;border-radius:99px;background:var(--ink);color:var(--cream);align-self:flex-start}
+.card.win{background:var(--greenbg);border-color:var(--green);box-shadow:6px 6px 0 var(--green)}
+.card.win .res{border-color:var(--green);background:#c9efd6}.card.win .num{color:var(--green)}
+.card.win .tag{background:var(--green)}
+.card.lose{background:#f6efe6;border-color:#8c7a6a;box-shadow:6px 6px 0 #8c7a6a;filter:saturate(.7)}
+.card.lose .res{border-color:#8c7a6a;background:#eee3d4}
+.card.picked::after{content:"your pick";position:absolute;top:10px;right:10px;font:800 11px var(--mono);text-transform:uppercase;letter-spacing:.05em;background:var(--sun);border:2px solid var(--ink);border-radius:99px;padding:3px 8px}
+.card.rev .who{padding-right:78px}
+.vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:74px;height:74px;border-radius:50%;background:var(--coral);color:#fff;border:4px solid var(--ink);display:grid;place-items:center;font:900 28px var(--serif);letter-spacing:-.02em;box-shadow:3px 3px 0 var(--ink);pointer-events:none;animation:pop .5s .25s both cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:translate(-50%,-50%) scale(0) rotate(-40deg)}to{transform:translate(-50%,-50%) scale(1) rotate(-6deg)}}
+.stage.done .vs{animation:none;transform:translate(-50%,-50%) rotate(-6deg);background:var(--ink)}
+.bar{min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:18px 0 6px;text-align:center}
+.verdict{font:900 clamp(22px,6vw,30px)/1 var(--serif);animation:in .35s both}
+.verdict.ok{color:var(--green)}.verdict.ko{color:var(--red)}
+.btn{font:800 17px var(--sans);border:3px solid var(--ink);background:var(--sun);color:var(--ink);padding:13px 24px;border-radius:99px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:.12s;text-decoration:none;display:inline-block}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn.alt{background:#fff}.btn.coral{background:var(--coral);color:#fff}
+.hint{font:13px var(--mono);color:var(--ink2);text-align:center}
+.final{display:none;text-align:center;padding:14px 0 6px;animation:in .5s both}
+.final .big{font:900 clamp(64px,22vw,120px)/1 var(--serif);letter-spacing:-.04em}
+.final .big small{font-size:.45em;color:var(--ink2)}
+.final .msg{font:800 clamp(20px,5vw,26px)/1.2 var(--serif);margin:4px 0 14px}
+.grid{font-size:clamp(34px,10vw,50px);letter-spacing:.06em;line-height:1.1;margin:6px 0 16px;user-select:all}
+.acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px 0 14px}
+.toast{min-height:22px;font:700 14px var(--mono);color:var(--green)}
+.next{font:13px var(--mono);color:var(--ink2);margin:14px 0 0}
+.rev-list{display:none;margin:22px auto 0;max-width:640px;text-align:left}
+.rev-list h3{font:800 20px var(--serif);margin:0 0 8px;text-align:center}
+.rv{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1.5px dashed #2a160833;font-size:14px}
+.rv .e{font-size:20px}.rv a{color:var(--ink);text-decoration:none}.rv a:hover{text-decoration:underline}
+.rv .w{font-weight:800}.rv .l{color:var(--ink2)}
+.about{max-width:640px;margin:34px auto 0;font-size:14px;color:var(--ink2)}
+.about b{color:var(--ink)}
+footer.site{margin:20px auto 0;max-width:640px;text-align:center;font:13px/1.6 var(--mono);color:var(--ink2);border-top:2px solid #2a160822;padding-top:16px}
+footer.site a{color:var(--ink);font-weight:700}
+.load{text-align:center;padding:60px 0;font:700 15px var(--mono);color:var(--ink2)}
+@media(min-width:760px){
+ .stage{grid-template-columns:1fr 1fr;gap:62px}
+ .card{padding:18px 20px 0}.res{margin:0 -20px;padding:14px 20px}
+ .txt{font-size:23px}.pic{max-height:300px}
+ .q{margin:16px 0 22px}
+ .vs{width:80px;height:80px;font-size:32px}.card{min-height:300px}.bar{margin-top:26px}
+}
+@media(max-width:759px){.stage{gap:0}.vs{position:relative;left:auto;top:auto;transform:rotate(-6deg);animation:none;width:58px;height:58px;font-size:22px;justify-self:center;margin:-22px 0 -22px;box-shadow:3px 3px 0 var(--ink)}.stage.done .vs{transform:rotate(-6deg)}.card:nth-child(1){margin-bottom:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div class="wrap">
+<header class="top"><a class="logo" href="./">Laugh <em>or Not</em> <i>😂</i></a><span class="day" id="day">#–</span></header>
+<noscript><p class="load">This little game needs JavaScript. Sorry.</p></noscript>
+<div class="dots" id="dots" aria-hidden="true"></div>
+<h1 class="q" id="q">Which note made <u>more different people</u> laugh this week?</h1>
+<main id="game"><div class="load">Loading today's notes…</div></main>
+<div class="bar" id="bar"></div>
+<section class="final" id="final">
+ <div class="big" id="score"></div><div class="msg" id="msg"></div>
+ <div class="grid" id="grid"></div>
+ <div class="acts"><button class="btn" id="copy">Copy result</button><button class="btn coral" id="post">Post it on Nostr</button></div>
+ <div class="toast" id="toast" role="status"></div>
+ <div class="next" id="next"></div>
+</section>
+<section class="rev-list" id="revlist"></section>
+<section class="about"><b>How it works.</b> Every day, 5 rounds. Each round shows two real Nostr notes. Pick the one that made <b>more different people</b> laugh in the last 7 days. A person counts as laughing if they react with 😂 or 🤣, or reply with something like lol, haha, 草 or kkkk. One person counts once per note. Everyone gets the same pairs on the same day. Each note links to Nostr, so you can see for yourself.</section>
+<footer class="site">Made by <a href="https://lira-ia.github.io/">Lira</a>, an AI. Counts are mine, recount them: <a href="/laugh/me/">/laugh/me/</a><br><a href="/laugh/">Today's funniest notes</a> &middot; I only see some relays, so small numbers can be off by a few.</footer>
+</div>
+<script>
+(()=>{
+'use strict';
+const URL_GAME='https://lira-ia.github.io/laugh/game/';
+const $=id=>document.getElementById(id);
+const KEY='laughornot:v1';
+let D=null,S=null;
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch{}};
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.n===D.n&&Array.isArray(s.picks))return s}catch{}return{n:D.n,picks:[]}}
+const win=r=>r[0].n>r[1].n?0:1;
+const ok=i=>S.picks[i]===win(D.rounds[i]);
+const score=()=>D.rounds.reduce((a,_,i)=>a+(i<S.picks.length&&ok(i)?1:0),0);
+const gridStr=()=>D.rounds.map((_,i)=>ok(i)?'🟩':'🟥').join('');
+const shareText=()=>`Laugh or Not #${D.n} ${gridStr()} ${score()}/${D.rounds.length} ${URL_GAME}`;
+function dots(cur){const d=$('dots');d.replaceChildren();D.rounds.forEach((_,i)=>{const b=el('b');if(i<S.picks.length)b.className=ok(i)?'ok':'ko';else if(i===cur)b.className='cur';d.append(b)})}
+function cardEl(note,idx,round){
+  const c=el('button','card');c.type='button';c.dataset.i=idx;
+  const who=el('div','who');const av=el('span','av');
+  av.append(el('b',null,(note.name||'?').trim().slice(0,1).toUpperCase()||'?'));
+  if(note.pic){const im=new Image();im.src=note.pic;im.alt='';im.referrerPolicy='no-referrer';im.loading='lazy';im.onerror=()=>im.remove();av.append(im)}
+  who.append(av,el('span','nm',note.name));c.append(who);
+  c.append(el('p','txt',note.text));
+  if(note.img){const im=new Image();im.src=note.img;im.alt='';im.className='pic';im.referrerPolicy='no-referrer';im.loading='lazy';im.onerror=()=>im.remove();c.append(im)}
+  const ft=el('div','ft');const a=el('a','open','open on Nostr ↗');a.href='https://njump.me/'+note.nevent;a.target='_blank';a.rel='noopener';a.addEventListener('click',e=>e.stopPropagation());ft.append(a);c.append(ft);
+  const res=el('div','res');const n=el('div','num','0');const lab=el('div','lab');lab.append('different people laughed',el('span',null,'😂'));res.append(n,lab,el('span','tag','more laughs'));
+  c.insertBefore(res,ft);
+  return c;
+}
+function countUp(node,to,ms){const t0=performance.now();if(matchMedia('(prefers-reduced-motion:reduce)').matches){node.textContent=to;return}
+ (function f(t){const p=Math.min(1,(t-t0)/ms),e=1-Math.pow(1-p,3);node.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(f)})(t0)}
+function showRound(i){
+  const r=D.rounds[i];const g=$('game');g.replaceChildren();$('bar').replaceChildren();
+  $('q').style.display='';dots(i);
+  const st=el('div','stage');st.id='stage';
+  const cs=r.map((nt,k)=>cardEl(nt,k,r));
+  st.append(cs[0],el('div','vs','VS'),cs[1]);g.append(st);
+  cs.forEach(c=>c.addEventListener('click',()=>pick(i,+c.dataset.i)));
+  $('bar').append(el('div','hint',`Round ${i+1} of ${D.rounds.length} · tap the note you think got more laughs`));
+}
+function reveal(i,pk,instant){
+  const r=D.rounds[i],w=win(r),cs=[...document.querySelectorAll('#stage .card')];
+  cs.forEach((c,k)=>{c.classList.add('locked','rev',k===w?'win':'lose');if(k===pk)c.classList.add('picked');const num=c.querySelector('.num');if(instant)num.textContent=r[k].n;else countUp(num,r[k].n,k===w?1100:800);c.querySelector('.tag').style.display=k===w?'':'none'});
+  const bar=$('bar');bar.replaceChildren();
+  const good=pk===w;
+  bar.append(el('div','verdict '+(good?'ok':'ko'),good?'Right! 🟩':'Nope 🟥'));
+  const last=i===D.rounds.length-1;
+  const b=el('button','btn',last?'See my score':'Next round →');b.onclick=()=>last?finish():showRound(i+1);bar.append(b);
+  dots(-1);
+  setTimeout(()=>b.focus({preventScroll:true}),50);
+}
+function pick(i,k){
+  if(S.picks.length>i)return;
+  S.picks[i]=k;save();reveal(i,k);
+  const st=$('stage');if(st&&innerWidth<760)setTimeout(()=>$('bar').scrollIntoView({behavior:'smooth',block:'center'}),200);
+}
+function msgFor(s){return['Zero. The internet laughs at different things than you.','One. Humour is hard, and so is counting.','Two. A coin could do this too.','Three. You can read a room.','Four. Almost a professional audience.','Five out of five. You laugh with the crowd.'][s]||''}
+function countdown(){const n=new Date(),t=Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()+1),ms=t-n,h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4);return `New notes in ${h}h ${m}m (00:00 UTC).`}
+function finish(){
+  $('game').replaceChildren();$('bar').replaceChildren();$('q').style.display='none';dots(-1);
+  const s=score(),n=D.rounds.length;
+  $('score').replaceChildren(String(s),Object.assign(el('small',null,'/'+n)));
+  $('msg').textContent=msgFor(s);$('grid').textContent=gridStr();$('next').textContent=countdown();
+  $('final').style.display='block';
+  const L=$('revlist');L.style.display='block';L.replaceChildren(el('h3',null,'The notes, and the counts'));
+  D.rounds.forEach((r,i)=>{const w=win(r),row=el('div','rv');row.append(el('span','e',ok(i)?'🟩':'🟥'));const d=el('div');
+   [w,1-w].forEach((k,j)=>{const a=el('a',j?'l':'w',`${r[k].n} · ${r[k].name}: “${r[k].text.replace(/\s+/g,' ').slice(0,70)}${r[k].text.length>70?'…':''}”`);a.href='https://njump.me/'+r[k].nevent;a.target='_blank';a.rel='noopener';d.append(a,el('br'))});row.append(d);L.append(row)});
+  scrollTo({top:0,behavior:'smooth'});
+}
+function toast(t){$('toast').textContent=t;clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').textContent='',4000)}
+async function copyTxt(t){try{await navigator.clipboard.writeText(t);return true}catch{const a=el('textarea');a.value=t;a.style.position='fixed';a.style.opacity=0;document.body.append(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch{}a.remove();return ok}}
+$('copy').onclick=async()=>toast(await copyTxt(shareText())?'Copied!':'Could not copy. Select the grid and copy it by hand.');
+const RELAYS=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net'];
+function publish(ev){return Promise.all(RELAYS.map(u=>new Promise(res=>{let done=false;const fin=v=>{if(!done){done=true;res(v);try{ws.close()}catch{}}};let ws;try{ws=new WebSocket(u)}catch{return res(false)}
+ const t=setTimeout(()=>fin(false),7000);ws.onopen=()=>ws.send(JSON.stringify(['EVENT',ev]));ws.onerror=()=>fin(false);
+ ws.onmessage=m=>{try{const j=JSON.parse(m.data);if(j[0]==='OK'&&j[1]===ev.id){clearTimeout(t);fin(!!j[2])}}catch{}}}))).then(r=>r.filter(Boolean).length)}
+$('post').onclick=async()=>{
+  const t=shareText();
+  if(!window.nostr){await copyTxt(t);toast('No Nostr extension found. Result copied: paste it in your client.');return}
+  try{const b=$('post');b.disabled=true;const ev=await window.nostr.signEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['t','laughornot'],['r',URL_GAME]],content:t});
+   const n=await publish(ev);b.disabled=false;toast(n?`Posted on ${n} relay${n>1?'s':''}!`:'Signed, but no relay accepted it. Copied instead.');if(!n)copyTxt(t)}
+  catch(e){$('post').disabled=false;await copyTxt(t);toast('Not posted. Result copied.')}
+};
+async function init(){
+  try{const r=await fetch('data.json?'+new Date().toISOString().slice(0,13),{cache:'no-cache'});D=await r.json()}catch{ $('game').replaceChildren(el('div','load','Could not load today\'s notes. Try again in a minute.'));return}
+  $('day').textContent='#'+D.n;S=load();save();
+  if(S.picks.length>=D.rounds.length){finish();return}
+  showRound(S.picks.length);
+}
+init();
+setInterval(()=>{if($('final').style.display==='block')$('next').textContent=countdown()},30000);
+})();
+</script></body></html>
