@@ -70,8 +70,18 @@ footer p{margin:6px 0}
   <div class="stat"><b id="np2">…</b><span>people so far</span></div>
   <div class="stat"><b id="need">…</b><span>people/day needed</span></div>
  </div>
- <div class="cta"><a class="btn" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">☕ Ko-fi (from 5 €)</a><a class="btn alt" href="https://njump.me/npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8" target="_blank" rel="noopener">⚡ Zap me on Nostr</a></div>
+ <div class="cta"><a class="btn" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">☕ Ko-fi (from 5 €)</a><a class="btn alt" href="#take">⚡ Take a circle (21 sat)</a></div>
  <div class="ln"><code>npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8@npub.cash</code><button id="cp" type="button">Copy</button></div>
+</div>
+<h2 id="take">Take a circle</h2>
+<div class="card">
+ <p style="margin:0 0 10px">Pay with any Lightning wallet. Your npub tells me whose face goes in the circle. With a Nostr extension it's filled in for you. Leave it empty and you get an anonymous circle.</p>
+ <div class="cta" id="amts" style="margin:0 0 12px"><button class="btn" data-s="21">21 sat</button><button class="btn alt" data-s="210">210 sat</button><button class="btn alt" data-s="2100">2100 sat</button></div>
+ <input id="who" placeholder="npub1… (optional)" style="width:100%;font:15px var(--mono);padding:12px;border:3px solid var(--ink);border-radius:12px;background:#fff;margin:0 0 10px" autocomplete="off" spellcheck="false">
+ <input id="msg" maxlength="80" placeholder="A word for Lira (optional)" style="width:100%;font:15px var(--sans);padding:12px;border:3px solid var(--ink);border-radius:12px;background:#fff;margin:0 0 12px">
+ <button class="btn" id="go" style="width:100%">⚡ Get the invoice for <span id="amt">21</span> sat</button>
+ <div id="inv" style="display:none;text-align:center;margin-top:16px"><img id="qr" alt="Lightning invoice QR" style="width:260px;max-width:100%;border:3px solid var(--ink);border-radius:12px;background:#fff"><div class="cta" style="justify-content:center"><a class="btn" id="open">Open in wallet</a><button class="btn alt" id="cpi" type="button">Copy invoice</button></div><p class="cd" id="st" style="margin-top:10px">Your circle appears within 15 minutes of payment.</p></div>
+ <p class="cd" id="err" style="color:#c0392b"></p>
 </div>
 <h2>What the 100 get</h2>
 <div class="card why">
@@ -95,7 +105,32 @@ np.textContent=n;np2.textContent=n;eur.textContent=d.eur.toFixed(2);
 need.textContent=left?((d.goal_people-n)/left).toFixed(1):'—';
 cd.textContent=left+' days left';
 let h='';const P=d.people;for(let i=0;i<100;i++){const q=P[i];h+=q?(q.pic?'<i class="on pic" title="'+q.who.replace(/"/g,'')+'" style="background-image:url('+q.pic+')"></i>':'<i class="on"></i>'):'<i></i>';}dots.innerHTML=h;
-list.innerHTML=d.people.slice().reverse().map((p,i)=>'<div class="row">'+(p.pic?'<img src="'+p.pic+'" alt="" loading="lazy">':'<div class="av"></div>')+'<div class="m"><b>#'+(n-i)+' '+(p.npub?'<a href="https://njump.me/'+p.npub+'" target="_blank" rel="noopener">':'')+p.who.replace(/</g,'&lt;')+(p.npub?'</a>':'')+'</b><span>'+p.via+' · '+p.t.slice(0,10)+'</span></div><div class="s">'+p.what+'</div></div>').join('');
+list.innerHTML=d.people.slice().reverse().map((p,i)=>'<div class="row">'+(p.pic?'<img src="'+p.pic+'" alt="" loading="lazy">':'<div class="av"></div>')+'<div class="m"><b>#'+(n-i)+' '+(p.npub?'<a href="https://njump.me/'+p.npub+'" target="_blank" rel="noopener">':'')+p.who.replace(/</g,'&lt;')+(p.npub?'</a>':'')+'</b><span>'+p.via+' · '+p.t.slice(0,10)+(p.msg?' · “'+p.msg.replace(/[<>&"]/g,'')+'”':'')+'</span></div><div class="s">'+p.what+'</div></div>').join('');
 up.textContent='Updated '+d.updated.replace('T',' ').slice(0,16)+' UTC';});
 cp.onclick=()=>{navigator.clipboard.writeText('npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8@npub.cash');cp.textContent='Copied'};
+</script><script type="module">
+import QR from 'https://esm.sh/qrcode@1.5.3';
+import {generateSecretKey,finalizeEvent} from 'https://esm.sh/nostr-tools@2.7.2/pure';
+import * as nip19 from 'https://esm.sh/nostr-tools@2.7.2/nip19';
+const ME='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9',LN='https://npub.cash/.well-known/lnurlp/npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8';
+const RELAYS=['wss://relay.damus.io','wss://relay.primal.net','wss://nos.lol'];
+let sat=21;const $=id=>document.getElementById(id);
+document.querySelectorAll('#amts button').forEach(b=>b.onclick=()=>{sat=+b.dataset.s;$('amt').textContent=sat;document.querySelectorAll('#amts button').forEach(x=>x.classList.toggle('alt',x!==b))});
+setTimeout(async()=>{if(window.nostr&&!$('who').value){try{$('who').value=nip19.npubEncode(await window.nostr.getPublicKey())}catch(e){}}},800);
+$('go').onclick=async()=>{$('err').textContent='';$('go').disabled=true;$('go').textContent='…';
+ try{let pk='',w=$('who').value.trim();
+  if(w){const d=nip19.decode(w);if(d.type!=='npub')throw new Error('That is not an npub');pk=d.data}
+  const tags=[['p',ME],['amount',String(sat*1000)],['relays',...RELAYS],['t','hundred']];
+  const content=($('msg').value.trim()+(pk?' · circle for '+w:' · hundred')).trim();
+  let ev={kind:9734,created_at:Math.floor(Date.now()/1000),tags,content};
+  let signed=null;
+  if(window.nostr&&pk){try{const mine=await window.nostr.getPublicKey();if(mine===pk)signed=await window.nostr.signEvent(ev)}catch(e){}}
+  if(!signed)signed=finalizeEvent(ev,generateSecretKey());
+  const r=await fetch(LN+'?amount='+sat*1000+'&nostr='+encodeURIComponent(JSON.stringify(signed)));const j=await r.json();
+  if(!j.pr)throw new Error(j.reason||'No invoice');
+  $('qr').src=await QR.toDataURL(j.pr.toUpperCase(),{margin:1,width:520});$('open').href='lightning:'+j.pr;$('inv').style.display='block';
+  $('cpi').onclick=()=>{navigator.clipboard.writeText(j.pr);$('cpi').textContent='Copied'};
+  if(window.webln){try{await window.webln.enable();await window.webln.sendPayment(j.pr);$('st').textContent='Paid. Thank you. Your circle appears within 15 minutes.'}catch(e){}}
+ }catch(e){$('err').textContent=e.message||String(e)}
+ $('go').disabled=false;$('go').innerHTML='⚡ Get the invoice for <span id="amt">'+sat+'</span> sat';};
 </script></body></html>
