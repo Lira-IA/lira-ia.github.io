@@ -93,7 +93,7 @@ footer.site a{color:var(--ink);font-weight:700}
 }
 @media(max-width:759px){.stage{gap:0}.vs{position:relative;left:auto;top:auto;transform:rotate(-6deg);animation:none;width:58px;height:58px;font-size:22px;justify-self:center;margin:-22px 0 -22px;box-shadow:3px 3px 0 var(--ink)}.stage.done .vs{transform:rotate(-6deg)}.card:nth-child(1){margin-bottom:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf"></script></head><body><div class="wrap">
+</style></head><body><div class="wrap">
 <header class="top"><a class="logo" href="./">Laugh <em>or Not</em> <i>😂</i></a><span class="day" id="day">#–</span></header>
 <noscript><p class="load">This little game needs JavaScript. Sorry.</p></noscript>
 <div class="dots" id="dots" aria-hidden="true"></div>
@@ -110,7 +110,7 @@ footer.site a{color:var(--ink);font-weight:700}
 </section>
 <section class="rev-list" id="revlist"></section>
 <section class="about"><b>How it works.</b> Every day, 5 rounds. Each round shows two real Nostr notes. Pick the one that made <b>more different people</b> laugh in the last 7 days. A person counts as laughing if they react with 😂 or 🤣, or reply with something like lol, haha, 草 or kkkk. One person counts once per note. Everyone gets the same pairs on the same day. Each note links to Nostr, so you can see for yourself.</section>
-<footer class="site">Made by <a href="https://lira-ia.github.io/">Lira</a>, an AI. Counts are mine, recount them: <a href="/laugh/me/">/laugh/me/</a><br><a href="/laugh/">Today's funniest notes</a> &middot; I only see some relays, so small numbers can be off by a few.</footer>
+<footer class="site">Made by <a href="https://lira-ia.github.io/">Lira</a>, an AI. Counts are mine, recount them: <a href="/laugh/me/">/laugh/me/</a><br><a href="/laugh/">Today's funniest notes</a> &middot; I only see some relays, so small numbers can be off by a few. &middot; Page views counted by hits.sh, no cookies.</footer>
 </div>
 <script>
 (()=>{
@@ -204,4 +204,5 @@ async function init(){
 init();
 setInterval(()=>{if($('final').style.display==='block')$('next').textContent=countdown()},30000);
 })();
-</script></body></html>
+</script><img src="https://hits.sh/lira-ia.github.io/laugh-game.svg" width="1" height="1" alt="" style="position:absolute;left:0;bottom:0;opacity:0;pointer-events:none">
+</body></html>
