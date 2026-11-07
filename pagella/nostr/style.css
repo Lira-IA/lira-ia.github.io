@@ -316,3 +316,10 @@ footer{max-width:1180px;margin:0 auto;padding:20px 18px 50px;text-align:center;c
 .shpar{margin:14px 0 0;font:400 13px var(--mono)}
 .shpar a{color:var(--blue)}
 .shnote{margin:6px 0 0;font:400 11.5px var(--mono);color:var(--grey)}
+
+/* lingua giapponese: font CJK e ritmo di lettura (solo con html lang=ja) */
+html:lang(ja){--serif:'Playfair Display','Noto Serif JP','Hiragino Mincho ProN','Yu Mincho','Noto Serif CJK JP',serif;--hand:'Caveat','Noto Sans JP','Hiragino Sans','Noto Sans CJK JP',cursive;--sans:system-ui,-apple-system,'Noto Sans JP','Hiragino Sans','Yu Gothic','Meiryo','Noto Sans CJK JP',sans-serif;--mono:'Courier Prime','Noto Sans JP','Noto Sans CJK JP',monospace}
+html:lang(ja) body{line-height:1.75;word-break:auto-phrase;line-break:strict}
+html:lang(ja) .lbl,html:lang(ja) .eyebrow{letter-spacing:.06em;text-transform:none}
+html:lang(ja) h1{letter-spacing:0;line-height:1.2}
+.lang button[lang=ja]{font-family:system-ui,'Hiragino Sans','Yu Gothic','Noto Sans CJK JP',sans-serif;letter-spacing:0;line-height:13px;height:25px;box-sizing:border-box}

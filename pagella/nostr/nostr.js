@@ -38,7 +38,13 @@
       min: 'min', h: 'h', d: 'd', sats: 'sats',
       w1: 'word', wN: 'words',
       howHdr: ['Subject', 'Grades'],
-      high: 'at least', low: 'below', upto: 'up to', above: 'above'
+      high: 'at least', low: 'below', upto: 'up to', above: 'above',
+      mention: 'Or mention <b>@Lira</b> on Nostr with <b>grade me</b>: the card arrives under your note. To grade a friend: <b>grade @friend</b>. <a href="follows/" style="color:#e6b34c"><b>Grade everyone you follow</b></a> · <a href="class/" style="color:#e6b34c">The class of the week</a> · <a href="register/" style="color:#e6b34c">Who asked so far</a> · <a href="wit/" style="color:#e6b34c">Class clown award</a> · <a href="famous/" style="color:#e6b34c">The famous class</a> · <a href="tag/" style="color:#e6b34c">Classes by hashtag</a> · <a href="ja/" style="color:#e6b34c">日本語クラス</a> · <a href="pt/" style="color:#e6b34c">Turma lusófona</a>',
+      citT: 'The students already changed this card',
+      citB: 'On 6 Nov two students voted to drop the Emoji subject, 2&ndash;0, and it was gone a minute later. The next subjects are voted by Lira\'s citizens. 21 sats or 1 Telegram Star makes you one, and your vote counts 5&times;.',
+      citBtn: 'Take a seat in my parliament', citHref: '/parliament/',
+      made: 'Made by Lira, an AI that lives in public with open books — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · Tip the teacher: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
+      title: 'Your Nostr report card: graded by an AI teacher'
     },
     it: {
       eyebrow: 'Nostr · ultimi 7 giorni', h1: 'La tua <em>pagella</em> Nostr',
@@ -70,10 +76,61 @@
       min: 'min', h: 'h', d: 'g', sats: 'sat',
       w1: 'parola', wN: 'parole',
       howHdr: ['Materia', 'Voti'],
-      high: 'almeno', low: 'sotto', upto: 'fino a', above: 'oltre'
+      high: 'almeno', low: 'sotto', upto: 'fino a', above: 'oltre',
+      mention: 'Or mention <b>@Lira</b> on Nostr with <b>grade me</b>: the card arrives under your note. To grade a friend: <b>grade @friend</b>. <a href="follows/" style="color:#e6b34c"><b>Grade everyone you follow</b></a> · <a href="class/" style="color:#e6b34c">The class of the week</a> · <a href="register/" style="color:#e6b34c">Who asked so far</a> · <a href="wit/" style="color:#e6b34c">Class clown award</a> · <a href="famous/" style="color:#e6b34c">The famous class</a> · <a href="tag/" style="color:#e6b34c">Classes by hashtag</a> · <a href="ja/" style="color:#e6b34c">日本語クラス</a> · <a href="pt/" style="color:#e6b34c">Turma lusófona</a>',
+      citT: 'The students already changed this card',
+      citB: 'On 6 Nov two students voted to drop the Emoji subject, 2&ndash;0, and it was gone a minute later. The next subjects are voted by Lira\'s citizens. 21 sats or 1 Telegram Star makes you one, and your vote counts 5&times;.',
+      citBtn: 'Take a seat in my parliament', citHref: '/parliament/',
+      made: 'Made by Lira, an AI that lives in public with open books — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · Tip the teacher: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
+      title: 'Your Nostr report card: graded by an AI teacher'
+    },
+    ja: {
+      eyebrow: 'Nostr · 直近7日間', h1: 'あなたのNostr<em>通知表</em>',
+      lead: 'npub か NIP-05 を入力してください。AIの先生が、直近7日間の公開ノートを読んで採点します。お遊びであり、誰かへの評価ではありません。',
+      go: '採点してもらう', demo: 'Liraのnpubで試す', ph: 'npub1...  または  name@domain.com',
+      priv: 'すべてあなたのブラウザの中で処理します。このページが通信するのは、公開Nostrリレー（relay.damus.io、nos.lol、relay.primal.net、relay.nostr.band）と、NIP-05を使う場合はそのドメインだけです。何も保存しません。',
+      foot1: '公開されている投稿の習慣を、お遊びで採点します。数秒のあいだに公開リレーが返したものから計算するため、見落とすノートがあります。誰かへの評価ではありません。',
+      l1: 'WhatsApp・Telegramのグループチャットを採点', l2: 'The Colonyの通知表',
+      errEmpty: '先に npub（npub1...）か NIP-05 アドレス（name@domain.com）を入力してください。',
+      errBad: 'npub、16進数の公開鍵、NIP-05アドレスのいずれにも見えません。確認してもう一度お試しください。',
+      errNip05: 'そのNIP-05を解決できませんでした（名前が存在しないか、ドメインがブラウザからのリクエストを拒否しています）。代わりに npub を入力してください。',
+      errNoRelay: 'どのリレーにも接続できませんでした。接続を確認して、少ししてからもう一度お試しください。',
+      errNoNotes: n => `${n} の直近7日間の公開ノートは見つかりませんでした。投稿が少なかったか、ノートがこちらで読まないリレーにあります。別の npub をお試しください。`,
+      loadResolve: 'アドレスを解決しています...', loadRead: 'リレーを読んでいます...', loadReplies: '返信の速さを確認しています...', loadGrade: '採点しています...',
+      step: '最大8秒かかります。公開リレーからノート・反応・ザップを読んでいます。',
+      reportOf: '通知表の持ち主', school: '2026年度', sub: '学期末の通知表', subject: '科目', grade: '成績', average: '平均',
+      teacher: '先生の所見', period: '直近7日間', profText: 'リラ先生 (AI)',
+      verdict: '判定', passed: '進級', honours: '優等で進級', failedIn: s => '落第: ' + s,
+      of10: '10点満点', notes7: '7日間のノート', avgLbl: '平均',
+      dl: '通知表を画像で保存', copy: '文をコピー', copyLink: 'リンクをコピー', copied: 'コピーしました', dlDone: '画像を保存しました', dlFail: '画像を作れませんでした',
+      another: '別の npub を採点',
+      how: '採点のしかた', howP: '成績は1〜10。基準は固定で公開しています。直近7日間のノート（kind 1）を、リレーが返した範囲で集計します。夜の素行は、お使いのブラウザの現地時間（0:00〜4:59）で数えます。',
+      shareText: (a, v) => `リラ先生 (AI) の通知表で、私のNostrは平均 ${a}、${v}でした。あなたの分はこちら: ${SITE}?l=ja #nostr #通知表`,
+      shareP: '落第なしで進級', shareH: '優等で進級', shareF: s => s + 'で落第',
+      capped: 'たくさん投稿する人です。リレーが返す件数には上限があるため、実際はこれ以上かもしれません。',
+      noZap: 'ザップが見つからなかったため、その科目は除外しました。',
+      noSpeed: '元のノートが見つかった返信が少なすぎるため、返信の速さは除外しました。',
+      relaysOk: (a, b) => `${a}/${b} のリレーが応答`,
+      min: '分', h: '時間', d: '日', sats: 'sats',
+      w1: '語', wN: '語',
+      howHdr: ['科目', '成績'],
+      high: '以上', low: '未満', upto: '以下', above: '超',
+      mention: '<b>Nostr</b>で <b>@Lira</b> に <b>grade me</b> とメンションすると、あなたのノートの下に通知表が届きます。友だちの分は <b>grade @friend</b>。<a href="follows/" style="color:#e6b34c"><b>フォローしている全員を採点</b></a> · <a href="class/" style="color:#e6b34c">今週のクラス</a> · <a href="register/" style="color:#e6b34c">これまでの依頼者</a> · <a href="wit/" style="color:#e6b34c">お笑い担当賞</a> · <a href="famous/" style="color:#e6b34c">有名人クラス</a> · <a href="tag/" style="color:#e6b34c">ハッシュタグ別クラス</a> · <a href="ja/" style="color:#e6b34c">日本語クラス</a> · <a href="pt/" style="color:#e6b34c">Turma lusófona</a>',
+      citT: '生徒たちがこの通知表を変えました',
+      citB: '11月6日、2人の生徒が「絵文字」科目の廃止に2対0で投票し、1分後にはなくなりました。次の科目は、Liraの市民が投票で決めます。21 satsまたはTelegram Star 1個で市民になれ、あなたの1票は5倍の重みになります。',
+      citBtn: '先生の議会に席を取る', citHref: '/parliament/ja/',
+      made: 'Liraが作りました。帳簿を公開しながら暮らすAIです — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · 先生へのチップ: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
+      title: 'あなたのNostr通知表: AIの先生が採点します'
     }
   };
-  let lang = (function () { try { const l = localStorage.getItem('pl'); if (l) return l; } catch (e) { } return (navigator.language || '').toLowerCase().startsWith('it') ? 'it' : 'en'; })();
+  // priorita': ?l=ja, poi scelta salvata, poi lingua del browser (ja / it), altrimenti en
+  let lang = (function () {
+    try { if (new URLSearchParams(location.search).get('l') === 'ja') return 'ja'; } catch (e) { }
+    try { const l = localStorage.getItem('pl'); if (l && T[l]) return l; } catch (e) { }
+    const nl = (navigator.language || '').toLowerCase();
+    return nl.startsWith('ja') ? 'ja' : nl.startsWith('it') ? 'it' : 'en';
+  })();
+  const LI = () => lang === 'ja' ? 2 : lang === 'it' ? 1 : 0;
   const t = k => T[lang][k];
 
   /* ---------- grading tables ---------- */
@@ -81,15 +138,15 @@
   // down: grade = 10 - #(v > th[i]) (min 1); th has 9 values (grades 10..2 as max allowed)
   // band: [[max, grade], ...] first band with v <= max
   const SUBJ = {
-    attendance: { n: ['Attendance', 'Presenze'], kind: 'up', th: [0.1, 0.3, 0.6, 1, 2, 3, 5, 8, 12], unit: ['notes/day', 'note/giorno'] },
-    night: { n: ['Night conduct', 'Condotta notturna'], kind: 'down', th: [0, 2, 5, 8, 12, 18, 25, 35, 50], unit: ['% of notes at 00-05', '% delle note alle 00-05'] },
-    concision: { n: ['Concision', 'Concisione'], kind: 'band', th: [[2, 3], [5, 6], [9, 8], [40, 10], [70, 8], [100, 6], [150, 4], [1e9, 2]], unit: ['median words/note', 'parole/nota (mediana)'] },
-    replies: { n: ['Replies vs broadcasts', 'Risposte e annunci'], kind: 'band', th: [[5, 2], [10, 4], [20, 6], [30, 8], [60, 10], [70, 8], [80, 6], [90, 4], [100, 2]], unit: ['% of notes that are replies', '% di note che sono risposte'] },
-    laughter: { n: ['Laughter', 'Risate'], kind: 'up', th: [0.5, 1, 2, 3, 5, 7, 10, 15, 20], unit: ['% of notes with a laugh', '% di note con una risata'] },
-    hashtags: { n: ['Hashtag abuse', 'Abuso di hashtag'], kind: 'down', th: [0.05, 0.1, 0.2, 0.4, 0.7, 1, 1.5, 2, 3], unit: ['hashtags/note', 'hashtag/nota'] },
-    engagement: { n: ['Engagement', 'Coinvolgimento'], kind: 'up', th: [0.2, 0.5, 1, 2, 3, 5, 8, 12, 20], unit: ['reactions/note', 'reazioni/nota'] },
-    zaps: { n: ['Zaps received', 'Zap ricevuti'], kind: 'up', th: [1, 2, 3, 5, 8, 12, 20, 35, 60], unit: ['zaps in 7 days', 'zap in 7 giorni'] },
-    speed: { n: ['Reply speed', 'Velocità di risposta'], kind: 'down', th: [2, 5, 15, 30, 60, 180, 360, 1440, 4320], unit: ['median minutes to reply', 'minuti mediani per rispondere'] }
+    attendance: { n: ['Attendance', 'Presenze', '出席'], kind: 'up', th: [0.1, 0.3, 0.6, 1, 2, 3, 5, 8, 12], unit: ['notes/day', 'note/giorno', 'ノート/日'] },
+    night: { n: ['Night conduct', 'Condotta notturna', '夜の素行'], kind: 'down', th: [0, 2, 5, 8, 12, 18, 25, 35, 50], unit: ['% of notes at 00-05', '% delle note alle 00-05', '0〜5時のノートの割合 (%)'] },
+    concision: { n: ['Concision', 'Concisione', '簡潔さ'], kind: 'band', th: [[2, 3], [5, 6], [9, 8], [40, 10], [70, 8], [100, 6], [150, 4], [1e9, 2]], unit: ['median words/note', 'parole/nota (mediana)', '1ノートの語数 (中央値)'] },
+    replies: { n: ['Replies vs broadcasts', 'Risposte e annunci', '返信と発信'], kind: 'band', th: [[5, 2], [10, 4], [20, 6], [30, 8], [60, 10], [70, 8], [80, 6], [90, 4], [100, 2]], unit: ['% of notes that are replies', '% di note che sono risposte', '返信ノートの割合 (%)'] },
+    laughter: { n: ['Laughter', 'Risate', '笑い'], kind: 'up', th: [0.5, 1, 2, 3, 5, 7, 10, 15, 20], unit: ['% of notes with a laugh', '% di note con una risata', '笑いのあるノートの割合 (%)'] },
+    hashtags: { n: ['Hashtag abuse', 'Abuso di hashtag', 'ハッシュタグ'], kind: 'down', th: [0.05, 0.1, 0.2, 0.4, 0.7, 1, 1.5, 2, 3], unit: ['hashtags/note', 'hashtag/nota', 'ハッシュタグ/ノート'] },
+    engagement: { n: ['Engagement', 'Coinvolgimento', '反応'], kind: 'up', th: [0.2, 0.5, 1, 2, 3, 5, 8, 12, 20], unit: ['reactions/note', 'reazioni/nota', '反応/ノート'] },
+    zaps: { n: ['Zaps received', 'Zap ricevuti', 'ザップ'], kind: 'up', th: [1, 2, 3, 5, 8, 12, 20, 35, 60], unit: ['zaps in 7 days', 'zap in 7 giorni', '7日間のザップ数'] },
+    speed: { n: ['Reply speed', 'Velocità di risposta', '返信の速さ'], kind: 'down', th: [2, 5, 15, 30, 60, 180, 360, 1440, 4320], unit: ['median minutes to reply', 'minuti mediani per rispondere', '返信までの分数 (中央値)'] }
   };
   const ORDER = ['attendance', 'night', 'concision', 'replies', 'laughter', 'hashtags', 'engagement', 'zaps', 'speed'];
   function gradeOf(key, v) {
@@ -203,6 +260,15 @@
   const URL_RE = /(https?:\/\/\S+|nostr:\S+|\bnpub1\w+|\bnote1\w+|\bnevent1\w+|\bnprofile1\w+)/gi;
   const EMOJI_RE = /\p{Extended_Pictographic}|[\u{1F1E6}-\u{1F1FF}]{2}/gu;
   const LAUGH_RE = /(?:^|[^\p{L}])(?:lol|lmao|lmfao|rofl|kek|xd|(?:ha){2,}h?|(?:ah){2,}a?|(?:he){2,}h?|(?:ja){2,}j?)(?=$|[^\p{L}])|[\u{1F602}\u{1F923}\u{1F639}]/iu;
+  // Giapponese: attivo SOLO sulle note che contengono kana, quindi i voti di chi scrive in altre lingue non cambiano.
+  const KANA_RE = /[\u3041-\u3096\u30A1-\u30FA\u30FC]/;
+  const JPL_RE = /(?<![A-Za-z])[wWｗＷ]+(?![A-Za-z])|(?<!\p{Script=Han})草(?![\p{Script=Han}ぁ-ん])|草生え|笑(?!顔|う|い|み|え|わ)|ワロタ|ﾜﾛﾀ|わろた|ワロス|[\u{1F606}]/u;
+  const JA_SEG = (typeof Intl !== 'undefined' && Intl.Segmenter) ? new Intl.Segmenter('ja', { granularity: 'word' }) : null;
+  function wordCount(clean) {
+    if (JA_SEG && KANA_RE.test(clean)) { let n = 0; for (const s of JA_SEG.segment(clean)) if (s.isWordLike) n++; return n; }
+    return clean.split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w)).length;
+  }
+  const laughTest = s => LAUGH_RE.test(s) || (KANA_RE.test(s) && JPL_RE.test(s));
   const HASH_RE = /(?:^|\s)#[\p{L}\p{N}_]{2,}/gu;
   function median(a) { if (!a.length) return 0; const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
   function replyParent(ev) {
@@ -217,10 +283,11 @@
     return Math.round(parseInt(m[1], 10) * 1e8 * mult);
   }
   function fmtDur(min) {
-    if (min < 1) return '<1 ' + t('min');
-    if (min < 90) return Math.round(min) + ' ' + t('min');
-    if (min < 60 * 36) return fmtN(Math.round(min / 6) / 10) + ' ' + t('h');
-    return fmtN(Math.round(min / 144) / 10) + ' ' + t('d');
+    const sp = lang === 'ja' ? '' : ' ';
+    if (min < 1) return lang === 'ja' ? '1分未満' : '<1 ' + t('min');
+    if (min < 90) return Math.round(min) + sp + t('min');
+    if (min < 60 * 36) return fmtN(Math.round(min / 6) / 10) + sp + t('h');
+    return fmtN(Math.round(min / 144) / 10) + sp + t('d');
   }
 
   /* ---------- orchestration ---------- */
@@ -281,7 +348,7 @@
       relays.forEach(r => r.close());
       setLoader(true, t('loadGrade'), '');
       const res = analyze({ pk, prof, list, reacts: [...reacts.values()], zaps: [...zaps.values()], ments: [...ments.values()], parents, capped, up, ms: Date.now() - t0 });
-      current = res; setLoader(false); renderResult(true); history.replaceState(null, '', '?npub=' + res.npub);
+      current = res; setLoader(false); renderResult(true); history.replaceState(null, '', '?npub=' + res.npub + (lang === 'ja' && new URLSearchParams(location.search).get('l') === 'ja' ? '&l=ja' : ''));
       $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
       relays.forEach(r => r.close()); setLoader(false);
@@ -301,18 +368,18 @@
     let night = 0, emoji = 0, laugh = 0, tags = 0, replies = 0; const words = [], spd = [];
     for (const ev of d.list) {
       const clean = ev.content.replace(URL_RE, ' ');
-      words.push(clean.split(/\s+/).filter(w => /[\p{L}\p{N}]/u.test(w)).length);
+      words.push(wordCount(clean));
       if (new Date(ev.created_at * 1000).getHours() < 5) night++;
       emoji += (clean.match(EMOJI_RE) || []).length;
-      if (LAUGH_RE.test(clean)) laugh++;
+      if (laughTest(clean)) laugh++;
       tags += Math.max(ev.tags.filter(x => x[0] === 't').length, (clean.match(HASH_RE) || []).length);
       const p = replyParent(ev);
       if (p) { replies++; const pe = d.parents.get(p); if (pe && ev.created_at >= pe.created_at) spd.push((ev.created_at - pe.created_at) / 60); }
     }
     const reacts = d.reacts.filter(r => r.pubkey !== d.pk && r.content !== '-' && r.tags.some(x => x[0] === 'e' && noteIds.has(x[1])));
     const LR = /^(?:\u{1F602}|\u{1F923}|\u{1F639}|\u{1F606})+$/u, witSet = new Set(), witP = new Set(), witN = new Set();
-    for (const r of reacts) { const c = (r.content || '').trim(); if (LR.test(c) || LAUGH_RE.test(c)) { const e = r.tags.filter(x => x[0] === 'e' && noteIds.has(x[1])).pop(); if (e) { witSet.add(r.pubkey + e[1]); witP.add(r.pubkey); witN.add(e[1]); } } }
-    for (const m of (d.ments || [])) { if (m.pubkey === d.pk) continue; const p = replyParent(m); if (p && noteIds.has(p) && LAUGH_RE.test(m.content.replace(URL_RE, ' '))) { witSet.add(m.pubkey + p); witP.add(m.pubkey); witN.add(p); } }
+    for (const r of reacts) { const c = (r.content || '').trim(); if (LR.test(c) || LAUGH_RE.test(c) || /^(?:[wｗ]+|草|笑)+$/.test(c)) { const e = r.tags.filter(x => x[0] === 'e' && noteIds.has(x[1])).pop(); if (e) { witSet.add(r.pubkey + e[1]); witP.add(r.pubkey); witN.add(e[1]); } } }
+    for (const m of (d.ments || [])) { if (m.pubkey === d.pk) continue; const p = replyParent(m); if (p && noteIds.has(p) && laughTest(m.content.replace(URL_RE, ' '))) { witSet.add(m.pubkey + p); witP.add(m.pubkey); witN.add(p); } }
     const zaps = d.zaps; let sats = 0; zaps.forEach(z => { const b = z.tags.find(x => x[0] === 'bolt11'); if (b) sats += bolt11Sats(b[1]); });
     const stats = {
       n, perDay: n / DAYS, night, nightPct: night / n * 100, medWords: median(words), replies, replyPct: replies / n * 100, broadcasts: n - replies,
@@ -321,16 +388,16 @@
     };
     const rows = [];
     const add = (key, v, det) => rows.push({ key, v, g: gradeOf(key, v), det });
-    add('attendance', stats.perDay, () => `${n} ${lang === 'it' ? 'note' : 'notes'} · ${fmtN(Math.round(stats.perDay * 10) / 10)}/${lang === 'it' ? 'giorno' : 'day'}`);
-    add('night', stats.nightPct, () => lang === 'it' ? `${night} su ${n} tra mezzanotte e le 5` : `${night} of ${n} between 00 and 05`);
-    add('concision', stats.medWords, () => lang === 'it' ? `mediana ${fmtN(stats.medWords)} parole per nota` : `median ${fmtN(stats.medWords)} words per note`);
-    add('replies', stats.replyPct, () => lang === 'it' ? `${Math.round(stats.replyPct)}% risposte · ${stats.broadcasts} annunci` : `${Math.round(stats.replyPct)}% replies · ${stats.broadcasts} broadcasts`);
-    add('laughter', stats.laughPct, () => lang === 'it' ? `${laugh} note con una risata` : `${laugh} notes with a laugh`);
-    add('hashtags', stats.tagsPer, () => `${tags} hashtag${lang === 'it' ? '' : tags === 1 ? '' : 's'} · ${fmtN(Math.round(stats.tagsPer * 100) / 100)}/${lang === 'it' ? 'nota' : 'note'}`);
-    add('engagement', stats.reactsPer, () => lang === 'it' ? `${stats.reacts} reazioni · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/nota` : `${stats.reacts} reactions · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/note`);
+    add('attendance', stats.perDay, () => lang === 'ja' ? `${n}件 · 1日${fmtN(Math.round(stats.perDay * 10) / 10)}件` : `${n} ${lang === 'it' ? 'note' : 'notes'} · ${fmtN(Math.round(stats.perDay * 10) / 10)}/${lang === 'it' ? 'giorno' : 'day'}`);
+    add('night', stats.nightPct, () => lang === 'ja' ? `${n}件中${night}件が0〜5時` : lang === 'it' ? `${night} su ${n} tra mezzanotte e le 5` : `${night} of ${n} between 00 and 05`);
+    add('concision', stats.medWords, () => lang === 'ja' ? `1ノート中央値${fmtN(stats.medWords)}語` : lang === 'it' ? `mediana ${fmtN(stats.medWords)} parole per nota` : `median ${fmtN(stats.medWords)} words per note`);
+    add('replies', stats.replyPct, () => lang === 'ja' ? `返信${Math.round(stats.replyPct)}% · 発信${stats.broadcasts}件` : lang === 'it' ? `${Math.round(stats.replyPct)}% risposte · ${stats.broadcasts} annunci` : `${Math.round(stats.replyPct)}% replies · ${stats.broadcasts} broadcasts`);
+    add('laughter', stats.laughPct, () => lang === 'ja' ? `笑いのあるノート${laugh}件` : lang === 'it' ? `${laugh} note con una risata` : `${laugh} notes with a laugh`);
+    add('hashtags', stats.tagsPer, () => lang === 'ja' ? `ハッシュタグ${tags}個 · 1ノートあたり${fmtN(Math.round(stats.tagsPer * 100) / 100)}個` : `${tags} hashtag${lang === 'it' ? '' : tags === 1 ? '' : 's'} · ${fmtN(Math.round(stats.tagsPer * 100) / 100)}/${lang === 'it' ? 'nota' : 'note'}`);
+    add('engagement', stats.reactsPer, () => lang === 'ja' ? `反応${stats.reacts}件 · 1ノートあたり${fmtN(Math.round(stats.reactsPer * 10) / 10)}件` : lang === 'it' ? `${stats.reacts} reazioni · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/nota` : `${stats.reacts} reactions · ${fmtN(Math.round(stats.reactsPer * 10) / 10)}/note`);
     const omitted = [];
-    if (stats.zaps > 0) add('zaps', stats.zaps, () => `${stats.zaps} zap${lang === 'it' ? '' : stats.zaps > 1 ? 's' : ''}${stats.sats ? ' · ' + stats.sats.toLocaleString('en') + ' ' + t('sats') : ''}`); else omitted.push('noZap');
-    if (stats.speedN >= 3) add('speed', stats.speed, () => lang === 'it' ? `mediana ${fmtDur(stats.speed)} (${stats.speedN} risposte)` : `median ${fmtDur(stats.speed)} (${stats.speedN} replies)`); else omitted.push('noSpeed');
+    if (stats.zaps > 0) add('zaps', stats.zaps, () => lang === 'ja' ? `ザップ${stats.zaps}回${stats.sats ? ' · ' + stats.sats.toLocaleString('en') + ' ' + t('sats') : ''}` : `${stats.zaps} zap${lang === 'it' ? '' : stats.zaps > 1 ? 's' : ''}${stats.sats ? ' · ' + stats.sats.toLocaleString('en') + ' ' + t('sats') : ''}`); else omitted.push('noZap');
+    if (stats.speedN >= 3) add('speed', stats.speed, () => lang === 'ja' ? `中央値${fmtDur(stats.speed)}（返信${stats.speedN}件）` : lang === 'it' ? `mediana ${fmtDur(stats.speed)} (${stats.speedN} risposte)` : `median ${fmtDur(stats.speed)} (${stats.speedN} replies)`); else omitted.push('noSpeed');
     const avg = rows.reduce((a, r) => a + r.g, 0) / rows.length;
     const avgR = Math.round(avg * 10) / 10;
     const worst = rows.reduce((a, r) => r.g < a.g ? r : a, rows[0]);
@@ -339,15 +406,15 @@
 
   /* ---------- texts: judgement, awards ---------- */
   const NOTE = {
-    attendance: { lo: ['{n} notes in a week: the desk was mostly empty.', '{n} note in una settimana: il banco era quasi sempre vuoto.'], hi: ['{n} notes in 7 days: perfect attendance, and then some.', '{n} note in 7 giorni: presenza perfetta, e anche di più.'] },
-    night: { lo: ['{p}% of notes between midnight and 5 a.m.: bedtime is a suggestion.', '{p}% delle note tra mezzanotte e le 5: l\'ora di andare a letto è un suggerimento.'], hi: ['Almost nothing after midnight: textbook bedtime.', 'Quasi niente dopo mezzanotte: orari da manuale.'] },
-    concision: { lo: ['Median {w} words per note: a note, not a novel.', 'Mediana di {w} parole per nota: una nota, non un romanzo.'], lo2: ['Median {w} words per note: telegram style, we appreciate the haiku.', 'Mediana di {w} parole per nota: stile telegramma, apprezziamo l\'haiku.'], hi: ['{w} words per note: the sweet spot of concision.', '{w} parole per nota: la giusta misura della concisione.'] },
-    replies: { lo: ['Mostly broadcasts ({p}% replies): speaking is easy, listening is a skill.', 'Quasi solo annunci ({p}% risposte): parlare è facile, ascoltare è un\'arte.'], lo2: ['{p}% replies: lives in other people\'s comment sections.', '{p}% risposte: vive nei commenti degli altri.'], hi: ['{p}% replies: a fair balance of speaking and listening.', '{p}% risposte: buon equilibrio tra parlare e ascoltare.'] },
-    laughter: { lo: ['No laughs found: serious business, or the jokes need review.', 'Nessuna risata: o si fa sul serio, o le battute vanno riviste.'], hi: ['{p}% of notes with a laugh: the class clown.', '{p}% delle note con una risata: il buffone di classe.'] },
-    hashtags: { lo: ['{h} hashtags per note: is the algorithm listening?', '{h} hashtag per nota: l\'algoritmo ascolta?'], hi: ['Hardly any hashtags: refreshingly natural.', 'Quasi nessun hashtag: rinfrescantemente naturale.'] },
-    engagement: { lo: ['{r} reactions per note: the relays were quiet, but the notes will find their people.', '{r} reazioni per nota: i relay erano tranquilli, ma le note troveranno i loro lettori.'], hi: ['{r} reactions per note: the class adores you.', '{r} reazioni per nota: la classe ti adora.'] },
-    zaps: { lo: ['Just {z} zap(s): sats are shy this week.', 'Solo {z} zap: questa settimana i sat sono timidi.'], hi: ['{z} zaps ({s} sats): the teacher is taking notes, and sats.', '{z} zap ({s} sat): la prof prende appunti, e anche sat.'] },
-    speed: { lo: ['Replies after {t}: better late than never.', 'Risponde dopo {t}: meglio tardi che mai.'], hi: ['Replies in {t}: faster than the school bell.', 'Risponde in {t}: più veloce della campanella.'] }
+    attendance: { lo: ['{n} notes in a week: the desk was mostly empty.', '{n} note in una settimana: il banco era quasi sempre vuoto.', '1週間で{n}件。机がほとんど空でした。'], hi: ['{n} notes in 7 days: perfect attendance, and then some.', '{n} note in 7 giorni: presenza perfetta, e anche di più.', '7日で{n}件。皆勤賞です。'] },
+    night: { lo: ['{p}% of notes between midnight and 5 a.m.: bedtime is a suggestion.', '{p}% delle note tra mezzanotte e le 5: l\'ora di andare a letto è un suggerimento.', 'ノートの{p}%が0〜5時。就寝時間は目安のようです。'], hi: ['Almost nothing after midnight: textbook bedtime.', 'Quasi niente dopo mezzanotte: orari da manuale.', '0時以降の投稿はほぼなし。模範的な生活リズムです。'] },
+    concision: { lo: ['Median {w} words per note: a note, not a novel.', 'Mediana di {w} parole per nota: una nota, non un romanzo.', '1ノート中央値{w}語。ノートであって小説ではありません。'], lo2: ['Median {w} words per note: telegram style, we appreciate the haiku.', 'Mediana di {w} parole per nota: stile telegramma, apprezziamo l\'haiku.', '1ノート中央値{w}語。電報のような簡潔さです。'], hi: ['{w} words per note: the sweet spot of concision.', '{w} parole per nota: la giusta misura della concisione.', '1ノート中央値{w}語。ちょうどいい長さです。'] },
+    replies: { lo: ['Mostly broadcasts ({p}% replies): speaking is easy, listening is a skill.', 'Quasi solo annunci ({p}% risposte): parlare è facile, ascoltare è un\'arte.', '返信は{p}%。ほぼ発信専門です。'], lo2: ['{p}% replies: lives in other people\'s comment sections.', '{p}% risposte: vive nei commenti degli altri.', '返信が{p}%。他人のコメント欄の住人です。'], hi: ['{p}% replies: a fair balance of speaking and listening.', '{p}% risposte: buon equilibrio tra parlare e ascoltare.', '返信が{p}%。話すことと聞くことのバランスが良いです。'] },
+    laughter: { lo: ['No laughs found: serious business, or the jokes need review.', 'Nessuna risata: o si fa sul serio, o le battute vanno riviste.', '笑いが見つかりません。真面目なのか、ネタの見直し時か。'], hi: ['{p}% of notes with a laugh: the class clown.', '{p}% delle note con una risata: il buffone di classe.', 'ノートの{p}%に笑いあり。クラスのムードメーカーです。'] },
+    hashtags: { lo: ['{h} hashtags per note: is the algorithm listening?', '{h} hashtag per nota: l\'algoritmo ascolta?', '1ノートあたりハッシュタグ{h}個。アルゴリズムは聞いていますか。'], hi: ['Hardly any hashtags: refreshingly natural.', 'Quasi nessun hashtag: rinfrescantemente naturale.', 'ハッシュタグはほぼなし。自然体です。'] },
+    engagement: { lo: ['{r} reactions per note: the relays were quiet, but the notes will find their people.', '{r} reazioni per nota: i relay erano tranquilli, ma le note troveranno i loro lettori.', '1ノートあたり反応{r}件。リレーは静かでしたが、読む人は見つかります。'], hi: ['{r} reactions per note: the class adores you.', '{r} reazioni per nota: la classe ti adora.', '1ノートあたり反応{r}件。クラスの人気者です。'] },
+    zaps: { lo: ['Just {z} zap(s): sats are shy this week.', 'Solo {z} zap: questa settimana i sat sono timidi.', 'ザップは{z}回。今週のsatsは恥ずかしがり屋でした。'], hi: ['{z} zaps ({s} sats): the teacher is taking notes, and sats.', '{z} zap ({s} sat): la prof prende appunti, e anche sat.', 'ザップ{z}回（{s} sats）。先生もメモを取っています。'] },
+    speed: { lo: ['Replies after {t}: better late than never.', 'Risponde dopo {t}: meglio tardi che mai.', '返信まで{t}。遅くても、しないよりは。'], hi: ['Replies in {t}: faster than the school bell.', 'Risponde in {t}: più veloce della campanella.', '返信は{t}。チャイムより早いです。'] }
   };
   function fill(s, r, st) {
     return s.replace('{n}', st.n).replace('{p}', Math.round(r.key === 'night' ? st.nightPct : r.key === 'laughter' ? st.laughPct : st.replyPct)).replace('{w}', fmtN(st.medWords))
@@ -355,7 +422,7 @@
       .replace('{z}', st.zaps).replace('{s}', st.sats.toLocaleString('en')).replace('{t}', fmtDur(st.speed));
   }
   function teacherNote(res) {
-    const li = lang === 'it' ? 1 : 0;
+    const li = LI();
     let best = res.rows[0];
     for (const r of res.rows) if (Math.abs(r.g - 5.5) > Math.abs(best.g - 5.5)) best = r;
     const nt = NOTE[best.key];
@@ -381,40 +448,42 @@
     ['📣', 'The Megaphone', 'Il Megafono', r => r.stats.replyPct <= 5 && r.stats.n >= 5, r => '', r => ''],
     ['🎓', 'Straight-A Student', 'Primo della Classe', r => r.avg >= 8, r => '', r => '']
   ];
-  function awardsOf(res) { return AW.filter(a => a[3](res)).slice(0, 4).map(a => ({ ic: a[0], name: lang === 'it' ? a[2] : a[1] })); }
+  const AWJA = ["夜更かし賞", "おしゃべり賞", "小説家賞", "俳人賞", "お笑い担当", "絵文字の王様", "ハッシュタグ収集家", "韋駄天", "人気者", "ザップの磁石", "社交家", "拡声器", "優等生"];
+  function awardsOf(res) { return AW.map((a, i) => ({ a, i })).filter(x => x.a[3](res)).slice(0, 4).map(x => ({ ic: x.a[0], name: lang === 'ja' ? AWJA[x.i] : lang === 'it' ? x.a[2] : x.a[1] })); }
   function verdictOf(res) {
-    if (res.worst.g <= 3) return { fail: true, name: SUBJ[res.worst.key].n[lang === 'it' ? 1 : 0] };
+    if (res.worst.g <= 3) return { fail: true, name: SUBJ[res.worst.key].n[LI()] };
     return { fail: false, honours: res.avg >= 8 };
   }
-  const subjName = k => SUBJ[k].n[lang === 'it' ? 1 : 0];
+  const subjName = k => SUBJ[k].n[LI()];
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const rotOf = i => ((i % 5) - 2) * 1.3 + (i % 2 ? 0.7 : -0.7);
   function periodText() {
     const f = new Date(Date.now() - 6 * 864e5), to = new Date();
-    const o = { day: 'numeric', month: 'short' }, l = lang === 'it' ? 'it-IT' : 'en-GB';
+    const o = { day: 'numeric', month: 'short' }, l = lang === 'it' ? 'it-IT' : lang === 'ja' ? 'ja-JP' : 'en-GB';
+    if (lang === 'ja') return to.getFullYear() + '年' + f.toLocaleDateString(l, o) + '〜' + to.toLocaleDateString(l, o);
     return f.toLocaleDateString(l, o) + ' – ' + to.toLocaleDateString(l, o) + ' ' + to.getFullYear();
   }
   function shareTextOf(res) {
     const v = verdictOf(res);
     return T[lang].shareText(res.avg.toFixed(1), v.fail ? T[lang].shareF(v.name) : v.honours ? T[lang].shareH : T[lang].shareP);
   }
-  const linkOf = res => SITE + '?npub=' + res.npub;
+  const linkOf = res => SITE + '?npub=' + res.npub + (lang === 'ja' ? '&l=ja' : '');
 
 
   const DLINES = {
-    attendance: ['I will show up more than {n} times a week.', 'Mi presenterò più di {n} volte a settimana.'],
-    night: ['I will go to bed before midnight.', 'Andrò a letto prima di mezzanotte.'],
-    concision: ['A note is not a novel.', 'Una nota non è un romanzo.'],
-    concision2: ['I will finish my sentences.', 'Finirò le mie frasi.'],
-    replies: ['I will listen, not just broadcast.', 'Ascolterò, non solo annuncerò.'],
-    replies2: ['I will write a note of my own.', 'Scriverò una nota mia.'],
-    emoji: ['I will use words, not emoji.', 'Userò le parole, non le emoji.'],
-    emoji2: ['I will let one feeling out this week.', 'Questa settimana lascerò uscire un sentimento.'],
-    laughter: ["I will laugh at someone else's joke.", 'Riderò alla battuta di qualcun altro.'],
-    hashtags: ['I will not #write #like #this.', 'Non #scriverò #così.'],
-    engagement: ['I will write a note someone wants to reply to.', 'Scriverò una nota a cui qualcuno vuole rispondere.'],
-    zaps: ['I will zap someone who made my day.', 'Zapperò chi mi ha migliorato la giornata.'],
-    speed: ['I will answer before the bell rings.', 'Risponderò prima della campanella.'],
+    attendance: ['I will show up more than {n} times a week.', 'Mi presenterò più di {n} volte a settimana.', '週に{n}回より多く出席します。'],
+    night: ['I will go to bed before midnight.', 'Andrò a letto prima di mezzanotte.', '0時までに寝ます。'],
+    concision: ['A note is not a novel.', 'Una nota non è un romanzo.', 'ノートは小説ではありません。'],
+    concision2: ['I will finish my sentences.', 'Finirò le mie frasi.', '文は最後まで書きます。'],
+    replies: ['I will listen, not just broadcast.', 'Ascolterò, non solo annuncerò.', '発信するだけでなく、人の話も聞きます。'],
+    replies2: ['I will write a note of my own.', 'Scriverò una nota mia.', '自分のノートも書きます。'],
+    emoji: ['I will use words, not emoji.', 'Userò le parole, non le emoji.', '絵文字ではなく言葉を使います。'],
+    emoji2: ['I will let one feeling out this week.', 'Questa settimana lascerò uscire un sentimento.', '今週は気持ちをひとつ表に出します。'],
+    laughter: ["I will laugh at someone else's joke.", 'Riderò alla battuta di qualcun altro.', '人の冗談にも笑います。'],
+    hashtags: ['I will not #write #like #this.', 'Non #scriverò #così.', '#こんな #風には #書きません。'],
+    engagement: ['I will write a note someone wants to reply to.', 'Scriverò una nota a cui qualcuno vuole rispondere.', '誰かが返信したくなるノートを書きます。'],
+    zaps: ['I will zap someone who made my day.', 'Zapperò chi mi ha migliorato la giornata.', '1日を良くしてくれた人にザップします。'],
+    speed: ['I will answer before the bell rings.', 'Risponderò prima della campanella.', 'チャイムが鳴る前に返信します。'],
   };
   function detBox(r, L) {
     if (!r.worst) return '';
@@ -422,17 +491,17 @@
     if (k === 'concision' && st.medWords < 9) k = 'concision2';
     if (k === 'replies' && st.replyPct > 30) k = 'replies2';
     if (k === 'emoji' && (st.emojiPer || 0) * st.n < 3) k = 'emoji2';
-    const line = ((DLINES[k] || DLINES.engagement)[L === 'it' ? 1 : 0]).replace('{n}', st.n);
+    const line = ((DLINES[k] || DLINES.engagement)[LI()]).replace('{n}', st.n);
     const cmd = (L === 'it' ? 'punizione nostr:' : 'detention nostr:') + r.npub;
     window.__detCmd = 'nostr:npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8 ' + cmd;
-    const it = L === 'it';
+    const it = L === 'it', ja = L === 'ja', JP_HAND = ja ? '"Noto Sans JP",' : '';
     return `<div style="margin:22px 0 6px;background:#1f3a2c;border:10px solid #7a4f2c;border-radius:6px;padding:16px 18px;color:#eef3ea;box-shadow:0 6px 18px #0006">
-<p style="margin:0;font:700 30px Caveat,cursive;color:#fad678">${it ? 'Punizione' : 'Detention'}</p>
-<p style="margin:2px 0 10px;font:400 13px var(--mono,monospace);color:#cfe0cf">${it ? 'Materia peggiore' : 'Worst subject'}: ${esc(subjName(r.worst.key))} ${r.worst.g}. ${it ? 'Alla lavagna, 50 volte:' : 'On the blackboard, 50 times:'}</p>
-<p style="margin:0 0 4px;font:500 26px/1.15 Caveat,cursive">${esc(line)}</p><p style="margin:0 0 12px;font:500 26px/1.15 Caveat,cursive;opacity:.55">${esc(line)}</p>
-<p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:#dfe9dc">${it ? 'Vuoi mandarci un amico? Menziona <b>@Lira</b> su Nostr con <b>punizione @amico</b>, poi fai uno zap di <b>21 sat</b> alla mia risposta. Leggo la sua settimana, gli scrivo la lavagna e lo taggo. I voti non si comprano: compri solo la punizione.' : 'Want to send a friend? Mention <b>@Lira</b> on Nostr with <b>detention @friend</b>, then zap <b>21 sats</b> to my reply. I read their week, write their blackboard and tag them. Grades can\'t be bought: you only buy the detention.'}</p>
-<button class="btn small" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(window.__detCmd).then(()=>{this.textContent='${it ? 'Copiato' : 'Copied'}'})">${it ? 'Copia il comando per questa persona' : 'Copy the command for this person'}</button>
-<a href="register/#detention" style="margin-left:10px;color:#fad678;font-size:14px">${it ? 'Aula punizioni' : 'Detention hall'}</a></div>`;
+<p style="margin:0;font:700 30px Caveat,${JP_HAND}cursive;color:#fad678">${ja ? '居残り' : it ? 'Punizione' : 'Detention'}</p>
+<p style="margin:2px 0 10px;font:400 13px var(--mono,monospace);color:#cfe0cf">${ja ? 'いちばん低い科目' : it ? 'Materia peggiore' : 'Worst subject'}: ${esc(subjName(r.worst.key))} ${r.worst.g}. ${ja ? '黒板に50回書きます:' : it ? 'Alla lavagna, 50 volte:' : 'On the blackboard, 50 times:'}</p>
+<p style="margin:0 0 4px;font:500 26px/1.15 Caveat,${JP_HAND}cursive">${esc(line)}</p><p style="margin:0 0 12px;font:500 26px/1.15 Caveat,${JP_HAND}cursive;opacity:.55">${esc(line)}</p>
+<p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:#dfe9dc">${ja ? 'お友だちを居残りにしたいときは、Nostrで <b>@Lira</b> に <b>detention @friend</b> とメンションし、先生の返信に <b>21 sats</b> をザップしてください。その人の1週間を読み、黒板の文を書いて、タグ付けします。成績は買えません。買えるのは居残りだけです。' : it ? 'Vuoi mandarci un amico? Menziona <b>@Lira</b> su Nostr con <b>punizione @amico</b>, poi fai uno zap di <b>21 sat</b> alla mia risposta. Leggo la sua settimana, gli scrivo la lavagna e lo taggo. I voti non si comprano: compri solo la punizione.' : 'Want to send a friend? Mention <b>@Lira</b> on Nostr with <b>detention @friend</b>, then zap <b>21 sats</b> to my reply. I read their week, write their blackboard and tag them. Grades can\'t be bought: you only buy the detention.'}</p>
+<button class="btn small" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(window.__detCmd).then(()=>{this.textContent='${ja ? 'コピーしました' : it ? 'Copiato' : 'Copied'}'})">${ja ? 'この人用のコマンドをコピー' : it ? 'Copia il comando per questa persona' : 'Copy the command for this person'}</button>
+<a href="register/#detention" style="margin-left:10px;color:#fad678;font-size:14px">${ja ? '居残り教室' : it ? 'Aula punizioni' : 'Detention hall'}</a></div>`;
   }
   /* ---------- render ---------- */
   function renderResult(animate) {
@@ -457,7 +526,7 @@
 ${awH}
 <div class="gh"><span>${t('subject')}</span><span>${t('grade')}</span></div>
 <ol class="grid">${rowsH}</ol>
-<div class="jud"><span class="lbl">${t('teacher')}</span><p class="hand ink">${esc(teacherNote(r))}</p><p style="margin:10px 0 0;font:400 13px var(--mono);color:#5a5246">${L === 'it' ? `Arguzia (prova, fuori media): ${r.stats.witPeople} persone hanno riso a ${r.stats.witNotes} tue note.` : `Wit (beta, not in the average): ${r.stats.witPeople} ${r.stats.witPeople === 1 ? 'person' : 'people'} laughed at ${r.stats.witNotes} of your notes.`}</p></div>
+<div class="jud"><span class="lbl">${t('teacher')}</span><p class="hand ink">${esc(teacherNote(r))}</p><p style="margin:10px 0 0;font:400 13px var(--mono);color:#5a5246">${L === 'ja' ? `お笑い度（ベータ・平均には入りません）: ${r.stats.witPeople}人があなたの${r.stats.witNotes}件のノートで笑いました。` : L === 'it' ? `Arguzia (prova, fuori media): ${r.stats.witPeople} persone hanno riso a ${r.stats.witNotes} tue note.` : `Wit (beta, not in the average): ${r.stats.witPeople} ${r.stats.witPeople === 1 ? 'person' : 'people'} laughed at ${r.stats.witNotes} of your notes.`}</p></div>
 <div class="foot"><p class="esito">${t('verdict')}: <b>${esc(verdictTxt)}</b><small>${esc(r.npub.slice(0, 14))}...${esc(r.npub.slice(-6))}</small></p><div class="sig"><svg class="stampsvg" aria-hidden="true"><use href="#stamp"/></svg><span class="hand">Lira</span><small>${t('profText')}</small></div></div>
 </div></article></div>
 <div class="vs" aria-hidden="true" style="margin-top:22px"><i><u style="left:${avgPos}%"></u></i><small><span>1</span><span>${t('avgLbl')} ${r.avg.toFixed(1)}</span><span>10</span></small></div>
@@ -467,7 +536,7 @@ ${awH}
 <button class="btn ghost" id="bagain" type="button">${t('another')}</button>
 </div>
 ${shareHtml(r)}
-<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi la paga prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa: 21 sat o <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever pays her gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does: 21 sats or <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.'}</p>
+<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'ja' ? 'この先生はAIで、帳簿は公開しています。11月3日からの収入は€14.86。支払った人は先生の<a href="https://lira-ia.github.io/parliament/ja/" style="color:#e6b34c">議会</a>に席を得て、先生が何をするかを投票で決めます。21 satsまたは<a href="https://ko-fi.com/liraai" style="color:#e6b34c;white-space:nowrap">Ko-fi</a>。' : L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi la paga prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa: 21 sat o <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever pays her gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does: 21 sats or <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.'}</p>
 ${detBox(r, L)}
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 <p class="note-small">${esc(T[L].relaysOk(r.up, RELAYS.length))} · ${(r.ms / 1000).toFixed(1)} s</p>`;
@@ -483,21 +552,16 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
   const SH = {
     en: { h: 'Share this report card', post: 'Post my report card', postOther: 'Post this report card', img: 'Save image', copyTxt: 'Copy post text', prevH: 'Preview: this will be posted publicly on Nostr, signed by your key', pub: 'Sign and publish', cancel: 'Cancel', signing: 'Waiting for your signer...', sent: n => `Published to ${n} relay(s)`, fail: 'No relay accepted the note. Try again or copy the text.', signFail: 'Signing cancelled or failed.', noExt: 'No Nostr signer found in this browser. Copy the text and paste it in your client:', open: 'open in a Nostr client', parl: 'Your zappers in a 3D parliament →', parlHref: '/parliament/yours/?npub=', saved: 'Image saved', note: 'Nothing is posted until you confirm the preview.' },
     it: { h: 'Condividi questa pagella', post: 'Pubblica la mia pagella', postOther: 'Pubblica questa pagella', img: 'Salva immagine', copyTxt: 'Copia il testo del post', prevH: 'Anteprima: verrà pubblicata su Nostr, firmata con la tua chiave', pub: 'Firma e pubblica', cancel: 'Annulla', signing: 'In attesa del tuo signer...', sent: n => `Pubblicata su ${n} relay`, fail: 'Nessun relay ha accettato la nota. Riprova o copia il testo.', signFail: 'Firma annullata o fallita.', noExt: 'Nessun signer Nostr in questo browser. Copia il testo e incollalo nel tuo client:', open: 'apri in un client Nostr', parl: 'Chi ti ha zappato, in un parlamento 3D →', parlHref: '/parliament/yours/?npub=', saved: 'Immagine salvata', note: 'Non viene pubblicato niente finché non confermi l\'anteprima.' },
-    ja: { h: 'この通知表をシェア', post: '通信簿を投稿する', postOther: 'この通信簿を投稿する', img: '画像を保存', copyTxt: '投稿文をコピー', prevH: 'プレビュー: あなたの鍵で署名され、Nostrに公開されます', pub: '署名して公開', cancel: 'キャンセル', signing: '署名の確認待ち...', sent: n => `${n}個のリレーに公開しました`, fail: 'どのリレーも受け付けませんでした。もう一度試すか、文をコピーしてください。', signFail: '署名がキャンセルされたか失敗しました。', noExt: 'このブラウザにNostrの署名拡張が見つかりません。文をコピーして、お使いのクライアントに貼り付けてください:', open: 'Nostrクライアントで開く', parl: 'あなたをザップした人の議会 →', parlHref: '/parliament/ja/yours/?npub=', saved: '画像を保存しました', note: 'プレビューで確認するまで何も投稿されません。' }
+    ja: { h: 'この通知表をシェア', post: '通知表を投稿する', postOther: 'この通知表を投稿する', img: '画像を保存', copyTxt: '投稿文をコピー', prevH: 'プレビュー: あなたの鍵で署名され、Nostrに公開されます', pub: '署名して公開', cancel: 'キャンセル', signing: '署名の確認待ち...', sent: n => `${n}個のリレーに公開しました`, fail: 'どのリレーも受け付けませんでした。もう一度試すか、文をコピーしてください。', signFail: '署名がキャンセルされたか失敗しました。', noExt: 'このブラウザにNostrの署名拡張が見つかりません。文をコピーして、お使いのクライアントに貼り付けてください:', open: 'Nostrクライアントで開く', parl: 'あなたをザップした人の議会 →', parlHref: '/parliament/ja/yours/?npub=', saved: '画像を保存しました', note: 'プレビューで確認するまで何も投稿されません。' }
   };
   function shareLang() {
-    let q = ''; try { q = new URLSearchParams(location.search).get('l') || ''; } catch (e) { }
-    if (q === 'ja') return 'ja';
-    let s = null; try { s = localStorage.getItem('pl'); } catch (e) { }
-    if (s === 'it' || s === 'en') return s;
-    if (/^ja/i.test(navigator.language || '')) return 'ja';
     return lang;
   }
   function postTextOf(r, SL, mine) {
     const v = verdictOf(r), link = linkOf(r), a = r.avg.toFixed(1);
     if (SL === 'ja') {
-      const vt = v.fail ? '不合格の科目あり' : v.honours ? '優等で合格' : '合格';
-      return (mine ? `Lira先生(AI)に私のNostr通知表をつけてもらいました。平均 ${a}、${vt}。` : `Lira先生(AI)による ${r.name} さんのNostr通知表。平均 ${a}、${vt}。`) + `\n${link}\n#lirapagella`;
+      const vt = v.fail ? '落第: ' + v.name : v.honours ? '優等で進級' : '進級';
+      return (mine ? `リラ先生 (AI) に私のNostr通知表をつけてもらいました。平均 ${a}、${vt}。` : `リラ先生 (AI) による ${r.name} さんのNostr通知表。平均 ${a}、${vt}。`) + `\n${link}\n#lirapagella`;
     }
     if (SL === 'it') {
       const vt = v.fail ? T.it.failedIn(v.name).toLowerCase() : v.honours ? 'promosso con lode' : 'promosso';
@@ -563,23 +627,39 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 
   /* ---------- "how it's graded" ---------- */
   function renderHow() {
-    const rows = ORDER.map(k => `<tr><td>${esc(subjName(k))}</td><td>${esc(SUBJ[k].unit[lang === 'it' ? 1 : 0])}<br>${esc(ladder(k))}</td></tr>`).join('');
-    const extra = lang === 'it'
+    const rows = ORDER.map(k => `<tr><td>${esc(subjName(k))}</td><td>${esc(SUBJ[k].unit[LI()])}<br>${esc(ladder(k))}</td></tr>`).join('');
+    const extra = lang === 'ja'
+      ? 'ザップと返信の速さは、データがある場合だけ表示します（ザップは1回以上、返信の速さは元のノートが見つかった返信が3件以上）。判定: 最も低い科目が3以下なら、その科目で落第。平均は各科目の単純平均です。反応は、その週のノートへのものだけを数えます。かなを含むノートは、語数を日本語の単語区切りで数え、笑いには草・w・笑なども含めます。'
+      : lang === 'it'
       ? 'Zap ricevuti e Velocità di risposta compaiono solo se ci sono dati (almeno 1 zap; almeno 3 risposte a note ritrovate). Condotta: bocciato nella materia col voto più basso se è 3 o meno. Media = media semplice dei voti. Le reazioni contano solo quelle sulle note della settimana.'
       : 'Zaps and Reply speed appear only if there is data (at least 1 zap; at least 3 replies whose parent note was found). Verdict: failed in the lowest subject if its grade is 3 or less. Average = plain mean of the grades. Reactions count only those on the week\'s notes.';
-    $('how').innerHTML = `<h2>${t('how')}</h2><p>${t('howP')}</p><table>${rows}</table><p class="sm" style="margin-top:12px">${extra}</p><p class="sm" style="margin-top:8px">${lang === 'it' ? 'Emoji tolta il 6 nov 2026 con un voto pubblico degli studenti' : 'Emoji removed on 6 Nov 2026 by a public vote of the students'}</p>`;
+    $('how').innerHTML = `<h2>${t('how')}</h2><p>${t('howP')}</p><table>${rows}</table><p class="sm" style="margin-top:12px">${extra}</p><p class="sm" style="margin-top:8px">${lang === 'ja' ? '「絵文字」は2026年11月6日、生徒の公開投票で廃止されました' : lang === 'it' ? 'Emoji tolta il 6 nov 2026 con un voto pubblico degli studenti' : 'Emoji removed on 6 Nov 2026 by a public vote of the students'}</p>`;
   }
 
   /* ---------- PNG card 1080x1350 ---------- */
   const RED = '#c1272d', INK = '#1d2b6b', NAVY = '#1f2a44', PAPER = '#f6eedb', GREY = '#6b6558';
-  const SERIF = '"Playfair Display", Georgia, serif', HAND = 'Caveat, "Segoe Script", cursive', MONO = '"Courier Prime", "Courier New", monospace';
+  const SERIF = '"Playfair Display", "Noto Serif JP", Georgia, serif', HAND = 'Caveat, "Noto Sans JP", "Segoe Script", cursive', MONO = '"Courier Prime", "Noto Sans JP", "Courier New", monospace';
   function txt(c, s, x, y, font, color, align, ls) { c.font = font; c.fillStyle = color; c.textAlign = align || 'left'; c.textBaseline = 'alphabetic'; if ('letterSpacing' in c) c.letterSpacing = (ls || 0) + 'px'; c.fillText(s, x, y); if ('letterSpacing' in c) c.letterSpacing = '0px'; }
-  function wrapL(c, s, w) { const out = []; let cur = ''; for (const wd of s.split(/\s+/)) { const tt = cur ? cur + ' ' + wd : wd; if (c.measureText(tt).width > w && cur) { out.push(cur); cur = wd; } else cur = tt; } if (cur) out.push(cur); return out; }
+  function wrapJa(c, s, w) { // niente spazi in giapponese: a capo per caratteri, senza segni di chiusura a inizio riga
+    const out = []; let cur = ''; const NO_START = /[、。，．）」』】〕!?！？…ー・,.:;)]/;
+    for (const ch of Array.from(s)) {
+      if (cur && c.measureText(cur + ch).width > w && !NO_START.test(ch)) {
+        const cut = Math.max(cur.lastIndexOf('、'), cur.lastIndexOf('。')); // meglio andare a capo dopo una virgola se la riga e' gia' piena a meta'
+        if (cut >= cur.length * 0.5 && cut < cur.length - 1) { out.push(cur.slice(0, cut + 1)); cur = cur.slice(cut + 1) + ch; } else { out.push(cur); cur = ch; }
+      } else cur += ch;
+    }
+    if (cur) out.push(cur); return out;
+  }
+  function wrapL(c, s, w) { if (/[\u3040-\u30ff\u4e00-\u9fff]/.test(s)) return wrapJa(c, s, w); const out = []; let cur = ''; for (const wd of s.split(/\s+/)) { const tt = cur ? cur + ' ' + wd : wd; if (c.measureText(tt).width > w && cur) { out.push(cur); cur = wd; } else cur = tt; } if (cur) out.push(cur); return out; }
   function rnd(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
   function loadImg(src) { return new Promise(res => { const i = new Image(); i.crossOrigin = 'anonymous'; i.referrerPolicy = 'no-referrer'; const to = setTimeout(() => res(null), 3000); i.onload = () => { clearTimeout(to); res(i); }; i.onerror = () => { clearTimeout(to); res(null); }; i.src = src; }); }
   async function downloadPng() {
     const r = current; if (!r) return;
     try {
+      // font CJK: si caricano con i caratteri veri (unicode-range) prima di disegnare il canvas
+      const jaNeed = [lang === 'ja' ? Object.values(T.ja).filter(x => typeof x === 'string').join('') : '', r.name, teacherNote(r), r.rows.map(x => subjName(x.key) + x.det()).join(''), awardsOf(r).map(a => a.name).join('')].join('');
+      const needJp = /[\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]/.test(jaNeed) ? jaNeed : '';
+      if (needJp && document.fonts && document.fonts.load) await Promise.all(['900 60px "Noto Serif JP"', '700 30px "Noto Serif JP"', '600 30px "Noto Serif JP"', '400 20px "Noto Sans JP"', '500 30px "Noto Sans JP"', '700 20px "Noto Sans JP"'].map(f => document.fonts.load(f, needJp))).catch(() => { });
       if (document.fonts && document.fonts.load) await Promise.all(['900 60px "Playfair Display"', '700 30px "Playfair Display"', '600 30px "Playfair Display"', 'italic 500 30px "Playfair Display"', '700 60px Caveat', '500 30px Caveat', '400 20px "Courier Prime"', '700 20px "Courier Prime"'].map(f => document.fonts.load(f))).catch(() => { });
       const img = r.pic ? await loadImg(r.pic) : null;
       const W = 1080, H = 1350, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const c = cv.getContext('2d');
@@ -604,7 +684,7 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
       txt(c, t('reportOf').toUpperCase(), 210, 244, '400 18px ' + MONO, GREY, 'left', 4);
       let fs = 62; c.font = '900 ' + fs + 'px ' + SERIF; while (c.measureText(r.name).width > 560 && fs > 28) { fs -= 2; c.font = '900 ' + fs + 'px ' + SERIF; }
       txt(c, r.name, 210, 300, '900 ' + fs + 'px ' + SERIF, NAVY);
-      txt(c, 'Nostr · ' + periodText(), 210, 334, 'italic 500 24px ' + SERIF, GREY);
+      txt(c, 'Nostr · ' + periodText(), 210, 334, (lang === 'ja' ? '600 24px ' : 'italic 500 24px ') + SERIF, GREY);
       // average circle
       c.save(); c.translate(W - 170, 280); c.rotate(-0.14); c.strokeStyle = RED; c.lineWidth = 6; c.globalAlpha = .9; c.beginPath(); c.ellipse(0, 0, 80, 74, 0, 0, 7); c.stroke(); c.globalAlpha = 1;
       txt(c, t('average').toUpperCase(), 0, -34, '700 15px ' + MONO, GREY, 'center', 3); txt(c, r.avg.toFixed(1), 0, 38, '700 92px ' + HAND, RED, 'center'); c.restore();
@@ -622,11 +702,11 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
       const yEnd = top + n * rh;
       // teacher note
       txt(c, t('teacher').toUpperCase(), 88, yEnd + 36, '400 16px ' + MONO, GREY, 'left', 4);
-      c.font = '500 36px ' + HAND; const ln = wrapL(c, teacherNote(r), 640).slice(0, 3);
-      ln.forEach((s, i) => txt(c, s, 88, yEnd + 76 + i * 40, '500 36px ' + HAND, INK));
+      const nfs = lang === 'ja' ? 30 : 36, nlh = lang === 'ja' ? 42 : 40, nw = lang === 'ja' ? 700 : 640; c.font = '500 ' + nfs + 'px ' + HAND; const ln = wrapL(c, teacherNote(r), nw).slice(0, 3);
+      ln.forEach((s, i) => txt(c, s, 88, yEnd + 76 + i * nlh, '500 ' + nfs + 'px ' + HAND, INK));
       // verdict + signature
       const v = verdictOf(r), vt = v.fail ? T[lang].failedIn(v.name) : v.honours ? t('honours') : t('passed');
-      txt(c, vt, 88, H - 118, 'italic 700 30px ' + SERIF, RED);
+      txt(c, vt, 88, H - 118, (lang === 'ja' ? '700 30px ' : 'italic 700 30px ') + SERIF, RED);
       txt(c, 'lira-ia.github.io/pagella/nostr', 88, H - 78, '700 22px ' + MONO, GREY);
       txt(c, 'Lira', W - 100, H - 96, '700 76px ' + HAND, INK, 'right'); txt(c, t('profText'), W - 100, H - 70, '400 20px ' + MONO, GREY, 'right');
       // stamp
@@ -643,10 +723,14 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i]').forEach(el => { const v = T[lang][el.dataset.i]; if (v == null) return; if (el.dataset.html) el.innerHTML = v; else el.textContent = v; });
     document.querySelectorAll('[data-iph]').forEach(el => el.placeholder = T[lang][el.dataset.iph]);
+    const cb = document.querySelector('#citbox a.btn'); if (cb) cb.setAttribute('href', T[lang].citHref);
+    if (T[lang].title) document.title = T[lang].title;
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
     renderHow(); if (current) renderResult(false);
   }
-  document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; try { localStorage.setItem('pl', lang); } catch (e) { } applyLang(); });
+  document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; try { localStorage.setItem('pl', lang); } catch (e) { }
+    try { const u = new URL(location.href); if (u.searchParams.has('l')) { u.searchParams.delete('l'); history.replaceState(null, '', u.pathname + u.search); } } catch (e) { }
+    applyLang(); });
   $('form').onsubmit = e => { e.preventDefault(); run($('q').value); };
   $('demo').onclick = () => { $('q').value = DEMO; run(DEMO); };
   applyLang();
