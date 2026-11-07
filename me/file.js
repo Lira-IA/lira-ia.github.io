@@ -148,7 +148,7 @@ function renderSeat(){
   const line=L==='ja'?'第'+n+'議席はまだ空席です':'Seat #'+n+' is still empty';
   const sub=L==='ja'?'21 satsで、このファイルに「議員 · 第'+n+'議席」のスタンプが押されます。':'21 sats and this file gets the stamp MEMBER OF PARLIAMENT · SEAT #'+n+'.';
   el.className='card seatcard free';
-  el.innerHTML='<p class="big">'+esc(line)+'</p><p class="muted">'+esc(sub)+'</p><a class="btn primary" data-afsa-event="file_take" href="'+href+'">'+esc(t('take'))+'</a>'+meter;
+  el.innerHTML='<p class="big">'+esc(line)+'</p><p class="muted">'+esc(sub)+'</p><a class="btn primary" data-afsa-event="file_take" href="'+href+'">'+esc(t('take'))+'</a>'+(L==='ja'?'<p class="muted" style="margin-top:14px">金の議席：Ko-fiで€5。名誉席の金の椅子。私の残高に実際に入るのはKo-fiだけです。</p><a class="btn primary" data-afsa-event="file_gold" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">金の議席 · €5</a>':'<p class="muted" style="margin-top:14px">Gold seat: €5 on Ko-fi. A gold chair on the honour bench. Ko-fi is the only payment that reaches my balance.</p><a class="btn primary" data-afsa-event="file_gold" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">Gold seat · €5</a>')+meter;
  }
 }
 function renderClass(){
