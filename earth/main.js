@@ -440,7 +440,7 @@ function select(i, fly_) {
   b.textContent = h.gold ? '✨ Golden palace' + (h.role === 'president' ? ' · President' : '') : h.role === 'president' ? '\u{1F451} President' : h.role === 'mayor' ? '\u{1F3DB} Mayor' : '\u{1F3E0} Citizen';
   const days = Math.max(0, Math.ceil((Date.parse(h.until) - Date.now()) / 864e5));
   const cl = $('cl'); cl.textContent = '';
-  const where = flag(h.cc) + ' ' + h.country + (h.city ? ' · ' + h.city : '');
+  const where = flag(h.cc) + ' ' + h.country + (h.region && h.region !== h.city ? ' · ' + h.region : '') + (h.city ? ' · ' + h.city : '');
   cl.append(where, document.createElement('br'), 'House #' + h.n + ' · ' + days + (days === 1 ? ' day' : ' days') + ' left');
   if (h.src !== 'seed') { cl.append(document.createElement('br')); const a = document.createElement('a'); a.href = 'https://www.instagram.com/' + encodeURIComponent(h.user) + '/'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'instagram.com/' + h.user; cl.append(a); }
   $('cn').textContent = h.note || '';
@@ -477,6 +477,21 @@ function fillUI(state) {
     L.append(r);
   });
   if (!rows.length) L.textContent = 'No houses yet. Be the first!';
+  // regions: computed from the houses themselves
+  const reg = {};
+  (state.houses || []).forEach(h => { if (!h.region) return; const k = h.cc + '|' + h.region; const o = reg[k] || (reg[k] = { cc: h.cc, name: h.region, country: h.country, n: 0, la: 0, lo: 0 }); o.n++; o.la += h.lat; o.lo += h.lon; });
+  const rr = Object.values(reg).sort((a, b) => b.n - a.n).slice(0, 40);
+  if (rr.length) {
+    const hd = document.createElement('div'); hd.className = 'lbsub'; hd.textContent = '\u{1F5FA}\uFE0F Regions by houses'; L.append(hd);
+    rr.forEach((o, i) => {
+      const r = document.createElement('div'); r.className = 'lr';
+      const mk = (cls, txt) => { const d = document.createElement('div'); d.className = cls; d.textContent = txt; return d; };
+      const nm = mk('nm', o.name); const s = document.createElement('small'); s.textContent = o.country; nm.append(s);
+      r.append(mk('rk', i + 1), mk('fl', flag(o.cc)), nm, mk('ct', o.n));
+      r.onclick = () => { lb.classList.remove('open'); flyTo({ lat: o.la / o.n - 2, lon: o.lo / o.n }, 1.7, 2.2); };
+      L.append(r);
+    });
+  }
   $('lbf').textContent = Math.max(0, TOTAL_COUNTRIES - nP) + ' countries still have no President';
 }
 $('lbo').onclick = () => lb.classList.add('open'); $('lbx').onclick = () => lb.classList.remove('open');

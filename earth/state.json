@@ -14,7 +14,8 @@
    "role": "president",
    "gold": false,
    "src": "ig",
-   "note": null
+   "note": null,
+   "region": "Qormi"
   },
   {
    "n": 2,
@@ -29,7 +30,8 @@
    "role": "president",
    "gold": false,
    "src": "ig",
-   "note": null
+   "note": null,
+   "region": "Sicily"
   }
  ],
  "presidents": {
