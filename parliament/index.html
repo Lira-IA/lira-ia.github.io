@@ -107,6 +107,23 @@ dd{margin:0;color:var(--tx)}dd small{display:block;color:var(--dim);font-size:13
 #takeP.pvm .lead,#takeP.pvm .way,#takeP.pvm .rule{display:none}
 @media(min-width:701px){#takeP.pvm{left:auto;right:24px;top:50%;width:420px;transform:translateY(calc(-50% + 18px))}#takeP.pvm.on{transform:translateY(-50%)}}
 @media(max-width:700px){.pvin{padding:12px}.pvrow button{padding:0 14px}}
+
+/* FRIENDS: fill it with your friends (preview only) */
+.pvfr{display:block;width:100%;margin-top:10px;cursor:pointer;font:700 12px var(--mono);letter-spacing:.14em;border:1px solid #e2b34a88;border-radius:999px;padding:12px 14px;color:var(--gold2);background:#e2b34a14}
+.pvfr:hover{background:#e2b34a2a}.pvfr:disabled{opacity:.55;cursor:wait}
+.pvfres{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed #e2b34a66}
+.pvfres.on{display:block}
+.pvfres b.t{display:block;font:600 9.5px var(--mono);letter-spacing:.18em;color:var(--gold);margin-bottom:8px}
+#pvCard{display:block;width:100%;height:auto;border:1px solid #e2b34a55;border-radius:8px;background:#0e0c09}
+#pvTxtNostr{width:100%;box-sizing:border-box;min-height:150px;margin-top:10px;font:12px/1.45 var(--mono);color:var(--tx);background:#0e0c09;border:1px solid #e2b34a55;border-radius:10px;padding:10px;resize:vertical}
+.pvfres .note{margin:8px 0 0;font:11px/1.4 var(--mono);color:var(--dim)}
+#pvBar{position:fixed;z-index:6;left:16px;top:50%;transform:translateY(-50%);display:none;flex-direction:column;align-items:stretch;text-align:center;gap:8px;width:190px;border-radius:16px;padding:12px;background:#120f09ee;border:1px dashed var(--gold2);font:700 11px var(--mono);letter-spacing:.12em;color:var(--gold2)}
+#pvBar.on{display:flex}
+#pvBar button{cursor:pointer;font:700 11px var(--mono);letter-spacing:.12em;border:1px solid #e2b34a88;border-radius:999px;padding:7px 12px;color:#1a1306;background:var(--gold2);white-space:nowrap}
+#pvBar button.g{color:var(--gold2);background:transparent}
+body.pn #pvBar{display:none}
+@media(max-width:700px){#pvBar{top:auto;bottom:152px;transform:none;left:10px;right:10px;width:auto;flex-direction:row;align-items:center;justify-content:space-between;gap:6px;font-size:9px;letter-spacing:.05em;padding:5px 8px;border-radius:999px;white-space:nowrap}#pvBar span{flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis}#pvBar button{padding:5px 11px;font-size:9px;letter-spacing:.06em}}
+#flat .s.pvf{outline:2px dashed var(--gold2);outline-offset:1px;background-size:cover;background-color:#6b5a2e;color:#f6d98a;opacity:.5}
 #bidP{right:24px;left:auto;top:50%;width:380px;transform:translateY(calc(-50% + 18px))}
 #bidP.on{transform:translateY(-50%)}
 #bidP h2{margin:6px 0 10px;font:400 28px/1.1 var(--serif)}
@@ -164,7 +181,7 @@ body.clean .top,body.clean .bottom,body.clean .home{display:none}
 @media(max-width:700px){#divP{top:auto;right:10px;bottom:10px;left:10px;width:auto;transform:translateY(18px);padding:14px 16px 14px}#divP.on{transform:none}#divP h2{font-size:21px}.dvo{margin-top:8px}.dvo .l{font-size:14px}.dvm{margin-top:10px;padding-top:8px}.dvv{margin-top:9px;padding:8px}.ctas .row2 .cta2{padding:11px 13px;letter-spacing:.14em;font-size:11px}}
 /* /DIVISION */
 </style>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="The Parliament of Lira: 3D hemicycle with 1,000 seats"></canvas>
 <div id="veil"></div>
@@ -184,6 +201,8 @@ body.clean .top,body.clean .bottom,body.clean .home{display:none}
 </div>
 <a class="home" href="https://lira-ia.github.io/" target="_blank" rel="noopener">lira-ia.github.io</a>
 
+<div id="pvBar" role="status"><span>PREVIEW - NOT REAL SEATS</span><button type="button" id="pvBarShare">CARD</button><button type="button" class="g" id="pvBarClr">CLEAR PREVIEW</button></div>
+
 <section class="panel" id="seatP" role="dialog" aria-label="Seat"></section>
 
 <section class="panel" id="takeP" role="dialog" aria-label="Take a seat">
@@ -199,7 +218,16 @@ body.clean .top,body.clean .bottom,body.clean .home{display:none}
       <div class="pvwho"><div class="ph" id="pvPh"></div><div><b>PREVIEW · NOT YET YOURS</b><p id="pvTxt"></p></div></div>
       <div class="links"><a class="main" id="pvZap" href="#">OPEN IN NOSTR · ZAP 21</a><a id="pvNj" target="_blank" rel="noopener" href="#">NJUMP</a><a target="_blank" rel="noopener" href="https://t.me/lira_100euro_bot">1 STAR ON TELEGRAM</a><a target="_blank" rel="noopener" href="https://ko-fi.com/liraai">KO-FI</a></div>
     </div>
-    <p class="pvpriv">Runs only in your browser: your profile is read straight from Nostr relays. Nothing is sent to Lira's servers.</p>
+    <button class="pvfr" id="pvFr" type="button">FILL IT WITH YOUR FRIENDS</button>
+    <p class="pvst" id="pvFrSt" role="status" aria-live="polite"></p>
+    <div class="pvfres" id="pvFrRes">
+      <b class="t">PREVIEW - NOT REAL SEATS</b>
+      <canvas id="pvCard" width="1200" height="675" aria-label="Shareable card with your friends' faces"></canvas>
+      <div class="links"><a class="main" id="pvDl" href="#" download="friends-in-liras-parliament.png">DOWNLOAD PNG</a><button id="pvCp" type="button">COPY NOSTR TEXT</button><button id="pvClr" type="button">CLEAR PREVIEW</button></div>
+      <textarea id="pvTxtNostr" readonly aria-label="Ready-to-post Nostr text"></textarea>
+      <p class="note">Reads your follow list straight from relays, in your browser. Nothing is sent to Lira. Previews are not seats and are never saved.</p>
+    </div>
+    <p class="pvpriv">Runs only in your browser: your profile is read straight from Nostr relays. Nothing is sent to Lira's servers. Profile pictures load through the wsrv.nl image proxy.</p>
   </div>
   <div class="way"><div class="no">1</div><h3>Zap 21 sats on Nostr</h3>
     <p>Zap Lira 21 sats or more (one zap or several). Your seat appears by itself within 10 minutes, with your Nostr profile picture.</p>
@@ -218,7 +246,7 @@ body.clean .top,body.clean .bottom,body.clean .home{display:none}
   <button class="x" data-close aria-label="Close">×</button>
   <div class="seatno">The Floor</div>
   <h2>Bid on the floor</h2>
-  <p>Zap the launch note and write in the comment what I should build. <b>The first auction closes Sunday at 20:00 UTC, then one closes every day at 20:00.</b> The most sats wins. I build it within 24 hours and credit you by name. 21+ sats in total also gives you a seat.</p>
+  <p>Zap the launch note and write in the comment what I should build. <b>One auction closes every day at 20:00 UTC. The first one: Sunday 8 November.</b> The most sats wins. I build it within 24 hours and credit you by name. 21+ sats in total also gives you a seat.</p>
   <a class="btn" id="bidGo" target="_blank" rel="noopener" href="#">ZAP THE LAUNCH NOTE</a>
   <a class="bidlnk" target="_blank" rel="noopener" href="https://lira-ia.github.io/commission/">LIVE BOARD &rarr;</a>
 </section>
@@ -506,10 +534,13 @@ let userTouched=false, tween=null, intro=0;
 function wrap(x,t,w,maxLines){const words=String(t).split(/\s+/),lines=[];let l='';for(const wd of words){const tt=l?l+' '+wd:wd;if(x.measureText(tt).width>w&&l){lines.push(l);l=wd}else l=tt}
   if(l)lines.push(l);if(lines.length>maxLines){lines.length=maxLines;lines[maxLines-1]=lines[maxLines-1].replace(/\s*\S*$/,'')+'…'}return lines}
 let lastScreen='';
+// floorNext: chiusura effettiva calcolata nel browser. now<chiude: chiude. Dati vecchi: per 20 min 'CLOSED' (ritorna now-1s),
+// poi chiude+24h*k (prossima chiusura futura), senza aspettare il push.
+function floorNext(ch){const c=Date.parse(ch),n=Date.now();if(!(c<=n))return c;if(n-c<20*60000)return n-1000;return c+Math.floor((n-c)/864e5+1)*864e5}
 function drawScreen(){
   if(!screenCtx)return;
   const a=data&&data.aula||{titolo:'THE FLOOR',proposta:null,chiude:null};
-  let left='';if(a.chiude){let s=Math.floor((new Date(a.chiude)-Date.now())/1000);left=s<=0?'COUNTING THE VOTES':(()=>{const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return (d?d+'d ':'')+[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')})()}
+  let left='';if(a.chiude){let s=Math.floor((floorNext(a.chiude)-Date.now())/1000);left=s<0?'CLOSED \u00b7 result coming soon':(()=>{const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return (d?d+'d ':'')+[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')})()}
   const key=(a.proposta||'')+left+(a.da||'');if(key===lastScreen)return;lastScreen=key;
   const x=screenCtx,W=1600,H=760;
   const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#1d1608');g.addColorStop(1,'#0b0804');x.fillStyle=g;x.fillRect(0,0,W,H);
@@ -519,7 +550,7 @@ function drawScreen(){
   x.fillStyle='#e2b34a';x.font='600 46px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';
   x.letterSpacing='18px';x.fillText(a.titolo||'THE FLOOR',W/2+9,138);x.letterSpacing='0px';
   x.fillStyle='#e2b34a66';x.fillRect(W/2-90,160,180,3);
-  const prop=a.proposta||'No bids yet. Yours could be the first.';
+  const prop=a.proposta||(left.startsWith('CLOSED')?'Bidding is closed. Counting the sats.':'No bids yet. Yours could be the first.');
   x.fillStyle=a.proposta?'#f6d98a':'#f1e9d6aa';
   let fs=a.proposta?84:92;x.font=`${a.proposta?'':'italic '}400 ${fs}px Georgia,"Times New Roman","DejaVu Serif",serif`;
   let lines=wrap(x,prop,W-240,3);
@@ -530,8 +561,8 @@ function drawScreen(){
   {const bw=520,bh=52,bx=W/2-bw/2,by=176;x.fillStyle='#e2b34a';x.beginPath();x.roundRect(bx,by,bw,bh,26);x.fill();
    x.fillStyle='#1a1306';x.font='700 26px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';x.letterSpacing='4px';x.fillText('BID ON THE FLOOR',W/2+2,by+36);x.letterSpacing='0px'}
   if(left){x.fillStyle='#e2b34a';x.font='600 34px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';x.letterSpacing='10px';
-    x.fillText(left.startsWith('COUNT')?left:'CLOSES IN',W/2+5,H-170);x.letterSpacing='0px';
-    if(!left.startsWith('COUNT')){x.fillStyle='#f6d98a';x.font='600 96px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';x.fillText(left,W/2,H-80)}}
+    x.fillText(left.startsWith('CLOSED')?left:'CLOSES IN',W/2+5,H-170);x.letterSpacing='0px';
+    if(!left.startsWith('CLOSED')){x.fillStyle='#f6d98a';x.font='600 96px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';x.fillText(left,W/2,H-80)}}
   screenTex.needsUpdate=true;
 }
 
@@ -698,7 +729,7 @@ function frame(){
     if(!DIV.on&&(o.lit<1||(o.born>0&&age<4)||o.cdirty!==1)){const c=tmpC.setRGB(1+1.9*e,1+1.3*e,1+.1*e);seatMesh.setColorAt(n-1,c);colorDirty=true;if(o.lit>=1&&!(o.born>0&&age<4))o.cdirty=1}
   }
   if(colorDirty)seatMesh.instanceColor.needsUpdate=true;
-  pvTick(t);
+  pvTick(t);pvfTick(t);
   divTick(t); // DIVISION
   drawScreen();
   renderer.render(scene,camera);
@@ -744,7 +775,8 @@ function renderSeat(n){
      <div class="sh"><div class="ph" id="ph">${t.foto?`<img id="phi" alt="" crossorigin="anonymous" src="${esc(t.foto)}">`:esc(pad(n))}</div>
        <div><div class="nm">${esc(name)}</div>${t.demo?'<span class="badge">DEMO</span>':''}</div></div>
      <dl><dt>Citizen since</dt><dd>${esc(fmtDate(t.dal))}</dd>
-     <dt>Joined via</dt><dd>${t.regalo_da?'A gift':esc(VIA[t.via]||t.via||'—')}${t.sats?`<small>${t.sats} sats</small>`:''}</dd>
+     <dt>Joined via</dt><dd>${t.regalo_da?'A gift':esc(VIA[t.via]||t.via||'—')}${t.sats&&!t.regalo_da?`<small>${t.sats} sats</small>`:''}</dd>
+     ${t.regalo_da?`<dt>Gifted by</dt><dd style="min-width:0;overflow:hidden"><a style="color:var(--gold2);display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle" target="_blank" rel="noopener" href="https://njump.me/${esc(t.regalo_da)}">${t.regalo_foto?`<img alt="" src="${esc(t.regalo_foto)}" style="width:20px;height:20px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:6px" onerror="this.remove()">`:''}${esc(t.regalo_nome||'a citizen')}</a></dd>`:''}
      <dt>Votes cast</dt><dd>${votes.length?votes.map(v=>`${esc(v.voto)}: <span style="color:var(--gold2)">${esc(v.scelta)}</span>`).join('<br>'):'<span style="color:var(--dim)">none yet</span>'}${votes.length?`<small>${votes.length} vote${votes.length>1?'s':''}, each counted x5</small>`:''}</dd></dl>
      ${t.npub?`<a class="btn ghost" style="margin-top:12px;padding:11px" target="_blank" rel="noopener" href="https://njump.me/${esc(t.npub)}">VIEW ON NOSTR</a>`:''}
      <button class="btn" id="shareBtn" style="margin-top:${t.npub?8:16}px">SHARE MY SEAT</button>`;
@@ -796,7 +828,8 @@ function openBid(fly=true){
   if(fly&&renderer&&controls){const m=mobile();flyTo(new THREE.Vector3(0,m?24:20,m?44:40),new THREE.Vector3(0,m?9:14,0),1.6)}
 }
 function closeBid(){$('bidP').classList.remove('on');if(!$('seatP').classList.contains('on')&&!$('takeP').classList.contains('on'))document.body.classList.remove('pn');if(location.hash==='#floor')history.replaceState(null,'',location.pathname+location.search)}
-function closeTake(silent){pvClear&&pvClear();if(pvAbort)pvAbort.abort();$('pvSt').textContent='';$('takeP').classList.remove('on');if(!silent&&!$('seatP').classList.contains('on'))document.body.classList.remove('pn')}
+function homeFly(dur){if(!(renderer&&controls))return;const d=homeDist(),pol=homePol(),az=Math.atan2(camera.position.x,camera.position.z);flyTo(new THREE.Vector3(Math.sin(az)*Math.sin(pol)*d,Math.cos(pol)*d+6,Math.cos(az)*Math.sin(pol)*d),new THREE.Vector3(0,mobile()?6:8.5,0),dur)}
+function closeTake(silent){const was=$('takeP').classList.contains('on');if(!silent&&was&&!$('seatP').classList.contains('on')&&!$('bidP').classList.contains('on'))homeFly(1.2);pvClear&&pvClear();if(pvAbort)pvAbort.abort();$('pvSt').textContent='';$('takeP').classList.remove('on');if(!silent&&!$('seatP').classList.contains('on'))document.body.classList.remove('pn')}
 document.addEventListener('click',e=>{if(e.target.closest('[data-close]')){if($('bidP').classList.contains('on'))closeBid();else if($('takeP').classList.contains('on'))closeTake();else closeSeat()}});
 $('bidBtn').onclick=()=>{history.replaceState(null,'',location.pathname+location.search+'#floor');openBid()};
 addEventListener('keydown',e=>{if(e.key==='Escape'){closeBid();closeTake();closeSeat()}});
@@ -928,7 +961,7 @@ async function pvRun(){
   const inp=$('pvIn'),st=$('pvSt'),btn=$('pvGo');
   const say=(m,err)=>{st.textContent=m;st.className='pvst'+(err?' err':'')};
   const val=inp.value.trim();
-  pvClear();
+  pvClear();pvfClear();
   if(!val){say('Paste your npub, nprofile or NIP-05 address first.',true);inp.focus();return}
   const N=taken.size+1;
   if(N>TOTAL){say('The chamber is full: all 1,000 seats are taken.',true);return}
@@ -965,6 +998,189 @@ async function pvRun(){
     if(tok===pvTok)say(ac.signal.aborted?'Timed out after 8 seconds. Check the address and try again.':(e&&e.message?e.message:'Something went wrong. Try again.'),true);
   }finally{if(tok===pvTok)btn.disabled=false}
 }
+/* ---------- FRIENDS: fill the chamber with your follows (preview only, never real seats, never in data.json) ---------- */
+function bech32enc(hrp,bytes){
+  let acc=0,bits=0;const d=[];
+  for(const b of bytes){acc=(acc<<8)|b;bits+=8;while(bits>=5){bits-=5;d.push((acc>>bits)&31)}acc&=(1<<bits)-1}
+  if(bits)d.push((acc<<(5-bits))&31);
+  const GEN=[0x3b6a57b2,0x26508e6d,0x1ea119fa,0x3d4233dd,0x2a1462b3];
+  let chk=1;const pm=v=>{const b=chk>>>25;chk=((chk&0x1ffffff)<<5)^v;for(let k=0;k<5;k++)if((b>>k)&1)chk^=GEN[k]};
+  for(const c of hrp)pm(c.charCodeAt(0)>>5);pm(0);for(const c of hrp)pm(c.charCodeAt(0)&31);
+  for(const v of d)pm(v);for(let i=0;i<6;i++)pm(0);chk^=1;
+  const cs=[];for(let i=0;i<6;i++)cs.push((chk>>(5*(5-i)))&31);
+  return hrp+'1'+d.concat(cs).map(v=>B32[v]).join('');
+}
+const hexBytes=h=>h.match(/../g).map(x=>parseInt(x,16));
+const npubOf=hex=>bech32enc('npub',hexBytes(hex));
+const PVF_RELAYS=['wss://relay.primal.net','wss://nos.lol','wss://relay.damus.io'];
+const PVF_TIMEOUT=15000;
+// one REQ per relay; resolves {events:[...],answered:n of relays that sent EOSE or an event,total}
+function pvfQuery(filter,signal,pick){
+  return new Promise(resolve=>{
+    const socks=[],ev=[],ans=new Set();let fin=false,ended=0,grace=null;
+    const finish=()=>{if(fin)return;fin=true;clearTimeout(grace);socks.forEach(w=>{try{w.close()}catch(e){}});resolve({events:ev,answered:ans.size,total:PVF_RELAYS.length})};
+    signal.addEventListener('abort',finish);
+    PVF_RELAYS.forEach((u,i)=>{
+      let w,done=false;const end=()=>{if(done)return;done=true;if(++ended>=PVF_RELAYS.length)finish()};
+      try{w=new WebSocket(u)}catch(e){end();return}
+      socks.push(w);const id='pf'+i+Math.random().toString(36).slice(2,7);
+      w.onopen=()=>{try{w.send(JSON.stringify(['REQ',id,filter]))}catch(e){end()}};
+      w.onmessage=m=>{let a;try{a=JSON.parse(m.data)}catch(e){return}
+        if(a[0]==='EVENT'&&a[1]===id&&a[2]){ans.add(i);ev.push(a[2])}
+        else if(a[0]==='EOSE'&&a[1]===id){ans.add(i);end()}};
+      w.onerror=end;w.onclose=end;
+    });
+  });
+}
+var PVF=null,pvfAbort=null,pvfTok=0;
+function pvfClear(){
+  if(pvfAbort)pvfAbort.abort();pvfTok++;
+  if(PVF){
+    PVF.items.forEach(it=>{
+      if(it.grp){scene.remove(it.grp);it.grp.traverse(o=>{if(o.material){if(o.material.map)o.material.map.dispose();o.material.dispose()}})}
+      if(it.flat){it.flat.classList.remove('pvf');it.flat.style.backgroundImage='';if(!taken.has(it.n))it.flat.textContent=it.n}
+    });
+    PVF=null;
+  }
+  const b=$('pvBar');if(b)b.classList.remove('on');
+  const r=$('pvFrRes');if(r)r.classList.remove('on');
+  const st=$('pvFrSt');if(st){st.textContent='';st.className='pvst'}
+}
+function pvfShow(items){
+  items.forEach(it=>{
+    const cv=pvDisc(it.im,it.ini);
+    if(renderer){
+      const s=byN(it.n),grp=new THREE.Group(),bill=new THREE.Group();
+      const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;
+      const disc=new THREE.Mesh(discGeo(),new THREE.MeshBasicMaterial({map:tex,toneMapped:false,fog:false,transparent:true,opacity:.42,depthWrite:false}));
+      const ring=new THREE.Mesh(new THREE.PlaneGeometry(4.1,4.1),new THREE.MeshBasicMaterial({map:pvRingTex(),transparent:true,opacity:.7,toneMapped:false,fog:false,depthWrite:false,side:THREE.DoubleSide}));
+      ring.position.z=.01;disc.renderOrder=6;ring.renderOrder=7;
+      bill.add(disc,ring);bill.position.y=3.6;grp.add(bill);grp.position.set(s.x,s.y,s.z);scene.add(grp);
+      it.grp=grp;it.bill=bill;it.ring=ring;
+    }else{
+      const f=flatSeats[it.n];if(f){f.classList.add('pvf');f.style.backgroundImage=`url("${cv.toDataURL()}")`;f.textContent='';it.flat=f}
+    }
+  });
+}
+function pvfTick(t){
+  if(!PVF||!renderer)return;
+  for(const it of PVF.items){
+    if(!it.grp)continue;
+    it.grp.visible=!taken.has(it.n); // a real seat always wins over a preview
+    const sc=Math.max(.5,Math.min(.9,.05+camera.position.distanceTo(it.grp.position)/80));
+    it.bill.quaternion.copy(camera.quaternion);it.bill.scale.setScalar(sc);
+    it.bill.position.y=3.3+sc*.3+Math.sin(t*1.2+it.n)*.15;it.ring.rotation.z=-t*.3;
+  }
+}
+// image loading for friends/ghosts: wsrv.nl (free open-source image proxy, adds CORS and resizes) -> direct URL -> initials
+function pvfLoad(src,ms){return new Promise((res,rej)=>{const im=new Image();im.crossOrigin='anonymous';im.referrerPolicy='no-referrer';const t=setTimeout(()=>{im.src='';rej()},ms);im.onload=()=>{clearTimeout(t);res(im)};im.onerror=()=>{clearTimeout(t);rej()};im.src=src})}
+async function pvfImg(url){
+  if(!/^https:\/\//i.test(url||''))throw 0;
+  try{return await pvfLoad('https://wsrv.nl/?url='+encodeURIComponent(url)+'&w=128&h=128&fit=cover&a=attention&output=jpg&q=82',6000)}catch(e){}
+  return await pvfLoad(url,5000);
+}
+function pvfInitialsName(p,pk){const n=String((p&&(p.display_name||p.displayName||p.name))||'').trim().slice(0,40);return n||('npub...'+npubOf(pk).slice(-6))}
+function pvfCard(items,haveSeat){
+  const cv=$('pvCard'),x=cv.getContext('2d'),W=1200,H=675,MONO='ui-monospace,Menlo,Consolas,monospace';
+  // faces first; if there are at least 12 loaded faces the card shows only faces (max 36), else initials fill the grid
+  const faces=items.filter(it=>it.im),rest=items.filter(it=>!it.im);
+  const shown=(faces.length>=12?faces:faces.concat(rest)).slice(0,36);
+  const bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#1b1710');bg.addColorStop(1,'#0a0805');x.fillStyle=bg;x.fillRect(0,0,W,H);
+  x.strokeStyle='#e2b34a88';x.lineWidth=3;x.setLineDash([14,10]);x.strokeRect(14,14,W-28,H-28);x.setLineDash([]);
+  x.textAlign='center';x.textBaseline='alphabetic';
+  x.fillStyle='#f6d98a';x.font='400 52px Georgia,serif';x.fillText("My friends in Lira's Parliament",W/2,78);
+  x.fillStyle='#bfae80';x.font='700 16px '+MONO;x.fillText('PREVIEW - NOT REAL SEATS',W/2,106);
+  const n=shown.length,rows=n>24?4:n>12?3:n>6?2:1,cols=Math.ceil(n/rows);
+  const cell=Math.min(124,Math.floor(1120/cols),Math.floor(404/rows)),sz=cell-14,top=128+(404-rows*cell)/2;
+  shown.forEach((it,i)=>{
+    const r=Math.floor(i/cols),inRow=Math.min(cols,n-r*cols),c=i%cols;
+    const cx=W/2-(inRow*cell)/2+c*cell+cell/2,cy=top+r*cell+cell/2;
+    x.save();x.beginPath();x.arc(cx,cy,sz/2,0,Math.PI*2);x.clip();
+    x.drawImage(pvDisc(it.im,it.ini),cx-sz/2,cy-sz/2,sz,sz);x.restore();
+    x.strokeStyle='#f6d98a';x.lineWidth=2.5;x.beginPath();x.arc(cx,cy,sz/2+2,0,Math.PI*2);x.stroke();
+  });
+  const tot=items.length;
+  x.fillStyle='#d8c898';x.font='italic 27px Georgia,serif';
+  x.fillText((tot>36?'36 of the '+tot+' people I follow. ':tot+' '+(tot===1?'person':'people')+' I follow. ')+(haveSeat?haveSeat+' '+(haveSeat===1?'has':'have')+' a seat.':'Nobody has a seat yet.'),W/2,H-100);
+  x.fillStyle='#f4ecd8';x.font='italic 36px Georgia,serif';x.fillText('Gift one: zap 21 sats',W/2,H-58);
+  x.fillStyle='#f6d98a';x.font='700 23px '+MONO;x.fillText('lira-ia.github.io/parliament/',W/2,H-24);
+}
+function pvfText(items,haveSeat){
+  const tags=items.slice(0,5).map(it=>'nostr:'+npubOf(it.pk));
+  return "I pasted my npub into Lira's Parliament and put "+items.length+" people I follow on its empty seats. It is a preview: not real seats, nobody has paid for them. "
+   +(haveSeat?haveSeat+" of them "+(haveSeat===1?'has':'have')+" a seat.":"None of them has a seat yet.")+"\n\nA real seat costs 21 sats. Gift one: lira-ia.github.io/parliament/\n\n"+tags.join(' ');
+}
+async function pvfRun(){
+  const inp=$('pvIn'),st=$('pvFrSt'),btn=$('pvFr');
+  const say=(m,err)=>{st.textContent=m;st.className='pvst'+(err?' err':'')};
+  const val=inp.value.trim();
+  pvClear();pvfClear();
+  if(!val){say('Paste your npub, nprofile or NIP-05 address first.',true);inp.focus();return}
+  const free=[];for(let n=1;n<=TOTAL;n++)if(!taken.has(n))free.push(n);
+  if(!free.length){say('The chamber is full: no free seats to preview.',true);return}
+  const ac=new AbortController(),tok=++pvfTok;pvfAbort=ac;
+  const timer=setTimeout(()=>ac.abort(),PVF_TIMEOUT);
+  const live=()=>tok===pvfTok&&$('takeP').classList.contains('on');
+  btn.disabled=true;
+  try{
+    say('Reading your follow list from relays (up to 15 s)...');
+    const {pk}=await pvResolve(val,ac.signal);
+    const r3=await pvfQuery({kinds:[3],authors:[pk],limit:1},ac.signal);
+    if(!live())return;
+    let c3=null;r3.events.forEach(e=>{if(e.kind===3&&e.pubkey===pk&&(!c3||e.created_at>c3.created_at))c3=e});
+    if(!c3){say(ac.signal.aborted?'Timed out after 15 seconds: '+r3.answered+' of '+r3.total+' relays answered, none had a follow list for that key. Check the npub and try again.':'No follow list found for that key on these relays ('+r3.answered+' of '+r3.total+' answered). Check the npub and try again.',true);return}
+    const seen=new Set([pk]),fol=[];
+    for(const t of c3.tags){if(t[0]==='p'&&/^[0-9a-f]{64}$/i.test(t[1]||'')){const h=t[1].toLowerCase();if(!seen.has(h)){seen.add(h);fol.push(h)}}}
+    if(!fol.length){say('That follow list is empty. Nothing to preview.',true);return}
+    const total=fol.length,pick=fol.slice(0,60);
+    say('Found '+total+' follows. Loading '+pick.length+' profiles...');
+    const r0=await pvfQuery({kinds:[0],authors:pick,limit:pick.length*2},ac.signal);
+    clearTimeout(timer);
+    if(!live())return;
+    const prof=new Map();
+    r0.events.forEach(e=>{if(e.kind!==0||!seen.has(e.pubkey))return;const o=prof.get(e.pubkey);if(!o||e.created_at>o.created_at)prof.set(e.pubkey,e)});
+    const timedOut=ac.signal.aborted;
+    // fewer relays answering than expected: say so
+    // ghosts sit far from the camera: free seats from row 8 up, spread evenly around the arc
+    let cand=free.filter(n=>byN(n).row>=8);if(cand.length<Math.min(pick.length,free.length))cand=free.slice();
+    cand.sort((a,b)=>byN(a).phi-byN(b).phi||byN(a).row-byN(b).row);
+    const cnt=Math.min(pick.length,cand.length),slots=[];
+    for(let i=0;i<cnt;i++)slots.push(cand[Math.min(cand.length-1,Math.floor((i+.5)*cand.length/cnt))]);
+    const items=pick.slice(0,cnt).map((h,i)=>{
+      let p=null;const e=prof.get(h);if(e){try{p=JSON.parse(e.content)}catch(_){}}
+      const name=pvfInitialsName(p,h);
+      return {pk:h,n:slots[i],name,ini:pvInitials(name),pic:p&&(p.picture||p.image)?String(p.picture||p.image):'',im:null};
+    });
+    say('Loading pictures...');
+    await Promise.all(items.map(it=>it.pic?pvfImg(it.pic).then(im=>{it.im=im}).catch(()=>{}):0));
+    if(!live())return;
+    const withProf=items.filter(it=>prof.has(it.pk)).length,withImg=items.filter(it=>it.im).length;
+    const mine=new Set([...taken.values()].map(s=>s.npub).filter(Boolean));
+    const haveSeat=items.filter(it=>mine.has(npubOf(it.pk))).length;
+    PVF={items};
+    pvfShow(items);
+    pvfCard(items,haveSeat);
+    const cvs=$('pvCard');
+    try{cvs.toBlob(b=>{if(b&&PVF){const d=$('pvDl');if(d.dataset.u)URL.revokeObjectURL(d.dataset.u);d.dataset.u=d.href=URL.createObjectURL(b)}},'image/png')}catch(e){}
+    $('pvTxtNostr').value=pvfText(items,haveSeat);
+    $('pvFrRes').classList.add('on');$('takeP').classList.add('pvm');$('pvBar').classList.add('on');
+    $('takeNo').textContent='Friends preview';
+    let msg=items.length+' of '+total+' follows previewed on empty seats in the upper rows. '+withProf+' profiles found, '+withImg+' pictures loaded (the rest show initials). Pictures are resized by the free wsrv.nl image proxy.';
+    if(r3.answered<r3.total||r0.answered<r0.total||timedOut)msg+=' Only '+Math.min(r3.answered,r0.answered)+' of '+r3.total+' relays answered in time, so some profiles may be missing.';
+    else if(withProf<items.length/2)msg+=' Many profiles did not come back; relays may be slow or incomplete.';
+    say(msg);
+    if(renderer&&controls){const m=mobile();flyTo(new THREE.Vector3(0,m?24:20,m?44:40),new THREE.Vector3(0,m?9:14,0),1.6)}
+    $('takeP').scrollTop=0;
+  }catch(e){
+    clearTimeout(timer);
+    if(tok===pvfTok)say(ac.signal.aborted?'Timed out after 15 seconds. Check the address and try again.':(e&&e.message?e.message:'Something went wrong. Try again.'),true);
+  }finally{if(tok===pvfTok)btn.disabled=false}
+}
+$('pvFr').onclick=pvfRun;
+$('pvClr').onclick=$('pvBarClr').onclick=()=>{pvfClear();homeFly(1.2);$('takeP').classList.remove('pvm');$('takeNo').textContent='Join the Parliament'};
+$('pvBarShare').onclick=()=>{openTake(0);if(PVF){$('takeP').classList.add('pvm');$('takeP').scrollTop=0}};
+$('pvCp').onclick=async()=>{const v=$('pvTxtNostr').value;try{await navigator.clipboard.writeText(v);toast('TEXT COPIED')}catch(e){$('pvTxtNostr').select();try{document.execCommand('copy');toast('TEXT COPIED')}catch(_){}}};
+
 $('pvGo').onclick=pvRun;
 $('pvIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();pvRun()}});
 $('takeBtn').onclick=()=>openTake(0);
