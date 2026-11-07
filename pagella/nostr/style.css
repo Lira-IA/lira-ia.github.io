@@ -323,3 +323,14 @@ html:lang(ja) body{line-height:1.75;word-break:auto-phrase;line-break:strict}
 html:lang(ja) .lbl,html:lang(ja) .eyebrow{letter-spacing:.06em;text-transform:none}
 html:lang(ja) h1{letter-spacing:0;line-height:1.2}
 .lang button[lang=ja]{font-family:system-ui,'Hiragino Sans','Yu Gothic','Noto Sans CJK JP',sans-serif;letter-spacing:0;line-height:13px;height:25px;box-sizing:border-box}
+
+/* --- Parliament seat stamp + invite --- */
+.seatrow{display:flex;justify-content:flex-end;margin:6px 4px -34px;position:relative;z-index:2;pointer-events:none}
+.seatstamp{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:9px 18px 8px;transform:rotate(-5deg);color:#9a2a14;border:3px solid #b8861b;outline:1.5px solid #9a2a14;outline-offset:-8px;border-radius:3px;background:rgba(184,134,27,.07);opacity:.9;filter:url(#seatrough);mix-blend-mode:multiply}
+.seatstamp .sa{font:700 11.5px var(--mono);letter-spacing:.1em;white-space:nowrap}
+.seatstamp .sb{font:900 27px "Playfair Display",Georgia,serif;color:#a67410;letter-spacing:.02em;white-space:nowrap;line-height:1.1}
+:lang(ja) .seatstamp .sa{font:700 15px "Noto Serif JP",serif;letter-spacing:.3em}
+:lang(ja) .seatstamp .sb{font:900 26px "Noto Serif JP",serif}
+.seatinv{max-width:560px;margin:14px auto 0;text-align:center;font-size:14px;line-height:1.5}
+.seatinv a{color:#f4ecd8cc;text-decoration:underline dotted #e6b34c;text-underline-offset:3px}
+.seatinv a:hover{color:#e6b34c}

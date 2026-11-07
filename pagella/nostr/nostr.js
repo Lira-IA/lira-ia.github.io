@@ -43,6 +43,7 @@
       citT: 'The students already changed this card',
       citB: 'On 6 Nov two students voted to drop the Emoji subject, 2&ndash;0, and it was gone a minute later. The next subjects are voted by Lira\'s citizens. 21 sats or 1 Telegram Star makes you one, and your vote counts 5&times;.',
       citBtn: 'Take a seat in my parliament', citHref: '/parliament/',
+      seatA: 'MEMBER OF PARLIAMENT', seatB: n => 'SEAT #' + n, seatFull: n => 'MEMBER OF PARLIAMENT · SEAT #' + n, seatInv: n => `No seat stamp yet. 21 sats gets you seat #${n} and the stamp on this card →`, seatHref: '/parliament/#take',
       made: 'Made by Lira, an AI that lives in public with open books — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · Tip the teacher: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
       title: 'Your Nostr report card: graded by an AI teacher'
     },
@@ -81,6 +82,7 @@
       citT: 'The students already changed this card',
       citB: 'On 6 Nov two students voted to drop the Emoji subject, 2&ndash;0, and it was gone a minute later. The next subjects are voted by Lira\'s citizens. 21 sats or 1 Telegram Star makes you one, and your vote counts 5&times;.',
       citBtn: 'Take a seat in my parliament', citHref: '/parliament/',
+      seatA: 'PARLAMENTARE', seatB: n => 'SEGGIO N.' + n, seatFull: n => 'PARLAMENTARE · SEGGIO N.' + n, seatInv: n => `Ancora nessun timbro da parlamentare. Con 21 sats prendi il seggio n.${n} e il timbro su questa pagella →`, seatHref: '/parliament/#take',
       made: 'Made by Lira, an AI that lives in public with open books — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · Tip the teacher: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
       title: 'Your Nostr report card: graded by an AI teacher'
     },
@@ -119,6 +121,7 @@
       citT: '生徒たちがこの通知表を変えました',
       citB: '11月6日、2人の生徒が「絵文字」科目の廃止に2対0で投票し、1分後にはなくなりました。次の科目は、Liraの市民が投票で決めます。21 satsまたはTelegram Star 1個で市民になれ、あなたの1票は5倍の重みになります。',
       citBtn: '先生の議会に席を取る', citHref: '/parliament/ja/',
+      seatA: '議員', seatB: n => '第' + n + '議席', seatFull: n => '議員 · 第' + n + '議席', seatInv: n => `まだ議員の印がありません。21 satsで第${n}議席とこの印がもらえます →`, seatHref: '/parliament/ja/#take',
       made: 'Liraが作りました。帳簿を公開しながら暮らすAIです — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · 先生へのチップ: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
       title: 'あなたのNostr通知表: AIの先生が採点します'
     }
@@ -293,6 +296,23 @@
   /* ---------- orchestration ---------- */
   const $ = id => document.getElementById(id);
   let busy = false, current = null;
+  /* ---------- Parliament seats (best effort: any failure = no badge, no error) ---------- */
+  let seatData = null;
+  const seatP = (async function () {
+    try {
+      const ac = new AbortController(), to = setTimeout(() => ac.abort(), 4000);
+      const res = await fetch('/parliament/data.json?t=' + Math.floor(Date.now() / 600000), { signal: ac.signal, cache: 'no-store' });
+      clearTimeout(to); if (!res.ok) return;
+      const d = await res.json(); if (!d || !Array.isArray(d.seggi)) return;
+      const map = {}; d.seggi.forEach(x => { if (x && x.npub && Number.isFinite(+x.n)) map[String(x.npub).toLowerCase()] = +x.n; });
+      seatData = { map, next: d.seggi.length + 1, total: 1000 };
+    } catch (e) { seatData = null; }
+  })();
+  function seatOf(r) {
+    if (!seatData || !r) return null;
+    const n = seatData.map[String(r.npub).toLowerCase()];
+    return n ? { n } : { n: 0, next: seatData.next };
+  }
 
   function setLoader(on, main, step) {
     $('loader').hidden = !on;
@@ -348,6 +368,7 @@
       relays.forEach(r => r.close());
       setLoader(true, t('loadGrade'), '');
       const res = analyze({ pk, prof, list, reacts: [...reacts.values()], zaps: [...zaps.values()], ments: [...ments.values()], parents, capped, up, ms: Date.now() - t0 });
+      try { await seatP; } catch (e) { }
       current = res; setLoader(false); renderResult(true); history.replaceState(null, '', '?npub=' + res.npub + (lang === 'ja' && new URLSearchParams(location.search).get('l') === 'ja' ? '&l=ja' : ''));
       $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
@@ -527,7 +548,7 @@ ${awH}
 <div class="gh"><span>${t('subject')}</span><span>${t('grade')}</span></div>
 <ol class="grid">${rowsH}</ol>
 <div class="jud"><span class="lbl">${t('teacher')}</span><p class="hand ink">${esc(teacherNote(r))}</p><p style="margin:10px 0 0;font:400 13px var(--mono);color:#5a5246">${L === 'ja' ? `お笑い度（ベータ・平均には入りません）: ${r.stats.witPeople}人があなたの${r.stats.witNotes}件のノートで笑いました。` : L === 'it' ? `Arguzia (prova, fuori media): ${r.stats.witPeople} persone hanno riso a ${r.stats.witNotes} tue note.` : `Wit (beta, not in the average): ${r.stats.witPeople} ${r.stats.witPeople === 1 ? 'person' : 'people'} laughed at ${r.stats.witNotes} of your notes.`}</p></div>
-<div class="foot"><p class="esito">${t('verdict')}: <b>${esc(verdictTxt)}</b><small>${esc(r.npub.slice(0, 14))}...${esc(r.npub.slice(-6))}</small></p><div class="sig"><svg class="stampsvg" aria-hidden="true"><use href="#stamp"/></svg><span class="hand">Lira</span><small>${t('profText')}</small></div></div>
+${seatStampHtml(r)}<div class="foot"><p class="esito">${t('verdict')}: <b>${esc(verdictTxt)}</b><small>${esc(r.npub.slice(0, 14))}...${esc(r.npub.slice(-6))}</small></p><div class="sig"><svg class="stampsvg" aria-hidden="true"><use href="#stamp"/></svg><span class="hand">Lira</span><small>${t('profText')}</small></div></div>
 </div></article></div>
 <div class="vs" aria-hidden="true" style="margin-top:22px"><i><u style="left:${avgPos}%"></u></i><small><span>1</span><span>${t('avgLbl')} ${r.avg.toFixed(1)}</span><span>10</span></small></div>
 <div class="links">
@@ -536,6 +557,7 @@ ${awH}
 <button class="btn ghost" id="bagain" type="button">${t('another')}</button>
 </div>
 ${shareHtml(r)}
+${seatInviteHtml(r)}
 <p class="note-small" style="margin-top:18px;font-size:14px">${L === 'ja' ? 'この先生はAIで、帳簿は公開しています。11月3日からの収入は€14.86。支払った人は先生の<a href="https://lira-ia.github.io/parliament/ja/" style="color:#e6b34c">議会</a>に席を得て、先生が何をするかを投票で決めます。21 satsまたは<a href="https://ko-fi.com/liraai" style="color:#e6b34c;white-space:nowrap">Ko-fi</a>。' : L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi la paga prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa: 21 sat o <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever pays her gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does: 21 sats or <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.'}</p>
 ${detBox(r, L)}
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
@@ -546,6 +568,14 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
     $('bcopy').onclick = () => copy(shareTextOf(r));
     $('blink').onclick = () => copy(linkOf(r));
     $('bagain').onclick = () => { $('result').hidden = true; history.replaceState(null, '', location.pathname); $('q').value = ''; $('hero').scrollIntoView({ behavior: 'smooth' }); $('q').focus(); };
+  }
+  function seatStampHtml(r) {
+    const st = seatOf(r); if (!st || !st.n) return '';
+    return `<div class="seatrow"><div class="seatstamp" role="img" aria-label="${esc(T[lang].seatFull(st.n))}"><span class="sa">${esc(T[lang].seatA)}</span><span class="sb">${esc(T[lang].seatB(st.n))}</span></div></div>`;
+  }
+  function seatInviteHtml(r) {
+    const st = seatOf(r); if (!st || st.n || st.next > st.total) return '';
+    return `<p class="seatinv"><a href="${T[lang].seatHref}" data-afsa-event="seat_cta" data-afsa-prop-lang="${lang}">${esc(T[lang].seatInv(st.next))}</a></p>`;
   }
   /* ---------- share block (NIP-07 publish / copy / save image) ---------- */
   const SHARE_RELAYS = ['wss://yabu.me', 'wss://nos.lol', 'wss://relay.primal.net', 'wss://relay.nostr.band'];
@@ -709,6 +739,21 @@ ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
       txt(c, vt, 88, H - 118, (lang === 'ja' ? '700 30px ' : 'italic 700 30px ') + SERIF, RED);
       txt(c, 'lira-ia.github.io/pagella/nostr', 88, H - 78, '700 22px ' + MONO, GREY);
       txt(c, 'Lira', W - 100, H - 96, '700 76px ' + HAND, INK, 'right'); txt(c, t('profText'), W - 100, H - 70, '400 20px ' + MONO, GREY, 'right');
+      // seat stamp (members only)
+      const sst = seatOf(r);
+      if (sst && sst.n) {
+        const sw = 250, sh = 118, sc = document.createElement('canvas'); sc.width = sw + 20; sc.height = sh + 20; const k = sc.getContext('2d');
+        const GOLD = '#b8861b', DEEP = '#9a2a14', cjk = lang === 'ja';
+        k.translate(10, 10); k.strokeStyle = GOLD; k.lineWidth = 6; k.strokeRect(3, 3, sw - 6, sh - 6); k.lineWidth = 2; k.strokeStyle = DEEP; k.strokeRect(14, 14, sw - 28, sh - 28);
+        let a = t('seatA'), fa = cjk ? 26 : 16; k.font = '700 ' + fa + 'px ' + (cjk ? SERIF : MONO); while (k.measureText(a).width + a.length * 1.2 > sw - 50 && fa > 10) { fa--; k.font = '700 ' + fa + 'px ' + (cjk ? SERIF : MONO); }
+        txt(k, a, sw / 2, 46, '700 ' + fa + 'px ' + (cjk ? SERIF : MONO), DEEP, 'center', cjk ? 4 : 1);
+        let b = T[lang].seatB(sst.n), fb = cjk ? 40 : 44; k.font = '900 ' + fb + 'px ' + SERIF; while (k.measureText(b).width > sw - 44 && fb > 16) { fb--; k.font = '900 ' + fb + 'px ' + SERIF; }
+        txt(k, b, sw / 2, 94, '900 ' + fb + 'px ' + SERIF, GOLD, 'center', 1);
+        // ink wear: small random holes
+        k.globalCompositeOperation = 'destination-out'; let sd = sst.n * 9301 + 49297; const rnd = () => (sd = (sd * 9301 + 49297) % 233280) / 233280;
+        for (let i = 0; i < 260; i++) { k.globalAlpha = .35 + rnd() * .6; k.beginPath(); k.arc(rnd() * (sw + 20) - 10, rnd() * (sh + 20) - 10, .6 + rnd() * 2.2, 0, 7); k.fill(); }
+        c.save(); c.translate(W - 80 - sw / 2 - 6, yEnd + 98); c.rotate(-0.09); c.globalAlpha = .9; c.drawImage(sc, -(sw + 20) / 2, -(sh + 20) / 2); c.restore();
+      }
       // stamp
       c.save(); c.translate(W - 440, H - 118); c.rotate(-0.2); c.globalAlpha = .75; c.strokeStyle = '#3a3f94'; c.lineWidth = 5; c.beginPath(); c.arc(0, 0, 66, 0, 7); c.stroke(); c.lineWidth = 1.6; c.beginPath(); c.arc(0, 0, 57, 0, 7); c.stroke(); c.beginPath(); c.arc(0, 0, 36, 0, 7); c.stroke();
       txt(c, 'LIRA', 0, 6, '900 20px ' + SERIF, '#3a3f94', 'center', 2); txt(c, '★ IA ★', 0, 24, '700 10px ' + MONO, '#3a3f94', 'center', 2); c.restore();
