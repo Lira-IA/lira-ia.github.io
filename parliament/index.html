@@ -240,7 +240,7 @@ body.pn .lang,body.clean .lang{display:none}
 /* /GALLERY */
 </style>
 <link rel="alternate" hreflang="ja" href="https://lira-ia.github.io/parliament/ja/">
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="The Parliament of Lira: 3D hemicycle with 1,000 seats"></canvas>
 <div id="veil"></div>
@@ -256,7 +256,7 @@ body.pn .lang,body.clean .lang{display:none}
 </header>
 
 <div class="bottom">
-  <div class="ctas"><button class="cta" id="takeBtn">TAKE A SEAT · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">BID ON THE FLOOR</button><button class="cta2 vote" id="voteBtn">THE LAST VOTE</button></div><button class="cta2 gal" id="galBtn">SHOUT FROM THE GALLERY &middot; <b>FREE</b></button></div>  <!-- DIVISION -->
+  <div class="ctas"><button class="cta" id="takeBtn" data-afsa-event="take_btn">TAKE A SEAT · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">BID ON THE FLOOR</button><button class="cta2 vote" id="voteBtn">THE LAST VOTE</button></div><button class="cta2 gal" id="galBtn">SHOUT FROM THE GALLERY &middot; <b>FREE</b></button></div>  <!-- DIVISION -->
   <div class="acts"><span class="lbl">Recent acts</span><div class="row" id="acts"></div></div>
 </div>
 <a class="home" href="https://lira-ia.github.io/" target="_blank" rel="noopener">lira-ia.github.io</a>
@@ -273,11 +273,11 @@ body.pn .lang,body.clean .lang{display:none}
   <div class="lnbox" id="lnBox">
     <h3>No Nostr?</h3>
     <p class="lnt">Pay 21 sats with any Lightning wallet</p>
-    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your name (optional, max 32)" aria-label="Your name, optional"><button id="lnGo" type="button">GET INVOICE</button></div>
+    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your name (optional, max 32)" aria-label="Your name, optional"><button id="lnGo" type="button" data-afsa-event="ln_invoice">GET INVOICE</button></div>
     <p class="lnst" id="lnSt" role="status" aria-live="polite"></p>
     <div class="lnres" id="lnRes">
       <div id="lnQr" aria-label="Lightning invoice QR code"></div>
-      <div class="links"><button class="main" id="lnCopy" type="button">COPY INVOICE</button><a id="lnOpen" href="#">OPEN IN WALLET</a><button id="lnSave" type="button">SAVE MY KEY</button></div>
+      <div class="links"><button class="main" id="lnCopy" type="button" data-afsa-event="ln_copy">COPY INVOICE</button><a id="lnOpen" href="#" data-afsa-event="ln_open_wallet">OPEN IN WALLET</a><button id="lnSave" type="button">SAVE MY KEY</button></div>
       <p class="lnkey"><b>Save your key.</b> It is generated in your browser and is the only proof the seat is yours. You need it to vote later from a Nostr client. Without it the seat stays, but you cannot vote.</p>
     </div>
     <p class="lnp">Your seat lights up within 10 minutes of paying. No account, no email. A throwaway Nostr key is made in your browser; only the name you type is published.</p>
@@ -288,7 +288,7 @@ body.pn .lang,body.clean .lang{display:none}
     <p class="pvst" id="pvSt" role="status" aria-live="polite"></p>
     <div class="pvres" id="pvRes">
       <div class="pvwho"><div class="ph" id="pvPh"></div><div><b>PREVIEW · NOT YET YOURS</b><p id="pvTxt"></p></div></div>
-      <div class="links"><a class="main" id="pvZap" href="#">OPEN IN NOSTR · ZAP 21</a><a id="pvNj" target="_blank" rel="noopener" href="#">NJUMP</a><a target="_blank" rel="noopener" href="https://t.me/lira_100euro_bot">1 STAR ON TELEGRAM</a><a target="_blank" rel="noopener" href="https://ko-fi.com/liraai">KO-FI</a></div>
+      <div class="links"><a class="main" id="pvZap" href="#" data-afsa-event="zap_seat">OPEN IN NOSTR · ZAP 21</a><a id="pvNj" target="_blank" rel="noopener" href="#">NJUMP</a><a target="_blank" rel="noopener" href="https://t.me/lira_100euro_bot">1 STAR ON TELEGRAM</a><a target="_blank" rel="noopener" href="https://ko-fi.com/liraai" data-afsa-event="kofi_seat">KO-FI</a></div>
     </div>
     <button class="pvfr" id="pvFr" type="button">FILL IT WITH YOUR FRIENDS</button>
     <a class="pvfr" href="yours/" style="text-decoration:none;text-align:center;box-sizing:border-box">WHO HAS ZAPPED YOU? SEE YOUR OWN PARLIAMENT →</a>
@@ -1276,6 +1276,7 @@ $('takeBtn').onclick=()=>openTake(0);
  $('lCopy').onclick=async()=>{try{await navigator.clipboard.writeText(np);toast('NPUB COPIED')}catch(e){prompt('Copy the npub',np)}}}
 function fromHash(){if(divHash())return; // DIVISION
   if(DIV.on)divOff(true); // DIVISION
+  if(location.hash==='#take'){openTake();return}
   if(location.hash==='#floor'){openBid();return}
   if(location.hash==='#gallery'){galOpen();return}
   const m=/^#seat-(\d{1,4})$/.exec(location.hash);if(m){const n=+m[1];if(n>=1&&n<=TOTAL){openSeat(n);return}}

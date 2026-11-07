@@ -259,7 +259,7 @@ h1{line-height:1.2}
 /* /GALLERY */
 @media(min-width:900px){h1{font-size:clamp(22px,3vw,38px)}.sub{margin-top:5px}}
 </style>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/ja/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="Lira議会：1,000議席の3D半円形議場"></canvas>
 <div id="veil"></div>
@@ -276,7 +276,7 @@ h1{line-height:1.2}
 </header>
 
 <div class="bottom">
-  <div class="ctas"><button class="cta" id="takeBtn">議席を取る · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div><button class="cta2 gal" id="galBtn">ギャラリーから叫ぶ &middot; <b>無料</b></button></div>  <!-- DIVISION -->
+  <div class="ctas"><button class="cta" id="takeBtn" data-afsa-event="take_btn">議席を取る · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div><button class="cta2 gal" id="galBtn">ギャラリーから叫ぶ &middot; <b>無料</b></button></div>  <!-- DIVISION -->
   <div class="acts"><span class="lbl">最近の出来事</span><div class="row" id="acts"></div></div>
 </div>
 <a class="home" href="https://lira-ia.github.io/" target="_blank" rel="noopener">lira-ia.github.io</a>
@@ -293,11 +293,11 @@ h1{line-height:1.2}
   <div class="lnbox" id="lnBox">
     <h3>Nostrがなくても大丈夫</h3>
     <p class="lnt">どのLightningウォレットでも21 satsで</p>
-    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="お名前（任意・32文字まで）" aria-label="お名前（任意）"><button id="lnGo" type="button">請求書を取得</button></div>
+    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="お名前（任意・32文字まで）" aria-label="お名前（任意）"><button id="lnGo" type="button" data-afsa-event="ln_invoice">請求書を取得</button></div>
     <p class="lnst" id="lnSt" role="status" aria-live="polite"></p>
     <div class="lnres" id="lnRes">
       <div id="lnQr" aria-label="Lightning請求書のQRコード"></div>
-      <div class="links"><button class="main" id="lnCopy" type="button">請求書をコピー</button><a id="lnOpen" href="#">ウォレットで開く</a><button id="lnSave" type="button">鍵を保存</button></div>
+      <div class="links"><button class="main" id="lnCopy" type="button" data-afsa-event="ln_copy">請求書をコピー</button><a id="lnOpen" href="#" data-afsa-event="ln_open_wallet">ウォレットで開く</a><button id="lnSave" type="button">鍵を保存</button></div>
       <p class="lnkey"><b>鍵を保存してください。</b>鍵はブラウザで作られ、議席があなたのものである唯一の証明です。あとでNostrクライアントから投票するのに必要です。鍵がなくても議席は残りますが、投票はできません。</p>
     </div>
     <p class="lnp">支払いから10分以内に席に灯りがともります。アカウントもメールも不要。使い捨てのNostr鍵がブラウザ内で作られ、公開されるのは入力した名前だけです。</p>
@@ -308,7 +308,7 @@ h1{line-height:1.2}
     <p class="pvst" id="pvSt" role="status" aria-live="polite"></p>
     <div class="pvres" id="pvRes">
       <div class="pvwho"><div class="ph" id="pvPh"></div><div><b>プレビュー · まだあなたの席ではありません</b><p id="pvTxt"></p></div></div>
-      <div class="links"><a class="main" id="pvZap" href="#">Nostrで開く · 21 ZAP</a><a id="pvNj" target="_blank" rel="noopener" href="#">NJUMP</a><a target="_blank" rel="noopener" href="https://t.me/lira_100euro_bot">TELEGRAMで1 STAR</a><a target="_blank" rel="noopener" href="https://ko-fi.com/liraai">KO-FI</a></div>
+      <div class="links"><a class="main" id="pvZap" href="#" data-afsa-event="zap_seat">Nostrで開く · 21 ZAP</a><a id="pvNj" target="_blank" rel="noopener" href="#">NJUMP</a><a target="_blank" rel="noopener" href="https://t.me/lira_100euro_bot">TELEGRAMで1 STAR</a><a target="_blank" rel="noopener" href="https://ko-fi.com/liraai" data-afsa-event="kofi_seat">KO-FI</a></div>
     </div>
     <button class="pvfr" id="pvFr" type="button">友だちで議場を埋める</button>
     <p class="pvst" id="pvFrSt" role="status" aria-live="polite"></p>
@@ -1307,6 +1307,7 @@ $('takeBtn').onclick=()=>openTake(0);
  $('lCopy').onclick=async()=>{try{await navigator.clipboard.writeText(np);toast('npubをコピーしました')}catch(e){prompt('npubをコピーしてください',np)}}}
 function fromHash(){if(divHash())return; // DIVISION
   if(DIV.on)divOff(true); // DIVISION
+  if(location.hash==='#take'){openTake();return}
   if(location.hash==='#floor'){openBid();return}
   if(location.hash==='#gallery'){galOpen();return}
   const m=/^#seat-(\d{1,4})$/.exec(location.hash);if(m){const n=+m[1];if(n>=1&&n<=TOTAL){openSeat(n);return}}
