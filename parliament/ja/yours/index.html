@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>あなたの議会 — zap してくれた全員を、黄金の議席に</title>
+<meta name="description" content="npub を貼ると、過去90日間にあなたへ zap した人たちが、あなただけの黄金の議会に着席します。処理はすべてブラウザ内で完結し、何も送信しません。">
+<meta name="theme-color" content="#0e0c09">
+<meta property="og:type" content="website">
+<meta property="og:title" content="あなたの議会 — zap してくれた全員を、黄金の議席に">
+<meta property="og:description" content="npub を貼るだけ。過去90日間に zap してくれた人が、顔写真つきで着席します。">
+<meta property="og:image" content="https://lira-ia.github.io/parliament/og.png">
+<meta property="og:url" content="https://lira-ia.github.io/parliament/ja/yours/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0c09'/%3E%3Cpath d='M8 46a24 24 0 0 1 48 0' fill='none' stroke='%23e2b34a' stroke-width='4'/%3E%3C/svg%3E">
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js","three/addons/":"../../vendor/"}}</script>
+<style>
+:root{--bg:#0e0c09;--gold:#e2b34a;--gold2:#f6d98a;--tx:#f1e9d6;--dim:rgba(241,233,214,.62);--serif:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Noto Serif CJK JP","DejaVu Serif",serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,"Hiragino Sans","Yu Gothic","Noto Sans JP","Noto Sans CJK JP","DejaVu Sans Mono",monospace}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);overflow:hidden;font-family:var(--serif)}
+#gl{position:fixed;inset:0;display:block;width:100%;height:100%;touch-action:none;outline:none}
+#veil{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,transparent 45%,rgba(8,6,3,.65) 100%)}
+.hid{display:none!important}
+/* header */
+.top{position:fixed;left:0;right:0;top:0;padding:max(14px,env(safe-area-inset-top)) 20px 30px;pointer-events:none;background:linear-gradient(#0e0c09f2 0%,#0e0c09b8 62%,transparent);text-align:center;transition:opacity .6s}
+body:not(.s-ready):not(.s-zero) .top{opacity:0}
+.eyebrow{font:600 10.5px/1 var(--mono);letter-spacing:.34em;color:var(--gold);text-transform:uppercase}
+h1{margin:10px 0 0;font:400 clamp(30px,8.4vw,64px)/1.02 var(--serif);color:var(--gold2);text-shadow:0 2px 22px #000,0 0 40px #e2b34a33;word-break:break-word}
+h1 small{display:block;font:600 clamp(10px,2.7vw,13px)/1 var(--mono);letter-spacing:.34em;color:var(--tx);opacity:.85;margin-bottom:8px;text-shadow:none}
+#sub{margin:9px auto 0;font:600 clamp(12px,3.3vw,16px)/1.3 var(--mono);letter-spacing:.06em;color:var(--tx);text-shadow:0 1px 8px #000,0 0 16px #000}
+#sub b{color:var(--gold2);font-weight:700;font-variant-numeric:tabular-nums}
+#sub i{font-style:normal;color:var(--dim)}
+#note{margin:6px auto 0;max-width:520px;font:12px/1.5 var(--serif);color:var(--dim);text-shadow:0 1px 6px #000}
+.lang{position:fixed;top:max(12px,env(safe-area-inset-top));right:14px;z-index:9;display:flex;gap:2px;font:700 11px/1 var(--mono);letter-spacing:.08em;background:#0e0c09cc;border:1px solid #e2b34a55;border-radius:999px;padding:3px}
+.lang a,.lang span{padding:7px 10px;border-radius:999px;text-decoration:none;color:var(--dim)}
+.lang a:hover{color:var(--gold2)}
+.lang span{background:#e2b34a;color:#1a1306}
+/* bottom */
+.bottom{position:fixed;left:0;right:0;bottom:0;padding:30px 14px max(10px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:12px;background:linear-gradient(transparent,#0e0c09e0 60%);pointer-events:none}
+.acts{display:flex;gap:10px;pointer-events:auto;transition:opacity .5s}
+body:not(.s-ready) .acts.r{display:none}
+.cta{cursor:pointer;border:0;font:700 14px/1 var(--mono);letter-spacing:.2em;color:#1a1306;padding:16px 28px;border-radius:999px;background:linear-gradient(180deg,#f6d98a,#e2b34a 60%,#c8962c);box-shadow:0 0 0 1px #f6d98a55,0 8px 34px #e2b34a55;text-decoration:none;white-space:nowrap}
+.cta:hover{filter:brightness(1.1)}
+.cta2{cursor:pointer;font:700 11.5px/1 var(--mono);letter-spacing:.18em;color:var(--gold2);padding:0 18px;border-radius:999px;background:#0e0c09aa;border:1px solid #e2b34a88;white-space:nowrap}
+.cta2:hover{background:#e2b34a22}
+.foot{pointer-events:auto;font:11px/1.4 var(--mono);letter-spacing:.02em;color:var(--dim);text-align:center;max-width:620px}
+.foot a{color:var(--gold2);text-decoration:none;white-space:nowrap}
+.foot a:hover{text-decoration:underline}
+/* panels */
+.panel{position:fixed;z-index:5;background:linear-gradient(180deg,#1b1710f6,#120f09f8);border:1px solid #e2b34a55;box-shadow:0 20px 80px #000c,0 0 0 1px #000,0 0 60px #e2b34a1f inset;border-radius:16px;padding:22px;transition:opacity .3s,transform .3s}
+.x{position:absolute;right:10px;top:10px;width:34px;height:34px;border-radius:50%;border:1px solid #e2b34a44;background:#0e0c0988;color:var(--tx);font:20px/1 var(--mono);cursor:pointer}
+.x:hover{border-color:var(--gold)}
+/* entry */
+#entry{left:50%;top:50%;width:min(540px,calc(100% - 24px));transform:translate(-50%,-50%);text-align:center;padding:30px 26px 22px}
+body:not(.s-entry) #entry{opacity:0;pointer-events:none;transform:translate(-50%,-46%)}
+#entry .eyebrow{display:block;margin-bottom:12px}
+#entry h2{margin:0 0 10px;font:400 clamp(28px,7vw,40px)/1.08 var(--serif);color:var(--gold2)}
+#entry p{margin:0 0 16px;font:15px/1.7 var(--serif);color:var(--dim)}
+.row{display:flex;gap:8px}
+.row input{flex:1;min-width:0;height:50px;padding:0 14px;border-radius:12px;border:1px solid #e2b34a77;background:#0e0c09;color:var(--tx);font:14px var(--mono);outline:none}
+.row input:focus{border-color:var(--gold2);box-shadow:0 0 0 3px #e2b34a33}
+.row button{height:50px;padding:0 20px;font-size:13px}
+#err{min-height:18px;margin:10px 0 0;font:14px/1.5 var(--serif);color:#ff9d8a}
+.ex{margin-top:6px;font:12px var(--mono);color:var(--dim)}
+.ex button{background:none;border:0;padding:0;font:inherit;color:var(--gold2);cursor:pointer;text-decoration:underline}
+.priv{margin:14px 0 0!important;font:11px/1.45 var(--mono)!important;color:var(--dim)!important}
+/* loading and messages */
+#load{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;text-align:center;pointer-events:none;transition:opacity .4s;width:min(520px,calc(100% - 24px))}
+body:not(.s-load) #load{opacity:0}
+#load .big{font:400 clamp(22px,5.4vw,32px)/1.2 var(--serif);color:var(--gold2);text-shadow:0 2px 20px #000,0 0 30px #000}
+#load .sm{margin-top:10px;font:12px/1.5 var(--mono);letter-spacing:.06em;color:var(--dim);text-shadow:0 1px 8px #000}
+#load .bar{width:220px;height:3px;margin:16px auto 0;border-radius:2px;background:#e2b34a22;overflow:hidden}
+#load .bar i{display:block;height:100%;width:40%;background:linear-gradient(90deg,transparent,var(--gold2),transparent);animation:slide 1.3s linear infinite}
+@keyframes slide{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
+#msg{left:50%;top:50%;width:min(480px,calc(100% - 24px));transform:translate(-50%,-50%);text-align:center}
+body:not(.s-err) #msg.e,body:not(.s-zero) #msg.z{opacity:0;pointer-events:none}
+#msg.z{top:auto;bottom:112px;transform:translateX(-50%)}
+#msg h3{margin:0 0 8px;font:400 24px/1.2 var(--serif);color:var(--gold2)}
+#msg p{margin:0 0 14px;font:16px/1.5 var(--serif);color:var(--tx)}
+#msg .acts{justify-content:center;flex-wrap:wrap}
+#msg .cta{padding:14px 22px;font-size:12px}
+#msg .cta2{display:inline-flex;align-items:center;padding:14px 18px}
+@media(max-width:700px){#msg.z{bottom:128px}#msg h3{font-size:20px}#msg p{font-size:14.5px}}
+/* seat panel */
+#seatP{right:24px;top:50%;width:330px;transform:translateY(calc(-50% + 18px));opacity:0;pointer-events:none}
+#seatP.on{opacity:1;pointer-events:auto;transform:translateY(-50%)}
+.seatno{font:600 10.5px var(--mono);letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.sh{display:flex;gap:16px;align-items:center;margin:12px 0 14px}
+#spImg{flex:none;width:76px;height:76px;border-radius:50%;border:2px solid var(--gold2);box-shadow:0 0 28px #e2b34a55;background:#2a2012 center/cover}
+#spName{font:400 24px/1.12 var(--serif);color:var(--tx);word-break:break-word}
+#spSats{font:700 22px var(--mono);color:var(--gold2);font-variant-numeric:tabular-nums}
+#spSats small{font:600 11px var(--mono);letter-spacing:.14em;color:var(--dim)}
+#spMeta{margin:4px 0 14px;font:12px/1.4 var(--mono);color:var(--dim)}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{flex:1 1 auto;text-align:center;font:700 11px var(--mono);letter-spacing:.12em;padding:11px 12px;border-radius:999px;border:1px solid #e2b34a88;color:var(--gold2);text-decoration:none;background:#e2b34a10}
+.links a:hover{background:#e2b34a2a}
+@media(max-width:700px){#seatP{left:10px;right:10px;bottom:10px;top:auto;width:auto;padding:16px;transform:translateY(24px)}#seatP.on{transform:none}#spImg{width:60px;height:60px}#spName{font-size:20px}}
+/* share */
+#shareM{inset:0;z-index:8;display:flex;align-items:center;justify-content:center;background:#0a0805e6;opacity:0;pointer-events:none;transition:opacity .25s;padding:12px}
+#shareM.on{opacity:1;pointer-events:auto}
+#shareM .in{position:relative;width:min(780px,100%);max-height:100%;overflow:auto;background:linear-gradient(180deg,#1b1710,#120f09);border:1px solid #e2b34a55;border-radius:16px;padding:20px}
+#shareM .in::-webkit-scrollbar{display:none}
+#cardC{display:block;width:100%;height:auto;border:1px solid #e2b34a55;border-radius:8px;background:#0e0c09}
+#shareT{width:100%;min-height:118px;margin-top:12px;font:12.5px/1.5 var(--mono);color:var(--tx);background:#0e0c09;border:1px solid #e2b34a55;border-radius:10px;padding:10px;resize:vertical}
+#shareM .acts{margin-top:12px;flex-wrap:wrap}
+#shareM .acts .cta{padding:14px 20px;font-size:12px}
+#shareM .acts .cta2{padding:14px 18px;display:inline-flex;align-items:center;text-decoration:none}
+#shPost{font-family:var(--mono);letter-spacing:.12em}
+#shPost[disabled]{opacity:.55;cursor:wait}
+#shSt a{color:var(--gold2)}
+#shareM h3{margin:0 34px 12px 0;font:600 10.5px var(--mono);letter-spacing:.26em;color:var(--gold);text-transform:uppercase}
+#shareM .tiny{margin:10px 0 0;font:11px/1.4 var(--mono);color:var(--dim)}
+#toast{position:fixed;left:50%;top:84px;transform:translate(-50%,-10px);z-index:20;padding:9px 16px;border-radius:999px;background:var(--gold2);color:#1a1306;font:700 11px var(--mono);letter-spacing:.14em;opacity:0;pointer-events:none;transition:.25s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#fade{position:fixed;inset:0;background:#0a0805;z-index:7;opacity:0;pointer-events:none;transition:opacity .35s}
+#fade.on{opacity:1}
+#nogl{position:fixed;inset:0;z-index:2;display:none;overflow:auto;padding:190px 20px 150px;text-align:center}
+@media (max-width:520px){.top{padding-top:calc(max(14px,env(safe-area-inset-top)) + 40px)}} /*lirafix-top*/
+#nogl.on{display:block}
+#nogl div{display:inline-block;margin:6px;width:70px;font:11px var(--mono);color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#nogl div b{display:block;width:56px;height:56px;margin:0 auto 4px;border-radius:50%;border:2px solid var(--gold2);background:#2a2012 center/cover}
+</style>
+</head>
+<body class="s-entry">
+<canvas id="gl" tabindex="-1" aria-label="3D の議会"></canvas>
+<div id="veil"></div>
+<div id="nogl"></div>
+
+<nav class="lang" aria-label="言語 / Language"><a id="lnEn" href="../../yours/" hreflang="en" lang="en">EN</a><span aria-current="true">日本語</span></nav>
+
+<header class="top">
+  <div class="eyebrow">あなたの議会</div>
+  <h1 id="ttl"><small>この議会の主</small><span id="ttlN">—</span></h1>
+  <div id="sub"></div>
+  <div id="note"></div>
+</header>
+
+<section class="panel" id="entry">
+  <span class="eyebrow">あなたの議会</span>
+  <h2>誰があなたに zap した？</h2>
+  <p>npub を貼ってください。過去90日間にあなたへ zap した人が、顔写真つきで着席します。たくさん送ってくれた人ほど前列です。</p>
+  <form class="row" id="f" autocomplete="off">
+    <input id="in" type="text" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="npub1… または name@domain" aria-label="npub、nprofile、または NIP-05">
+    <button class="cta" type="submit">着席させる</button>
+  </form>
+  <div id="err" role="alert"></div>
+  <div class="ex">npub が手元にない？ <button id="exLira" type="button">Lira の議会を見る</button></div>
+  <p class="priv">処理はブラウザ内で完結します。zap は Nostr リレーから直接読み取り、Lira には何も送信されません。画像のリサイズには wsrv.nl の画像プロキシを使います。</p>
+</section>
+
+<div id="load" role="status" aria-live="polite"><div class="big" id="ldBig">zap を読み込み中…</div><div class="sm" id="ldSm"></div><div class="bar"><i></i></div></div>
+
+<section class="panel e" id="msg" role="alert" style="display:none"></section>
+
+<aside class="panel" id="seatP" aria-live="polite">
+  <button class="x" id="spX" aria-label="閉じる">×</button>
+  <div class="seatno" id="spNo"></div>
+  <div class="sh"><div id="spImg"></div><div><div id="spName"></div><div id="spSats"></div></div></div>
+  <div id="spMeta"></div>
+  <div class="links"><a id="spProf" target="_blank" rel="noopener">プロフィール</a><a id="spHer">この人の議会</a></div>
+</aside>
+
+<div class="panel" id="shareM"><div class="in">
+  <button class="x" id="shX" aria-label="閉じる">×</button>
+  <h3>議会をシェア</h3>
+  <canvas id="cardC" width="1200" height="675" aria-label="あなたの議会のシェア用カード"></canvas>
+  <textarea id="shareT" aria-label="Nostr に投稿するテキスト"></textarea>
+  <div class="acts"><button class="cta hid" id="shPost" type="button">Nostr に投稿</button><a class="cta" id="shDl" download="my-parliament.png">PNG を保存</a><button class="cta2" id="shCp" type="button">テキストをコピー</button></div>
+  <p class="tiny hid" id="shSt" role="status" aria-live="polite"></p>
+  <p class="tiny" id="shHint">このテキストを Nostr に投稿し、PNG を添付してください。すべてブラウザ内で作成されています。</p>
+</div></div>
+
+<div class="bottom">
+  <div class="acts r"><button class="cta" id="bShare" type="button">カードをシェア</button><button class="cta2" id="bAnother" type="button">別の npub</button></div>
+  <div class="foot">Lira が作りました。払ってくれる人に統治される AI です。 <a href="../">彼女の議会で席をとる →</a></div>
+</div>
+<div id="fade"></div>
+<div id="toast"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/OrbitControls.js';
+
+const $=id=>document.getElementById(id);
+const Q=new URLSearchParams(location.search);
+const RELAYS=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net','wss://nostr.mom'];
+const DAYS=90, MAXREC=3000, SIZES=[100,250,500,1000];
+const SITE='https://lira-ia.github.io/parliament/ja/yours/';
+const MONO='ui-monospace,Menlo,Consolas,"Hiragino Sans","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",monospace';
+const SERIF='Georgia,"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Noto Serif CJK JP",serif';
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const mobile=()=>innerWidth<700;
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2000)}
+function state(s){document.body.className=s}
+
+/* ---------- bech32 / keys ---------- */
+const B32='qpzry9x8gf2tvdw0s3jn54khce6mua7l',GEN=[0x3b6a57b2,0x26508e6d,0x1ea119fa,0x3d4233dd,0x2a1462b3];
+function polymod(hrp,d){let chk=1;const pm=v=>{const b=chk>>>25;chk=((chk&0x1ffffff)<<5)^v;for(let k=0;k<5;k++)if((b>>k)&1)chk^=GEN[k]};
+  for(const c of hrp)pm(c.charCodeAt(0)>>5);pm(0);for(const c of hrp)pm(c.charCodeAt(0)&31);for(const v of d)pm(v);return {get chk(){return chk},pm}}
+function bech32dec(str){
+  str=str.toLowerCase();const i=str.lastIndexOf('1');if(i<1)throw 0;
+  const hrp=str.slice(0,i),d=[];
+  for(const c of str.slice(i+1)){const v=B32.indexOf(c);if(v<0)throw 0;d.push(v)}
+  if(polymod(hrp,d).chk!==1)throw 0;
+  let acc=0,bits=0;const out=[];
+  for(const v of d.slice(0,-6)){acc=(acc<<5)|v;bits+=5;while(bits>=8){bits-=8;out.push((acc>>bits)&255)}acc&=(1<<bits)-1}
+  return {hrp,bytes:out};
+}
+function bech32enc(hrp,bytes){
+  let acc=0,bits=0;const d=[];
+  for(const b of bytes){acc=(acc<<8)|b;bits+=8;while(bits>=5){bits-=5;d.push((acc>>bits)&31)}acc&=(1<<bits)-1}
+  if(bits)d.push((acc<<(5-bits))&31);
+  const p=polymod(hrp,d);for(let i=0;i<6;i++)p.pm(0);const chk=p.chk^1;
+  const cs=[];for(let i=0;i<6;i++)cs.push((chk>>(5*(5-i)))&31);
+  return hrp+'1'+d.concat(cs).map(v=>B32[v]).join('');
+}
+const toHex=a=>a.map(b=>b.toString(16).padStart(2,'0')).join('');
+const npubOf=hex=>bech32enc('npub',hex.match(/../g).map(x=>parseInt(x,16)));
+async function resolveKey(input){
+  let v=input.trim().replace(/^nostr:/i,'');
+  if(/^[0-9a-f]{64}$/i.test(v))return v.toLowerCase();
+  if(/^(npub|nprofile)1/i.test(v)){
+    let r;try{r=bech32dec(v)}catch(e){throw new Error('有効な npub / nprofile ではないようです。打ち間違いがないか確認してください。')}
+    if(r.hrp==='npub'&&r.bytes.length===32)return toHex(r.bytes);
+    if(r.hrp==='nprofile'&&r.bytes[0]===0&&r.bytes[1]===32)return toHex(r.bytes.slice(2,34));
+    throw new Error('有効な npub / nprofile ではないようです。');
+  }
+  if(/^[^\s@]+@[^\s@]+\.[^\s@]+$|^[^\s@\/]+\.[^\s@\/]+$/.test(v)){
+    let name='_',dom=v;if(v.includes('@'))[name,dom]=v.split('@');
+    try{
+      const ac=new AbortController(),t=setTimeout(()=>ac.abort(),8000);
+      const res=await fetch('https://'+dom+'/.well-known/nostr.json?name='+encodeURIComponent(name),{signal:ac.signal});clearTimeout(t);
+      const j=await res.json();const pk=j&&j.names&&(j.names[name]||j.names[name.toLowerCase()]);
+      if(pk&&/^[0-9a-f]{64}$/i.test(pk))return pk.toLowerCase();
+    }catch(e){}
+    throw new Error('この NIP-05 アドレスを解決できませんでした。代わりに npub を貼ってみてください。');
+  }
+  throw new Error('npub、nprofile、または NIP-05 アドレス (name@domain) を貼ってください。');
+}
+
+/* ---------- relays ---------- */
+class Relay{
+  constructor(u){this.u=u;this.q=Promise.resolve();this.ws=null;this.opening=null;this.dead=false;this.subs=new Map();this.answered=false}
+  connect(){
+    if(this.opening)return this.opening;
+    return this.opening=new Promise(res=>{
+      let ws;try{ws=new WebSocket(this.u)}catch(e){this.dead=true;return res(false)}
+      this.ws=ws;let opened=false;
+      const t=setTimeout(()=>{if(!opened){this.dead=true;res(false);this.close()}},5000);
+      ws.onopen=()=>{opened=true;clearTimeout(t);res(true)};
+      const bye=()=>{clearTimeout(t);this.dead=true;if(!opened)res(false);this.subs.forEach(s=>s.done(false));this.subs.clear()};
+      ws.onerror=bye;ws.onclose=bye;
+      ws.onmessage=m=>{let a;try{a=JSON.parse(m.data)}catch(e){return}
+        const s=this.subs.get(a[1]);if(!s)return;
+        if(a[0]==='EVENT'&&a[2])s.ev.push(a[2]);else if(a[0]==='EOSE')s.done(true);else if(a[0]==='CLOSED')s.done(false)};
+    });
+  }
+  req(filter,ms=9000){const p=this.q.then(()=>this._req(filter,ms));this.q=p.catch(()=>{});return p}
+  async _req(filter,ms){
+    if(this.dead||!(await this.connect()))return {ok:false,events:[]};
+    return new Promise(resolve=>{
+      const id='y'+Math.random().toString(36).slice(2,9),ev=[];let fin=false;
+      const done=ok=>{if(fin)return;fin=true;clearTimeout(t);this.subs.delete(id);try{this.ws.send(JSON.stringify(['CLOSE',id]))}catch(e){}resolve({ok,events:ev})};
+      const t=setTimeout(()=>done(false),ms);
+      this.subs.set(id,{ev,done});
+      try{this.ws.send(JSON.stringify(['REQ',id,filter]))}catch(e){done(false)}
+    });
+  }
+  close(){const w=this.ws;if(!w)return;try{if(w.readyState===0){w.onerror=w.onclose=null;w.onopen=()=>w.close()}else w.close()}catch(e){}}
+}
+
+/* ---------- zaps ---------- */
+function bolt11Msat(inv){
+  const m=/^ln(?:bc|tb|bcrt|tbs)(\d+)([munp])?1/i.exec(inv||'');if(!m)return 0;
+  const mul={m:1e8,u:1e5,n:100,p:.1}[(m[2]||'').toLowerCase()]||1e11;return Math.round(Number(m[1])*mul);
+}
+function parseReceipt(e,pk){
+  if(!e||e.kind!==9735||typeof e.id!=='string'||!Array.isArray(e.tags))return null;
+  const d=e.tags.find(t=>t[0]==='description');if(!d||!d[1])return null;
+  let rq;try{rq=JSON.parse(d[1])}catch(_){return null}
+  if(!rq||rq.kind!==9734||!/^[0-9a-f]{64}$/.test(rq.pubkey||''))return null;
+  const pt=(rq.tags||[]).find(t=>t[0]==='p');if(!pt||pt[1]!==pk)return null;
+  let msat=bolt11Msat((e.tags.find(t=>t[0]==='bolt11')||[])[1]);
+  if(!msat){const a=(rq.tags||[]).find(t=>t[0]==='amount');if(a&&/^\d+$/.test(a[1]||''))msat=Number(a[1])}
+  const sats=Math.floor(msat/1000);if(!(sats>=1))return null;
+  return {id:e.id,from:rq.pubkey,sats,ts:e.created_at};
+}
+async function readZaps(relays,pk,since,onProg){
+  const found=new Map(),st=relays.map(()=>({ok:false,complete:false,oldest:null,n:0}));
+  let deadline=Date.now()+28000;
+  const prog=()=>onProg(found.size,st.filter(s=>s.ok).length);
+  await Promise.all(relays.map(async(rl,i)=>{
+    const s=st[i],mine=new Set();let until=Math.floor(Date.now()/1000)+60;
+    for(let page=0;page<40&&Date.now()<deadline&&s.n<MAXREC;page++){
+      const r=await rl.req({kinds:[9735],'#p':[pk],since,until,limit:500},Math.min(9000,Math.max(2000,deadline-Date.now())));
+      if(!r.ok&&!r.events.length)break;
+      s.ok=true;
+      if(!r.events.length){s.complete=true;break}
+      let fresh=0,min=Infinity;
+      for(const e of r.events){
+        if(!mine.has(e.id)){mine.add(e.id);fresh++;s.n++}
+        if(e.created_at<min)min=e.created_at;
+        if(!found.has(e.id)){const z=parseReceipt(e,pk);if(z)found.set(e.id,z)}
+      }
+      s.oldest=s.oldest===null?min:Math.min(s.oldest,min);
+      prog();
+      if(!r.ok)break;
+      if(min<=since&&fresh===0){s.complete=true;break}
+      until=fresh===0?min-1:min;
+      if(until<since){s.complete=true;break}
+    }
+    if(s.complete){deadline=Math.min(deadline,Date.now()+4000)}
+    prog();
+  }));
+  const okN=st.filter(s=>s.ok).length;
+  const anyComplete=st.some(s=>s.complete);
+  let cov=since;
+  if(!anyComplete){const o=st.filter(s=>s.ok&&s.oldest!==null).map(s=>s.oldest);cov=o.length?Math.max(...o):since}
+  const list=[...found.values()].filter(z=>z.ts>=cov);
+  return {list,okRelays:okN,total:relays.length,capped:!anyComplete&&okN>0&&cov>since,cov};
+}
+
+/* ---------- layout ---------- */
+const PHI0=Math.PI*0.2, ARC=Math.PI*2-2*PHI0, R0=11.5, DR=1.15, DY=0.4;
+const rowR=i=>R0+i*DR, rowY=i=>i*DY;
+const ROWSOF={100:6,250:10,500:14,1000:20};
+const DISC={100:1.25,250:.95,500:.78,1000:.62};
+function layout(N){
+  const ROWS=ROWSOF[N];
+  const sumR=Array.from({length:ROWS},(_,i)=>rowR(i)).reduce((a,b)=>a+b,0);
+  const counts=Array.from({length:ROWS},(_,i)=>Math.round(N*rowR(i)/sumR));
+  let d=N-counts.reduce((a,b)=>a+b,0),k=ROWS-1;while(d!==0){counts[k]+=Math.sign(d);d-=Math.sign(d);k=(k-1+ROWS)%ROWS}
+  const seats=[];
+  for(let r=0;r<ROWS;r++)for(let j=0;j<counts[r];j++){
+    const phi=PHI0+(j+.5)/counts[r]*ARC,R=rowR(r);
+    seats.push({row:r,phi,x:R*Math.sin(phi),y:rowY(r),z:R*Math.cos(phi),c:Math.abs(phi-Math.PI)});
+  }
+  // front row first, centre of each row first: seat index = rank
+  seats.sort((a,b)=>a.row-b.row||a.c-b.c);
+  return {N,ROWS,seats,outer:rowR(ROWS-1)+2.2};
+}
+
+/* ---------- state ---------- */
+let KEY=null,NPUB='',RUN=null; // RUN: {zappers:[{pk,sats,n,name,pic,im,loaded}],total,covDays,...}
+const prof=new Map();          // pk -> {name,pic,created}
+let target={name:'',pic:'',im:null};
+
+/* ---------- three ---------- */
+let renderer=null,controls=null,world=null,L=null,atlas=null,faces=null,podium=null,sel=-1,glOK=true;
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x0a0805);
+scene.fog=new THREE.FogExp2(0x0a0805,0.0075);
+const camera=new THREE.PerspectiveCamera(mobile()?56:48,1,0.5,600);
+try{renderer=new THREE.WebGLRenderer({canvas:$('gl'),antialias:true,powerPreference:'high-performance'})}catch(e){renderer=null;glOK=false}
+const SEATC=new THREE.Color(1,1,1),LITC=new THREE.Color(1.9,1.35,.35);
+
+function initials(name){if(!name||!String(name).trim())return '';const w=(name||'').replace(/[^\p{L}\p{N}\s]/gu,' ').trim().split(/\s+/).filter(Boolean);return (w.length>1?w[0][0]+w[1][0]:(w[0]||'?').slice(0,2)).toUpperCase()}
+function drawTile(x,px,py,T,im,ini,pending){
+  if(im){const sz=Math.min(im.width,im.height);x.drawImage(im,(im.width-sz)/2,(im.height-sz)*.25,sz,sz,px,py,T,T);return}
+  const g=x.createRadialGradient(px+T/2,py+T*.4,T*.05,px+T/2,py+T/2,T*.65);
+  if(pending){g.addColorStop(0,'#5a4519');g.addColorStop(1,'#2a2010')}else{g.addColorStop(0,'#f6d98a');g.addColorStop(1,'#c8962c')}
+  x.fillStyle=g;x.fillRect(px,py,T,T);
+  if(!pending&&!ini){x.save();x.beginPath();x.rect(px,py,T,T);x.clip();x.fillStyle='#1a1306';x.beginPath();x.arc(px+T/2,py+T*.4,T*.17,0,7);x.fill();x.beginPath();x.ellipse(px+T/2,py+T*.98,T*.34,T*.32,0,0,7);x.fill();x.restore()}
+  if(!pending&&ini){x.fillStyle='#1a1306';x.textAlign='center';x.textBaseline='middle';x.font='700 '+Math.round(T*.42)+'px '+MONO;x.fillText(ini,px+T/2,py+T*.54)}
+}
+
+function disposeWorld(){
+  if(!world)return;scene.remove(world);
+  world.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){if(o.material.map)o.material.map.dispose();o.material.dispose()}});
+  world=null;faces=null;podium=null;atlas=null;
+}
+function buildWorld(N,zappers){
+  disposeWorld();sel=-1;
+  L=layout(N);const {ROWS,seats}=L;
+  world=new THREE.Group();scene.add(world);
+  if(!renderer)return;
+  // floor
+  {const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');
+   const g=x.createRadialGradient(256,256,0,256,256,256);g.addColorStop(0,'#3a2c12');g.addColorStop(.35,'#1a130a');g.addColorStop(1,'#0a0805');
+   x.fillStyle=g;x.fillRect(0,0,512,512);x.strokeStyle='rgba(226,179,74,.22)';x.lineWidth=1;for(let r=30;r<256;r+=22){x.beginPath();x.arc(256,256,r,0,7);x.stroke()}
+   const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+   const m=new THREE.Mesh(new THREE.CircleGeometry(80,64),new THREE.MeshStandardMaterial({map:t,roughness:.55,metalness:.4}));
+   m.rotation.x=-Math.PI/2;m.position.y=-0.55;world.add(m);
+   const st=new THREE.Mesh(new THREE.CylinderGeometry(9.2,9.6,.5,64),new THREE.MeshStandardMaterial({color:0x2a2012,roughness:.35,metalness:.7}));st.position.y=-.3;world.add(st);
+   const ring=new THREE.Mesh(new THREE.TorusGeometry(9.2,.07,8,96),new THREE.MeshBasicMaterial({color:0xf6d98a}));ring.rotation.x=Math.PI/2;ring.position.y=-.04;world.add(ring);}
+  // terraces
+  const stoneM=new THREE.MeshStandardMaterial({color:0x1a140b,roughness:.6,metalness:.5});
+  const riserM=new THREE.MeshStandardMaterial({color:0x120d07,roughness:.5,metalness:.6,side:THREE.DoubleSide});
+  const lineM=new THREE.MeshBasicMaterial({color:0xe2b34a,side:THREE.DoubleSide,transparent:true,opacity:.85});
+  for(let r=0;r<ROWS;r++){
+    const R=rowR(r),y=rowY(r),a0=PHI0-Math.PI/2,inner=R-DR*0.5-0.02,outer=R+DR*0.5;
+    const top=new THREE.Mesh(new THREE.RingGeometry(inner,outer,160,1,a0,ARC),stoneM);top.rotation.x=-Math.PI/2;top.position.y=y-0.02;world.add(top);
+    const h=r===0?1.0:DY;
+    const ri=new THREE.Mesh(new THREE.CylinderGeometry(inner,inner,h,160,1,true,PHI0,ARC),riserM);ri.position.y=y-0.02-h/2;world.add(ri);
+    const ln=new THREE.Mesh(new THREE.RingGeometry(inner-0.03,inner+0.04,160,1,a0,ARC),lineM);ln.rotation.x=-Math.PI/2;ln.position.y=y-0.015;world.add(ln);
+  }
+  {const wr=rowR(ROWS-1)+2.2;
+   const wall=new THREE.Mesh(new THREE.CylinderGeometry(wr,wr,2.2,160,1,true,PHI0,ARC),new THREE.MeshStandardMaterial({color:0x1b140a,roughness:.5,metalness:.6,side:THREE.DoubleSide}));wall.position.y=rowY(ROWS-1)+.1;world.add(wall);
+   const wl=new THREE.Mesh(new THREE.CylinderGeometry(wr,wr,.1,160,1,true,PHI0,ARC),new THREE.MeshBasicMaterial({color:0xf6d98a,side:THREE.DoubleSide}));wl.position.y=rowY(ROWS-1)+1.2;world.add(wl);}
+  // seats
+  const parts=[];
+  const box=(w,h,d,x,y,z,col)=>{const g=new THREE.BoxGeometry(w,h,d).toNonIndexed();g.translate(x,y,z);
+    const n=g.attributes.position.count,c=new Float32Array(n*3);for(let i=0;i<n;i++){c[i*3]=col[0];c[i*3+1]=col[1];c[i*3+2]=col[2]}
+    g.setAttribute('color',new THREE.BufferAttribute(c,3));g.deleteAttribute('uv');parts.push(g)};
+  const body=[.13,.12,.11],gold=[.85,.6,.17];
+  box(1.35,.28,1.0,0,.14,0,body);box(1.35,.9,.2,0,.62,-.5,body);box(1.37,.06,.22,0,1.1,-.5,gold);
+  let total=0;parts.forEach(p=>total+=p.attributes.position.count);
+  const geo=new THREE.BufferGeometry();
+  for(const k of ['position','normal','color']){const arr=new Float32Array(total*3);let o=0;parts.forEach(p=>{arr.set(p.attributes[k].array,o);o+=p.attributes[k].array.length});geo.setAttribute(k,new THREE.BufferAttribute(arr,3))}
+  const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.6,metalness:.35,emissive:0x140e05,emissiveIntensity:.5});
+  const sm=new THREE.InstancedMesh(geo,mat,N),dm=new THREE.Object3D();
+  seats.forEach((s,i)=>{dm.position.set(s.x,s.y,s.z);dm.rotation.set(0,s.phi+Math.PI,0);dm.updateMatrix();sm.setMatrixAt(i,dm.matrix);sm.setColorAt(i,i<zappers.length?LITC:SEATC)});
+  sm.frustumCulled=false;world.add(sm);
+  // podium
+  const pm=new THREE.MeshStandardMaterial({color:0x2b2113,roughness:.3,metalness:.8});
+  const base=new THREE.Mesh(new THREE.CylinderGeometry(3.3,3.8,2.4,48),pm);base.position.y=1.0;world.add(base);
+  const cap=new THREE.Mesh(new THREE.CylinderGeometry(3.6,3.6,.22,48),new THREE.MeshStandardMaterial({color:0xe2b34a,roughness:.25,metalness:.95}));cap.position.y=2.3;world.add(cap);
+  const pr=new THREE.Mesh(new THREE.TorusGeometry(3.3,.05,8,64),new THREE.MeshBasicMaterial({color:0xf6d98a}));pr.rotation.x=Math.PI/2;pr.position.y=1.2;world.add(pr);
+  if(RUN){
+    // the person: big disc on the podium
+    const pc=document.createElement('canvas');pc.width=pc.height=512;
+    const tex=new THREE.CanvasTexture(pc);tex.colorSpace=THREE.SRGBColorSpace;
+    const g=new THREE.Group();g.position.y=6.2;
+    const disc=new THREE.Mesh(new THREE.CircleGeometry(3,64),new THREE.MeshBasicMaterial({map:tex,toneMapped:false,fog:false}));
+    const rg=new THREE.Mesh(new THREE.TorusGeometry(3.08,.14,10,96),new THREE.MeshBasicMaterial({color:0xf6d98a,toneMapped:false}));
+    const c2=document.createElement('canvas');c2.width=c2.height=128;const x2=c2.getContext('2d');const gg=x2.createRadialGradient(64,64,0,64,64,64);gg.addColorStop(0,'rgba(255,224,150,.9)');gg.addColorStop(.4,'rgba(240,190,80,.35)');gg.addColorStop(1,'rgba(226,179,74,0)');x2.fillStyle=gg;x2.fillRect(0,0,128,128);
+    const glow=new THREE.Mesh(new THREE.PlaneGeometry(13,13),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c2),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,toneMapped:false}));glow.position.z=-.4;
+    g.add(glow,disc,rg);world.add(g);
+    podium={g,pc,tex};redrawPodium();
+  }
+  // faces atlas + instanced billboards
+  const n=zappers.length;
+  if(n){
+    const G=Math.ceil(Math.sqrt(n)),T=N>250?64:128,cv=document.createElement('canvas');cv.width=cv.height=G*T;
+    const cx=cv.getContext('2d');cx.fillStyle='#2a2010';cx.fillRect(0,0,cv.width,cv.height);
+    const tx=new THREE.CanvasTexture(cv);tx.colorSpace=THREE.NoColorSpace;tx.anisotropy=4;
+    atlas={cv,cx,tx,G,T,dirty:false};
+    zappers.forEach((z,i)=>tileDraw(i));
+    tx.needsUpdate=true;
+    const plane=new THREE.PlaneGeometry(2,2),ig=new THREE.InstancedBufferGeometry();
+    ig.index=plane.index;ig.setAttribute('position',plane.attributes.position);
+    const off=new Float32Array(n*3),idx=new Float32Array(n);
+    const rad=DISC[N];
+    for(let i=0;i<n;i++){const s=seats[i];off[i*3]=s.x;off[i*3+1]=s.y+.75+rad;off[i*3+2]=s.z;idx[i]=i}
+    ig.setAttribute('aOff',new THREE.InstancedBufferAttribute(off,3));ig.setAttribute('aIdx',new THREE.InstancedBufferAttribute(idx,1));
+    ig.instanceCount=n;
+    const sh=new THREE.ShaderMaterial({transparent:true,depthWrite:true,uniforms:{uMap:{value:tx},uR:{value:rad},uG:{value:G},uSel:{value:-1}},
+      vertexShader:`attribute vec3 aOff;attribute float aIdx;uniform float uR,uSel,uG;varying vec2 vP,vUv;varying float vSel;
+void main(){vec3 right=vec3(viewMatrix[0][0],viewMatrix[1][0],viewMatrix[2][0]);vec3 up=vec3(viewMatrix[0][1],viewMatrix[1][1],viewMatrix[2][1]);
+float s=step(abs(aIdx-uSel),.5);vec3 c=aOff+normalize(cameraPosition-aOff)*2.5*s;
+vec3 w=c+(right*position.x+up*position.y)*uR*(1.+.75*s);
+vec2 t0=vec2(mod(aIdx,uG),uG-1.-floor(aIdx/uG))/uG;vUv=t0+((position.xy*.5+.5)*.94+.03)/uG;vP=position.xy;vSel=s;
+gl_Position=projectionMatrix*viewMatrix*vec4(w,1.);}`,
+      fragmentShader:`uniform sampler2D uMap;varying vec2 vP,vUv;varying float vSel;
+void main(){float d=length(vP);float a=1.-smoothstep(.93,1.,d);if(a<.02)discard;vec3 c=texture2D(uMap,vUv).rgb;
+float r=smoothstep(.80,.84,d);vec3 g=mix(vec3(.96,.85,.54),vec3(1.,.97,.75),vSel);gl_FragColor=vec4(mix(c,g,r),a);}`});
+    const fm=new THREE.Mesh(ig,sh);fm.frustumCulled=false;fm.renderOrder=3;world.add(fm);
+    faces={mesh:fm,rad,off};
+  }
+}
+function tileDraw(i){
+  if(!atlas||!RUN)return;const z=RUN.zappers[i];if(!z)return;
+  const {cx,G,T}=atlas,px=(i%G)*T,py=Math.floor(i/G)*T;
+  cx.save();cx.beginPath();cx.rect(px,py,T,T);cx.clip();
+  drawTile(cx,px,py,T,z.im,initials(z.name),!z.known);cx.restore();atlas.dirty=true;
+}
+function redrawPodium(){
+  if(!podium)return;const x=podium.pc.getContext('2d');
+  drawTile(x,0,0,512,target.im,initials(target.name),!target.known);podium.tex.needsUpdate=true;
+}
+setInterval(()=>{if(atlas&&atlas.dirty){atlas.dirty=false;atlas.tx.needsUpdate=true}},350);
+
+if(renderer){
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;renderer.outputColorSpace=THREE.SRGBColorSpace;
+  scene.add(new THREE.HemisphereLight(0xffd9a0,0x1a1208,0.45));
+  const key=new THREE.PointLight(0xffc766,1000,90,2);key.position.set(0,17,6);scene.add(key);
+  const rim=new THREE.PointLight(0xe2b34a,900,70,2);rim.position.set(0,12,-24);scene.add(rim);
+  const front=new THREE.DirectionalLight(0xffe2b0,0.3);front.position.set(0,30,50);scene.add(front);
+  controls=new OrbitControls(camera,renderer.domElement);
+  controls.enableDamping=true;controls.dampingFactor=.07;controls.enablePan=false;
+  controls.minDistance=9;controls.maxDistance=190;controls.minPolarAngle=.25;controls.maxPolarAngle=Math.PI/2-.03;
+  controls.autoRotate=true;controls.autoRotateSpeed=.45;controls.target.set(0,4,0);
+  controls.addEventListener('start',()=>{controls.autoRotate=false;tween=null});
+}
+let tween=null,clock=new THREE.Clock();
+const homePol=()=>mobile()?.92:1.12;
+function homeDist(){return homeDist0()*(RUN?1:1.3)}
+function homeDist0(){
+  const a=innerWidth/innerHeight,outer=L?L.outer:37,k=outer/37;
+  if(a>=1.2)return 62*Math.max(k,.5);
+  const pol=homePol(),tc=new THREE.PerspectiveCamera(camera.fov,a,1,500),tgt=new THREE.Vector3(0,3,0),pts=[];
+  for(let i=0;i<48;i++){const q=i/48*Math.PI*2;pts.push(new THREE.Vector3(Math.sin(q)*outer,8,Math.cos(q)*outer))}
+  let lo=15,hi=400;
+  for(let j=0;j<30;j++){const d=(lo+hi)/2;tc.position.set(0,Math.cos(pol)*d+6,Math.sin(pol)*d);tc.lookAt(tgt);tc.updateMatrixWorld();tc.updateProjectionMatrix();
+    let mx=0;for(const p of pts){const v=p.clone().project(tc);mx=Math.max(mx,Math.abs(v.x))}
+    if(mx>(a<1.2?2.05:.97))lo=d;else hi=d}
+  return a<.8?hi*1.2:hi;
+}
+function homePos(){const d=homeDist(),pol=homePol();return new THREE.Vector3(0,Math.cos(pol)*d+6,Math.sin(pol)*d)}
+function homeTgt(){return new THREE.Vector3(0,mobile()?5:4,0)}
+function flyHome(intro){
+  if(!controls)return;
+  const p1=homePos(),t1=homeTgt();
+  const p0=intro?p1.clone().multiplyScalar(1.7).setY(p1.y*1.5):camera.position.clone();
+  if(intro){camera.position.copy(p0)}
+  tween={t:0,dur:intro?3.2:1.4,p0,t0:controls.target.clone(),p1,t1};
+}
+function resize(){
+  const w=innerWidth,h=innerHeight;if(!renderer)return;
+  renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w<700?56:48;camera.updateProjectionMatrix();
+}
+addEventListener('resize',()=>{resize();if(controls&&controls.autoRotate&&!tween){const az=Math.atan2(camera.position.x,camera.position.z),p=homePos(),r=Math.hypot(p.x,p.z);camera.position.set(Math.sin(az)*r,p.y,Math.cos(az)*r);controls.target.copy(homeTgt())}});
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function frame(){
+  requestAnimationFrame(frame);if(!renderer)return;
+  const dt=Math.min(clock.getDelta(),.1),t=clock.elapsedTime;
+  if(tween){tween.t+=dt/tween.dur;const k=ease(Math.min(1,tween.t));camera.position.lerpVectors(tween.p0,tween.p1,k);controls.target.lerpVectors(tween.t0,tween.t1,k);if(tween.t>=1){tween=null;controls.autoRotate=!selectedUser}}
+  controls.update();
+  if(podium){podium.g.rotation.y=Math.atan2(camera.position.x,camera.position.z);podium.g.position.y=6.2+Math.sin(t*1.1)*.12}
+  renderer.render(scene,camera);
+}
+let selectedUser=false;
+
+/* ---------- picking ---------- */
+let down=null;
+if(renderer){
+  const cv=$('gl');
+  cv.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,t:performance.now()}});
+  cv.addEventListener('pointerup',e=>{
+    if(!down)return;const d=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;
+    if(d<7&&dt<600)pick(e.clientX,e.clientY);
+  });
+}
+function pick(px,py){
+  if(!RUN||!faces)return closeSeat();
+  const w=innerWidth,h=innerHeight,v=new THREE.Vector3(),v2=new THREE.Vector3();
+  const right=new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld,0).multiplyScalar(faces.rad);
+  let best=-1,bd=1e9;
+  camera.updateMatrixWorld();
+  const n=RUN.zappers.length;
+  for(let i=0;i<n;i++){
+    v.set(faces.off[i*3],faces.off[i*3+1],faces.off[i*3+2]);const cd=v.distanceTo(camera.position);
+    const a=v.clone().project(camera);if(a.z>1)continue;
+    const sx=(a.x+1)/2*w,sy=(1-a.y)/2*h;
+    v2.copy(v).add(right).project(camera);const rpx=Math.hypot((v2.x-a.x)/2*w,(v2.y-a.y)/2*h);
+    const dd=Math.hypot(sx-px,sy-py);
+    if(dd<=Math.max(rpx*1.15,13)&&cd<bd){bd=cd;best=i}
+  }
+  if(best>=0)openSeat(best);
+  else{
+    // podium
+    const a=new THREE.Vector3(0,6.2,0).project(camera),sx=(a.x+1)/2*w,sy=(1-a.y)/2*h;
+    const rp=new THREE.Vector3(0,6.2,0).add(right.clone().normalize().multiplyScalar(3)).project(camera);
+    if(Math.hypot(sx-px,sy-py)<Math.hypot((rp.x-a.x)/2*w,(rp.y-a.y)/2*h))openSeat(-2);else closeSeat();
+  }
+}
+function setImgBg(el,im){
+  if(im&&im.src&&im.complete&&im.naturalWidth)el.style.backgroundImage='url("'+im.src.replace(/"/g,'%22')+'")';
+  else el.style.backgroundImage='';
+}
+function openSeat(i){
+  const P=$('seatP');selectedUser=true;if(controls)controls.autoRotate=false;
+  if(i===-2){
+    sel=-1;if(faces)faces.mesh.material.uniforms.uSel.value=-1;
+    $('spNo').textContent='この議会の主';$('spName').textContent=target.name;
+    $('spSats').innerHTML='';$('spMeta').textContent=RUN.dayLabel+'で '+RUN.zappers.length+' 人。';
+    setImgBg($('spImg'),target.im);if(!target.im){$('spImg').textContent=initials(target.name);$('spImg').style.cssText+=';display:flex;align-items:center;justify-content:center;font:700 22px '+MONO+';color:#1a1306;background-color:#e2b34a'}else{$('spImg').textContent=''}
+    $('spProf').href='https://njump.me/'+NPUB;$('spHer').classList.add('hid');P.classList.add('on');return;
+  }
+  const z=RUN.zappers[i];if(!z)return;
+  sel=i;if(faces)faces.mesh.material.uniforms.uSel.value=i;
+  $('spHer').classList.remove('hid');
+  $('spNo').textContent='第'+(i+1)+'席 / 全'+L.N+'席'+(i<(L.seats.filter(s=>s.row===0).length)?' · 最前列':'');
+  $('spName').textContent=z.name||('npub…'+npubOf(z.pk).slice(-6));
+  $('spSats').innerHTML='';const b=document.createElement('span');b.textContent=fmt(z.sats)+' ';const sm=document.createElement('small');sm.textContent='SATS';$('spSats').append(b,sm);
+  $('spMeta').textContent=target.name+' へ '+z.n+' 回 zap · '+RUN.dayLabel+'の全 sats の '+(z.sats/RUN.totalSats*100<1?'1% 未満':Math.round(z.sats/RUN.totalSats*100)+'%')+'。';
+  const im=$('spImg');im.textContent='';im.style.cssText='';setImgBg(im,z.im);
+  if(!z.im){im.textContent=initials(z.name);im.style.cssText+='display:flex;align-items:center;justify-content:center;font:700 22px '+MONO+';color:#1a1306;background-color:#e2b34a'}
+  $('spProf').href='https://njump.me/'+npubOf(z.pk);$('spHer').href='?npub='+npubOf(z.pk);
+  P.classList.add('on');
+}
+function closeSeat(){$('seatP').classList.remove('on');sel=-1;if(faces)faces.mesh.material.uniforms.uSel.value=-1}
+$('spX').onclick=closeSeat;
+
+/* ---------- profiles and pictures ---------- */
+function imgLoad(src,ms){return new Promise((res,rej)=>{const im=new Image();im.crossOrigin='anonymous';im.referrerPolicy='no-referrer';const t=setTimeout(()=>{im.src='';rej()},ms);im.onload=()=>{clearTimeout(t);res(im)};im.onerror=()=>{clearTimeout(t);rej()};im.src=src})}
+async function fetchPic(url,size,direct){
+  if(!/^https:\/\//i.test(url||''))throw 0;
+  try{return await imgLoad('https://wsrv.nl/?url='+encodeURIComponent(url)+'&w='+size+'&h='+size+'&fit=cover&a=attention&output=jpg&q=80',7000)}catch(e){}
+  throw 0;
+}
+const imgQ=[];let imgBusy=0,imgTok=0;
+function pumpImg(tok){
+  while(imgBusy<14&&imgQ.length&&tok===imgTok){
+    imgQ.sort((a,b)=>a-b);const i=imgQ.shift(),z=RUN.zappers[i];imgBusy++;
+    fetchPic(z.pic,atlas?atlas.T:64,i<150).then(im=>{if(tok!==imgTok)return;z.im=im;tileDraw(i);if(sel===i)openSeat(i)}).catch(()=>{}).finally(()=>{imgBusy--;pumpImg(tok)});
+  }
+}
+async function loadProfiles(relays,tok){
+  const zs=RUN.zappers,idx=new Map(zs.map((z,i)=>[z.pk,i]));
+  const pks=[KEY].concat(zs.map(z=>z.pk)),batches=[];
+  for(let i=0;i<pks.length;i+=100)batches.push(pks.slice(i,i+100));
+  const deadline=Date.now()+25000;
+  const got=(e)=>{
+    if(!e||e.kind!==0||typeof e.pubkey!=='string')return;
+    const o=prof.get(e.pubkey);if(o&&o.created>=e.created_at)return;
+    let p;try{p=JSON.parse(e.content)}catch(_){return}if(!p||typeof p!=='object')return;
+    const name=String(p.display_name||p.displayName||p.name||'').trim().slice(0,40),pic=String(p.picture||p.image||'');
+    prof.set(e.pubkey,{name,pic,created:e.created_at});
+    if(e.pubkey===KEY){
+      const first=!target.known;target.known=true;target.name=name||target.name||('npub…'+NPUB.slice(-6));
+      if(pic&&pic!==target.pic){target.pic=pic;fetchPic(pic,512,true).then(im=>{if(tok!==imgTok)return;target.im=im;redrawPodium()}).catch(()=>{})}
+      else redrawPodium();
+      if(first||true)setTitle();
+    }
+    const i=idx.get(e.pubkey);
+    if(i!==undefined&&tok===imgTok){
+      const z=zs[i];z.known=true;if(name)z.name=name;
+      if(pic&&pic!==z.pic){z.pic=pic;imgQ.push(i);pumpImg(tok)}
+      tileDraw(i);if(sel===i)openSeat(i);
+    }
+  };
+  await Promise.all(relays.map(async rl=>{
+    for(const b of batches){if(Date.now()>deadline||tok!==imgTok)return;
+      const r=await rl.req({kinds:[0],authors:b,limit:b.length*2},Math.min(9000,Math.max(1500,deadline-Date.now())));
+      r.events.forEach(got);
+      if(!r.ok&&!r.events.length)return;
+    }
+  }));
+  // whoever has no profile shows initials from the npub, not a blank
+  zs.forEach((z,i)=>{if(!z.known){z.known=true;z.name=z.name||'';tileDraw(i)}});
+  if(!target.known){target.known=true;redrawPodium()}
+}
+
+/* ---------- title / numbers ---------- */
+function setTitle(){
+  const nm=(target.name||('npub…'+NPUB.slice(-6)));
+  $('ttlN').textContent=nm;
+  document.title=nm+' の議会 — あなたの議会';
+}
+function countUp(el,to,pre,post){
+  const t0=performance.now(),d=1400;
+  (function s(t){const k=Math.min(1,(t-t0)/d),v=to*(1-Math.pow(1-k,3));el.innerHTML=pre+'<b>'+fmt(v)+'</b>'+post;if(k<1)requestAnimationFrame(s)})(t0);
+}
+
+/* ---------- run ---------- */
+async function run(input){
+  const tok=++imgTok;imgQ.length=0;RUN=null;
+  state('s-load');$('msg').style.display='none';
+  $('ldBig').textContent='鍵を探しています…';$('ldSm').textContent='';
+  try{KEY=await resolveKey(input)}catch(e){state('s-entry');$('err').textContent=e.message;return}
+  NPUB=npubOf(KEY);
+  try{history.replaceState(null,'','?npub='+NPUB)}catch(e){}
+  prof.clear();target={name:'',pic:'',im:null,known:false};
+  const relays=RELAYS.map(u=>new Relay(u));
+  $('ldBig').textContent='Reading zaps…';
+  $('ldSm').textContent=RELAYS.length+' 個のリレーに過去'+DAYS+'日分を問い合わせ中';
+  const since=Math.floor(Date.now()/1000)-DAYS*86400;
+  // the owner's name shows up while the zaps are still being read
+  relays.forEach(rl=>rl.req({kinds:[0],authors:[KEY],limit:1},8000).then(r=>{
+    const e=r.events.sort((a,b)=>b.created_at-a.created_at)[0];if(!e||tok!==imgTok||RUN)return;
+    try{const p=JSON.parse(e.content),nm=String(p.display_name||p.displayName||p.name||'').trim().slice(0,40);if(nm&&!target.name){target.name=nm;$('ldBig').textContent=nm+' への zap を読み込み中…'}}catch(_){}
+  }));
+  const z=await readZaps(relays,KEY,since,(n,ok)=>{if(tok!==imgTok)return;$('ldBig').textContent='zap を読み込み中… '+fmt(n)+' 件';$('ldSm').textContent=RELAYS.length+' 個中 '+ok+' 個のリレーが応答中'});
+  if(tok!==imgTok)return;
+  if(z.okRelays===0){
+    relays.forEach(r=>r.close());
+    state('s-err');showMsg('e','Nostr リレーに接続できませんでした',RELAYS.length+' 個のリレーのどれからも応答がありません。回線、ブロッカー、またはリレー側の問題かもしれません。データは失われていません。もう一度試してください。',[['再試行',()=>run(input),'cta'],['別の npub',()=>anotherNpub(),'cta2']]);
+    return;
+  }
+  // aggregate by sender
+  const by=new Map();
+  for(const r of z.list){if(r.from===KEY)continue;let o=by.get(r.from);if(!o)by.set(r.from,o={pk:r.from,sats:0,n:0});o.sats+=r.sats;o.n++}
+  const zappers=[...by.values()].sort((a,b)=>b.sats-a.sats||b.n-a.n).slice(0,1000).map(o=>({...o,name:'',pic:'',im:null,known:false}));
+  const totalAll=[...by.values()].reduce((s,o)=>s+o.sats,0);
+  const totalSats=zappers.reduce((s,o)=>s+o.sats,0);
+  const covDays=z.capped?Math.max(1,Math.ceil((Date.now()/1000-z.cov)/86400)):DAYS;
+  RUN={zappers,totalSats:Math.max(1,totalSats),allZappers:by.size,capped:z.capped,covDays,dayLabel:z.capped?'直近'+covDays+'日間':'過去'+DAYS+'日間',okRelays:z.okRelays,relays:relays.length,N:SIZES.find(s=>s>=zappers.length)||1000};
+  target.name=target.name||'';
+  $('fade').classList.add('on');
+  await new Promise(r=>setTimeout(r,360));
+  if(tok!==imgTok)return;
+  buildWorld(RUN.N,zappers);
+  if(!target.name)target.name=prof.get(KEY)?prof.get(KEY).name:'';
+  setTitle();
+  const n=zappers.length;
+  $('sub').innerHTML='';$('note').textContent='';
+  if(!n){
+    state('s-zero');
+    $('sub').innerHTML='0 人 <i>· '+RUN.dayLabel+'で 0 sats</i>';
+    showMsg('z',RUN.dayLabel+'、この npub に zap した人はいません','最初の一人になってください。お使いの Nostr クライアントから zap すれば、最前列に座れます。',[['zap しに行く →',()=>window.open('https://njump.me/'+NPUB,'_blank','noopener'),'cta'],['別の npub',()=>anotherNpub(),'cta2']]);
+    if(z.okRelays<z.total)$('note').textContent=z.total+' 個中 '+z.okRelays+' 個のリレーしか応答しなかったため、zap が漏れている可能性があります。';
+  }else{
+    state('s-ready');
+    const sub=$('sub'),t0=performance.now();
+    (function s(t){const k=Math.min(1,(t-t0)/1500),e=1-Math.pow(1-k,3);sub.innerHTML='<b>'+fmt(n*e)+'</b> 人 · '+RUN.dayLabel+'で <b>'+fmt(totalSats*e)+'</b> sats';if(k<1)requestAnimationFrame(s)})(t0);
+    const notes=[];
+    if(RUN.allZappers>1000)notes.push(fmt(RUN.allZappers)+' 人全員は座れません。上位1,000人が着席しています。sats は着席した人の分だけを集計しています。');
+    if(z.capped)notes.push('zap の多い npub です。リレーから取得できたのは '+new Date(z.cov*1000).toLocaleDateString('ja-JP',{month:'long',day:'numeric'})+' 以降の最新分です。');
+    if(z.okRelays<z.total)notes.push(z.total+' 個中 '+z.okRelays+' 個のリレーしか応答しなかったため、一部の zap が漏れている可能性があります。');
+    $('note').textContent=notes.join(' ');
+  }
+  if(!renderer){fallbackList()}
+  resize();
+  if(controls){controls.autoRotate=true;flyHome(true)}
+  setTimeout(()=>$('fade').classList.remove('on'),60);
+  // names, then pictures (in the background, tiles fill in live)
+  loadProfiles(relays,tok).finally(()=>{setTimeout(()=>relays.forEach(r=>r.close()),12000)});
+}
+function fallbackList(){
+  const el=$('nogl');el.classList.add('on');el.innerHTML='';
+  RUN.zappers.slice(0,60).forEach(z=>{const d=document.createElement('div');d.textContent=z.name||npubOf(z.pk).slice(0,10);const b=document.createElement('b');d.prepend(b);el.appendChild(d)});
+}
+function showMsg(kind,h,p,btns){
+  const m=$('msg');m.className='panel '+kind;m.style.display='block';m.innerHTML='';
+  const a=document.createElement('h3');a.textContent=h;const b=document.createElement('p');b.textContent=p;
+  const row=document.createElement('div');row.className='acts';
+  btns.forEach(([t,f,c])=>{const x=document.createElement('button');x.className=c;x.textContent=t;x.onclick=f;row.appendChild(x)});
+  m.append(a,b,row);
+}
+function anotherNpub(){
+  $('msg').style.display='none';closeSeat();closeShare();
+  state('s-entry');$('in').value='';$('err').textContent='';
+  try{history.replaceState(null,'',location.pathname)}catch(e){}
+  setTimeout(()=>$('in').focus(),50);
+}
+$('bAnother').onclick=anotherNpub;
+
+/* ---------- share card ---------- */
+function shareText(){
+  const n=RUN.zappers.length,top=RUN.zappers.slice(0,3).map(z=>'nostr:'+npubOf(z.pk));
+  return '私の議会: 過去'+RUN.covDays+'日間に '+n+' 人が zap してくれました。最前列: '+top.join(' ')+' ありがとうございます。あなたの議会はこちら: '+SITE+'?npub='+NPUB+' #yourparliament';
+}
+function drawCard(){
+  const cv=$('cardC'),x=cv.getContext('2d'),W=1200,H=675;
+  const bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#1b1710');bg.addColorStop(1,'#0a0805');x.fillStyle=bg;x.fillRect(0,0,W,H);
+  const cx=860,cy=338,rg=x.createRadialGradient(cx,cy,40,cx,cy,340);rg.addColorStop(0,'rgba(226,179,74,.22)');rg.addColorStop(1,'rgba(226,179,74,0)');x.fillStyle=rg;x.fillRect(0,0,W,H);
+  x.strokeStyle='#e2b34a88';x.lineWidth=3;x.setLineDash([14,10]);x.strokeRect(14,14,W-28,H-28);x.setLineDash([]);
+  // hemicycle from above (opening at the bottom), faces on every seat
+  const Ls=layout(RUN.N),s=302/(Ls.outer-.8),zs=RUN.zappers,rowSp=DR*s;
+  const rc={};Ls.seats.forEach(q=>rc[q.row]=(rc[q.row]||0)+1);
+  for(let i=Ls.seats.length-1;i>=0;i--){
+    const st=Ls.seats[i],px=cx+st.x*s,py=cy+st.z*s,z=zs[i];
+    const rd=Math.max(2,Math.min(rowSp*.95,(ARC*rowR(st.row)/rc[st.row])*s*.45));
+    if(!z){x.fillStyle='#2a2012';x.beginPath();x.arc(px,py,rd*.55,0,7);x.fill();continue}
+    if(z.im){x.save();x.beginPath();x.arc(px,py,rd,0,7);x.clip();drawTile(x,px-rd,py-rd,rd*2,z.im);x.restore()}
+    else{x.save();x.beginPath();x.arc(px,py,rd,0,7);x.clip();drawTile(x,px-rd,py-rd,rd*2,null,z.name?initials(z.name):'',false);x.restore()}
+    x.strokeStyle='#f6d98a';x.lineWidth=Math.max(.8,rd*.14);x.beginPath();x.arc(px,py,rd,0,7);x.stroke();
+  }
+  // owner in the middle
+  const pr=64;x.save();x.shadowColor='#e2b34a';x.shadowBlur=30;x.fillStyle='#f6d98a';x.beginPath();x.arc(cx,cy,pr+5,0,7);x.fill();x.restore();
+  x.save();x.beginPath();x.arc(cx,cy,pr,0,7);x.clip();drawTile(x,cx-pr,cy-pr,pr*2,target.im,initials(target.name),false);x.restore();
+  // left column
+  x.textAlign='left';x.textBaseline='alphabetic';
+  x.fillStyle='#e2b34a';x.font='700 15px '+MONO;x.letterSpacing='5px';x.fillText('あなたの議会',56,92);
+  x.fillStyle='#f1e9d6';x.font='600 17px '+MONO;x.fillText('この議会の主',56,146);x.letterSpacing='0px';
+  const nm=(target.name||'npub…'+NPUB.slice(-6));let fs=72;x.font='400 '+fs+'px '+SERIF;
+  while(x.measureText(nm).width>470&&fs>30){fs-=2;x.font='400 '+fs+'px '+SERIF}
+  x.fillStyle='#f6d98a';x.fillText(nm,56,146+fs+4);
+  const n=zs.length;let y=330;
+  x.fillStyle='#f6d98a';x.font='700 84px '+MONO;x.fillText(fmt(n),56,y);
+  x.fillStyle='#f1e9d6';x.font='30px '+SERIF;x.fillText('人が zap',56,y+40);
+  y=450;x.fillStyle='#f6d98a';x.font='700 54px '+MONO;x.fillText(fmt(RUN.totalSats),56,y);
+  x.fillStyle='#f1e9d6';x.font='30px '+SERIF;x.fillText('sats ('+RUN.dayLabel+')',56,y+40);
+  const names=zs.slice(0,3).map(z=>z.name||'').filter(Boolean);
+  if(names.length){x.fillStyle='#bfae80';x.font='22px '+SERIF;let t='最前列: '+names.join(' · ');while(x.measureText(t).width>480&&t.length>12)t=t.slice(0,-2);x.fillText(t,56,552)}
+  x.fillStyle='#f6d98a';x.font='700 19px '+MONO;x.fillText('lira-ia.github.io/parliament/ja/yours',56,H-44);
+}
+function openShare(){
+  if(!RUN||!RUN.zappers.length)return;
+  drawCard();$('shareT').value=shareText();
+  $('cardC').toBlob(b=>{if(!b)return;const d=$('shDl');if(d.dataset.u)URL.revokeObjectURL(d.dataset.u);d.dataset.u=d.href=URL.createObjectURL(b)},'image/png');
+  syncPostBtn();$('shareM').classList.add('on');
+}
+
+/* ---------- one-click post (NIP-07 + NIP-96/98) ---------- */
+const FALLBACK_RELAYS=['wss://nos.lol','wss://relay.primal.net','wss://relay.damus.io','wss://nostr.mom'];
+const UPLOADERS=['https://nostr.build','https://nostrcheck.me'];
+const hasNostr=()=>!!(window.nostr&&typeof window.nostr.signEvent==='function');
+const hex=u8=>[...u8].map(b=>b.toString(16).padStart(2,'0')).join('');
+async function sha256hex(buf){return hex(new Uint8Array(await crypto.subtle.digest('SHA-256',buf)))}
+const withTimeout=(p,ms,msg)=>new Promise((res,rej)=>{const t=setTimeout(()=>rej(new Error(msg||'timeout')),ms);p.then(v=>{clearTimeout(t);res(v)},e=>{clearTimeout(t);rej(e)})});
+class Cancelled extends Error{}
+async function signOrCancel(ev){
+  let r;try{r=await window.nostr.signEvent(ev)}catch(e){throw new Cancelled(String(e&&e.message||e))}
+  if(!r||!r.sig||!r.id)throw new Cancelled('no signature');return r;
+}
+async function nip98(url,method,fileHash){
+  const ev={kind:27235,created_at:Math.floor(Date.now()/1000),content:'',tags:[['u',url],['method',method],['payload',fileHash]]};
+  const sg=await signOrCancel(ev);return 'Nostr '+btoa(JSON.stringify(sg));
+}
+async function uploadTo(base,blob,fileHash){
+  const wk=await withTimeout(fetch(base+'/.well-known/nostr/nip96.json').then(r=>{if(!r.ok)throw new Error('wk '+r.status);return r.json()}),8000,'discovery timeout');
+  let api=wk.api_url;if(!api)throw new Error('no api_url');
+  if(!/^https:\/\//.test(api))api=new URL(api,base+'/').href;
+  const fd=new FormData();
+  fd.append('size',String(blob.size));fd.append('content_type','image/png');fd.append('alt','わたしの Nostr 議会: zap してくれた人たち');
+  fd.append('caption','わたしの Nostr 議会');fd.append('no_transform','true');
+  fd.append('file',blob,'my-parliament.png');
+  const auth=await nip98(api,'POST',fileHash);
+  const r=await withTimeout(fetch(api,{method:'POST',headers:{Authorization:auth},body:fd}),30000,'upload timeout');
+  let j=null;try{j=await r.json()}catch(e){}
+  if(!r.ok||!j||j.status==='error')throw new Error('upload '+r.status+' '+(j&&j.message||''));
+  const tags=(j.nip94_event&&j.nip94_event.tags)||[];const g=k=>(tags.find(t=>t[0]===k)||[])[1];
+  const url=g('url');if(!url||!/^https:\/\//.test(url))throw new Error('no url in response (status '+(j.status||'?')+')');
+  return {url,m:g('m')||'image/png',dim:g('dim'),x:g('x')||g('ox')||fileHash};
+}
+async function uploadCard(blob,setSt){
+  const fileHash=await sha256hex(await blob.arrayBuffer());
+  for(const b of UPLOADERS){
+    try{setSt('カードをアップロード中: '+b.replace('https://','')+'…');return await uploadTo(b,blob,fileHash)}
+    catch(e){if(e instanceof Cancelled)throw e;console.warn('upload failed',b,e.message)}
+  }
+  return null;
+}
+function buildNote(text,img){
+  const tags=[],seen=new Set();
+  for(const m of text.matchAll(/nostr:(npub1[023456789acdefghjklmnpqrstuvwxyz]{58})/g)){
+    try{const r=bech32dec(m[1]);if(r.hrp==='npub'&&r.bytes.length===32){const h=toHex(r.bytes);if(!seen.has(h)){seen.add(h);tags.push(['p',h])}}}catch(e){}
+  }
+  tags.push(['t','liraparliament']);tags.push(['t','yourparliament']);
+  let content=text;
+  if(img){
+    content=text.replace(/\s+$/,'')+'\n\n'+img.url;
+    const im=['imeta','url '+img.url,'m '+img.m];if(img.dim)im.push('dim '+img.dim);if(img.x)im.push('x '+img.x);
+    tags.push(im);
+  }
+  return {kind:1,created_at:Math.floor(Date.now()/1000),tags,content};
+}
+async function relayList(){
+  let urls=[];
+  try{const r=await withTimeout(Promise.resolve(window.nostr.getRelays?window.nostr.getRelays():null),2500);
+    if(r)urls=Object.entries(r).filter(([u,p])=>/^wss?:\/\//.test(u)&&(!p||p.write!==false)).map(([u])=>u)}catch(e){}
+  if(!urls.length)urls=FALLBACK_RELAYS;
+  return urls.slice(0,8);
+}
+function publish(ev,urls){
+  return Promise.all(urls.map(u=>new Promise(res=>{
+    let ws,done=false;const fin=ok=>{if(done)return;done=true;try{ws.close()}catch(e){}res(ok?u:null)};
+    const t=setTimeout(()=>fin(false),8000);
+    try{ws=new WebSocket(u)}catch(e){clearTimeout(t);return fin(false)}
+    ws.onopen=()=>{try{ws.send(JSON.stringify(['EVENT',ev]))}catch(e){fin(false)}};
+    ws.onerror=()=>fin(false);ws.onclose=()=>fin(false);
+    ws.onmessage=m=>{try{const d=JSON.parse(m.data);if(d[0]==='OK'&&d[1]===ev.id){clearTimeout(t);fin(d[2]===true)}}catch(e){}};
+  }))).then(a=>a.filter(Boolean));
+}
+function nevent(id,author,relay){
+  const b=[],h=x=>x.match(/../g).map(v=>parseInt(v,16));
+  b.push(0,32,...h(id));if(relay){const r=[...relay].map(c=>c.charCodeAt(0));b.push(1,r.length,...r)}
+  if(author)b.push(2,32,...h(author));return bech32enc('nevent',b);
+}
+function setSt(html,isHtml){const e=$('shSt');e.classList.remove('hid');if(isHtml)e.innerHTML=html;else e.textContent=html}
+let posting=false;
+async function postNostr(){
+  if(posting||!hasNostr())return;posting=true;const btn=$('shPost');btn.disabled=true;
+  try{
+    const blob=await new Promise(r=>$('cardC').toBlob(r,'image/png'));
+    let img=null;
+    if(blob){img=await uploadCard(blob,setSt)}
+    if(!img)setSt('画像をアップロードできません。テキストだけ投稿します…');
+    const note=buildNote($('shareT').value,img);
+    setSt('署名を待っています…');
+    const ev=await signOrCancel(note);
+    const urls=await relayList();setSt('投稿中: '+urls.length+' 個のリレー…');
+    const ok=await publish(ev,urls);
+    if(!ok.length){setSt('どのリレーも受け付けませんでした。接続を確認して、もう一度どうぞ。');return}
+    const ne=nevent(ev.id,ev.pubkey,ok[0]);
+    setSt(ok.length+' 個のリレーに投稿しました'+(img?'':'（テキストのみ）')+'. <a href="https://njump.me/'+ne+'" target="_blank" rel="noopener">njump.me で見る</a>',true);
+    toast('投稿しました');
+  }catch(e){
+    if(e instanceof Cancelled)setSt('署名がキャンセルされました。何も投稿していません。');
+    else{console.warn(e);setSt('問題が起きました。何も投稿していません。PNG を保存してテキストをコピーできます。')}
+  }finally{posting=false;btn.disabled=false}
+}
+function syncPostBtn(){
+  const on=hasNostr();$('shPost').classList.toggle('hid',!on);
+  $('shDl').className=on?'cta2':'cta';
+  $('shHint').textContent=on?'ワンクリック: カードをアップロードし、Nostr 拡張機能で署名します。先にテキストを編集できます。':'このテキストを Nostr に投稿し、PNG を添付してください。すべてブラウザ内で作成されています。';
+  $('shSt').classList.add('hid');
+}
+$('shPost').onclick=postNostr;
+function closeShare(){$('shareM').classList.remove('on')}
+$('bShare').onclick=openShare;$('shX').onclick=closeShare;
+$('shareM').addEventListener('pointerdown',e=>{if(e.target===$('shareM'))closeShare()});
+$('shCp').onclick=async()=>{const v=$('shareT').value;try{await navigator.clipboard.writeText(v);toast('コピーしました')}catch(e){$('shareT').select();try{document.execCommand('copy');toast('コピーしました')}catch(_){}}};
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeShare();closeSeat()}});
+
+/* ---------- boot ---------- */
+$('f').onsubmit=e=>{e.preventDefault();const v=$('in').value.trim();if(!v){$('err').textContent='先に npub、nprofile、または NIP-05 アドレスを貼ってください。';return}$('err').textContent='';run(v)};
+$('exLira').onclick=()=>run('npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8');
+function syncLang(){const q=new URLSearchParams(location.search).get('npub');$('lnEn').href='../../yours/'+(q?'?npub='+encodeURIComponent(q):'')}
+syncLang();const _rs=history.replaceState.bind(history);history.replaceState=function(){_rs.apply(history,arguments);syncLang()};
+RUN=null;
+buildWorld(1000,[]);
+if(renderer){resize();camera.position.copy(homePos());controls.target.copy(homeTgt())}
+frame();
+const qp=(Q.get('npub')||Q.get('nostr')||'').trim();
+if(qp){$('in').value=qp;run(qp)}
+window.__yp={get run(){return RUN},seatXY(i){camera.updateMatrixWorld();const v=new THREE.Vector3(faces.off[i*3],faces.off[i*3+1],faces.off[i*3+2]).project(camera);return [(v.x+1)/2*innerWidth,(1-v.y)/2*innerHeight]}};
+</script>
+</body>
+</html>
