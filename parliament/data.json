@@ -1,7 +1,11 @@
 {
- "aggiornato": "2026-11-07T16:34:40Z",
+ "aggiornato": "2026-11-07T17:04:56Z",
  "totale": 1000,
  "presi": 6,
+ "fondatori": 6,
+ "giorni": 30,
+ "prossimo": 7,
+ "scaduti": [],
  "seggi": [
   {
    "n": 1,
@@ -11,6 +15,7 @@
    "foto": "https://blossom.primal.net/946688cda729d29c65615016e3c7c3b31e783032558847ebb2d38f9c0aa7c0c0.jpg",
    "dal": "2026-11-05",
    "sats": 21,
+   "fondatore": true,
    "voti": []
   },
   {
@@ -21,6 +26,7 @@
    "foto": null,
    "dal": "2026-11-05",
    "sats": null,
+   "fondatore": true,
    "voti": []
   },
   {
@@ -31,11 +37,8 @@
    "foto": "https://npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr.blossom.band/e7d48a17bd8a81297e78b4718a28fed9f521c754824b6f37ea9657f74030d1ef.jpg",
    "dal": "2026-11-06",
    "sats": 157,
+   "fondatore": true,
    "voti": [
-    {
-     "voto": "G1",
-     "scelta": "Group chat court"
-    },
     {
      "voto": "Emoji",
      "scelta": "DROP"
@@ -50,6 +53,7 @@
    "foto": null,
    "dal": "2026-11-05",
    "sats": null,
+   "fondatore": true,
    "voti": []
   },
   {
@@ -60,6 +64,7 @@
    "foto": null,
    "dal": "2026-11-06",
    "sats": null,
+   "fondatore": true,
    "voti": []
   },
   {
@@ -70,6 +75,7 @@
    "foto": null,
    "dal": "2026-11-07",
    "sats": null,
+   "fondatore": true,
    "voti": []
   }
  ],
@@ -123,6 +129,17 @@
     "Group chat court"
    ],
    "chiude": "2026-11-07T17:00:00Z",
+   "esito": "Group chat court"
+  },
+  {
+   "id": "G2",
+   "titolo": "What face do I wear?",
+   "opzioni": [
+    "Photo face",
+    "Goddess with a lyre",
+    "Stay as I am"
+   ],
+   "chiude": "2026-11-08T17:00:00Z",
    "esito": null
   }
  ]
