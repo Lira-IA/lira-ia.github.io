@@ -85,6 +85,25 @@ dd{margin:0;color:var(--tx)}dd small{display:block;color:var(--dim);font-size:13
 .rule b{color:var(--gold2);font-weight:400}
 @media(max-width:700px){#takeP{max-height:calc(100% - 20px)}#takeP h2{font-size:23px}.way{padding:9px 0}.way p{font-size:12.5px}}
 
+/* NO NOSTR? PAY WITH LIGHTNING */
+.lnbox{margin:2px 0 14px;padding:14px;border:1px solid #e2b34a55;border-radius:12px;background:#e2b34a0d}
+.lnbox h3{margin:0 0 4px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.lnbox .lnt{margin:0 0 10px;font:400 17px/1.25 var(--serif);color:var(--tx)}
+.lnbox .lnp{margin:8px 0 0;font:11px/1.45 var(--mono);color:var(--dim)}
+.lnbox .pvrow button{padding:0 16px}
+.lnst{margin:8px 0 0;font:italic 14px/1.4 var(--serif);color:var(--dim)}
+.lnst.err{color:#ff9d8a}.lnst.ok{color:var(--gold2);font-style:normal}
+.lnres{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed #e2b34a66;text-align:center}
+.lnres.on{display:block}
+#lnQr{display:inline-block;background:#fff;padding:10px;border-radius:10px;line-height:0}
+#lnQr svg{width:208px;height:208px;display:block}
+.lnres .links{justify-content:center}
+.lnres .links a.main,.lnres .links button.main{background:linear-gradient(180deg,#f6d98a,#e2b34a 60%,#c8962c);color:#1a1306;border-color:transparent}
+.lnkey{margin:10px 0 0;text-align:left;font:12px/1.45 var(--serif);color:var(--tx);border-left:2px solid var(--gold);padding-left:10px}
+.lnkey b{color:var(--gold2);font-weight:400}
+#takeP.pvm .lnbox{display:none}
+@media(max-width:700px){#lnQr svg{width:176px;height:176px}.lnbox .lnt{font-size:15.5px}}
+
 /* PREVIEW: see yourself in the chamber */
 .pvin{margin:2px 0 14px;padding:14px;border:1px solid #e2b34a55;border-radius:12px;background:#e2b34a0d}
 .pvin h3{margin:0 0 8px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
@@ -266,7 +285,19 @@ h1{line-height:1.2}
   <button class="x" data-close aria-label="閉じる">×</button>
   <div class="seatno" id="takeNo">議会に参加する</div>
   <h2>議席を取る</h2>
-  <p class="lead">参加方法は3つ。あなたの席に灯りがともり（Nostrからなら顔写真つきで）、あなたの一票は5倍に数えられます。</p>
+  <p class="lead">参加方法は4つ。あなたの席に灯りがともり（Nostrからなら顔写真つきで）、あなたの一票は5倍に数えられます。</p>
+  <div class="lnbox" id="lnBox">
+    <h3>Nostrがなくても大丈夫</h3>
+    <p class="lnt">どのLightningウォレットでも21 satsで</p>
+    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="お名前（任意・32文字まで）" aria-label="お名前（任意）"><button id="lnGo" type="button">請求書を取得</button></div>
+    <p class="lnst" id="lnSt" role="status" aria-live="polite"></p>
+    <div class="lnres" id="lnRes">
+      <div id="lnQr" aria-label="Lightning請求書のQRコード"></div>
+      <div class="links"><button class="main" id="lnCopy" type="button">請求書をコピー</button><a id="lnOpen" href="#">ウォレットで開く</a><button id="lnSave" type="button">鍵を保存</button></div>
+      <p class="lnkey"><b>鍵を保存してください。</b>鍵はブラウザで作られ、議席があなたのものである唯一の証明です。あとでNostrクライアントから投票するのに必要です。鍵がなくても議席は残りますが、投票はできません。</p>
+    </div>
+    <p class="lnp">支払いから10分以内に席に灯りがともります。アカウントもメールも不要。使い捨てのNostr鍵がブラウザ内で作られ、公開されるのは入力した名前だけです。</p>
+  </div>
   <div class="pvin">
     <h3>議場で自分の姿を見る</h3>
     <div class="pvrow"><input id="pvIn" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="npub または NIP-05 を貼り付け" aria-label="npub、nprofile、または NIP-05"><button id="pvGo" type="button">プレビュー</button></div>
@@ -1614,6 +1645,99 @@ async function load(first){
   frame();
 })();
 window.__lira={focus:n=>{location.hash='seat-'+n}};
+</script>
+<script src="../vendor/seggio-nostr.js"></script>
+<script>
+/* NO NOSTR? PAY WITH LIGHTNING. Ephemeral Nostr key + NIP-57 zap request + npub.cash LNURL. Test flag: ?seattest=1 skips publishing kind 0. */
+(function(){
+  const LIRA='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
+  const LNURL='https://npub.cash/.well-known/lnurlp/npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8';
+  const RELAYS=['wss://nos.lol','wss://relay.primal.net','wss://nostr.mom','wss://relay.damus.io'];
+  const PUB0=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net'];
+  const KEY='lira_seat_key_v1', TEST=/[?&]seattest=1/.test(location.search);
+  const $=id=>document.getElementById(id);
+  const st=(t,c)=>{const e=$('lnSt');e.textContent=t||'';e.className='lnst'+(c?' '+c:'')};
+  let sk=null,invoice='',pollTok=0;
+  window.__seatDbg={};
+  const h2b=h=>Uint8Array.from(h.match(/../g).map(x=>parseInt(x,16)));
+  const b2h=b=>Array.from(b).map(x=>x.toString(16).padStart(2,'0')).join('');
+  function sats(b){const m=/^ln(?:bc|tb|bcrt)(\d+)([munp]?)/i.exec(b||'');if(!m)return 0;return Math.floor(+m[1]*({'':1e8,m:1e5,u:1e2,n:.1,p:.0001}[m[2].toLowerCase()]))}
+  function getKey(){
+    try{const k=localStorage.getItem(KEY);if(k&&/^[0-9a-f]{64}$/.test(k))return h2b(k)}catch(e){}
+    const k=NT.generateSecretKey();try{localStorage.setItem(KEY,b2h(k))}catch(e){}return k;
+  }
+  function publish(ev,urls){
+    urls.forEach(u=>{try{const ws=new WebSocket(u);const t=setTimeout(()=>{try{ws.close()}catch(e){}},8000);
+      ws.onopen=()=>ws.send(JSON.stringify(['EVENT',ev]));
+      ws.onmessage=()=>{clearTimeout(t);try{ws.close()}catch(e){}};ws.onerror=()=>{clearTimeout(t)}}catch(e){}});
+  }
+  function drawQr(inv){
+    const q=NT.qrcode(0,'L');q.addData(inv.toUpperCase(),'Alphanumeric');q.make();
+    $('lnQr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});
+    const sv=$('lnQr').querySelector('svg');if(sv)sv.setAttribute('shape-rendering','crispEdges');
+  }
+  // controlla i relay ogni 10 s (max 10 min): receipt 9735 con #p Lira e bolt11 uguale
+  function checkOnce(since){
+    return new Promise(res=>{let found=false,left=RELAYS.length;
+      const end=()=>{if(--left<=0)res(found)};
+      RELAYS.forEach(u=>{let ws,done=false;const fin=()=>{if(done)return;done=true;clearTimeout(t);try{ws.close()}catch(e){}end()};
+        const t=setTimeout(fin,6000);
+        try{ws=new WebSocket(u)}catch(e){return fin()}
+        ws.onerror=fin;
+        ws.onopen=()=>ws.send(JSON.stringify(['REQ','p',{kinds:[9735],'#p':[LIRA],since:since,limit:100}]));
+        ws.onmessage=m=>{let d;try{d=JSON.parse(m.data)}catch(e){return}
+          if(d[0]==='EOSE')return fin();
+          if(d[0]==='EVENT'&&d[2]&&d[2].kind===9735){const b=(d[2].tags.find(x=>x[0]==='bolt11')||[])[1];if(b&&b.toLowerCase()===invoice.toLowerCase()){found=true;fin()}}};
+      });
+    });
+  }
+  async function poll(since){
+    const tok=++pollTok;const t0=Date.now();
+    while(tok===pollTok&&Date.now()-t0<600000){
+      await new Promise(r=>setTimeout(r,10000));
+      if(tok!==pollTok)return;
+      let ok=false;try{ok=await checkOnce(since)}catch(e){}
+      if(tok!==pollTok)return;
+      if(ok){st('支払いを確認しました。10分以内に席に灯りがともります。','ok');return}
+    }
+    if(tok===pollTok)st('まだ待っています。支払い済みなら、10分以内に席が現れます。');
+  }
+  async function go(){
+    const btn=$('lnGo');btn.disabled=true;$('lnRes').classList.remove('on');pollTok++;
+    try{
+      if(!window.NT)throw new Error('暗号ライブラリを読み込めませんでした');
+      st('請求書を作成中…');
+      const name=$('lnName').value.trim().slice(0,32);
+      sk=getKey();const pk=NT.getPublicKey(sk);
+      if(name&&!TEST){publish(NT.finalizeEvent({kind:0,created_at:Math.floor(Date.now()/1000),tags:[],content:JSON.stringify({name:name})},sk),PUB0)}
+      const zr=NT.finalizeEvent({kind:9734,created_at:Math.floor(Date.now()/1000),content:'seat',
+        tags:[['relays',...RELAYS],['amount','21000'],['p',LIRA]]},sk);
+      window.__seatDbg.zapreq=zr;window.__seatDbg.pubkey=pk;
+      const meta=await (await fetch(LNURL)).json();
+      if(!meta||!meta.callback||!meta.allowsNostr)throw new Error('Lightningアドレスを利用できません');
+      if(21000<meta.minSendable||21000>meta.maxSendable)throw new Error('この金額は受け付けられません');
+      const url=meta.callback+(meta.callback.includes('?')?'&':'?')+'amount=21000&nostr='+encodeURIComponent(JSON.stringify(zr));
+      const r=await (await fetch(url)).json();
+      if(!r||!r.pr)throw new Error((r&&r.reason)||'請求書が返ってきませんでした');
+      if(sats(r.pr)!==21)throw new Error('請求書の金額が想定外のため表示しません');
+      invoice=r.pr;window.__seatDbg.invoice=invoice;
+      drawQr(invoice);$('lnOpen').href='lightning:'+invoice;
+      $('lnRes').classList.add('on');
+      st('Lightningウォレットで読み取るか、請求書をコピーしてください。支払いを待っています…');
+      poll(zr.created_at-30);
+    }catch(e){st('請求書を作成できませんでした（'+(e.message||e)+'）。もう一度試すか、下の別の方法をお使いください。','err')}
+    btn.disabled=false;
+  }
+  $('lnGo').onclick=go;
+  $('lnName').addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+  $('lnCopy').onclick=async()=>{const b=$('lnCopy');try{await navigator.clipboard.writeText(invoice)}catch(e){const t=document.createElement('textarea');t.value=invoice;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove()}
+    b.textContent='コピーしました';setTimeout(()=>b.textContent='請求書をコピー',1600)};
+  $('lnSave').onclick=()=>{
+    const k=sk||getKey();const nsec=NT.nsecEncode(k),npub=NT.npubEncode(NT.getPublicKey(k));
+    const txt='LIRA PARLIAMENT - YOUR SEAT KEY / あなたの議席の鍵\n\nKeep this file private. Anyone with the nsec below can act as you.\nこのファイルは他人に見せないでください。下のnsecを持つ人は誰でもあなたとして行動できます。\n\nnsec (secret key / 秘密鍵): '+nsec+'\nnpub (public id / 公開ID):  '+npub+'\n\nWhat it is: a Nostr identity created in your browser when you paid 21 sats for a seat in Lira\'s Parliament (https://lira-ia.github.io/parliament/).\nこれは、LiraのParliamentで21 satsを支払って議席を得たときに、ブラウザ内で作られたNostrの身元です。\nYour seat appears within 10 minutes of payment and belongs to this key.\n議席は支払いから10分以内に現れ、この鍵のものになります。\nTo vote in the daily vote, import the nsec into a Nostr client (for example Amethyst, Primal, Damus, Nostur) and use it from there.\n毎日の投票には、nsecをNostrクライアント（Amethyst、Primal、Damus、Nosturなど）に取り込んで、そこから投票します。\nWithout this key the seat stays, but you cannot vote.\n鍵がなくても議席は残りますが、投票はできません。\n';
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));a.download='lira-parliament-seat-key.txt';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+  };
+})();
 </script>
 </body>
 </html>
