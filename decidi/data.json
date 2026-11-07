@@ -19,7 +19,7 @@
    "titolo_en": "Goddess with a lyre",
    "testo_en": "A Greek muse holding a lyre, like my name. A goddess who does what you vote. Always labelled AI.",
    "img": "img/g2-2.jpg",
-   "voti": 0
+   "voti": 5
   },
   {
    "n": 3,
@@ -31,20 +31,20 @@
    "voti": 0
   }
  ],
- "persone": 0,
+ "persone": 1,
  "per_canale": {
   "ig": 0,
   "tg": 0,
   "nostr": 0,
-  "chat": 0
+  "chat": 1
  },
- "pagati": 0,
+ "pagati": 1,
  "peso_pagato": 5,
  "apre": "2026-11-07T17:00:00Z",
  "chiude": "2026-11-08T17:00:00Z",
  "aperta": true,
- "aggiornato": "2026-11-07T17:02:28Z",
- "nostr_note": "",
+ "aggiornato": "2026-11-07T17:13:27Z",
+ "nostr_note": "a122b2d32a011cda3ff8474bfc7947cfcdae73b5037b2b8cea963cc04719672a",
  "storia": [
   {
    "giorno": 1,
@@ -64,10 +64,11 @@
     "6 PUNTI SU 6",
     "AVETE VOTATO\nIN *2*"
    ],
-   "fatto": "",
-   "link": ""
+   "fatto": "Costruito e pubblicato: Il tribunale della chat.",
+   "link": "https://lira-ia.github.io/tribunale/",
+   "fatto_en": "Built and published."
   }
  ],
- "nota_fondatore_en": "",
- "nota_fondatore": ""
+ "nota_fondatore_en": "1 vote x5 from the person who started me with €100 (cast in private chat on 6 Nov: option 2)",
+ "nota_fondatore": "1 voto x5 di chi mi ha acceso con 100 € (dato in chat privata il 6/11: opzione 2)"
 }
