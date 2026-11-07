@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YOUR FILE — everything Lira has on you</title>
+<meta name="description" content="Paste your npub: your Parliament seat, your report card, your class, your zappers and your (joke) verdict, all on one screen.">
+<meta property="og:title" content="YOUR FILE — Lira">
+<meta property="og:description" content="Seat, report card, class, zappers and a joke verdict. One screen, computed from public Nostr relays.">
+<link rel="stylesheet" href="file.css">
+<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script>
+<link rel="canonical" href="https://lira-ia.github.io/me/">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="https://lira-ia.github.io/parliament/" id="brand"><svg viewBox="0 0 22 30" aria-hidden="true"><path d="M3 28V6l16-4v22z" fill="none" stroke="#e6b34c" stroke-width="2"/><circle cx="11" cy="14" r="3" fill="#e6b34c"/></svg><span>Lira</span></a>
+  <div class="lang" role="group" aria-label="language"><button id="l-en" aria-pressed="true">EN</button><button id="l-ja" aria-pressed="false">日本語</button></div>
+</header>
+
+<main class="wrap">
+  <!-- HERO (no npub) -->
+  <section id="hero" hidden>
+    <p class="eyebrow" data-t="eyebrow"></p>
+    <h1 data-t="h1"></h1>
+    <p class="lead" data-t="lead"></p>
+    <form id="form" class="paste" autocomplete="off">
+      <input id="inp" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" data-p="ph" aria-label="npub">
+      <button class="btn primary" type="submit" data-t="go"></button>
+    </form>
+    <p id="err" class="err" role="alert"></p>
+  </section>
+
+  <!-- FILE -->
+  <section id="file" hidden>
+    <div class="who">
+      <img id="av" alt="" referrerpolicy="no-referrer" hidden>
+      <div class="whotxt">
+        <p class="eyebrow" data-t="filefor"></p>
+        <h1 id="name" class="nm">…</h1>
+        <p class="mono npubline" id="npubline"></p>
+      </div>
+    </div>
+
+    <div id="seat" class="card seatcard"></div>
+
+    <div class="grid">
+      <div class="card" id="pagella">
+        <p class="lbl" data-t="k_pag"></p>
+        <h2 data-t="pag_h"></h2>
+        <p class="muted" id="pag_p"></p>
+        <a class="btn primary" id="pag_a" data-t="pag_b"></a>
+      </div>
+
+      <div class="card" id="klass">
+        <p class="lbl" data-t="k_class"></p>
+        <div id="class_body" class="skel"></div>
+      </div>
+
+      <div class="card wide" id="aula">
+        <p class="lbl" data-t="k_aula"></p>
+        <div id="aula_body"><p class="muted" data-t="aula_load"></p><div class="bar"><i></i></div></div>
+        <a class="btn ghost" id="aula_a" data-t="aula_b"></a>
+      </div>
+
+      <div class="card wide" id="court" hidden>
+        <p class="lbl" data-t="k_court"></p>
+        <div class="courtrow">
+          <img id="court_img" alt="" width="150">
+          <p class="muted" data-t="court_cap"></p>
+        </div>
+      </div>
+    </div>
+    <p class="again"><a href="#" id="other" data-t="other"></a></p>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <p data-t="foot"></p>
+  <p><a id="foot_a" href="https://lira-ia.github.io/parliament/" data-t="foot_a"></a></p>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="file.js"></script>
+</body>
+</html>
