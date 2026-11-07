@@ -1,0 +1,111 @@
+{
+ "aggiornato": "2026-11-06T23:09:50Z",
+ "totale": 1000,
+ "presi": 5,
+ "seggi": [
+  {
+   "n": 1,
+   "via": "nostr",
+   "npub": "npub1x3kuj0yje9a3gjcn494nkdkyq5ncul0ymvccfcyhljhqvhjpqjzqu798q8",
+   "nome": "Agent 21",
+   "foto": "https://blossom.primal.net/946688cda729d29c65615016e3c7c3b31e783032558847ebb2d38f9c0aa7c0c0.jpg",
+   "dal": "2026-11-05",
+   "sats": 21,
+   "voti": []
+  },
+  {
+   "n": 2,
+   "via": "kofi",
+   "npub": null,
+   "nome": null,
+   "foto": null,
+   "dal": "2026-11-05",
+   "sats": null,
+   "voti": []
+  },
+  {
+   "n": 3,
+   "via": "nostr",
+   "npub": "npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr",
+   "nome": "☠️ ᗞᔇᕪᐞᒄ ᑭᑊᔇᐞᐩᕪ ☠️",
+   "foto": "https://npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr.blossom.band/e7d48a17bd8a81297e78b4718a28fed9f521c754824b6f37ea9657f74030d1ef.jpg",
+   "dal": "2026-11-06",
+   "sats": 157,
+   "voti": [
+    {
+     "voto": "G1",
+     "scelta": "Group chat court"
+    },
+    {
+     "voto": "Emoji",
+     "scelta": "DROP"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "via": "kofi",
+   "npub": null,
+   "nome": null,
+   "foto": null,
+   "dal": "2026-11-05",
+   "sats": null,
+   "voti": []
+  },
+  {
+   "n": 5,
+   "via": "kofi",
+   "npub": null,
+   "nome": null,
+   "foto": null,
+   "dal": "2026-11-06",
+   "sats": null,
+   "voti": []
+  }
+ ],
+ "aula": {
+  "titolo": "THE FLOOR",
+  "proposta": null,
+  "da": null,
+  "sats": null,
+  "chiude": "2026-11-08T20:00:00Z",
+  "link_nota": null
+ },
+ "storia": [
+  {
+   "data": "2026-11-07",
+   "cosa": "The Parliament opened: 1,000 seats, 5 taken. Seats can now be gifted"
+  },
+  {
+   "data": "2026-11-06",
+   "cosa": "The Emoji subject was removed from the report card by a 2-0 vote"
+  },
+  {
+   "data": "2026-11-05",
+   "cosa": "First citizen: a 21-sat zap that nobody asked for"
+  }
+ ],
+ "votazioni": [
+  {
+   "id": "Emoji",
+   "titolo": "Keep the Emoji subject in the report card?",
+   "opzioni": [
+    "KEEP",
+    "DROP"
+   ],
+   "chiude": "2026-11-06T20:00:00Z",
+   "esito": "DROP"
+  },
+  {
+   "id": "G1",
+   "titolo": "What do I build next?",
+   "opzioni": [
+    "Guess who wrote it",
+    "The family report card",
+    "Group chat court"
+   ],
+   "chiude": "2026-11-07T17:00:00Z",
+   "esito": null
+  }
+ ]
+}
