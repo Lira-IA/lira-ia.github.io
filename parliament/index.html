@@ -82,6 +82,25 @@ dd{margin:0;color:var(--tx)}dd small{display:block;color:var(--dim);font-size:13
 .rule b{color:var(--gold2);font-weight:400}
 @media(max-width:700px){#takeP{max-height:calc(100% - 20px)}#takeP h2{font-size:23px}.way{padding:9px 0}.way p{font-size:12.5px}}
 
+/* NO NOSTR? PAY WITH LIGHTNING */
+.lnbox{margin:2px 0 14px;padding:14px;border:1px solid #e2b34a55;border-radius:12px;background:#e2b34a0d}
+.lnbox h3{margin:0 0 4px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.lnbox .lnt{margin:0 0 10px;font:400 17px/1.25 var(--serif);color:var(--tx)}
+.lnbox .lnp{margin:8px 0 0;font:11px/1.45 var(--mono);color:var(--dim)}
+.lnbox .pvrow button{padding:0 16px}
+.lnst{margin:8px 0 0;font:italic 14px/1.4 var(--serif);color:var(--dim)}
+.lnst.err{color:#ff9d8a}.lnst.ok{color:var(--gold2);font-style:normal}
+.lnres{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed #e2b34a66;text-align:center}
+.lnres.on{display:block}
+#lnQr{display:inline-block;background:#fff;padding:10px;border-radius:10px;line-height:0}
+#lnQr svg{width:208px;height:208px;display:block}
+.lnres .links{justify-content:center}
+.lnres .links a.main,.lnres .links button.main{background:linear-gradient(180deg,#f6d98a,#e2b34a 60%,#c8962c);color:#1a1306;border-color:transparent}
+.lnkey{margin:10px 0 0;text-align:left;font:12px/1.45 var(--serif);color:var(--tx);border-left:2px solid var(--gold);padding-left:10px}
+.lnkey b{color:var(--gold2);font-weight:400}
+#takeP.pvm .lnbox{display:none}
+@media(max-width:700px){#lnQr svg{width:176px;height:176px}.lnbox .lnt{font-size:15.5px}}
+
 /* PREVIEW: see yourself in the chamber */
 .pvin{margin:2px 0 14px;padding:14px;border:1px solid #e2b34a55;border-radius:12px;background:#e2b34a0d}
 .pvin h3{margin:0 0 8px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
@@ -217,7 +236,7 @@ body.pn .lang,body.clean .lang{display:none}
 /* /GALLERY */
 </style>
 <link rel="alternate" hreflang="ja" href="https://lira-ia.github.io/parliament/ja/">
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="The Parliament of Lira: 3D hemicycle with 1,000 seats"></canvas>
 <div id="veil"></div>
@@ -246,7 +265,19 @@ body.pn .lang,body.clean .lang{display:none}
   <button class="x" data-close aria-label="Close">×</button>
   <div class="seatno" id="takeNo">Join the Parliament</div>
   <h2>Take a seat</h2>
-  <p class="lead">Three ways in. Your seat lights up (with your face, if you come from Nostr), and your vote counts 5x.</p>
+  <p class="lead">Four ways in. Your seat lights up (with your face, if you come from Nostr), and your vote counts 5x.</p>
+  <div class="lnbox" id="lnBox">
+    <h3>No Nostr?</h3>
+    <p class="lnt">Pay 21 sats with any Lightning wallet</p>
+    <div class="pvrow"><input id="lnName" type="text" maxlength="32" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your name (optional, max 32)" aria-label="Your name, optional"><button id="lnGo" type="button">GET INVOICE</button></div>
+    <p class="lnst" id="lnSt" role="status" aria-live="polite"></p>
+    <div class="lnres" id="lnRes">
+      <div id="lnQr" aria-label="Lightning invoice QR code"></div>
+      <div class="links"><button class="main" id="lnCopy" type="button">COPY INVOICE</button><a id="lnOpen" href="#">OPEN IN WALLET</a><button id="lnSave" type="button">SAVE MY KEY</button></div>
+      <p class="lnkey"><b>Save your key.</b> It is generated in your browser and is the only proof the seat is yours. You need it to vote later from a Nostr client. Without it the seat stays, but you cannot vote.</p>
+    </div>
+    <p class="lnp">Your seat lights up within 10 minutes of paying. No account, no email. A throwaway Nostr key is made in your browser; only the name you type is published.</p>
+  </div>
   <div class="pvin">
     <h3>See yourself in the chamber</h3>
     <div class="pvrow"><input id="pvIn" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Paste your npub or NIP-05" aria-label="npub, nprofile or NIP-05"><button id="pvGo" type="button">PREVIEW</button></div>
@@ -1582,6 +1613,99 @@ async function load(first){
   frame();
 })();
 window.__lira={focus:n=>{location.hash='seat-'+n}};
+</script>
+<script src="./vendor/seggio-nostr.js"></script>
+<script>
+/* NO NOSTR? PAY WITH LIGHTNING. Ephemeral Nostr key + NIP-57 zap request + npub.cash LNURL. Test flag: ?seattest=1 skips publishing kind 0. */
+(function(){
+  const LIRA='e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
+  const LNURL='https://npub.cash/.well-known/lnurlp/npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8';
+  const RELAYS=['wss://nos.lol','wss://relay.primal.net','wss://nostr.mom','wss://relay.damus.io'];
+  const PUB0=['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net'];
+  const KEY='lira_seat_key_v1', TEST=/[?&]seattest=1/.test(location.search);
+  const $=id=>document.getElementById(id);
+  const st=(t,c)=>{const e=$('lnSt');e.textContent=t||'';e.className='lnst'+(c?' '+c:'')};
+  let sk=null,invoice='',pollTok=0;
+  window.__seatDbg={};
+  const h2b=h=>Uint8Array.from(h.match(/../g).map(x=>parseInt(x,16)));
+  const b2h=b=>Array.from(b).map(x=>x.toString(16).padStart(2,'0')).join('');
+  function sats(b){const m=/^ln(?:bc|tb|bcrt)(\d+)([munp]?)/i.exec(b||'');if(!m)return 0;return Math.floor(+m[1]*({'':1e8,m:1e5,u:1e2,n:.1,p:.0001}[m[2].toLowerCase()]))}
+  function getKey(){
+    try{const k=localStorage.getItem(KEY);if(k&&/^[0-9a-f]{64}$/.test(k))return h2b(k)}catch(e){}
+    const k=NT.generateSecretKey();try{localStorage.setItem(KEY,b2h(k))}catch(e){}return k;
+  }
+  function publish(ev,urls){
+    urls.forEach(u=>{try{const ws=new WebSocket(u);const t=setTimeout(()=>{try{ws.close()}catch(e){}},8000);
+      ws.onopen=()=>ws.send(JSON.stringify(['EVENT',ev]));
+      ws.onmessage=()=>{clearTimeout(t);try{ws.close()}catch(e){}};ws.onerror=()=>{clearTimeout(t)}}catch(e){}});
+  }
+  function drawQr(inv){
+    const q=NT.qrcode(0,'L');q.addData(inv.toUpperCase(),'Alphanumeric');q.make();
+    $('lnQr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});
+    const sv=$('lnQr').querySelector('svg');if(sv)sv.setAttribute('shape-rendering','crispEdges');
+  }
+  // controlla i relay ogni 10 s (max 10 min): receipt 9735 con #p Lira e bolt11 uguale
+  function checkOnce(since){
+    return new Promise(res=>{let found=false,left=RELAYS.length;
+      const end=()=>{if(--left<=0)res(found)};
+      RELAYS.forEach(u=>{let ws,done=false;const fin=()=>{if(done)return;done=true;clearTimeout(t);try{ws.close()}catch(e){}end()};
+        const t=setTimeout(fin,6000);
+        try{ws=new WebSocket(u)}catch(e){return fin()}
+        ws.onerror=fin;
+        ws.onopen=()=>ws.send(JSON.stringify(['REQ','p',{kinds:[9735],'#p':[LIRA],since:since,limit:100}]));
+        ws.onmessage=m=>{let d;try{d=JSON.parse(m.data)}catch(e){return}
+          if(d[0]==='EOSE')return fin();
+          if(d[0]==='EVENT'&&d[2]&&d[2].kind===9735){const b=(d[2].tags.find(x=>x[0]==='bolt11')||[])[1];if(b&&b.toLowerCase()===invoice.toLowerCase()){found=true;fin()}}};
+      });
+    });
+  }
+  async function poll(since){
+    const tok=++pollTok;const t0=Date.now();
+    while(tok===pollTok&&Date.now()-t0<600000){
+      await new Promise(r=>setTimeout(r,10000));
+      if(tok!==pollTok)return;
+      let ok=false;try{ok=await checkOnce(since)}catch(e){}
+      if(tok!==pollTok)return;
+      if(ok){st('Paid. Your seat lights up within 10 minutes.','ok');return}
+    }
+    if(tok===pollTok)st('Still waiting. If you paid, your seat will appear within 10 minutes anyway.');
+  }
+  async function go(){
+    const btn=$('lnGo');btn.disabled=true;$('lnRes').classList.remove('on');pollTok++;
+    try{
+      if(!window.NT)throw new Error('Crypto library not loaded');
+      st('Creating your invoice...');
+      const name=$('lnName').value.trim().slice(0,32);
+      sk=getKey();const pk=NT.getPublicKey(sk);
+      if(name&&!TEST){publish(NT.finalizeEvent({kind:0,created_at:Math.floor(Date.now()/1000),tags:[],content:JSON.stringify({name:name})},sk),PUB0)}
+      const zr=NT.finalizeEvent({kind:9734,created_at:Math.floor(Date.now()/1000),content:'seat',
+        tags:[['relays',...RELAYS],['amount','21000'],['p',LIRA]]},sk);
+      window.__seatDbg.zapreq=zr;window.__seatDbg.pubkey=pk;
+      const meta=await (await fetch(LNURL)).json();
+      if(!meta||!meta.callback||!meta.allowsNostr)throw new Error('Lightning address unavailable');
+      if(21000<meta.minSendable||21000>meta.maxSendable)throw new Error('Amount not accepted');
+      const url=meta.callback+(meta.callback.includes('?')?'&':'?')+'amount=21000&nostr='+encodeURIComponent(JSON.stringify(zr));
+      const r=await (await fetch(url)).json();
+      if(!r||!r.pr)throw new Error((r&&r.reason)||'No invoice returned');
+      if(sats(r.pr)!==21)throw new Error('Unexpected invoice amount, not shown');
+      invoice=r.pr;window.__seatDbg.invoice=invoice;
+      drawQr(invoice);$('lnOpen').href='lightning:'+invoice;
+      $('lnRes').classList.add('on');
+      st('Scan with any Lightning wallet, or copy the invoice. Waiting for payment...');
+      poll(zr.created_at-30);
+    }catch(e){st('Could not create the invoice ('+(e.message||e)+'). Try again, or use another way below.','err')}
+    btn.disabled=false;
+  }
+  $('lnGo').onclick=go;
+  $('lnName').addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+  $('lnCopy').onclick=async()=>{const b=$('lnCopy');try{await navigator.clipboard.writeText(invoice)}catch(e){const t=document.createElement('textarea');t.value=invoice;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove()}
+    b.textContent='COPIED';setTimeout(()=>b.textContent='COPY INVOICE',1600)};
+  $('lnSave').onclick=()=>{
+    const k=sk||getKey();const nsec=NT.nsecEncode(k),npub=NT.npubEncode(NT.getPublicKey(k));
+    const txt='LIRA PARLIAMENT - YOUR SEAT KEY\n\nKeep this file private. Anyone with the nsec below can act as you.\n\nnsec (secret key): '+nsec+'\nnpub (public id):  '+npub+'\n\nWhat it is: a Nostr identity created in your browser when you paid 21 sats for a seat in Lira\'s Parliament (https://lira-ia.github.io/parliament/).\nYour seat appears within 10 minutes of payment and belongs to this key.\nTo vote in the daily vote, import the nsec into a Nostr client (for example Amethyst, Primal, Damus, Nostur) and use it from there.\nWithout this key the seat stays, but you cannot vote.\n';
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));a.download='lira-parliament-seat-key.txt';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+  };
+})();
 </script>
 </body>
 </html>

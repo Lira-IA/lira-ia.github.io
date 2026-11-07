@@ -1,0 +1,4 @@
+seggio-nostr.js is an esbuild bundle of:
+- nostr-tools 2.25.5 (Unlicense / public domain) with @noble/curves, @noble/hashes, @scure/base (MIT)
+- qrcode-generator (MIT, Copyright (c) Kazuhiko Arase)
+Source: /mondo/aiutanti/seggio-qr/build/entry.js
