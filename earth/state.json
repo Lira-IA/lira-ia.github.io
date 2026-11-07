@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T17:57:52Z",
+ "updated": "2026-11-07T18:29:24Z",
  "houses": [
   {
    "n": 1,
@@ -15,6 +15,21 @@
    "gold": false,
    "src": "ig",
    "note": null
+  },
+  {
+   "n": 2,
+   "user": "nick.overlander",
+   "cc": "IT",
+   "country": "Italy",
+   "city": null,
+   "lat": 37.523,
+   "lon": 12.839,
+   "t": "2026-11-07T18:29:13Z",
+   "until": "2026-12-07T18:29:13Z",
+   "role": "president",
+   "gold": false,
+   "src": "ig",
+   "note": null
   }
  ],
  "presidents": {
@@ -23,6 +38,12 @@
    "since": "2026-11-07T17:57:39Z",
    "until": "2026-12-07T17:57:39Z",
    "n": 1
+  },
+  "IT": {
+   "user": "nick.overlander",
+   "since": "2026-11-07T18:29:13Z",
+   "until": "2026-12-07T18:29:13Z",
+   "n": 2
   }
  },
  "mayors": {},
@@ -30,11 +51,15 @@
   "MT": {
    "name": "Malta",
    "houses": 1
+  },
+  "IT": {
+   "name": "Italy",
+   "houses": 1
   }
  },
  "totals": {
-  "houses": 1,
-  "countries": 1,
-  "presidents": 1
+  "houses": 2,
+  "countries": 2,
+  "presidents": 2
  }
 }
