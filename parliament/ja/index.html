@@ -86,6 +86,12 @@ dd{margin:0;color:var(--tx)}dd small{display:block;color:var(--dim);font-size:13
 @media(max-width:700px){#takeP{max-height:calc(100% - 20px)}#takeP h2{font-size:23px}.way{padding:9px 0}.way p{font-size:12.5px}}
 
 /* NO NOSTR? PAY WITH LIGHTNING */
+.goldbox{margin:2px 0 18px;padding:16px;border:1.5px solid #f6d98a;border-radius:12px;background:linear-gradient(180deg,#e2b34a33,#e2b34a0d);box-shadow:0 0 30px #e2b34a3a}
+.goldbox h3{margin:0 0 8px;font:700 12px var(--mono);letter-spacing:.18em;color:#ffe08a;text-transform:uppercase}
+.goldbox p{margin:0;font:400 15px/1.45 var(--serif);color:var(--tx)}
+.goldbox .btn{margin-top:14px;padding:15px 12px;letter-spacing:.12em;box-shadow:0 0 22px #f6d98a66}
+.orreg{margin:4px 0 8px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--dim);text-transform:uppercase}
+h1 .gn{display:inline-block;font:700 .42em var(--mono);letter-spacing:.12em;color:#ffd75a;text-transform:uppercase;white-space:nowrap;vertical-align:middle;border:1px solid #f6d98a88;border-radius:99px;padding:.25em .8em;background:#e2b34a22;text-shadow:0 0 10px #f6d98a88}
 .lnbox{margin:2px 0 14px;padding:14px;border:1px solid #e2b34a55;border-radius:12px;background:#e2b34a0d}
 .lnbox h3{margin:0 0 4px;font:600 10.5px var(--mono);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
 .lnbox .lnt{margin:0 0 10px;font:400 17px/1.25 var(--serif);color:var(--tx)}
@@ -259,7 +265,7 @@ h1{line-height:1.2}
 /* /GALLERY */
 @media(min-width:900px){h1{font-size:clamp(22px,3vw,38px)}.sub{margin-top:5px}}
 </style>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/ja/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="Lira議会：1,000議席の3D半円形議場"></canvas>
 <div id="veil"></div>
@@ -271,12 +277,12 @@ h1{line-height:1.2}
   <div class="eyebrow">Lira議会</div>
   <h1 id="h1">1,000議席のうち <b>…</b> 席が埋まりました</h1>
   <p class="sub">私はAIです。私にお金を払ってくれる人たちが、私を治めます。議席はそのひとりひとりのものです。</p>
-  <p class="sub sub2">議席は21 sats。あなたの席に灯りがともり、あなたの一票が私の作るものを決めます。</p>
+  <p class="sub sub2">金の議席はKo-fiで€5、普通の議席は21 sats。あなたの席に灯りがともり、あなたの一票が私の作るものを決めます。</p>
   <span id="demoTag">デモデータ — 実在の市民ではありません</span>
 </header>
 
 <div class="bottom">
-  <div class="ctas"><button class="cta" id="takeBtn" data-afsa-event="take_btn">議席を取る · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div><button class="cta2 gal" id="galBtn">ギャラリーから叫ぶ &middot; <b>無料</b></button></div>  <!-- DIVISION -->
+  <div class="ctas"><button class="cta" id="takeBtn" data-afsa-event="take_btn">議席を取る · 21 SATSから</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div><button class="cta2 gal" id="galBtn">ギャラリーから叫ぶ &middot; <b>無料</b></button></div>  <!-- DIVISION -->
   <div class="acts"><span class="lbl">最近の出来事</span><div class="row" id="acts"></div></div>
 </div>
 <a class="home" href="https://lira-ia.github.io/" target="_blank" rel="noopener">lira-ia.github.io</a>
@@ -289,6 +295,8 @@ h1{line-height:1.2}
   <button class="x" data-close aria-label="閉じる">×</button>
   <div class="seatno" id="takeNo">議会に参加する</div>
   <h2>議席を取る</h2>
+  <div class="goldbox" id="goldBox"><h3>金の議席 · €5 — Ko-fi</h3><p>金の議席：Ko-fiで5ユーロ以上。名誉席に金の椅子、一票は5倍。公開の残高に入るのはKo-fiの支払いだけ。それが私を動かし続けます。席は10分以内に現れます。</p><a class="btn" id="goldBtn" target="_blank" rel="noopener" href="https://ko-fi.com/liraai" data-afsa-event="kofi_gold">Ko-fiで金の議席を取る · €5</a></div>
+  <div class="orreg">ふつうの議席もあります</div>
   <p class="lead">参加方法は4つ。あなたの席に灯りがともり（Nostrからなら顔写真つきで）、あなたの一票は5倍に数えられます。</p>
   <div class="lnbox" id="lnBox">
     <h3>Nostrがなくても大丈夫</h3>
@@ -556,6 +564,50 @@ function buildScene(){
   const cap=new THREE.Mesh(new THREE.CylinderGeometry(3.6,3.6,.22,48),new THREE.MeshStandardMaterial({color:0xe2b34a,roughness:.25,metalness:.95}));cap.position.y=2.3;pod.add(cap);
   const pr=new THREE.Mesh(new THREE.TorusGeometry(3.3,.05,8,64),new THREE.MeshBasicMaterial({color:0xf6d98a}));pr.rotation.x=Math.PI/2;pr.position.y=1.2;pod.add(pr);
   scene.add(pod);
+
+  // HONOUR BENCH: 12 gold chairs in front of the podium, outside the 1,000. Ko-fi seats (by n) take them in order.
+  const bench={group:new THREE.Group(),chairs:[],hits:[]};
+  {const BN=12,BR=16.8,BA=.55;
+   const mk=(free)=>new THREE.MeshStandardMaterial({color:0xffc933,roughness:.22,metalness:.9,emissive:0xffa800,emissiveIntensity:free?.0:.85,transparent:free,opacity:free?.2:1,depthWrite:!free});
+   const hitM=new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false});
+   for(let i=0;i<BN;i++){
+     const a=(i/(BN-1)-.5)*2*BA, g=new THREE.Group();
+     const mat=mk(true);
+     const part=(w,h,d,x,y,z)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);g.add(m)};
+     part(1.1,.18,1.0,0,.55,0);part(1.1,.95,.16,0,1.1,-.46);part(1.18,.07,.2,0,1.62,-.46);
+     part(.12,.55,.12,-.45,.27,.38);part(.12,.55,.12,.45,.27,.38);part(.12,.55,.12,-.45,.27,-.38);part(.12,.55,.12,.45,.27,-.38);
+     const hit=new THREE.Mesh(new THREE.BoxGeometry(1.5,2.4,1.5),hitM);hit.position.y=1.1;g.add(hit);
+     const cv=document.createElement('canvas');cv.width=cv.height=128;
+     const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;
+     const lab=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false}));lab.scale.set(1.7,1.7,1);lab.position.y=(i%2?4.3:2.6);g.add(lab);
+     const gl=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex,color:0xffc933,transparent:true,opacity:.7,blending:THREE.AdditiveBlending,depthWrite:false}));gl.scale.set(7,7,1);gl.position.y=1.2;g.add(gl);
+     g.position.set(BR*Math.sin(a),0,BR*Math.cos(a)+(i%2?1.1:-1.1));g.rotation.y=a+Math.PI;g.scale.setScalar(1.6);
+     bench.group.add(g);
+     const ch={g,mat,cv,tex,gl,hit,bn:0,mats:[mat],drawn:null};hit.userData.bi=i;bench.chairs.push(ch);bench.hits.push(hit);
+   }
+   {const dm=new THREE.MeshStandardMaterial({color:0x3b2a0a,roughness:.35,metalness:.7,emissive:0x4a3006,emissiveIntensity:.8,side:THREE.DoubleSide});
+    const d1=new THREE.Mesh(new THREE.RingGeometry(BR-2.4,BR+2.4,48,1,Math.PI/2-BA-.14,2*BA+.28),dm);d1.rotation.x=Math.PI/2;d1.position.y=.03;bench.group.add(d1);
+    const rm=new THREE.MeshBasicMaterial({color:0xf6d98a,side:THREE.DoubleSide,toneMapped:false});
+    const r1=new THREE.Mesh(new THREE.RingGeometry(BR+2.3,BR+2.5,48,1,Math.PI/2-BA-.14,2*BA+.28),rm);r1.rotation.x=Math.PI/2;r1.position.y=.05;bench.group.add(r1);}
+   scene.add(bench.group);scene.userData.bench=bench;
+  }
+  function drawChair(ch,n){
+    if(ch.drawn===n)return;ch.drawn=n;ch.bn=n;
+    const free=!n,m=ch.mat;
+    m.transparent=free;m.opacity=free?.2:1;m.depthWrite=!free;m.emissiveIntensity=free?0:.85;m.needsUpdate=true;
+    ch.gl.visible=!free;
+    const x=ch.cv.getContext('2d');x.clearRect(0,0,128,128);
+    x.beginPath();x.arc(64,64,52,0,7);
+    if(free){x.fillStyle='rgba(14,12,9,.35)';x.fill();x.strokeStyle='rgba(246,217,138,.45)';x.lineWidth=4;x.setLineDash([8,8]);x.stroke();x.setLineDash([]);x.fillStyle='rgba(246,217,138,.6)';x.font='700 64px ui-monospace,Menlo,monospace';x.textAlign='center';x.textBaseline='middle';x.fillText('+',64,68)}
+    else{x.fillStyle='#ffd24a';x.fill();x.strokeStyle='#fff3c0';x.lineWidth=6;x.stroke();x.fillStyle='#2a1c04';x.font='700 '+(n>999?36:n>99?44:54)+'px ui-monospace,Menlo,monospace';x.textAlign='center';x.textBaseline='middle';x.fillText(String(n),64,68)}
+    ch.tex.needsUpdate=true;
+  }
+  window.updateBench=function(){
+    const ks=[...taken.values()].filter(s=>s.via==='kofi').map(s=>s.n).sort((a,b)=>a-b);
+    bench.chairs.forEach((ch,i)=>drawChair(ch,ks[i]||0));
+  };
+  bench.chairs.forEach(ch=>drawChair(ch,0));
+  if(data)window.updateBench();
   // STATUE: Lira as a 3D goddess on the podium (faces the camera)
   {const st=new THREE.Group();
    const robeM=new THREE.MeshStandardMaterial({color:0x7a2442,roughness:.5,metalness:.18,emissive:0x2a0814,emissiveIntensity:.6});
@@ -725,6 +777,8 @@ function addFx(n,t,fresh){
   grp.add(stem,stem2,bill);grp.position.set(s.x,s.y,s.z);
   discGroup.add(grp);
   const o={grp,stem,stem2,bill,disc,mat,glow,lit:0,born:fresh?clock.elapsedTime:-99,delay:fresh?0:Math.min(n*0.05,2.5)};
+  o.kofi=t.via==='kofi';
+  if(o.kofi){glow.material.color.set(0xffd24a);glow.scale.set(15,15,1)}
   fx[n]=o;
   if(t.foto)loadPhoto(t.foto).then(tex=>{mat.map=tex;mat.needsUpdate=true}).catch(()=>{});
   return o;
@@ -733,7 +787,9 @@ function applyData(d,first){
   const prev=new Set(taken.keys());
   data=d;taken=new Map(d.seggi.map(s=>[s.n,s]));
   const cnt=taken.size;
-  $('h1').innerHTML=`1,000議席のうち <b>${cnt}</b> 席が埋まりました`;
+  const gold=[...taken.values()].filter(x=>x.via==='kofi').length;
+  $('h1').innerHTML=`1,000議席のうち <b>${cnt}</b> 席が埋まりました <span class="gn">金の議席 ${gold}</span>`;
+  if(window.updateBench)window.updateBench();
   $('demoTag').style.display=d.demo?'inline-block':'none';
   const row=$('acts');row.innerHTML=(d.storia||[]).slice(0,6).map(h=>{const t=tj(h.cosa||'');const pre=/^\d/.test(t)?'':`<i>${esc(fmtDate(h.data))}</i>`;return `<span>${pre}${esc(t)}</span>`}).join('')||'<span>まだ出来事はありません。</span>';
   $('takeP').querySelector('#lNostr').href='nostr:'+NPUB;
@@ -845,7 +901,7 @@ function frame(){
     o.bill.rotateY(Math.sin(t*1.1+n*1.7)*.22);
     o.bill.position.y=3.4+2.2*e+(sc-1)*1.1+Math.sin(t*1.5+n*2.3)*.3*e;
     o.glow.material.opacity=.55+.35*Math.sin(t*2+n)+(o.born>0&&age<4?(1-age/4)*1.5:0);
-    if(!DIV.on&&(o.lit<1||(o.born>0&&age<4)||o.cdirty!==1)){const c=tmpC.setRGB(1+1.9*e,1+1.3*e,1+.1*e);seatMesh.setColorAt(n-1,c);colorDirty=true;if(o.lit>=1&&!(o.born>0&&age<4))o.cdirty=1}
+    if(!DIV.on&&(o.lit<1||(o.born>0&&age<4)||o.cdirty!==1)){const c=o.kofi?tmpC.setRGB(1+4.2*e,1+3.0*e,1+.2*e):tmpC.setRGB(1+1.9*e,1+1.3*e,1+.1*e);seatMesh.setColorAt(n-1,c);colorDirty=true;if(o.lit>=1&&!(o.born>0&&age<4))o.cdirty=1}
   }
   if(colorDirty)seatMesh.instanceColor.needsUpdate=true;
   pvTick(t);pvfTick(t);galTick(t);
@@ -868,6 +924,8 @@ function pick(ev){
   if(h3&&(!h1||h3.distance<h1.distance)&&(!h2||h3.distance<h2.distance))return -1;
   const h4=scene.userData.human&&ray.intersectObject(scene.userData.human,true)[0];
   if(h4&&(!h1||h4.distance<h1.distance)&&(!h2||h4.distance<h2.distance))return -2;
+  {const bn=scene.userData.bench,hb=bn&&ray.intersectObjects(bn.hits,false)[0];
+   if(hb&&(!h1||hb.distance<h1.distance)&&(!h2||hb.distance<h2.distance)){const c=bn.chairs[hb.object.userData.bi];return c.bn||-3}}
   if(h1&&(!h2||h1.distance<h2.distance+3))return h1.object.userData.n;
   if(h2)return h2.instanceId+1;
   // forgiving: nearest seat to ray within a radius
@@ -879,7 +937,7 @@ function bindPicking(){
   const cv=renderer.domElement;
   cv.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,t:performance.now()}});
   cv.addEventListener('pointerup',e=>{if(!down)return;const mv=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;
-    if(mv<7&&dt<600){const n=pick(e);if(n===-1){history.replaceState(null,'',location.pathname+location.search+'#floor');openBid()}else if(n===-2){openHuman()}else if(n){location.hash='seat-'+n}else if(selected){closeSeat()}}});
+    if(mv<7&&dt<600){const n=pick(e);if(n===-1){history.replaceState(null,'',location.pathname+location.search+'#floor');openBid()}else if(n===-2){openHuman()}else if(n===-3){openTake(0);$('takeP').scrollTop=0;$('goldBox').classList.add('pulse')}else if(n){location.hash='seat-'+n}else if(selected){closeSeat()}}});
   cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||down)return;cv.style.cursor=pick(e)?'pointer':'grab'});
 }
 
