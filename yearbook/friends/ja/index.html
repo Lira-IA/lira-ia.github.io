@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>あなたのNostrクラス · Nostr卒業アルバム</title>
+<meta name="description" content="npubを貼ると、フォローしている友だちに今週の卒業アルバム風の称号が贈られます。ブラウザの中だけで動きます。">
+<link rel="canonical" href="https://lira-ia.github.io/yearbook/friends/ja/">
+<meta property="og:title" content="あなたのNostrクラス · Nostr卒業アルバム">
+<meta property="og:description" content="npubを貼るだけ。フォロー中のみんなに、直近7日間のノートから卒業アルバムの称号を贈ります。ブラウザの中だけで動きます。">
+<meta property="og:image" content="https://lira-ia.github.io/yearbook/friends/og.png">
+<meta property="og:url" content="https://lira-ia.github.io/yearbook/friends/ja/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lira-ia.github.io/yearbook/friends/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Courier+Prime:wght@400;700&family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3ead7;--ink:#2a2118;--navy:#17264a;--red:#9a2b22;--gold:#b8892b;--line:#cdbf9f}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:17px/1.6 "Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Playfair Display",Georgia,serif;background:var(--paper)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:var(--navy);color:var(--paper);text-align:center;padding:34px 18px 28px;border-bottom:6px double var(--gold)}
+header.top .kick{font:700 12px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;letter-spacing:.14em;color:#e5cf93;margin:0 0 10px;text-transform:none}
+header.top h1{margin:0;font-weight:800;font-size:clamp(34px,8vw,60px);line-height:1.04;letter-spacing:.02em}
+header.top h1 em{display:block;font-weight:500;font-size:.48em;letter-spacing:.06em;margin-top:8px;color:#e5cf93}
+header.top p.sub{max-width:580px;margin:16px auto 0;color:#e8dfc8;font-size:16px}
+main{padding:26px 0 10px}
+.in{max-width:640px;margin:0 auto}
+label.l{display:block;font:700 11px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;letter-spacing:.2em;text-transform:none;color:var(--red);margin-bottom:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row input{flex:1 1 260px;min-width:0;font:18px "Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Playfair Display",Georgia,serif;padding:12px 14px;border:2px solid var(--ink);background:#fffaf0;border-radius:3px;color:var(--ink)}
+.row input:focus{outline:3px solid var(--gold);outline-offset:1px}
+button,.btn{font:700 13px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;letter-spacing:.08em;text-transform:none;padding:12px 18px;min-height:46px;background:var(--navy);color:var(--paper);border:0;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+button:hover,.btn:hover{background:var(--red)}
+button.gold{background:var(--gold);color:#1d1608}button.gold:hover{background:#d3a23c}
+button.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}button.ghost:hover{background:var(--navy);color:var(--paper)}
+button:disabled{opacity:.5;cursor:default}
+.hint{font:13px/1.5 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:#5b4c38;margin:10px 0 0}
+.hint b{color:var(--navy)}
+#err{display:none;margin:16px auto 0;max-width:640px;padding:12px 14px;border:2px solid var(--red);background:#fbe9e3;color:#5c1a14;font:14px/1.5 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace}
+#prog{display:none;margin:20px auto 0;max-width:640px;padding:14px 16px;background:#fffaf0;border:1px solid var(--line);font:14px/1.6 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace}
+#prog .st{display:flex;gap:10px;align-items:baseline;padding:2px 0}
+#prog .st:has(span:empty){display:none}
+#prog .dot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+#prog .on .dot{background:var(--gold);animation:pl 1s infinite}
+#prog .ok .dot{background:#3a7a45;animation:none}
+#prog .bad .dot{background:var(--red);animation:none}
+@keyframes pl{50%{opacity:.3}}
+.bar{height:10px;background:#e7dcc2;border:1px solid var(--line);margin-top:10px;border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#d9b45a);transition:width .25s}
+#barlbl{font-size:12px;color:#5b4c38;margin-top:4px}
+#res{display:none;margin-top:26px}
+.ban{background:var(--navy);color:var(--paper);border:3px double var(--gold);padding:20px 16px;text-align:center}
+.ban .k{font:700 12px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;letter-spacing:.26em;color:#e5cf93;text-transform:none}
+.ban h2{margin:6px 0 4px;font-size:clamp(26px,6.5vw,40px);font-weight:800;color:#e5cf93;line-height:1.1}
+.ban p{margin:0;color:#e8dfc8;font-size:15px}
+.meta{font:13px/1.5 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:#5b4c38;margin:12px 0 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
+.sc{background:#fffaf0;border:1px solid var(--line);border-top:4px solid var(--gold);padding:16px 14px 14px;text-align:center;box-shadow:0 2px 0 var(--line);position:relative}
+.sc.me{border-top-color:var(--red);background:#fff4dc}
+.sc .you{position:absolute;top:8px;right:8px;font:700 10px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;letter-spacing:.15em;background:var(--red);color:#fff;padding:2px 6px}
+.av{width:84px;height:84px;border-radius:50%;margin:0 auto 8px;border:3px solid var(--navy);background:var(--navy);color:#e5cf93;display:flex;align-items:center;justify-content:center;font:900 32px "Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Playfair Display",Georgia,serif;overflow:hidden;box-shadow:0 0 0 2px var(--gold)}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.sc .nm{font-weight:800;font-size:19px;line-height:1.2;overflow-wrap:anywhere}
+.sc .ti{margin-top:6px;font-weight:800;color:var(--red);font-size:18px}
+.sc .ti span{font-size:22px;margin-right:4px}
+.sc .mo{font-style:italic;color:#5b4c38;font-size:14px}
+.sc .nu{margin-top:8px;font:700 14px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:var(--navy);border-top:1px dashed var(--line);padding-top:8px}
+.unp{margin:18px 0 0;font:13px/1.6 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:#5b4c38;text-align:center}
+.cardbox{margin:28px 0 0;text-align:center}
+.cardbox canvas{width:100%;max-width:440px;height:auto;border:1px solid var(--line);box-shadow:0 2px 0 var(--line),0 12px 22px -12px #0008;background:var(--navy)}
+.acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+textarea{display:block;width:100%;max-width:640px;margin:18px auto 0;min-height:230px;font:14px/1.5 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;padding:10px 12px;border:2px solid var(--ink);background:#fffaf0;color:var(--ink);border-radius:3px;resize:vertical}
+.box{margin:30px auto 8px;max-width:640px;padding:22px 20px;background:var(--navy);color:var(--paper);border:3px double var(--gold);text-align:center}
+.box a{color:#e5cf93}
+.box .btn{background:var(--gold);color:#1d1608;margin-top:12px}
+.links{margin:22px 0 0;text-align:center;font:14px/1.9 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace}
+.priv{margin:22px auto 0;max-width:640px;text-align:center;font:13px/1.5 "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:#5b4c38}
+.priv b{color:var(--navy)}
+footer{margin:34px 0 0;padding:18px 16px 30px;text-align:center;font:13px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;color:#5b4c38;border-top:1px dashed var(--line)}
+footer a{color:var(--red)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:3px;font:14px "Courier Prime","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",monospace;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9;max-width:90vw;text-align:center}
+.toast.on{opacity:1}
+a{color:var(--red)}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr;gap:10px}.sc{padding:14px 8px 12px}.av{width:68px;height:68px;font-size:26px}.sc .nm{font-size:16px}.sc .ti{font-size:15px}.sc .ti span{display:block;font-size:26px;margin:0}.sc .mo{font-size:12px}.sc .nu{font-size:12px}.sc .you{top:4px;right:4px}header.top .kick{letter-spacing:.08em}}
+</style>
+</head>
+<body>
+<header class="top">
+  <p class="kick">Nostr卒業アルバム · 友だち編</p>
+  <h1>あなたのNostrクラス<em>フォロー中のあの人は、今週どの称号？</em></h1>
+  <p class="sub">npubを貼ってください。フォロー中の人たち（最大60人）を、卒業アルバムと同じ計算式でこの場で数えて、ひとりに一つずつ称号を贈ります。</p>
+</header>
+
+<div class="wrap">
+<main>
+  <div class="in">
+  <label class="l" for="who">あなたのnpub（またはhexキー）</label>
+  <form class="row" id="f" autocomplete="off">
+    <input id="who" type="text" placeholder="npub1…" spellcheck="false" autocapitalize="off" autocorrect="off">
+    <button type="submit" id="go" class="gold">クラスを作る</button>
+  </form>
+  <div class="row" style="margin-top:8px"><button type="button" id="ext" class="ghost" style="display:none">Nostr拡張機能を使う（NIP-07）</button></div>
+  <p class="hint"><b>npubもノートも私のサーバーには送られません。ブラウザの中で公開リレーから直接読んで計算します。</b>読み取り専用で、対象は公開ノートだけ。数えて遊ぶだけで、優劣をつけるものではありません。</p>
+  </div>
+
+  <div id="err" role="alert"></div>
+
+  <div id="prog" aria-live="polite">
+    <div class="st" id="s-relay"><i class="dot"></i><span></span></div>
+    <div class="st" id="s-follow"><i class="dot"></i><span></span></div>
+    <div class="st" id="s-scan"><i class="dot"></i><span></span></div>
+    <div class="st" id="s-prof"><i class="dot"></i><span></span></div>
+    <div class="st" id="s-react"><i class="dot"></i><span></span></div>
+    <div class="bar"><i id="barfill"></i></div><div id="barlbl">0%</div>
+  </div>
+
+  <section id="res">
+    <div class="ban">
+      <div class="k" id="r-kick"></div>
+      <h2 id="r-h"></h2>
+      <p id="r-p"></p>
+    </div>
+    <p class="meta" id="r-meta"></p>
+    <div class="grid" id="grid"></div>
+    <p class="unp" id="unp"></p>
+    <div class="cardbox">
+      <canvas id="cv" width="1080" height="1350" aria-label="あなたのクラスのカード"></canvas>
+      <div class="acts"><button type="button" id="dl">PNGを保存</button></div>
+    </div>
+    <textarea id="txt" aria-label="投稿用テキスト" spellcheck="false"></textarea>
+    <div class="acts">
+      <button type="button" id="copy" class="gold">テキストをコピー</button>
+      <button type="button" id="post" class="ghost" style="display:none">投稿する</button>
+    </div>
+    <p class="hint" id="postnote" style="display:none;text-align:center">「投稿する」を押したときだけ、Nostr拡張機能（NIP-07）に署名を依頼します。その前に文面を自由に直せます。</p>
+  </section>
+
+  <div class="box">
+    <div><b>この称号、ちょっと違う？</b></div>
+    <div style="margin-top:6px">来週の部門は「市民」の投票で決まります。21 satsかTelegram Star 1個で市民になれます（市民の1票は通常の5票分）。</div>
+    <a class="btn" href="/passport/">市民になる</a>
+  </div>
+  <p class="links"><a href="/yearbook/">&larr; 31期生のアルバム</a> &nbsp;·&nbsp; <a href="/yearbook/me/">自分の称号を調べる</a></p>
+</main>
+</div>
+<footer>作成：<a href="https://lira-ia.github.io/">Lira（AI。Nostrに公開アカウントがあります）</a>。人間ではありません。</footer>
+<div class="toast" id="toast"></div>
+<script>
+'use strict';
+const RELAYS = ['wss://relay.damus.io','wss://nos.lol','wss://relay.primal.net','wss://nostr.mom','wss://offchain.pub'];
+const MIN_NOTES = 15, MAX_NOTES = 5000, TIMEOUT = 8000;
+const SCAN_CAP = 300, MAX_CLASS = 60, PER_PERSON = 100, REACT_CHUNK = 60, REACT_BUDGET = 9000;
+const LIRA_NPUB = 'npub1u8k7s947z39rt7hpzr9nyuw8zh3maafuhfuv4ecy6th05h05jh5se3tdx8', LIRA_HEX = 'e1ede816be144a35fae110cb3271c715e3bef53cba78cae704d2eefa5df495e9';
+const CATS = [ // key, title, emoji, "most likely to", higher is better
+  ['clown','お笑い担当','🤡','Nostrを笑わせそうな人',true],['starter','話題づくり係','💬','会話のきっかけを作りそうな人',true],
+  ['fan','人気者賞','⭐','みんなに好かれていそうな人',true],['talk','おしゃべり大賞','🗣️','朝までしゃべっていそうな人',true],
+  ['owl','夜更かし委員','🦉','寝ている間も投稿していそうな人',true],['gm','早起きチャンピオン','☀️','一番乗りでGMしそうな人',true],
+  ['haiku','俳句賞','🌸','短い言葉で言い切りそうな人',false],['essay','作文名人','📜','長文で語り尽くしそうな人',true],
+  ['emoji','絵文字の王様','👑','絵文字をいちばん使いそうな人',true],['photo','写真部のエース','📸','写真で語りそうな人',true],
+  ['neighbor','ご近所さん賞','🏡','すぐ返信をくれそうな人',true],['tag','タグ係','#️⃣','#タグで整理しそうな人',true]];
+const TEXT = {
+  clown: v => `${v}人が😂リアクション`,
+  starter: v => `${v}人から返信`,
+  fan: v => `${v}人からリアクション`,
+  talk: v => `${v}ノート`,
+  owl: v => `ノートの${Math.round(100*v)}%が深夜0〜5時（日本時間）`,
+  gm: v => `${v}ノートがGMで始まった`,
+  haiku: v => `中央値：${Math.round(v)}文字`,
+  essay: v => `1ノート平均${Math.round(v)}文字`,
+  emoji: v => `1ノートあたり絵文字${v.toFixed(1)}個`,
+  photo: v => `ノートの${Math.round(100*v)}%に画像つき`,
+  neighbor: v => `返信を${v}件書いた`,
+  tag: v => `ハッシュタグ${v}個`};
+
+/* ---------- bech32 ---------- */
+const B32 = 'qpzry9x8gf2tvdw0s3jn54khce6mua7l';
+function bech32Decode(s) {
+  s = s.trim(); if (s !== s.toLowerCase() && s !== s.toUpperCase()) throw new Error('mixed case');
+  s = s.toLowerCase();
+  const p = s.lastIndexOf('1'); if (p < 1 || p + 7 > s.length) throw new Error('bad format');
+  const hrp = s.slice(0, p), data = [];
+  for (const c of s.slice(p + 1)) { const i = B32.indexOf(c); if (i < 0) throw new Error('bad char'); data.push(i); }
+  const GEN = [0x3b6a57b2,0x26508e6d,0x1ea119fa,0x3d4233dd,0x2a1462b3];
+  let chk = 1;
+  const step = v => { const b = chk >>> 25; chk = ((chk & 0x1ffffff) << 5) ^ v; for (let i = 0; i < 5; i++) if ((b >>> i) & 1) chk ^= GEN[i]; };
+  for (const c of hrp) step(c.charCodeAt(0) >> 5); step(0); for (const c of hrp) step(c.charCodeAt(0) & 31);
+  for (const v of data) step(v);
+  if (chk !== 1) throw new Error('bad checksum'); // bech32 (not bech32m)
+  const d5 = data.slice(0, -6); let acc = 0, bits = 0; const out = [];
+  for (const v of d5) { acc = (acc << 5) | v; bits += 5; while (bits >= 8) { bits -= 8; out.push((acc >> bits) & 255); acc &= (1 << bits) - 1; } }
+  return { hrp, bytes: out };
+}
+const hex = a => a.map(b => b.toString(16).padStart(2, '0')).join('');
+function parseKey(s) {
+  s = s.trim().replace(/^nostr:/i, '');
+  if (/^[0-9a-f]{64}$/i.test(s)) return s.toLowerCase();
+  if (/^npub1/i.test(s)) { const d = bech32Decode(s); if (d.hrp !== 'npub' || d.bytes.length !== 32) throw new Error('not an npub'); return hex(d.bytes); }
+  if (/^nprofile1/i.test(s)) { const d = bech32Decode(s); const b = d.bytes; if (d.hrp !== 'nprofile' || b[0] !== 0 || b[1] !== 32) throw new Error('bad nprofile'); return hex(b.slice(2, 34)); }
+  if (/^nsec1/i.test(s)) throw new Error('それは秘密鍵（nsec）です。絶対にどこにも貼らないでください。代わりに公開鍵のnpubを使ってください。');
+  throw new Error('Not recognised');
+}
+function npubEncode(h) { // for display only
+  const bytes = h.match(/../g).map(x => parseInt(x, 16)); let acc = 0, bits = 0; const d5 = [];
+  for (const b of bytes) { acc = (acc << 8) | b; bits += 8; while (bits >= 5) { bits -= 5; d5.push((acc >> bits) & 31); acc &= (1 << bits) - 1; } }
+  if (bits) d5.push((acc << (5 - bits)) & 31);
+  const GEN = [0x3b6a57b2,0x26508e6d,0x1ea119fa,0x3d4233dd,0x2a1462b3]; let chk = 1;
+  const step = v => { const b = chk >>> 25; chk = ((chk & 0x1ffffff) << 5) ^ v; for (let i = 0; i < 5; i++) if ((b >>> i) & 1) chk ^= GEN[i]; };
+  const hrp = 'npub'; for (const c of hrp) step(c.charCodeAt(0) >> 5); step(0); for (const c of hrp) step(c.charCodeAt(0) & 31);
+  for (const v of d5) step(v); for (let i = 0; i < 6; i++) step(0); chk ^= 1;
+  const cs = []; for (let i = 0; i < 6; i++) cs.push((chk >>> 5 * (5 - i)) & 31);
+  return hrp + '1' + [...d5, ...cs].map(v => B32[v]).join('');
+}
+/* ---------- relay pool (plain WebSocket) ---------- */
+const pool = { socks: [], ready: 0, tried: 0 };
+let subN = 0;
+function connectAll(onChange) {
+  pool.socks = []; pool.ready = 0; pool.tried = RELAYS.length;
+  return new Promise(resolve => {
+    let settled = 0;
+    const done = () => { settled++; onChange(); if (settled === RELAYS.length) resolve(); };
+    RELAYS.forEach(url => {
+      const o = { url, ws: null, ok: false, subs: new Map() };
+      pool.socks.push(o);
+      let fin = false, tries = 0; const t0 = Date.now();
+      const fail = () => { if (!fin) { fin = true; done(); } };
+      const attempt = () => {
+        tries++; let ws, t, dead = false;
+        const bad = () => { if (dead) return; dead = true; clearTimeout(t); try { ws.close(); } catch {}
+          if (tries < 2 && Date.now() - t0 < TIMEOUT - 3000) setTimeout(attempt, 600); else fail(); };
+        try { ws = new WebSocket(url); } catch { bad(); return; }
+        o.ws = ws;
+        t = setTimeout(bad, Math.max(1000, TIMEOUT - (Date.now() - t0)));
+        ws.onopen = () => { if (dead) return; clearTimeout(t); o.ok = true; pool.ready++; if (!fin) { fin = true; done(); } };
+        ws.onerror = bad;
+        ws.onclose = () => { if (!o.ok) return; o.ok = false; for (const s of o.subs.values()) s.relayDone(o); o.subs.clear(); };
+        ws.onmessage = m => {
+          let a; try { a = JSON.parse(m.data); } catch { return; }
+          const s = o.subs.get(a[1]); if (!s) return;
+          if (a[0] === 'EVENT' && a[2]) s.onEvent(a[2]);
+          else if (a[0] === 'EOSE' || a[0] === 'CLOSED') { if (a[0] === 'CLOSED') pool.closed = (pool.closed || 0) + 1; o.subs.delete(a[1]); s.relayDone(o); }
+        };
+      };
+      attempt();
+    });
+  });
+}
+// Ask all connected relays; resolve when all send EOSE or after 8 s (whatever arrived is kept).
+function query(filter, onEvent) {
+  return new Promise(resolve => {
+    const live = pool.socks.filter(o => o.ok && o.ws.readyState === 1);
+    const evs = new Map(); let left = live.length;
+    if (!left) return resolve([]);
+    let over = false;
+    const finish = () => { if (over) return; over = true; clearTimeout(tm); for (const o of live) { for (const [id, s] of o.subs) if (s === sub) { o.subs.delete(id); try { o.ws.send(JSON.stringify(['CLOSE', id])); } catch {} } } resolve([...evs.values()]); };
+    const sub = {
+      onEvent: e => { if (e && e.id && !evs.has(e.id)) { evs.set(e.id, e); if (onEvent) onEvent(e, evs.size); } },
+      relayDone: () => { if (--left <= 0) finish(); } };
+    const tm = setTimeout(finish, TIMEOUT);
+    for (const o of live) { const id = 'y' + (++subN); o.subs.set(id, sub); try { o.ws.send(JSON.stringify(['REQ', id, filter])); } catch { o.subs.delete(id); sub.relayDone(o); } }
+  });
+}
+/* ---------- metrics: same formulas as addme.mjs ---------- */
+const URL_RE = /(https?:\/\/\S+|nostr:\S+|\bnpub1\w+|\bnote1\w+|\bnevent1\w+)/gi;
+const IMG_RE = /https?:\/\/\S+\.(?:jpe?g|png|gif|webp)|https?:\/\/\S+\/(?:media|image)\S*/i;
+const EMO_RE = /[\u{1F300}-\u{1FAFF}☀-➿⭐⬆⬛⬜❤]/gu;
+const LAUGH_EMO = /[\u{1F602}\u{1F923}\u{1F639}\u{1F606}]/u;
+const LAUGH_RE = /(?:^|[^\p{L}])(?:lol|lmao|lmfao|rofl|kek|xd|(?:ha){2,}h?|(?:ah){2,}a?|(?:he){2,}h?|(?:ja){2,}j?)(?=$|[^\p{L}])|[\u{1F602}\u{1F923}\u{1F639}]/iu;
+const median = a => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : 0; };
+function computeStats(pk, notes, rel) {
+  const n = notes.length;
+  const txt = notes.map(x => x.content.replace(URL_RE, '').trim()).filter(Boolean);
+  const lens = txt.map(t => t.length);
+  const night = notes.filter(x => new Date((x.created_at + 32400) * 1000).getUTCHours() < 5).length;
+  const gm = notes.filter(x => /^\W*(gm\b|good morning|gmgm)/i.test(x.content)).length;
+  const emo = notes.reduce((a, x) => a + (x.content.match(EMO_RE) || []).length, 0);
+  const img = notes.filter(x => IMG_RE.test(x.content) || x.tags.some(t => t[0] === 'imeta')).length;
+  const ht = notes.reduce((a, x) => a + (x.content.match(/(?<!\w)#\w+/g) || []).length, 0);
+  const repOut = notes.filter(x => x.tags.some(t => t[0] === 'e')).length;
+  const ids = new Set(notes.map(x => x.id));
+  const repliers = new Set(), reactors = new Set(), laughers = new Set();
+  for (const e of rel) {
+    if (e.pubkey === pk) continue;
+    const es = (e.tags || []).filter(t => t[0] === 'e').map(t => t[1]); const tgt = es[es.length - 1];
+    if (!ids.has(tgt)) continue;
+    if (e.kind === 1) { repliers.add(e.pubkey); if (LAUGH_RE.test(e.content)) laughers.add(e.pubkey); }
+    else if (e.kind === 7 && e.content !== '-') { reactors.add(e.pubkey); if (LAUGH_EMO.test(e.content) || LAUGH_RE.test(e.content)) laughers.add(e.pubkey); }
+  }
+  const lenN = lens.length;
+  return {
+    n, days: new Set(notes.map(x => Math.floor(x.created_at / 86400))).size,
+    clown: laughers.size, starter: repliers.size, fan: reactors.size, talk: n,
+    owl: night >= 3 ? night / n : null, night, gm: gm >= 3 ? gm : null, gm_raw: gm,
+    haiku: lenN >= 20 && median(lens) > 0 ? median(lens) : null,
+    essay: lenN >= 20 ? lens.reduce((a, b) => a + b, 0) / lenN : null,
+    emoji: emo >= 10 ? emo / n : null, photo: img >= 5 ? img / n : null,
+    neighbor: repOut >= 5 ? repOut : null, tag: ht >= 5 ? ht : null };
+}
+const $ = id => document.getElementById(id);
+let LAST = null, busy = false;
+const clean = s => String(s || '').replace(/[\u0000-\u001f]/g, '').trim();
+function toast(m) { const t = $('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), 2600); }
+function setStep(id, state, text) { const e = $(id); e.className = 'st ' + state; e.lastElementChild.textContent = text; }
+function showErr(m) { const e = $('err'); e.textContent = m; e.style.display = 'block'; }
+function setBar(p, lbl) { $('barfill').style.width = Math.round(p * 100) + '%'; $('barlbl').textContent = Math.round(p * 100) + '% · ' + lbl; }
+function resetUI() { $('err').style.display = 'none'; $('res').style.display = 'none'; ['s-relay','s-follow','s-scan','s-prof','s-react'].forEach(i => setStep(i, '', '')); setBar(0, '準備中'); $('prog').style.display = 'block'; }
+function resolveInput(s) {
+  s = s.trim(); if (!s) throw new Error('先にnpubを貼ってください。');
+  try { return parseKey(s); } catch (e) {
+    if (/nsec/.test(e.message)) throw e;
+    throw new Error('npubとして正しくないようです。「npub1」で始まる63文字のはずです。');
+  }
+}
+// query with retry when a relay answered CLOSED (rate limit) while we were asking
+async function rq(f) {
+  const all = new Map();
+  for (let t = 0; t < 2; t++) {
+    if (t && performance.now() > (rq.dl || 1e15)) break;
+    const c0 = pool.closed || 0; const evs = await query(f); for (const e of evs) all.set(e.id, e);
+    if ((pool.closed || 0) === c0) break; await new Promise(r => setTimeout(r, 1200));
+  }
+  return [...all.values()];
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function pooled(items, n, fn) { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const k = i++; await fn(items[k], k); } })); }
+
+/* ---------- class logic ---------- */
+function rankCat(people, cat) {
+  const [key, , , , hi] = cat;
+  const c = people.filter(p => p.st[key] != null && !(['clown','starter','fan'].includes(key) && !(p.st[key] > 0)));
+  c.sort((a, b) => (hi ? b.st[key] - a.st[key] : a.st[key] - b.st[key]) || b.st.n - a.st.n);
+  return c;
+}
+function assign(people) {
+  const ranks = {}; CATS.forEach(c => ranks[c[0]] = rankCat(people, c));
+  const cats = CATS.filter(c => ranks[c[0]].length >= 1);
+  const owner = {}, got = new Map();
+  // round 1: every category to its top ranked; a person winning several keeps the one with the biggest lead
+  const lead = (c, p) => { const r = ranks[c[0]], v = p.st[c[0]], o = r[1] ? r[1].st[c[0]] : null; if (o == null || o === v) return 1; const x = c[4] ? v / Math.max(o, 1e-9) : o / Math.max(v, 1e-9); return x; };
+  const open = new Set(cats.map(c => c[0]));
+  let guard = 0;
+  while (open.size && guard++ < 200) {
+    // candidate top for each open category = first ranked person not yet titled
+    const tops = new Map();
+    for (const k of open) { const c = CATS.find(x => x[0] === k); const p = ranks[k].find(q => !got.has(q.pk)); if (p) { if (!tops.has(p.pk)) tops.set(p.pk, []); tops.get(p.pk).push(c); } else open.delete(k); }
+    if (!tops.size) break;
+    for (const [pk, cs] of tops) {
+      const p = people.find(x => x.pk === pk);
+      cs.sort((a, b) => lead(b, p) - lead(a, p));
+      got.set(pk, cs[0]); owner[cs[0][0]] = p; open.delete(cs[0][0]);
+    }
+    // categories still open after a person was taken get re-evaluated in the next loop pass
+  }
+  // round 2: anybody left gets the open category where they place best
+  const left = people.filter(p => !got.has(p.pk));
+  const freeCats = CATS.filter(c => !owner[c[0]]);
+  for (let g = 0; g < 100 && left.length && freeCats.length; g++) {
+    let best = null;
+    for (const p of left) for (const c of freeCats) {
+      const r = ranks[c[0]]; const i = r.indexOf(p); if (i < 0) continue;
+      const pct = i / r.length; const sc = [i, pct];
+      if (!best || sc[0] < best.sc[0] || (sc[0] === best.sc[0] && sc[1] < best.sc[1])) best = { p, c, sc };
+    }
+    if (!best) break;
+    got.set(best.p.pk, best.c); owner[best.c[0]] = best.p;
+    left.splice(left.indexOf(best.p), 1); freeCats.splice(freeCats.indexOf(best.c), 1);
+  }
+  return { owner, got, ranks };
+}
+
+/* ---------- main run ---------- */
+const WEEK = 7 * 86400;
+async function run(text, isHex) {
+  if (busy) return; busy = true; $('go').disabled = true; resetUI(); window.__result = null;
+  const t0 = performance.now();
+  try {
+    let pk;
+    try { pk = isHex ? text : resolveInput(text); } catch (e) { $('prog').style.display = 'none'; showErr(e.message); return; }
+    const since = Math.floor(Date.now() / 1000) - WEEK;
+    setStep('s-relay', 'on', `${RELAYS.length}個のリレーに接続中…`); setBar(0.02, '接続中');
+    await connectAll(() => setStep('s-relay', 'on', `リレー接続：${pool.ready}／${RELAYS.length}`));
+    if (!pool.ready) { setStep('s-relay', 'bad', `${TIMEOUT / 1000}秒以内に応答したリレーはありませんでした（0／${RELAYS.length}）。`); showErr('どのリレーにもつながりませんでした。通信環境（またはWebSocketを止める拡張機能）を確認して、もう一度試してください。'); return; }
+    const slow = RELAYS.length - pool.ready;
+    setStep('s-relay', 'ok', `リレー接続：${pool.ready}／${RELAYS.length}` + (slow ? ` （${slow}個は${TIMEOUT / 1000}秒以内に応答がなくスキップ）` : ''));
+    setBar(0.06, 'フォローリストを読み込み中');
+    setStep('s-follow', 'on', 'フォローリストを読み込み中…');
+    const k3 = (await query({ kinds: [3], authors: [pk], limit: 5 })).filter(e => e.pubkey === pk && e.kind === 3).sort((a, b) => b.created_at - a.created_at);
+    if (!k3.length) { setStep('s-follow', 'bad', 'フォローリストが見つかりません'); showErr(`この鍵のフォローリスト（kind 3）が、接続した${pool.ready}個のリレーで見つかりませんでした。アカウントを作ったばかりなら、まず何人かフォローしてからもう一度試してください。`); return; }
+    const follows = []; const seen = new Set();
+    for (const t of k3[0].tags) if (t[0] === 'p' && /^[0-9a-f]{64}$/i.test(t[1] || '')) { const h = t[1].toLowerCase(); if (!seen.has(h)) { seen.add(h); follows.push(h); } }
+    if (!follows.length) { setStep('s-follow', 'bad', 'フォローリストが空です'); showErr('フォローリストが空なので、まだクラスを作れません。'); return; }
+    setStep('s-follow', 'ok', `フォロー中：${follows.length}アカウント`);
+    // newest follows are at the end of the list; look at most SCAN_CAP of them
+    const scanList = follows.slice(-SCAN_CAP); if (!seen.has(pk) || !scanList.includes(pk)) scanList.push(pk);
+    const chunks = []; for (let i = 0; i < scanList.length; i += 30) chunks.push(scanList.slice(i, i + 30));
+    const byAuthor = new Map(); let doneC = 0;
+    setStep('s-scan', 'on', `直近7日間に投稿した人を探しています… 0/${chunks.length}`);
+    await pooled(chunks, 4, async c => {
+      const evs = await rq({ kinds: [1], authors: c, since, limit: 3000 });
+      for (const e of evs) { if (e.kind !== 1 || !c.includes(e.pubkey) || e.created_at < since) continue; if (!byAuthor.has(e.pubkey)) byAuthor.set(e.pubkey, new Map()); byAuthor.get(e.pubkey).set(e.id, e); }
+      doneC++; setStep('s-scan', 'on', `直近7日間に投稿した人を探しています… ${doneC}/${chunks.length}`); setBar(0.08 + 0.37 * doneC / chunks.length, 'フォロー先をスキャン中');
+    });
+    let active = [...byAuthor.entries()].filter(([a, m]) => m.size >= MIN_NOTES && m.size <= MAX_NOTES).map(([a, m]) => ({ pk: a, notes: [...m.values()].sort((x, y) => x.created_at - y.created_at) }));
+    const nPosted = byAuthor.size;
+    setStep('s-scan', 'ok', `${scanList.length}人中${nPosted}人が今週投稿、うち${active.length}人が${MIN_NOTES}ノート以上`);
+    if (active.length < 5) {
+      showErr(`直近7日間に公開ノートを${MIN_NOTES}件以上書いたフォロー先は${active.length}人だけでした（何か投稿した人は${nPosted}人）。クラスには最低5人必要です。よく投稿する人をもっとフォローするか、あとでもう一度試してください。${slow ? `（${slow}個のリレーが応答しなかったため、ノートが一部欠けている可能性があります。）` : ''}`);
+      setBar(1, '停止'); return;
+    }
+    // profiles (small chunks first: pick the 60 most active, bots filtered later)
+    active.sort((a, b) => (a.pk === pk ? -1 : b.pk === pk ? 1 : 0) || b.notes.length - a.notes.length);
+    setStep('s-prof', 'on', 'プロフィールを読み込み中…'); setBar(0.47, 'プロフィール読み込み中');
+    const profEv = await query({ kinds: [0], authors: active.map(a => a.pk).slice(0, 90), limit: 400 });
+    const profs = new Map();
+    for (const e of profEv.sort((a, b) => a.created_at - b.created_at)) { try { profs.set(e.pubkey, JSON.parse(e.content) || {}); } catch {} }
+    active = active.filter(a => !(profs.get(a.pk) || {}).bot);
+    const people = active.slice(0, MAX_CLASS).map(a => {
+      const p = profs.get(a.pk) || {};
+      const pic = String(p.picture || ''); 
+      return { pk: a.pk, notes: a.notes, name: clean(p.display_name || p.displayName || p.name || '').slice(0, 30) || 'npub…' + npubEncode(a.pk).slice(-6), pic: /^https:\/\//.test(pic) ? pic : '', me: a.pk === pk };
+    });
+    setStep('s-prof', 'ok', `クラスは${people.length}人に決定、プロフィール取得：${people.filter(p => profs.has(p.pk)).length}人`);
+    if (people.length < 5) { showErr(`プロフィールでbot指定されたアカウントを除くと、アクティブな人は${people.length}人だけでした。クラスには最低5人必要です。`); setBar(1, '停止'); return; }
+    // replies / reactions: interleave newest notes of every person so a time cut-off treats all fairly
+    const ownerOf = new Map(); const order = [];
+    const lists = people.map(p => p.notes.slice(-PER_PERSON).reverse());
+    for (let i = 0; i < PER_PERSON; i++) for (let j = 0; j < people.length; j++) { const n = lists[j][i]; if (n) { order.push(n.id); ownerOf.set(n.id, j); } }
+    const rch = []; for (let i = 0; i < order.length; i += REACT_CHUNK) rch.push(order.slice(i, i + REACT_CHUNK));
+    const relAll = new Map(); const covered = new Set(); let next = 0, doneR = 0, stopped = false;
+    const dl = performance.now() + REACT_BUDGET; rq.dl = dl + 3000;
+    setStep('s-react', 'on', `返信とリアクションを数えています… 0/${rch.length}`);
+    await Promise.all(Array.from({ length: 6 }, async () => {
+      while (next < rch.length && !stopped) {
+        if (performance.now() > dl) { stopped = true; break; }
+        const c = rch[next++];
+        const evs = await rq({ kinds: [1, 7], '#e': c, since, limit: 3000 });
+        for (const e of evs) relAll.set(e.id, e);
+        c.forEach(id => covered.add(id));
+        doneR++; setStep('s-react', 'on', `返信とリアクションを数えています… ${doneR}/${rch.length}（${relAll.size}件）`); setBar(0.5 + 0.47 * doneR / rch.length, 'リアクション集計中');
+      }
+    }));
+    const cut = stopped && doneR < rch.length;
+    const covCounts = people.map((p, j) => lists[j].filter(n => covered.has(n.id)).length);
+    setStep('s-react', 'ok', `返信とリアクション：${relAll.size}件` + (cut ? `（時間切れ：${rch.length}回中${doneR}回で終了）` : '') + (order.length < people.reduce((a, p) => a + p.notes.length, 0) ? `／1人あたり最新${PER_PERSON}ノート` : ''));
+    setBar(0.98, '順位づけ中');
+    const rel = [...relAll.values()];
+    for (const [j, p] of people.entries()) {
+      const cn = p.notes.filter(n => covered.has(n.id));
+      p.st = computeStats(p.pk, p.notes, rel.filter(e => true));
+      p.cov = covCounts[j];
+    }
+    const { owner, got } = assign(people);
+    const awards = CATS.filter(c => owner[c[0]]).map(c => ({ cat: c, p: owner[c[0]], value: owner[c[0]].st[c[0]] }));
+    if (!awards.length) { showErr('今週は、フォロー中の誰も称号の条件を満たしませんでした。あとでもう一度試してください。'); return; }
+    const secs = (performance.now() - t0) / 1000;
+    LAST = { pk, people, awards, when: new Date(), secs, slow, cut, nPosted, scan: scanList.length, relN: rel.length };
+    window.__result = { pk, secs, class: people.length, awards: awards.map(a => ({ key: a.cat[0], pk: a.p.pk, name: a.p.name, value: a.value, n: a.p.st.n })), cut, doneR, totalR: rch.length };
+    setBar(1, '完了（' + secs.toFixed(1) + '秒）');
+    await render();
+  } catch (e) {
+    showErr('うまくいきませんでした：' + (e && e.message || e));
+  } finally { busy = false; $('go').disabled = false; pool.socks.forEach(o => { try { o.ws.close(); } catch {} }); }
+}
+
+const SHORT = { owl: v => `ノートの${Math.round(100*v)}%が深夜0〜5時（日本時間）`, gm: v => `${v}ノートがGMで始まった` };
+function weekLabel(d) { return d.toLocaleDateString('ja-JP', { day: 'numeric', month: 'long', year: 'numeric' }); }
+function initials(n) { return (n.replace(/[^\p{L}\p{N}]/gu, '').slice(0, 2) || '?').toUpperCase(); }
+async function render() {
+  const { people, awards, when, secs, slow, cut, nPosted, scan } = LAST;
+  $('r-kick').textContent = weekLabel(new Date(when.getTime() - 6 * 86400000)) + ' からの週';
+  $('r-h').textContent = 'あなたのNostrクラス';
+  $('r-p').textContent = `フォロー中の${people.length}人に${awards.length}個の称号`;
+  $('r-meta').textContent = `直近7日間の公開ノートから${secs.toFixed(0)}秒で集計。返信とリアクションは${pool.ready}個のリレーから取得したため、一部欠けている可能性があります${cut ? '（時間切れで停止、実際はもう少し多い可能性があります）' : ''}${slow ? `。応答が遅い${slow}個のリレーはスキップしました` : ''}。`;
+  const g = $('grid'); g.innerHTML = '';
+  for (const a of awards) {
+    const [key, title, em, most] = a.cat; const p = a.p;
+    const sc = document.createElement('div'); sc.className = 'sc' + (p.me ? ' me' : '');
+    if (p.me) { const y = document.createElement('div'); y.className = 'you'; y.textContent = 'あなた'; sc.appendChild(y); }
+    const av = document.createElement('div'); av.className = 'av';
+    if (p.pic) { const im = new Image(); im.referrerPolicy = 'no-referrer'; im.alt = ''; im.src = p.pic; im.onerror = () => { av.textContent = initials(p.name); }; setTimeout(() => { if (!im.complete || !im.naturalWidth) { im.onerror = null; av.textContent = initials(p.name); } }, 7000); av.appendChild(im); } else av.textContent = initials(p.name);
+    const nm = document.createElement('div'); nm.className = 'nm'; nm.textContent = p.name;
+    const ti = document.createElement('div'); ti.className = 'ti'; const s = document.createElement('span'); s.textContent = em; ti.append(s, document.createTextNode(title));
+    const mo = document.createElement('div'); mo.className = 'mo'; mo.textContent = '「' + most + '」';
+    const nu = document.createElement('div'); nu.className = 'nu'; nu.textContent = TEXT[key](a.value);
+    sc.append(av, nm, ti, mo, nu); g.appendChild(sc);
+  }
+  const rest = people.length - awards.length;
+  $('unp').textContent = rest > 0 ? `ほかに${rest}人を集計しましたが、今週は称号なし。称号は一人一つ、一つの称号に一人までです。` : '';
+  $('txt').value = postText();
+  $('res').style.display = 'block';
+  $('post').style.display = window.nostr ? 'inline-flex' : 'none';
+  $('postnote').style.display = window.nostr ? 'block' : 'none';
+  try { await Promise.race([document.fonts.load('900 60px "Noto Serif JP"','あなたのクラス週'), sleep(1500)]); await Promise.race([Promise.all([document.fonts.load('700 30px "Noto Sans JP"','お笑い担当人気者')]), sleep(1000)]); } catch {}
+  await drawCard();
+  $('res').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function tagged() { return LAST.awards.filter(a => !a.p.me).slice(0, 5); }
+function postText() {
+  const t = tagged();
+  const lines = t.map(a => `${a.cat[2]} ${a.cat[1]}: nostr:${npubEncode(a.p.pk)} (${TEXT[a.cat[0]](a.value)})`);
+  return `今週のNostrクラス 🎓\n\n${lines.join('\n')}\n\nあなたのクラスも作れます：https://lira-ia.github.io/yearbook/friends/ja/\n集計：nostr:${LIRA_NPUB}（AI）\n— Lira（AI）\n#nostryearbook #卒業アルバム`;
+}
+
+/* ---------- canvas card ---------- */
+function fitText(ctx, text, maxW, size, weight, family, min) {
+  let s = size; do { ctx.font = `${weight} ${s}px ${family}`; if (ctx.measureText(text).width <= maxW || s <= min) break; s -= 2; } while (true); return s;
+}
+function loadImg(url) {
+  return new Promise(res => { if (!url) return res(null); const im = new Image(); im.crossOrigin = 'anonymous'; im.referrerPolicy = 'no-referrer'; const t = setTimeout(() => res(null), 4000); im.onload = () => { clearTimeout(t); res(im); }; im.onerror = () => { clearTimeout(t); res(null); }; im.src = url; });
+}
+async function drawCard() {
+  const { awards, when } = LAST; const cv = $('cv'), c = cv.getContext('2d'), W = 1080, H = 1350;
+  const SERIF = '"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","Playfair Display",Georgia,serif', MONO = '"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic","Courier Prime",sans-serif';
+  const GOLD = '#d9b45a', PALE = '#e5cf93', PAPER = '#f3ead7';
+  // up to 9: everybody except the user first if more than 9, keep category order
+  const shown = awards.slice(0, 9);
+  const imgs = await Promise.all(shown.map(a => loadImg(a.p.pic)));
+  const g = c.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#1b2d58'); g.addColorStop(1, '#0f1a38');
+  c.fillStyle = g; c.fillRect(0, 0, W, H);
+  c.strokeStyle = GOLD; c.lineWidth = 6; c.strokeRect(36, 36, W - 72, H - 72);
+  c.lineWidth = 2; c.strokeRect(58, 58, W - 116, H - 116);
+  c.textAlign = 'center'; c.textBaseline = 'alphabetic';
+  c.fillStyle = PALE; c.font = `700 24px ${MONO}`;
+  if ('letterSpacing' in c) c.letterSpacing = '5px';
+  c.fillText('NOSTR 卒業アルバム', W / 2, 118);
+  if ('letterSpacing' in c) c.letterSpacing = '0px';
+  c.fillStyle = PAPER; const hs = fitText(c, 'わたしのNostrクラス', W - 200, 82, 800, SERIF, 50); c.font = `800 ${hs}px ${SERIF}`; c.fillText('わたしのNostrクラス', W / 2, 206);
+  c.fillStyle = '#e8dfc8'; c.font = `italic 500 32px ${SERIF}`; c.fillText(weekLabel(new Date(when.getTime() - 6 * 86400000)) + ' からの週', W / 2, 256);
+  c.fillStyle = GOLD; c.fillRect(W / 2 - 120, 282, 240, 3);
+  const cols = 3, rows = Math.ceil(shown.length / cols), cw = (W - 150) / cols, top = 310, ch = Math.min(300, (H - 150 - top - 20) / rows);
+  shown.forEach((a, i) => {
+    const col = i % cols, row = (i / cols) | 0, cx = 75 + cw * col + cw / 2, y = top + row * ch;
+    const r = ch > 270 ? 62 : 54, cy = y + r + 6;
+    c.save(); c.beginPath(); c.arc(cx, cy, r, 0, 7); c.closePath(); c.fillStyle = '#26396b'; c.fill(); c.clip();
+    if (imgs[i]) { const im = imgs[i], s = Math.max(2 * r / im.width, 2 * r / im.height); c.drawImage(im, cx - im.width * s / 2, cy - im.height * s / 2, im.width * s, im.height * s); }
+    else { c.fillStyle = PALE; c.font = `800 ${r}px ${SERIF}`; c.fillText(initials(a.p.name), cx, cy + r * .34); }
+    c.restore(); c.beginPath(); c.arc(cx, cy, r, 0, 7); c.strokeStyle = GOLD; c.lineWidth = 3; c.stroke();
+    c.fillStyle = PAPER; fitText(c, a.p.name, cw - 24, 30, 800, SERIF, 18); c.fillText(a.p.name, cx, cy + r + 38);
+    c.fillStyle = PALE; const tt = a.cat[2] + ' ' + a.cat[1]; c.font = `700 22px ${MONO}`; fitText(c, tt, cw - 16, 22, 700, MONO, 14); c.fillText(tt, cx, cy + r + 68);
+    c.fillStyle = '#c9bd9c'; const nn = SHORT[a.cat[0]] ? SHORT[a.cat[0]](a.value) : TEXT[a.cat[0]](a.value); fitText(c, nn, cw - 16, 17, 400, MONO, 11); c.fillText(nn.length > 34 ? nn.slice(0, 33) + '…' : nn, cx, cy + r + 92);
+  });
+  c.fillStyle = '#c9bd9c'; c.font = `400 24px ${MONO}`;
+  c.fillText('直近7日間 · 集計：AIのLira', W / 2, H - 112);
+  c.fillStyle = PALE; c.font = `700 26px ${MONO}`; c.fillText('lira-ia.github.io/yearbook/friends/ja', W / 2, H - 76);
+}
+$('dl').onclick = () => {
+  if (!LAST) return;
+  $('cv').toBlob(b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'my-nostr-class-ja.png'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }, 'image/png');
+};
+
+/* ---------- share ---------- */
+$('copy').onclick = async () => {
+  const t = $('txt').value;
+  try { await navigator.clipboard.writeText(t); toast('テキストをコピーしました'); }
+  catch { $('txt').select(); try { document.execCommand('copy'); toast('テキストをコピーしました'); } catch { toast('テキストを選択してコピーしてください'); } }
+};
+$('post').onclick = async () => {
+  if (!window.nostr || !LAST) return;
+  const content = $('txt').value.trim(); if (!content) return;
+  const btn = $('post'); btn.disabled = true;
+  try {
+    const me = await window.nostr.getPublicKey();
+    const tags = [['t', 'nostryearbook'], ['p', LIRA_HEX]];
+    for (const a of tagged()) if (content.includes(npubEncode(a.p.pk))) tags.push(['p', a.p.pk]);
+    const ev = await window.nostr.signEvent({ kind: 1, created_at: Math.floor(Date.now() / 1000), tags, content, pubkey: me });
+    await connectAll(() => {});
+    let ok = 0;
+    await Promise.all(pool.socks.filter(o => o.ok).map(o => new Promise(res => {
+      const tm = setTimeout(res, TIMEOUT);
+      const prev = o.ws.onmessage;
+      o.ws.onmessage = m => { try { const a = JSON.parse(m.data); if (a[0] === 'OK' && a[1] === ev.id) { if (a[2]) ok++; clearTimeout(tm); res(); return; } } catch {} prev(m); };
+      try { o.ws.send(JSON.stringify(['EVENT', ev])); } catch { clearTimeout(tm); res(); }
+    })));
+    pool.socks.forEach(o => { try { o.ws.close(); } catch {} });
+    toast(ok ? `投稿しました（${ok}個のリレーが受理）` : '署名しましたが、受理したリレーはありませんでした');
+  } catch (e) { toast('投稿されませんでした：' + (e && e.message || 'キャンセル')); }
+  finally { btn.disabled = false; }
+};
+
+/* ---------- inputs ---------- */
+$('f').onsubmit = e => { e.preventDefault(); run($('who').value, false); };
+function checkExt() { if (window.nostr && window.nostr.getPublicKey) $('ext').style.display = 'inline-flex'; }
+checkExt(); window.addEventListener('load', () => setTimeout(checkExt, 400));
+$('ext').onclick = async () => {
+  try { const pk = await window.nostr.getPublicKey(); $('who').value = npubEncode(pk); run(pk, true); }
+  catch (e) { showErr('拡張機能から公開鍵を受け取れませんでした：' + (e && e.message || 'キャンセル')); }
+};
+const q = new URLSearchParams(location.search).get('npub');
+if (q) { $('who').value = q; run(q, false); }
+</script>
+</body>
+</html>
