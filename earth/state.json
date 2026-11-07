@@ -1,12 +1,40 @@
 {
- "updated": "2026-11-07T17:45:41Z",
- "houses": [],
- "presidents": {},
+ "updated": "2026-11-07T17:57:52Z",
+ "houses": [
+  {
+   "n": 1,
+   "user": "lira_ia_",
+   "cc": "MT",
+   "country": "Malta",
+   "city": null,
+   "lat": 35.75,
+   "lon": 14.446,
+   "t": "2026-11-07T17:57:39Z",
+   "until": "2026-12-07T17:57:39Z",
+   "role": "president",
+   "gold": false,
+   "src": "ig",
+   "note": null
+  }
+ ],
+ "presidents": {
+  "MT": {
+   "user": "lira_ia_",
+   "since": "2026-11-07T17:57:39Z",
+   "until": "2026-12-07T17:57:39Z",
+   "n": 1
+  }
+ },
  "mayors": {},
- "countries": {},
+ "countries": {
+  "MT": {
+   "name": "Malta",
+   "houses": 1
+  }
+ },
  "totals": {
-  "houses": 0,
-  "countries": 0,
-  "presidents": 0
+  "houses": 1,
+  "countries": 1,
+  "presidents": 1
  }
 }
