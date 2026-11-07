@@ -1,14 +1,15 @@
 {
- "aggiornato": "2026-11-06T20:28:17.662Z",
- "nota": null,
+ "aggiornato": "2026-11-07T00:30:33.207Z",
+ "nota": {
+  "id": "134eee988c83980a76830c13f964c2211deb206fd6315bf11d28728f5b15a5d6",
+  "nevent": "nevent1qgswrm0gz6lpgj34lts3pjejw8r3tca7757t57x2uuzd9mh6th6ft6gpp4mhxue69uhkummn9ekx7mqpzemhxue69uhhyetvv9ujuurjd9kkzmpwdejhgqg0waehxw309ahx7um5wghx6mmdqqspxnhwnzxg8xq2w6pscylevnpzz80typhavv2m7ywjsu50tv26t4sn3lklk",
+  "url": "https://njump.me/nevent1qgswrm0gz6lpgj34lts3pjejw8r3tca7757t57x2uuzd9mh6th6ft6gpp4mhxue69uhkummn9ekx7mqpzemhxue69uhhyetvv9ujuurjd9kkzmpwdejhgqg0waehxw309ahx7um5wghx6mmdqqspxnhwnzxg8xq2w6pscylevnpzz80typhavv2m7ywjsu50tv26t4sn3lklk"
+ },
  "asta_corrente": {
   "chiude": "2026-11-08T20:00:00.000Z",
   "aperta": false,
   "offerte": []
  },
  "storico": [],
- "crediti": {},
- "errori_relay": [
-  "note_id vuoto: nessuna asta da leggere"
- ]
+ "crediti": {}
 }
