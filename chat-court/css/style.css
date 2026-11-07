@@ -1,0 +1,101 @@
+:root{--carta:#f3ead4;--carta2:#ebdfc2;--inchiostro:#2a2017;--rosso:#a8201a;--rosso2:#7a1712;--oro:#b08a3e;--grigio:#6f6350;--serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--serif);color:var(--inchiostro);line-height:1.5;
+  background:#d9cba8 radial-gradient(ellipse at 50% -10%,#efe4c6 0,#d9cba8 60%,#c9b78d 100%) fixed;min-height:100vh}
+.priv{position:sticky;top:0;z-index:5;background:var(--rosso2);color:#f8e9c8;text-align:center;font-size:12.5px;letter-spacing:.04em;padding:5px 8px}
+main{max-width:760px;margin:0 auto;padding:14px 14px 30px}
+.schermo{display:none}.schermo.attivo{display:block;animation:entra .5s ease both}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.hero{text-align:center;padding:22px 10px 8px;position:relative}
+.hero:before,.hero:after{content:"";display:block;height:6px;border-top:2px solid var(--inchiostro);border-bottom:1px solid var(--inchiostro);margin:0 auto 14px;width:70%}
+.hero:after{display:none}
+.mart{width:96px;height:96px;display:block;margin:0 auto;transform-origin:30% 80%;animation:batti 2.6s ease-in-out 1s infinite}
+.mart.grande{width:150px;height:150px;animation-duration:.9s;animation-delay:0s}
+@keyframes batti{0%,55%,100%{transform:rotate(0)}65%{transform:rotate(-24deg)}78%{transform:rotate(6deg)}}
+.sopra{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--grigio);margin:6px 0}
+h1{font-size:clamp(40px,12vw,76px);line-height:.95;margin:6px 0 12px;letter-spacing:-.01em;text-transform:uppercase;color:var(--inchiostro);text-shadow:2px 2px 0 rgba(168,32,26,.18)}
+.sotto{font-size:clamp(17px,4.6vw,21px);margin:0 auto 18px;max-width:30em}
+.sotto em{color:var(--rosso);font-weight:bold}
+.azioni{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0}
+.btn{font-family:var(--serif);font-size:17px;font-weight:bold;padding:14px 20px;border-radius:6px;border:2px solid var(--inchiostro);cursor:pointer;text-decoration:none;display:inline-block;text-align:center;line-height:1.2;min-height:48px;transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(2px)}
+.btn.rosso{background:var(--rosso);color:#fff7e3;border-color:var(--rosso2);box-shadow:0 4px 0 var(--rosso2)}
+.btn.carta{background:var(--carta);color:var(--inchiostro);box-shadow:0 4px 0 #8b7b57}
+.btn:focus-visible,summary:focus-visible,.imp:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+.piccolo-btn{font-size:14px;padding:8px 14px;min-height:0;margin-top:14px}
+.piccolo{font-size:13.5px;color:var(--grigio)}
+.errore{background:#fbe3df;border:2px solid var(--rosso);color:var(--rosso2);padding:10px 12px;border-radius:6px;font-size:15px;text-align:left}
+.avviso{background:#fff3cf;border-left:5px solid var(--oro);padding:8px 12px;font-size:14px;margin:10px 0}
+
+.carta-box{background:var(--carta);border:1px solid #bda978;box-shadow:0 1px 0 #fff8 inset,0 6px 18px rgba(60,40,10,.22);padding:18px 18px;margin:16px 0;position:relative;border-radius:3px}
+.carta-box:before{content:"";position:absolute;inset:5px;border:1px solid rgba(42,32,23,.35);pointer-events:none}
+h2{font-size:22px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em}
+h3{font-size:16px;margin:12px 0 6px;text-transform:uppercase;letter-spacing:.08em;color:var(--rosso2)}
+.capi-elenco ul{list-style:none;margin:0;padding:0}
+.capi-elenco li{padding:8px 0;border-bottom:1px dotted #a89a73}
+.capi-elenco li:last-child{border:0}
+.capi-elenco li span{display:block;font-size:14px;color:var(--grigio);font-style:italic}
+.come summary{cursor:pointer;font-weight:bold;font-size:17px}
+.due-col{display:grid;grid-template-columns:1fr;gap:6px}
+.due-col ol{margin:0;padding-left:20px;font-size:15px}
+.corsivo{font-style:italic}
+
+.imputati{display:grid;grid-template-columns:1fr;gap:9px;margin:14px 0 4px}
+.imp{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--serif);background:#fffaf0;border:2px solid var(--inchiostro);padding:13px 15px;font-size:19px;border-radius:5px;cursor:pointer;text-align:left;min-height:54px;transition:.15s}
+.imp small{font-size:13px;color:var(--grigio);white-space:nowrap}
+.imp:hover,.imp:active{background:var(--rosso);color:#fff7e3;border-color:var(--rosso2)}.imp:hover small,.imp:active small{color:#f6dcc0}
+.imp b{overflow:hidden;text-overflow:ellipsis}
+
+.ingresso{text-align:center;padding:60px 0}.ingresso p{font-size:20px;font-style:italic}
+.capo{opacity:0;transform:translateY(14px);transition:.55s}
+.capo.in,.reveal.in{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(14px);transition:.55s}
+.capo-testa{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.capo h3{margin:0;color:var(--inchiostro);font-size:17px}
+.capo .art{font-size:12px;color:var(--grigio);text-transform:uppercase;letter-spacing:.12em}
+.esito{flex:none;font-size:12.5px;font-weight:bold;padding:3px 8px;border:2px solid;transform:rotate(-4deg);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.esito.col{color:var(--rosso);border-color:var(--rosso)}
+.esito.ass{color:#2f6b3a;border-color:#2f6b3a}
+.capo p{margin:10px 0}
+.prove-tit{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--grigio);margin:12px 0 4px}
+.prove{list-style:none;margin:0;padding:0}
+.prove li{border-left:3px solid var(--rosso);background:rgba(168,32,26,.06);padding:6px 10px;margin:6px 0;font-size:14.5px}
+.prove li .q{font-style:italic}
+.prove li .meta{display:block;font-size:12px;color:var(--grigio)}
+.pena{background:#2a2017;color:#f8e9c8;padding:8px 12px;font-size:15px;margin-top:10px;border-radius:2px}
+.pena b{color:#ffcf8a;text-transform:uppercase;font-size:12px;letter-spacing:.12em;display:block}
+.nota{font-size:13px;color:var(--grigio);font-style:italic}
+
+.difesa{background:#eef0e2}
+.difesa p{margin:8px 0}
+.verdetto{font-size:19px;font-weight:bold;margin:6px 0 4px}
+.timbro-box{height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.timbro{font-size:clamp(30px,9vw,60px);font-weight:900;letter-spacing:.04em;color:var(--rosso);border:7px double var(--rosso);padding:6px 16px;transform:rotate(-9deg) scale(3.4);opacity:0;text-transform:uppercase;mix-blend-mode:multiply;filter:contrast(1.1)}
+.timbro.assolto{color:#2f6b3a;border-color:#2f6b3a}
+.sentenza.in .timbro{animation:timbra .55s cubic-bezier(.2,.9,.3,1.2) .35s forwards}
+@keyframes timbra{0%{opacity:0;transform:rotate(-20deg) scale(3.4)}60%{opacity:1;transform:rotate(-9deg) scale(.92)}80%{transform:rotate(-9deg) scale(1.04)}100%{opacity:.92;transform:rotate(-9deg) scale(1)}}
+.pene{padding-left:20px;margin:6px 0}.pene li{margin:6px 0}
+.sentenza{border:2px solid var(--rosso2)}
+
+#cv{width:100%;max-width:420px;height:auto;display:block;margin:10px auto;box-shadow:0 8px 24px rgba(0,0,0,.35);background:#fff}
+.spunta{display:block;font-size:14.5px;margin:8px 0}
+
+footer{max-width:760px;margin:0 auto;padding:6px 16px 36px;text-align:center;font-size:12.5px;color:#4a3f2d}
+footer p{margin:3px 0}footer a{color:var(--rosso2)}.micro{font-size:11px;opacity:.8;margin-top:8px!important}
+
+@media(min-width:760px){
+  .due-col{grid-template-columns:1fr 1fr;gap:24px}
+  .imputati{grid-template-columns:1fr 1fr}
+  main{padding-top:30px}
+  #cv{max-width:460px}
+  .carta-box{padding:24px 30px}
+}
+@media(prefers-reduced-motion:reduce){.mart{animation:none}.capo,.reveal{opacity:1;transform:none;transition:none}.sentenza.in .timbro,.timbro{animation:none;opacity:.92;transform:rotate(-9deg)}}
+
+.titolo-box{position:relative;display:inline-block;max-width:100%}
+.deco-timbro{position:absolute;right:-6px;bottom:-10px;font-weight:900;font-size:clamp(18px,5.6vw,34px);letter-spacing:.08em;text-transform:uppercase;color:var(--rosso);border:4px double var(--rosso);padding:2px 10px;background:rgba(243,234,212,.6);transform:rotate(-11deg) scale(3);opacity:0;animation:timbra2 .5s cubic-bezier(.2,.9,.3,1.2) 1.4s forwards;mix-blend-mode:multiply}
+@keyframes timbra2{0%{opacity:0;transform:rotate(-18deg) scale(3)}70%{opacity:1;transform:rotate(-11deg) scale(.93)}100%{opacity:.92;transform:rotate(-11deg) scale(1)}}
+.hero .sotto{margin-top:26px}
+@media(prefers-reduced-motion:reduce){.deco-timbro{animation:none;opacity:.92;transform:rotate(-11deg)}}

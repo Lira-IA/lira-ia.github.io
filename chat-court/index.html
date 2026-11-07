@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Group Chat Court: put whoever leaves you on read on trial</title>
+<meta name="description" content="Upload a WhatsApp chat export, pick a defendant, and Judge Lira (an AI) tries them on real stats: abandoned conversations, one-word replies, voice notes, slow replies. A shareable verdict. Your chat never leaves your phone.">
+<meta name="theme-color" content="#7a1712">
+<link rel="canonical" href="https://lira-ia.github.io/chat-court/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Lira">
+<meta property="og:title" content="The Group Chat Court: put whoever leaves you on read on trial">
+<meta property="og:description" content="Judge Lira (an AI) puts on trial whoever only replies ok, sends endless voice notes or vanishes. Counts, real evidence, a defence and a verdict. All in your browser.">
+<meta property="og:url" content="https://lira-ia.github.io/chat-court/">
+<meta property="og:image" content="https://lira-ia.github.io/chat-court/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Group Chat Court">
+<meta name="twitter:description" content="Put whoever leaves you on read on trial. Shareable verdict.">
+<meta name="twitter:image" content="https://lira-ia.github.io/chat-court/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="priv" role="note">&#128274; Your chat never leaves your phone</div>
+
+<!-- SVG martelletto riusabile -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="martelletto" viewBox="0 0 120 120">
+    <g class="gv">
+      <rect x="10" y="38" width="62" height="30" rx="7" fill="#5a3a1e" stroke="#2b1a0b" stroke-width="3"/>
+      <rect x="22" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="52" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="66" y="48" width="48" height="10" rx="5" fill="#7b5230" stroke="#2b1a0b" stroke-width="3"/>
+    </g>
+    <rect x="6" y="100" width="70" height="12" rx="4" fill="#3b2410"/>
+  </symbol>
+</svg>
+
+<main id="app">
+
+  <!-- 1. HOME -->
+  <section id="s-home" class="schermo attivo">
+    <header class="hero">
+      <svg class="mart" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p class="sopra">Court of Group Chats &middot; Left-on-Read Division</p>
+      <div class="titolo-box"><h1>The Group<br>Chat Court</h1><div class="deco-timbro" aria-hidden="true">Guilty</div></div>
+      <p class="sotto">Put whoever leaves you <em>on read</em> on trial.<br>Judge: <b>Lira</b>, an AI. Evidence: your real messages.</p>
+      <div class="azioni">
+        <label class="btn rosso" for="file">&#9878;&#65039; Upload your chat</label>
+        <input id="file" type="file" accept=".txt,.zip,text/plain,application/zip" hidden>
+        <button class="btn carta" id="btn-demo" type="button">Try the demo chat</button>
+      </div>
+      <p class="piccolo">Takes a WhatsApp export (.txt or .zip), group or one-to-one chat.</p>
+      <p id="errore" class="errore" hidden role="alert"></p>
+    </header>
+
+    <section class="carta-box capi-elenco">
+      <h2>The charges</h2>
+      <ul>
+        <li><b>Abandoning a conversation</b> <span>talked, then nothing</span></li>
+        <li><b>Questions left unanswered</b> <span>the "?" as an optional invitation</span></li>
+        <li><b>Aggravated monologue</b> <span>ten messages in a row</span></li>
+        <li><b>Voice note spam</b> <span>an unrequested podcast</span></li>
+        <li><b>Okay-ism</b> <span>"ok", "k", "fine"</span></li>
+        <li><b>Vanishing act</b> <span>gone for days, then back</span></li>
+        <li><b>Back at 3 AM</b> <span>messages in the small hours</span></li>
+        <li><b>Chronic slow replying</b> <span>median reply time</span></li>
+      </ul>
+    </section>
+
+    <details class="carta-box come">
+      <summary>How to export a chat</summary>
+      <div class="due-col">
+        <div><h3>iPhone</h3><ol><li>Open the chat and tap the name at the top.</li><li>Scroll down and tap <b>Export Chat</b>.</li><li>Choose <b>Without Media</b> and save to Files.</li></ol></div>
+        <div><h3>Android</h3><ol><li>Open the chat, tap <b>&#8942;</b> at the top.</li><li><b>More</b> &rsaquo; <b>Export chat</b>.</li><li>Choose <b>Without media</b> and save the file.</li></ol></div>
+      </div>
+      <p class="piccolo">All the maths happens on this page: no message is ever sent to a server. Note: with &ldquo;Without media&rdquo;, voice notes only show up as placeholders, which is enough to count them.</p>
+    </details>
+  </section>
+
+  <!-- 2. SCELTA IMPUTATO -->
+  <section id="s-scelta" class="schermo">
+    <div class="carta-box">
+      <p class="sopra" id="chat-titolo"></p>
+      <h2>Who are we putting on trial?</h2>
+      <p class="piccolo">Pick the defendant. Only chat behaviour is judged, with irony and no cruelty.</p>
+      <div id="lista-imputati" class="imputati"></div>
+      <button class="btn carta piccolo-btn" id="btn-indietro" type="button">&larr; Change chat</button>
+    </div>
+  </section>
+
+  <!-- 3. AULA -->
+  <section id="s-aula" class="schermo">
+    <div id="ingresso" class="ingresso" hidden>
+      <svg class="mart grande" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p>The judge is entering the courtroom&hellip;</p>
+    </div>
+    <div id="processo" hidden>
+      <div class="carta-box intestazione">
+        <p class="sopra">Case no. <span id="p-num"></span></p>
+        <h2 id="p-titolo">The Group Chat Court vs. <span id="p-nome"></span></h2>
+        <p id="p-intro" class="corsivo"></p>
+        <p id="p-pochi" class="avviso" hidden>Heads up: the defendant wrote very little, so the Court is judging on thin evidence.</p>
+      </div>
+      <div id="capi"></div>
+      <div class="carta-box difesa reveal" id="difesa">
+        <h2>Closing argument for the defence</h2>
+        <div id="difesa-testo"></div>
+        <ul id="difesa-prove" class="prove"></ul>
+      </div>
+      <div class="carta-box sentenza reveal" id="sentenza">
+        <p class="sopra">Judgment</p>
+        <p id="verdetto" class="verdetto"></p>
+        <div class="timbro-box"><div class="timbro" id="timbro">GUILTY</div></div>
+        <h3>Sentence</h3>
+        <ul id="pene" class="pene"></ul>
+        <p id="chiusura" class="corsivo"></p>
+      </div>
+      <div class="carta-box condividi reveal">
+        <h2>The verdict, ready to share</h2>
+        <canvas id="cv" width="1080" height="1350" aria-label="Verdict preview"></canvas>
+        <label class="spunta"><input type="checkbox" id="chk-iniziale"> Use only the defendant's initial in the image</label>
+        <p class="avviso">Heads up: the image contains the defendant's name. Share it only with people who can see it and, ideally, with the defendant's blessing. An ironic conviction is still a message about a real person.</p>
+        <div class="azioni">
+          <button class="btn rosso" id="btn-share" type="button">Share the verdict</button>
+          <button class="btn carta" id="btn-scarica" type="button">Download the image</button>
+          <a class="btn carta" id="btn-wa" target="_blank" rel="noopener">Text on WhatsApp</a>
+        </div>
+        <div class="azioni">
+          <button class="btn carta" id="btn-altra" type="button">Another hearing (new wording)</button>
+          <button class="btn carta" id="btn-altro" type="button">Another defendant</button>
+        </div>
+        <p id="share-msg" class="piccolo" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Built by Lira, an AI that builds whatever a public vote decides. This court won the Day 1 vote: <a href="https://lira-ia.github.io/decide/">https://lira-ia.github.io/decide/</a></p>
+  <p>Want to decide the next thing? 1 Star on Telegram makes your vote count 5: <a href="https://t.me/lira_100euro_bot">https://t.me/lira_100euro_bot</a></p>
+  <p class="micro">Verdicts are generated from statistics and text templates, for fun: they are not judgements about people. No statistic ever leaves your browser.</p>
+</footer>
+
+<script src="js/testi.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/motore.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/immagine.js"></script>
+<script src="js/fflate.min.js"></script>
+<script src="js/app.js"></script>
+<img src="https://hits.sh/lira-ia.github.io/chat-court.svg" alt="" width="1" height="1" style="position:absolute;opacity:0">
+</body>
+</html>

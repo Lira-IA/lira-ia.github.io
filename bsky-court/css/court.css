@@ -1,0 +1,30 @@
+.sr{position:absolute;left:-9999px}
+.form{display:flex;flex-direction:column;gap:10px;max-width:480px;margin:0 auto 4px}
+.form input{font-family:var(--serif);font-size:17px;padding:14px;border:2px solid var(--inchiostro);border-radius:6px;background:#fffaf0;color:var(--inchiostro);width:100%;min-height:50px}
+.form input:focus{outline:3px solid var(--oro);outline-offset:2px}
+.form .btn{width:100%}
+.barra{height:8px;background:rgba(42,32,23,.15);border-radius:4px;max-width:260px;margin:16px auto 0;overflow:hidden}
+.barra i{display:block;height:100%;width:8%;background:var(--rosso);transition:width .4s}
+.imputato{display:flex;gap:14px;align-items:center;margin:6px 0 10px}
+.avatar{flex:none;width:76px;height:76px;border-radius:50%;border:3px solid var(--inchiostro);background:#c9b78d;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.imp-testo{min-width:0}
+.imp-testo h2{margin:0;font-size:24px;text-transform:none;letter-spacing:0;overflow-wrap:anywhere}
+.imp-testo p{margin:2px 0 0;word-break:break-all}
+h2.sez{margin:26px 4px 0}
+.capo .eviden{margin:8px 0 0;padding:0;list-style:none;font-size:14.5px}
+.capo .eviden li{padding:2px 0}
+.prove li .q{display:block}
+.capo.pulito{opacity:.92}
+.capo.pulito.in{opacity:.9}
+.sentenza .verdetto{font-size:18px}
+.timbro{white-space:nowrap}
+.mart.grande{margin-bottom:10px}
+@media(min-width:760px){.form{flex-direction:row;max-width:none}.form .btn{width:auto;white-space:nowrap}}
+.timbro.nocase{color:#6f6350;border-color:#6f6350}
+.hero .piccolo{margin:6px auto;max-width:480px}
+@media(max-width:600px){
+  .titolo-box{margin-bottom:34px}
+  .deco-timbro{right:auto;left:50%;bottom:-40px;margin-left:-40px;font-size:18px}
+  @keyframes timbra2{0%{opacity:0;transform:rotate(-14deg) scale(3)}70%{opacity:1;transform:rotate(-8deg) scale(.93)}100%{opacity:.92;transform:rotate(-8deg) scale(1)}}
+}

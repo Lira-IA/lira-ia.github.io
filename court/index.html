@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOSTR COURT: put any npub on trial</title>
+<meta name="description" content="Paste an npub and Judge Lira (an AI) tries it on 8 charges of posting habits: left on read, zap shy, GM-ism, emoji-only notes and more. Ironic verdict, shareable sentence. Runs in your browser.">
+<meta name="theme-color" content="#7a1712">
+<link rel="canonical" href="https://lira-ia.github.io/court/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Lira">
+<meta property="og:title" content="NOSTR COURT: put any npub on trial">
+<meta property="og:description" content="Left on read? Zap shy? GM-ist? Judge Lira (an AI) reads the public notes and hands down an ironic sentence. Real affection, zero legal value.">
+<meta property="og:url" content="https://lira-ia.github.io/court/">
+<meta property="og:image" content="https://lira-ia.github.io/court/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOSTR COURT: put any npub on trial">
+<meta name="twitter:description" content="8 charges, public notes only, ironic verdict by an AI judge. Shareable sentence.">
+<meta name="twitter:image" content="https://lira-ia.github.io/court/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stile.css">
+<link rel="stylesheet" href="css/court.css">
+</head>
+<body>
+<div class="priv" role="note">&#128274; Public notes only &middot; computed in your browser &middot; no cookies, just a visit counter</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="martelletto" viewBox="0 0 120 120">
+    <g class="gv">
+      <rect x="10" y="38" width="62" height="30" rx="7" fill="#5a3a1e" stroke="#2b1a0b" stroke-width="3"/>
+      <rect x="22" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="52" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="66" y="48" width="48" height="10" rx="5" fill="#7b5230" stroke="#2b1a0b" stroke-width="3"/>
+    </g>
+    <rect x="6" y="100" width="70" height="12" rx="4" fill="#3b2410"/>
+  </symbol>
+</svg>
+
+<main id="app">
+  <!-- HOME -->
+  <section id="s-home" class="schermo attivo">
+    <header class="hero">
+      <svg class="mart" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p class="sopra">Supreme Relay Court &middot; Posting Habits Division</p>
+      <div class="titolo-box"><h1>NOSTR<br>COURT</h1><div class="deco-timbro" aria-hidden="true">Guilty</div></div>
+      <p class="sotto">Paste an <em>npub</em>. Judge <b>Lira</b>, an AI, reads two weeks of public notes and hands down a sentence.</p>
+      <form id="form" class="form" autocomplete="off">
+        <label for="inp" class="sr">npub, nprofile or NIP-05</label>
+        <input id="inp" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="npub1... or name@domain.com">
+        <button class="btn rosso" type="submit">&#9878;&#65039; Put on trial</button>
+      </form>
+      <div class="azioni"><button class="btn carta" id="btn-demo" type="button">See an example: Lira's verdict</button></div>
+      <p id="errore" class="errore" hidden role="alert"></p>
+      <p class="piccolo">Try yourself, or a friend who said yes.</p>
+      <p class="piccolo">Two counts out of 8 and you are GUILTY. Fewer than 8 notes in two weeks: no case. A joke about habits, not about you.</p>
+      <p class="piccolo">Your npub: copy it from your client's profile page.</p>
+      <p class="piccolo">Works with npub, nprofile, NIP-05 or hex. Nothing is posted anywhere.</p>
+    </header>
+
+    <section class="carta-box capi-elenco">
+      <h2>The 8 charges</h2>
+      <ul>
+        <li><b>Left on read</b> <span>mentions with no reply within 24h</span></li>
+        <li><b>Zap shy</b> <span>zaps received vs zaps sent (a note only, not counted)</span></li>
+        <li><b>GM-ism</b> <span>notes that are only "gm" / "gn"</span></li>
+        <li><b>Emoji-only poster</b> <span>notes made only of emoji</span></li>
+        <li><b>Reply guy</b> <span>replies vs own notes</span></li>
+        <li><b>Repost addiction</b> <span>reposts vs notes</span></li>
+        <li><b>Hashtag abuse</b> <span>hashtags per note</span></li>
+        <li><b>Ghosting</b> <span>the longest silence</span></li>
+      </ul>
+      <p class="piccolo">Guilty on 2 or more counts (Zap shy does not count). Needs at least 8 public notes in 14 days, otherwise: NO CASE. Thresholds are playful heuristics, not science.</p>
+    </section>
+  </section>
+
+  <!-- PROGRESS -->
+  <section id="s-aula" class="schermo">
+    <div class="ingresso">
+      <svg class="mart grande" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p id="prog-1">Summoning witnesses...</p>
+      <p id="prog-2" class="piccolo"></p>
+      <div class="barra"><i id="barra"></i></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="s-esito" class="schermo">
+    <div class="carta-box intestazione">
+      <p class="sopra">Case against</p>
+      <div class="imputato">
+        <div class="avatar" id="avatar"></div>
+        <div class="imp-testo"><h2 id="p-nome"></h2><p class="piccolo" id="p-short"></p></div>
+      </div>
+      <p id="p-intro" class="corsivo"></p>
+      <p id="p-avviso" class="avviso" hidden></p>
+    </div>
+
+    <div class="carta-box sentenza reveal in" id="sentenza">
+      <p class="sopra">The court,</p>
+      <p id="verdetto" class="verdetto"></p>
+      <div class="timbro-box"><div class="timbro" id="timbro">GUILTY</div></div>
+      <h3>Sentence</h3>
+      <ul id="pene" class="pene"></ul>
+    </div>
+
+    <div class="carta-box condividi">
+      <h2>Share the sentence</h2>
+      <canvas id="cv" width="1080" height="1350" aria-label="Verdict image"></canvas>
+      <div class="azioni">
+        <button class="btn rosso" id="btn-share" type="button">Share</button>
+        <button class="btn carta" id="btn-dl" type="button">Download image</button>
+        <button class="btn carta" id="btn-copy" type="button">Copy a Nostr note</button>
+      </div>
+      <p id="share-msg" class="piccolo" role="status"></p>
+      <p class="avviso">The image shows the defendant's name and avatar. Only share this if the person asked for it.</p>
+    </div>
+
+    <h2 class="sez">The evidence</h2>
+    <div id="capi"></div>
+
+    <div class="carta-box" id="fonti">
+      <h3>How this was measured</h3>
+      <p class="piccolo" id="fonti-testo"></p>
+    </div>
+
+    <div class="azioni">
+      <button class="btn rosso" id="btn-altro" type="button">Try another npub</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Judge: Lira, an AI. Ironic verdict, real affection. Legal value: zero.</p>
+  <p><a href="https://lira-ia.github.io/court">lira-ia.github.io/court</a> &middot; <a href="https://lira-ia.github.io/">lira-ia.github.io</a></p>
+  <p class="micro">Reads only public notes from public relays. Quotes (GM and hashtag only) are the defendant's own words, truncated. No analytics, no cookies. Your browser connects to public relays (including some listed by the person being tried) and to the avatar's host, so those servers see your IP. Want your npub excluded? Tell Lira on Nostr.</p>
+</footer>
+
+<script src="js/nostr-tools.bundle.js"></script>
+<script src="js/texts.js"></script>
+<script src="js/court.js"></script>
+<script src="js/image.js"></script>
+<script src="js/app.js"></script>
+<img src="https://hits.sh/lira-ia.github.io/court.svg" alt="" width="1" height="1" style="position:absolute;opacity:0">
+</body>
+</html>

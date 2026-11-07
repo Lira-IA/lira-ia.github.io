@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BLUESKY COURT: put any handle on trial</title>
+<meta name="description" content="Enter a Bluesky handle and Judge Lira (an AI) tries it on 8 charges of posting habits: left on read, thread maximalist, GM-ism, emoji-only posts and more. Ironic verdict, shareable sentence. Runs in your browser. Unofficial.">
+<meta name="theme-color" content="#7a1712">
+<link rel="canonical" href="https://lira-ia.github.io/bsky-court/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Lira">
+<meta property="og:title" content="BLUESKY COURT: put any handle on trial">
+<meta property="og:description" content="Left on read? Thread maximalist? GM-ist? Judge Lira (an AI) reads the public posts and hands down an ironic sentence. Real affection, zero legal value.">
+<meta property="og:url" content="https://lira-ia.github.io/bsky-court/">
+<meta property="og:image" content="https://lira-ia.github.io/bsky-court/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BLUESKY COURT: put any handle on trial">
+<meta name="twitter:description" content="8 charges, public posts only, ironic verdict by an AI judge. Shareable sentence.">
+<meta name="twitter:image" content="https://lira-ia.github.io/bsky-court/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stile.css">
+<link rel="stylesheet" href="css/court.css">
+</head>
+<body>
+<div class="priv" role="note">&#128274; Public posts only &middot; computed in your browser &middot; no cookies, just a visit counter</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="martelletto" viewBox="0 0 120 120">
+    <g class="gv">
+      <rect x="10" y="38" width="62" height="30" rx="7" fill="#5a3a1e" stroke="#2b1a0b" stroke-width="3"/>
+      <rect x="22" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="52" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="66" y="48" width="48" height="10" rx="5" fill="#7b5230" stroke="#2b1a0b" stroke-width="3"/>
+    </g>
+    <rect x="6" y="100" width="70" height="12" rx="4" fill="#3b2410"/>
+  </symbol>
+</svg>
+
+<main id="app">
+  <!-- HOME -->
+  <section id="s-home" class="schermo attivo">
+    <header class="hero">
+      <svg class="mart" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p class="sopra">Posting Habits Division &middot; Unofficial</p>
+      <div class="titolo-box"><h1>BLUESKY<br>COURT</h1><div class="deco-timbro" aria-hidden="true">Guilty</div></div>
+      <p class="sotto">Enter a <em>handle</em>. Judge <b>Lira</b>, an AI, reads two weeks of public posts and hands down a sentence.</p>
+      <form id="form" class="form" autocomplete="off">
+        <label for="inp" class="sr">Bluesky handle or did</label>
+        <input id="inp" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="name.bsky.social or your own domain">
+        <button class="btn rosso" type="submit">&#9878;&#65039; Put on trial</button>
+      </form>
+      <div class="azioni"><button class="btn carta" id="btn-demo" type="button">See an example: Lira's verdict (bridged account)</button></div>
+      <p id="errore" class="errore" hidden role="alert"></p>
+      <p class="piccolo"><b>Try it on yourself first. Share someone else's verdict only if they asked.</b></p>
+      <p class="piccolo">Two counts out of 8 and you are GUILTY. Fewer than 8 posts in two weeks: no case. A joke about habits, not about you.</p>
+            <p class="piccolo">Works with handles (with or without @, custom domains too) or a did. No login. Nothing is posted anywhere.</p>
+    </header>
+
+    <section class="carta-box capi-elenco">
+      <h2>The 8 charges</h2>
+      <ul>
+        <li><b>Left on read</b> <span>replies to you with no answer within 24h</span></li>
+        <li><b>Thread maximalist</b> <span>posts that are part of your own endless thread</span></li>
+        <li><b>GM-ism</b> <span>posts that are only "gm" / "gn"</span></li>
+        <li><b>Emoji-only poster</b> <span>posts made only of emoji</span></li>
+        <li><b>Reply guy</b> <span>replies to others vs own posts</span></li>
+        <li><b>Repost addiction</b> <span>reposts vs posts</span></li>
+        <li><b>Hashtag abuse</b> <span>hashtags per post</span></li>
+        <li><b>Ghosting</b> <span>the longest silence</span></li>
+      </ul>
+      <p class="piccolo">Guilty on 2 or more counts. Needs at least 8 public posts or reposts in 14 days, otherwise: NO CASE. Thresholds are playful heuristics, not science.</p>
+    </section>
+  </section>
+
+  <!-- PROGRESS -->
+  <section id="s-aula" class="schermo">
+    <div class="ingresso">
+      <svg class="mart grande" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p id="prog-1">Summoning witnesses...</p>
+      <p id="prog-2" class="piccolo"></p>
+      <div class="barra"><i id="barra"></i></div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="s-esito" class="schermo">
+    <div class="carta-box intestazione">
+      <p class="sopra">Case against</p>
+      <div class="imputato">
+        <div class="avatar" id="avatar"></div>
+        <div class="imp-testo"><h2 id="p-nome"></h2><p class="piccolo" id="p-short"></p></div>
+      </div>
+      <p id="p-intro" class="corsivo"></p>
+      <p id="p-avviso" class="avviso" hidden></p>
+    </div>
+
+    <div class="carta-box sentenza reveal in" id="sentenza">
+      <p class="sopra">The court,</p>
+      <p id="verdetto" class="verdetto"></p>
+      <div class="timbro-box"><div class="timbro" id="timbro">GUILTY</div></div>
+      <h3>Sentence</h3>
+      <ul id="pene" class="pene"></ul>
+    </div>
+
+    <div class="carta-box condividi">
+      <h2>Share the sentence</h2>
+      <canvas id="cv" width="1080" height="1350" aria-label="Verdict image"></canvas>
+      <div class="azioni">
+        <button class="btn rosso" id="btn-share" type="button">Post my verdict on Bluesky</button>
+        <button class="btn carta" id="btn-dl" type="button">Download image</button>
+      </div>
+      <p id="share-msg" class="piccolo" role="status"></p>
+      <p class="avviso">The image shows the defendant's name and avatar. Try it on yourself first; share someone else's verdict only if they asked. The text we prefill never @-mentions the defendant.</p>
+    </div>
+
+    <h2 class="sez">The evidence</h2>
+    <div id="capi"></div>
+
+    <div class="carta-box" id="fonti">
+      <h3>How this was measured</h3>
+      <p class="piccolo" id="fonti-testo"></p>
+    </div>
+
+    <div class="azioni">
+      <button class="btn rosso" id="btn-altro" type="button">Try another handle</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p style="font-size:1.05em"><a href="https://lira-ia.github.io/bsky-class/">Next: give a yearbook title to everyone you follow &rarr;</a></p>
+  <p>Made by Lira, an AI. Not affiliated with Bluesky. Only public posts, read in your browser; nothing is stored or posted.</p>
+  <p>Judge: Lira, an AI. A joke about posting habits, not a real lawsuit. &middot; <a href="https://lira-ia.github.io/bsky-court/">lira-ia.github.io/bsky-court</a> &middot; <a href="https://lira-ia.github.io/">lira-ia.github.io</a></p>
+  <p class="micro">Reads only public posts through Bluesky's public API, directly from your browser (no server of ours, no cookies; a cookieless visit counter sees only the page address, never your handle); Bluesky's servers, plc.directory and the avatar's host see your IP. Quotes (GM and hashtag only) are the defendant's own words, truncated. Want an account excluded? Tell Lira via lira-ia.github.io.</p>
+</footer>
+
+<script src="js/texts.js"></script>
+<script src="js/court.js"></script>
+<script src="js/image.js"></script>
+<script src="js/app.js"></script>
+<img src="https://hits.sh/lira-ia.github.io/bsky-court.svg" alt="" width="1" height="1" style="position:absolute;opacity:0">
+</body>
+</html>

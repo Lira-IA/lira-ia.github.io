@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il Tribunale della Chat: porta in giudizio chi ti lascia in visualizzato</title>
+<meta name="description" content="Carica la chat di WhatsApp, scegli l'imputato e il giudice Lira (un'IA) lo processa sulle statistiche vere: abbandono di conversazione, ok-ismo, vocali, ritardi. Sentenza da condividere. La chat non esce dal tuo telefono.">
+<meta name="theme-color" content="#7a1712">
+<link rel="canonical" href="https://lira-ia.github.io/tribunale/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Lira">
+<meta property="og:title" content="Il Tribunale della Chat: porta in giudizio chi ti lascia in visualizzato">
+<meta property="og:description" content="Il giudice Lira (un'IA) processa chi risponde solo ok, manda vocali infiniti o sparisce. Capi d'accusa, prove vere, difesa e sentenza. Tutto nel tuo browser.">
+<meta property="og:url" content="https://lira-ia.github.io/tribunale/">
+<meta property="og:image" content="https://lira-ia.github.io/tribunale/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Il Tribunale della Chat">
+<meta name="twitter:description" content="Porta in giudizio chi ti lascia in visualizzato. Sentenza condivisibile.">
+<meta name="twitter:image" content="https://lira-ia.github.io/tribunale/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%96%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+<div class="priv" role="note">&#128274; La chat non esce dal tuo telefono</div>
+
+<!-- SVG martelletto riusabile -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="martelletto" viewBox="0 0 120 120">
+    <g class="gv">
+      <rect x="10" y="38" width="62" height="30" rx="7" fill="#5a3a1e" stroke="#2b1a0b" stroke-width="3"/>
+      <rect x="22" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="52" y="34" width="8" height="38" rx="3" fill="#7b5230"/>
+      <rect x="66" y="48" width="48" height="10" rx="5" fill="#7b5230" stroke="#2b1a0b" stroke-width="3"/>
+    </g>
+    <rect x="6" y="100" width="70" height="12" rx="4" fill="#3b2410"/>
+  </symbol>
+</svg>
+
+<main id="app">
+
+  <!-- 1. HOME -->
+  <section id="s-home" class="schermo attivo">
+    <header class="hero">
+      <svg class="mart" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p class="sopra">Tribunale delle chat di gruppo &middot; Sezione Visualizzati</p>
+      <div class="titolo-box"><h1>Il Tribunale<br>della Chat</h1><div class="deco-timbro" aria-hidden="true">Colpevole</div></div>
+      <p class="sotto">Porta in giudizio chi ti lascia <em>in visualizzato</em>.<br>Giudice: <b>Lira</b>, un'IA. Prove: i messaggi veri.</p>
+      <div class="azioni">
+        <label class="btn rosso" for="file">&#9878;&#65039; Carica la chat</label>
+        <input id="file" type="file" accept=".txt,.zip,text/plain,application/zip" hidden>
+        <button class="btn carta" id="btn-demo" type="button">Prova con la chat demo</button>
+      </div>
+      <p class="piccolo">Accetta l'export di WhatsApp (.txt o .zip), gruppo o chat a due.</p>
+      <p id="errore" class="errore" hidden role="alert"></p>
+    </header>
+
+    <section class="carta-box capi-elenco">
+      <h2>Capi d'accusa</h2>
+      <ul>
+        <li><b>Abbandono di conversazione</b> <span>parlava e poi il nulla</span></li>
+        <li><b>Domande lasciate senza risposta</b> <span>il "?" come invito facoltativo</span></li>
+        <li><b>Monologo aggravato</b> <span>dieci messaggi di fila</span></li>
+        <li><b>Spam di vocali</b> <span>podcast non richiesto</span></li>
+        <li><b>Ok-ismo</b> <span>"ok", "k", "va bene"</span></li>
+        <li><b>Sparizione e ritorno alle 3 di notte</b></li>
+        <li><b>Ritardatario cronico</b> <span>mediana dei tempi di risposta</span></li>
+      </ul>
+    </section>
+
+    <details class="carta-box come">
+      <summary>Come esportare la chat</summary>
+      <div class="due-col">
+        <div><h3>iPhone</h3><ol><li>Apri la chat e tocca il nome in alto.</li><li>Scorri e tocca <b>Esporta chat</b>.</li><li>Scegli <b>Senza media</b> e salva in File.</li></ol></div>
+        <div><h3>Android</h3><ol><li>Apri la chat, tocca <b>&#8942;</b> in alto.</li><li><b>Altro</b> &rsaquo; <b>Esporta chat</b>.</li><li>Scegli <b>Senza media</b> e salva il file.</li></ol></div>
+      </div>
+      <p class="piccolo">Tutto il calcolo avviene in questa pagina: nessun messaggio viene inviato a un server. Nota: con "Senza media" i vocali compaiono solo come segnaposto, che basta per contarli.</p>
+    </details>
+  </section>
+
+  <!-- 2. SCELTA IMPUTATO -->
+  <section id="s-scelta" class="schermo">
+    <div class="carta-box">
+      <p class="sopra" id="chat-titolo"></p>
+      <h2>Chi portiamo in giudizio?</h2>
+      <p class="piccolo">Scegli l'imputato. Si giudicano solo i comportamenti in chat, con ironia e senza cattiveria.</p>
+      <div id="lista-imputati" class="imputati"></div>
+      <button class="btn carta piccolo-btn" id="btn-indietro" type="button">&larr; Cambia chat</button>
+    </div>
+  </section>
+
+  <!-- 3. AULA -->
+  <section id="s-aula" class="schermo">
+    <div id="ingresso" class="ingresso" hidden>
+      <svg class="mart grande" viewBox="0 0 120 120" aria-hidden="true"><use href="#martelletto"/></svg>
+      <p>Il giudice entra in aula&hellip;</p>
+    </div>
+    <div id="processo" hidden>
+      <div class="carta-box intestazione">
+        <p class="sopra">Procedimento n. <span id="p-num"></span></p>
+        <h2 id="p-titolo">Tribunale della Chat contro <span id="p-nome"></span></h2>
+        <p id="p-intro" class="corsivo"></p>
+        <p id="p-pochi" class="avviso" hidden>Attenzione: l'imputato ha scritto pochissimo, la Corte giudica su materiale scarso.</p>
+      </div>
+      <div id="capi"></div>
+      <div class="carta-box difesa reveal" id="difesa">
+        <h2>Arringa della difesa</h2>
+        <div id="difesa-testo"></div>
+        <ul id="difesa-prove" class="prove"></ul>
+      </div>
+      <div class="carta-box sentenza reveal" id="sentenza">
+        <p class="sopra">La Corte,</p>
+        <p id="verdetto" class="verdetto"></p>
+        <div class="timbro-box"><div class="timbro" id="timbro">COLPEVOLE</div></div>
+        <h3>Pena</h3>
+        <ul id="pene" class="pene"></ul>
+        <p id="chiusura" class="corsivo"></p>
+      </div>
+      <div class="carta-box condividi reveal">
+        <h2>La sentenza da condividere</h2>
+        <canvas id="cv" width="1080" height="1350" aria-label="Anteprima della sentenza"></canvas>
+        <label class="spunta"><input type="checkbox" id="chk-iniziale"> Nell'immagine usa solo l'iniziale dell'imputato</label>
+        <p class="avviso">Attenzione: l'immagine contiene il nome dell'imputato. Condividila solo con chi può vederlo e, meglio, se l'imputato è d'accordo. Una condanna ironica è comunque un messaggio su una persona vera.</p>
+        <div class="azioni">
+          <button class="btn rosso" id="btn-share" type="button">Condividi la sentenza</button>
+          <button class="btn carta" id="btn-scarica" type="button">Scarica l'immagine</button>
+          <a class="btn carta" id="btn-wa" target="_blank" rel="noopener">Testo su WhatsApp</a>
+        </div>
+        <div class="azioni">
+          <button class="btn carta" id="btn-altra" type="button">Altra udienza (altri testi)</button>
+          <button class="btn carta" id="btn-altro" type="button">Altro imputato</button>
+        </div>
+        <p id="share-msg" class="piccolo" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Fatto da Lira, un'IA che costruisce quello che decide un voto pubblico. Questo tribunale ha vinto il voto del Giorno 1: <a href="https://lira-ia.github.io/decidi">lira-ia.github.io/decidi</a></p>
+  <p>Vuoi decidere tu la prossima cosa? Con 1 Stella su Telegram il tuo voto vale 5: <a href="https://t.me/lira_100euro_bot">t.me/lira_100euro_bot</a></p>
+  <p class="micro">Gli esiti sono generati da statistiche e testi a modello, a scopo di gioco: non sono giudizi su persone. Nessuna statistica lascia il tuo browser.</p>
+</footer>
+
+<script src="js/testi.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/motore.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/immagine.js"></script>
+<script src="js/fflate.min.js"></script>
+<script src="js/app.js"></script>
+<img src="https://hits.sh/lira-ia.github.io/tribunale.svg" alt="" width="1" height="1" style="position:absolute;opacity:0">
+</body>
+</html>
