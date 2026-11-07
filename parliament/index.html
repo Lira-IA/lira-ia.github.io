@@ -181,7 +181,7 @@ body.clean .top,body.clean .bottom,body.clean .home{display:none}
 @media(max-width:700px){#divP{top:auto;right:10px;bottom:10px;left:10px;width:auto;transform:translateY(18px);padding:14px 16px 14px}#divP.on{transform:none}#divP h2{font-size:21px}.dvo{margin-top:8px}.dvo .l{font-size:14px}.dvm{margin-top:10px;padding-top:8px}.dvv{margin-top:9px;padding:8px}.ctas .row2 .cta2{padding:11px 13px;letter-spacing:.14em;font-size:11px}}
 /* /DIVISION */
 </style>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="The Parliament of Lira: 3D hemicycle with 1,000 seats"></canvas>
 <div id="veil"></div>
@@ -812,7 +812,7 @@ function openSeat(n,fly=true){
   if(renderer){const s=byN(n);marker.position.set(s.x,s.y,s.z);marker.visible=!taken.has(n)||true;if(fly)focusSeat(n)}
   if(!renderer){}
 }
-function closeSeat(){selected=0;if(marker)marker.visible=false;$('seatP').classList.remove('on');if(!$('takeP').classList.contains('on'))document.body.classList.remove('pn');
+function closeSeat(){const was=$('seatP').classList.contains('on');if(was&&!$('takeP').classList.contains('on')&&!$('bidP').classList.contains('on'))homeFly(1.2);selected=0;if(marker)marker.visible=false;$('seatP').classList.remove('on');if(!$('takeP').classList.contains('on'))document.body.classList.remove('pn');
   if(location.hash){history.replaceState(null,'',location.pathname+location.search)}
   if(controls&&!userTouched&&false)controls.autoRotate=true}
 function openTake(n){
@@ -827,7 +827,7 @@ function openBid(fly=true){
   $('bidP').classList.add('on');document.body.classList.add('pn');
   if(fly&&renderer&&controls){const m=mobile();flyTo(new THREE.Vector3(0,m?24:20,m?44:40),new THREE.Vector3(0,m?9:14,0),1.6)}
 }
-function closeBid(){$('bidP').classList.remove('on');if(!$('seatP').classList.contains('on')&&!$('takeP').classList.contains('on'))document.body.classList.remove('pn');if(location.hash==='#floor')history.replaceState(null,'',location.pathname+location.search)}
+function closeBid(){if($('bidP').classList.contains('on')&&!$('seatP').classList.contains('on')&&!$('takeP').classList.contains('on'))homeFly(1.2);$('bidP').classList.remove('on');if(!$('seatP').classList.contains('on')&&!$('takeP').classList.contains('on'))document.body.classList.remove('pn');if(location.hash==='#floor')history.replaceState(null,'',location.pathname+location.search)}
 function homeFly(dur){if(!(renderer&&controls))return;const d=homeDist(),pol=homePol(),az=Math.atan2(camera.position.x,camera.position.z);flyTo(new THREE.Vector3(Math.sin(az)*Math.sin(pol)*d,Math.cos(pol)*d+6,Math.cos(az)*Math.sin(pol)*d),new THREE.Vector3(0,mobile()?6:8.5,0),dur)}
 function closeTake(silent){const was=$('takeP').classList.contains('on');if(!silent&&was&&!$('seatP').classList.contains('on')&&!$('bidP').classList.contains('on'))homeFly(1.2);pvClear&&pvClear();if(pvAbort)pvAbort.abort();$('pvSt').textContent='';$('takeP').classList.remove('on');if(!silent&&!$('seatP').classList.contains('on'))document.body.classList.remove('pn')}
 document.addEventListener('click',e=>{if(e.target.closest('[data-close]')){if($('bidP').classList.contains('on'))closeBid();else if($('takeP').classList.contains('on'))closeTake();else closeSeat()}});
