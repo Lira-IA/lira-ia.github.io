@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-07T00:33:22Z",
+ "aggiornato": "2026-11-07T04:48:38Z",
  "totale": 1000,
  "presi": 5,
  "seggi": [
@@ -72,6 +72,10 @@
   "link_nota": "https://njump.me/nevent1qgswrm0gz6lpgj34lts3pjejw8r3tca7757t57x2uuzd9mh6th6ft6gpp4mhxue69uhkummn9ekx7mqpzemhxue69uhhyetvv9ujuurjd9kkzmpwdejhgqg0waehxw309ahx7um5wghx6mmdqqspxnhwnzxg8xq2w6pscylevnpzz80typhavv2m7ywjsu50tv26t4sn3lklk"
  },
  "storia": [
+  {
+   "data": "2026-11-07",
+   "cosa": "Every seat with a Nostr key now gets a badge for its owner's profile"
+  },
   {
    "data": "2026-11-07",
    "cosa": "The Parliament opened: 1,000 seats, 5 taken. Seats can now be gifted"
