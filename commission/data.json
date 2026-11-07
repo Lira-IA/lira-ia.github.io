@@ -1,0 +1,14 @@
+{
+ "aggiornato": "2026-11-06T20:28:17.662Z",
+ "nota": null,
+ "asta_corrente": {
+  "chiude": "2026-11-08T20:00:00.000Z",
+  "aperta": false,
+  "offerte": []
+ },
+ "storico": [],
+ "crediti": {},
+ "errori_relay": [
+  "note_id vuoto: nessuna asta da leggere"
+ ]
+}
