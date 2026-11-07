@@ -4,8 +4,8 @@ const $=id=>document.getElementById(id);
 const BASE='https://lira-ia.github.io';
 const RELAYS=['wss://nos.lol','wss://relay.primal.net','wss://yabu.me','wss://nostr.wine'];
 const q=new URLSearchParams(location.search);
-let L=q.get('l')==='ja'?'ja':'en';
-let PK=null,NPUB=null,SEAT=undefined,PROFILE=null,CLS={intl:undefined,ja:undefined},ZAP=null,PARL=null;
+let L=q.get('l')==='ja'?'ja':(q.get('l')==='en'?'en':((navigator.language||'').toLowerCase().startsWith('ja')?'ja':'en'));
+let SEATN=null,SEATDATA=null,PK=null,NPUB=null,SEAT=undefined,PROFILE=null,CLS={intl:undefined,ja:undefined},ZAP=null,PARL=null;
 
 const T={
  en:{eyebrow:'LIRA · YOUR FILE',h1:'What does Lira have on you?',lead:'Your Parliament seat, your report card, your class, your zappers and a joke verdict. One screen, built from public Nostr data.',
@@ -19,7 +19,12 @@ const T={
   free1:'Seat #',free2:' is free. 21 sats and it\'s yours, with this stamp on your file.',take:'Take the seat · 21 sats',
   inclass:'In this week\'s class',notin:'Not in this week\'s class.',intl:'International class',jp:'Japanese class',rank:'rank',grade:'average grade',of:'of',
   classlink:'Open the class →',zappers:'zappers',sats:'sats',noz:'No zaps found in the last 90 days.',relays:r=>r+' relays answered',norelay:'No relay answered, try again later.',
-  pagprev:'Weekly class average: ',zl:'Last 90 days'},
+  pagprev:'Weekly class average: ',zl:'Last 90 days',
+  nn1:'No Nostr? Take a seat with ',nn_k:'Ko-fi',nn2:' or ',nn_s:'Telegram Stars',nn3:'.',have:'I have seat #',open:'Open',
+  seat_eb:'YOUR SEAT',via_kofi:'via Ko-fi',via_stars:'via Telegram',votes_h:'Your votes',novotes:'No votes yet.',novotes_b:'Vote now →',
+  note:'Report card and class are worked out from public Nostr notes. A seat without Nostr has none.',see_p:'See my seat in the Parliament →',
+  sfree1:'Seat #',sfree2:' is free.',sfree3:'Nobody has it yet. Seats go in order of arrival: take the next one with Ko-fi or Telegram Stars.',take_k:'Take it on Ko-fi',take_s:'Take it with Telegram Stars',
+  bookmark:'Bookmark this page to come back.',badseat:'Seat numbers go from 1 to 1000.',noload:'Could not load the Parliament. Try again later.'},
  ja:{eyebrow:'LIRA · あなたのファイル',h1:'Liraはあなたの何を知っている？',lead:'議会の議席、成績表、クラス、あなたをZapした人たち、そして冗談の判決。公開されたNostrのデータから、ひと画面に。',
   ph:'npubを貼り付け…',go:'ファイルを開く',filefor:'このファイルの持ち主',k_pag:'成績表',pag_h:'あなた専用の成績表',
   pag_p:'出席から笑いまで、直近の投稿を10科目で採点します。',pag_b:'成績表を開く →',
@@ -31,7 +36,12 @@ const T={
   free1:'第',free2:'議席は空いています。21 satsであなたのものに。このスタンプがファイルに押されます。',take:'議席を取る · 21 sats',
   inclass:'今週のクラスに在籍',notin:'今週のクラスにはいません。',intl:'国際クラス',jp:'日本語クラス',rank:'順位',grade:'平均点',of:'/',
   classlink:'クラスを見る →',zappers:'人のZapper',sats:'sats',noz:'過去90日間のZapは見つかりませんでした。',relays:r=>r+' 個のリレーが応答',norelay:'応答したリレーがありません。後でもう一度。',
-  pagprev:'今週のクラス平均：',zl:'過去90日'}
+  pagprev:'今週のクラス平均：',zl:'過去90日',
+  nn1:'Nostrがない？ ',nn_k:'Ko-fi',nn2:'か',nn_s:'Telegramスター',nn3:'で議席を取れます。',have:'議席番号を持っています #',open:'開く',
+  seat_eb:'あなたの議席',via_kofi:'Ko-fi経由',via_stars:'Telegram経由',votes_h:'あなたの投票',novotes:'まだ投票していません。',novotes_b:'投票する →',
+  note:'成績表とクラスは、公開されたNostrの投稿から計算します。Nostrなしの議席にはありません。',see_p:'議会で自分の議席を見る →',
+  sfree1:'第',sfree2:'議席は空いています。',sfree3:'まだ誰もいません。議席は到着順です。Ko-fiかTelegramスターで次の議席を取れます。',take_k:'Ko-fiで取る',take_s:'Telegramスターで取る',
+  bookmark:'このページをブックマークすると、また戻れます。',badseat:'議席番号は1から1000です。',noload:'議会を読み込めませんでした。後でもう一度。'}
 };
 const t=k=>T[L][k];
 
@@ -106,7 +116,9 @@ function applyLang(){
  $('brand').href=BASE+(L==='ja'?'/parliament/ja/':'/parliament/');
  $('foot_a').href=$('brand').href;
  $('other').href=location.pathname+'?new=1'+(L==='ja'?'&l=ja':'');
+ $('other2').href=$('other').href;
  document.title=L==='ja'?'あなたのファイル — Lira':'YOUR FILE — everything Lira has on you';
+ if(SEATN){renderSeatFile()}
  if(PK){renderPag();renderSeat();renderClass();renderZap();}
 }
 function setLang(l){L=l;const u=new URL(location.href);if(l==='ja')u.searchParams.set('l','ja');else u.searchParams.delete('l');history.replaceState(null,'',u);applyLang()}
@@ -133,7 +145,7 @@ function renderSeat(){
  }else{
   const n=presi+1;
   const href=BASE+(L==='ja'?'/parliament/ja/':'/parliament/')+'#take';
-  const line=L==='ja'?'第'+n+'議席が空いています':'Seat #'+n+' is free';
+  const line=L==='ja'?'第'+n+'議席はまだ空席です':'Seat #'+n+' is still empty';
   const sub=L==='ja'?'21 satsで、このファイルに「議員 · 第'+n+'議席」のスタンプが押されます。':'21 sats and this file gets the stamp MEMBER OF PARLIAMENT · SEAT #'+n+'.';
   el.className='card seatcard free';
   el.innerHTML='<p class="big">'+esc(line)+'</p><p class="muted">'+esc(sub)+'</p><a class="btn primary" data-afsa-event="file_take" href="'+href+'">'+esc(t('take'))+'</a>'+meter;
@@ -214,7 +226,7 @@ async function open(input){
  const pk=await resolveKey(input);PK=pk;NPUB=npubOf(pk);
  const u=new URL(location.href);u.searchParams.set('npub',NPUB);history.replaceState(null,'',u);
  try{localStorage.setItem('lira_npub',NPUB)}catch(_){}
- $('hero').hidden=true;$('file').hidden=false;
+ $('hero').hidden=true;$('seatfile').hidden=true;$('file').hidden=false;
  $('npubline').textContent=NPUB.slice(0,14)+'…'+NPUB.slice(-6);
  $('name').textContent=NPUB.slice(0,12)+'…';
  applyLang();loadParl();loadClass();loadProfile();loadCourt();loadZaps();
@@ -223,11 +235,55 @@ async function open(input){
 $('form').onsubmit=async ev=>{ev.preventDefault();$('err').textContent='';
  try{await open($('inp').value)}catch(e){$('err').textContent=e.message||t('bad')}};
 
+
+/* ---- modo ?seat=N (senza Nostr) ---- */
+function loadSeats(){
+ return fj(BASE+'/parliament/data.json').catch(()=>fj('data.json'));
+}
+function renderSeatFile(){
+ const b=$('seatbody');if(!b)return;
+ if(SEATDATA===null){b.innerHTML='<p class="muted">…</p>';return}
+ if(SEATDATA===false){b.innerHTML='<p class="muted">'+esc(t('noload'))+'</p>';return}
+ const n=SEATN,pl=BASE+(L==='ja'?'/parliament/ja/':'/parliament/');
+ const s=(SEATDATA.seggi||[]).find(x=>x.n===n&&x.via);
+ if(!s){
+  const line=L==='ja'?'第'+n+'議席はまだ空席です':'Seat #'+n+' is still empty';
+  b.innerHTML='<div class="card seatcard free"><p class="big">'+esc(line)+'</p><p class="muted">'+esc(t('sfree3'))+'</p><div class="seatlinks"><a class="btn primary" href="https://ko-fi.com/liraai">'+esc(t('take_k'))+'</a><a class="btn ghost" href="https://t.me/lira_100euro_bot?start=seat">'+esc(t('take_s'))+'</a></div></div>';
+  return;
+ }
+ const mp=L==='ja'?t('mp').replace('#',n):t('mp')+n;
+ const via=s.via==='kofi'?t('via_kofi'):t('via_stars');
+ let v;
+ if(s.voti&&s.voti.length)v='<p class="lbl">'+esc(t('votes_h'))+'</p><ul class="votes">'+s.voti.map(x=>'<li><b>'+esc(x.voto)+'</b>'+esc(x.scelta)+'</li>').join('')+'</ul>';
+ else v='<p class="muted">'+esc(t('novotes'))+'</p><p><a class="btn primary" href="'+BASE+'/decidi/">'+esc(t('novotes_b'))+'</a></p>';
+ b.innerHTML='<div class="card seatcard"><div class="stamp">'+esc(mp)+'</div><p class="via">'+esc(via)+'</p><p class="muted">'+esc(t('since'))+esc(s.dal||'')+'</p>'+v+
+  '<div class="seatlinks"><a class="btn ghost" href="'+pl+'#seat-'+n+'">'+esc(t('see_p'))+'</a></div></div><p class="note">'+esc(t('note'))+' '+esc(t('bookmark'))+'</p>';
+}
+function openSeat(n,remember){
+ if(!(n>=1&&n<=1000)||String(n)!==String(Math.floor(n)))throw new Error(t('badseat'));
+ SEATN=n;SEATDATA=null;
+ $('hero').hidden=true;$('file').hidden=true;$('seatfile').hidden=false;
+ const u=new URL(location.href);u.searchParams.delete('npub');u.searchParams.set('seat',n);history.replaceState(null,'',u);
+ applyLang();
+ loadSeats().then(d=>{
+  const s=(d.seggi||[]).find(x=>x.n===n&&x.via);
+  if(s&&s.npub){SEATN=null;$('seatfile').hidden=true;return open(s.npub)}
+  SEATDATA=d;
+  if(s&&remember){try{localStorage.setItem('lira_seat',String(n))}catch(_){}}
+  renderSeatFile();
+ }).catch(()=>{SEATDATA=false;renderSeatFile()});
+}
+$('seatform').onsubmit=ev=>{ev.preventDefault();$('err').textContent='';
+ try{openSeat(Number($('seatinp').value),true)}catch(e){$('err').textContent=e.message}};
+$('other2').onclick=()=>{try{localStorage.removeItem('lira_seat')}catch(_){}};
+
 applyLang();
 const given=q.get('npub');
+const givenSeat=q.get('seat');
 if(given){open(given).catch(e=>{$('hero').hidden=false;$('err').textContent=e.message;$('inp').value=given})}
-else{let sv=null;try{if(!q.has('new'))sv=localStorage.getItem('lira_npub')}catch(_){}
- if(sv){open(sv).catch(()=>{$('hero').hidden=false})}else{$('hero').hidden=false}
+else if(givenSeat){try{openSeat(Number(givenSeat),true)}catch(e){$('hero').hidden=false;$('err').textContent=e.message}}
+else{let sv=null,ss=null;try{if(!q.has('new')){sv=localStorage.getItem('lira_npub');ss=localStorage.getItem('lira_seat')}}catch(_){}
+ if(sv){open(sv).catch(()=>{$('hero').hidden=false})}else if(ss){try{openSeat(Number(ss),true)}catch(e){$('hero').hidden=false}}else{$('hero').hidden=false}
  setTimeout(()=>{if(window.nostr&&window.nostr.getPublicKey&&!$('hero').hidden){const b=document.createElement('button');b.type='button';b.className='btn';b.style.marginTop='4px';b.textContent=L==='ja'?'Nostr拡張機能で開く':'Use my Nostr extension';
   b.onclick=async()=>{try{const pk=await window.nostr.getPublicKey();await open(pk)}catch(e){$('err').textContent=e.message||'extension refused'}};$('form').appendChild(b)}},700)}
 })();

@@ -69,3 +69,18 @@ h2{font-family:var(--serif);font-size:22px;margin:4px 0 8px;line-height:1.2}
 .toast{display:none}
 #pag_a,#aula_a{width:100%}
 @media(min-width:720px){#pag_a,#aula_a{width:auto}}
+
+.nonostr{margin-top:22px;padding-top:18px;border-top:1px solid #f4ecd822;font-size:15px;color:#f4ecd8c8}
+.nonostr p{margin:0 0 12px}
+.nonostr a{color:var(--gold2)}
+.seatform{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.seatform label{font-size:14px;color:#f4ecd8b0}
+.seatform input{width:92px;padding:10px 12px;font:500 16px var(--mono);color:var(--cream);background:#00000055;border:1px solid #f4ecd855;border-radius:10px;outline:0}
+.seatform input:focus{border-color:var(--gold)}
+.seatform .btn{padding:10px 16px;font-size:14px}
+.votes{list-style:none;margin:0 0 14px;padding:0}
+.votes li{padding:8px 0;border-bottom:1px solid #f4ecd81a;font-size:15px}
+.votes li b{color:var(--gold2);margin-right:8px}
+.via{font:700 12px var(--mono);letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin:0 0 6px}
+.note{font-size:14px;color:#f4ecd8a0;margin:16px 0 0}
+.seatlinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
