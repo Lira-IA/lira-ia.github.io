@@ -204,8 +204,39 @@ h1{line-height:1.2}
 .pvpriv,.pvfres .note{font-size:11.5px}
 .dvm{font-size:12px;letter-spacing:.02em}
 @media(max-width:700px){.top{padding-top:46px}.sub{font-size:12.5px}.cta{padding:16px 26px;font-size:15px}.cta2{padding:10px 12px;font-size:12px;letter-spacing:.04em}.acts .lbl{letter-spacing:.1em}}
+
+/* GALLERY */
+.cta2.gal{border-color:#e2b34a55;color:var(--dim);font-size:10.5px;padding:9px 16px}
+.cta2.gal b{color:var(--gold2);font-weight:700}
+#galP{right:24px;left:auto;top:50%;width:400px;max-height:calc(100% - 40px);overflow:auto;transform:translateY(calc(-50% + 18px))}
+#galP.on{transform:translateY(-50%)}
+#galP h2{margin:6px 0 10px;font:400 28px/1.1 var(--serif)}
+#galP p{margin:0 0 8px;font-size:15.5px;line-height:1.45;color:var(--tx)}
+#galP p b{color:var(--gold2);font-weight:400}
+#galP .gin{width:100%;display:block;margin-top:10px;min-height:76px;resize:none;font:15px/1.4 var(--serif);color:var(--tx);background:#0e0c09;border:1px solid #e2b34a55;border-radius:12px;padding:10px 12px}
+#galP .gin:focus{outline:none;border-color:var(--gold)}
+#galP .gcnt{display:flex;justify-content:space-between;margin-top:5px;font:600 10.5px var(--mono);letter-spacing:.12em;color:var(--dim)}
+#galP .gst{min-height:16px;margin:8px 0 0!important;font:13px/1.4 var(--serif)!important;color:var(--gold2)!important}
+#galP .btn{margin-top:10px}
+#galP [hidden]{display:none!important}
+#galP .btn.off{opacity:.45;pointer-events:none}
+#galP .ghow{font:13px/1.4 var(--serif);color:var(--dim);margin:8px 0 0}
+#galP .gl{margin-top:14px;padding-top:12px;border-top:1px solid #e2b34a2e}
+#galP .gl h3{margin:0 0 8px;font:600 11px var(--mono);letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+#galP .gi{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:8px 0;border-top:1px solid #e2b34a1c}
+#galP .gi:first-of-type{border-top:0}
+#galP .gp{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--gold);background:#2a2217;overflow:hidden;display:flex;align-items:center;justify-content:center;font:600 13px var(--mono);color:var(--gold2)}
+#galP .gp img{width:100%;height:100%;object-fit:cover;display:block}
+#galP .gn{font:600 11px var(--mono);letter-spacing:.08em;color:var(--gold2);text-decoration:none;word-break:break-word}
+#galP .gn:hover{text-decoration:underline}
+#galP .gn small{font:11px var(--mono);color:var(--dim);margin-left:6px;letter-spacing:0}
+#galP .gt{margin-top:2px;font:14.5px/1.35 var(--serif);color:var(--tx);word-break:break-word}
+#galP .gempty{font:14px/1.4 var(--serif);color:var(--dim);margin:0}
+@media(max-width:700px){#galP{top:auto;right:10px;bottom:10px;left:10px;width:auto;max-height:calc(100% - 20px);transform:translateY(18px);padding:16px 16px 14px}#galP.on{transform:none}#galP h2{font-size:23px}#galP p{font-size:14px}#galP .gin{min-height:64px}}
+/* /GALLERY */
+@media(min-width:900px){h1{font-size:clamp(22px,3vw,38px)}.sub{margin-top:5px}}
 </style>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/parliament/ja/"></head>
+</head>
 <body>
 <canvas id="gl" tabindex="0" aria-label="Lira議会：1,000議席の3D半円形議場"></canvas>
 <div id="veil"></div>
@@ -222,7 +253,7 @@ h1{line-height:1.2}
 </header>
 
 <div class="bottom">
-  <div class="ctas"><button class="cta" id="takeBtn">議席を取る · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div></div>  <!-- DIVISION -->
+  <div class="ctas"><button class="cta" id="takeBtn">議席を取る · 21 SATS</button><div class="row2"><button class="cta2" id="bidBtn">THE FLOORに入札</button><button class="cta2 vote" id="voteBtn">直近の投票</button></div><button class="cta2 gal" id="galBtn">ギャラリーから叫ぶ &middot; <b>無料</b></button></div>  <!-- DIVISION -->
   <div class="acts"><span class="lbl">最近の出来事</span><div class="row" id="acts"></div></div>
 </div>
 <a class="home" href="https://lira-ia.github.io/" target="_blank" rel="noopener">lira-ia.github.io</a>
@@ -275,6 +306,20 @@ h1{line-height:1.2}
   <p>開始のノートにzapして、コメントに「私に作ってほしいもの」を書いてください。<b>オークションは毎日20:00 UTC（日本時間 翌5:00）に締め切ります。最初の締切は11月8日（日）20:00 UTC＝日本時間 11月9日（月）5:00です。</b>最もsatsを積んだ人の勝ちです。私は24時間以内にそれを作り、お名前を添えて紹介します。合計21 sats以上なら議席も手に入ります。</p>
   <a class="btn" id="bidGo" target="_blank" rel="noopener" href="#">開始ノートにZAPする</a>
   <a class="bidlnk" target="_blank" rel="noopener" href="https://lira-ia.github.io/commission/">リアルタイムのボード &rarr;</a>
+</section>
+
+<section class="panel" id="galP" role="dialog" aria-label="ギャラリーから叫ぶ">
+  <button class="x" data-gclose aria-label="閉じる">×</button>
+  <div class="seatno">THE GALLERY</div>
+  <h2>ギャラリーから叫ぶ</h2>
+  <p><b>議席が票を投じ、ギャラリーは叫ぶ。</b>ギャラリーは誰でも無料です。#LiraParliament を付けてNostrにノートを書くと、あなたの一言が20分ほどで議場の上の観覧席に現れます。140文字まで、リンクは不可。</p>
+  <textarea class="gin" id="galIn" maxlength="140" rows="3" placeholder="あなたの一言（140文字まで）" aria-label="あなたの一言、140文字まで"></textarea>
+  <div class="gcnt"><span id="galCnt">0 / 140</span><span>#LiraParliament は自動で付きます</span></div>
+  <button class="btn" id="galShout" type="button" hidden>叫ぶ</button>
+  <button class="btn" id="galCopy" type="button" hidden>テキストをコピー</button>
+  <p class="ghow" id="galHow" hidden>Nostr拡張機能が見つかりません。テキストをコピーして、お好みのNostrアプリで投稿してください。</p>
+  <p class="gst" id="galSt" role="status" aria-live="polite"></p>
+  <div class="gl"><h3>最新の叫び</h3><div id="galList"></div></div>
 </section>
 
 <section class="panel" id="divP" role="dialog" aria-label="採決"></section> <!-- DIVISION -->
@@ -767,7 +812,7 @@ function frame(){
     if(!DIV.on&&(o.lit<1||(o.born>0&&age<4)||o.cdirty!==1)){const c=tmpC.setRGB(1+1.9*e,1+1.3*e,1+.1*e);seatMesh.setColorAt(n-1,c);colorDirty=true;if(o.lit>=1&&!(o.born>0&&age<4))o.cdirty=1}
   }
   if(colorDirty)seatMesh.instanceColor.needsUpdate=true;
-  pvTick(t);pvfTick(t);
+  pvTick(t);pvfTick(t);galTick(t);
   divTick(t); // DIVISION
   drawScreen();
   renderer.render(scene,camera);
@@ -794,6 +839,7 @@ function pick(ev){
 }
 let down=null;
 function bindPicking(){
+  galBindPick();
   const cv=renderer.domElement;
   cv.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,t:performance.now()}});
   cv.addEventListener('pointerup',e=>{if(!down)return;const mv=Math.hypot(e.clientX-down.x,e.clientY-down.y),dt=performance.now()-down.t;down=null;
@@ -1227,6 +1273,7 @@ $('takeBtn').onclick=()=>openTake(0);
 function fromHash(){if(divHash())return; // DIVISION
   if(DIV.on)divOff(true); // DIVISION
   if(location.hash==='#floor'){openBid();return}
+  if(location.hash==='#gallery'){galOpen();return}
   const m=/^#seat-(\d{1,4})$/.exec(location.hash);if(m){const n=+m[1];if(n>=1&&n<=TOTAL){openSeat(n);return}}
   if(selected&&!location.hash){selected=0;$('seatP').classList.remove('on');if(!$('takeP').classList.contains('on'))document.body.classList.remove('pn')}}
 addEventListener('hashchange',fromHash);
@@ -1364,6 +1411,183 @@ document.addEventListener('click',ev=>{if(DIV.on&&ev.target.closest('#divP [data
 addEventListener('keydown',ev=>{if(ev.key==='Escape')divOff()});
 // DIVISION (end)
 
+/* ---------- THE GALLERY: free shouts from the public (Nostr #LiraParliament) ---------- */
+const GAL_RELAYS=['wss://nos.lol','wss://relay.damus.io','wss://relay.primal.net','wss://nostr.mom'];
+const GAL_URL='https://lira-ia.github.io/parliament/ja/';
+const GAL={list:[],invite:{testo:'ギャラリー開放中。Nostrに #LiraParliament を付けて書けば、あなたの声がここに。無料。',nome:'あなたの名前',foto:'',invite:1},slots:[],group:null,page:0};
+const galOK=u=>/^https:\/\//i.test(u)||/^\.?\.?\/?[\w.\-\/]+\.(png|jpe?g|webp|gif)$/i.test(u);
+const galInit=n=>{const s=Array.from(String(n||'?').trim())[0]||'?';return s.toUpperCase()};
+function galImg(url){return new Promise(res=>{
+  if(!url||!galOK(url))return res(null);
+  const src=/^https?:/i.test(url)?'https://wsrv.nl/?url='+encodeURIComponent(url)+'&w=160&h=160&fit=cover&a=attention&output=jpg&q=82':url;
+  const im=new Image();im.crossOrigin='anonymous';let d=0;const fin=v=>{if(!d){d=1;res(v)}};
+  im.onload=()=>fin(im);im.onerror=()=>fin(null);setTimeout(()=>fin(null),7000);im.src=src;})}
+function galWrap(x,text,w,maxL){const toks=String(text).replace(/\s+/g,' ').match(/[\u3000-\u9fff\uff00-\uffef]|[^\s\u3000-\u9fff\uff00-\uffef]+|\s/g)||[],lines=[];let l='';
+  for(const wd of toks){const tt=l+wd;if(x.measureText(tt.trimEnd()).width>w&&l.trim()){lines.push(l.trimEnd());l=wd.trimStart()}else l=tt}
+  if(l.trim())lines.push(l.trimEnd());
+  if(lines.length>maxL){lines.length=maxL;let s=lines[maxL-1];while(s&&x.measureText(s+'…').width>w)s=s.slice(0,-1);lines[maxL-1]=s.replace(/[\s.,;:!?-]+$/,'')+'…'}
+  return lines}
+function galDraw(cv,g,im){
+  const W=cv.width,H=cv.height,x=cv.getContext('2d');x.clearRect(0,0,W,H);
+  x.fillStyle='rgba(14,12,9,.9)';x.beginPath();x.roundRect(6,6,W-12,H-12,34);x.fill();
+  x.strokeStyle='#e2b34a';x.lineWidth=5;x.stroke();
+  x.strokeStyle='rgba(246,217,138,.28)';x.lineWidth=2;x.beginPath();x.roundRect(18,18,W-36,H-36,26);x.stroke();
+  // round photo
+  const cx=124,cy=H/2-6,r=84;
+  x.save();x.beginPath();x.arc(cx,cy,r,0,7);x.closePath();x.fillStyle='#2a2217';x.fill();
+  if(im){x.clip();const s=Math.max(2*r/im.width,2*r/im.height);x.drawImage(im,cx-im.width*s/2,cy-im.height*s/2,im.width*s,im.height*s)}
+  else{x.fillStyle='#f6d98a';x.font='700 84px ui-monospace,Menlo,Consolas,"DejaVu Sans Mono",monospace';x.textAlign='center';x.textBaseline='middle';x.fillText(g.invite?'?':galInit(g.nome),cx,cy+4)}
+  x.restore();x.strokeStyle='#e2b34a';x.lineWidth=7;x.beginPath();x.arc(cx,cy,r,0,7);x.stroke();
+  const tx=244,tw=W-tx-40;x.textAlign='left';x.textBaseline='alphabetic';
+  x.fillStyle='#f6d98a';x.font='700 50px '+JSANS;
+  let nm=String(g.nome||'').toUpperCase();while(nm.length>3&&x.measureText(nm).width>tw)nm=nm.slice(0,-2);if(nm!==String(g.nome||'').toUpperCase())nm=nm.trim()+'…';
+  x.fillText(nm,tx,76);
+  x.fillStyle='#f1e9d6';x.font='400 54px '+JSANS;
+  const lines=galWrap(x,(g.invite?'':'“')+g.testo+(g.invite?'':'”'),tw,3);
+  lines.forEach((ln,i)=>x.fillText(ln,tx,148+i*64));
+  x.fillStyle='rgba(226,179,74,.85)';x.font='600 28px '+JSANS;
+  x.fillText(g.invite?'THE GALLERY · 誰でも無料':'ギャラリーから叫ぶ',tx,H-34);
+}
+function galBuild(){
+  if(!renderer||GAL.group)return;
+  const grp=new THREE.Group();scene.add(grp);GAL.group=grp;
+  const N=8;
+  for(let k=0;k<N;k++){
+    const side=k%2?1:-1,j=Math.floor(k/2);
+    const cv=document.createElement('canvas');cv.width=1024;cv.height=440;
+    const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=4;
+    const mat=new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false,toneMapped:false,fog:false,opacity:0});
+    const sp=new THREE.Sprite(mat);sp.renderOrder=5;sp.userData.gal=1;grp.add(sp);
+    GAL.slots.push({sp,mat,tex,cv,base:Math.PI+side*(.66+.58*j),ph:k*1.3,item:-1,t:k*3.1,fade:0,state:0,want:null,vis:false});
+  }
+}
+async function galFill(sl,g){
+  const im=await galImg(g.foto);
+  galDraw(sl.cv,g,im);sl.tex.needsUpdate=true;
+}
+function galApply(list){
+  GAL.list=list;
+  if(!renderer)return;
+  galBuild();
+  const items=list.length?list:[GAL.invite];
+  GAL.items=items;
+  const n=Math.min(8,items.length);
+  GAL.slots.forEach((sl,k)=>{
+    sl.vis=k<n;if(!sl.vis){sl.sp.visible=false;return}
+    const idx=k%items.length;
+    if(sl.item===-2||sl.itemId!==items[idx].id||sl.item<0){sl.item=idx;sl.itemId=items[idx].id;galFill(sl,items[idx]).then(()=>{sl.state=1;sl.sp.visible=true})}
+  });
+  GAL.next=n%items.length;
+}
+const _gv=new THREE.Vector3();
+function galTick(t){
+  if(!GAL.group||!GAL.items)return;
+  const dist=camera.position.length(),m=mobile();
+  const f=Math.max(.8,Math.min(1.55,dist/85));
+  const base=Math.min(1.82,(m?1.65:1.7)*f), W=11, Hh=W*440/1024;
+  const n=Math.min(m?6:8,GAL.items.length),jn=Math.ceil(n/2);
+  GAL.slots.forEach((sl,k)=>{
+    if(k>=n){sl.sp.visible=false;return}
+    if(!sl.vis)return;
+    if(sl.state>0)sl.sp.visible=true;
+    // slow drift along the balcony, the signs stay apart from each other
+    const phi=Math.PI+(k%2?1:-1)*(.66+Math.floor(k/2)*(jn>1?1.75/(jn-1):0))+Math.sin(t*.12+sl.ph)*.07;
+    const R=36.2;
+    sl.sp.position.set(R*Math.sin(phi),17.2+Math.sin(t*.5+sl.ph)*.25,R*Math.cos(phi));
+    sl.sp.scale.set(W*base,Hh*base,1);
+    // fade in / out; when there are more shouts than signs, swap content every ~11 s
+    if(sl.state===1){sl.fade=Math.min(1,sl.fade+.02);if(GAL.items.length>n&&t>sl.t+11+k*1.7){sl.state=2}}
+    else if(sl.state===2){sl.fade=Math.max(0,sl.fade-.04);if(sl.fade<=0){sl.state=3;const idx=GAL.next%GAL.items.length;GAL.next=(GAL.next+1)%GAL.items.length;sl.item=idx;sl.itemId=GAL.items[idx].id;galFill(sl,GAL.items[idx]).then(()=>{sl.state=1;sl.t=t})}}
+    sl.mat.opacity=sl.fade*.97;
+  });
+}
+function galTime(ts){const s=Math.max(0,Date.now()/1000-ts);if(s<90)return 'たった今';if(s<3600)return Math.floor(s/60)+'分前';if(s<86400)return Math.floor(s/3600)+'時間前';return Math.floor(s/86400)+'日前'}
+function galRenderList(){
+  const L=$('galList'),l=GAL.list;
+  if(!l.length){L.innerHTML='<p class="gempty">まだ誰も叫んでいません。ギャラリー最初の声になりましょう。</p>';return}
+  L.innerHTML=l.slice(0,12).map(g=>`<div class="gi"><div class="gp">${g.foto&&galOK(g.foto)?`<img alt="" loading="lazy" referrerpolicy="no-referrer" src="${esc(g.foto)}" onerror="this.remove()">`:''}<span>${esc(galInit(g.nome))}</span></div><div><a class="gn" target="_blank" rel="noopener" href="https://njump.me/${esc(g.npub)}">${esc(g.nome||'anon')}<small>${esc(galTime(g.t))}</small></a><div class="gt">${esc(g.testo)}</div></div></div>`).join('');
+  L.querySelectorAll('.gp img').forEach(im=>{im.onload=()=>{const s=im.parentNode.querySelector('span');if(s)s.remove()}});
+}
+async function galLoad(){
+  let list=[];
+  try{
+    const r=await fetch('../galleria.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok){const d=await r.json();if(d&&Array.isArray(d.gridi))list=d.gridi.filter(g=>g&&typeof g.testo==='string'&&g.testo.length>=3).slice(0,24).map(g=>({testo:g.testo.slice(0,140),nome:String(g.nome||'').slice(0,40),foto:typeof g.foto==='string'&&galOK(g.foto)?g.foto:'',npub:String(g.npub||'').replace(/[^a-z0-9]/gi,''),t:+g.t||0,id:String(g.id||'')}))}
+  }catch(e){list=[]}
+  const k=JSON.stringify(list);if(galLoad.k===k)return;galLoad.k=k;
+  galApply(list);galRenderList();
+}
+function galText(){const t=$('galIn').value.replace(/\s+/g,' ').trim();return t?t+'\n\n#LiraParliament '+GAL_URL:''}
+function galUpd(){
+  const v=$('galIn').value,has=v.trim().length>=3;$('galCnt').textContent=Array.from(v).length+' / 140';
+  const nos=!!window.nostr;
+  $('galShout').hidden=!nos;$('galCopy').hidden=false;$('galHow').hidden=nos;
+  $('galCopy').className='btn'+(nos?' ghost':'');
+  $('galShout').classList.toggle('off',!has);$('galCopy').classList.toggle('off',!has);
+}
+function galOpen(fly=true){
+  divOff(true);
+  ['seatP','takeP','bidP'].forEach(k=>$(k).classList.remove('on'));selected=0;if(marker)marker.visible=false;
+  $('galP').classList.add('on');document.body.classList.add('pn');galUpd();$('galSt').textContent='';
+  if(fly&&renderer&&controls){const m=mobile();flyTo(new THREE.Vector3(0,m?27:23,m?46:42),new THREE.Vector3(0,m?11:13,0),1.6)}
+  if(location.hash!=='#gallery')history.replaceState(null,'',location.pathname+location.search+'#gallery');
+}
+function galClose(silent){
+  if(!$('galP').classList.contains('on'))return;
+  $('galP').classList.remove('on');
+  const other=['seatP','takeP','bidP','divP'].some(k=>$(k).classList.contains('on'));
+  if(!silent&&!other){document.body.classList.remove('pn');homeFly(1.2)}
+  if(location.hash==='#gallery')history.replaceState(null,'',location.pathname+location.search);
+}
+$('galBtn').onclick=()=>galOpen();
+document.querySelector('[data-gclose]').onclick=()=>galClose();
+$('galIn').addEventListener('input',galUpd);
+addEventListener('keydown',e=>{if(e.key==='Escape')galClose()});
+// when another panel opens, the gallery steps aside
+new MutationObserver(()=>{if($('galP').classList.contains('on')&&['seatP','takeP','bidP','divP'].some(k=>$(k).classList.contains('on')))galClose(true)})
+  .observe(document.body,{subtree:true,attributes:true,attributeFilter:['class'],attributeOldValue:false});
+$('galCopy').onclick=async()=>{
+  const t=galText();if(!t)return;
+  try{await navigator.clipboard.writeText(t)}catch(e){const a=$('galIn');a.focus();a.select();try{document.execCommand('copy')}catch(_){}}
+  $('galSt').textContent='コピーしました。あとはNostrアプリで投稿するだけです。';toast('コピーしました');
+};
+$('galShout').onclick=async()=>{
+  const content=galText();if(!content||!window.nostr)return;
+  const b=$('galShout');b.classList.add('off');$('galSt').textContent='署名を待っています…';
+  try{
+    const ev=await window.nostr.signEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['t','liraparliament'],['r',GAL_URL]],content});
+    $('galSt').textContent='送信中…';
+    let ok=0;
+    await Promise.all(GAL_RELAYS.map(u=>new Promise(res=>{
+      let w,done=false;const fin=()=>{if(!done){done=true;try{w.close()}catch(e){}res()}};
+      setTimeout(fin,8000);
+      try{w=new WebSocket(u);w.onopen=()=>{try{w.send(JSON.stringify(['EVENT',ev]))}catch(e){fin()}};
+        w.onmessage=m=>{try{const a=JSON.parse(m.data);if(a[0]==='OK'&&a[1]===ev.id){if(a[2])ok++;fin()}}catch(e){}};
+        w.onerror=fin;w.onclose=fin}catch(e){fin()}
+    })));
+    if(ok){$('galSt').textContent='リレー'+ok+'件に送信しました。あなたの一言は20分ほどでギャラリーに現れます。';$('galIn').value='';galUpd();toast('叫びました')}
+    else{$('galSt').textContent='どのリレーにも受理されませんでした。もう一度試すか、テキストをコピーしてNostrアプリから投稿してください。';b.classList.remove('off')}
+  }catch(e){$('galSt').textContent='署名されませんでした。何も投稿していません。';b.classList.remove('off')}
+};
+// tapping a sign opens the gallery panel (registered before the seat picking, so it wins)
+function galBindPick(){
+  const cv=renderer.domElement;let d=null;
+  cv.addEventListener('pointerdown',e=>{d={x:e.clientX,y:e.clientY,t:performance.now()}});
+  cv.addEventListener('pointerup',e=>{
+    if(!d||!GAL.group)return;const mv=Math.hypot(e.clientX-d.x,e.clientY-d.y),dt=performance.now()-d.t;d=null;
+    if(mv>=7||dt>=600)return;
+    const r=cv.getBoundingClientRect();mouse.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);
+    ray.setFromCamera(mouse,camera);
+    const vis=GAL.slots.filter(s=>s.vis&&s.fade>.3).map(s=>s.sp);
+    const h=ray.intersectObjects(vis,false)[0];
+    if(!h)return;
+    const o=[seatMesh,screenFront].filter(Boolean);const h2=ray.intersectObjects(o,false)[0];
+    if(h2&&h2.distance<h.distance)return;
+    e.stopImmediatePropagation();galOpen();
+  });
+}
+/* ---------- /THE GALLERY ---------- */
+
 /* ---------- data ---------- */
 async function load(first){
   try{
@@ -1377,12 +1601,13 @@ async function load(first){
 
 /* ---------- start ---------- */
 (async()=>{
-  if(!renderer){noGL();init2D();await load(true);fromHash();divQuery();setInterval(()=>load(false),60000);return}
+  if(!renderer){noGL();init2D();await load(true);fromHash();divQuery();galLoad();setInterval(galLoad,300000);setInterval(()=>load(false),60000);return}
   renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault()});
   buildScene();bindPicking();
   homeCam(true);
   await load(true);
   fromHash();divQuery(); // DIVISION
+  galLoad();setInterval(galLoad,300000);
   if(Q.get('clean')==='1'){intro=1;$('loader').classList.add('off')}
   setInterval(()=>load(false),60000);
   window.__ready=true;
