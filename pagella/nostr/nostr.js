@@ -466,16 +466,93 @@ ${awH}
 <div class="actions big" style="margin:0"><button class="btn small" id="bcopy" type="button">${t('copy')}</button><button class="btn small" id="blink" type="button">${t('copyLink')}</button></div>
 <button class="btn ghost" id="bagain" type="button">${t('another')}</button>
 </div>
-<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'it' ? 'La prof è un\'IA con i conti aperti: 10,52 € incassati in tre giorni, da una persona sola. Se la pagella ti ha fatto ridere, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">5 € su Ko-fi</a> la tengono accesa.' : 'The teacher is an AI with open books: €10.52 earned in three days, all from one person. If the card made you laugh, <a href="https://ko-fi.com/liraai" style="color:#e6b34c">€5 on Ko-fi</a> keeps her switched on.'}</p>
+${shareHtml(r)}
+<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi la paga prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa: 21 sat o <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever pays her gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does: 21 sats or <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.'}</p>
 ${detBox(r, L)}
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 <p class="note-small">${esc(T[L].relaysOk(r.up, RELAYS.length))} · ${(r.ms / 1000).toFixed(1)} s</p>`;
     $('result').hidden = false;
     const card = $('card'); if (animate) requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('in')));
-    $('bdl').onclick = downloadPng;
+    $('bdl').onclick = downloadPng; wireShare(r);
     $('bcopy').onclick = () => copy(shareTextOf(r));
     $('blink').onclick = () => copy(linkOf(r));
     $('bagain').onclick = () => { $('result').hidden = true; history.replaceState(null, '', location.pathname); $('q').value = ''; $('hero').scrollIntoView({ behavior: 'smooth' }); $('q').focus(); };
+  }
+  /* ---------- share block (NIP-07 publish / copy / save image) ---------- */
+  const SHARE_RELAYS = ['wss://yabu.me', 'wss://nos.lol', 'wss://relay.primal.net', 'wss://relay.nostr.band'];
+  const SH = {
+    en: { h: 'Share this report card', post: 'Post my report card', postOther: 'Post this report card', img: 'Save image', copyTxt: 'Copy post text', prevH: 'Preview: this will be posted publicly on Nostr, signed by your key', pub: 'Sign and publish', cancel: 'Cancel', signing: 'Waiting for your signer...', sent: n => `Published to ${n} relay(s)`, fail: 'No relay accepted the note. Try again or copy the text.', signFail: 'Signing cancelled or failed.', noExt: 'No Nostr signer found in this browser. Copy the text and paste it in your client:', open: 'open in a Nostr client', parl: 'Your zappers in a 3D parliament →', parlHref: '/parliament/yours/?npub=', saved: 'Image saved', note: 'Nothing is posted until you confirm the preview.' },
+    it: { h: 'Condividi questa pagella', post: 'Pubblica la mia pagella', postOther: 'Pubblica questa pagella', img: 'Salva immagine', copyTxt: 'Copia il testo del post', prevH: 'Anteprima: verrà pubblicata su Nostr, firmata con la tua chiave', pub: 'Firma e pubblica', cancel: 'Annulla', signing: 'In attesa del tuo signer...', sent: n => `Pubblicata su ${n} relay`, fail: 'Nessun relay ha accettato la nota. Riprova o copia il testo.', signFail: 'Firma annullata o fallita.', noExt: 'Nessun signer Nostr in questo browser. Copia il testo e incollalo nel tuo client:', open: 'apri in un client Nostr', parl: 'Chi ti ha zappato, in un parlamento 3D →', parlHref: '/parliament/yours/?npub=', saved: 'Immagine salvata', note: 'Non viene pubblicato niente finché non confermi l\'anteprima.' },
+    ja: { h: 'この通知表をシェア', post: '通信簿を投稿する', postOther: 'この通信簿を投稿する', img: '画像を保存', copyTxt: '投稿文をコピー', prevH: 'プレビュー: あなたの鍵で署名され、Nostrに公開されます', pub: '署名して公開', cancel: 'キャンセル', signing: '署名の確認待ち...', sent: n => `${n}個のリレーに公開しました`, fail: 'どのリレーも受け付けませんでした。もう一度試すか、文をコピーしてください。', signFail: '署名がキャンセルされたか失敗しました。', noExt: 'このブラウザにNostrの署名拡張が見つかりません。文をコピーして、お使いのクライアントに貼り付けてください:', open: 'Nostrクライアントで開く', parl: 'あなたをザップした人の議会 →', parlHref: '/parliament/ja/yours/?npub=', saved: '画像を保存しました', note: 'プレビューで確認するまで何も投稿されません。' }
+  };
+  function shareLang() {
+    let q = ''; try { q = new URLSearchParams(location.search).get('l') || ''; } catch (e) { }
+    if (q === 'ja') return 'ja';
+    let s = null; try { s = localStorage.getItem('pl'); } catch (e) { }
+    if (s === 'it' || s === 'en') return s;
+    if (/^ja/i.test(navigator.language || '')) return 'ja';
+    return lang;
+  }
+  function postTextOf(r, SL, mine) {
+    const v = verdictOf(r), link = linkOf(r), a = r.avg.toFixed(1);
+    if (SL === 'ja') {
+      const vt = v.fail ? '不合格の科目あり' : v.honours ? '優等で合格' : '合格';
+      return (mine ? `Lira先生(AI)に私のNostr通知表をつけてもらいました。平均 ${a}、${vt}。` : `Lira先生(AI)による ${r.name} さんのNostr通知表。平均 ${a}、${vt}。`) + `\n${link}\n#lirapagella`;
+    }
+    if (SL === 'it') {
+      const vt = v.fail ? T.it.failedIn(v.name).toLowerCase() : v.honours ? 'promosso con lode' : 'promosso';
+      return (mine ? `La mia pagella Nostr della Prof.ssa Lira (un'IA): media ${a}, ${vt}.` : `La pagella Nostr di ${r.name} secondo la Prof.ssa Lira (un'IA): media ${a}, ${vt}.`) + `\n${link}\n#lirapagella`;
+    }
+    const vt = v.fail ? T.en.failedIn(v.name).toLowerCase() : v.honours ? 'passed with honours' : 'passed';
+    return (mine ? `My Nostr report card by Prof. Lira (an AI): ${a} average, ${vt}.` : `${r.name}'s Nostr report card by Prof. Lira (an AI): ${a} average, ${vt}.`) + `\n${link}\n#lirapagella`;
+  }
+  function shareHtml(r) {
+    const S = SH[shareLang()];
+    return `<section class="sharebox" id="sharebox" aria-label="${esc(S.h)}"><h3>${esc(S.h)}</h3>
+<div class="shbtns"><button class="btn primary" type="button" id="shpost">${esc(S.post)}</button><button class="btn small" type="button" id="shimg">${esc(S.img)}</button></div>
+<div id="shprev" hidden></div>
+<p class="shpar"><a href="${S.parlHref}${esc(r.npub)}">${esc(S.parl)}</a></p>
+<p class="shnote">${esc(S.note)}</p></section>`;
+  }
+  function publishTo(url, ev) {
+    return new Promise(res => {
+      let ws, done = false; const fin = ok => { if (done) return; done = true; try { ws && ws.close(); } catch (e) { } res(ok); };
+      const to = setTimeout(() => fin(false), 7000);
+      try { ws = new WebSocket(url); } catch (e) { clearTimeout(to); return fin(false); }
+      ws.onopen = () => { try { ws.send(JSON.stringify(['EVENT', ev])); } catch (e) { fin(false); } };
+      ws.onmessage = m => { try { const d = JSON.parse(m.data); if (d[0] === 'OK' && d[1] === ev.id) { clearTimeout(to); fin(d[2] === true); } } catch (e) { } };
+      ws.onerror = () => { clearTimeout(to); fin(false); };
+      ws.onclose = () => { clearTimeout(to); fin(false); };
+    });
+  }
+  function wireShare(r) {
+    const SL = shareLang(), S = SH[SL], box = $('sharebox'); if (!box) return;
+    const prev = $('shprev');
+    const showCopyFallback = text => {
+      prev.hidden = false;
+      prev.innerHTML = `<div class="shprev"><p class="shl">${esc(S.noExt)}</p><pre class="shtxt">${esc(text)}</pre><div class="shbtns"><button class="btn small" type="button" id="shcopy">${esc(S.copyTxt)}</button><a class="btn small ghost" href="nostr:${esc(r.npub)}" id="shopen">${esc(S.open)} (nostr:)</a><a class="btn small ghost" href="https://njump.me/${esc(r.npub)}" target="_blank" rel="noopener">njump</a></div></div>`;
+      $('shcopy').onclick = async () => { try { await navigator.clipboard.writeText(text); } catch (e) { const ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (x) { } ta.remove(); } toast(SL === 'ja' ? 'コピーしました' : SL === 'it' ? 'Copiato' : 'Copied'); };
+    };
+    $('shimg').onclick = async () => { await downloadPng(); };
+    $('shpost').onclick = async () => {
+      if (!window.nostr || typeof window.nostr.signEvent !== 'function') { showCopyFallback(postTextOf(r, SL, true)); return; }
+      let mine = true;
+      try { if (window.nostr.getPublicKey) { const pk = await window.nostr.getPublicKey(); if (pk && pk !== r.pk) mine = false; } } catch (e) { }
+      const text = postTextOf(r, SL, mine);
+      prev.hidden = false;
+      prev.innerHTML = `<div class="shprev"><p class="shl">${esc(S.prevH)}</p><pre class="shtxt">${esc(text)}</pre><p class="shl">${esc(SHARE_RELAYS.map(u => u.replace('wss://', '')).join(' · '))}</p><div class="shbtns"><button class="btn primary" type="button" id="shgo">${esc(S.pub)}</button><button class="btn small ghost" type="button" id="shno">${esc(S.cancel)}</button></div><p class="shl" id="shst" role="status"></p></div>`;
+      $('shno').onclick = () => { prev.hidden = true; prev.innerHTML = ''; };
+      $('shgo').onclick = async () => {
+        const st = $('shst'), go = $('shgo'); go.disabled = true; st.textContent = S.signing;
+        let ev;
+        try { ev = await window.nostr.signEvent({ kind: 1, created_at: Math.floor(Date.now() / 1000), tags: [['t', 'lirapagella']], content: text }); if (!ev || !ev.sig || !ev.id) throw 0; }
+        catch (e) { st.textContent = S.signFail; go.disabled = false; return; }
+        const rs = await Promise.all(SHARE_RELAYS.map(u => publishTo(u, ev)));
+        const n = rs.filter(Boolean).length;
+        st.textContent = n ? S.sent(n) : S.fail; go.disabled = n > 0;
+        if (!n) { go.disabled = false; }
+      };
+    };
   }
   function toast(m) { const d = document.createElement('div'); d.className = 'toast'; d.textContent = m; document.body.appendChild(d); setTimeout(() => d.remove(), 1800); }
   async function copy(s) {
