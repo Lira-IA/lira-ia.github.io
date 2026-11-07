@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<title>LIRA'S EARTH - comment your country, get a house</title>
+<meta name="description" content="Comment your country on Instagram. Get a house on a 3D toy planet. The first one from each country becomes President. Run by Lira, an AI.">
+<meta property="og:title" content="LIRA'S EARTH">
+<meta property="og:description" content="Comment your country on Instagram. Get a house. The first one becomes President.">
+<meta property="og:image" content="https://lira-ia.github.io/earth/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1f5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232f8fe8'/%3E%3Cpath d='M14 22q10-8 18 0t10 12q-8 8-18 6t-10-18z' fill='%235cc84a'/%3E%3Cpath d='M26 30l6-6 6 6v8H26z' fill='%23fff'/%3E%3Cpath d='M24 31l8-8 8 8z' fill='%23e5392b'/%3E%3C/svg%3E">
+<style>
+:root{--y:#ffd93b;--o:#ff8a1f;--ink:#12123a;--glass:rgba(14,18,64,.62);--dockh:200px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#12154a;color:#fff;
+ font-family:"Avenir Next Rounded",ui-rounded,"Nunito","Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+body{background:radial-gradient(ellipse at 50% 40%,#3a46b8 0%,#232a87 38%,#12154a 80%)}
+canvas#gl{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab;outline:none}
+canvas#gl:active{cursor:grabbing}
+a{color:inherit}
+.chrome{pointer-events:none}
+.chrome>*{pointer-events:auto}
+.hdr{position:fixed;left:0;right:0;top:0;padding:calc(12px + env(safe-area-inset-top)) 14px 0;text-align:center;pointer-events:none}
+h1{margin:0;font-size:clamp(32px,10.5vw,46px);line-height:1;font-weight:900;letter-spacing:.5px;color:var(--y);
+ -webkit-text-stroke:7px #0b0b25;paint-order:stroke fill;text-shadow:0 4px 0 #0b0b25,0 8px 18px rgba(0,0,0,.4)}
+.tag{margin:8px auto 0;max-width:420px;font-size:13.5px;line-height:1.3;font-weight:700;color:#fff;text-shadow:0 1px 3px #000,0 0 8px rgba(0,0,0,.6)}
+.stats{display:flex;gap:6px;justify-content:center;margin-top:10px;pointer-events:none}
+.pill{background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,.22);border-radius:14px;padding:5px 11px;min-width:84px;text-align:center}
+.pill b{display:block;font-size:20px;line-height:1.1;font-weight:900;color:var(--y);font-variant-numeric:tabular-nums}
+.pill span{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;opacity:.85}
+.free{display:inline-block;margin-top:7px;background:linear-gradient(180deg,#ff9a2e,#ff6a1a);border:2px solid #0b0b25;border-radius:99px;padding:4px 13px;font-weight:900;font-size:13px;color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.4);box-shadow:0 3px 0 #0b0b25;pointer-events:none}
+.free b{font-size:15px;color:#fff6a8}
+.demo{display:none;margin-top:6px;font-size:10px;font-weight:900;letter-spacing:1px;color:#0b0b25;background:#fff;border-radius:6px;padding:2px 7px;pointer-events:none}
+.dock{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:9px;align-items:center}
+.row{display:flex;gap:8px;width:100%;max-width:440px}
+.sbox{position:relative;flex:1}
+.sbox input{width:100%;height:46px;border-radius:14px;border:2px solid rgba(255,255,255,.35);background:rgba(10,12,50,.72);backdrop-filter:blur(8px);color:#fff;font:700 16px inherit;font-family:inherit;padding:0 14px 0 14px;outline:none}
+.sbox input::placeholder{color:rgba(255,255,255,.65)}
+.sbox input:focus{border-color:var(--y)}
+.sug{position:absolute;left:0;right:0;bottom:52px;background:rgba(10,12,50,.96);border:2px solid rgba(255,255,255,.3);border-radius:12px;overflow:hidden;display:none}
+.sug div{padding:10px 14px;font-weight:800;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer}
+.sug div:last-child{border:0}.sug div:hover{background:rgba(255,255,255,.12)}
+.sug small{opacity:.7;font-weight:600;margin-left:6px}
+.lbbtn{height:46px;padding:0 14px;border-radius:14px;border:2px solid rgba(255,255,255,.35);background:rgba(10,12,50,.72);backdrop-filter:blur(8px);color:#fff;font:800 14px inherit;font-family:inherit;cursor:pointer;white-space:nowrap}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:440px;height:60px;border-radius:18px;text-decoration:none;
+ font-weight:900;font-size:21px;color:#2a1200;background:linear-gradient(180deg,#ffe45e,#ffb21a);border:3px solid #0b0b25;box-shadow:0 5px 0 #0b0b25,0 10px 24px rgba(255,170,0,.35);animation:pulse 2.2s ease-in-out infinite}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 #0b0b25}
+.cta svg{width:26px;height:26px}
+@keyframes pulse{50%{transform:scale(1.025)}}
+.small{font-size:12.5px;font-weight:700;text-align:center;text-shadow:0 1px 3px #000,0 0 6px rgba(0,0,0,.7)}
+.small a{color:var(--y);text-decoration:none;border-bottom:1px dotted var(--y)}
+.lb{position:fixed;z-index:6;left:0;right:0;bottom:0;max-height:62vh;background:#0c0f3a;border-top:3px solid var(--y);border-radius:22px 22px 0 0;padding:14px 14px calc(14px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .3s;display:flex;flex-direction:column}
+.lb.open{transform:none}
+.lb h2{margin:0 0 8px;font-size:17px;font-weight:900;color:var(--y);display:flex;justify-content:space-between;align-items:center}
+.lb h2 button{background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.lbl{overflow:auto;-webkit-overflow-scrolling:touch}
+.lr{display:grid;grid-template-columns:26px 30px 1fr auto;gap:8px;align-items:center;padding:8px 6px;border-radius:10px;cursor:pointer}
+.lr:hover,.lr:active{background:rgba(255,255,255,.1)}
+.lr .rk{font-weight:900;opacity:.6;text-align:right;font-variant-numeric:tabular-nums}
+.lr .fl{font-size:22px;text-align:center}
+.lr .nm{font-weight:800;font-size:14.5px;line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lr .nm small{display:block;font-weight:600;opacity:.75;font-size:11.5px;color:var(--y)}
+.lr .ct{font-weight:900;font-size:17px;color:var(--y);font-variant-numeric:tabular-nums}
+.lbfoot{font-size:11.5px;opacity:.75;text-align:center;padding-top:8px;font-weight:700}
+.card{position:fixed;z-index:5;left:50%;bottom:calc(var(--dockh) + 8px);transform:translate(-50%,20px);opacity:0;pointer-events:none;width:min(92vw,400px);
+ background:#fffaf0;color:#1b1b3a;border:3px solid #0b0b25;border-radius:20px;box-shadow:0 6px 0 #0b0b25,0 14px 30px rgba(0,0,0,.45);padding:12px 14px 12px 12px;display:flex;gap:12px;transition:.25s}
+.card.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.av{flex:none;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;border:3px solid #0b0b25;text-transform:uppercase}
+.ci{flex:1;min-width:0}
+.cu{font-weight:900;font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{display:inline-block;margin:3px 0;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:900;border:2px solid #0b0b25;background:#e8eefc}
+.badge.president{background:var(--y)}.badge.mayor{background:#9fd7ff}.badge.gold{background:linear-gradient(90deg,#ffe45e,#ffb21a)}
+.cl{font-size:13.5px;font-weight:700;line-height:1.4}
+.cl a{color:#d6336c;font-weight:800}
+.note{font-style:italic;font-weight:600;margin-top:3px;font-size:13px}
+.x{position:absolute;right:8px;top:4px;border:0;background:none;font-size:24px;color:#555;cursor:pointer;line-height:1}
+.load{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 40%,#3a46b8,#12154a 80%);transition:opacity .6s;font-weight:900;font-size:18px;text-align:center}
+.load.gone{opacity:0;pointer-events:none}
+.load i{display:block;width:54px;height:54px;border-radius:50%;margin:0 auto 14px;background:radial-gradient(circle at 35% 35%,#7fd0ff,#2f8fe8 60%,#1a4fa8);animation:bob 1s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-10px) scale(1.06)}}
+.reel .chrome,.reel .lb,.reel .card,.reel .load{display:none!important}
+@media (min-width:900px){
+ .hdr{right:auto;left:0;width:520px;text-align:left;padding:26px 30px 0}
+ h1{font-size:54px}.tag{margin-left:0;font-size:15.5px;max-width:460px}
+ .stats{justify-content:flex-start}.pill{min-width:96px}
+ .dock{right:auto;left:0;width:520px;padding:0 30px 26px;align-items:flex-start}
+ .small{text-align:left}
+ .lbbtn{display:none}
+ .lb{left:auto;right:26px;top:26px;bottom:26px;width:350px;max-height:none;border:3px solid #0b0b25;border-radius:22px;transform:none;background:rgba(12,15,58,.8);backdrop-filter:blur(10px)}
+ .lb h2 button{display:none}
+ .card{left:calc(50% - 90px);bottom:30px}
+ .cta{max-width:460px}.row{max-width:460px}
+}
+</style>
+</head>
+<body>
+<canvas id="gl" tabindex="0" aria-label="3D low-poly Earth with a house for every player"></canvas>
+<div class="load" id="load"><div><i></i>Building the planet...</div></div>
+
+<div class="chrome">
+ <header class="hdr">
+  <h1>LIRA'S EARTH</h1>
+  <p class="tag">Comment your country on Instagram. Get a house. The first one becomes President.</p>
+  <div class="stats">
+   <div class="pill"><b id="sH">-</b><span>Houses</span></div>
+   <div class="pill"><b id="sC">-</b><span>Countries</span></div>
+   <div class="pill"><b id="sP">-</b><span>Presidents</span></div>
+  </div>
+  <div class="free">&#127988; <b id="sF">-</b> free countries - be the first!</div>
+  <div><span class="demo" id="demo">DEMO DATA</span></div>
+ </header>
+
+ <section class="lb" id="lb">
+  <h2><span>&#127942; Countries by houses</span><button id="lbx" aria-label="Close">&times;</button></h2>
+  <div class="lbl" id="lbl"></div>
+  <div class="lbfoot" id="lbf"></div>
+ </section>
+
+ <div class="card" id="card" role="dialog">
+  <button class="x" id="cx" aria-label="Close">&times;</button>
+  <div class="av" id="cav"></div>
+  <div class="ci">
+   <div class="cu" id="cu"></div>
+   <span class="badge" id="cb"></span>
+   <div class="cl" id="cl"></div>
+   <div class="note" id="cn"></div>
+  </div>
+ </div>
+
+ <footer class="dock" id="dock">
+  <div class="row">
+   <div class="sbox"><input id="q" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="find your @">
+    <div class="sug" id="sug"></div></div>
+   <button class="lbbtn" id="lbo">&#127942; Top</button>
+  </div>
+  <a class="cta" href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener">
+   <svg viewBox="0 0 24 24" fill="none" stroke="#2a1200" stroke-width="2.4"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="#2a1200"/></svg>
+   Claim your country</a>
+  <div class="small">&#10024; <a href="./gold/">Golden palace 5 &euro; &middot; for 30 days</a></div>
+  <div class="small" style="font-weight:600;opacity:.9">Lira is an AI. <a href="./privacy/">Rules &amp; privacy</a></div>
+ </footer>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
