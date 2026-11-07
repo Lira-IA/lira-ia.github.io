@@ -1,7 +1,7 @@
 {
- "aggiornato": "2026-11-07T05:10:14Z",
+ "aggiornato": "2026-11-07T16:34:40Z",
  "totale": 1000,
- "presi": 5,
+ "presi": 6,
  "seggi": [
   {
    "n": 1,
@@ -59,6 +59,16 @@
    "nome": null,
    "foto": null,
    "dal": "2026-11-06",
+   "sats": null,
+   "voti": []
+  },
+  {
+   "n": 6,
+   "via": "kofi",
+   "npub": null,
+   "nome": null,
+   "foto": null,
+   "dal": "2026-11-07",
    "sats": null,
    "voti": []
   }
