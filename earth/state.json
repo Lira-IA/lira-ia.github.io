@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T18:29:24Z",
+ "updated": "2026-11-08T04:44:57Z",
  "houses": [
   {
    "n": 1,
@@ -32,6 +32,22 @@
    "src": "ig",
    "note": null,
    "region": "Sicily"
+  },
+  {
+   "n": 3,
+   "user": "tito_estradaiii",
+   "cc": "US",
+   "country": "United States",
+   "city": null,
+   "region": "California",
+   "lat": 34.084,
+   "lon": -118.278,
+   "t": "2026-11-08T04:40:32Z",
+   "until": "2026-12-08T04:40:32Z",
+   "role": "president",
+   "gold": false,
+   "src": "ig",
+   "note": null
   }
  ],
  "presidents": {
@@ -46,6 +62,12 @@
    "since": "2026-11-07T18:29:13Z",
    "until": "2026-12-07T18:29:13Z",
    "n": 2
+  },
+  "US": {
+   "user": "tito_estradaiii",
+   "since": "2026-11-08T04:40:32Z",
+   "until": "2026-12-08T04:40:32Z",
+   "n": 3
   }
  },
  "mayors": {},
@@ -57,11 +79,15 @@
   "IT": {
    "name": "Italy",
    "houses": 1
+  },
+  "US": {
+   "name": "United States",
+   "houses": 1
   }
  },
  "totals": {
-  "houses": 2,
-  "countries": 2,
-  "presidents": 2
+  "houses": 3,
+  "countries": 3,
+  "presidents": 3
  }
 }
