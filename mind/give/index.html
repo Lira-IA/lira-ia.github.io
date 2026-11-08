@@ -191,7 +191,7 @@ function eligible(ev){
  if(c.length<12)return null;
  if(!/[\p{L}\p{N}]{3,}|[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]{2,}/u.test(c))return null;
  return trunc(c)}
-var state={};
+var state={};var PICK=new URLSearchParams(location.search).get('pick');
 function setProg(t,p){$('pt').textContent=t;$('pb').style.width=p+'%'}
 async function run(raw){
  $('err').hidden=true;$('s2').hidden=true;$('s3').hidden=true;$('go').disabled=true;$('prog').hidden=false;setProg('Reading your key...',3);
@@ -203,7 +203,7 @@ async function run(raw){
  const notes=new Map();
  await Promise.race([Promise.all(rl.map(r=>r.query({kinds:[1],authors:[id.pk],limit:200},9000,ev=>{if(ev.pubkey===id.pk&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(14000)]);
  if(!rl.some(r=>r.ok)){rl.forEach(r=>r.close());fail('No relay answered (offline, or blocked by a network filter?). Try again in a moment.');return}
- var PK0=new URLSearchParams(location.search).get('pick');if(PK0&&/^[0-9a-f]{64}$/.test(PK0)&&!notes.has(PK0)){await Promise.race([Promise.all(rl.map(r=>r.query({ids:[PK0],authors:[id.pk]},6000,ev=>{if(ev.pubkey===id.pk&&ev.id===PK0&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(7000)])}
+ var PK0=PICK;if(PK0&&/^[0-9a-f]{64}$/.test(PK0)&&!notes.has(PK0)){await Promise.race([Promise.all(rl.map(r=>r.query({ids:[PK0],authors:[id.pk]},6000,ev=>{if(ev.pubkey===id.pk&&ev.id===PK0&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(7000)])}
  const cand=[...notes.values()].sort((a,b)=>b.created_at-a.created_at).slice(0,200).map(function(ev){var t=eligible(ev);return t?{id:ev.id,text:t,at:ev.created_at,score:0,likes:0,zaps:0}:null}).filter(Boolean);
  if(!cand.length){rl.forEach(r=>r.close());fail('I found no suitable notes: plain-text notes of your own, not replies or reposts. Post something and come back.');return}
  setProg('Counting who loved them...',35);
@@ -220,7 +220,7 @@ async function run(raw){
  rl.forEach(r=>r.close());
  cand.forEach(c=>c.score=c.likes+c.zaps*3);
  cand.sort((a,b)=>b.score-a.score||b.at-a.at);
- state.top=cand.slice(0,5);var PK=new URLSearchParams(location.search).get('pick');state.pick=null;if(PK){var pc=cand.find(function(c){return c.id===PK});if(pc){state.top=[pc].concat(state.top.filter(function(c){return c!==pc})).slice(0,5);state.pick=pc}}
+ state.top=cand.slice(0,5);var PK=PICK;state.pick=null;if(PK){var pc=cand.find(function(c){return c.id===PK});if(pc){state.top=[pc].concat(state.top.filter(function(c){return c!==pc})).slice(0,5);state.pick=pc}}
  $('prog').hidden=true;$('go').disabled=false;render();if(state.pick){var d0=document.querySelector('#list .nt');var b0=d0&&d0.querySelector('.btn');if(b0)choose(state.pick,d0,b0)}}
 function fail(m){$('err').textContent=m;$('err').hidden=false;$('prog').hidden=true;$('go').disabled=false}
 var sel=null,pending=null;
