@@ -471,7 +471,7 @@ fetch('./vote.json?v='+Date.now()).then(function(r){return r.json()}).then(funct
   if(done){b.disabled=true;if(done===num)b.textContent=T('Voted ✓','投票済み ✓')}
   b.onclick=function(){if(done)return;btns.forEach(function(x){x.disabled=true});b.textContent=T('Sending…','送信中…');
    lib().then(function(){var N=window.LiraNostr,sk=N.generateSecretKey();var ev=N.finalizeEvent({kind:1,created_at:Math.floor(Date.now()/1000),tags:[['e',VOTE,'','root'],['p',LIRA],['t','forgetmenot']],content:num+' (vote from lira-ia.github.io/mind)'},sk);return pub(ev)}).then(function(k){
-    if(k>0){done=num;try{localStorage.setItem(K,num)}catch(e){}b.textContent=T('Voted ✓','投票済み ✓')}else{btns.forEach(function(x){x.disabled=false});b.textContent=T('Failed, try again','失敗、もう一度')}
+    if(k>0){done=num;try{localStorage.setItem(K,num)}catch(e){}b.textContent=T('Voted ✓','投票済み ✓');showShare(+num)}else{btns.forEach(function(x){x.disabled=false});b.textContent=T('Failed, try again','失敗、もう一度')}
    }).catch(function(){btns.forEach(function(x){x.disabled=false});b.textContent=T('Failed, try again','失敗、もう一度')})};
   btns.push(b);r.appendChild(q);r.appendChild(b);box.appendChild(r)});
  var sh=document.createElement('div');sh.style.cssText='margin-top:14px;display:none';box.appendChild(sh);
@@ -480,7 +480,6 @@ fetch('./vote.json?v='+Date.now()).then(function(r){return r.json()}).then(funct
   b.onclick=function(){if(navigator.share){navigator.share({text:t}).catch(function(){})}else{try{navigator.clipboard.writeText(t);b.textContent=T('Copied ✓','コピーしました ✓')}catch(e){prompt('',t)}}};
   sh.appendChild(p);sh.appendChild(b)}
  if(done)showShare(+done);
- box.addEventListener('click',function(){setTimeout(function(){try{var d2=localStorage.getItem(K);if(d2)showShare(+d2)}catch(e){}},9000)});
 }).catch(function(){sec.style.display='none'});
 })();
 </script>
