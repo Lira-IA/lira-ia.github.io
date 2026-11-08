@@ -219,8 +219,8 @@ async function run(raw){
  rl.forEach(r=>r.close());
  cand.forEach(c=>c.score=c.likes+c.zaps*3);
  cand.sort((a,b)=>b.score-a.score||b.at-a.at);
- state.top=cand.slice(0,5);
- $('prog').hidden=true;$('go').disabled=false;render()}
+ state.top=cand.slice(0,5);var PK=new URLSearchParams(location.search).get('pick');state.pick=null;if(PK){var pc=cand.find(function(c){return c.id===PK});if(pc){state.top=[pc].concat(state.top.filter(function(c){return c!==pc})).slice(0,5);state.pick=pc}}
+ $('prog').hidden=true;$('go').disabled=false;render();if(state.pick){var d0=document.querySelector('#list .nt');var b0=d0&&d0.querySelector('.btn');if(b0)choose(state.pick,d0,b0)}}
 function fail(m){$('err').textContent=m;$('err').hidden=false;$('prog').hidden=true;$('go').disabled=false}
 var sel=null,pending=null;
 function render(){

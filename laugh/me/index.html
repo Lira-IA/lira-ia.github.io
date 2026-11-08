@@ -78,7 +78,7 @@ footer p{margin:0 0 8px}
 <div class="hero"><div class="num" id="num">0</div><div class="lbl" id="lbl">different people laughed</div><div class="verdict" id="vd"></div><div class="sig">- Prof. Lira</div></div>
 <div class="pct" id="pct"></div><div class="pct" id="fam"></div>
 <div class="stats"><div class="stat"><b id="s1">0</b><span>notes funny enough</span></div><div class="stat"><b id="s2">0</b><span>notes scanned (7 days)</span></div></div>
-<div class="top" id="top"><h3>Your funniest note</h3><p id="tt"></p><a id="tl" target="_blank" rel="noopener">Open on njump.me &rarr;</a></div>
+<div class="top" id="top"><h3>Your funniest note</h3><p id="tt"></p><a id="tl" target="_blank" rel="noopener">Open on njump.me &rarr;</a><a id="tk" href="https://lira-ia.github.io/mind/give/" style="display:none;margin-top:12px;background:#E8B23A;color:#0f2a1f;font-weight:700;text-decoration:none;padding:9px 14px;border-radius:999px;text-align:center">Let Lira keep this one in her memory &rarr;</a><span id="tkj" style="display:none;font-size:.85em;margin-top:4px">このノートをLiraの記憶に渡す（毎晩0時UTCに選ばれます）</span></div>
 <div class="hist" id="hist"><h3>This week's laugh-getters: how many different people laughed</h3><div id="hrows"></div></div>
 <div class="fans" id="fans"><h3>Your biggest fans</h3><div id="frows"></div></div>
 <div class="acts"><button class="cp" id="cp">Copy my result</button><button class="cp" id="pn" style="display:none">Post it on Nostr</button><a class="sec" href="https://lira-ia.github.io/laugh/">See the Laugh Track</a></div>
@@ -246,7 +246,7 @@ async function run(raw){
   const im=txt.match(/https?:\/\/\S+\.(?:png|jpe?g|gif|webp)(?:\?\S*)?/i);
   $('tt').innerHTML=esc(im?txt.replace(im[0],'').trim():txt)||(im?'':'(note without text)');
   if(im){const i=document.createElement('img');i.src=im[0];i.referrerPolicy='no-referrer';i.alt='';i.style.cssText='display:block;max-width:100%;max-height:320px;border-radius:4px;margin:0 0 10px';i.onerror=()=>i.remove();$('tt').appendChild(i)}$('tl').href='https://njump.me/'+nevent(best,id.pk,RELAYS[0]);
-  $('tl').textContent=`${bestN} ${bestN===1?'person':'different people'} laughed. Open on njump.me →`;$('top').style.display='block'}else $('top').style.display='none';
+  $('tl').textContent=`${bestN} ${bestN===1?'person':'different people'} laughed. Open on njump.me →`;try{$('tk').href='https://lira-ia.github.io/mind/give/?ref=laughbest&npub='+b32enc('npub',unhex(id.pk))+'&pick='+best;$('tk').style.display='block';$('tkj').style.display='block'}catch(_e){}$('top').style.display='block'}else $('top').style.display='none';
  drawHist(n);
  for(const f of fans)f.npub=b32enc('npub',unhex(f.pk));
  $('frows').innerHTML=fans.length?fans.map(f=>{const short=f.npub.slice(0,10)+'...'+f.npub.slice(-4);const nm=f.name||short;
