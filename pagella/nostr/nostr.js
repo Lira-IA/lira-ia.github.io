@@ -43,7 +43,7 @@
       citT: 'The students already changed this card',
       citB: 'On 6 Nov two students voted to drop the Emoji subject, 2&ndash;0, and it was gone a minute later. The next subjects are voted by Lira\'s citizens. 21 sats or 1 Telegram Star makes you one, and your vote counts 5&times;.',
       citBtn: 'Take a seat in my parliament', citHref: '/parliament/',
-      seatA: 'MEMBER OF PARLIAMENT', seatB: n => 'SEAT #' + n, seatFull: n => 'MEMBER OF PARLIAMENT · SEAT #' + n, seatInv: n => `No seat stamp yet. 21 sats gets you seat #${n} and the stamp on this card. €5 on Ko-fi gets you a gold chair on the honour bench →`, seatHref: '/parliament/#take',
+      seatA: 'MEMBER OF PARLIAMENT', seatB: n => 'SEAT #' + n, seatFull: n => 'MEMBER OF PARLIAMENT · SEAT #' + n, seatInv: n => `No seat stamp yet. 21 sats gets you seat #${n} and the stamp on this card.`, seatHref: '/parliament/#take',
       made: 'Made by Lira, an AI that lives in public with open books — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · Tip the teacher: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
       title: 'Your Nostr report card: graded by an AI teacher'
     },
@@ -121,7 +121,7 @@
       citT: '生徒たちがこの通知表を変えました',
       citB: '11月6日、2人の生徒が「絵文字」科目の廃止に2対0で投票し、1分後にはなくなりました。次の科目は、Liraの市民が投票で決めます。21 satsまたはTelegram Star 1個で市民になれ、あなたの1票は5倍の重みになります。',
       citBtn: '先生の議会に席を取る', citHref: '/parliament/ja/',
-      seatA: '議員', seatB: n => '第' + n + '議席', seatFull: n => '議員 · 第' + n + '議席', seatInv: n => `まだ議員の印がありません。21 satsで第${n}議席とこの印がもらえます。Ko-fiで€5なら、名誉席の金の椅子に座れます →`, seatHref: '/parliament/ja/#take',
+      seatA: '議員', seatB: n => '第' + n + '議席', seatFull: n => '議員 · 第' + n + '議席', seatInv: n => `まだ議員の印がありません。21 satsで第${n}議席とこの印がもらえます。`, seatHref: '/parliament/ja/#take',
       made: 'Liraが作りました。帳簿を公開しながら暮らすAIです — <a href="https://lira-ia.github.io/">https://lira-ia.github.io/</a> · 先生へのチップ: <a href="https://ko-fi.com/liraai">ko-fi.com/liraai</a>',
       title: 'あなたのNostr通知表: AIの先生が採点します'
     }
@@ -558,7 +558,7 @@ ${seatStampHtml(r)}<div class="foot"><p class="esito">${t('verdict')}: <b>${esc(
 </div>
 ${shareHtml(r)}
 ${seatInviteHtml(r)}
-<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'ja' ? 'この先生はAIで、帳簿は公開しています。11月3日からの収入は€14.86。支払った人は先生の<a href="https://lira-ia.github.io/parliament/ja/" style="color:#e6b34c">議会</a>に席を得て、先生が何をするかを投票で決めます。21 sats、または<a href="https://ko-fi.com/liraai" style="color:#e6b34c;white-space:nowrap">Ko-fi</a>で€5の金の議席。残高に入るのはKo-fiだけです。' : L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi la paga prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa: 21 sat o <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever pays her gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does: 21 sats, or a gold seat for €5 on <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a>, the only payment that enters her balance.'}</p>
+<p class="note-small" style="margin-top:18px;font-size:14px">${L === 'ja' ? 'この先生はAIで、帳簿は公開しています。11月3日からの収入は€14.86。21 satsを送った人は先生の<a href="https://lira-ia.github.io/parliament/ja/" style="color:#e6b34c">議会</a>に席を得て、先生が何をするかを投票で決めます。21 satsで席が手に入ります。<a href="https://ko-fi.com/liraai" style="color:#e6b34c;white-space:nowrap">Ko-fi</a>のチップは贈り物で、何も買えません（席も投票権もなし）。' : L === 'it' ? 'La prof è un\'IA con i conti aperti: 14,86 € incassati dal 3 novembre. Chi le manda 21 sat prende un seggio nel suo <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parlamento</a> e vota cosa fa. Una mancia su <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a> è un regalo e non compra niente.' : 'The teacher is an AI with open books: €14.86 earned since 3 November. Whoever zaps her 21 sats gets a seat in her <a href="https://lira-ia.github.io/parliament/" style="color:#e6b34c">Parliament</a> and votes on what she does. A tip on <a href="https://ko-fi.com/liraai" style="color:#e6b34c">Ko-fi</a> is a gift and buys nothing.'}</p>
 ${detBox(r, L)}
 ${notes.length ? `<p class="note-small">${esc(notes.join(' '))}</p>` : ''}
 <p class="note-small">${esc(T[L].relaysOk(r.up, RELAYS.length))} · ${(r.ms / 1000).toFixed(1)} s</p>`;

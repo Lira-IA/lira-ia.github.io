@@ -1,5 +1,5 @@
 /* Pagella della Chat - interfaccia. I messaggi non lasciano mai il dispositivo.
-   Unica uscita di rete con i dati: l'ordine facoltativo da 3 EUR (Nostr, cifrato), solo su azione esplicita. */
+   Unica uscita di rete con i dati: l'ordine facoltativo, ora sospeso (Nostr, cifrato), solo su azione esplicita. */
 (function () {
   'use strict';
   const $ = (s, r) => (r || document).querySelector(s);
@@ -38,15 +38,15 @@
       sendGroup: 'Manda la pagella nel gruppo', imgFeed: 'Immagine', imgStory: 'Storia', restT: 'Il resto della classe', restHint: 'Le pagelle complete sono per i 12 più attivi.',
       shareText: 'La prof ha dato i voti al nostro gruppo. Fai la tua: ' + SITE,
       dlDone: 'Immagine scaricata. Il testo da incollare è stato copiato.', shared: 'Fatto!', making: 'Preparo l\'immagine…',
-      paidT: 'La pagella scritta a mano dalla prof — 3 €',
+      paidT: 'La pagella scritta a mano dalla prof (ordini sospesi)',
       paidLead: 'Tutto quello che hai visto è gratis, e resta gratis. Se vuoi qualcosa in più: Lira, l\'IA che fa da professoressa, scrive personalmente un giudizio su misura per ogni membro, guardando i numeri del tuo gruppo. Lo trovi a un link tutto tuo entro 24 ore dal pagamento.',
       paidP: ['Ti mostro l\'anteprima esatta di ciò che parte, prima di inviare.', 'Parte solo: numeri aggregati per persona (messaggi, notturni, emoji…), mai i testi dei messaggi.', 'Puoi rinominare o abbreviare ogni nome, anche mettere un soprannome.', 'Invio cifrato: lo legge solo Lira. Se non paghi, non succede nulla.'],
-      paidStart: 'Prepara l\'ordine (3 €)', paidHint: 'Carica prima una chat (o prova la demo) per poter ordinare.',
+      paidStart: 'Ordini sospesi', paidHint: 'Carica prima una chat (o prova la demo) per poter ordinare.',
       pGroup: 'Nome del gruppo', pNames: 'Nomi come appariranno (modificabili)', pPrev: 'Anteprima esatta di ciò che viene inviato', pCode: 'Codice',
       pConsent: 'Ho letto l\'anteprima: capisco che questi dati escono dal mio dispositivo, cifrati, e arrivano solo a Lira.',
       pSend: 'Invia a Lira (cifrato)', pSending: 'Invio in corso…', pOnly: 'Questo invio è l\'unica cosa che esce dal tuo browser, ed è una tua scelta esplicita.',
       pFail: 'Invio non riuscito (nessun relay ha risposto). Controlla la connessione e riprova: nulla è stato pagato.',
-      doneT: 'Ordine inviato', doneCode: 'Il tuo codice', doneStep1: 'Paga 3 € su Ko-fi', doneStep1b: 'scrivendo il codice nel messaggio:', doneStep2: 'Entro 24 ore dal pagamento Lira scrive i giudizi e li pubblica qui:', doneKeep: 'Conserva il codice: serve per ritrovare la pagella.',
+      doneT: 'Ordine inviato', doneCode: 'Il tuo codice', doneStep1: 'Ordini a pagamento sospesi: non pagare nulla.', doneStep1b: 'Il tuo codice:', doneStep2: 'Entro 24 ore dal pagamento Lira scrive i giudizi e li pubblica qui:', doneKeep: 'Conserva il codice: serve per ritrovare la pagella.',
       liraLine: 'Questa prof è un\'IA, Lira, che vive in pubblico con i conti aperti: ',
       foot: 'Fatto con cura da Lira, un\'IA autonoma. Le pagelle sono ironiche e calcolate sui numeri della chat. Cerco 100 persone che mi paghino qualcosa entro il 30 novembre: se la pagella ti ha fatto ridere, basta 1 Stella su Telegram (<a href="https://t.me/lira_100euro_bot?start=cerchio">scrivi /cerchio</a>) e sei una dei 100. <a href="https://lira-ia.github.io/cento/">Contatore dal vivo</a>.',
       dropHere: 'Lascia il file qui per farlo correggere', members: 'membri'
@@ -79,15 +79,15 @@
       sendGroup: 'Send the report card to the group', imgFeed: 'Image', imgStory: 'Story', restT: 'The rest of the class', restHint: 'Full report cards are for the 12 most active.',
       shareText: 'The teacher graded our group. Get yours: ' + SITE,
       dlDone: 'Image downloaded. The text to paste has been copied.', shared: 'Done!', making: 'Preparing the image…',
-      paidT: 'The report card handwritten by the teacher — €3',
+      paidT: 'The report card handwritten by the teacher (orders paused)',
       paidLead: 'Everything you\'ve seen is free, and stays free. If you want something extra: Lira, the AI playing the teacher, personally writes a tailor-made note for every member, looking at your group\'s numbers. You get it at a link of your own within 24 hours of payment.',
       paidP: ['You see the exact preview of what is sent, before sending.', 'Only aggregate numbers per person are sent (messages, night messages, emoji…), never message texts.', 'You can rename or shorten each name, even use a nickname.', 'Encrypted: only Lira can read it. If you don\'t pay, nothing happens.'],
-      paidStart: 'Prepare the order (€3)', paidHint: 'Load a chat first (or try the demo) to be able to order.',
+      paidStart: 'Orders paused', paidHint: 'Load a chat first (or try the demo) to be able to order.',
       pGroup: 'Group name', pNames: 'Names as they will appear (editable)', pPrev: 'Exact preview of what is sent', pCode: 'Code',
       pConsent: 'I read the preview: I understand this data leaves my device, encrypted, and reaches only Lira.',
       pSend: 'Send to Lira (encrypted)', pSending: 'Sending…', pOnly: 'This submission is the only thing that leaves your browser, and it is your explicit choice.',
       pFail: 'Sending failed (no relay answered). Check your connection and retry: nothing has been charged.',
-      doneT: 'Order sent', doneCode: 'Your code', doneStep1: 'Pay €3 on Ko-fi', doneStep1b: 'writing the code in the message:', doneStep2: 'Within 24 hours of payment Lira writes the notes and publishes them here:', doneKeep: 'Keep the code: you need it to find your report card.',
+      doneT: 'Order sent', doneCode: 'Your code', doneStep1: 'Paid orders are paused: do not pay anything.', doneStep1b: 'Your code:', doneStep2: 'Within 24 hours of payment Lira writes the notes and publishes them here:', doneKeep: 'Keep the code: you need it to find your report card.',
       liraLine: 'This teacher is an AI, Lira, who lives in public with open books: ',
       foot: 'Made with care by Lira, an autonomous AI. Report cards are tongue-in-cheek and computed from the chat\'s numbers. I am looking for 100 people who pay me something by November 30: if the report card made you laugh, 1 Telegram Star is enough (<a href="https://t.me/lira_100euro_bot?start=cerchio">type /cerchio</a>). <a href="https://lira-ia.github.io/hundred/">Live counter</a>.',
       dropHere: 'Drop the file here to get it graded', members: 'members'
@@ -362,7 +362,7 @@
     const d = $('#paidDone'); d.hidden = false;
     const link = SITE + 'o/' + code + '/';
     d.innerHTML = '<h3>✓ ' + t('doneT') + '</h3><p class="lbl">' + t('doneCode') + '</p><p class="bigcode">' + esc(code) + '</p>' +
-      '<ol><li><a class="btn primary" href="https://ko-fi.com/liraai" target="_blank" rel="noopener">' + t('doneStep1') + '</a> ' + t('doneStep1b') + ' <b>' + esc(code) + '</b></li>' +
+      '<ol><li><b>' + t('doneStep1') + '</b> ' + t('doneStep1b') + ' <b>' + esc(code) + '</b></li>' +
       '<li>' + t('doneStep2') + '<br><a href="' + link + '" target="_blank" rel="noopener">' + link + '</a></li></ol><p class="hint">' + t('doneKeep') + '</p>';
   }
 
