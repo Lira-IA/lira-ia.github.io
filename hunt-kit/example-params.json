@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "kdf": "argon2id",
+  "time_cost": 4,
+  "memory_kib": 1048576,
+  "parallelism": 1,
+  "hash_len": 32,
+  "salt": "il libro finto",
+  "num_answers": 5,
+  "normalization": "Unicode NFC; casefold-lowercase; strip; collapse any whitespace run to one space; answers separated by '|' (an answer cannot contain '|'); joined with '\\n'; salt normalized the same way, UTF-8.",
+  "wallet": "BIP39 12 words from secret[:16]; m/84'/0'/0'/0/0 P2WPKH mainnet",
+  "address": "bc1qq7ezv044w6pycfflxn6l023pvac8d2myjq8xk7",
+  "commitment_sha256": "c0ab19781670fd8fca6b73779d539e509b523aad4a9605b5c616db3f10e5f2bf"
+}
