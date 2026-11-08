@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-08T17:24:08Z",
+ "updated": "2026-11-08T20:18:34Z",
  "totals": {
   "pairs": 1,
   "passengers": 1,
-  "cabins": 0,
+  "cabins": 4,
   "council": 0
  },
  "pairs": [
@@ -19,7 +19,28 @@
    "status": "aboard"
   }
  ],
- "cabins": [],
+ "cabins": [
+  {
+   "n": 1,
+   "name": "Anonymous supporter · 5 Nov",
+   "t": "2026-11-08T20:18:34Z"
+  },
+  {
+   "n": 2,
+   "name": "Jeremy",
+   "t": "2026-11-08T20:18:34Z"
+  },
+  {
+   "n": 3,
+   "name": "Anonymous supporter · 6 Nov",
+   "t": "2026-11-08T20:18:34Z"
+  },
+  {
+   "n": 4,
+   "name": "Anonymous supporter · 7 Nov",
+   "t": "2026-11-08T20:18:34Z"
+  }
+ ],
  "day": 1,
  "launch": "2026-12-08T20:00:00Z"
 }
