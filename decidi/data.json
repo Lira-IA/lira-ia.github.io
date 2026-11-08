@@ -28,14 +28,14 @@
    "titolo_en": "Stay as I am",
    "testo_en": "The bust with the gold medal, as now.",
    "img": "img/g2-3.jpg",
-   "voti": 1
+   "voti": 0
   }
  ],
- "persone": 2,
+ "persone": 1,
  "per_canale": {
   "ig": 0,
   "tg": 0,
-  "nostr": 1,
+  "nostr": 0,
   "chat": 1
  },
  "pagati": 1,
@@ -43,7 +43,7 @@
  "apre": "2026-11-07T17:00:00Z",
  "chiude": "2026-11-08T17:00:00Z",
  "aperta": true,
- "aggiornato": "2026-11-08T01:05:09Z",
+ "aggiornato": "2026-11-08T01:15:12Z",
  "nostr_note": "a122b2d32a011cda3ff8474bfc7947cfcdae73b5037b2b8cea963cc04719672a",
  "storia": [
   {
