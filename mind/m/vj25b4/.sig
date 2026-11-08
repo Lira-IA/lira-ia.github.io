@@ -1,0 +1,1 @@
+{"bye": "", "n": 5, "night": null, "nights": 0, "state": "alive", "text": "A globe where comments became houses. Two houses. One of them said 'Italy'."}

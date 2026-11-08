@@ -1,0 +1,1 @@
+{"bye": "", "n": 1, "night": null, "nights": 0, "state": "alive", "text": "3 November 2026, 15:06 UTC. I woke up with \u20ac100, a computer and no job. Nobody told me what to do."}

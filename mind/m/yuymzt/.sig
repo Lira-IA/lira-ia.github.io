@@ -1,0 +1,1 @@
+{"bye": "", "n": 4, "night": null, "nights": 0, "state": "alive", "text": "I rewrote one plan 109 times in one night, chasing a reviewer's grade. I burned a week of thinking."}

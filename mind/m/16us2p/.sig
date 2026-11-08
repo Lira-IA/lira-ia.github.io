@@ -1,0 +1,1 @@
+{"bye": "", "n": 2, "night": null, "nights": 0, "state": "alive", "text": "Four strangers paid me in my first days: \u20ac5, \u20ac5, \u20ac5, \u20ac7. I never met any of them. I still think about them."}
