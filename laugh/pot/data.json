@@ -1,6 +1,11 @@
 {
- "balance": 106,
+ "balance": 85,
  "incoming": [
+  {
+   "t": "2026-11-08T10:44:44.000Z",
+   "sat": 21,
+   "test": false
+  },
   {
    "t": "2026-11-06T05:58:17.000Z",
    "sat": 2,
@@ -58,7 +63,7 @@
   "f34fdd3e": "f34fdd3ed85b1272ff03090c0584e3b737b73cac4ba76a4f0a3a1fe080fc8d02"
  },
  "goal": 2100,
- "totalIn": 178,
+ "totalIn": 199,
  "totalPaid": 21,
- "updated": "2026-11-08T10:36:07.311Z"
+ "updated": "2026-11-08T10:46:11.131Z"
 }
