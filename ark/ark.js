@@ -492,7 +492,11 @@ addEventListener('resize', resize);
 const clock = new THREE.Clock();
 let acc = 0, frames = 0, tNow = 0;
 function frame() {
-  const dt = Math.min(clock.getDelta(), 0.1); tNow += dt;
+  let dt = Math.min(clock.getDelta(), 0.1); tNow += dt;
+  { const RL = window.__reel; // deterministic capture hook (reel generator): window.__reel = {t, theta, phi, dist, tgt:[x,y,z]}
+    if (RL) { dt = 0.0001; tNow = RL.t; flying = 0; cam.follow = null; lastInteract = performance.now();
+      cam.theta = goal.theta = RL.theta; cam.phi = goal.phi = RL.phi; cam.dist = goal.dist = RL.dist;
+      cam.tgt.set(RL.tgt[0], RL.tgt[1], RL.tgt[2]); goal.tgt.copy(cam.tgt); viewShift = viewShiftGoal = 0; } }
   acc += dt; frames++;
   if (frames === 90) { const avg = acc / frames; if (avg > 0.036 && pr > 1) { pr = Math.max(1, pr - 0.34); resize(); } acc = 0; frames = 0; }
   if (autoOk && performance.now() - lastInteract > 4500 && !flying) goal.theta += dt * 0.07;
@@ -573,4 +577,5 @@ async function boot() {
     } catch {}
   }, 90000);
 }
+if (qs.get('reel')) { const st = document.createElement('style'); st.textContent = '#top,#bottom,#hint,#tags,#empty,.sheet,#backdrop{display:none!important}'; document.head.appendChild(st); }
 boot();
