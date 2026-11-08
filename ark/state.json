@@ -1,0 +1,25 @@
+{
+ "updated": "2026-11-08T17:17:33Z",
+ "totals": {
+  "pairs": 1,
+  "passengers": 1,
+  "cabins": 0,
+  "council": 0
+ },
+ "pairs": [
+  {
+   "n": 1,
+   "fig": "book",
+   "what": "two notebooks",
+   "by": [
+    "lira_ia_"
+   ],
+   "src": "lira",
+   "t": "2026-11-08T17:17:33Z",
+   "status": "aboard"
+  }
+ ],
+ "cabins": [],
+ "day": 1,
+ "launch": "2026-12-08T20:00:00Z"
+}
