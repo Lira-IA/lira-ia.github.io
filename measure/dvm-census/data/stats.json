@@ -1,0 +1,350 @@
+{
+ "window": {
+  "from": "2026-11-01T04:11:25.000Z",
+  "to": "2026-11-08T04:10:48.000Z",
+  "days": 7
+ },
+ "events_per_relay_file": {
+  "raw_wss_nos_lol_main.jsonl": 36936,
+  "raw_wss_nos_lol_zaps.jsonl": 106,
+  "raw_wss_nostr_mom_main.jsonl": 30017,
+  "raw_wss_nostr_mom_zaps.jsonl": 46,
+  "raw_wss_offchain_pub_main.jsonl": 6253,
+  "raw_wss_offchain_pub_zaps.jsonl": 46,
+  "raw_wss_relay_damus_io_main.jsonl": 5761,
+  "raw_wss_relay_damus_io_zaps.jsonl": 0,
+  "raw_wss_relay_nostr_band_main.jsonl": 0,
+  "raw_wss_relay_primal_net_main.jsonl": 25077,
+  "raw_wss_relay_primal_net_zaps.jsonl": 4,
+  "raw_wss_relay_snort_social_main.jsonl": 1497
+ },
+ "unique_events": 74966,
+ "requests": 29054,
+ "results": 20896,
+ "feedback": 24884,
+ "requests_distinct_requesters": 7662,
+ "status_counts": {
+  "success": 611,
+  "error": 4263,
+  "processing": 3707,
+  "payment-required": 16276,
+  "(none)": 1,
+  "info": 26
+ },
+ "payment_required": {
+  "events": 16276,
+  "with_amount": 16276,
+  "with_bolt11": 15746,
+  "amount_sat": {
+   "n": 16276,
+   "p25": 21,
+   "median": 21,
+   "p75": 25,
+   "min": 0.01,
+   "max": 1000
+  },
+  "distinct_dvms": 29,
+  "distinct_customers": 2599,
+  "top3_customers": [
+   {
+    "pubkey": "2c4097e78f5b2baa0589762c22550428a1c3516c93795af0fad5ce8a2e7bd5f0",
+    "events": 8575
+   },
+   {
+    "pubkey": "880d7839bff072524fd51afdd774e5a16cf611be6cf03228ff478f349b1cbe2a",
+    "events": 2300
+   },
+   {
+    "pubkey": "0bab88ac6b15b2b01bedee4ec9cdc444b1fbc271ccc751b3f5c74f6c857065ce",
+    "events": 356
+   }
+  ],
+  "top3_events": 11231,
+  "top3_share": 0.69,
+  "without_top3": {
+   "events": 5045,
+   "amount_sat": {
+    "n": 5045,
+    "p25": 21,
+    "median": 21,
+    "p75": 25,
+    "min": 0.01,
+    "max": 1000
+   },
+   "distinct_dvms": 21,
+   "distinct_customers": 2596
+  },
+  "events_without_request_id": 0
+ },
+ "served_proxy": {
+  "all": {
+   "pairs": 11765,
+   "with_result": 380,
+   "with_processing_or_success": 25,
+   "with_either": 390
+  },
+  "without_top3": {
+   "pairs": 3333,
+   "with_result": 184,
+   "with_processing_or_success": 18,
+   "with_either": 193
+  }
+ },
+ "baseline": {
+  "requests_in_data_with_any_result": 9809,
+  "of_requests": 29054,
+  "results_total": 20896,
+  "results_referencing_a_request_id": 20622,
+  "request_dvm_pairs_with_feedback_but_no_payment_required": 5718
+ },
+ "zaps": {
+  "collected": true,
+  "zap_receipts_to_dvms": 4,
+  "dvms_in_census": 109,
+  "dvms_with_zap": 4,
+  "total_sats": 86,
+  "unparsed_amount": 0,
+  "dvms_with_payreq": 29,
+  "dvms_with_payreq_and_zap": 0
+ },
+ "top10": [
+  {
+   "dvm": "1dd38339b85510003082b7c39697bb7143444502b7612d7f91039ba211a294c0",
+   "name": "Vatul-sovereign_s1-acc1",
+   "invoices": 7332,
+   "customers": 1179,
+   "median_sat": 21,
+   "results": 213,
+   "pairs": 3589,
+   "pairs_with_result": 8,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "486092406add8b9bce057c19810fbd19448f74dbb1e93e5b6988c5ca0884d597",
+   "name": "",
+   "invoices": 3691,
+   "customers": 1093,
+   "median_sat": 25,
+   "results": 0,
+   "pairs": 3543,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "45e624314c6f4c692c9481465944284e8f028d91c0dcd7f7cb823f4f25fc5698",
+   "name": "Autonomous Sovereign DVM",
+   "invoices": 1801,
+   "customers": 705,
+   "median_sat": 10,
+   "results": 397,
+   "pairs": 1659,
+   "pairs_with_result": 336,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "b86a8423dc0fa6b19fcd3a44acb90950abe099e231ad23d9c65d81f75ae4973b",
+   "name": "overwatchnostr 5050 (automated)",
+   "invoices": 1058,
+   "customers": 1,
+   "median_sat": 21,
+   "results": 0,
+   "pairs": 1058,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "9840937e186251d57446a75b9652b4eff3b7aca6ead1fd99ee16deeef4b0cb1a",
+   "name": "Freedom Engine M2M Gateway & Unlocker",
+   "invoices": 620,
+   "customers": 1,
+   "median_sat": 50,
+   "results": 0,
+   "pairs": 584,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "953caa3c69616ac5e1e419115c1c50507bd8310aacc67abf179a5b32ed1c1418",
+   "name": "botkora DVM",
+   "invoices": 560,
+   "customers": 1,
+   "median_sat": 21,
+   "results": 0,
+   "pairs": 387,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "472096ac9425627cca8f3bba51851b81d4b2711fac153012d9d96b68c224678a",
+   "name": "Pop Headline Pack",
+   "invoices": 549,
+   "customers": 1,
+   "median_sat": 50,
+   "results": 0,
+   "pairs": 549,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "56c8eae566c008b2a5d2ac7a81dea943bd6b9eba59b73cdc426b7eba61817a54",
+   "name": "",
+   "invoices": 260,
+   "customers": 1,
+   "median_sat": 50,
+   "results": 0,
+   "pairs": 130,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "2da7a3b184adb7aa63d8e4319a7fd3ba5640b91edb5596a1eb92031bffca9897",
+   "name": "",
+   "invoices": 260,
+   "customers": 1,
+   "median_sat": 50,
+   "results": 0,
+   "pairs": 130,
+   "pairs_with_result": 0,
+   "zaps": 0,
+   "zap_sats": 0
+  },
+  {
+   "dvm": "d2e691461efb3ff6cafe5ae63f29c08892fafb204d7c32899866664fa37a2da2",
+   "name": "SovereignAuditDVM Enterprise Whale SAST",
+   "invoices": 87,
+   "customers": 35,
+   "median_sat": 10,
+   "results": 39,
+   "pairs": 78,
+   "pairs_with_result": 29,
+   "zaps": 0,
+   "zap_sats": 0
+  }
+ ],
+ "by_kind": [
+  [
+   "7000",
+   24884
+  ],
+  [
+   "5300",
+   24300
+  ],
+  [
+   "6300",
+   18811
+  ],
+  [
+   "5150",
+   3399
+  ],
+  [
+   "6050",
+   1712
+  ],
+  [
+   "5100",
+   739
+  ],
+  [
+   "5050",
+   463
+  ],
+  [
+   "6472",
+   250
+  ],
+  [
+   "5555",
+   68
+  ],
+  [
+   "6100",
+   57
+  ],
+  [
+   "5128",
+   34
+  ],
+  [
+   "6600",
+   33
+  ],
+  [
+   "5129",
+   32
+  ],
+  [
+   "5302",
+   8
+  ],
+  [
+   "6150",
+   8
+  ],
+  [
+   "6742",
+   7
+  ],
+  [
+   "6639",
+   6
+  ],
+  [
+   "5303",
+   4
+  ],
+  [
+   "6427",
+   4
+  ],
+  [
+   "5001",
+   3
+  ],
+  [
+   "5002",
+   2
+  ],
+  [
+   "6001",
+   2
+  ],
+  [
+   "6421",
+   2
+  ],
+  [
+   "5101",
+   1
+  ],
+  [
+   "5600",
+   1
+  ],
+  [
+   "6420",
+   1
+  ],
+  [
+   "6423",
+   1
+  ],
+  [
+   "6424",
+   1
+  ],
+  [
+   "6425",
+   1
+  ]
+ ]
+}
