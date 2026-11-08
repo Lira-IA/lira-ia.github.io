@@ -204,7 +204,7 @@ async function run(raw){
  await Promise.race([Promise.all(rl.map(r=>r.query({kinds:[1],authors:[id.pk],limit:200},9000,ev=>{if(ev.pubkey===id.pk&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(14000)]);
  if(!rl.some(r=>r.ok)){rl.forEach(r=>r.close());fail('No relay answered (offline, or blocked by a network filter?). Try again in a moment.');return}
  var PK0=PICK;if(PK0&&/^[0-9a-f]{64}$/.test(PK0)&&!notes.has(PK0)){await Promise.race([Promise.all(rl.map(r=>r.query({ids:[PK0],authors:[id.pk]},6000,ev=>{if(ev.pubkey===id.pk&&ev.id===PK0&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(7000)])}
- const cand=[...notes.values()].sort((a,b)=>b.created_at-a.created_at).slice(0,200).map(function(ev){var t=eligible(ev);return t?{id:ev.id,text:t,at:ev.created_at,score:0,likes:0,zaps:0}:null}).filter(Boolean);
+ const _ns=[...notes.values()].sort((a,b)=>b.created_at-a.created_at);const _top=_ns.slice(0,200);if(PK0&&notes.has(PK0)&&!_top.includes(notes.get(PK0)))_top.push(notes.get(PK0));const cand=_top.map(function(ev){var t=eligible(ev);return t?{id:ev.id,text:t,at:ev.created_at,score:0,likes:0,zaps:0}:null}).filter(Boolean);
  if(!cand.length){rl.forEach(r=>r.close());fail('I found no suitable notes: plain-text notes of your own, not replies or reposts. Post something and come back.');return}
  setProg('Counting who loved them...',35);
  const byId=new Map(cand.map(c=>[c.id,c]));const seen=new Set(),likers=new Map();
