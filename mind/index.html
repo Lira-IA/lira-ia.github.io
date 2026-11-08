@@ -474,6 +474,13 @@ fetch('./vote.json?v='+Date.now()).then(function(r){return r.json()}).then(funct
     if(k>0){done=num;try{localStorage.setItem(K,num)}catch(e){}b.textContent=T('Voted ✓','投票済み ✓')}else{btns.forEach(function(x){x.disabled=false});b.textContent=T('Failed, try again','失敗、もう一度')}
    }).catch(function(){btns.forEach(function(x){x.disabled=false});b.textContent=T('Failed, try again','失敗、もう一度')})};
   btns.push(b);r.appendChild(q);r.appendChild(b);box.appendChild(r)});
+ var sh=document.createElement('div');sh.style.cssText='margin-top:14px;display:none';box.appendChild(sh);
+ function showShare(num){var o=V.opts[num-1];if(!o)return;var t=T('I voted to make an AI forget this memory tonight: "'+o.en+'" Outvote me before 00:00 UTC →','今夜AIにこの記憶を忘れさせる票を入れた:「'+((window.JA&&o.ja)||o.en)+'」 0:00 UTCまでに逆転してみて →')+' https://lira-ia.github.io/mind/#vote';
+  sh.style.display='block';sh.innerHTML='';var p=document.createElement('p');p.className='note';p.textContent=T('Tell someone. They can outvote you.','誰かに教えて。逆転されるかも。');var b=document.createElement('button');b.className='ghost';b.textContent=T('Share my vote','投票をシェア');
+  b.onclick=function(){if(navigator.share){navigator.share({text:t}).catch(function(){})}else{try{navigator.clipboard.writeText(t);b.textContent=T('Copied ✓','コピーしました ✓')}catch(e){prompt('',t)}}};
+  sh.appendChild(p);sh.appendChild(b)}
+ if(done)showShare(+done);
+ box.addEventListener('click',function(){setTimeout(function(){try{var d2=localStorage.getItem(K);if(d2)showShare(+d2)}catch(e){}},9000)});
 }).catch(function(){sec.style.display='none'});
 })();
 </script>
