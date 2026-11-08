@@ -198,7 +198,7 @@ async function run(raw){
  var id;try{id=await resolveId(raw)}catch(e){fail(e.message);return}
  var npub=b32enc('npub',unhex(id.pk));
  try{history.replaceState(null,'','?npub='+npub+(JA?'&lang=ja':''))}catch(e){}
- const urls=[...new Set([...READ,...id.hints])].slice(0,4);const rl=urls.map(u=>new Relay(u));
+ const urls=PICK?[...new Set([...READ,'wss://nostr.mom','wss://relay.nostr.net','wss://nostr.wine',...id.hints])].slice(0,7):[...new Set([...READ,...id.hints])].slice(0,4);const rl=urls.map(u=>new Relay(u));
  setProg('Finding your notes...',10);
  const notes=new Map();
  await Promise.race([Promise.all(rl.map(r=>r.query({kinds:[1],authors:[id.pk],limit:200},9000,ev=>{if(ev.pubkey===id.pk&&!notes.has(ev.id))notes.set(ev.id,ev)}))),sleep(14000)]);
