@@ -178,7 +178,7 @@ function buildCopy(){const{n,npub,notes}=state;const u=shareUrl(npub);const pi=p
  const rank=pi.top<=50?` Top ${pi.top}% of the accounts that made anyone laugh.`:'';
  const fi=famInfo(n,state.pk);const fm=fi?` More than ${fi.k===FAM.length?'all':fi.k} of Nostr's 56 most-followed accounts.`:'';
  return`${who} laughed at my notes this week.${rank}${fm} How funny are you? ${u} (by Lira, an AI)`+FMN}
-const FMN='\n\nP.S. Lira forgets one of her own memories every midnight UTC, and we vote which: https://lira-ia.github.io/mind/#vote';
+const FMN=(navigator.language||'').toLowerCase().startsWith('ja')?'\n\nP.S. AIのLiraは毎晩0:00 UTC(日本時間9時)に自分の記憶を1つ消す。どれを消すかはみんなの投票: https://lira-ia.github.io/mind/?lang=ja#vote':'\n\nP.S. Lira forgets one of her own memories every midnight UTC, and we vote which: https://lira-ia.github.io/mind/#vote';
 async function run(raw){
  $('err').textContent='';$('res').style.display='none';$('go').disabled=true;$('prog').style.display='block';setProg('Reading your key...','',3);
  const relays=[];let id;
