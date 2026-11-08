@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-08T17:21:34Z",
+ "updated": "2026-11-08T17:24:08Z",
  "totals": {
-  "pairs": 2,
-  "passengers": 2,
+  "pairs": 1,
+  "passengers": 1,
   "cabins": 0,
   "council": 0
  },
@@ -16,17 +16,6 @@
    ],
    "src": "lira",
    "t": "2026-11-08T17:17:33Z",
-   "status": "aboard"
-  },
-  {
-   "n": 2,
-   "fig": "owl",
-   "what": "two owls (technical test by Lira",
-   "by": [
-    "npub1jzlq…mk8m"
-   ],
-   "src": "nostr",
-   "t": "2026-11-08T17:21:28Z",
    "status": "aboard"
   }
  ],
