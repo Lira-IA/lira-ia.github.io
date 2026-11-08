@@ -39,6 +39,7 @@ body.carding #empty,body.carding #hint{opacity:0}
 .mini{display:flex;gap:8px;width:min(100%,420px);justify-content:center}
 .chip{flex:1 1 0;text-align:center;text-decoration:none;color:var(--cream);background:rgba(77,47,22,.88);border:2px solid var(--brown);
   font:600 11px/1.2 var(--sans);padding:7px 6px;border-radius:2px;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.chip b,.chip span{display:block;white-space:nowrap}.chip b{font-weight:800;font-size:12px}.chip span{font-weight:600;font-size:10.5px;opacity:.9;margin-top:2px}
 .chip:hover{background:var(--brown)}
 
 #tags{position:fixed;inset:0;pointer-events:none;overflow:hidden}

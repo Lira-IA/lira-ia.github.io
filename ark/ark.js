@@ -2,7 +2,7 @@
 import * as THREE from './vendor/three.module.min.js';
 import { CONFIG } from './config.js';
 import { figureGeometry, figureGeometryCoarse } from './voxel.js';
-import { computeLayout, buildHull, buildCabins, slotPos, cabinPos, VS, WATERLINE, FIG_SCALE } from './ship.js';
+import { computeLayout, buildHull, buildCabins, slotPos, cabinPos, VS, WATERLINE, FIG_SCALE, PAIR_PITCH } from './ship.js';
 
 const $ = (id) => document.getElementById(id);
 const LOCAL = ['localhost', '127.0.0.1'].includes(location.hostname);
@@ -10,6 +10,7 @@ const qs = new URLSearchParams(location.search);
 const STATE_URL = (LOCAL && qs.get('state')) || './state.json';
 const FIGS_URL = (LOCAL && qs.get('figs')) || './figs.json';
 const SEED = 7;
+const PO = 1.75; // half distance between the two figures of a pair
 
 // ---------- built-in crate figure (used while a figure is being sculpted) ----------
 const CRATE = (() => {
@@ -134,28 +135,32 @@ whiteClouds.add(cloudField(26, (out) => {
   }
 }));
 scene.add(whiteClouds);
+// storm clouds: soft dark voxel clouds high in the sky, rain streaks falling from them
 const storm = new THREE.Group();
-const stormCols = ['#38404f', '#444c5b', '#505968', '#2e3441', '#5d6675'];
-storm.add(cloudField(70, (out, i) => {
-  const a = Math.PI + (i / 70 - 0.5) * 3.2 + (R() - 0.5) * 0.06, r = 440 + R() * 130;
-  const cx = Math.sin(a) * r, cz = Math.cos(a) * r, y = 6 + R() * 8;
-  const w = 22 + R() * 30;
-  out.push({ p: [cx, y, cz], s: [w * 1.5, 7 + R() * 5, 28 + R() * 20], c: '#2b313e' });
-  for (let k = 0; k < 7; k++) {
-    const hh = 8 + R() * 20;
-    out.push({ p: [cx + (R() - 0.5) * w * 1.4, y + 4 + hh / 2 + R() * 3, cz + (R() - 0.5) * 22], s: [6 + R() * 16, hh, 10 + R() * 16], c: stormCols[Math.floor(R() * stormCols.length)] });
+const stormCols = ['#4a5368', '#3c4558', '#586279', '#333b4d', '#667088'];
+const STORMS = [[-330, 92, -470, 1.0], [-60, 105, -560, 1.25], [250, 88, -500, 1.0], [520, 98, -330, 0.9], [-560, 100, -300, 0.9]];
+storm.add(cloudField(STORMS.length, (out, i) => {
+  const [cx, cy, cz, sc] = STORMS[i];
+  const w = 120 * sc;
+  out.push({ p: [cx, cy, cz], s: [w * 1.1, 9, 56 * sc], c: '#3d465a' });
+  for (let k = 0; k < 20; k++) {
+    const hh = (12 + R() * 22) * sc;
+    out.push({ p: [cx + (R() - 0.5) * w, cy + 4 + hh / 2 + R() * 3, cz + (R() - 0.5) * 38 * sc], s: [(12 + R() * 20) * sc, hh, (16 + R() * 22) * sc], c: stormCols[Math.floor(R() * stormCols.length)] });
   }
+  for (let k = 0; k < 8; k++) out.push({ p: [cx + (R() - 0.5) * w * 0.9, cy - 6 - R() * 4, cz + (R() - 0.5) * 40 * sc], s: [(10 + R() * 14) * sc, 6, (12 + R() * 14) * sc], c: '#343c4e' });
 }));
 scene.add(storm);
 const rainGeo = (() => {
   const pts = [];
-  for (let i = 0; i < 220; i++) {
-    const a = Math.PI + (R() - 0.5) * 2.3, r = 420 + R() * 170, x = Math.sin(a) * r + (R() - 0.5) * 40, z = Math.cos(a) * r;
-    for (let k = 0; k < 6; k++) { const y = k * 14; if (y > 40) continue; pts.push(x, y + 2, z, x - 1.2, y + 9, z); }
+  for (const [cx, cy, cz, sc] of STORMS) {
+    for (let i = 0; i < 90; i++) {
+      const x = cx + (R() - 0.5) * 100 * sc, z = cz + (R() - 0.5) * 36 * sc;
+      for (let y = cy - 9; y > -14; y -= 16) pts.push(x, y, z, x - 1.5, y - 9, z);
+    }
   }
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3)); return g;
 })();
-const rain = new THREE.LineSegments(rainGeo, new THREE.LineBasicMaterial({ color: 0xdfe8f0, transparent: true, opacity: 0.35 }));
+const rain = new THREE.LineSegments(rainGeo, new THREE.LineBasicMaterial({ color: 0xc8d4e4, transparent: true, opacity: 0.5 }));
 rain.frustumCulled = false;
 scene.add(rain);
 
@@ -198,12 +203,12 @@ function rebuildArk() {
     list.forEach((pi, j) => {
       const sp = slotPos(layout, pi);
       for (let s = 0; s < 2; s++) {
-        m4.makeTranslation(sp.x + (s ? 0.72 : -0.72), sp.y, sp.z);
+        m4.makeTranslation(sp.x + (s ? PO : -PO), sp.y, sp.z);
         hi.setMatrixAt(j * 2 + s, m4); lo.setMatrixAt(j * 2 + s, m4);
       }
     });
     const lo2 = new THREE.InstancedMesh(figureGeometryCoarse(fig, FIG_SCALE), figMat, list.length * 2);
-    list.forEach((pi, j) => { const sp = slotPos(layout, pi); for (let s = 0; s < 2; s++) { m4.makeTranslation(sp.x + (s ? 0.72 : -0.72), sp.y, sp.z); lo2.setMatrixAt(j * 2 + s, m4); } });
+    list.forEach((pi, j) => { const sp = slotPos(layout, pi); for (let s = 0; s < 2; s++) { m4.makeTranslation(sp.x + (s ? PO : -PO), sp.y, sp.z); lo2.setMatrixAt(j * 2 + s, m4); } });
     for (const m of [hi, lo, lo2]) { m.frustumCulled = false; m.instanceMatrix.needsUpdate = true; ark.add(m); }
     lo.visible = false; lo2.visible = false;
     groups.push({ id, list, hi, lo, lo2, hiTris: hi.geometry.index.count / 3, loTris: lo.geometry.index.count / 3, lo2Tris: lo2.geometry.index.count / 3 });
@@ -223,16 +228,24 @@ const BASE_SHIFT = innerWidth < 900 ? -0.06 : -0.05;
 function limits() { return { min: 5, max: Math.max(160, (layout ? layout.L : 60) * 1.4 + 80) }; }
 
 function initialView() {
-  const L = layout.L, aspect = innerWidth / innerHeight;
+  const { L, W } = layout, aspect = innerWidth / innerHeight;
+  const phone = aspect < 0.8;
   const hf = Math.atan(Math.tan(THREE.MathUtils.degToRad(21)) * aspect);
-  const need = Math.min(L, 90) * 0.5 / Math.tan(hf);
-  goal.dist = THREE.MathUtils.clamp(need * (aspect < 0.8 ? 1.0 : 1.45), 28, 300);
-  goal.phi = aspect < 0.8 ? 0.27 : 0.24;
-  goal.theta = aspect < 0.8 ? 0.8 : 0.5;
-  const count = Math.min(pairs.length, layout.perLevel);
-  const cmid = layout.x0 + (Math.max(0, Math.ceil(count / layout.rows) - 1) / 2) * 3.2;
-  goal.tgt.set(layout.L > 140 ? cmid : 0, 2, 0);
-  Object.assign(cam, { theta: goal.theta, phi: goal.phi, dist: goal.dist * 1.4 });
+  goal.theta = phone ? 0.5 : 0.42;
+  goal.phi = phone ? 0.38 : 0.36;
+  // frame: whole ship when short, else the occupied part of the deck (plus the house)
+  const used = Math.min(pairs.length, layout.perLevel);
+  const usedCols = Math.max(1, Math.ceil(used / layout.rows));
+  const xs = -L / 2, xe = Math.min(L / 2, layout.x0 + (usedCols - 0.5) * PAIR_PITCH + 5);
+  let a0 = xs, a1 = xe;
+  if (L <= 56 || a1 - a0 > 0.9 * L) { a0 = -L / 2; a1 = L / 2; }
+  else if (a1 - a0 < 34) a1 = a0 + 34;
+  const ext = a1 - a0, cx = (a0 + a1) / 2;
+  const frac = (phone ? 0.96 : 0.68) * (pairs.length >= 10 ? 1.07 : 1);
+  const proj = ext * Math.cos(goal.theta) + W * Math.sin(goal.theta);
+  goal.dist = THREE.MathUtils.clamp(proj / frac / 2 / Math.tan(hf), 24, 400);
+  goal.tgt.set(cx, 2.5, 0);
+  Object.assign(cam, { theta: goal.theta + 0.25, phi: goal.phi, dist: goal.dist * 1.25 });
   cam.tgt.copy(goal.tgt);
 }
 
@@ -394,8 +407,8 @@ function selectPair(i, user) {
   $('card-open').href = `p/${p.n}/`;
   setCardOpen(true);
   marker.visible = true;
-  const local = pairInfo[i].clone(); local.y += 0.5;
-  flyTo(pairWorld(i, 0.5), innerWidth < 600 ? 21 : 15, local);
+  const local = pairInfo[i].clone(); local.y += 1.5;
+  flyTo(pairWorld(i, 1.5), innerWidth < 600 ? 33 : 22, local);
   if (user) history.replaceState(null, '', `?p=${p.n}`);
 }
 function selectCabin(k) {
@@ -445,9 +458,9 @@ let tagTimer = 0;
 function updateTagSet() {
   if (!layout) return;
   const cands = [];
-  const near = cam.dist < 12;
+  const near = cam.dist < 32;
   if (selected) {
-    const w = selected.type === 'pair' ? pairWorld(selected.idx, 1.7) : cabinWorld(selected.idx, 2.4);
+    const w = selected.type === 'pair' ? pairWorld(selected.idx, 3.9) : cabinWorld(selected.idx, 2.4);
     cands.push({ w, text: selected.type === 'pair' ? cap(pairs[selected.idx].what) : state.cabins[selected.idx].name, sel: true, cab: selected.type === 'cabin' });
   }
   if (near) {
@@ -456,10 +469,10 @@ function updateTagSet() {
       if (selected && selected.type === 'pair' && selected.idx === i) continue;
       tmp.copy(pairInfo[i]); ark.localToWorld(tmp);
       const d = tmp.distanceToSquared(cam.tgt);
-      if (d < 380) scored.push([d, i]);
+      if (d < 900) scored.push([d, i]);
     }
     scored.sort((a, b) => a[0] - b[0]);
-    for (const [, i] of scored.slice(0, 4)) cands.push({ w: pairWorld(i, 1.7), text: cap(pairs[i].what) });
+    for (const [, i] of scored.slice(0, 4)) cands.push({ w: pairWorld(i, 3.9), text: cap(pairs[i].what) });
     for (let k = 0; k < state.cabins.length && cands.length < 8; k++) {
       const w = cabinWorld(k, 2.4); if (w.distanceToSquared(cam.tgt) < 300) cands.push({ w, text: state.cabins[k].name, cab: true });
     }
@@ -530,11 +543,11 @@ function frame() {
   }
   if (marker.visible && selected) {
     const loc = selected.type === 'pair' ? pairInfo[selected.idx] : cabinPos(layout, selected.idx);
-    marker.position.set(loc.x, loc.y + (selected.type === 'pair' ? 2.2 : 3.2) + Math.sin(tNow * 4) * 0.12, loc.z);
+    marker.position.set(loc.x, loc.y + (selected.type === 'pair' ? 4.6 : 3.2) + Math.sin(tNow * 4) * 0.12, loc.z);
     marker.rotation.y = tNow * 2;
   }
   whiteClouds.rotation.y = tNow * 0.0035;
-  rain.position.y = -((tNow * 26) % 14);
+  rain.position.y = -((tNow * 30) % 16);
   tagTimer -= dt; if (tagTimer <= 0) { updateTagSet(); tagTimer = 0.25; }
   placeTags();
   if (renderer) renderer.render(scene, camera);
@@ -542,7 +555,7 @@ function frame() {
 }
 
 // ---------- boot ----------
-window.__ark = { THREE, cam, goal, ark, tris: 0, get layout() { return layout; }, get pairs() { return pairs; }, selectPair, selectCabin, cabinWorld, closeCard, tap };
+window.__ark = { THREE, cam, goal, ark, tris: 0, get layout() { return layout; }, get pairs() { return pairs; }, selectPair, selectCabin, cabinWorld, pairWorld, camera, closeCard, tap };
 
 function applyData(st, fg, first) {
   state = Object.assign({ pairs: [], cabins: [], totals: {}, day: 1, launch: CONFIG.LAUNCH }, st);

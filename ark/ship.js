@@ -5,20 +5,27 @@ import { MeshBuilder, hexLinear } from './voxel.js';
 export const VS = 0.5;          // world size of one hull voxel
 export const WATERLINE = 3;     // voxel row that sits at sea level
 const B = 8;                    // hold rows below the lowest deck
-const H = 6;                    // rows per deck level
-export const PAIR_PITCH = 3.2;  // along x
-export const ROW_PITCH = 2.0;   // along z
-export const FIG_SCALE = 0.1;
+const H = 8;                    // rows per deck level
+export const PAIR_PITCH = 7.2;  // along x
+export const ROW_PITCH = 3.8;   // along z
+export const FIG_SCALE = 0.26;
 
 export function computeLayout(nPairs, nCabins) {
   const n = nPairs;
-  const rows = n <= 30 ? 3 : n <= 120 ? 5 : n <= 400 ? 7 : n <= 1000 ? 9 : 11;
-  const levels = 2 + (n > 60 ? 1 : 0) + (n > 300 ? 1 : 0) + (n > 1500 ? 1 : 0);
-  const cabinCols = Math.ceil(Math.ceil(nCabins / 2));
-  const cols = Math.max(8, Math.ceil(n / (levels * rows)), cabinCols);
-  const sternPad = 3, houseLen = 10, bowPad = 14;
+  let rows, levels;
+  if (n <= 4) { rows = 1; levels = 1; }
+  else if (n <= 10) { rows = 2; levels = 1; }
+  else if (n <= 24) { rows = 3; levels = 2; }
+  else if (n <= 60) { rows = 5; levels = 2; }
+  else if (n <= 150) { rows = 5; levels = 3; }
+  else if (n <= 400) { rows = 7; levels = 4; }
+  else if (n <= 1000) { rows = 9; levels = 4; }
+  else { rows = 11; levels = 5; }
+  const cabinCols = Math.ceil(nCabins / 2);
+  const cols = Math.max(2, Math.ceil(n / (levels * rows)), cabinCols);
+  const sternPad = 3, houseLen = 10, bowPad = 11;
   const L = sternPad + houseLen + cols * PAIR_PITCH + bowPad;
-  const W = rows * 2 + 7;
+  const W = (rows - 1) * ROW_PITCH + 10;
   const NX = Math.ceil(L / VS) + 2, NZ = Math.ceil(W / VS) + 2;
   const NY = B + levels * H + 8 + 8 + 18 + 4;
   const fy = (j) => B + (levels - 1 - j) * H; // floor row of level j (0 = top)
@@ -26,18 +33,21 @@ export function computeLayout(nPairs, nCabins) {
     x0: -L / 2 + sternPad + houseLen + PAIR_PITCH / 2 };
 }
 
-const ROW_ORDER = (rows) => { const a = [0]; for (let i = 1; a.length < rows; i++) { a.push(i); a.push(-i); } return a.slice(0, rows); };
+const rowOrder = (rows) => {
+  const a = []; for (let r = 0; r < rows; r++) a.push(r - (rows - 1) / 2);
+  return a.sort((p, q) => Math.abs(p) - Math.abs(q) || p - q);
+};
 
 export function slotPos(lay, i) {
   const j = Math.floor(i / lay.perLevel), k = i % lay.perLevel;
   const col = Math.floor(k / lay.rows);
-  const o = ROW_ORDER(lay.rows)[k % lay.rows];
+  const o = rowOrder(lay.rows)[k % lay.rows];
   return new THREE.Vector3(lay.x0 + col * PAIR_PITCH, (lay.fy(j) + 1) * VS, o * ROW_PITCH);
 }
 
 export function cabinPos(lay, i) {
   const col = i >> 1, side = (i & 1) ? 1 : -1;
-  return new THREE.Vector3(lay.x0 + col * PAIR_PITCH, (lay.fy(0) + 1) * VS, side * (lay.rows + 1.9));
+  return new THREE.Vector3(lay.x0 + col * PAIR_PITCH, (lay.fy(0) + 1) * VS, side * ((lay.rows - 1) / 2 * ROW_PITCH + 3.4));
 }
 
 function hash3(x, y, z) {
@@ -109,7 +119,7 @@ export function buildHull(lay) {
         }
         if (!edge) continue;
         const isTop = j === 0;
-        const wallH = isTop ? 2 + sheer : 1;
+        const wallH = isTop ? 3 + sheer : 2;
         const post = (ix % 8 === 3) && !isTop;
         if (post) { put(ix, iy, iz, C.TRIM, 1); continue; }
         if (r <= wallH) {
