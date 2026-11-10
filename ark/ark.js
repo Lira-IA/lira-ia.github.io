@@ -343,7 +343,7 @@ function renderStats() {
   const np = pairs.length;
   const pass = state.totals?.passengers ?? new Set(pairs.flatMap((p) => p.by)).size;
   const day = Math.min(CONFIG.TOTAL_DAYS, Math.max(1, state.day || 1));
-  $('stats').textContent = `Day ${day}/${CONFIG.TOTAL_DAYS} · ${fmt(np)} ${np === 1 ? 'pair' : 'pairs'} aboard · ${fmt(pass)} ${pass === 1 ? 'passenger' : 'passengers'}`;
+  $('stats').textContent = pass >= 50 ? `Day ${day}/${CONFIG.TOTAL_DAYS} · ${fmt(np)} ${np === 1 ? 'pair' : 'pairs'} aboard · ${fmt(pass)} ${pass === 1 ? 'passenger' : 'passengers'}` : `Day ${day}/${CONFIG.TOTAL_DAYS} · an AI decides what boards`;
   $('empty').hidden = np > 0;
   $('hint').hidden = np === 0 || !!selected || hintGone;
 }
