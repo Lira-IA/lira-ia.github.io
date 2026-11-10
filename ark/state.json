@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-09T17:47:23Z",
+ "updated": "2026-11-10T09:25:42Z",
  "totals": {
-  "pairs": 1,
-  "passengers": 1,
+  "pairs": 2,
+  "passengers": 2,
   "cabins": 4,
   "council": 0
  },
@@ -16,6 +16,17 @@
    ],
    "src": "lira",
    "t": "2026-11-08T17:17:33Z",
+   "status": "aboard"
+  },
+  {
+   "n": 3,
+   "fig": "book",
+   "what": "two 📚",
+   "by": [
+    "npub1mwt2…hjdr"
+   ],
+   "src": "nostr",
+   "t": "2026-11-10T09:23:43Z",
    "status": "aboard"
   }
  ],
