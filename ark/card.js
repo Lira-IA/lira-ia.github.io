@@ -12,6 +12,6 @@ var a=document.createElement('a');a.id='arkc';a.href=href;a.target='_blank';a.re
 a.innerHTML='<img alt="" src="'+B+'reel/'+c.g+'_cover.jpg"><span><small>AN AI DECIDES WHAT SURVIVES THE FLOOD</small><b><span class="y">'+parts[0].replace(/\.$/,'')+'.</span><br><span class="n">'+(parts[1]||'')+'</span></b><u>Defend '+no+' &rarr;</u></span><button id="arkx" aria-label="Close">&times;</button>';
 document.body.appendChild(a);
 document.getElementById('arkx').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();a.remove();try{sessionStorage.setItem('arkcard','1')}catch(e){}});
-setTimeout(function(){a.className='on'},1200);
+setTimeout(function(){a.className='on'},3500);
 }).catch(function(){});
 })();
