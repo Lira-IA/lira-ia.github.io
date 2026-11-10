@@ -87,7 +87,7 @@
 <script type="module" src="ark.js"></script>
 <script>
 fetch('verdicts.json?'+Date.now()).then(r=>r.json()).then(L=>{const now=Date.now();const c=L.filter(v=>Date.parse(v.t)<=now).pop();if(!c)return;
-const $=i=>document.getElementById(i);$('g-n').textContent=c.n;$('g-v').textContent=c.v1;$('g-r').textContent=c.reason;$('g-no').textContent=(c.no||'them').toLowerCase();$('gate').hidden=false;}).catch(()=>{});
+const $=i=>document.getElementById(i);$('g-n').textContent=c.n;$('g-v').textContent=c.v1;$('g-r').textContent=c.reason;$('g-no').textContent=(c.no||'them').toLowerCase();if(c.ig){const a=document.querySelector('#gate a');if(a)a.href=c.ig;}$('gate').hidden=false;}).catch(()=>{});
 </script>
 </body>
 </html>
