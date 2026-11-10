@@ -96,3 +96,10 @@ code{font:600 12.5px ui-monospace,Menlo,monospace;background:#f4e1b8;padding:2px
   #card h2{font-size:24px}
   #empty,#hint{bottom:120px}
 }
+
+#gate{position:fixed;left:50%;top:calc(150px + var(--safe-t));transform:translateX(-50%);width:min(92vw,420px);background:rgba(20,28,48,.88);color:#fff;border:3px solid #4d2f16;border-radius:6px;padding:10px 12px;text-align:center;display:flex;flex-direction:column;gap:4px;z-index:5;font-family:system-ui,sans-serif}
+#gate small{font:700 10px/1.2 var(--px);letter-spacing:1px;color:#ffd23f}
+#gate b{font-size:20px;line-height:1.15}
+#gate span{font-size:13px;opacity:.9}
+#gate a{font-size:12px;color:#ffd23f;text-decoration:underline;pointer-events:auto}
+body.carding #gate{opacity:0}

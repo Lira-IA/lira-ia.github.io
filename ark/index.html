@@ -34,6 +34,7 @@
   <b>The Ark is empty.</b>
   <span>Be the first pair.</span>
 </div>
+<div id="gate" hidden><small>AT THE GATE · LIRA'S VERDICT #<span id="g-n"></span></small><b id="g-v"></b><span id="g-r"></span><a href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener">Disagree? Defend <span id="g-no"></span> in the reel comments. 5 defenders and they board.</a></div>
 <div id="hint" hidden>Tap a pair. Drag to look around.</div>
 <div id="tags"></div>
 
@@ -84,5 +85,9 @@
 </section>
 
 <script type="module" src="ark.js"></script>
+<script>
+fetch('verdicts.json?'+Date.now()).then(r=>r.json()).then(L=>{const now=Date.now();const c=L.filter(v=>Date.parse(v.t)<=now).pop();if(!c)return;
+const $=i=>document.getElementById(i);$('g-n').textContent=c.n;$('g-v').textContent=c.v1;$('g-r').textContent=c.reason;$('g-no').textContent=(c.no||'them').toLowerCase();$('gate').hidden=false;}).catch(()=>{});
+</script>
 </body>
 </html>
