@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-10T17:56:23Z",
+ "updated": "2026-11-10T21:06:57Z",
  "totals": {
-  "pairs": 3,
+  "pairs": 4,
   "passengers": 2,
   "cabins": 4,
   "council": 0
@@ -38,6 +38,17 @@
    ],
    "src": "lira",
    "t": "2026-11-10T17:56:23Z",
+   "status": "aboard"
+  },
+  {
+   "n": 5,
+   "fig": "pizza",
+   "what": "two pizza (Lira's verdict #2)",
+   "by": [
+    "lira_ia_"
+   ],
+   "src": "lira",
+   "t": "2026-11-10T21:06:57Z",
    "status": "aboard"
   }
  ],
