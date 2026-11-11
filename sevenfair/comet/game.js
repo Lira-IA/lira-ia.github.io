@@ -516,8 +516,31 @@ $('share').addEventListener('click', (e) => {
   const url = base + '?c=' + sc + '&n=' + encodeURIComponent(riderName) + '&d=' + rideDay, text = 'I scored ' + fmt(sc) + ' on today\'s COMET track at ' + CFG.park + '. Same track for everyone until midnight UTC. Beat me:';
   const done = (msg) => { const b = $('share'), old = 'DARE A FRIEND TO BEAT IT'; b.textContent = msg; setTimeout(() => { b.textContent = old; }, 1800); };
   const copy = () => { try { navigator.clipboard.writeText(text + ' ' + url).then(() => done('LINK COPIED'), () => done(url)); } catch (err) { done(url); } };
-  try { if (navigator.share) navigator.share({ text, url }).catch((err) => { if (!err || err.name !== 'AbortError') copy(); }); else copy(); } catch (err) { copy(); }
+  let files = null;
+  try { const f = scoreCard(sc); if (f && navigator.canShare && navigator.canShare({ files: [f] })) files = [f]; } catch (err) {}
+  try { if (navigator.share) navigator.share(files ? { files, text: text + ' ' + url } : { text, url }).catch((err) => { if (!err || err.name !== 'AbortError') copy(); }); else copy(); } catch (err) { copy(); }
 });
+function scoreCard(sc) {
+  const W = 1080, H = 1920, c = document.createElement('canvas'); c.width = W; c.height = H; const g = c.getContext('2d');
+  const bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#0b0620'); bg.addColorStop(.55, '#2a0b3d'); bg.addColorStop(1, '#090314'); g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  g.strokeStyle = 'rgba(45,226,230,.55)'; g.lineWidth = 3; const hy = 1180;
+  for (let i = -12; i <= 12; i++) { g.beginPath(); g.moveTo(W / 2 + i * 18, hy); g.lineTo(W / 2 + i * 260, H); g.stroke(); }
+  for (let k = 0; k < 14; k++) { const y = hy + Math.pow(k / 13, 2) * (H - hy); g.globalAlpha = .25 + .5 * k / 13; g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+  g.globalAlpha = 1; g.textAlign = 'center';
+  const sun = g.createRadialGradient(W / 2, hy, 10, W / 2, hy, 300); sun.addColorStop(0, 'rgba(255,200,90,.9)'); sun.addColorStop(1, 'rgba(255,80,160,0)'); g.fillStyle = sun; g.fillRect(0, hy - 300, W, 300);
+  g.fillStyle = '#f6d98a'; g.font = "64px Bungee, 'Chakra Petch', sans-serif"; g.fillText(String(CFG.park || 'SEVENFAIR').toUpperCase(), W / 2, 230);
+  g.fillStyle = '#2de2e6'; g.font = "700 46px 'Chakra Petch', sans-serif"; g.fillText('THE COMET \u00b7 TODAY\'S TRACK', W / 2, 310);
+  g.fillStyle = '#ffffff'; g.font = "700 56px 'Chakra Petch', sans-serif"; g.fillText(String(riderName || 'RIDER').slice(0, 14) + ' SCORED', W / 2, 560);
+  let fs = 300; const st = fmt(sc); g.font = fs + "px Bungee, sans-serif"; while (g.measureText(st).width > W - 120 && fs > 120) { fs -= 10; g.font = fs + "px Bungee, sans-serif"; }
+  g.shadowColor = '#ff3d9a'; g.shadowBlur = 40; g.fillStyle = '#f6d98a'; g.fillText(st, W / 2, 560 + fs + 20); g.shadowBlur = 0;
+  if (you && you.rank) { g.fillStyle = '#ffffff'; g.font = "700 52px 'Chakra Petch', sans-serif"; g.fillText('#' + fmt(you.rank) + ' OF ' + fmt(you.of) + ' THIS WEEK', W / 2, 1010); }
+  g.fillStyle = 'rgba(9,3,20,.78)'; g.fillRect(0, 1340, W, 500); g.fillStyle = '#f6d98a'; g.font = "700 40px 'Chakra Petch', sans-serif"; g.fillText('TOP RIDER IS CROWNED EVERY MONDAY', W / 2, 1100); g.fillStyle = '#ffffff'; g.font = "92px Bungee, sans-serif"; g.fillText('CAN YOU', W / 2, 1450); g.fillText('BEAT ME?', W / 2, 1560);
+  g.fillStyle = '#2de2e6'; g.font = "700 44px 'Chakra Petch', sans-serif"; g.fillText('lira-ia.github.io/sevenfair', W / 2, 1720);
+  g.fillStyle = 'rgba(255,255,255,.7)'; g.font = "500 34px 'Chakra Petch', sans-serif"; g.fillText('Free \u00b7 no account \u00b7 a park run by an AI', W / 2, 1790);
+  const d = c.toDataURL('image/png'), b = atob(d.split(',')[1]), a = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i);
+  return new File([a], 'sevenfair-' + sc + '.png', { type: 'image/png' });
+}
+window.__scoreCard = scoreCard;
 
 // ---------- title ----------
 function titleText() {
