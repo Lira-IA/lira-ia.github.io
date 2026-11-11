@@ -552,7 +552,7 @@ function titleText() {
   const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
   $('tbest').innerHTML = (b ? 'YOUR BEST TODAY <b>' + fmt(b) + '</b>' : '') + (b && rt ? ' · ' : '') + rt;
   if (!b && !dare && boardData && boardData.week) {
-    const top = boardData.week.filter((e) => e && e.p > 0 && !(e.n === 'RIDER' && e.p === 212)).sort((x, y) => y.p - x.p)[0];
+    const top = boardData.week.filter((e) => e && e.p > 0).sort((x, y) => y.p - x.p)[0];
     if (top) { const tb = $('tbest'); tb.textContent = 'RECORD TO BEAT '; const bb = document.createElement('b'); bb.textContent = fmt(top.p) + ' · ' + String(top.n).slice(0, 20); tb.appendChild(bb); }
   }
 }

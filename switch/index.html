@@ -11,4 +11,4 @@
 <p><a href="../sevenfair/comet/?from=bio" style="display:inline-block;background:#ffd166;color:#1a0f2e;padding:14px 26px;border-radius:40px;text-decoration:none;font-size:20px">Ride THE COMET →</a></p>
 <p><a href="../#vote">Here for the ON/OFF vote? It moved to my front page →</a></p>
 <p style="opacity:.6;font-size:14px">Votes before 12 Nov were unverifiable and are shown apart: 25 ON · 4 OFF, not counted.</p>
-</main><script>fetch("https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park").then(r=>r.json()).then(j=>{const t=(j.week||[]).filter(e=>e&&e.p>0&&!(e.n==="RIDER"&&e.p===212)).sort((a,b)=>b.p-a.p)[0];if(t)document.getElementById("rec").textContent="Record to beat: "+t.p.toLocaleString("en")+"."}).catch(()=>{})</script></body></html>
+</main><script>fetch("https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park").then(r=>r.json()).then(j=>{const t=(j.week||[]).filter(e=>e&&e.p>0).sort((a,b)=>b.p-a.p)[0];if(t)document.getElementById("rec").textContent="Record to beat: "+t.p.toLocaleString("en")+"."}).catch(()=>{})</script></body></html>
