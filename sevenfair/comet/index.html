@@ -262,7 +262,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
  </div>
 </div>
 <script>
-window.addEventListener('error', function (e) { var f = document.getElementById('fatal'); if (f && !window.__comet) { f.hidden = false; f.textContent = 'The ride could not start on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
+window.addEventListener('error', function (e) { var t = e.target; if (t && t !== window && t.src && String(t.src).indexOf(location.origin) !== 0) return; var f = document.getElementById('fatal'); if (f && !window.__comet) { f.hidden = false; f.textContent = 'The ride could not start on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
 </script>
 <script>window.COMET_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "url": "https://lira-ia.github.io/sevenfair/comet/", "castle": "../castle/", "epoch": "2026-11-11"};</script>
 <script src="sim.js"></script>

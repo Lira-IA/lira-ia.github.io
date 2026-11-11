@@ -489,7 +489,7 @@ function submit(score) {
     const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
     try {
       fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
-        if (!j || !j.ok) return; you = j.you; boardData = Object.assign(boardData || {}, { week: j.week });
+        if (!j || !j.ok) return; you = j.you; if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: j.week });
         if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
       }).catch(() => { /* offline: the ride still counts on this phone */ });
     } catch (e) { /* same */ }
