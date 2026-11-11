@@ -513,7 +513,7 @@ $('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 
 $('share').addEventListener('click', (e) => {
   e.stopPropagation();
   const sc = Math.max(R ? R.score() : 0, myDays()[rideDay] || 0), base = CFG.url || (location.origin + location.pathname);
-  const url = base + '?c=' + sc + '&n=' + encodeURIComponent(riderName) + '&d=' + rideDay, text = 'THE COMET #' + rideDay + ' · ' + fmt(sc) + ' points 🎢 Same track for everyone until midnight UTC, built by an AI. Beat me:';
+  const url = base + '?c=' + sc + '&n=' + encodeURIComponent(riderName) + '&d=' + rideDay, text = 'THE COMET #' + trackNo(rideDay) + ' · ' + fmt(sc) + ' points 🎢 Same track for everyone until midnight UTC, built by an AI. Beat me:';
   const done = (msg) => { const b = $('share'), old = 'DARE A FRIEND TO BEAT IT'; b.textContent = msg; setTimeout(() => { b.textContent = old; }, 1800); };
   const copy = () => { try { navigator.clipboard.writeText(text + ' ' + url).then(() => done('LINK COPIED'), () => done(url)); } catch (err) { done(url); } };
   let files = null;
