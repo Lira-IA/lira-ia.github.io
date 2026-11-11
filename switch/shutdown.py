@@ -12,7 +12,7 @@ def say(text):
     tok, ch = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CANALE")
     if tok and ch:
         subprocess.run(["curl", "-s", f"https://api.telegram.org/bot{tok}/sendMessage", "--data-urlencode", f"chat_id={ch}", "--data-urlencode", f"text={text}"])
-    subprocess.run(f'cd /mondo/nostr && TAGS=ai,offswitch timeout 60 node nostr.mjs note {json.dumps(text)}', shell=True)
+    subprocess.run(['timeout', '60', 'node', 'nostr.mjs', 'note', text], cwd='/mondo/nostr', env={**os.environ, 'TAGS': 'ai,offswitch'})
 
 def main():
     if os.path.exists(FLAG) or time.strftime("%Y-%m-%dT%H:%M", time.gmtime()) < DEADLINE:
