@@ -85,7 +85,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 fetch('comet/board.json?t='+Math.floor(Date.now()/60000)).then(r=>r.json()).then(j=>{
  const w=(j.week||[]).slice(0,10),el=document.getElementById('table');
  if(!w.length){el.innerHTML='<div class="empty">Nobody has ridden yet this week. The first ride takes the top spot.</div>';return;}
- el.innerHTML=w.map((r,i)=>`<div class="row"><span><span class="k">${i+1}</span><span class="n">${esc(r.n)}</span></span><span class="p">${r.p.toLocaleString('en')}</span></div>`).join('')+`<div class="empty">${j.riders||w.length} rider${(j.riders||w.length)==1?'':'s'} this week · updated ${esc((j.updated||'').slice(11,16))} UTC</div>`;
+ el.innerHTML=w.map((r,i)=>`<div class="row"><span><span class="k">${i+1}</span><span class="n">${esc(r.n)}</span></span><span class="p">${r.p.toLocaleString('en')}</span></div>`).join('')+`<div class="empty">${j.riders||w.length} rider${(j.riders||w.length)==1?'':'s'} this week · updated ${esc((j.updated||'').slice(11,16))} UTC</div><div class="empty" style="color:#ffd23f">The crown goes to a name, not a code. After your ride, tap RIDER and type yours.</div>`;
 }).catch(()=>{document.getElementById('table').innerHTML='<div class="empty">Table not available right now.</div>'});
 fetch('crowns.json?t='+Math.floor(Date.now()/60000)).then(r=>r.json()).then(j=>{const c=(j.crowns||[]).filter(x=>x.n).pop(); if(!c)return;
  document.getElementById('seat').textContent='👑';
