@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#060818">
+<title>The Comet</title>
+</head>
+<body>
+<style>
+@font-face { font-family: 'Bungee'; font-weight: 400; font-display: swap; src: url(fonts/bungee-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 500; font-display: swap; src: url(fonts/chakra-petch-latin-500-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-display: swap; src: url(fonts/chakra-petch-latin-700-normal.woff2) format('woff2'); }
+:root { color-scheme: dark; --ink:#f4f1ff; --dim:#a9a3d6; --night:#060818; --panel:rgba(14,12,40,.86); --line:rgba(190,170,255,.22);
+  --pink:#ff3d9a; --cyan:#2de2e6; --gold:#ffd23f; --violet:#7a5cff; --red:#ff3b5c; --amber:#ffb020; }
+html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink); overflow: hidden; overscroll-behavior: none; }
+#comet { position: fixed; inset: 0; height: 100%; background: var(--night); color: var(--ink); font-family: 'Chakra Petch', system-ui, sans-serif; font-weight: 500;
+  overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+#stage { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto; width: 100%; overflow: hidden; background: var(--night); --u: 1vw; --v: 1vh; }
+@media (min-aspect-ratio: 3/4) and (min-height: 521px) {
+  #comet { background: radial-gradient(ellipse 60% 80% at 50% 50%, #1b0d45 0%, #060818 70%); }
+  #stage { width: calc(100vh * 0.6); max-width: 100%; box-shadow: 0 0 0 1px rgba(190,170,255,.2), 0 0 90px rgba(122,92,255,.28); }
+}
+#comet canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#comet .vig { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 85% 70% at 50% 55%, rgba(0,0,0,0) 55%, rgba(3,2,14,.55) 100%); }
+#comet .flash { position: absolute; inset: 0; pointer-events: none; background: #fff; opacity: 0; }
+#comet .layer { position: absolute; inset: 0; pointer-events: none;
+  padding: max(14px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+#comet .disp { font-family: 'Bungee', 'Chakra Petch', system-ui, sans-serif; font-weight: 400; letter-spacing: .01em; }
+#comet button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+#comet [hidden] { display: none !important; }
+
+/* ---- ride HUD ---- */
+#hud { opacity: 0; transition: opacity .25s; }
+#hud.on { opacity: 1; }
+#hud .score { position: absolute; left: 0; right: 0; top: max(14px, env(safe-area-inset-top)); text-align: center; font-size: clamp(40px, calc(13 * var(--u)), 76px); line-height: 1;
+  text-shadow: 0 3px 0 rgba(0,0,0,.45), 0 0 26px rgba(45,226,230,.35); font-variant-numeric: tabular-nums; }
+#hud .score.bump { animation: bump .18s ease-out; }
+@keyframes bump { 0% { transform: scale(1.12); } 100% { transform: scale(1); } }
+#hud .target { position: absolute; left: 0; right: 0; top: calc(max(14px, env(safe-area-inset-top)) + clamp(44px, calc(14 * var(--u)), 84px)); text-align: center; font-size: 13px; letter-spacing: .14em;
+  color: var(--dim); font-weight: 700; text-transform: uppercase; }
+#hud .target b { color: var(--gold); }
+#hud .target.done b { color: #7dffb0; }
+#hud .mult { position: absolute; left: max(16px, env(safe-area-inset-left)); bottom: max(22px, env(safe-area-inset-bottom)); display: flex; align-items: flex-end; gap: 10px; }
+#hud .mult .x { font-size: clamp(34px, calc(10 * var(--u)), 54px); line-height: .9; color: var(--mc, var(--cyan)); text-shadow: 0 3px 0 rgba(0,0,0,.45), 0 0 22px var(--mc, var(--cyan)); transform-origin: 0 100%; }
+#hud .mult .x.pop { animation: mpop .45s cubic-bezier(.2,1.6,.4,1); }
+@keyframes mpop { 0% { transform: scale(1.9) rotate(-8deg); } 100% { transform: scale(1) rotate(0); } }
+#hud .mult .x.lost { animation: mlost .4s ease-out; }
+@keyframes mlost { 0% { transform: translateX(-6px); color: var(--red); } 30% { transform: translateX(6px); } 60% { transform: translateX(-3px); } 100% { transform: none; } }
+#hud .mult .bar { width: clamp(84px, calc(26 * var(--u)), 130px); height: 9px; border-radius: 6px; background: rgba(255,255,255,.14); overflow: hidden; margin-bottom: 7px; }
+#hud .mult .bar i { display: block; height: 100%; width: 0%; background: var(--mc, var(--cyan)); border-radius: 6px; transition: width .12s; box-shadow: 0 0 12px var(--mc, var(--cyan)); }
+#hud .mult .lbl { font-size: 11px; font-weight: 700; letter-spacing: .16em; color: var(--dim); margin-bottom: 3px; }
+#hud .stars { position: absolute; right: max(16px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); text-align: right; font-weight: 700; font-size: 17px; color: var(--gold);
+  text-shadow: 0 2px 0 rgba(0,0,0,.5); font-variant-numeric: tabular-nums; }
+#hud .stars small { display: block; font-size: 11px; letter-spacing: .16em; color: var(--dim); }
+#pops { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+#pops .pop { position: absolute; left: 50%; top: 40%; white-space: nowrap; font-family: 'Bungee', sans-serif; font-size: clamp(20px, calc(6.4 * var(--u)), 34px); color: var(--gold);
+  text-shadow: 0 3px 0 rgba(0,0,0,.5), 0 0 18px currentColor; animation: popup .8s ease-out forwards; will-change: transform, opacity; }
+#pops .pop.big { font-size: clamp(30px, calc(10 * var(--u)), 58px); top: 30%; animation-duration: 1.1s; }
+@keyframes popup { 0% { transform: translate(-50%, 10px) scale(.6); opacity: 0; } 18% { transform: translate(-50%, -6px) scale(1.12); opacity: 1; } 100% { transform: translate(-50%, -64px) scale(1); opacity: 0; } }
+#hint { position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%); width: 124px; height: 124px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(8,8,30,.55); border: 2px solid rgba(255,255,255,.5); opacity: 0; transition: opacity .12s; pointer-events: none; }
+#hint.on { opacity: 1; }
+#hint svg { width: 70px; height: 70px; animation: nudge .5s ease-in-out infinite alternate; }
+#hint[data-d="L"] svg { transform: rotate(180deg); --nx: -9px; --ny: 0px; } #hint[data-d="R"] svg { --nx: 9px; --ny: 0px; }
+#hint[data-d="U"] svg { transform: rotate(-90deg); --nx: 0px; --ny: -9px; } #hint[data-d="D"] svg { transform: rotate(90deg); --nx: 0px; --ny: 9px; }
+@keyframes nudge { to { translate: var(--nx, 0) var(--ny, 0); } }
+#hint span { position: absolute; top: 100%; margin-top: 8px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-weight: 700; letter-spacing: .14em; font-size: 13px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.6); }
+
+/* ---- corner controls ---- */
+#corner { position: absolute; right: max(12px, env(safe-area-inset-right)); top: max(12px, env(safe-area-inset-top)); display: flex; gap: 8px; z-index: 5; }
+#corner button { width: 40px; height: 40px; border-radius: 12px; background: rgba(12,10,36,.6); border: 1px solid var(--line); display: grid; place-items: center; }
+#corner svg { width: 20px; height: 20px; }
+
+/* ---- title ---- */
+#title { display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: auto; transition: opacity .25s; }
+#title.off { opacity: 0; pointer-events: none; }
+#title .queen { display: flex; align-items: center; gap: 10px; text-align: left; margin-top: clamp(6px, calc(2 * var(--v)), 22px); padding: 5px 16px 5px 5px; border-radius: 999px; background: rgba(10,8,34,.62); border: 1px solid rgba(255,210,63,.45); }
+#title .queen img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 0 0 18px rgba(255,210,63,.5); display: block; }
+#title .queen small { display: block; font-size: 9.5px; letter-spacing: .22em; font-weight: 700; color: var(--dim); }
+#title .queen b { display: block; font-family: 'Bungee', sans-serif; font-weight: 400; font-size: 17px; color: var(--gold); line-height: 1.1; }
+#title .queen i { display: block; font-style: normal; font-size: 10.5px; color: var(--dim); letter-spacing: .06em; }
+#title .park { margin-top: clamp(14px, calc(4 * var(--v)), 40px); font-size: 12px; letter-spacing: .34em; font-weight: 700; color: var(--dim); }
+#title .park b { color: var(--gold); font-weight: 700; }
+#title h1 { margin: 10px 0 0; font-size: clamp(54px, calc(17.5 * var(--u)), 124px); line-height: .86; transform: rotate(-4deg) skewX(-6deg);
+  background: linear-gradient(180deg, #fff6c9 0%, var(--gold) 38%, var(--pink) 78%, #b11cff 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 5px 0 rgba(30,4,60,.9)) drop-shadow(0 0 26px rgba(255,61,154,.55)); }
+#title h1 span { display: block; font-size: .42em; letter-spacing: .2em; margin-bottom: .1em; }
+#title .today { margin-top: clamp(14px, calc(3 * var(--v)), 28px); padding: 9px 14px; border-radius: 12px; background: rgba(10,8,34,.62); border: 1px solid var(--line); font-size: 14px; line-height: 1.35; max-width: 320px; }
+#title .today b { color: var(--cyan); font-weight: 700; }
+#title .today .cd { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 700; }
+#title .dare { margin-top: 10px; padding: 9px 14px; border-radius: 12px; background: rgba(255,210,63,.14); border: 1px solid rgba(255,210,63,.5); font-size: 15px; font-weight: 700; max-width: 320px; }
+#title .dare b { color: var(--gold); }
+#title .grow { flex: 1; }
+#title .how { display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; font-size: 11px; font-weight: 700; letter-spacing: .12em; color: var(--ink); padding: 10px 16px 9px; border-radius: 16px; background: rgba(10,8,34,.66); border: 1px solid var(--line); }
+#title .how div { display: grid; justify-items: center; gap: 5px; }
+#title .how svg { width: 34px; height: 34px; }
+#title .go { font-size: clamp(22px, calc(7 * var(--u)), 30px); padding: 16px 34px 15px; border-radius: 999px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold));
+  box-shadow: 0 6px 0 #a9670a, 0 0 34px rgba(255,210,63,.55); animation: pulse 1.1s ease-in-out infinite alternate; }
+@keyframes pulse { to { transform: scale(1.06); box-shadow: 0 6px 0 #a9670a, 0 0 54px rgba(255,210,63,.85); } }
+#title .best { margin: 14px 0 clamp(8px, calc(3 * var(--v)), 26px); font-size: 13px; letter-spacing: .12em; font-weight: 700; color: var(--dim); min-height: 18px; }
+#title .best b { color: var(--ink); }
+
+/* ---- result ---- */
+#result { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; pointer-events: none; opacity: 0; transition: opacity .2s; }
+#result.on { opacity: 1; }
+#result .card { pointer-events: auto; width: min(100%, 430px); box-sizing: border-box; background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 18px 18px 16px;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translateY(40px); transition: transform .35s cubic-bezier(.2,1.2,.3,1); box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  max-height: 100%; overflow-y: auto; }
+#result.on .card { transform: none; }
+#result .tag { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: .2em; font-weight: 700; color: var(--dim); }
+#result .tag .nb { color: #1a0630; background: var(--gold); padding: 3px 9px 2px; border-radius: 999px; letter-spacing: .12em; animation: pulse .5s ease-in-out infinite alternate; }
+#result .big { font-size: clamp(56px, calc(19 * var(--u)), 92px); line-height: 1; text-align: center; margin: 6px 0 2px; font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #fff, #ffe9a6 55%, var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 4px 0 rgba(0,0,0,.4)); }
+#result .sub { text-align: center; font-size: 13px; color: var(--dim); min-height: 18px; font-weight: 700; letter-spacing: .04em; }
+#result .sub b { color: var(--ink); }
+#result .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0 12px; }
+#result .stats div { background: rgba(255,255,255,.06); border-radius: 12px; padding: 8px 4px 7px; text-align: center; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
+#result .stats small { display: block; font-size: 9.5px; letter-spacing: .14em; color: var(--dim); margin-top: 2px; }
+#result .week { border-top: 1px solid var(--line); padding-top: 11px; }
+#result .week .hd { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--dim); }
+#result .week .hd b { font-size: 19px; letter-spacing: 0; color: var(--cyan); font-variant-numeric: tabular-nums; }
+#result .bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; height: 54px; align-items: end; margin-top: 8px; }
+#result .bars i { display: block; border-radius: 5px 5px 2px 2px; background: rgba(255,255,255,.16); min-height: 3px; position: relative; }
+#result .bars i.has { background: linear-gradient(180deg, var(--cyan), #1b7fbf); }
+#result .bars i.today.has { background: linear-gradient(180deg, #fff3a8, var(--gold)); }
+#result .bars i.old.has { background: linear-gradient(180deg, #ff8fa6, var(--red)); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .55; } }
+#result .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; font-size: 9.5px; letter-spacing: .08em; text-align: center; color: var(--dim); margin-top: 4px; font-weight: 700; }
+#result .note { font-size: 12.5px; line-height: 1.35; color: var(--dim); margin-top: 8px; }
+#result .note b { color: #ff9db0; }
+#result .board { border-top: 1px solid var(--line); margin-top: 11px; padding-top: 10px; font-size: 13.5px; }
+#result .board .hd { font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--dim); margin-bottom: 5px; }
+#result .board ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
+#result .board li { display: flex; justify-content: space-between; gap: 10px; font-variant-numeric: tabular-nums; }
+#result .board li.me { color: var(--gold); font-weight: 700; }
+#result .name { display: flex; gap: 8px; align-items: center; margin-top: 11px; font-size: 11px; letter-spacing: .14em; font-weight: 700; color: var(--dim); }
+#result .name input { flex: 1; min-width: 0; font: inherit; font-size: 16px; letter-spacing: .02em; color: var(--ink); background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 10px;
+  padding: 8px 10px; outline: none; pointer-events: auto; user-select: text; -webkit-user-select: text; }
+#result .name input:focus { border-color: var(--cyan); }
+#result .btns { display: grid; grid-template-columns: 1fr; gap: 9px; margin-top: 13px; }
+#result .again { font-size: 24px; padding: 15px 10px 14px; border-radius: 16px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a; }
+#result .again:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
+#result .share { font-weight: 700; letter-spacing: .1em; font-size: 14px; padding: 12px 10px; border-radius: 14px; border: 1px solid rgba(45,226,230,.6); color: var(--cyan); background: rgba(45,226,230,.08); }
+#paused { display: grid; place-items: center; text-align: center; background: rgba(4,3,18,.6); pointer-events: auto; }
+#paused div { font-size: 34px; } #paused small { display: block; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: .16em; color: var(--dim); margin-top: 8px; font-weight: 700; }
+#fatal { display: grid; place-items: center; text-align: center; padding: 30px; font-size: 15px; line-height: 1.5; background: var(--night); pointer-events: auto; }
+@media (min-aspect-ratio: 1/1) and (max-height: 520px) {
+  #result { justify-content: center; align-items: flex-end; }
+  #result .card { width: min(46%, 430px); }
+  #title .park { margin-top: calc(3 * var(--v)); } #title h1 { font-size: clamp(54px, calc(15 * var(--v)), 124px); }
+}
+@media (max-height: 520px) {
+  #title .how, #title .queen i { display: none; }
+  #title .queen { margin-top: 0; } #title .park { margin-top: 6px; } #title h1 { font-size: clamp(40px, calc(20 * var(--v)), 90px); }
+  #title .today { margin-top: 8px; padding: 6px 12px; font-size: 13px; } #title .go { padding: 11px 28px 10px; font-size: 20px; } #title .best { margin: 8px 0 2px; }
+  #result .card { padding: 12px 14px; } #result .big { font-size: clamp(40px, calc(16 * var(--v)), 70px); } #result .week .bars { height: 30px; }
+}
+@media (max-height: 620px) and (max-aspect-ratio: 1/1) {
+  #result .card { padding: 13px 14px 12px; } #result .big { font-size: clamp(46px, calc(16 * var(--u)), 70px); margin: 2px 0 0; }
+  #result .stats { margin: 8px 0; } #result .stats div { padding: 6px 2px 5px; font-size: 15px; } #result .stats small { font-size: 8.5px; letter-spacing: .08em; }
+  #result .week { padding-top: 8px; } #result .bars { height: 30px; margin-top: 5px; } #result .note { font-size: 11.5px; margin-top: 5px; }
+  #result .name { margin-top: 8px; } #result .name input { padding: 6px 9px; } #result .btns { margin-top: 9px; gap: 7px; } #result .again { font-size: 21px; padding: 12px 10px 11px; } #result .share { padding: 10px; font-size: 13px; }
+  #title .how { padding: 7px 12px 6px; margin-bottom: 10px; } #title .how svg { width: 26px; height: 26px; }
+}
+#title .turn { display: none; }
+@media (max-height: 520px) and (min-aspect-ratio: 1/1) { #title .turn { display: block; font-size: 11px; letter-spacing: .14em; font-weight: 700; color: var(--gold); margin-top: 6px; } }
+@media (prefers-reduced-motion: reduce) { #title .go, #result .tag .nb { animation: none; } }
+</style>
+<div id="comet">
+ <div id="stage">
+  <canvas id="gl"></canvas>
+  <div class="vig"></div>
+  <div class="flash" id="flash"></div>
+
+  <div class="layer" id="hud">
+    <div class="score disp" id="score">0</div>
+    <div class="target" id="target" hidden></div>
+    <div class="mult"><div><div class="lbl">COMBO</div><div class="x disp" id="mx">×1</div></div><div class="bar"><i id="mbar"></i></div></div>
+    <div class="stars"><span id="nstars">0</span><small>STARS</small></div>
+    <div id="pops"></div>
+    <div id="hint"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 5l7 7-7 7"/></svg><span id="hintt"></span></div>
+  </div>
+
+  <div class="layer" id="title">
+    <div class="queen"><img src="queen.jpg" alt="Lira, the queen of the park" width="64" height="64"><div><small>THE PARK OF</small><b>QUEEN LIRA</b><i>she is an AI</i></div></div>
+    <div class="park"><b id="parkname">LIRALAND</b> · RIDE 01</div>
+    <h1 class="disp"><span>THE</span>COMET</h1>
+    <div class="today" id="today"></div>
+    <div class="dare" id="dare" hidden></div>
+    <div class="turn">TURN YOUR PHONE UPRIGHT FOR THE BEST RIDE</div>
+    <div class="grow"></div>
+    <div class="how">
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l-7 7 7 7M21 10l7 7-7 7"/></svg><span data-key="← → LANE">SWIPE: LANE</span></div>
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15l7-7 7 7M17 8v18"/></svg><span data-key="↑ JUMP">UP: JUMP</span></div>
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l7 7 7-7M17 26V8"/></svg><span data-key="↓ DUCK">DOWN: DUCK</span></div>
+    </div>
+    <button class="go disp" id="go">TAP TO RIDE</button>
+    <div class="best" id="tbest"></div>
+  </div>
+
+  <div class="layer" id="result" hidden>
+    <div class="card">
+      <div class="tag"><span id="rtrack">TODAY'S TRACK</span><span class="nb" id="rnb" hidden>NEW BEST</span></div>
+      <div class="big disp" id="rscore">0</div>
+      <div class="sub" id="rsub"></div>
+      <div class="stats">
+        <div><span id="rm">0</span><small>METRES</small></div>
+        <div><span id="rs">0</span><small>STARS</small></div>
+        <div><span id="rx">×1</span><small>TOP COMBO</small></div>
+        <div><span id="rn">0</span><small>NEAR MISS</small></div>
+      </div>
+      <div class="week">
+        <div class="hd"><span>YOUR WEEK</span><b id="wsum">0</b></div>
+        <div class="bars" id="wbars"></div>
+        <div class="days" id="wdays"></div>
+        <div class="note" id="wnote"></div>
+      </div>
+      <div class="board" id="board" hidden><div class="hd" id="bhd">THIS WEEK'S RIDERS</div><ol id="blist"></ol></div>
+      <label class="name" id="namerow">RIDER <input id="name" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="done"></label>
+      <div class="btns">
+        <button class="again disp" id="again">RIDE AGAIN</button>
+        <button class="share" id="share">DARE A FRIEND TO BEAT IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer disp" id="paused" hidden><div>PAUSED<small>TAP TO CONTINUE</small></div></div>
+  <div class="layer" id="fatal" hidden></div>
+
+  <div id="corner">
+    <button id="snd" aria-label="Sound on or off"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path id="sndw" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/><path id="sndx" d="M17 9l5 6M22 9l-5 6" style="display:none"/></svg></button>
+  </div>
+ </div>
+</div>
+<script>
+window.addEventListener('error', function (e) { var f = document.getElementById('fatal'); if (f && !window.__comet) { f.hidden = false; f.textContent = 'The ride could not start on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
+</script>
+<script>window.COMET_CONFIG = {park:'SEVENFAIR',url:'https://lira-ia.github.io/sevenfair/comet/',submit:'https://ntfy.sh/sevenfair-comet-r8w3',board:'board.json',epoch:'2026-11-11'};</script>
+<script src="sim.js"></script>
+<script type="module" src="game.js"></script>
+</body>
+</html>
