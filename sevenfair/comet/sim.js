@@ -5,14 +5,14 @@
   'use strict';
   var FPS = 60;
   var U = 100;                       // distance units per metre
-  var V0 = 20, VMAX = 46;            // speed, units per frame (12 m/s -> 27.6 m/s)
-  var V_STEP = 9000;                 // +1 speed every 90 m
-  var JUMP_F = 34, DUCK_F = 30;      // frames in the air / sliding
-  var AIR_LO = 5, AIR_HI = JUMP_F - 4;
+  var V0 = 16, VMAX = 46;            // speed, units per frame (9.6 m/s -> 27.6 m/s)
+  var V_STEP = 8000;                 // +1 speed every 80 m: top speed after about two and a half minutes
+  var JUMP_F = 34, DUCK_F = 36;      // frames in the air / sliding
+  var AIR_LO = 3, AIR_HI = JUMP_F - 3;
   var NEAR_F = 14;                   // a lane change this close to a gate counts as a near miss
   var MAX_FRAMES = FPS * 60 * 20;    // no ride lasts longer than 20 minutes
   var MULT_MAX = 8, STREAK_PER_MULT = 10;
-  var GAP_MAX = 52, GAP_MIN = 30;    // frames between two obstacles, start and hardest
+  var GAP_MAX = 80, GAP_MIN = 34;    // frames between two obstacles: 1.3 s at the start, 0.57 s at the hardest (after about a minute)
   // cells
   var EMPTY = 0, GATE = 1, HURDLE = 2, BEAM = 3, STAR = 4, STAR_AIR = 5;
 
@@ -33,14 +33,14 @@
   }
   function daySeed(day) { return hashSeed('liraland-comet-' + day); }
   function speedAt(s) { var v = V0 + Math.floor(s / V_STEP); return v > VMAX ? VMAX : v; }
-  function gapAt(k) { var g = GAP_MAX - 2 * Math.floor(k / 6); return g < GAP_MIN ? GAP_MIN : g; }
+  function gapAt(k) { var g = GAP_MAX - Math.floor(k * 2 / 3); return g < GAP_MIN ? GAP_MIN : g; }
 
   // ---- the track: rows of three cells, generated on demand, identical for everyone on the same seed ----
   function Course(seed) {
     this.rnd = prng(seed);
     this.rows = [];                  // {s, c:[left, mid, right], k: obstacle index or -1 for a star row}
-    this.nextS = 46 * U;             // first obstacle 46 m in
-    this.prevS = 16 * U;
+    this.nextS = 44 * U;             // first obstacle 44 m in, four and a half seconds
+    this.prevS = 14 * U;
     this.k = 0;
     this.lastFree = 1;
   }
@@ -49,13 +49,17 @@
     while (this.nextS <= upTo) this.addSegment();
   };
   Course.prototype.addSegment = function () {
-    var k = this.k++, s = this.nextS, tier = Math.min(6, Math.floor(k / 9));
+    var k = this.k++, s = this.nextS;
     var c = [EMPTY, EMPTY, EMPTY], r = this.pick(100), a = this.pick(3), b, free = -1, need = 0; // need: 0 lane, 1 jump, 2 duck
     var kind;
-    if (k < 3) kind = 0;
-    else if (tier === 0) kind = r < 60 ? 0 : r < 80 ? 2 : 3;
-    else if (tier === 1) kind = r < 30 ? 0 : r < 55 ? 1 : r < 75 ? 2 : r < 90 ? 3 : 4;
-    else if (tier === 2) kind = r < 15 ? 0 : r < 45 ? 1 : r < 60 ? 2 : r < 75 ? 3 : r < 88 ? 4 : 5;
+    // one new thing at a time: first only single gates, then the first jump, then the first duck, then the mixes
+    if (k < 6) kind = 0;
+    else if (k === 6) kind = 2;
+    else if (k < 12) kind = r < 70 ? 0 : 2;
+    else if (k === 12) kind = 3;
+    else if (k < 18) kind = r < 50 ? 0 : r < 75 ? 2 : 3;
+    else if (k < 30) kind = r < 30 ? 0 : r < 55 ? 1 : r < 75 ? 2 : r < 95 ? 3 : 4;
+    else if (k < 48) kind = r < 15 ? 0 : r < 45 ? 1 : r < 60 ? 2 : r < 75 ? 3 : r < 90 ? 4 : 5;
     else kind = r < 8 ? 0 : r < 36 ? 1 : r < 48 ? 2 : r < 60 ? 3 : r < 76 ? 4 : r < 88 ? 5 : 6;
     if (kind === 0) { c[a] = GATE; free = (a + 1 + this.pick(2)) % 3; }                       // one gate
     else if (kind === 1) { free = a; c[(a + 1) % 3] = GATE; c[(a + 2) % 3] = GATE; }          // two gates
@@ -66,7 +70,7 @@
     else { free = a; c[(a + 1) % 3] = GATE; c[(a + 2) % 3] = GATE; c[a] = BEAM; need = 2; }
     // a trail of stars leading into the way through (sometimes a tempting one that ends at a gate)
     var v = speedAt(s), gap = s - this.prevS;
-    var lane = free, trap = tier >= 2 && this.pick(100) < 15;
+    var lane = free, trap = k >= 30 && this.pick(100) < (k >= 48 ? 15 : 10);
     if (trap) { for (var i = 0; i < 3; i++) if (c[i] === GATE) lane = i; }
     var n = 3 + this.pick(2), step = Math.floor(gap / (n + 3));
     if (step < 5 * v) { n = 2; step = Math.floor(gap / 5); }

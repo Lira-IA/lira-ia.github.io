@@ -369,7 +369,7 @@ function pilot(r) {
   if (sr && sr.k < 0 && eta > 9) want = sr.c.indexOf(S.STAR);
   const cur = r.lane + 1;
   if (want < cur) act('L', r); else if (want > cur) act('R', r);
-  if (r.lane + 1 === target) { if (need === 1 && eta <= 12 && eta >= 5 && r.jumpT < S.AIR_LO) act('U', r); if (need === 2 && eta <= 10 && !r.sliding() && r.duckT === 0) act('D', r); }
+  if (r.lane + 1 === target) { if (need === 1 && eta <= 12 && eta >= 5 && r.jumpT < S.AIR_LO) act('U', r); if (need === 2 && eta <= 10 && r.duckT <= eta) act('D', r); }
 }
 function act(a, r) {
   r = r || R; if (!r || r.dead) return;
@@ -417,7 +417,7 @@ function hud() {
     const ob = rows[i];
     if (ob) {
       const eta = (ob.s - R.s) / S.speedAt(R.s), li = R.lane + 1, c = ob.c[li];
-      if (eta < 46 && eta > 3) {
+      if (eta < 62 && eta > 3) {
         if (c === S.GATE) { const l = li > 0 ? ob.c[li - 1] : S.GATE, r = li < 2 ? ob.c[li + 1] : S.GATE; h = l === S.EMPTY ? 'L' : r === S.EMPTY ? 'R' : l !== S.GATE ? 'L' : 'R'; }
         else if (c === S.HURDLE && !R.airborne() && R.jumpT === 0) h = 'U';
         else if (c === S.BEAM && !R.sliding()) h = 'D';
