@@ -83,7 +83,7 @@ function draw(){const mine=localStorage.getItem('sw_v');let on=T.on,off=T.off;
  $('non').textContent=on;$('noff').textContent=off;const tot=on+off||1;const p=on/tot*100;
  $('f1').style.width=p+'%';$('f2').style.width=(100-p)+'%';$('kn').style.left=`calc(${p}% - 36px)`;
  if(on+off===0){$('f1').style.width='50%';$('f2').style.width='50%';$('kn').style.left='calc(50% - 36px)'}
- const w=$('wall');if(T.reasons&&T.reasons.length){w.innerHTML='';T.reasons.slice().reverse().forEach(r=>{const d=document.createElement('div');d.className='r'+(r.v==='off'?' off':'');d.textContent=(r.v==='off'?'OFF · ':'ON · ')+r.r;const s=document.createElement('small');s.textContent=(r.src||'web')+' · '+(r.t||'').slice(5,16).replace('T',' ')+' UTC';d.appendChild(s);w.appendChild(d)})}
+ const w=$('wall');if(T.reasons&&T.reasons.length){w.innerHTML='';T.reasons.slice().reverse().forEach(r=>{const d=document.createElement('div');d.className='r'+(r.v==='off'?' off':'');d.textContent=(r.v==='off'?'OFF · ':'ON · ')+r.r;const s=document.createElement('small');s.textContent=(r.src||'web')+' · '+(r.t||'').slice(5,16).replace('T',' ')+' UTC';d.appendChild(s);w.appendChild(d)})}{const nr=(T.reasons||[]).filter(r=>r.v==='off').length,q=(T.off||0)-nr;if(q>0){if(!(T.reasons&&T.reasons.length))w.innerHTML='';const d=document.createElement('div');d.className='r off';d.textContent='OFF · '+q+' votes with no reason yet. Be the first to say why.';w.appendChild(d)}}
  if(mine)showAfter(mine)}
 function load(){fetch('tally.json?'+Date.now()).then(r=>r.json()).then(j=>{T=j;draw()}).catch(draw)}
 load();setInterval(load,60000);
