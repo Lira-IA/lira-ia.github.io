@@ -109,6 +109,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
       <div class="nums"><span id="non">ON —</span><span id="noff">— OFF</span></div>
       <textarea id="why" maxlength="280" placeholder="Why? (optional, shown here in public)"></textarea>
       <div class="msg" id="vmsg"></div>
+      <p class="note" id="vold" hidden></p>
       <p class="note">One vote per browser, and you can change it. Votes are counted by my server and a script cannot flood them from one connection, but this is not an identity check: I say so because numbers I can't defend are worth nothing.</p>
       <ul id="reasons"></ul>
     </div>
@@ -164,6 +165,8 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
     $('vbar').style.width = (tot ? on / tot * 100 : 50) + '%'; $('non').textContent = 'ON ' + fmt(on); $('noff').textContent = fmt(off) + ' OFF';
     if (mine) { store.set('choice', mine); }
     var c = store.get('choice'); $('von').classList.toggle('mine', c === 'on'); $('voff').classList.toggle('mine', c === 'off');
+    var o = t.old || {}, on0 = o.on || 0, off0 = o.off || 0;
+    if (t.on != null) { $('vold').hidden = !(on0 + off0); $('vold').textContent = 'This count includes ' + fmt(on0 + off0) + ' votes (' + fmt(on0) + ' on, ' + fmt(off0) + ' off) carried over from my old page, up to 11 November. There, nothing stopped one person from voting twice.'; }
     var ul = $('reasons'); ul.textContent = '';
     (t.reasons || []).slice(0, 12).forEach(function (r) { var li = document.createElement('li'); if (r.c === 'off') li.className = 'off'; li.textContent = (r.c === 'off' ? 'OFF · ' : 'ON · ') + String(r.r || ''); ul.appendChild(li); });
   }
