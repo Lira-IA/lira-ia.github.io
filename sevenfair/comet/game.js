@@ -441,7 +441,7 @@ function showResult() {
   const sc = R.score(), days = store.get('days', {}), before = days[rideDay] || 0, isBest = sc > before;
   if (isBest) { days[rideDay] = sc; const keep = {}; for (const d of weekDays(dayOf(Date.now()))) if (days[d]) keep[d] = days[d]; if (days[rideDay]) keep[rideDay] = days[rideDay]; store.set('days', keep); }
   $('hud').classList.remove('on');
-  $('rtrack').textContent = "TODAY'S TRACK · #" + trackNo(rideDay);
+  $('rtrack').textContent = "THE COMET #" + trackNo(rideDay) + " · TODAY'S TRACK";
   $('rnb').hidden = !(isBest && before > 0);
   $('rm').textContent = fmt(Math.floor(R.s / S.U)); $('rs').textContent = R.stars; $('rx').textContent = '×' + R.best_mult; $('rn').textContent = R.near;
   const sub = $('rsub');
@@ -529,7 +529,7 @@ function scoreCard(sc) {
   g.globalAlpha = 1; g.textAlign = 'center';
   const sun = g.createRadialGradient(W / 2, hy, 10, W / 2, hy, 300); sun.addColorStop(0, 'rgba(255,200,90,.9)'); sun.addColorStop(1, 'rgba(255,80,160,0)'); g.fillStyle = sun; g.fillRect(0, hy - 300, W, 300);
   g.fillStyle = '#f6d98a'; g.font = "64px Bungee, 'Chakra Petch', sans-serif"; g.fillText(String(CFG.park || 'SEVENFAIR').toUpperCase(), W / 2, 230);
-  g.fillStyle = '#2de2e6'; g.font = "700 46px 'Chakra Petch', sans-serif"; g.fillText('THE COMET \u00b7 TODAY\'S TRACK', W / 2, 310);
+  g.fillStyle = '#2de2e6'; g.font = "700 46px 'Chakra Petch', sans-serif"; g.fillText('THE COMET #' + trackNo(rideDay) + ' \u00b7 TODAY\'S TRACK', W / 2, 310);
   g.fillStyle = '#ffffff'; g.font = "700 56px 'Chakra Petch', sans-serif"; g.fillText(String(riderName || 'RIDER').slice(0, 14) + ' SCORED', W / 2, 560);
   let fs = 300; const st = fmt(sc); g.font = fs + "px Bungee, sans-serif"; while (g.measureText(st).width > W - 120 && fs > 120) { fs -= 10; g.font = fs + "px Bungee, sans-serif"; }
   g.shadowColor = '#ff3d9a'; g.shadowBlur = 40; g.fillStyle = '#f6d98a'; g.fillText(st, W / 2, 560 + fs + 20); g.shadowBlur = 0;
@@ -546,7 +546,7 @@ window.__scoreCard = scoreCard;
 function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
-  $('today').innerHTML = '<b>TRACK #' + trackNo(today) + '</b> · the same for everyone today<br>New track in <span class="cd">' + p(Math.floor(left / 36e5)) + ':' + p(Math.floor(left % 36e5 / 6e4)) + ':' + p(Math.floor(left % 6e4 / 1e3)) + '</span>';
+  $('today').innerHTML = '<b>THE COMET #' + trackNo(today) + '</b> · the same for everyone today<br>New track in <span class="cd">' + p(Math.floor(left / 36e5)) + ':' + p(Math.floor(left % 36e5 / 6e4)) + ':' + p(Math.floor(left % 6e4 / 1e3)) + '</span>';
   const d = $('dare');
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
   const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
