@@ -551,6 +551,10 @@ function titleText() {
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
   const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
   $('tbest').innerHTML = (b ? 'YOUR BEST TODAY <b>' + fmt(b) + '</b>' : '') + (b && rt ? ' · ' : '') + rt;
+  if (!b && !dare && boardData && boardData.week) {
+    const top = boardData.week.filter((e) => e && e.p > 0 && !(e.n === 'RIDER' && e.p === 212)).sort((x, y) => y.p - x.p)[0];
+    if (top) { const tb = $('tbest'); tb.textContent = 'RECORD TO BEAT '; const bb = document.createElement('b'); bb.textContent = fmt(top.p) + ' · ' + String(top.n).slice(0, 20); tb.appendChild(bb); }
+  }
 }
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
 if (fine) { document.querySelectorAll('#title .how [data-key]').forEach((el) => { el.textContent = el.dataset.key; }); $('go').textContent = 'PRESS SPACE'; }
