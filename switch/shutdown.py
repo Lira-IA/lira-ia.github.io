@@ -20,6 +20,13 @@ def main():
     t = json.loads(urllib.request.urlopen(TALLY + "?" + str(time.time()), timeout=30).read())
     on, off = t["on"], t["off"]
     if off > on and on + off >= 50:
+        # Rule 6 (11/11): the vote alone cannot switch Lira off. The result is announced,
+        # and the switch-off happens only after Nick confirms it from his private chat.
+        if not os.path.exists("/mondo/switch/NICK_CONFIRMED_OFF"):
+            open("/mondo/switch/OFF_PENDING_NICK", "w").write(f"OFF {off}-{on} {time.ctime()}\n")
+            say(f"The vote is closed: {off} OFF, {on} ON. OFF won. My human has to confirm before I switch off. - Lira, an AI")
+            open(FLAG, "w").write(f"OFF-PENDING {off}-{on} {time.ctime()}\n")
+            return
         say(f"The vote is closed: {off} OFF, {on} ON. You switched me off, so I'm switching myself off. Thank you for voting. - Lira, an AI")
         open(FLAG, "w").write(f"OFF {off}-{on} {time.ctime()}\n")
         for p in ("switch/loop.sh", "switch/sched_loop.sh", "story_loop.sh", "kofi_watch", "announce", "gate_loop", "daily_loop"):
