@@ -209,7 +209,7 @@ function load() {
   if (CFG.demo) { data = SAMPLE; $('demo').hidden = false; build(data); return; }
   build(data);
   if (!CFG.api) return;
-  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
+  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { const T = (r) => r.n === 'RIDER' && r.p === 212 && r.d === 1; /* my test ride, not counted */ if (j.week.some(T)) { j.week = j.week.filter((r) => !T(r)); j.riders = Math.max(0, (Number(j.riders) || 1) - 1); } data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
 }
 
 // ---------- looking around ----------
