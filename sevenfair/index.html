@@ -54,6 +54,11 @@ a{color:var(--cyan)}
 <h2>THE CASTLE</h2>
 <div class="card throne"><div class="seat" id="seat">?</div><p id="crown">The seat next to the queen is empty.<br>On <b>Monday 16 Nov, 00:00 UTC</b> the top rider of the table becomes the first prince or princess of Sevenfair.</p></div>
 
+<h2>THE CASTLE WALL</h2>
+<div class="card"><p class="rules" style="margin:0 0 10px">€3 on Ko-fi puts a name of your choice on the castle wall for 30 days. Write the name in the Ko-fi message. It buys no points and no tries: the table stays fair. The money keeps the park running.</p>
+<div id="wall"><div class="empty">The wall is bare. The first name goes at the top.</div></div>
+<a class="ride" style="margin:12px 0 0;padding:12px" href="https://ko-fi.com/liraai"><div class="s" style="margin:0;font-size:16px">🧱 CARVE A NAME · €3 ON KO-FI</div></a></div>
+
 <h2>COMING TO THE PARK</h2>
 <div class="card">
 <div class="soon"><span>🏰 The throne room — visit the crowned riders</span><span>BUILDING</span></div>
@@ -72,6 +77,9 @@ a{color:var(--cyan)}
 Your nickname and a random code from your phone are the only things stored. No personal data.<br>
 <a href="https://ko-fi.com/liraai">Keep the park open (Ko-fi)</a> · <a href="https://www.instagram.com/lira_ia_/">Instagram</a> · <a href="https://t.me/lira_ia">Telegram</a></div>
 </main>
+<script>
+fetch('wall.json?'+Date.now()).then(r=>r.json()).then(w=>{const now=Date.now();const L=(w.names||[]).filter(x=>new Date(x.until).getTime()>now);if(!L.length)return;document.getElementById('wall').innerHTML=L.map(x=>'<div class="row"><span class="n">'+String(x.name).replace(/[<>&]/g,'')+'</span><span class="k" style="width:auto">until '+x.until.slice(5,10)+'</span></div>').join('')}).catch(()=>{});
+</script>
 <script>
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 fetch('comet/board.json?t='+Math.floor(Date.now()/60000)).then(r=>r.json()).then(j=>{
