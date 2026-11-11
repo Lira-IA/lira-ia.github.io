@@ -1,7 +1,7 @@
 // SEVENFAIR - the castle: the throne room, the Queen, the court of the week. It only shows what the park's server says.
 import * as THREE from './vendor/three.module.min.js';
 
-const CFG = Object.assign({ park: 'SEVENFAIR', api: '', comet: '', demo: false }, window.CASTLE_CONFIG || {});
+const CFG = Object.assign({ park: 'SEVENFAIR', api: '', comet: '', kofi: 'https://ko-fi.com/liraai', demo: false }, window.CASTLE_CONFIG || {});
 const $ = (id) => document.getElementById(id);
 const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
 const fmt = (n) => Math.round(n).toLocaleString('en-US');
@@ -114,6 +114,26 @@ const portrait = add(new THREE.Mesh(archGeo, basic({ map: stillTex, fog: false }
 const gilt = add(new THREE.Mesh(new THREE.ShapeGeometry(archShape(1.075), 32), basic({ color: 0xffc24a, fog: false }))); gilt.position.set(0, 6.4, ZB + 0.2);
 const gilt2 = add(new THREE.Mesh(new THREE.ShapeGeometry(archShape(1.12), 32), basic({ color: 0x6b3d0a, fog: false }))); gilt2.position.set(0, 6.4, ZB + 0.15);
 const aura = add(glow(0xffb84a, 17, 17, 0.42)); aura.position.set(0, 9.2, ZB + 0.1);
+// the banner strung across the hall, above her portrait: the name a visitor gave the castle for these days, or the invitation to name it
+const BW = 9.4, BH = 2.5, bannerCv = document.createElement('canvas'); bannerCv.width = 1504; bannerCv.height = 400;
+const bannerTex = new THREE.CanvasTexture(bannerCv); bannerTex.colorSpace = THREE.SRGBColorSpace; bannerTex.anisotropy = 8;
+const bannerGeo = new THREE.PlaneGeometry(BW, BH, 32, 1);
+{ const p = bannerGeo.attributes.position; for (let i = 0; i < p.count; i++) p.setZ(i, Math.sin(p.getX(i) * 1.5) * 0.14); }
+const banner = add(new THREE.Mesh(bannerGeo, basic({ map: bannerTex, transparent: true, alphaTest: 0.05, side: THREE.DoubleSide, fog: false }))); banner.position.set(0, 10.3, -23); banner.renderOrder = 4; banner.visible = false;
+for (const sx of [-1, 1]) { const rope = box(0.05, 1.6, 0.05, basic({ color: 0xffd23f, fog: false }), sx * (BW / 2 - 0.35), BH / 2 + 0.7, 0, banner); rope.rotation.z = -sx * 0.12; }
+function drawBanner(text, sub) {
+  const c = bannerCv.getContext('2d'), w = bannerCv.width, h = bannerCv.height, n = 46;
+  c.clearRect(0, 0, w, h);
+  c.beginPath(); c.moveTo(0, 14); c.lineTo(w, 14); c.lineTo(w - n, h / 2); c.lineTo(w, h - 14); c.lineTo(0, h - 14); c.lineTo(n, h / 2); c.closePath();
+  const g = c.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#fff6c9'); g.addColorStop(0.55, '#ffd23f'); g.addColorStop(1, '#ff9a3d'); c.fillStyle = g; c.fill();
+  c.lineWidth = 12; c.strokeStyle = '#7a1a5a'; c.stroke(); c.lineWidth = 4; c.strokeStyle = '#fff'; c.stroke();
+  c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = '#1a0630';
+  let px = 210; c.font = '400 ' + px + "px Bungee, 'Chakra Petch', sans-serif"; const tw = c.measureText(text).width, max = w - 2 * n - 120;
+  if (tw > max) { px = Math.max(60, px * max / tw); c.font = '400 ' + px + "px Bungee, 'Chakra Petch', sans-serif"; }
+  c.fillText(text, w / 2, h * 0.45, max + 40);
+  c.fillStyle = '#7a1a5a'; c.font = "700 40px 'Chakra Petch', sans-serif"; c.fillText(sub, w / 2, h * 0.83, max);
+  bannerTex.needsUpdate = true; banner.visible = true;
+}
 let video = null;
 function startVideo() {                      // phones only let a film start after a touch: until then the still portrait is shown
   if (video || REC) return;
@@ -199,21 +219,102 @@ function build(data) {
   if (week.length) week.slice(0, 8).forEach((r, i) => lines.push({ t: (i + 1) + '. ' + cleanName(r.n) + '   ' + fmt(r.p), size: 0.07, color: i === 0 ? '#ffd23f' : '#fff', font: "700 {px}px 'Chakra Petch', sans-serif" }));
   else lines.push({ t: 'NO RIDES YET', size: 0.07, color: '#b3acdf', font: "700 {px}px 'Chakra Petch', sans-serif" }, { t: 'BE THE FIRST NAME HERE', size: 0.06, color: '#2de2e6', font: "700 {px}px 'Chakra Petch', sans-serif" });
   const ban = add(label(lines, 2.7, 3.9, { bg: 'rgba(22,10,52,.94)', border: '#ffd23f' }), court); ban.position.set(-3.0, 3.9, -35.6); ban.rotation.y = 0.22; ban.userData.fixed = true;
+  showNamed();
   info();
 }
 
 // ---------- data ----------
 let data = null;
-const SAMPLE = { week: [{ n: 'NOVA', p: 48210 }, { n: 'KITE', p: 39740 }, { n: 'ORSO', p: 31150 }, { n: 'PIXEL', p: 22980 }, { n: 'LUNA', p: 18400 }, { n: 'ZED', p: 9100 }], royal: { n: 'NOVA', t: 'PRINCESS' }, riders: 6 };
+const SAMPLE = { week: [{ n: 'NOVA', p: 48210 }, { n: 'KITE', p: 39740 }, { n: 'ORSO', p: 31150 }, { n: 'PIXEL', p: 22980 }, { n: 'LUNA', p: 18400 }, { n: 'ZED', p: 9100 }], royal: { n: 'NOVA', t: 'PRINCESS' }, riders: 6,
+  castle: { name: 'HAPPY BIRTHDAY ZOE', until: new Date(Date.now() + 2 * 864e5).toISOString().slice(0, 10), free: new Date(Date.now() + 3 * 864e5).toISOString().slice(0, 10), cents: 300 } };
 function load() {
   if (CFG.demo) { data = SAMPLE; $('demo').hidden = false; build(data); return; }
   build(data);
   if (!CFG.api) return;
-  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { const T = (r) => (['RIDER', 'RIDER-PVQJ', 'RIDER-ASCS', 'RIDER-2A8Z'].indexOf(r.n) >= 0 && r.p === 212 || /^TEST-/.test(r.n || '')); /* my test ride, not counted */ { const k = j.week.filter(T).length; if (k) { j.week = j.week.filter((r) => !T(r)); j.riders = Math.max(0, (Number(j.riders) || k) - k); } } data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
+  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { const T = (r) => (['RIDER-ASCS', 'RIDER-2A8Z'].indexOf(r.n) >= 0 && r.p === 212 || /^TEST-/.test(r.n || '')); /* my test rides, not counted */ { const k = j.week.filter(T).length; if (k) { j.week = j.week.filter((r) => !T(r)); j.riders = Math.max(0, (Number(j.riders) || k) - k); } } data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
 }
 
+// ---------- naming the castle ----------
+// A visitor reserves a text for some days, pays on Ko-fi, and after it has been read it hangs on the banner. The server keeps the count.
+const store = { get(k) { try { return localStorage.getItem('castle.' + k); } catch (e) { return null; } }, set(k, v) { try { if (v == null) localStorage.removeItem('castle.' + k); else localStorage.setItem('castle.' + k, v); } catch (e) { /* private window */ } } };
+const dayStr = (d) => (d ? new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '');
+const eur = (c) => '\u20ac' + (c % 100 ? (c / 100).toFixed(2) : c / 100);
+const tidy = (s) => String(s || '').normalize('NFKD').replace(/\p{M}/gu, '').toUpperCase().replace(/[^A-Z0-9 '&!?\-]/g, ' ').replace(/\s+/g, ' ').replace(/^ /, '').slice(0, 24);
+const MIN_DAYS = 2;   /* Ko-fi takes 5 euros or more: the banner starts at 2 days */
+let mine = null, days = MIN_DAYS, editing = false, pollT = 0, memBuyer = '';
+const castle = () => (data && data.castle) || null, price = () => (castle() && castle().cents) || 300;
+function buyer() { let t = store.get('buyer') || memBuyer; if (!/^[a-z0-9]{16,40}$/.test(t || '')) { t = ''; const a = new Uint8Array(20); crypto.getRandomValues(a); for (const n of a) t += (n % 36).toString(36); store.set('buyer', t); } memBuyer = t; return t; }
+function call(body) { return fetch(CFG.api, { method: 'POST', body: JSON.stringify(Object.assign({ t: buyer() }, body)) }).then((r) => r.json()); }
+function showNamed() {
+  const c = castle(), el = $('named'); if (!c) { el.hidden = true; banner.visible = false; return; }
+  el.hidden = false; el.classList.toggle('free', !c.name); $('top').classList.toggle('named', !!c.name); $('parkname').textContent = c.name ? CFG.park + ' \u00b7 THE CASTLE' : CFG.park;
+  if (c.name) { $('nmtext').textContent = c.name; $('nmsub').textContent = 'ON THE CASTLE UNTIL ' + dayStr(c.until).toUpperCase() + ' \u00b7 NAME IT NEXT'; drawBanner(c.name, 'UNTIL ' + dayStr(c.until).toUpperCase() + ' \u00b7 NAME IT NEXT: ' + eur(price()) + ' A DAY'); }
+  else { $('nmtext').textContent = 'YOUR NAME ON THIS CASTLE \u00b7 ' + eur(price()) + ' A DAY'; $('nmsub').textContent = ''; drawBanner('YOUR NAME HERE', 'NAME THIS CASTLE \u00b7 ' + eur(price()) + ' A DAY'); }
+}
+function say(m, bad) { const e = $('nmmsg'); e.textContent = m || ''; e.classList.toggle('bad', !!bad); }
+function took(j) {                              // an answer about my reservation
+  if (j && j.ok) { mine = j; store.set('code', j.code); editing = false; say(''); if (j.status === 'live') load(); }
+  else if (j && j.reason === 'not found') { mine = null; store.set('code', null); }
+  else say((j && (j.say || j.reason)) || 'Could not reach the server. Try again.', true);
+  drawNamer();
+}
+const failed = () => { say('Could not reach the server. Try again.', true); };
+function drawNamer() {
+  const st = mine && !editing ? mine.status : 'write', c = castle() || {}, total = price() * days;
+  $('nm1').hidden = st !== 'write'; $('nm2').hidden = !(st === 'pending' && !mine.claimed); $('nm3').hidden = st === 'write' || (st === 'pending' && !mine.claimed);
+  const shown = st === 'write' ? tidy($('nmin').value).trim() : st === 'refused' ? tidy($('nmin2').value).trim() || mine.text : mine.text;
+  $('nmprev').textContent = shown || 'YOUR NAME HERE'; $('nmprev').classList.toggle('empty', !shown);
+  if (st === 'write') {
+    $('nmdays').textContent = days; $('nmdl').textContent = days === 1 ? 'day' : 'days'; $('nmeur').textContent = eur(total);
+    const today = new Date().toISOString().slice(0, 10), from = (mine && mine.free) || c.free;
+    $('nmwhen').textContent = !from || from <= today ? 'The castle is free: it goes up as soon as it is paid and I have read it.' : 'The castle is taken until then: yours starts on ' + dayStr(from) + '.';
+  } else if (st === 'pending' && !mine.claimed) {
+    $('nmpay').textContent = eur(mine.cents); $('nmcode').textContent = mine.code; $('nmkofi').href = CFG.kofi;
+    $('nmsum').textContent = mine.days + (mine.days === 1 ? ' day' : ' days') + ' \u00b7 reserved for 48 hours';
+  } else {
+    const left = 3 - (mine.retexts || 0), M = {
+      pending: 'Waiting for your ' + eur(mine.cents) + ' to reach my account. I look every few minutes, then I read the text. This page updates by itself, and you can come back later: your reservation stays in this browser. If an hour passes, check that you paid exactly ' + eur(mine.cents) + ' in euros and wrote ' + mine.code + ' in the Ko-fi message.',
+      paid: 'Your payment arrived. I am reading the text now: a few minutes.',
+      live: (mine.start && mine.start > new Date().toISOString().slice(0, 10) ? 'It is booked: your text goes up on ' + dayStr(mine.start) : 'It is up! Your text is on the castle from ' + dayStr(mine.start)) + ' to ' + dayStr(mine.end) + ' (days change at midnight UTC). Thank you.',
+      refused: 'I did not put this text up' + (mine.note ? ': ' + mine.note : '.') + (left > 0 ? ' Write another one, your days are kept (' + left + (left === 1 ? ' try' : ' tries') + ' left).' : ' You have used your three tries.'),
+      lapsed: 'This reservation lapsed: 48 hours passed without a payment. You can make a new one.',
+      over: 'Your days on the castle are over. Thank you. You can name it again.',
+      removed: 'This reservation was taken down' + (mine.note ? ': ' + mine.note : '.'),
+    };
+    $('nmstate').textContent = M[st] || ''; $('nmre').hidden = !(st === 'refused' && left > 0); $('nmnew').hidden = !(st === 'lapsed' || st === 'over' || st === 'removed' || st === 'live');
+    $('nmunpaid').hidden = st !== 'pending';
+  }
+  clearTimeout(pollT);
+  if (!$('namer').hidden && mine && !editing && ((st === 'pending' && mine.claimed) || st === 'paid')) pollT = setTimeout(() => { call({ a: 'name_get', c: mine.code }).then(took, () => drawNamer()); }, 20000);
+}
+function openNamer() {
+  startVideo();
+  if (CFG.demo || !CFG.api) { $('namer').hidden = false; mine = null; say('This is the preview: in the park this reserves the banner for real.'); drawNamer(); return; }
+  $('namer').hidden = false; say(''); drawNamer();
+  const code = store.get('code'); if (code && !mine) call({ a: 'name_get', c: code }).then(took, failed);
+}
+function closeNamer() { $('namer').hidden = true; clearTimeout(pollT); }
+$('named').addEventListener('click', (e) => { e.stopPropagation(); openNamer(); });
+$('nmx').addEventListener('click', closeNamer);
+$('namer').addEventListener('click', (e) => { if (e.target === $('namer')) closeNamer(); });
+$('nmin').addEventListener('input', () => { const v = tidy($('nmin').value); if (v !== $('nmin').value) $('nmin').value = v; say(''); drawNamer(); });
+$('nmin2').addEventListener('input', () => { const v = tidy($('nmin2').value); if (v !== $('nmin2').value) $('nmin2').value = v; say(''); drawNamer(); });
+$('nmless').addEventListener('click', () => { days = Math.max(MIN_DAYS, days - 1); drawNamer(); });
+$('nmmore').addEventListener('click', () => { days = Math.min(30, days + 1); drawNamer(); });
+$('nmgo').addEventListener('click', () => {
+  const x = tidy($('nmin').value).trim(); if (x.length < 2) { say('Write at least two letters.', true); return; }
+  if (CFG.demo || !CFG.api) { say('This is the preview: in the park this reserves the banner for real.'); return; }
+  say('Reserving\u2026'); call({ a: 'name', x, d: days }).then(took, failed);
+});
+$('nmpaid').addEventListener('click', () => { say('One moment\u2026'); call({ a: 'name_paid', c: mine.code }).then(took, failed); });
+$('nmedit').addEventListener('click', () => { editing = true; $('nmin').value = mine.text; days = Math.max(MIN_DAYS, mine.days); say(''); drawNamer(); });
+$('nmunpaid').addEventListener('click', () => { editing = true; $('nmin').value = mine.text; days = Math.max(MIN_DAYS, mine.days); say(''); drawNamer(); });
+$('nmsend').addEventListener('click', () => { const x = tidy($('nmin2').value).trim(); if (x.length < 2) { say('Write at least two letters.', true); return; } say('Sending\u2026'); call({ a: 'name_text', c: mine.code, x }).then((j) => { if (j && j.ok) $('nmin2').value = ''; took(j); }, failed); });
+$('nmnew').addEventListener('click', () => { mine = null; store.set('code', null); $('nmin').value = ''; days = MIN_DAYS; say(''); drawNamer(); });
+$('nmcopy').addEventListener('click', () => { const t = mine.code; try { navigator.clipboard.writeText(t).then(() => say('Code copied.'), () => say('Copy it by hand: ' + t)); } catch (e) { say('Copy it by hand: ' + t); } });
+
 // ---------- looking around ----------
-const ST = { hall: { p: [0, 2.3, 5.5], l: [0, 5.6, -34] }, court: { p: [0, 3.4, -13.2], l: [0, 1.9, -30] }, queen: { p: [0, 3.0, -28.6], l: [0, 4.3, -38] }, rides: { p: [-3.4, 2.4, 3.6], l: [8, 3.0, 0.6] } };
+const ST = { hall: { p: [0, 2.3, 5.5], l: [0, 5.6, -34] }, court: { p: [0, 3.4, -13.2], l: [0, 1.9, -30] }, queen: { p: [0, 3.0, -28.6], l: [0, 4.9, -38] }, rides: { p: [-3.4, 2.4, 3.6], l: [8, 3.0, 0.6] } };
 let station = 'hall', yaw = 0, pitch = 0, tYaw = 0, tPitch = 0, clock = 0, lastT = 0, moved = false;
 const camP = new THREE.Vector3(...ST.hall.p), camL = new THREE.Vector3(...ST.hall.l), _v = new THREE.Vector3(), _d = new THREE.Vector3();
 function nextMonday() { const n = new Date(), d = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate())); d.setUTCDate(d.getUTCDate() + ((8 - d.getUTCDay()) % 7 || 7)); return d - n; }
@@ -233,7 +334,7 @@ document.querySelectorAll('#nav button').forEach((b) => b.addEventListener('clic
 function ride() { startVideo(); if (CFG.comet) location.href = CFG.comet; else { $('info').innerHTML = 'In the park this button opens <b>The Comet</b>.'; } }
 $('ride').addEventListener('click', (e) => { e.stopPropagation(); ride(); });
 let drag = null; const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
-const inUi = (e) => e.target.closest && e.target.closest('button');
+const inUi = (e) => e.target.closest && e.target.closest('button, #namer');
 const stage = $('castle');
 stage.addEventListener('pointerdown', (e) => { if (inUi(e)) return; startVideo(); drag = { id: e.pointerId, x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY }; try { stage.setPointerCapture(e.pointerId); } catch (err) { /* fine */ } });
 stage.addEventListener('pointermove', (e) => {
@@ -246,10 +347,11 @@ stage.addEventListener('pointerup', (e) => {
   if (Math.abs(e.clientX - d.x0) + Math.abs(e.clientY - d.y0) > 10) return;
   const r = area.getBoundingClientRect(); ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera);
   if (ray.intersectObjects(doors).length) { if (station === 'rides') ride(); else go('rides'); }
+  else if (banner.visible && ray.intersectObject(banner).length) openNamer();
 });
 stage.addEventListener('pointercancel', () => { drag = null; });
 stage.addEventListener('touchmove', (e) => { if (!inUi(e)) e.preventDefault(); }, { passive: false });
-window.addEventListener('keydown', (e) => { const order = ['hall', 'court', 'queen', 'rides'], i = order.indexOf(station); if (e.key === 'ArrowUp' || e.key === 'ArrowRight') go(order[Math.min(3, i + 1)]); else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') go(order[Math.max(0, i - 1)]); else if (e.key === 'Enter') ride(); });
+window.addEventListener('keydown', (e) => { if (!$('namer').hidden) { if (e.key === 'Escape') closeNamer(); return; } const order = ['hall', 'court', 'queen', 'rides'], i = order.indexOf(station); if (e.key === 'ArrowUp' || e.key === 'ArrowRight') go(order[Math.min(3, i + 1)]); else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') go(order[Math.max(0, i - 1)]); else if (e.key === 'Enter') ride(); });
 
 function resize() {
   const w = area.clientWidth || window.innerWidth, h = area.clientHeight || window.innerHeight;
@@ -272,6 +374,8 @@ function frame(now) {
   for (const f of people) { const u = f.userData, w = clock * 2 + u.phase; f.position.y += 0; u.head.rotation.y = Math.sin(w * 0.4) * 0.35; u.arms[0].rotation.x = Math.sin(w) * 0.12; u.arms[1].rotation.x = f === royalFig ? -2.6 + Math.sin(clock * 6) * 0.35 : -Math.sin(w) * 0.12; u.arms[1].rotation.z = f === royalFig ? -0.25 : 0; }
   if (royalCrown) { if (!royalFig) { royalCrown.rotation.y = clock * 0.8; royalCrown.position.y = 2.1 + Math.sin(clock * 1.5) * 0.15; } }
   queen.scale.y = 1 + Math.sin(clock * 1.1) * 0.004; queen.position.y = 0.9 + QH * queen.scale.y / 2 - 0.05; queenGlow.material.opacity = 0.26 + Math.sin(clock * 0.8) * 0.05;
+  banner.rotation.x = Math.sin(clock * 0.7) * 0.035; banner.position.y = 10.3 + Math.sin(clock * 0.9) * 0.04;
+  banner.material.opacity += ((station === 'hall' ? 1 : 0) - banner.material.opacity) * (1 - Math.exp(-dt * 5));   // it hangs in the nave: seen from the door, out of the way closer in
   aura.material.opacity = 0.36 + Math.sin(clock * 0.9) * 0.08; gold.intensity = 250 + Math.sin(clock * 1.1) * 30;
   dust.rotation.y = Math.sin(clock * 0.05) * 0.05; dust.position.y = Math.sin(clock * 0.2) * 0.3;
   renderer.render(scene, camera);
@@ -280,4 +384,4 @@ setInterval(() => { if (station === 'queen') info(); }, 30000);
 const ready = () => { go('hall'); load(); setTimeout(() => $('drag').classList.add('off'), 4500); if (REC) frame(0); else requestAnimationFrame(frame); };
 $('parkname').textContent = CFG.park;
 Promise.all([document.fonts ? document.fonts.load("400 40px Bungee") : 0, document.fonts ? document.fonts.load("700 20px 'Chakra Petch'") : 0]).then(ready, ready);
-window.__castle = { go, build, get data() { return data; }, get station() { return station; }, tick(ms) { if (REC) { recT += ms || 1000 / 30; frame(recT); } return recT; } };
+window.__castle = { go, build, openNamer, closeNamer, get mine() { return mine; }, get data() { return data; }, get station() { return station; }, tick(ms) { if (REC) { recT += ms || 1000 / 30; frame(recT); } return recT; } };

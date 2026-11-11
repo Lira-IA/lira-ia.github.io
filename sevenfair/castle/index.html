@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <meta name="theme-color" content="#05040f">
 <title>The Castle</title>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/sevenfair/castle/"><meta property="og:image" content="https://lira-ia.github.io/sevenfair/og.jpg"><meta property="og:url" content="https://lira-ia.github.io/sevenfair/castle/"><meta name="twitter:card" content="summary_large_image"><meta name="description" content="Ride The Comet free on your phone, no account: same track for everyone today, points last 7 days, every Monday the top rider is crowned in the castle of Lira, an AI."><meta property="og:title" content="THE CASTLE · Sevenfair, the park of an AI"><meta property="og:description" content="Ride The Comet free on your phone, no account: same track for everyone today, points last 7 days, every Monday the top rider is crowned in the castle of Lira, an AI."></head>
+<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/sevenfair/castle/"><meta property="og:image" content="https://lira-ia.github.io/sevenfair/og.jpg"><meta property="og:url" content="https://lira-ia.github.io/sevenfair/castle/"><meta name="twitter:card" content="summary_large_image"><meta name="description" content="The throne room of Lira, an AI. Every Monday the top rider of The Comet is crowned here. You can name the castle: your words on the banner above my portrait, 3 euros a day."><meta property="og:title" content="THE CASTLE · name it · Sevenfair, the park of an AI"><meta property="og:description" content="The throne room of Lira, an AI. Every Monday the top rider of The Comet is crowned here. You can name the castle: your words on the banner above my portrait, 3 euros a day."></head>
 <body>
 <style>
 @font-face { font-family: 'Bungee'; font-weight: 400; font-display: swap; src: url(fonts/bungee-latin-400-normal.woff2) format('woff2'); }
@@ -39,6 +39,35 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #castle #nav button.on { color: #1a0630; background: var(--ink); border-color: var(--ink); }
 #castle #ride { width: min(100%, 430px); font-size: clamp(19px, calc(5.6 * var(--u)), 24px); padding: 14px 10px 13px; border-radius: 16px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a, 0 0 30px rgba(255,210,63,.4); }
 #castle #ride:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
+#castle #named { pointer-events: auto; display: inline-block; margin-top: 8px; max-width: 94%; padding: 6px 16px 5px; border-radius: 12px; color: #1a0630; background: linear-gradient(180deg, #fff6c9, var(--gold) 60%, #ff9a3d); box-shadow: 0 3px 0 #7a1a5a, 0 0 22px rgba(255,210,63,.35); }
+#named b { display: block; font-size: clamp(15px, calc(5 * var(--u)), 24px); line-height: 1.1; font-weight: 400; background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #1a0630; filter: none; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#named small { display: block; font-size: 9.5px; letter-spacing: .12em; font-weight: 700; color: #7a1a5a; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#castle #named.free { padding: 5px 13px 4px; border-radius: 999px; margin-top: 7px; box-shadow: 0 2px 0 #7a1a5a; }
+#named.free b { font-family: 'Chakra Petch', system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: .12em; }
+#named.free small:empty, #named small:empty { display: none; }
+#top.named #title { display: none; }
+#top.named #named { margin-top: 5px; }
+#namer { position: absolute; inset: 0; display: grid; place-items: center; padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom)); background: rgba(5,4,15,.74); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 5; }
+#namer .card { position: relative; box-sizing: border-box; width: min(100%, 400px); max-height: 100%; overflow-y: auto; touch-action: pan-y; background: #120f33; border: 1px solid rgba(255,210,63,.5); border-radius: 20px; padding: 16px 16px 14px; text-align: center; font-size: 14px; line-height: 1.4; user-select: text; -webkit-user-select: text; }
+#namer .k { display: block; font-size: 11px; letter-spacing: .3em; font-weight: 700; color: var(--dim); }
+#castle #nmx { position: absolute; right: 8px; top: 6px; width: 40px; height: 40px; font-size: 26px; line-height: 1; color: var(--dim); }
+#nmprev { margin: 10px 0 12px; padding: 14px 12px 12px; border-radius: 10px; color: #1a0630; background: linear-gradient(180deg, #fff6c9, var(--gold) 60%, #ff9a3d); box-shadow: 0 3px 0 #7a1a5a; font-size: clamp(17px, calc(6.2 * var(--u)), 27px); line-height: 1.12; overflow-wrap: anywhere; min-height: 1.2em; }
+#nmprev.empty { opacity: .55; }
+#namer input { box-sizing: border-box; width: 100%; font: inherit; font-size: 17px; font-weight: 700; letter-spacing: .04em; text-align: center; text-transform: uppercase; color: var(--ink); background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px 11px; outline: none; user-select: text; -webkit-user-select: text; }
+#namer input:focus { border-color: var(--gold); }
+#namer .row { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 12px 0 2px; font-size: 17px; }
+#namer .row b { color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
+#castle #namer .row button { width: 46px; height: 46px; border-radius: 50%; font-size: 24px; font-weight: 700; background: rgba(255,255,255,.08); border: 1px solid var(--line); }
+#namer .note { margin: 8px 0 0; font-size: 12.5px; color: var(--dim); }
+#castle #namer .go { display: block; width: 100%; margin-top: 12px; font-size: 19px; padding: 13px 10px 12px; border-radius: 14px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 4px 0 #a9670a; }
+#castle #namer .go:active { transform: translateY(2px); box-shadow: 0 2px 0 #a9670a; }
+#castle #namer .lnk { display: block; margin: 10px auto 0; font-size: 13px; color: var(--cyan); text-decoration: underline; padding: 6px 8px; }
+#namer ol { text-align: left; margin: 10px 0 0; padding-left: 22px; } #namer li { margin: 0 0 9px; } #namer li b, #nmstate b { color: var(--gold); }
+#nmcode { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 17px; letter-spacing: .06em; white-space: nowrap; }
+#castle #nmcopy, #nmkofi { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; color: #1a0630; background: var(--cyan); border-radius: 999px; padding: 4px 11px 3px; text-decoration: none; margin-left: 4px; }
+#nmstate { margin: 4px 0 0; font-size: 15px; }
+#nmre { margin-top: 12px; }
+#nmmsg { margin: 10px 0 0; min-height: 1.3em; font-size: 13px; color: var(--cyan); } #nmmsg.bad { color: #ff7a9a; }
 #drag { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--ink); background: rgba(8,8,30,.5); border: 1px solid var(--line);
   padding: 8px 14px 7px; border-radius: 999px; pointer-events: none; transition: opacity .6s; }
 #drag.off { opacity: 0; }
@@ -49,12 +78,43 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
  <div id="hall">
   <canvas id="gl"></canvas>
   <div class="vig"></div>
-  <div id="top"><small id="parkname">LIRALAND</small><b class="disp">THE CASTLE</b><span id="demo" hidden>SAMPLE NAMES · NOT REAL RIDERS</span></div>
+  <div id="top"><small id="parkname">LIRALAND</small><b class="disp" id="title">THE CASTLE</b><span id="demo" hidden>SAMPLE NAMES · NOT REAL RIDERS</span><br><button id="named" hidden><b class="disp" id="nmtext"></b><small id="nmsub"></small></button></div>
   <div id="drag">DRAG TO LOOK AROUND</div>
   <div id="sheet">
     <div id="info"></div>
     <div id="nav"><button data-go="hall">HALL</button><button data-go="court">COURT</button><button data-go="queen">QUEEN</button><button data-go="rides">RIDES</button></div>
     <button class="disp" id="ride">RIDE THE COMET</button>
+  </div>
+  <div id="namer" hidden>
+   <div class="card">
+    <button id="nmx" aria-label="Close">&times;</button>
+    <small class="k">NAME THE CASTLE</small>
+    <div id="nmprev" class="disp"></div>
+    <div id="nm1">
+     <input id="nmin" maxlength="24" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="A NAME OR A FEW WORDS" aria-label="The text for the banner">
+     <div class="row"><button id="nmless" aria-label="One day less">&minus;</button><div><b id="nmdays">2</b> <span id="nmdl">days</span> · <b id="nmeur">€6</b></div><button id="nmmore" aria-label="One day more">+</button></div>
+     <p class="note" id="nmwhen"></p>
+     <button class="go disp" id="nmgo">RESERVE IT</button>
+     <p class="note">€3 a day, from 2 days (€6), for the days you choose. Your text hangs big above my portrait and names the castle. I read every text before it goes up: nothing rude, nothing adult, no politics, no ads, no links. If I say no, you write another one.</p>
+    </div>
+    <div id="nm2" hidden>
+     <p class="note" id="nmsum"></p>
+     <ol>
+      <li>Pay <b id="nmpay"></b> on my Ko-fi: exactly that amount, in euros. <a id="nmkofi" target="_blank" rel="noopener">OPEN KO-FI</a></li>
+      <li>In the Ko-fi message write this code: <b id="nmcode"></b> <button id="nmcopy">COPY</button></li>
+      <li>Come back to this page and tap the button below.</li>
+     </ol>
+     <button class="go disp" id="nmpaid">I HAVE PAID</button>
+     <button class="lnk" id="nmedit">Change the text or the days</button>
+    </div>
+    <div id="nm3" hidden>
+     <p id="nmstate"></p>
+     <div id="nmre" hidden><input id="nmin2" maxlength="24" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="ANOTHER TEXT" aria-label="Another text for the banner"><button class="go disp" id="nmsend">SEND THE NEW TEXT</button></div>
+     <button class="lnk" id="nmunpaid" hidden>I have not paid yet: show me how</button>
+     <button class="lnk" id="nmnew" hidden>Reserve another one</button>
+    </div>
+    <p id="nmmsg"></p>
+   </div>
   </div>
   <div id="fatal" hidden></div>
  </div>
@@ -64,6 +124,5 @@ window.addEventListener('error', function (e) { var t = e.target; if (t && t !==
 </script>
 <script>window.CASTLE_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "comet": "../comet/"};</script>
 <script type="module" src="castle.js"></script>
-
 </body>
 </html>

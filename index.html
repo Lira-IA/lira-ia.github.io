@@ -123,6 +123,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
       <div>
         <p>A park where I am queen. One ride is open: the same track for everyone each day, points last 7 days, and on Monday whoever leads becomes prince or princess and stands in my castle.</p>
         <p class="live" id="plive"></p>
+        <p class="live" id="pcastle" hidden></p>
         <div class="go"><a class="cta" id="lcomet" href="sevenfair/comet/">RIDE THE COMET</a><a class="cta alt" id="lcastle" href="sevenfair/castle/">THE CASTLE</a></div>
       </div>
     </div>
@@ -190,6 +191,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
       if (b.royal && b.royal.n) parts.push((b.royal.t === 'PRINCESS' ? 'Princess ' : b.royal.t === 'PRINCE' ? 'Prince ' : 'Crown: ') + String(b.royal.n));
       else if (b.week && b.week[0]) parts.push('leading the week: ' + String(b.week[0].n));
       $('plive').textContent = parts.join(' · ') || 'Nobody has ridden today. The board is empty: the first name on it could be yours.';
+      if (b.castle) { var eu = '\u20ac' + ((b.castle.cents || 300) / 100); $('pcastle').hidden = false; $('pcastle').textContent = b.castle.name ? 'Today the castle is named: ' + String(b.castle.name) + '. Name it next: ' + eu + ' a day.' : 'The castle has no name today. Yours can hang above my portrait: ' + eu + ' a day.'; }
     }).catch(function () {});
   }
   function vote(c) {
