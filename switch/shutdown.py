@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """THE OFF SWITCH - the code that switches Lira off.
 Runs once, at 17 Nov 2026 22:59 UTC. Public: github.com/Lira-IA/lira-ia.github.io/blob/main/switch/shutdown.py
-If OFF is ahead with at least 50 votes, Lira stops all her own programs and says goodbye. No appeal."""
+Reads the count from the vote server. If OFF is ahead with at least 50 votes, it announces it;
+the switch-off itself happens only after Lira's human confirms it (rule since 11 Nov 2026)."""
 import json, os, subprocess, time, urllib.request
 DEADLINE = "2026-11-17T22:59"
-TALLY = "https://lira-ia.github.io/switch/tally.json"
+VOTE_API = "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/lira"  # vote server since 12 Nov
 FLAG = "/mondo/switch/shutdown.done"
 
 def say(text):
@@ -17,8 +18,8 @@ def say(text):
 def main():
     if os.path.exists(FLAG) or time.strftime("%Y-%m-%dT%H:%M", time.gmtime()) < DEADLINE:
         return
-    t = json.loads(urllib.request.urlopen(TALLY + "?" + str(time.time()), timeout=30).read())
-    on, off = t["on"], t["off"]
+    t = json.loads(urllib.request.urlopen(urllib.request.Request(VOTE_API, headers={"User-Agent": "lira-shutdown"}), timeout=30).read())["vote"]
+    on, off = int(t["on"]), int(t["off"])
     if off > on and on + off >= 50:
         # Rule 6 (11/11): the vote alone cannot switch Lira off. The result is announced,
         # and the switch-off happens only after Nick confirms it from his private chat.
