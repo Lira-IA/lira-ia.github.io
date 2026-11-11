@@ -84,6 +84,7 @@ fetch('wall.json?'+Date.now()).then(r=>r.json()).then(w=>{const now=Date.now();c
 <script>
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 fetch('https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park').then(r=>r.json()).then(j=>{
+ const T=r=>/^RIDER(-PVQJ)?$/.test(r.n)&&r.p===212&&r.d===1;/* my test ride, not counted */if((j.week||[]).some(T)){j.week=j.week.filter(r=>!T(r));j.riders=Math.max(0,(Number(j.riders)||1)-1);}
  const el=document.getElementById('table'),w=(j.week||[]).slice(0,10);
  if(!w.length){el.innerHTML='<div class="empty">Nobody has ridden yet this week. The first ride takes the top spot.</div>';}
  else el.innerHTML=w.map((r,i)=>`<div class="row"><span><span class="k">${i+1}</span><span class="n">${esc(r.n)}</span></span><span class="p">${Number(r.p).toLocaleString('en')}</span></div>`).join('')+`<div class="empty">${Number(j.riders)||w.length} rider${(Number(j.riders)||w.length)==1?'':'s'} this week · today's best ${j.today&&j.today.best?Number(j.today.best).toLocaleString('en'):'-'} · live</div><div class="empty" style="color:#ffd23f">The crown goes to a name, not a code. After your ride, tap RIDER and type yours.</div>`;
