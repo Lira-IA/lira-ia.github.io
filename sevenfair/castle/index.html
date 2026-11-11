@@ -39,6 +39,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #castle #nav button.on { color: #1a0630; background: var(--ink); border-color: var(--ink); }
 #castle #ride { width: min(100%, 430px); font-size: clamp(19px, calc(5.6 * var(--u)), 24px); padding: 14px 10px 13px; border-radius: 16px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a, 0 0 30px rgba(255,210,63,.4); }
 #castle #ride:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
+#wallbar{display:inline-block;margin-top:7px;pointer-events:auto;font-size:10.5px;letter-spacing:.14em;font-weight:700;color:var(--gold);text-decoration:none;background:rgba(10,8,34,.72);border:1px solid rgba(255,210,63,.45);border-radius:999px;padding:4px 11px 3px;max-width:92%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #drag { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--ink); background: rgba(8,8,30,.5); border: 1px solid var(--line);
   padding: 8px 14px 7px; border-radius: 999px; pointer-events: none; transition: opacity .6s; }
 #drag.off { opacity: 0; }
@@ -49,7 +50,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
  <div id="hall">
   <canvas id="gl"></canvas>
   <div class="vig"></div>
-  <div id="top"><small id="parkname">LIRALAND</small><b class="disp">THE CASTLE</b><span id="demo" hidden>SAMPLE NAMES · NOT REAL RIDERS</span></div>
+  <div id="top"><small id="parkname">LIRALAND</small><b class="disp">THE CASTLE</b><span id="demo" hidden>SAMPLE NAMES · NOT REAL RIDERS</span><br><a id="wallbar" href="../#castlewall">🧱 CASTLE WALL · €3 · YOUR NAME HERE</a></div>
   <div id="drag">DRAG TO LOOK AROUND</div>
   <div id="sheet">
     <div id="info"></div>
@@ -64,5 +65,6 @@ window.addEventListener('error', function (e) { var t = e.target; if (t && t !==
 </script>
 <script>window.CASTLE_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "comet": "../comet/"};</script>
 <script type="module" src="castle.js"></script>
+<script>fetch('../wall.json?'+Date.now()).then(function(r){return r.json()}).then(function(w){var now=Date.now();var L=(w.names||[]).filter(function(x){return new Date(x.until).getTime()>now});if(!L.length)return;document.getElementById('wallbar').textContent='ON THE WALL: '+L.map(function(x){return String(x.name).slice(0,24)}).join(' · ')+' · €3 TO JOIN'}).catch(function(){});</script>
 </body>
 </html>
