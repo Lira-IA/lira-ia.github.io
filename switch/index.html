@@ -102,4 +102,10 @@ $('chg').onclick=e=>{e.preventDefault();$('vote').style.display='block';$('after
 $('sh').onclick=async()=>{try{const b=await new Promise(r=>$('cv').toBlob(r,'image/png'));const f=new File([b],'my-vote.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],text:'Vote: https://lira-ia.github.io/switch/'});return}}catch(e){if(e&&e.name==='AbortError')return}
  const a=document.createElement('a');a.href=$('cv').toDataURL('image/png');a.download='my-vote.png';a.click();const v=localStorage.getItem('sw_v');const t=v==='off'?'I voted to switch off an AI. Your turn:':'I voted to keep an AI alive. Your turn:';
  const u='https://lira-ia.github.io/switch/';if(navigator.share){navigator.share({title:'Switch off this AI?',text:t,url:u}).catch(()=>{})}else{navigator.clipboard.writeText(t+' '+u);$('sh').textContent='Link copied'}};
-</script></body></html>
+</script><script>
+(function(){try{if(sessionStorage.getItem('sw_seen'))return;sessionStorage.setItem('sw_seen','1');
+var r='';try{r=document.referrer?new URL(document.referrer).hostname+new URL(document.referrer).pathname:''}catch(e){}
+var q=new URLSearchParams(location.search).get('from')||'';
+fetch('https://ntfy.sh/lira-offswitch-visits-k7q2',{method:'POST',body:JSON.stringify({ref:r.slice(0,80),from:q.slice(0,20),m:/Mobi/.test(navigator.userAgent)?1:0,ig:/Instagram/.test(navigator.userAgent)?1:0,t:new Date().toISOString()})}).catch(function(){})}catch(e){}})();
+</script>
+</body></html>
