@@ -2,7 +2,8 @@
 import * as THREE from './vendor/three.module.min.js';
 
 const S = window.CometSim;
-const CFG = Object.assign({ park: 'LIRALAND', submit: '', board: '', url: '', epoch: '2026-11-11' }, window.COMET_CONFIG || {});
+// api: the park's server (rides in, live board out). submit/board: the older way, a message board plus a file.
+const CFG = Object.assign({ park: 'LIRALAND', api: '', submit: '', board: '', url: '', castle: '', epoch: '2026-11-11' }, window.COMET_CONFIG || {});
 const $ = (id) => document.getElementById(id);
 const store = {
   get(k, d) { try { const v = localStorage.getItem('comet.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -341,7 +342,7 @@ const railTarget = new THREE.Color(MULT_COL[0]);
 
 function newRide(seed, demo) {
   R = new S.Ride(seed); R.vi = 0; R.demo = !!demo; prevS = 0; acc = 0; xVis = 0; rollVis = 0; squash = 1; drift = 0; hist.length = 0; beaten = false;
-  lastScore = -1; lastMult = 1; lastStars = -1; cart.visible = true; railTarget.setHex(MULT_COL[0]);
+  bufU = 0; lastScore = -1; lastMult = 1; lastStars = -1; cart.visible = true; railTarget.setHex(MULT_COL[0]);
 }
 function startRide() {
   auInit();
@@ -371,9 +372,11 @@ function pilot(r) {
   if (want < cur) act('L', r); else if (want > cur) act('R', r);
   if (r.lane + 1 === target) { if (need === 1 && eta <= 12 && eta >= 5 && r.jumpT < S.AIR_LO) act('U', r); if (need === 2 && eta <= 10 && r.duckT <= eta) act('D', r); }
 }
+let bufU = 0;
 function act(a, r) {
   r = r || R; if (!r || r.dead) return;
-  if (!r.input(a)) return;
+  if (!r.input(a)) { if (a === 'U' && !r.demo) bufU = 14; return; }
+  if (a === 'U' || a === 'D') bufU = 0;
   if (r.demo) return;
   if (a === 'L' || a === 'R') SFX.lane(); else if (a === 'U') SFX.jump(); else SFX.duck();
 }
@@ -449,7 +452,8 @@ function showResult() {
   week(); board();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
-  if (isBest) { if (before > 0) SFX.best(); submit(sc); }
+  if (isBest && before > 0) SFX.best();
+  if (isBest || (CFG.api && !you)) submit(sc);          // every new best, and the first ride of a visit so the rider sees their place
 }
 function week() {
   const now = Date.now(), d7 = weekDays(dayOf(now)), mine = myDays(), max = Math.max(1, ...d7.map((d) => mine[d] || 0));
@@ -459,33 +463,53 @@ function week() {
   const left = Date.parse(dayOf(now)) + DAY - now, h = Math.floor(left / 36e5), m = Math.floor(left % 36e5 / 6e4), old = mine[d7[0]] || 0;
   $('wnote').innerHTML = 'Your best ride of each day counts for 7 days, then it is gone. ' + (old ? '<b>' + fmt(old) + ' points vanish in ' + h + 'h ' + m + 'm.</b>' : 'New track in ' + h + 'h ' + m + 'm.');
 }
-let boardData = null;
+let boardData = null, you = null, crown = store.get('crown', '');
+function drawBoard() {
+  const el = $('board'), rows = (boardData && boardData.week) || [];
+  if (!rows.length) { el.hidden = true; return; }
+  el.hidden = false; let html = ''; const mine = you ? you.n : riderName;
+  rows.slice(0, 8).forEach((r, i) => { const n = cleanName(r.n); html += '<li class="' + (n === mine ? 'me' : '') + '"><span>' + (i + 1) + '. ' + n + (i === 0 ? ' 👑' : '') + '</span><span>' + fmt(r.p) + '</span></li>'; });
+  if (you && you.rank > 8) html += '<li class="me"><span>' + you.rank + '. ' + cleanName(you.n) + '</span><span>' + fmt(you.p) + '</span></li>';
+  $('blist').innerHTML = html;
+}
+function rankLine() {
+  const el = $('rrank'); if (!you) { el.hidden = true; return; }
+  el.hidden = false; el.classList.toggle('court', you.rank <= 5);
+  el.innerHTML = 'YOU ARE <b>#' + fmt(you.rank) + '</b> OF ' + fmt(you.of) + ' THIS WEEK' + (you.rank === 1 ? ' · THE CROWN IS YOURS ON MONDAY' : you.rank <= 5 ? ' · IN THE QUEEN\'S COURT' : '');
+}
 function board() {
-  const el = $('board'); if (!CFG.board) { el.hidden = true; return; }
-  const draw = () => {
-    const rows = (boardData && boardData.week) || []; if (!rows.length) { el.hidden = true; return; }
-    el.hidden = false; let html = '', seen = false;
-    rows.slice(0, 8).forEach((r, i) => { const me = cleanName(r.n) === riderName; seen = seen || me; html += '<li class="' + (me ? 'me' : '') + '"><span>' + (i + 1) + '. ' + cleanName(r.n) + (i === 0 ? ' 👑' : '') + '</span><span>' + fmt(r.p) + '</span></li>'; });
-    if (!seen) { const i = rows.findIndex((r) => cleanName(r.n) === riderName); if (i >= 0) html += '<li class="me"><span>' + (i + 1) + '. ' + riderName + '</span><span>' + fmt(rows[i].p) + '</span></li>'; }
-    $('blist').innerHTML = html;
-  };
-  draw();
-  fetch(CFG.board + (CFG.board.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000)).then((r) => r.json()).then((j) => { boardData = j; if (mode === 'result') draw(); }).catch(() => { /* no board today */ });
+  $('crownrow').hidden = !CFG.api; rankLine(); drawBoard();
+  const src = CFG.api || CFG.board; if (!src) return;
+  fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { boardData = j; if (mode === 'result') drawBoard(); if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
 }
 // the ride itself is sent, not just a number: the park re-runs it and counts what really happened
 function submit(score) {
+  const inputs = S.encode(R.log);
+  if (CFG.api) {
+    const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
+    try {
+      fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
+        if (!j || !j.ok) return; you = j.you; boardData = Object.assign(boardData || {}, { week: j.week });
+        if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
+      }).catch(() => { /* offline: the ride still counts on this phone */ });
+    } catch (e) { /* same */ }
+    return;
+  }
   if (!CFG.submit) return;
-  const inputs = S.encode(R.log), id = token.slice(0, 6) + Date.now().toString(36), size = 3200, n = Math.max(1, Math.ceil(inputs.length / size));
+  const id = token.slice(0, 6) + Date.now().toString(36), size = 3200, n = Math.max(1, Math.ceil(inputs.length / size));
   for (let i = 0; i < n; i++) {
-    const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, id, p: [i + 1, n], i: inputs.slice(i * size, (i + 1) * size) });
-    try { fetch(CFG.submit, { method: 'POST', body, keepalive: true }).catch(() => { /* offline: the ride still counts here */ }); } catch (e) { /* same */ }
+    const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, id, p: [i + 1, n], i: inputs.slice(i * size, (i + 1) * size) });
+    try { fetch(CFG.submit, { method: 'POST', body, keepalive: true }).catch(() => { /* offline */ }); } catch (e) { /* same */ }
   }
 }
+function crownShow() { document.querySelectorAll('#crownrow button').forEach((b) => b.classList.toggle('on', b.dataset.c === crown)); }
+document.querySelectorAll('#crownrow button').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); crown = b.dataset.c; store.set('crown', crown); crownShow(); }));
+crownShow();
 const nameEl = $('name'); nameEl.value = riderName;
 nameEl.addEventListener('input', () => { const c = cleanName(nameEl.value); if (c !== nameEl.value.toUpperCase().slice(0, 14)) nameEl.value = c; });
 nameEl.addEventListener('change', () => { riderName = cleanName(nameEl.value) || riderName; nameEl.value = riderName; store.set('name', riderName); });
 nameEl.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') nameEl.blur(); });
-$('again').addEventListener('click', (e) => { e.stopPropagation(); startRide(); });
+$('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'result') startRide(); });
 $('share').addEventListener('click', (e) => {
   e.stopPropagation();
   const sc = Math.max(R ? R.score() : 0, myDays()[rideDay] || 0), base = CFG.url || (location.origin + location.pathname);
@@ -502,36 +526,72 @@ function titleText() {
   $('today').innerHTML = '<b>TRACK #' + trackNo(today) + '</b> · the same for everyone today<br>New track in <span class="cd">' + p(Math.floor(left / 36e5)) + ':' + p(Math.floor(left % 36e5 / 6e4)) + ':' + p(Math.floor(left % 6e4 / 1e3)) + '</span>';
   const d = $('dare');
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
-  const b = myDays()[today]; $('tbest').innerHTML = b ? 'YOUR BEST TODAY <b>' + fmt(b) + '</b>' : '';
+  const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
+  $('tbest').innerHTML = (b ? 'YOUR BEST TODAY <b>' + fmt(b) + '</b>' : '') + (b && rt ? ' · ' : '') + rt;
 }
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
 if (fine) { document.querySelectorAll('#title .how [data-key]').forEach((el) => { el.textContent = el.dataset.key; }); $('go').textContent = 'PRESS SPACE'; }
-$('parkname').textContent = CFG.park; titleText(); setInterval(() => { if (mode === 'title') titleText(); }, 1000);
-$('go').addEventListener('click', (e) => { e.stopPropagation(); startRide(); });
+$('parkname').textContent = CFG.park; titleText(); if (CFG.api) board();
+if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); }, 1000);
+$('go').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'title') startRide(); });
 
 // ---------- input ----------
 const stage = $('comet');
-let ptr = null;
-stage.addEventListener('pointerdown', (e) => {
-  if (e.target.closest('button, input, .card')) return;
+// One finger: a short flick in any direction, or a tap on the left or right half to change lane.
+// Phones get their own touch listeners (the most dependable route inside apps and in-app browsers); a mouse uses pointer events.
+let g = null;
+const hasTouch = 'ontouchstart' in window;
+function down(id, x, y, ts) {
   if (mode === 'paused') { resume(); return; }
   if (mode === 'title') { startRide(); return; }
   if (mode !== 'ride') return;
-  auInit(); ptr = { id: e.pointerId, x: e.clientX, y: e.clientY, last: '' };
+  auInit(); g = { id, x0: x, y0: y, x, y, last: '', t: ts, moved: false };
+}
+function move(id, x, y) {
+  if (!g || g.id !== id || mode !== 'ride') return;
+  const dx = x - g.x, dy = y - g.y, ax = Math.abs(dx), ay = Math.abs(dy), big = Math.max(ax, ay);
+  if (big < (g.last ? 30 : 14)) return;
+  if (big < 44 && Math.min(ax, ay) > big * 0.8) return;        // too diagonal to tell: wait for a few more pixels
+  const a = ax > ay ? (dx > 0 ? 'R' : 'L') : (dy > 0 ? 'D' : 'U');
+  g.x = x; g.y = y; g.moved = true;
+  if (a === g.last) return;
+  g.last = a; act(a);
+}
+function up(id, x, y, ts) {
+  if (!g || g.id !== id) return;
+  const q = g; g = null;
+  if (mode !== 'ride' || q.moved || ts - q.t > 350 || Math.abs(x - q.x0) > 12 || Math.abs(y - q.y0) > 12) return;
+  const r = area.getBoundingClientRect(); act(x < r.left + r.width / 2 ? 'L' : 'R');
+}
+// Only what is on screen right now counts as a button. The title's big button sits at the bottom of the screen and, once
+// faded out, must not swallow the swipes that start there during a ride.
+const inUi = (e) => {
+  const t = e.target; if (!t || !t.closest) return false;
+  if (t.closest('#corner, #pad')) return true;
+  if (mode === 'result') return !!t.closest('.card');
+  if (mode === 'title') return !!t.closest('button');
+  return false;
+};
+if (hasTouch) {
+  stage.addEventListener('touchstart', (e) => { if (inUi(e)) return; e.preventDefault(); const t = e.changedTouches[0]; down(t.identifier, t.clientX, t.clientY, e.timeStamp); }, { passive: false });
+  stage.addEventListener('touchmove', (e) => { if (inUi(e)) return; e.preventDefault(); for (const t of e.changedTouches) move(t.identifier, t.clientX, t.clientY); }, { passive: false });
+  stage.addEventListener('touchend', (e) => { if (inUi(e)) return; e.preventDefault(); for (const t of e.changedTouches) up(t.identifier, t.clientX, t.clientY, e.timeStamp); }, { passive: false });
+  stage.addEventListener('touchcancel', () => { g = null; });
+}
+stage.addEventListener('pointerdown', (e) => {
+  if (inUi(e) || (hasTouch && e.pointerType === 'touch')) return;
+  down('p' + e.pointerId, e.clientX, e.clientY, e.timeStamp);
   try { stage.setPointerCapture(e.pointerId); } catch (err) { /* fine */ }
 });
-stage.addEventListener('pointermove', (e) => {
-  if (!ptr || e.pointerId !== ptr.id || mode !== 'ride') return;
-  const dx = e.clientX - ptr.x, dy = e.clientY - ptr.y, th = ptr.last ? 34 : 18;
-  if (Math.abs(dx) < th && Math.abs(dy) < th) return;
-  const a = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'R' : 'L') : (dy > 0 ? 'D' : 'U');
-  ptr.x = e.clientX; ptr.y = e.clientY;
-  if (a === ptr.last) return;
-  ptr.last = a; act(a);
-});
-const endPtr = (e) => { if (ptr && e.pointerId === ptr.id) ptr = null; };
-stage.addEventListener('pointerup', endPtr); stage.addEventListener('pointercancel', endPtr);
-stage.addEventListener('touchmove', (e) => { if (!e.target.closest('.card')) e.preventDefault(); }, { passive: false });
+stage.addEventListener('pointermove', (e) => { if (!(hasTouch && e.pointerType === 'touch')) move('p' + e.pointerId, e.clientX, e.clientY); });
+stage.addEventListener('pointerup', (e) => { if (!(hasTouch && e.pointerType === 'touch')) up('p' + e.pointerId, e.clientX, e.clientY, e.timeStamp); });
+stage.addEventListener('pointercancel', (e) => { if (g && g.id === 'p' + e.pointerId) g = null; });
+// optional buttons on screen, for anyone who prefers them to swiping
+let padOn = store.get('pad', false);
+function padShow() { $('hud').classList.toggle('pad', padOn); $('padb').classList.toggle('on', padOn); }
+$('padb').addEventListener('click', (e) => { e.stopPropagation(); padOn = !padOn; store.set('pad', padOn); padShow(); });
+document.querySelectorAll('#pad button').forEach((b) => b.addEventListener('pointerdown', (e) => { e.preventDefault(); e.stopPropagation(); auInit(); if (mode === 'ride') act(b.dataset.a); }));
+padShow();
 stage.addEventListener('contextmenu', (e) => e.preventDefault());
 window.addEventListener('keydown', (e) => {
   if (e.repeat || e.target === nameEl) return;
@@ -620,7 +680,7 @@ function drawTail(sm, y) {
   tailGeo.attributes.position.needsUpdate = true; tailGeo.attributes.color.needsUpdate = true;
 }
 const _c2 = new THREE.Color();
-let slow = 0, slowN = 0;
+let slow = 0, slowN = 0, lite = false;
 
 let recT = 0;
 function frame(now) {
@@ -630,7 +690,7 @@ function frame(now) {
   if (mode === 'paused') return;
   clock += dt;
   // keep it smooth on slower phones: lower the resolution, never the speed
-  if (dt > 0.022) slow++; if (++slowN >= 60) { if (slow > 24 && pixelRatio > 0.75) { pixelRatio = Math.max(0.75, pixelRatio - (pixelRatio > 1 ? 0.5 : 0.25)); resize(); } slow = slowN = 0; }
+  if (dt > 0.022) slow++; if (++slowN >= 60) { if (slow > 24 && pixelRatio > 0.75) { pixelRatio = Math.max(0.75, pixelRatio - (pixelRatio > 1 ? 0.5 : 0.25)); resize(); } else if (slow > 24 && !lite) { lite = true; for (const m of [towers, streaks, archGlow, lamps, gateGlow, starGlow, fire.mesh]) m.visible = false; } slow = slowN = 0; }
 
   if (!R) demoRide();
   let stepped = 0;
@@ -638,6 +698,7 @@ function frame(now) {
     acc += dt * S.FPS;
     while (acc >= 1 && stepped < 8) {
       if (R.demo || autopilot) pilot(R);
+      if (bufU > 0 && !R.demo) { bufU--; if (R.input('U')) { bufU = 0; SFX.jump(); } }
       prevS = R.s; R.step(); stepped++; acc -= 1;
       onEvents(R.events);
       if (R.dead || R.f === 0) break;
@@ -652,7 +713,7 @@ function frame(now) {
   musicTick();
 
   // the cart
-  const tx = R.lane * LW; const k = 1 - Math.exp(-dt * 24); const dx = (tx - xVis) * k; xVis += dx;
+  const tx = R.lane * LW; const k = 1 - Math.exp(-dt * 30); const dx = (tx - xVis) * k; xVis += dx;
   rollVis = lerp(rollVis, clamp(-dx / Math.max(dt, 0.001) * 0.022, -0.5, 0.5), 1 - Math.exp(-dt * 14));
   let y = 0; if (R.jumpT > 0) { const jt = clamp((S.JUMP_F - R.jumpT + (live ? acc : 0)) / S.JUMP_F, 0, 1); y = 4 * 1.75 * jt * (1 - jt); }
   squash = lerp(squash, R.sliding() ? 0.5 : 1, 1 - Math.exp(-dt * 26));

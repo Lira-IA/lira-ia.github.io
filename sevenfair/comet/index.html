@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <meta name="theme-color" content="#060818">
 <title>The Comet</title>
-<script>window.afsStrip=function(e,n){n.u=String(n.u).split(/[?#]/)[0];return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/sevenfair/comet/"><meta property="og:url" content="https://lira-ia.github.io/sevenfair/comet/"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://lira-ia.github.io/sevenfair/og.jpg"><meta property="og:title" content="THE COMET · Sevenfair · beat today's track"><meta property="og:description" content="A night-time park run by an AI. Ride The Comet free on your phone: same track for everyone today, points last 7 days, every Monday the top rider is crowned."><meta name="description" content="A night-time park run by an AI. Ride The Comet free on your phone: same track for everyone today, points last 7 days, every Monday the top rider is crowned."></head>
+</head>
 <body>
 <style>
 @font-face { font-family: 'Bungee'; font-weight: 400; font-display: swap; src: url(fonts/bungee-latin-400-normal.woff2) format('woff2'); }
@@ -69,6 +69,15 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #hint span { position: absolute; top: 100%; margin-top: 8px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-weight: 700; letter-spacing: .14em; font-size: 13px;
   text-shadow: 0 2px 0 rgba(0,0,0,.6); }
 
+#pad { display: none; }
+#hud.pad #pad { display: block; }
+#pad button { position: absolute; width: 84px; height: 84px; border-radius: 26px; background: rgba(12,10,36,.5); border: 2px solid rgba(255,255,255,.42); display: grid; place-items: center; pointer-events: auto; touch-action: none; }
+#pad button:active { background: rgba(255,255,255,.28); }
+#pad svg { width: 44px; height: 44px; fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+#pad .pl { left: max(12px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom)); } #pad .pr { right: max(12px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); }
+#pad .pd { left: max(12px, env(safe-area-inset-left)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 96px); } #pad .pu { right: max(12px, env(safe-area-inset-right)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 96px); }
+#hud.pad .mult, #hud.pad .stars { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 196px); }
+#corner button.on { background: rgba(255,210,63,.9); } #corner button.on svg { stroke: #1a0630; }
 /* ---- corner controls ---- */
 #corner { position: absolute; right: max(12px, env(safe-area-inset-right)); top: max(12px, env(safe-area-inset-top)); display: flex; gap: 8px; z-index: 5; }
 #corner button { width: 40px; height: 40px; border-radius: 12px; background: rgba(12,10,36,.6); border: 1px solid var(--line); display: grid; place-items: center; }
@@ -77,6 +86,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 /* ---- title ---- */
 #title { display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: auto; transition: opacity .25s; }
 #title.off { opacity: 0; pointer-events: none; }
+#comet #title.off *, #comet #result:not(.on) * { pointer-events: none !important; }
 #title .queen { display: flex; align-items: center; gap: 10px; text-align: left; margin-top: clamp(6px, calc(2 * var(--v)), 22px); padding: 5px 16px 5px 5px; border-radius: 999px; background: rgba(10,8,34,.62); border: 1px solid rgba(255,210,63,.45); }
 #title .queen img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 0 0 18px rgba(255,210,63,.5); display: block; }
 #title .queen small { display: block; font-size: 9.5px; letter-spacing: .22em; font-weight: 700; color: var(--dim); }
@@ -108,7 +118,9 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result.on { opacity: 1; }
 #result .card { pointer-events: auto; width: min(100%, 430px); box-sizing: border-box; background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 18px 18px 16px;
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translateY(40px); transition: transform .35s cubic-bezier(.2,1.2,.3,1); box-shadow: 0 20px 60px rgba(0,0,0,.5);
-  max-height: 100%; overflow-y: auto; }
+  max-height: 100%; overflow: hidden; display: flex; flex-direction: column; }
+#result .scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; touch-action: pan-y; overscroll-behavior: contain; margin: 0 -6px; padding: 0 6px; }
+#result .btns { flex: none; }
 #result.on .card { transform: none; }
 #result .tag { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: .2em; font-weight: 700; color: var(--dim); }
 #result .tag .nb { color: #1a0630; background: var(--gold); padding: 3px 9px 2px; border-radius: 999px; letter-spacing: .12em; animation: pulse .5s ease-in-out infinite alternate; }
@@ -116,6 +128,12 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
   background: linear-gradient(180deg, #fff, #ffe9a6 55%, var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 4px 0 rgba(0,0,0,.4)); }
 #result .sub { text-align: center; font-size: 13px; color: var(--dim); min-height: 18px; font-weight: 700; letter-spacing: .04em; }
 #result .sub b { color: var(--ink); }
+#result .rank { text-align: center; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; color: var(--cyan); margin-top: 5px; }
+#result .rank b { font-family: 'Bungee', sans-serif; font-weight: 400; font-size: 17px; color: var(--ink); }
+#result .rank.court { color: var(--gold); }
+#result .crown { display: flex; align-items: center; gap: 7px; margin-top: 10px; font-size: 10.5px; letter-spacing: .12em; font-weight: 700; color: var(--dim); }
+#result .crown button { font-size: 11px; letter-spacing: .1em; font-weight: 700; padding: 6px 10px 5px; border-radius: 999px; border: 1px solid var(--line); color: var(--dim); }
+#result .crown button.on { background: var(--gold); border-color: var(--gold); color: #1a0630; }
 #result .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0 12px; }
 #result .stats div { background: rgba(255,255,255,.06); border-radius: 12px; padding: 8px 4px 7px; text-align: center; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
 #result .stats small { display: block; font-size: 9.5px; letter-spacing: .14em; color: var(--dim); margin-top: 2px; }
@@ -144,6 +162,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .again { font-size: 24px; padding: 15px 10px 14px; border-radius: 16px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a; }
 #result .again:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
 #result .share { font-weight: 700; letter-spacing: .1em; font-size: 14px; padding: 12px 10px; border-radius: 14px; border: 1px solid rgba(45,226,230,.6); color: var(--cyan); background: rgba(45,226,230,.08); }
+#result .tocastle { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--gold); text-decoration: none; padding: 4px 0 0; pointer-events: auto; }
 #paused { display: grid; place-items: center; text-align: center; background: rgba(4,3,18,.6); pointer-events: auto; }
 #paused div { font-size: 34px; } #paused small { display: block; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: .16em; color: var(--dim); margin-top: 8px; font-weight: 700; }
 #fatal { display: grid; place-items: center; text-align: center; padding: 30px; font-size: 15px; line-height: 1.5; background: var(--night); pointer-events: auto; }
@@ -181,6 +200,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
     <div class="mult"><div><div class="lbl">COMBO</div><div class="x disp" id="mx">×1</div></div><div class="bar"><i id="mbar"></i></div></div>
     <div class="stars"><span id="nstars">0</span><small>STARS</small></div>
     <div id="pops"></div>
+    <div id="pad"><button data-a="D" class="pd" aria-label="Duck"><svg viewBox="0 0 24 24"><path d="M6 9l6 7 6-7"/></svg></button><button data-a="U" class="pu" aria-label="Jump"><svg viewBox="0 0 24 24"><path d="M6 15l6-7 6 7"/></svg></button><button data-a="L" class="pl" aria-label="Left"><svg viewBox="0 0 24 24"><path d="M15 6l-7 6 7 6"/></svg></button><button data-a="R" class="pr" aria-label="Right"><svg viewBox="0 0 24 24"><path d="M9 6l7 6-7 6"/></svg></button></div>
     <div id="hint"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 5l7 7-7 7"/></svg><span id="hintt"></span></div>
   </div>
 
@@ -193,9 +213,9 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
     <div class="turn">TURN YOUR PHONE UPRIGHT FOR THE BEST RIDE</div>
     <div class="grow"></div>
     <div class="how">
-      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l-7 7 7 7M21 10l7 7-7 7"/></svg><span data-key="← → LANE">SWIPE: LANE</span></div>
-      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15l7-7 7 7M17 8v18"/></svg><span data-key="↑ JUMP">UP: JUMP</span></div>
-      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l7 7 7-7M17 26V8"/></svg><span data-key="↓ DUCK">DOWN: DUCK</span></div>
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l-7 7 7 7M21 10l7 7-7 7"/></svg><span data-key="← → LANE">SWIPE OR TAP A SIDE</span></div>
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15l7-7 7 7M17 8v18"/></svg><span data-key="↑ JUMP">SWIPE UP: JUMP</span></div>
+      <div><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l7 7 7-7M17 26V8"/></svg><span data-key="↓ DUCK">SWIPE DOWN: DUCK</span></div>
     </div>
     <button class="go disp" id="go">TAP TO RIDE</button>
     <div class="best" id="tbest"></div>
@@ -203,9 +223,11 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 
   <div class="layer" id="result" hidden>
     <div class="card">
+     <div class="scroll">
       <div class="tag"><span id="rtrack">TODAY'S TRACK</span><span class="nb" id="rnb" hidden>NEW BEST</span></div>
       <div class="big disp" id="rscore">0</div>
       <div class="sub" id="rsub"></div>
+      <div class="rank" id="rrank" hidden></div>
       <div class="stats">
         <div><span id="rm">0</span><small>METRES</small></div>
         <div><span id="rs">0</span><small>STARS</small></div>
@@ -219,10 +241,13 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <div class="note" id="wnote"></div>
       </div>
       <div class="board" id="board" hidden><div class="hd" id="bhd">THIS WEEK'S RIDERS</div><ol id="blist"></ol></div>
+      <div class="crown" id="crownrow" hidden>IF YOU WIN THE WEEK <button data-c="prince">PRINCE</button><button data-c="princess">PRINCESS</button></div>
       <label class="name" id="namerow">RIDER <input id="name" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="done"></label>
+     </div>
       <div class="btns">
         <button class="again disp" id="again">RIDE AGAIN</button>
         <button class="share" id="share">DARE A FRIEND TO BEAT IT</button>
+        <a class="tocastle" id="tocastle" hidden>SEE THE COURT IN THE CASTLE →</a>
       </div>
     </div>
   </div>
@@ -231,6 +256,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
   <div class="layer" id="fatal" hidden></div>
 
   <div id="corner">
+    <button id="padb" aria-label="Buttons on screen on or off"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="10" rx="5"/><path d="M7 10.5v3M5.5 12h3M15.5 12h.01M18 12h.01"/></svg></button>
     <button id="snd" aria-label="Sound on or off"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path id="sndw" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/><path id="sndx" d="M17 9l5 6M22 9l-5 6" style="display:none"/></svg></button>
   </div>
  </div>
@@ -238,7 +264,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 <script>
 window.addEventListener('error', function (e) { var f = document.getElementById('fatal'); if (f && !window.__comet) { f.hidden = false; f.textContent = 'The ride could not start on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
 </script>
-<script>window.COMET_CONFIG = {park:'SEVENFAIR',url:'https://lira-ia.github.io/sevenfair/comet/',submit:'https://ntfy.sh/sevenfair-comet-r8w3',board:'board.json',epoch:'2026-11-11'};</script>
+<script>window.COMET_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "url": "https://lira-ia.github.io/sevenfair/comet/", "castle": "../castle/", "epoch": "2026-11-11"};</script>
 <script src="sim.js"></script>
 <script type="module" src="game.js"></script>
 </body>
