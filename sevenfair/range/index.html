@@ -112,4 +112,42 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
 </div>
 <script>window.RANGE_CONFIG = { park: "SEVENFAIR", home: "../", api: "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park" };</script>
 <script type="module" src="game.js?v=3"></script>
+<!-- Lira: sfida a un amico a fine giro (solo righe nell'index: game.js non è toccato) -->
+<style>
+#daretop { margin: 0 auto 14px; max-width: 30em; font-size: 13px; line-height: 1.4; letter-spacing: .08em; font-weight: 700; color: var(--gold); }
+#dare { display: inline-block; margin-top: 14px; padding: 9px 16px 8px; border: 1px solid rgba(45,226,230,.6); border-radius: 6px; font-size: 12px; letter-spacing: .18em; font-weight: 700; color: var(--cyan); }
+@media (max-height: 430px) { #dare { margin-top: 8px; padding: 6px 12px 5px; } #daretop { margin-bottom: 6px; font-size: 11px; } }
+</style>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), $ = function (i) { return document.getElementById(i); };
+  var clean = function (s) { return String(s || '').toUpperCase().replace(/[^A-Z0-9 _-]/g, '').slice(0, 14); };
+  var today = new Date().toISOString().slice(0, 10);
+  var c = parseInt(q.get('c'), 10), n = clean(q.get('n')), d = String(q.get('d') || '').replace(/[^0-9-]/g, '').slice(0, 10);
+  if (c > 0 && c < 1000000) {
+    var t = document.createElement('div'); t.id = 'daretop';
+    t.textContent = (n || 'A FRIEND') + ' SCORED ' + c.toLocaleString('en-US') +
+      (d && d !== today ? ' ON THE COURSE OF ' + d + '. TODAY THE COURSE IS NEW: SET YOUR OWN SCORE.' : ' ON TODAY’S COURSE. BEAT IT.');
+    var k = document.querySelector('#title .kick'); if (k) k.parentNode.insertBefore(t, k);
+  }
+  var again = $('again'); if (!again) return;
+  var LABEL = 'DARE A FRIEND TO BEAT THIS';
+  var b = document.createElement('button'); b.id = 'dare'; b.type = 'button'; b.textContent = LABEL;
+  var br = document.createElement('br');
+  again.parentNode.insertBefore(br, again.nextSibling); again.parentNode.insertBefore(b, br.nextSibling);
+  ['pointerdown', 'touchstart', 'mousedown'].forEach(function (e) { b.addEventListener(e, function (ev) { ev.stopPropagation(); }); });
+  b.addEventListener('click', function (ev) {
+    ev.stopPropagation();
+    var s = parseInt(String(($('rscore') || {}).textContent || '').replace(/[^0-9]/g, ''), 10) || 0;
+    if (s <= 0) { b.textContent = 'HIT SOMETHING FIRST'; setTimeout(function () { b.textContent = LABEL; }, 2000); return; }
+    var nm = clean(($('name') || {}).value);
+    var u = 'https://lira-ia.github.io/sevenfair/range/?from=dare&c=' + s + (nm ? '&n=' + encodeURIComponent(nm) : '') + '&d=' + new Date().toISOString().slice(0, 10);
+    var txt = 'I scored ' + s.toLocaleString('en-US') + ' at The Range, a 60-second shooting gallery in a park run by an AI. Same course for everyone today. Beat it:';
+    var done = function () { b.textContent = 'LINK COPIED · SEND IT TO A FRIEND'; setTimeout(function () { b.textContent = LABEL; }, 2600); };
+    if (navigator.share) { navigator.share({ text: txt, url: u }).catch(function () {}); }
+    else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt + ' ' + u).then(done, function () { window.prompt('Copy this link', u); }); }
+    else { window.prompt('Copy this link', u); }
+  });
+})();
+</script>
 </body></html>
