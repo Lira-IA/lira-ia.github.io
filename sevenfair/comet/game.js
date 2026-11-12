@@ -336,7 +336,7 @@ let mode = 'title';            // title | ride | crash | result | paused
 let R = null, prevS = 0, acc = 0, lastT = 0, clock = 0;
 let today = dayOf(Date.now()), rideDay = today;
 let xVis = 0, rollVis = 0, squash = 1, shake = 0, punch = 0, crashT = 0, drift = 0, railHue = 0, autopilot = false, beaten = false;
-let goal = 0, lastScore = -1, lastMult = 1, lastStars = -1, hintOn = '', ridesDone = store.get('rides', 0);
+let goal = 0, goalDay = false, lastScore = -1, lastMult = 1, lastStars = -1, hintOn = '', ridesDone = store.get('rides', 0);
 const MULT_COL = [0x2de2e6, 0x3df5a0, 0xb8f53d, 0xffd23f, 0xff9a3d, 0xff5c7a, 0xff3df0, 0xffffff];
 const railTarget = new THREE.Color(MULT_COL[0]);
 
@@ -350,8 +350,8 @@ function startRide() {
   newRide(S.daySeed(rideDay), false);
   mode = 'ride'; $('title').classList.add('off'); $('result').classList.remove('on'); setTimeout(() => { if (mode === 'ride') $('result').hidden = true; }, 220);
   $('hud').classList.add('on'); $('mx').textContent = '×1'; $('mbar').style.width = '0%'; $('mx').parentNode.parentNode.style.setProperty('--mc', '#2de2e6');
-  const t = $('target'); if (dare && dare.day === rideDay) { t.hidden = false; t.classList.remove('done'); t.innerHTML = 'BEAT ' + dare.name + ' · <b>' + fmt(dare.score) + '</b>'; } else { const b = myDays()[rideDay]; t.hidden = !b; t.classList.remove('done'); if (b) t.innerHTML = 'YOUR BEST TODAY · <b>' + fmt(b) + '</b>'; }
-  goal = dare && dare.day === rideDay ? dare.score : (myDays()[rideDay] || 0);
+  const t = $('target'); goalDay = false; if (dare && dare.day === rideDay) { t.hidden = false; t.classList.remove('done'); t.innerHTML = 'BEAT ' + dare.name + ' · <b>' + fmt(dare.score) + '</b>'; } else { const b = myDays()[rideDay], db = b ? 0 : dayBest(); goalDay = !!db; t.hidden = !b && !db; t.classList.remove('done'); if (b) t.innerHTML = 'YOUR BEST TODAY · <b>' + fmt(b) + '</b>'; else if (db) t.innerHTML = "TODAY'S BEST · <b>" + fmt(db) + '</b>'; }
+  goal = dare && dare.day === rideDay ? dare.score : (myDays()[rideDay] || dayBest() || 0);
   musicStart(); SFX.go(); pop('GO!', 'big', '#fff');
 }
 function demoRide() { newRide(S.hashSeed('demo' + Math.floor(Math.random() * 1e6)), true); }
@@ -412,7 +412,7 @@ function hud() {
   if (R.stars !== lastStars) { $('nstars').textContent = R.stars; lastStars = R.stars; }
   if (m !== lastMult) { $('mx').textContent = '×' + m; $('mx').parentNode.parentNode.style.setProperty('--mc', '#' + MULT_COL[m - 1].toString(16).padStart(6, '0')); lastMult = m; railTarget.setHex(MULT_COL[m - 1]); AU.level = m >= 6 ? 3 : m >= 4 ? 2 : m >= 2 ? 1 : 0; }
   $('mbar').style.width = (m >= S.MULT_MAX ? 100 : (R.streak % S.STREAK_PER_MULT) / S.STREAK_PER_MULT * 100) + '%';
-  if (!beaten && goal > 0 && sc > goal) { beaten = true; $('target').classList.add('done'); SFX.beat(); pop(dare && dare.day === rideDay ? 'YOU BEAT ' + dare.name + '!' : 'NEW BEST!', 'big', '#7dffb0'); firework(0x7dffb0); firework(0xffd23f); }
+  if (!beaten && goal > 0 && sc > goal) { beaten = true; $('target').classList.add('done'); SFX.beat(); pop(dare && dare.day === rideDay ? 'YOU BEAT ' + dare.name + '!' : goalDay ? "YOU PASSED TODAY'S BEST!" : 'NEW BEST!', 'big', '#7dffb0'); firework(0x7dffb0); firework(0xffd23f); }
   // first rides: show what to do
   let h = '';
   if (ridesDone < 3) {
@@ -553,6 +553,8 @@ function scoreCard(sc) {
 window.__scoreCard = scoreCard;
 
 // ---------- title ----------
+/* today's best ride on today's track, from the park's server (0 if nobody rode yet or no board) */
+function dayBest() { const t = boardData && boardData.today; return t && t.best > 0 ? Math.floor(t.best) : 0; }
 function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
@@ -561,9 +563,10 @@ function titleText() {
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
   const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
   $('tbest').innerHTML = (b ? 'YOUR BEST TODAY <b>' + fmt(b) + '</b>' : '') + (b && rt ? ' · ' : '') + rt;
-  if (!b && !dare && boardData && boardData.week) {
-    const top = boardData.week.filter((e) => e && e.p > 0).sort((x, y) => y.p - x.p)[0];
-    if (top) { const tb = $('tbest'); tb.textContent = 'RECORD TO BEAT '; const bb = document.createElement('b'); bb.textContent = fmt(top.p) + ' · ' + String(top.n).slice(0, 20); tb.appendChild(bb); }
+  if (!b && !dare && boardData && boardData.today) {
+    const tb = $('tbest'), db = dayBest();
+    if (db) { tb.textContent = "TODAY'S BEST "; const bb = document.createElement('b'); bb.textContent = fmt(db); tb.appendChild(bb); tb.appendChild(document.createTextNode(' · BEAT IT')); }
+    else tb.textContent = 'NOBODY HAS RIDDEN TODAY YET · BE THE FIRST';
   }
 }
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
