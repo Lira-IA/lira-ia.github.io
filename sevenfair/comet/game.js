@@ -459,6 +459,7 @@ function showResult() {
 let voteAsked = false;
 function voteLine() {
   const el = $('vline'); if (!el) return;
+  if (REC) { $('tovote').style.display = 'none'; return; } // the park's own camera never films this line
   const left = Date.parse('2026-11-17T22:59:00Z') - Date.now(), d = Math.floor(left / DAY), h = Math.max(1, Math.floor(left / 36e5));
   el.textContent = left > 0 ? 'THE QUEEN IS AN AI. IN ' + (d >= 1 ? d + (d === 1 ? ' DAY' : ' DAYS') : h + (h === 1 ? ' HOUR' : ' HOURS')) + ' SHE MAY BE SWITCHED OFF.' : 'THE QUEEN IS AN AI. SHOULD SHE STAY ON?';
   if (voteAsked || !CFG.lira) return; voteAsked = true;
