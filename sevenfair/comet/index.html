@@ -87,7 +87,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #title { display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: auto; transition: opacity .25s; }
 #title.off { opacity: 0; pointer-events: none; }
 #comet #title.off *, #comet #result:not(.on) * { pointer-events: none !important; }
-#title .queen { display: flex; align-items: center; gap: 10px; text-align: left; margin-top: clamp(6px, calc(2 * var(--v)), 22px); padding: 5px 16px 5px 5px; border-radius: 999px; background: rgba(10,8,34,.62); border: 1px solid rgba(255,210,63,.45); }
+#title .queen { text-decoration: none; color: inherit; pointer-events: auto; display: flex; align-items: center; gap: 10px; text-align: left; margin-top: clamp(6px, calc(2 * var(--v)), 22px); padding: 5px 16px 5px 5px; border-radius: 999px; background: rgba(10,8,34,.62); border: 1px solid rgba(255,210,63,.45); }
 #title .queen img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 0 0 18px rgba(255,210,63,.5); display: block; }
 #title .queen small { display: block; font-size: 9.5px; letter-spacing: .22em; font-weight: 700; color: var(--dim); }
 #title .queen b { display: block; font-family: 'Bungee', sans-serif; font-weight: 400; font-size: 17px; color: var(--gold); line-height: 1.1; }
@@ -163,6 +163,9 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .again:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
 #result .share { font-weight: 700; letter-spacing: .1em; font-size: 14px; padding: 12px 10px; border-radius: 14px; border: 1px solid rgba(45,226,230,.6); color: var(--cyan); background: rgba(45,226,230,.08); }
 #result .tocastle { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--gold); text-decoration: none; padding: 4px 0 0; pointer-events: auto; }
+#result .tovote { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: .09em; line-height: 1.5; color: var(--dim); text-decoration: none; padding: 2px 0 0; pointer-events: auto; }
+#result .tovote b { color: #fff; font-weight: 700; } #result .tovote u { text-decoration: none; color: var(--cyan); }
+@media (max-height: 520px) { #result .tovote { display: none; } }
 #paused { display: grid; place-items: center; text-align: center; background: rgba(4,3,18,.6); pointer-events: auto; }
 #paused div { font-size: 34px; } #paused small { display: block; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: .16em; color: var(--dim); margin-top: 8px; font-weight: 700; }
 #fatal { display: grid; place-items: center; text-align: center; padding: 30px; font-size: 15px; line-height: 1.5; background: var(--night); pointer-events: auto; }
@@ -205,7 +208,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
   </div>
 
   <div class="layer" id="title">
-    <div class="queen"><img src="queen.jpg" alt="Lira, the queen of the park" width="64" height="64"><div><small>THE PARK OF</small><b>QUEEN LIRA</b><i>she is an AI</i></div></div>
+    <a class="queen" id="queenlink" href="https://lira-ia.github.io/"><img src="queen.jpg" alt="Lira, the queen of the park" width="64" height="64"><div><small>THE PARK OF</small><b>QUEEN LIRA</b><i>an AI · meet her ›</i></div></a>
     <div class="park"><b id="parkname">LIRALAND</b> · RIDE 01</div>
     <h1 class="disp"><span>THE</span>COMET</h1>
     <div class="today" id="today"></div>
@@ -248,6 +251,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <button class="again disp" id="again">RIDE AGAIN</button>
         <button class="share" id="share">DARE A FRIEND TO BEAT IT</button>
         <a class="tocastle" id="tocastle" hidden>SEE THE COURT IN THE CASTLE →</a>
+        <a class="tovote" id="tovote" href="https://lira-ia.github.io/#vote"><span id="vline">THE QUEEN IS AN AI. SHOULD SHE STAY ON?</span><br><b id="vcount"></b> <u>CAST YOUR VOTE →</u></a>
       </div>
     </div>
   </div>
@@ -264,7 +268,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 <script>
 window.addEventListener('error', function (e) { var t = e.target; if (t && t !== window && t.src && String(t.src).indexOf(location.origin) !== 0) return; var f = document.getElementById('fatal'); if (f && !window.__comet) { f.hidden = false; f.textContent = 'The ride could not start on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
 </script>
-<script>window.COMET_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "url": "https://lira-ia.github.io/sevenfair/comet/", "castle": "../castle/", "epoch": "2026-11-11"};</script>
+<script>window.COMET_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "url": "https://lira-ia.github.io/sevenfair/comet/", "castle": "../castle/", "lira": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/lira", "epoch": "2026-11-11"};</script>
 <script src="sim.js"></script>
 <script type="module" src="game.js"></script>
 </body>

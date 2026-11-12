@@ -3,7 +3,7 @@ import * as THREE from './vendor/three.module.min.js';
 
 const S = window.CometSim;
 // api: the park's server (rides in, live board out). submit/board: the older way, a message board plus a file.
-const CFG = Object.assign({ park: 'LIRALAND', api: '', submit: '', board: '', url: '', castle: '', epoch: '2026-11-11' }, window.COMET_CONFIG || {});
+const CFG = Object.assign({ park: 'LIRALAND', api: '', submit: '', board: '', url: '', castle: '', lira: '', epoch: '2026-11-11' }, window.COMET_CONFIG || {});
 const $ = (id) => document.getElementById(id);
 const store = {
   get(k, d) { try { const v = localStorage.getItem('comet.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -449,11 +449,20 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board();
+  week(); board(); voteLine();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
   if (isBest || (CFG.api && !you)) submit(sc);          // every new best, and the first ride of a visit so the rider sees their place
+}
+/* one tap from the ride to the vote: the park is run by an AI, and people who just rode should know it (and say ON or OFF) */
+let voteAsked = false;
+function voteLine() {
+  const el = $('vline'); if (!el) return;
+  const left = Date.parse('2026-11-17T22:59:00Z') - Date.now(), d = Math.floor(left / DAY), h = Math.max(1, Math.floor(left / 36e5));
+  el.textContent = left > 0 ? 'THE QUEEN IS AN AI. IN ' + (d >= 1 ? d + (d === 1 ? ' DAY' : ' DAYS') : h + (h === 1 ? ' HOUR' : ' HOURS')) + ' SHE MAY BE SWITCHED OFF.' : 'THE QUEEN IS AN AI. SHOULD SHE STAY ON?';
+  if (voteAsked || !CFG.lira) return; voteAsked = true;
+  fetch(CFG.lira).then((r) => r.json()).then((j) => { if (j && j.vote) $('vcount').textContent = fmt(j.vote.on) + ' ON · ' + fmt(j.vote.off) + ' OFF ·'; }).catch(() => { voteAsked = false; });
 }
 function week() {
   const now = Date.now(), d7 = weekDays(dayOf(now)), mine = myDays(), max = Math.max(1, ...d7.map((d) => mine[d] || 0));
@@ -572,6 +581,7 @@ function titleText() {
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
 if (fine) { document.querySelectorAll('#title .how [data-key]').forEach((el) => { el.textContent = el.dataset.key; }); $('go').textContent = 'PRESS SPACE'; }
 $('parkname').textContent = CFG.park; titleText(); if (CFG.api) board();
+for (const id of ['tovote', 'queenlink']) { const a = $(id); if (a) a.addEventListener('click', (e) => e.stopPropagation()); }
 if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); }, 1000);
 $('go').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'title') startRide(); });
 
@@ -609,7 +619,7 @@ const inUi = (e) => {
   const t = e.target; if (!t || !t.closest) return false;
   if (t.closest('#corner, #pad')) return true;
   if (mode === 'result') return !!t.closest('.card');
-  if (mode === 'title') return !!t.closest('button');
+  if (mode === 'title') return !!t.closest('button, a');
   return false;
 };
 if (hasTouch) {
