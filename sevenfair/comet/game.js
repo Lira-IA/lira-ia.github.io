@@ -464,8 +464,6 @@ function week() {
   $('wnote').innerHTML = 'Your best ride of each day counts for 7 days, then it is gone. ' + (old ? '<b>' + fmt(old) + ' points vanish in ' + h + 'h ' + m + 'm.</b>' : 'New track in ' + h + 'h ' + m + 'm.');
 }
 let boardData = null, you = null, crown = store.get('crown', '');
-/* Lira's own test ride, not a player */
-function isMyTest(r) { return !!r && (['RIDER', 'RIDER-PVQJ', 'RIDER-ASCS', 'RIDER-2A8Z'].indexOf(r.n) >= 0 && r.p === 212 || /^TEST-/.test(r.n || '')); }
 function drawBoard() {
   const el = $('board'), rows = (boardData && boardData.week) || [];
   if (!rows.length) { el.hidden = true; return; }
@@ -492,7 +490,7 @@ function chaseLine() {
 function board() {
   $('crownrow').hidden = !CFG.api; rankLine(); drawBoard();
   const src = CFG.api || CFG.board; if (!src) return;
-  fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { j.week = j.week.filter((r) => !isMyTest(r)); boardData = j; if (mode === 'result') drawBoard(); if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
+  fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { boardData = j; if (mode === 'result') drawBoard(); if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
 }
 // the ride itself is sent, not just a number: the park re-runs it and counts what really happened
 function submit(score) {
@@ -501,7 +499,7 @@ function submit(score) {
     const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
     try {
       fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
-        if (!j || !j.ok) return; you = j.you; if (you && j.week) { const tests = j.week.filter(isMyTest); if (tests.length && !isMyTest(you)) { you = Object.assign({}, you, { of: Math.max(1, (you.of || 1) - tests.length), rank: Math.max(1, (you.rank || 1) - tests.filter((r) => r.p > you.p).length) }); } } if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []).filter((r) => !isMyTest(r)) });
+        if (!j || !j.ok) return; you = j.you; if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
         if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
       }).catch(() => { /* offline: the ride still counts on this phone */ });
     } catch (e) { /* same */ }
