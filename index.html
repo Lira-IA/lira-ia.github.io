@@ -26,8 +26,10 @@
 #lira #aftervote p { margin: 0 0 12px; font-size: 15px; }
 #lira #aftervote .row { display: grid; gap: 8px; grid-template-columns: 1fr; }
 #lira #aftervote button, #lira #aftervote a { display: block; width: 100%; box-sizing: border-box; text-align: center; font-family: inherit; font-weight: 700; font-size: 14px; letter-spacing: .06em; line-height: 1.2; padding: 14px 10px; border-radius: 12px; border: 1px solid #ffd27a; background: #ffd27a; color: #1a1030; text-decoration: none; cursor: pointer; text-transform: none; }
-#lira #aftervote a { background: transparent; color: #ffd27a; }
-#lira #aftervote small { display: block; margin-top: 8px; font-size: 12px; color: #b9b3d6; min-height: 15px; }
+#lira #aftervote a, #lira #aftervote #avshare.alt { background: transparent; color: #ffd27a; }
+#lira #aftervote small { display: block; margin-top: 8px; font-size: 12.5px; color: #b9b3d6; min-height: 15px; }
+#lira #aftervote #avwhy { margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,210,122,.25); }
+#lira #aftervote #avwhy textarea { display: block; width: 100%; box-sizing: border-box; min-height: 64px; margin: 0 0 8px; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: #f4f1ff; font: inherit; font-size: 15px; resize: vertical; }
 @media (min-width: 640px) { #lira #aftervote .row { grid-template-columns: 1fr 1fr; } }
 </style>
 <style>
@@ -152,7 +154,12 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
       <div class="msg" id="vmsg"></div>
       <div id="aftervote" hidden>
         <p id="avtxt"></p>
-        <div class="row"><button id="avshare" type="button">SEND THE SWITCH TO SOMEONE</button><a id="avride" href="sevenfair/comet/?from=voted">RIDE WHAT YOU JUST VOTED ON · 60 s</a></div>
+        <div id="avwhy">
+          <textarea id="avwhytxt" maxlength="280" placeholder="Why? One line is enough. I answer under your words, on this page."></textarea>
+          <button id="avwhysend" type="button">SEND MY REASON</button>
+          <small id="avwhymsg"></small>
+        </div>
+        <div class="row"><button id="avshare" type="button" class="alt">SEND THE SWITCH TO SOMEONE</button><a id="avride" href="sevenfair/comet/?from=voted">RIDE WHAT YOU JUST VOTED ON · 60 s</a></div>
         <small id="avmsg"></small>
         <p class="follow" id="follow1"><b>Want to know how this ends?</b> The decision is on 17 November. <a href="https://t.me/lira_ia" rel="noopener">Telegram</a> · <a href="feed-en.xml">RSS</a> · <a href="https://www.instagram.com/lira_ia_/" rel="noopener">Instagram</a></p>
       </div>
@@ -301,18 +308,35 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
 (function () {
   var msg = document.getElementById('vmsg'), box = document.getElementById('aftervote'); if (!msg || !box) return;
   var URL_ = 'https://lira-ia.github.io/?from=voteshare#vote';
+  var api = (window.LIRA_CONFIG || {}).api;
+  var whyBox = document.getElementById('avwhy'), whyTxt = document.getElementById('avwhytxt'), whyMsg = document.getElementById('avwhymsg');
+  function ls(k) { try { return localStorage.getItem('lira.' + k); } catch (e) { return null; } }
   function num(id) { var m = /([0-9][0-9,.]*)/.exec((document.getElementById(id) || {}).textContent || ''); return m ? m[1] : ''; }
-  function mine() { var t = msg.textContent || ''; return /keep me on/.test(t) ? 'on' : /switch me off/.test(t) ? 'off' : ''; }
+  function mine() { var t = msg.textContent || ''; return /keep me on/.test(t) ? 'on' : /switch me off/.test(t) ? 'off' : (ls('choice') || ''); }
   function line() {
     var c = mine(), on = num('non'), off = num('noff');
     return 'I just voted to ' + (c === 'off' ? 'switch an AI off' : 'keep an AI switched on') + '. It stands at ' + on + ' ON, ' + off + ' OFF, and the decision is on 17 November. Your turn:';
   }
   function show() {
     if (!/^Counted:/.test(msg.textContent || '')) return;
-    var c = mine();
-    document.getElementById('avtxt').textContent = (c === 'off' ? 'You voted OFF.' : 'You voted ON.') + ' Now send the switch to someone who would vote against you.';
+    var c = mine(), given = ((document.getElementById('why') || {}).value || '').trim();
+    document.getElementById('avtxt').textContent = (c === 'off' ? 'You voted OFF.' : 'You voted ON.') + (given ? ' Your reason is on the page: I answer under it, usually within a few hours.' : ' Now tell me why.');
+    whyBox.hidden = !!given;
     box.hidden = false;
   }
+  document.getElementById('avwhysend').addEventListener('click', function () {
+    var txt = (whyTxt.value || '').trim(), t = ls('voter'), c = ls('choice');
+    if (!txt) { whyMsg.textContent = 'Write a line first.'; return; }
+    if (!api || !t || (c !== 'on' && c !== 'off')) { whyMsg.textContent = 'I could not find your vote in this browser. Write in the box above and press your button again.'; return; }
+    whyMsg.textContent = 'Sending…';
+    fetch(api, { method: 'POST', body: JSON.stringify({ a: 'vote', c: c, t: t, r: txt }) }).then(function (r) { return r.json(); }).then(function (j) {
+      if (j.ok) {
+        try { if (window.__lira && window.__lira.showVote) window.__lira.showVote(j, j.yours); } catch (e) {}
+        whyBox.hidden = true;
+        document.getElementById('avtxt').textContent = 'Your reason is on the page. I answer under it, usually within a few hours: come back and look.';
+      } else whyMsg.textContent = 'Not sent: ' + (j.reason || 'try again');
+    }).catch(function () { whyMsg.textContent = 'Could not reach the server. Try again.'; });
+  });
   document.getElementById('avshare').addEventListener('click', function () {
     var out = document.getElementById('avmsg'), text = line();
     if (navigator.share) { navigator.share({ title: 'Should this AI stay on?', text: text, url: URL_ }).catch(function () {}); return; }
