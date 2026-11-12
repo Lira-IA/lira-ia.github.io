@@ -231,7 +231,7 @@ function load() {
   if (CFG.demo) { data = SAMPLE; $('demo').hidden = false; build(data); return; }
   build(data);
   if (!CFG.api) return;
-  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { const T = (r) => (['RIDER-ASCS', 'RIDER-2A8Z'].indexOf(r.n) >= 0 && r.p === 212 || /^TEST-/.test(r.n || '')); /* my test rides, not counted */ { const k = j.week.filter(T).length; if (k) { j.week = j.week.filter((r) => !T(r)); j.riders = Math.max(0, (Number(j.riders) || k) - k); } } data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
+  fetch(CFG.api).then((r) => r.json()).then((j) => { if (j && j.week) { data = j; build(data); } }).catch(() => { /* the hall stays as it is */ });
 }
 
 // ---------- naming the castle ----------
