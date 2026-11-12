@@ -477,7 +477,17 @@ function drawBoard() {
 function rankLine() {
   const el = $('rrank'); if (!you) { el.hidden = true; return; }
   el.hidden = false; el.classList.toggle('court', you.rank <= 5);
-  el.innerHTML = 'YOU ARE <b>#' + fmt(you.rank) + '</b> OF ' + fmt(you.of) + ' THIS WEEK' + (you.rank === 1 ? ' · THE CROWN IS YOURS ON MONDAY' : you.rank <= 5 ? ' · IN THE QUEEN\'S COURT' : '');
+  el.innerHTML = 'YOU ARE <b>#' + fmt(you.rank) + '</b> OF ' + fmt(you.of) + ' THIS WEEK' + (you.rank === 1 ? ' · THE CROWN IS YOURS ON MONDAY' : you.rank <= 5 ? ' · IN THE QUEEN\'S COURT' : '') + chaseLine();
+}
+/* the rider right above you (or right behind, if you lead): the number that makes people ride again */
+function chaseLine() {
+  try {
+    const rows = ((boardData && boardData.week) || []).filter((r) => r && r.p > 0 && cleanName(r.n) !== cleanName(you.n));
+    if (!(you.p > 0)) return '';
+    if (you.rank === 1) { const b = rows.filter((r) => r.p <= you.p).sort((x, y) => y.p - x.p)[0]; return b ? '<br><b>' + fmt(you.p - b.p) + '</b> AHEAD OF ' + cleanName(b.n) + ' · HOLD IT UNTIL MONDAY' : ''; }
+    const a = rows.filter((r) => r.p >= you.p).sort((x, y) => x.p - y.p)[0];
+    return a ? '<br><b>' + fmt(a.p - you.p + 1) + '</b> MORE TO PASS ' + cleanName(a.n) : '';
+  } catch (e) { return ''; }
 }
 function board() {
   $('crownrow').hidden = !CFG.api; rankLine(); drawBoard();
