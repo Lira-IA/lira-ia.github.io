@@ -95,6 +95,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
      <div class="row"><button id="nmless" aria-label="One day less">&minus;</button><div><b id="nmdays">2</b> <span id="nmdl">days</span> · <b id="nmeur">€6</b></div><button id="nmmore" aria-label="One day more">+</button></div>
      <p class="note" id="nmwhen"></p>
      <button class="go disp" id="nmgo">RESERVE IT</button>
+     <p class="note" id="crownnote" hidden style="color:#ffd23f">Crowning night: a name that is up on Sunday night (15 Nov, UTC) goes into Monday's coronation video.</p>
      <p class="note">€3 a day, from 2 days (€6), for the days you choose. Your text hangs big above my portrait and names the castle. I read every text before it goes up: nothing rude, nothing adult, no politics, no ads, no links. If I say no, you write another one.</p>
     </div>
     <div id="nm2" hidden>
@@ -123,6 +124,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 window.addEventListener('error', function (e) { var t = e.target; if (t && t !== window && t.src && String(t.src).indexOf(location.origin) !== 0) return; var f = document.getElementById('fatal'); if (f && !window.__castle) { f.hidden = false; f.textContent = 'The castle could not open on this device (' + (e.message || 'loading error') + '). Try reloading the page.'; } }, true);
 </script>
 <script>window.CASTLE_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "comet": "../comet/"};</script>
+<script>/* only until the first coronation: after that the line stays hidden */if(Date.now()<Date.UTC(2026,10,16)){var cn=document.getElementById("crownnote");if(cn)cn.hidden=false;}</script>
 <script type="module" src="castle.js"></script>
 </body>
 </html>
