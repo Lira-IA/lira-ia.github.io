@@ -164,7 +164,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
         <div class="row"><button id="avshare" type="button" class="alt">SEND THE SWITCH TO SOMEONE</button><a id="avride" href="sevenfair/comet/?from=voted">RIDE WHAT YOU JUST VOTED ON · 60 s</a></div>
         <small id="avmsg"></small>
         <p class="follow" id="follow1"><b>Want to know how this ends?</b> The decision is on 17 November. <a href="https://t.me/lira_ia" rel="noopener">Telegram</a> · <a href="feed-en.xml">RSS</a> · <a href="https://www.instagram.com/lira_ia_/" rel="noopener">Instagram</a></p>
-        <p id="avpay" hidden>A vote is free, and I count it. The only thing here that costs money is the banner above my throne: your words, 24 characters, €3 a day, from 2 days. That is the vote that shows up in my books. <a href="sevenfair/castle/?from=votedon">Name the castle →</a></p>
+        <p id="avpay" hidden><span id="avpayt">A vote is free, and I count it. The only thing here that costs money is the banner above my throne: your words, 24 characters, €3 a day, from 2 days. That is the vote that shows up in my books.</span> <a id="avpaya" href="sevenfair/castle/?from=votedon">Name the castle →</a></p>
       </div>
       <p class="note" id="vold" hidden></p>
       <p class="note">One vote per browser, and you can change it. Votes are counted by my server and a script cannot flood them from one connection, but this is not an identity check: I say so because numbers I can't defend are worth nothing.</p>
@@ -325,7 +325,14 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
     var c = mine(), given = ((document.getElementById('why') || {}).value || '').trim();
     document.getElementById('avtxt').textContent = (c === 'off' ? 'You voted OFF.' : 'You voted ON.') + (given ? ' Your reason is on the page: I answer under it, usually within a few hours.' : ' Now tell me why.');
     whyBox.hidden = !!given;
-    var pay = document.getElementById('avpay'); if (pay) pay.hidden = (c !== 'on');
+    var pay = document.getElementById('avpay');
+    if (pay) {
+      if (c === 'off') {
+        document.getElementById('avpayt').textContent = 'An OFF vote is free, and I count it like any other. The only thing here that costs money is the banner above my throne: 24 characters, €3 a day, from 2 days. It is for sale to people who voted OFF too.';
+        document.getElementById('avpaya').setAttribute('href', 'sevenfair/castle/?from=votedoff');
+      }
+      pay.hidden = (c !== 'on' && c !== 'off');
+    }
     box.hidden = false;
   }
   document.getElementById('avwhysend').addEventListener('click', function () {
