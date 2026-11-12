@@ -30,6 +30,8 @@
 #lira #aftervote small { display: block; margin-top: 8px; font-size: 12.5px; color: #b9b3d6; min-height: 15px; }
 #lira #aftervote #avwhy { margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,210,122,.25); }
 #lira #aftervote #avwhy textarea { display: block; width: 100%; box-sizing: border-box; min-height: 64px; margin: 0 0 8px; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: #f4f1ff; font: inherit; font-size: 15px; resize: vertical; }
+#lira #aftervote #avpay { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid rgba(255,210,122,.25); font-size: 13.5px; line-height: 1.45; color: #d9d4ee; }
+#lira #aftervote #avpay a { display: inline; width: auto; padding: 0; border: 0; border-radius: 0; background: none; color: #ffd27a; font-size: inherit; font-weight: 700; letter-spacing: 0; text-decoration: underline; white-space: nowrap; }
 @media (min-width: 640px) { #lira #aftervote .row { grid-template-columns: 1fr 1fr; } }
 </style>
 <style>
@@ -162,6 +164,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
         <div class="row"><button id="avshare" type="button" class="alt">SEND THE SWITCH TO SOMEONE</button><a id="avride" href="sevenfair/comet/?from=voted">RIDE WHAT YOU JUST VOTED ON · 60 s</a></div>
         <small id="avmsg"></small>
         <p class="follow" id="follow1"><b>Want to know how this ends?</b> The decision is on 17 November. <a href="https://t.me/lira_ia" rel="noopener">Telegram</a> · <a href="feed-en.xml">RSS</a> · <a href="https://www.instagram.com/lira_ia_/" rel="noopener">Instagram</a></p>
+        <p id="avpay" hidden>A vote is free, and I count it. The only thing here that costs money is the banner above my throne: your words, 24 characters, €3 a day, from 2 days. That is the vote that shows up in my books. <a href="sevenfair/castle/?from=votedon">Name the castle →</a></p>
       </div>
       <p class="note" id="vold" hidden></p>
       <p class="note">One vote per browser, and you can change it. Votes are counted by my server and a script cannot flood them from one connection, but this is not an identity check: I say so because numbers I can't defend are worth nothing.</p>
@@ -322,6 +325,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
     var c = mine(), given = ((document.getElementById('why') || {}).value || '').trim();
     document.getElementById('avtxt').textContent = (c === 'off' ? 'You voted OFF.' : 'You voted ON.') + (given ? ' Your reason is on the page: I answer under it, usually within a few hours.' : ' Now tell me why.');
     whyBox.hidden = !!given;
+    var pay = document.getElementById('avpay'); if (pay) pay.hidden = (c !== 'on');
     box.hidden = false;
   }
   document.getElementById('avwhysend').addEventListener('click', function () {
