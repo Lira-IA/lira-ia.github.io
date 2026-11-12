@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>The Range</title>
-<meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards. Sixty seconds.">
+<meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards, a new course every day. Sixty seconds.">
 <meta name="theme-color" content="#05070d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
@@ -26,12 +26,30 @@ body:not([data-mode="title"]) #title, body:not([data-mode="over"]) #over, body:n
 .go:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
 .back { display: inline-block; margin-top: 18px; font-size: 12px; letter-spacing: .2em; font-weight: 700; color: var(--dim); text-decoration: none; }
 #rscore { font-size: clamp(56px, 15vw, 130px); line-height: 1; color: var(--gold); text-shadow: 0 0 40px rgba(255,210,63,.45); font-variant-numeric: tabular-nums; }
+#rrank { margin-top: 2px; font-size: clamp(15px, 3.4vw, 22px); color: var(--pink); letter-spacing: .04em; }
+#tbest { margin-top: 14px; min-height: 1.2em; font-size: 11px; letter-spacing: .24em; font-weight: 700; color: var(--gold); }
+.cols { display: flex; gap: clamp(18px, 5vw, 60px); align-items: center; justify-content: center; flex-wrap: wrap; max-height: 100%; }
+#boardbox { min-width: 230px; text-align: left; } #boardbox .kick { margin-bottom: 8px; }
+#board { list-style: none; margin: 0; padding: 0; counter-reset: r; font-size: 14px; font-variant-numeric: tabular-nums; }
+#board li { counter-increment: r; display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,.09); } #board li::before { content: counter(r); width: 1.4em; color: var(--dim); }
+#board li span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } #board li b { color: var(--gold); font-weight: 700; } #board li.me span { color: var(--cyan); }
+#you { margin-top: 8px; min-height: 1.2em; font-size: 11px; letter-spacing: .2em; font-weight: 700; color: var(--cyan); }
+#namerow { display: block; margin-top: 8px; font-size: 10px; letter-spacing: .26em; font-weight: 700; color: var(--dim); }
+#name { display: block; margin-top: 4px; width: 100%; box-sizing: border-box; padding: 8px 10px; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.25); border-radius: 4px; user-select: text; -webkit-user-select: text; }
+@media (max-height: 430px) { #over .go { margin-top: 12px; padding: 10px 30px 8px; font-size: 18px; } #rscore { font-size: clamp(44px, 11vw, 80px); } #board { font-size: 12px; } #board li { padding: 1px 0; } #over .back { margin-top: 10px; } }
 #rline { margin-top: 6px; font-size: 16px; color: var(--ink); } #rbest { margin-top: 8px; min-height: 1.2em; font-size: 12px; letter-spacing: .26em; font-weight: 700; color: var(--cyan); }
 .hud { position: absolute; pointer-events: none; font-variant-numeric: tabular-nums; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
 #top { top: max(14px, env(safe-area-inset-top)); left: 0; right: 0; display: flex; justify-content: center; gap: 34px; align-items: baseline; }
 #top small { display: block; font-size: 10px; letter-spacing: .3em; font-weight: 700; color: var(--dim); }
 #top b { font-family: Bungee, sans-serif; font-weight: 400; font-size: 30px; line-height: 1; }
-#time { color: var(--gold); }
+#time { color: var(--gold); } #time.low { color: var(--pink); animation: beat 1s infinite; } @keyframes beat { 0% { transform: scale(1.25); } 30% { transform: none; } }
+#top > div { position: relative; } #bonus { position: absolute; left: 100%; top: 14px; margin-left: 8px; font-family: Bungee, sans-serif; font-size: 18px; color: var(--cyan); opacity: 0; white-space: nowrap; }
+#bonus.on { animation: pop 1.1s ease-out; }
+#streak { left: max(20px, env(safe-area-inset-left)); bottom: max(22px, env(safe-area-inset-bottom)); font-family: Bungee, sans-serif; font-size: 15px; color: var(--cyan); letter-spacing: .04em; }
+.touch #streak { bottom: auto; top: max(14px, env(safe-area-inset-top)); }
+#call { left: 0; right: 0; top: 24%; text-align: center; font-family: Bungee, sans-serif; font-size: clamp(20px, 5vw, 34px); color: #fff; text-shadow: 0 0 16px var(--pink), 0 2px 8px rgba(0,0,0,.9); opacity: 0; }
+#call.on { animation: call 1.1s ease-out; } @keyframes call { 0% { opacity: 0; transform: scale(1.5); } 14% { opacity: 1; transform: none; } 70% { opacity: 1; } 100% { opacity: 0; } }
+#count { left: 0; right: 0; top: 30%; text-align: center; font-family: Bungee, sans-serif; font-size: clamp(70px, 20vw, 150px); line-height: 1; color: #fff; text-shadow: 0 0 30px var(--pink), 0 4px 14px rgba(0,0,0,.9); }
 #ammobox { right: max(20px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); text-align: right; }
 #ammobox small { display: block; font-size: 10px; letter-spacing: .3em; font-weight: 700; color: var(--dim); }
 #ammo { font-family: Bungee, sans-serif; font-size: 40px; line-height: 1; } #ammo.low { color: var(--pink); }
@@ -40,47 +58,58 @@ body:not([data-mode="title"]) #title, body:not([data-mode="over"]) #over, body:n
 #cross i:nth-child(1) { left: 12px; top: 0; width: 2px; height: 8px; } #cross i:nth-child(2) { left: 12px; bottom: 0; width: 2px; height: 8px; }
 #cross i:nth-child(3) { top: 12px; left: 0; height: 2px; width: 8px; } #cross i:nth-child(4) { top: 12px; right: 0; height: 2px; width: 8px; }
 #cross i:nth-child(5) { left: 12px; top: 12px; width: 2px; height: 2px; }
+#cross { transition: opacity .08s; }
 #cross.hit i { animation: hit .22s ease-out; } @keyframes hit { 0% { background: var(--gold); transform: scale(1.9); } 100% { background: #fff; transform: none; } }
 #pop { left: 0; right: 0; top: 58%; text-align: center; font-family: Bungee, sans-serif; font-size: 22px; color: var(--gold); opacity: 0; }
 #pop.on { animation: pop .8s ease-out; } @keyframes pop { 0% { opacity: 0; transform: translateY(8px) scale(.9); } 15% { opacity: 1; transform: none; } 70% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16px); } }
 #paused { background: rgba(5,7,13,.7); }
 #hint { left: 0; right: 0; bottom: 18px; text-align: center; font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--dim); }
-#fire, #reload, #stick { display: none; }
+#fire, #reload, #aim, #stick { display: none; }
 .touch #fire { display: grid; place-items: center; position: absolute; right: max(18px, env(safe-area-inset-right)); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 66px); width: 92px; height: 92px; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); background: rgba(255,61,154,.22); font-family: Bungee, sans-serif; font-size: 16px; }
 .touch #fire:active { background: rgba(255,61,154,.5); }
 .touch #reload { display: grid; place-items: center; position: absolute; right: calc(max(18px, env(safe-area-inset-right)) + 108px); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 66px); width: 58px; height: 58px; border-radius: 50%; border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08); font-size: 10px; letter-spacing: .1em; font-weight: 700; }
 .touch #stick { display: block; position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; border: 2px solid rgba(255,255,255,.3); pointer-events: none; }
 .touch #stick[hidden] { display: none; } #knob { position: absolute; left: 26px; top: 26px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.4); }
-body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload { display: none; }
+.touch #aim { display: grid; place-items: center; position: absolute; right: calc(max(18px, env(safe-area-inset-right)) + 17px); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 172px); width: 58px; height: 58px; border-radius: 50%; border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08); font-size: 10px; letter-spacing: .1em; font-weight: 700; }
+.touch #aim.on { background: rgba(45,226,230,.4); border-color: var(--cyan); }
+body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:not([data-mode="play"]) #aim { display: none; }
 #loading { background: #05070d; } #loading .kick { color: var(--dim); } #track { width: min(260px, 60vw); height: 3px; background: rgba(255,255,255,.14); margin: 14px auto 0; } #bar { height: 100%; width: 0; background: var(--pink); transition: width .2s; }
 #fatal { position: absolute; left: 20px; right: 20px; top: 40%; text-align: center; font-size: 15px; color: #ff9db3; }
 .tall { display: none; } @media (orientation: portrait) { .touch .tall { display: inline; } }
 .only-touch { display: none; } .touch .only-touch { display: inline; } .touch .only-mouse { display: none; }
 </style>
-</head><body data-mode="loading">
+<script>window.afsStrip=function(e,n){var u=String(n.u),m=/[?&]from=([A-Za-z0-9_-]{1,24})/.exec(u);n.u=u.split(/[?#]/)[0]+(m?'?utm_source='+m[1]:'');return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/sevenfair/range/"><meta property="og:image" content="https://lira-ia.github.io/sevenfair/og.jpg"><meta property="og:url" content="https://lira-ia.github.io/sevenfair/range/"><meta name="twitter:card" content="summary_large_image"><meta property="og:title" content="THE RANGE · sixty seconds in the alley behind Sevenfair"><meta property="og:description" content="A first-person shooting gallery in the alley behind Sevenfair, the park run by Lira, an AI. Bottles, tins, dartboards, a new course every day. Sixty seconds, free, no account."></head><body data-mode="loading">
 <div id="stage">
  <canvas id="c"></canvas>
- <div class="hud" id="top"><div><small>SCORE</small><b id="score">0</b></div><div><small>TIME</small><b id="time">60</b></div></div>
+ <div class="hud" id="top"><div><small>SCORE</small><b id="score">0</b></div><div><small>TIME</small><b id="time">60</b><span id="bonus">+2 SEC</span></div></div>
+ <div class="hud" id="streak"></div><div class="hud" id="call"></div><div class="hud" id="count" hidden></div>
  <div class="hud" id="cross"><i></i><i></i><i></i><i></i><i></i></div>
  <div class="hud" id="pop"></div>
- <div class="hud" id="hint" hidden>HOLD AND DRAG TO AIM · CLICK OR SPACE TO SHOOT</div>
+ <div class="hud" id="hint" hidden>HOLD AND DRAG TO LOOK · CLICK OR SPACE TO SHOOT · SHIFT TO AIM</div>
  <div class="hud" id="ammobox"><small>AMMO</small><b id="ammo">8</b></div>
  <div id="stick" hidden><div id="knob"></div></div>
- <button id="reload">RELOAD</button><button id="fire">FIRE</button>
+ <button id="aim">AIM</button><button id="reload">RELOAD</button><button id="fire">FIRE</button>
  <div class="layer" id="paused" hidden><div><div class="kick">PAUSED</div><button class="go disp" id="resume">BACK TO THE RANGE</button></div></div>
  <div class="layer" id="title"><div>
   <div class="kick">SEVENFAIR · THE SECOND RIDE</div>
   <h1 class="disp">THE RANGE</h1>
-  <p class="sub">Sixty seconds in the alley behind the park. <b>Bottles, tins, dartboards.</b> Far shots and streaks pay more. Nothing here is alive.<br>
-   <span class="only-mouse">Mouse to aim, click to shoot, <b>WASD</b> to walk, <b>R</b> to reload.</span><span class="only-touch">Left thumb walks, right thumb aims. <b>Tap</b> the screen or press <b>FIRE</b> to shoot. <span class="tall">Turn the phone sideways to see more.</span></span></p>
-  <button class="go disp" id="go">START</button><br><a class="back" id="home" href="../">← BACK TO THE PARK</a>
+  <p class="sub">Sixty seconds in the alley behind the park. <b>Bottles, tins, dartboards</b>, tins thrown in the air and a <b>golden bottle</b> that does not wait. Far shots and streaks pay more; five hits in a row give two more seconds. Nothing here is alive.<br>
+   <span class="only-mouse">Click to shoot, <b>right button</b> or <b>Shift</b> to aim, <b>WASD</b> to walk, <b>R</b> to reload. Stand still to shoot straight.</span><span class="only-touch">Left thumb walks, right thumb looks. <b>Tap</b> or press <b>FIRE</b> to shoot, <b>AIM</b> to look down the sights. <span class="tall">Turn the phone sideways to see more.</span></span></p>
+  <button class="go disp" id="go">START</button><div id="tbest"></div><a class="back" id="home" href="../">← BACK TO THE PARK</a>
  </div></div>
- <div class="layer" id="over"><div>
-  <div class="kick">TIME</div><div class="disp" id="rscore">0</div><div id="rline"></div><div id="rbest"></div>
-  <button class="go disp" id="again">AGAIN</button><br><a class="back" href="../">← BACK TO THE PARK</a>
+ <div class="layer" id="over"><div class="cols">
+  <div>
+   <div class="kick">TIME</div><div class="disp" id="rscore">0</div><div class="disp" id="rrank"></div><div id="rline"></div><div id="rbest"></div>
+   <button class="go disp" id="again">AGAIN</button><br><a class="back" href="../">← BACK TO THE PARK</a>
+  </div>
+  <div id="boardbox" hidden>
+   <div class="kick">THE BEST ROUNDS OF THE WEEK</div><ol id="board"></ol><div id="you"></div>
+   <label id="namerow">YOUR NAME ON THE BOARD<input id="name" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false"></label>
+  </div>
  </div></div>
  <div class="layer" id="loading"><div><div class="kick">LOADING THE ALLEY</div><div id="track"><div id="bar"></div></div></div></div>
  <div id="fatal" hidden></div>
 </div>
-<script type="module" src="game.js?v=2"></script>
+<script>window.RANGE_CONFIG = { park: "SEVENFAIR", home: "../", api: "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park" };</script>
+<script type="module" src="game.js?v=3"></script>
 </body></html>
