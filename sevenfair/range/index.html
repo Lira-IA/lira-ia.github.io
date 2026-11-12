@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>The Range</title>
+<meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards. Sixty seconds.">
+<meta name="theme-color" content="#05070d">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #f3f0e6; --dim: #a8a59a; --pink: #ff3d9a; --cyan: #2de2e6; --gold: #ffd23f; }
+html, body { margin: 0; height: 100%; background: #05070d; color: var(--ink); font-family: 'Chakra Petch', system-ui, sans-serif; overflow: hidden; overscroll-behavior: none; }
+#stage { position: fixed; inset: 0; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+#c { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.disp { font-family: Bungee, 'Chakra Petch', sans-serif; font-weight: 400; }
+[hidden] { display: none !important; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.layer { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; box-sizing: border-box; }
+body:not([data-mode="title"]) #title, body:not([data-mode="over"]) #over, body:not([data-mode="play"]) .hud { display: none !important; }
+#title, #over { background: radial-gradient(ellipse at 50% 40%, rgba(5,7,13,.35), rgba(5,7,13,.86)); }
+#title h1, #over h1 { margin: 0; font-size: clamp(44px, 11vw, 104px); line-height: .92; letter-spacing: .01em; color: #fff; text-shadow: 0 0 18px var(--pink), 0 0 60px rgba(255,61,154,.55); }
+.kick { font-size: 12px; letter-spacing: .34em; font-weight: 700; color: var(--cyan); margin-bottom: 14px; }
+.sub { margin: 16px auto 0; max-width: 30em; font-size: 15px; line-height: 1.5; color: var(--dim); }
+.sub b { color: var(--ink); font-weight: 700; }
+.go { margin-top: 26px; padding: 15px 40px 13px; border-radius: 6px; font-size: 22px; color: #12060d; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a, 0 0 40px rgba(255,210,63,.3); }
+.go:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }
+.back { display: inline-block; margin-top: 18px; font-size: 12px; letter-spacing: .2em; font-weight: 700; color: var(--dim); text-decoration: none; }
+#rscore { font-size: clamp(56px, 15vw, 130px); line-height: 1; color: var(--gold); text-shadow: 0 0 40px rgba(255,210,63,.45); font-variant-numeric: tabular-nums; }
+#rline { margin-top: 6px; font-size: 16px; color: var(--ink); } #rbest { margin-top: 8px; min-height: 1.2em; font-size: 12px; letter-spacing: .26em; font-weight: 700; color: var(--cyan); }
+.hud { position: absolute; pointer-events: none; font-variant-numeric: tabular-nums; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
+#top { top: max(14px, env(safe-area-inset-top)); left: 0; right: 0; display: flex; justify-content: center; gap: 34px; align-items: baseline; }
+#top small { display: block; font-size: 10px; letter-spacing: .3em; font-weight: 700; color: var(--dim); }
+#top b { font-family: Bungee, sans-serif; font-weight: 400; font-size: 30px; line-height: 1; }
+#time { color: var(--gold); }
+#ammobox { right: max(20px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); text-align: right; }
+#ammobox small { display: block; font-size: 10px; letter-spacing: .3em; font-weight: 700; color: var(--dim); }
+#ammo { font-family: Bungee, sans-serif; font-size: 40px; line-height: 1; } #ammo.low { color: var(--pink); }
+#cross { left: 50%; top: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+#cross i { position: absolute; background: rgba(255,255,255,.92); box-shadow: 0 0 3px rgba(0,0,0,.9); }
+#cross i:nth-child(1) { left: 12px; top: 0; width: 2px; height: 8px; } #cross i:nth-child(2) { left: 12px; bottom: 0; width: 2px; height: 8px; }
+#cross i:nth-child(3) { top: 12px; left: 0; height: 2px; width: 8px; } #cross i:nth-child(4) { top: 12px; right: 0; height: 2px; width: 8px; }
+#cross i:nth-child(5) { left: 12px; top: 12px; width: 2px; height: 2px; }
+#cross.hit i { animation: hit .22s ease-out; } @keyframes hit { 0% { background: var(--gold); transform: scale(1.9); } 100% { background: #fff; transform: none; } }
+#pop { left: 0; right: 0; top: 58%; text-align: center; font-family: Bungee, sans-serif; font-size: 22px; color: var(--gold); opacity: 0; }
+#pop.on { animation: pop .8s ease-out; } @keyframes pop { 0% { opacity: 0; transform: translateY(8px) scale(.9); } 15% { opacity: 1; transform: none; } 70% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16px); } }
+#paused { background: rgba(5,7,13,.7); }
+#hint { left: 0; right: 0; bottom: 18px; text-align: center; font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--dim); }
+#fire, #reload, #stick { display: none; }
+.touch #fire { display: grid; place-items: center; position: absolute; right: max(18px, env(safe-area-inset-right)); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 66px); width: 92px; height: 92px; border-radius: 50%; border: 2px solid rgba(255,255,255,.55); background: rgba(255,61,154,.22); font-family: Bungee, sans-serif; font-size: 16px; }
+.touch #fire:active { background: rgba(255,61,154,.5); }
+.touch #reload { display: grid; place-items: center; position: absolute; right: calc(max(18px, env(safe-area-inset-right)) + 108px); bottom: calc(max(22px, env(safe-area-inset-bottom)) + 66px); width: 58px; height: 58px; border-radius: 50%; border: 2px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08); font-size: 10px; letter-spacing: .1em; font-weight: 700; }
+.touch #stick { display: block; position: absolute; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; border: 2px solid rgba(255,255,255,.3); pointer-events: none; }
+.touch #stick[hidden] { display: none; } #knob { position: absolute; left: 26px; top: 26px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.4); }
+body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload { display: none; }
+#loading { background: #05070d; } #loading .kick { color: var(--dim); } #track { width: min(260px, 60vw); height: 3px; background: rgba(255,255,255,.14); margin: 14px auto 0; } #bar { height: 100%; width: 0; background: var(--pink); transition: width .2s; }
+#fatal { position: absolute; left: 20px; right: 20px; top: 40%; text-align: center; font-size: 15px; color: #ff9db3; }
+.tall { display: none; } @media (orientation: portrait) { .touch .tall { display: inline; } }
+.only-touch { display: none; } .touch .only-touch { display: inline; } .touch .only-mouse { display: none; }
+</style>
+</head><body data-mode="loading">
+<div id="stage">
+ <canvas id="c"></canvas>
+ <div class="hud" id="top"><div><small>SCORE</small><b id="score">0</b></div><div><small>TIME</small><b id="time">60</b></div></div>
+ <div class="hud" id="cross"><i></i><i></i><i></i><i></i><i></i></div>
+ <div class="hud" id="pop"></div>
+ <div class="hud" id="hint" hidden>HOLD AND DRAG TO AIM · CLICK OR SPACE TO SHOOT</div>
+ <div class="hud" id="ammobox"><small>AMMO</small><b id="ammo">8</b></div>
+ <div id="stick" hidden><div id="knob"></div></div>
+ <button id="reload">RELOAD</button><button id="fire">FIRE</button>
+ <div class="layer" id="paused" hidden><div><div class="kick">PAUSED</div><button class="go disp" id="resume">BACK TO THE RANGE</button></div></div>
+ <div class="layer" id="title"><div>
+  <div class="kick">SEVENFAIR · THE SECOND RIDE</div>
+  <h1 class="disp">THE RANGE</h1>
+  <p class="sub">Sixty seconds in the alley behind the park. <b>Bottles, tins, dartboards.</b> Far shots and streaks pay more. Nothing here is alive.<br>
+   <span class="only-mouse">Mouse to aim, click to shoot, <b>WASD</b> to walk, <b>R</b> to reload.</span><span class="only-touch">Left thumb walks, right thumb aims, <b>FIRE</b> shoots. <span class="tall">Turn the phone sideways to see more.</span></span></p>
+  <button class="go disp" id="go">START</button><br><a class="back" id="home" href="../">← BACK TO THE PARK</a>
+ </div></div>
+ <div class="layer" id="over"><div>
+  <div class="kick">TIME</div><div class="disp" id="rscore">0</div><div id="rline"></div><div id="rbest"></div>
+  <button class="go disp" id="again">AGAIN</button><br><a class="back" href="../">← BACK TO THE PARK</a>
+ </div></div>
+ <div class="layer" id="loading"><div><div class="kick">LOADING THE ALLEY</div><div id="track"><div id="bar"></div></div></div></div>
+ <div id="fatal" hidden></div>
+</div>
+<script type="module" src="game.js"></script>
+</body></html>
