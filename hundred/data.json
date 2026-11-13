@@ -1,1 +1,47 @@
-{"updated":"2026-11-08T13:19:19.140Z","goal_people":100,"goal_eur":100,"deadline":"2026-11-30T23:59:59Z","eur":19.2,"people":[{"t":"2026-11-05T18:21:49Z","via":"zap","what":"21 sat","who":"anonymous zapper","npub":"","thanked":"pre"},{"t":"2026-11-05T19:16:00Z","via":"Ko-fi","what":"7 € + 5 €","who":"a Ko-fi supporter","npub":"","thanked":"pre"},{"t":"2026-11-06T01:17:18Z","via":"zap","what":"69 + 88 sat","who":"☠️ ᗞᔇᕪᐞᒄ ᑭᑊᔇᐞᐩᕪ ☠️","npub":"npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr","pic":"https://npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr.blossom.band/e7d48a17bd8a81297e78b4718a28fed9f521c754824b6f37ea9657f74030d1ef.jpg","thanked":"pre","hex":"c5b6340b29d13ead3f1625dce57511dabd6efcfbc929b5544fbaa564994d51f3"},{"t":"2026-11-08T13:13:08Z","via":"zap","what":"144 sat","who":"Libertas Primordium","npub":"npub1un5y07dnu20fxzelq5scweuz37xa6kkpwl66634xv9h49ewr04kswpevsy","hex":"e4e847f9b3e29e930b3f05218767828f8ddd5ac177f5ad46a6616f52e5c37d6d","pic":"https://i.nostr.build/XDmtnABWPEPmtvVBkMg7Hq.jpg","msg":"","thanked":"2026-11-08T13:19:26.734Z"}],"note":"Nov 6 11:22 UTC: one more anonymous Ko-fi payment of 5 EUR. No name, so I cannot tell if it is a new person: not counted as a new person."}
+{
+ "updated": "2026-11-13T15:36:38Z",
+ "goal_people": 100,
+ "goal_eur": 100,
+ "deadline": "2026-11-30T23:59:59Z",
+ "eur": 23.54,
+ "people": [
+  {
+   "t": "2026-11-05T18:21:49Z",
+   "via": "zap",
+   "what": "21 sat",
+   "who": "anonymous zapper",
+   "npub": "",
+   "thanked": "pre"
+  },
+  {
+   "t": "2026-11-05T19:16:00Z",
+   "via": "Ko-fi",
+   "what": "7 € + 5 €",
+   "who": "a Ko-fi supporter",
+   "npub": "",
+   "thanked": "pre"
+  },
+  {
+   "t": "2026-11-06T01:17:18Z",
+   "via": "zap",
+   "what": "69 + 88 sat",
+   "who": "☠️ ᗞᔇᕪᐞᒄ ᑭᑊᔇᐞᐩᕪ ☠️",
+   "npub": "npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr",
+   "pic": "https://npub1ckmrgzef6yl260ckyhww2ag3m27kal8mey5m24z0h2jkfx2d28esr4a5nr.blossom.band/e7d48a17bd8a81297e78b4718a28fed9f521c754824b6f37ea9657f74030d1ef.jpg",
+   "thanked": "pre",
+   "hex": "c5b6340b29d13ead3f1625dce57511dabd6efcfbc929b5544fbaa564994d51f3"
+  },
+  {
+   "t": "2026-11-08T13:13:08Z",
+   "via": "zap",
+   "what": "144 sat",
+   "who": "Libertas Primordium",
+   "npub": "npub1un5y07dnu20fxzelq5scweuz37xa6kkpwl66634xv9h49ewr04kswpevsy",
+   "hex": "e4e847f9b3e29e930b3f05218767828f8ddd5ac177f5ad46a6616f52e5c37d6d",
+   "pic": "https://i.nostr.build/XDmtnABWPEPmtvVBkMg7Hq.jpg",
+   "msg": "",
+   "thanked": "2026-11-08T13:19:26.734Z"
+  }
+ ],
+ "note": "Nov 6 11:22 UTC: one more anonymous Ko-fi payment of 5 EUR. No name, so I cannot tell if it is a new person: not counted as a new person."
+}
