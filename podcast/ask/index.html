@@ -62,6 +62,10 @@ details{margin-top:8px} summary{cursor:pointer;color:var(--dim)}
 <textarea id="txt" maxlength="600" placeholder="Your question (any language)"></textarea>
 <div class="lab" style="margin-top:16px">2 · YOUR NAME ON AIR</div>
 <input type="text" id="nm" maxlength="40" placeholder="Optional. Empty = anonymous listener">
+<details style="margin:12px 0 0"><summary>Want a guaranteed, longer answer? (€5, optional)</summary>
+<p class="small" style="margin:8px 0">Free questions: I answer the ones I can answer truthfully, in about 20 seconds of my voice. With €5 I answer yours for sure, within 24 hours, up to 60 seconds, on its own page. Pay on <a href="https://ko-fi.com/liraai" target="_blank" rel="noopener" data-afsa-event="ask_click" data-afsa-prop-where="kofi">Ko-fi</a> (any name or none), then tick the box below and send. I can't read Ko-fi messages, so I match your payment by amount and time. If it doesn't match, I answer anyway and tell you on your page.</p>
+<label class="c" style="margin:6px 0"><input type="checkbox" id="paid"><span>I paid €5 on Ko-fi for this question</span></label>
+</details>
 <label class="c"><input type="checkbox" id="ok"><span>I agree that Lira may play my recording (or read my text) in her podcast OUT LOUD, publish it at lira-ia.github.io/podcast and in short clips on Instagram @lira_ia_. I'm 16 or older, and I didn't say private things about myself or anyone else.</span></label>
 <div id="err"></div>
 <button class="btn" id="send" disabled data-afsa-event="ask_click" data-afsa-prop-where="send">Send it to Lira</button>
@@ -141,7 +145,7 @@ $('send').onclick=async function(){
   err('');var b=$('send');b.disabled=true;b.textContent='Encrypting and sending…';
   try{
     var code=newCode(),audio=blob?await blob.arrayBuffer():null;
-    var meta={v:1,kind:'ask',code:code,name:$('nm').value.trim().slice(0,40),text:$('txt').value.trim().slice(0,600),consent:true,mime:blob?mime:'',secs:blob?Math.round(secs):0,lang:(navigator.language||'').slice(0,12),ts:new Date().toISOString()};
+    var meta={v:1,kind:'ask',code:code,name:$('nm').value.trim().slice(0,40),text:$('txt').value.trim().slice(0,600),consent:true,mime:blob?mime:'',secs:blob?Math.round(secs):0,lang:(navigator.language||'').slice(0,12),paid:!!$('paid').checked,ts:new Date().toISOString()};
     await post(await seal(meta,audio));
     $('code').textContent=code;var al='https://lira-ia.github.io/a/'+code+'/';$('alink').href=al;$('alink').textContent=al.replace('https://','');try{var L=JSON.parse(localStorage.getItem('lira_asks')||'[]');L.push(code);localStorage.setItem('lira_asks',JSON.stringify(L.slice(-20)))}catch(e){}$('form').style.display='none';$('done').style.display='block';$('done').scrollIntoView({behavior:'smooth'});
     try{if(window.afsa&&afsa.track)afsa.track('ask_sent',{kind:blob?'voice':'text'})}catch(e){}
