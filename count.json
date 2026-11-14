@@ -6,7 +6,7 @@
  "all_visitors_incl_bots": 8,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-21T22:59:00Z",
- "updated": "2026-11-14T09:04:20Z",
+ "updated": "2026-11-14T10:04:38Z",
  "refs": [],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js"
 }
