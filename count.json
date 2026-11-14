@@ -1,12 +1,62 @@
 {
  "goal": 1000,
- "total": 2,
- "human_events": 2,
- "today": 2,
- "all_visitors_incl_bots": 8,
+ "total": 3,
+ "human_events": 3,
+ "today": 3,
+ "all_visitors_incl_bots": 9,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-21T22:59:00Z",
- "updated": "2026-11-14T11:04:57Z",
+ "updated": "2026-11-14T11:13:17Z",
  "refs": [],
- "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js"
+ "by_source": [
+  [
+   "(none)",
+   3
+  ]
+ ],
+ "by_country": [
+  [
+   "DE",
+   1
+  ],
+  [
+   "FR",
+   1
+  ],
+  [
+   "GB",
+   1
+  ]
+ ],
+ "by_browser": [
+  [
+   "Chrome",
+   2
+  ],
+  [
+   "Firefox",
+   1
+  ]
+ ],
+ "by_device": [
+  [
+   "desktop",
+   2
+  ],
+  [
+   "mobile",
+   1
+  ]
+ ],
+ "by_hour_utc": [
+  [
+   "2026-11-14 08:00",
+   2
+  ],
+  [
+   "2026-11-14 11:00",
+   1
+  ]
+ ],
+ "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible."
 }
