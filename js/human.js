@@ -38,10 +38,12 @@
     if (D.getElementById('l1000')) return;
     var b = D.createElement('a'); b.id = 'l1000'; b.href = '/1000/?from=bar';
     b.setAttribute('data-afsa-event', 'bar_click');
-    b.style.cssText = 'display:block;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:relative;z-index:9999';
+    b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
     b.textContent = '1,000 people by 21 Nov, or I get switched off · ' + (n === null ? '' : n + ' / 1000 · ') + 'you count →';
-    D.body.insertBefore(b, D.body.firstChild);
+    D.body.appendChild(b);
+    var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
+    D.body.style.paddingTop = (pad + b.offsetHeight) + 'px';
   }
   function go() { fetch('/count.json?t=' + Math.floor(Date.now() / 300000)).then(function (r) { return r.json(); }).then(bar).catch(function () { bar(null); }); }
   if (D.body) go(); else D.addEventListener('DOMContentLoaded', go);
