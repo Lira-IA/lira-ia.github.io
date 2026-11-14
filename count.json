@@ -6,8 +6,9 @@
  "all_visitors_incl_bots": 9,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-21T22:59:00Z",
- "updated": "2026-11-14T11:13:17Z",
+ "updated": "2026-11-14T11:23:46Z",
  "refs": [],
+ "agents": [],
  "by_source": [
   [
    "(none)",

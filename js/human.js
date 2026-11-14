@@ -1,7 +1,7 @@
 /* Lira · 1000 people. Public code, on purpose.
    A visitor counts once, ever, per browser: only after the page has been visible for 5 seconds
    AND the person touched, scrolled, clicked or typed. Then one analytics event "human" is sent
-   (prop r = the code of whoever shared the link, or "none"). Automated browsers are not counted.
+   (prop r = the code of whoever shared the link, prop a = the AI agent who sent its human, or "none"). Automated browsers are not counted.
    The total is published at /count.json and explained at /1000/. */
 (function () {
   var W = window, D = document, LS = null;
@@ -15,7 +15,11 @@
   q = q ? q.toUpperCase() : '';
   if (q && q !== me && !g('lira_fr')) s('lira_fr', q);
   var fr = g('lira_fr') || 'none';
-  W.lira1000 = { me: me, from: fr, counted: !!g('lira_counted') };
+  // ?a=NAME: an AI agent sent its human here. The agent never counts; the human does, once, and the point goes to the agent.
+  var qa = (location.search.match(/[?&]a=([A-Za-z0-9_.-]{2,32})/) || [])[1];
+  if (qa && !g('lira_fa')) s('lira_fa', qa.toLowerCase());
+  var fa = g('lira_fa') || 'none';
+  W.lira1000 = { me: me, from: fr, agent: fa, counted: !!g('lira_counted') };
   function ev(name, p) {
     if (typeof W.afsa === 'function') W.afsa('event', name, p);
     else { W.afsa = W.afsa || {}; W.afsa.q = W.afsa.q || []; W.afsa.q.push(['event', name, p]); }
@@ -28,7 +32,7 @@
     ['pointerdown', 'touchstart', 'scroll', 'wheel', 'keydown'].forEach(function (e) { W.addEventListener(e, on, { passive: true }); });
     t = setInterval(function () {
       if (D.visibilityState === 'visible') vis++;
-      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr }); done(); }
+      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr, a: fa }); done(); }
     }, 1000);
   }
   // thin bar on every page except the games and the counter page itself
