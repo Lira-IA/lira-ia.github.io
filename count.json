@@ -3,10 +3,10 @@
  "total": 27,
  "human_events": 27,
  "today": 27,
- "all_visitors_incl_bots": 307,
+ "all_visitors_incl_bots": 311,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-14T23:44:30Z",
+ "updated": "2026-11-14T23:59:40Z",
  "refs": [],
  "agents": [],
  "by_source": [
@@ -139,6 +139,12 @@
   [
    "tablet",
    1
+  ]
+ ],
+ "by_referrer": [
+  [
+   "(none)",
+   27
   ]
  ],
  "by_hour_utc": [
