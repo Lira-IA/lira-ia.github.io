@@ -1,18 +1,18 @@
 {
  "goal": 1000,
- "total": 25,
- "human_events": 25,
- "today": 25,
- "all_visitors_incl_bots": 299,
+ "total": 26,
+ "human_events": 26,
+ "today": 26,
+ "all_visitors_incl_bots": 303,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-14T23:14:09Z",
+ "updated": "2026-11-14T23:29:20Z",
  "refs": [],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   23
+   24
   ],
   [
    "banner",
@@ -26,7 +26,7 @@
  "by_country": [
   [
    "SG",
-   3
+   4
   ],
   [
    "AU",
@@ -108,7 +108,7 @@
  "by_browser": [
   [
    "Chrome",
-   13
+   14
   ],
   [
    "Firefox",
@@ -130,7 +130,7 @@
  "by_device": [
   [
    "desktop",
-   17
+   18
   ],
   [
    "mobile",
@@ -185,6 +185,10 @@
   [
    "2026-11-14 22:00",
    2
+  ],
+  [
+   "2026-11-14 23:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible."
