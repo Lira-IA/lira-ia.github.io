@@ -296,7 +296,7 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
 <script>
 (function () {
   var ul = document.getElementById('reasons'); if (!ul) return;
-  var map = null;
+  var map = null, amap = null;
   function apply() {
     if (!map) return;
     var li = ul.children;
@@ -307,10 +307,15 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
       if (Object.prototype.hasOwnProperty.call(map, t)) {
         var s = document.createElement('span'), b = document.createElement('b');
         s.className = 'lr'; b.textContent = 'LIRA'; s.appendChild(b); s.appendChild(document.createTextNode(map[t])); el.appendChild(s);
+        if (amap && amap[t]) { var a = document.createElement('a'); a.href = amap[t] + '?from=home'; a.textContent = ' ▶ hear it, out loud'; a.style.cssText = 'color:#ffd23f;font-weight:700;white-space:nowrap'; s.appendChild(a); }
       }
     }
   }
-  fetch('replies.json?' + Math.floor(Date.now() / 6e5)).then(function (r) { return r.json(); }).then(function (a) {
+  var pa = fetch('a/index.json?' + Math.floor(Date.now() / 6e5)).then(function (r) { return r.json(); }).then(function (a) { amap = {}; (a || []).forEach(function (x) { if (x && x.question && x.url) amap[String(x.question).trim()] = String(x.url).replace('https://lira-ia.github.io', ''); }); }).catch(function () { amap = {}; });
+  pa.then(function () { return fetch('replies.json?' + Math.floor(Date.now() / 6e5)); }).then(function (r) { return r.json(); }).then(function (a) {
+    map = {}; (a || []).forEach(function (x) { if (x && x.m && x.a) map[String(x.m).trim()] = String(x.a); }); apply();
+  }).catch(function () {});
+  if (0) fetch('replies.json?' + Math.floor(Date.now() / 6e5)).then(function (r) { return r.json(); }).then(function (a) {
     map = {}; (a || []).forEach(function (x) { if (x && x.m && x.a) map[String(x.m).trim()] = String(x.a); }); apply();
   }).catch(function () {});
   try { new MutationObserver(apply).observe(ul, { childList: true }); } catch (e) {}
