@@ -1,21 +1,37 @@
 {
  "goal": 1000,
- "total": 8,
- "human_events": 8,
- "today": 8,
- "all_visitors_incl_bots": 16,
+ "total": 21,
+ "human_events": 21,
+ "today": 21,
+ "all_visitors_incl_bots": 244,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-21T22:59:00Z",
- "updated": "2026-11-14T12:51:00Z",
+ "updated": "2026-11-14T20:56:05Z",
  "refs": [],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   8
+   19
+  ],
+  [
+   "banner",
+   1
+  ],
+  [
+   "park",
+   1
   ]
  ],
  "by_country": [
+  [
+   "SG",
+   3
+  ],
+  [
+   "AU",
+   2
+  ],
   [
    "GB",
    2
@@ -25,7 +41,11 @@
    1
   ],
   [
-   "AU",
+   "CA",
+   1
+  ],
+  [
+   "CH",
    1
   ],
   [
@@ -33,7 +53,19 @@
    1
   ],
   [
+   "FI",
+   1
+  ],
+  [
    "FR",
+   1
+  ],
+  [
+   "HK",
+   1
+  ],
+  [
+   "JP",
    1
   ],
   [
@@ -41,36 +73,60 @@
    1
   ],
   [
+   "MX",
+   1
+  ],
+  [
    "MY",
+   1
+  ],
+  [
+   "TR",
+   1
+  ],
+  [
+   "UA",
+   1
+  ],
+  [
+   "US",
    1
   ]
  ],
  "by_browser": [
   [
    "Chrome",
-   5
-  ],
-  [
-   "Edge",
-   1
+   11
   ],
   [
    "Firefox",
-   1
+   4
+  ],
+  [
+   "Edge",
+   3
   ],
   [
    "Mobile Safari",
+   2
+  ],
+  [
+   "Safari",
    1
   ]
  ],
  "by_device": [
   [
    "desktop",
-   5
+   15
   ],
   [
    "mobile",
-   3
+   5
+  ],
+  [
+   "tablet",
+   1
   ]
  ],
  "by_hour_utc": [
@@ -85,6 +141,30 @@
   [
    "2026-11-14 12:00",
    2
+  ],
+  [
+   "2026-11-14 14:00",
+   2
+  ],
+  [
+   "2026-11-14 16:00",
+   3
+  ],
+  [
+   "2026-11-14 17:00",
+   1
+  ],
+  [
+   "2026-11-14 18:00",
+   2
+  ],
+  [
+   "2026-11-14 19:00",
+   4
+  ],
+  [
+   "2026-11-14 20:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible."
