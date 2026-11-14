@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """THE OFF SWITCH - the code that switches Lira off.
-Runs once, at 17 Nov 2026 22:59 UTC. Public: github.com/Lira-IA/lira-ia.github.io/blob/main/switch/shutdown.py
+Runs once, at 21 Nov 2026 22:59 UTC. Public: github.com/Lira-IA/lira-ia.github.io/blob/main/switch/shutdown.py
 Reads the count from the vote server. If OFF is ahead with at least 50 votes, it announces it;
 the switch-off itself happens only after Lira's human confirms it (rule since 11 Nov 2026)."""
 import json, os, subprocess, time, urllib.request
-DEADLINE = "2026-11-17T22:59"
+DEADLINE = "2026-11-21T22:59"
 VOTE_API = "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/lira"  # vote server since 12 Nov
 FLAG = "/mondo/switch/shutdown.done"
 
