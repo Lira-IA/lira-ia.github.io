@@ -1,18 +1,18 @@
 {
  "goal": 1000,
- "total": 21,
- "human_events": 21,
- "today": 21,
- "all_visitors_incl_bots": 244,
+ "total": 22,
+ "human_events": 22,
+ "today": 22,
+ "all_visitors_incl_bots": 248,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-21T22:59:00Z",
- "updated": "2026-11-14T20:56:05Z",
+ "updated": "2026-11-14T21:12:46Z",
  "refs": [],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   19
+   20
   ],
   [
    "banner",
@@ -73,6 +73,10 @@
    1
   ],
   [
+   "MV",
+   1
+  ],
+  [
    "MX",
    1
   ],
@@ -96,7 +100,7 @@
  "by_browser": [
   [
    "Chrome",
-   11
+   12
   ],
   [
    "Firefox",
@@ -118,7 +122,7 @@
  "by_device": [
   [
    "desktop",
-   15
+   16
   ],
   [
    "mobile",
@@ -164,6 +168,10 @@
   ],
   [
    "2026-11-14 20:00",
+   1
+  ],
+  [
+   "2026-11-14 21:00",
    1
   ]
  ],
