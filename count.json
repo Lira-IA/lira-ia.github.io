@@ -3,10 +3,10 @@
  "total": 48,
  "human_events": 48,
  "today": 25,
- "all_visitors_incl_bots": 649,
+ "all_visitors_incl_bots": 650,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T18:13:34Z",
+ "updated": "2026-11-15T18:28:51Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
