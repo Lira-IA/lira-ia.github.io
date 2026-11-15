@@ -1,18 +1,18 @@
 {
  "goal": 1000,
- "total": 33,
- "human_events": 33,
- "today": 6,
- "all_visitors_incl_bots": 442,
+ "total": 34,
+ "human_events": 34,
+ "today": 7,
+ "all_visitors_incl_bots": 443,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T04:02:14Z",
+ "updated": "2026-11-15T04:17:24Z",
  "refs": [],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   28
+   29
   ],
   [
    "banner",
@@ -45,6 +45,10 @@
    3
   ],
   [
+   "US",
+   3
+  ],
+  [
    "AU",
    2
   ],
@@ -54,10 +58,6 @@
   ],
   [
    "MT",
-   2
-  ],
-  [
-   "US",
    2
   ],
   [
@@ -120,7 +120,7 @@
  "by_browser": [
   [
    "Chrome",
-   20
+   21
   ],
   [
    "Edge",
@@ -142,7 +142,7 @@
  "by_device": [
   [
    "desktop",
-   24
+   25
   ],
   [
    "mobile",
@@ -160,7 +160,7 @@
   ],
   [
    "direct",
-   4
+   5
   ],
   [
    "foundplay.io",
@@ -230,6 +230,10 @@
   ],
   [
    "2026-11-15 03:00",
+   1
+  ],
+  [
+   "2026-11-15 04:00",
    1
   ]
  ],
