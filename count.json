@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 37,
- "human_events": 37,
- "today": 14,
- "all_visitors_incl_bots": 632,
+ "total": 38,
+ "human_events": 38,
+ "today": 15,
+ "all_visitors_incl_bots": 633,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T13:24:17Z",
+ "updated": "2026-11-15T13:39:31Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -33,6 +33,10 @@
   ],
   [
    "Hacker News",
+   1
+  ],
+  [
+   "aibuiltgames",
    1
   ],
   [
@@ -114,6 +118,10 @@
    1
   ],
   [
+   "LU",
+   1
+  ],
+  [
    "MX",
    1
   ],
@@ -137,7 +145,7 @@
  "by_browser": [
   [
    "Chrome",
-   22
+   23
   ],
   [
    "Edge",
@@ -159,7 +167,7 @@
  "by_device": [
   [
    "desktop",
-   27
+   28
   ],
   [
    "mobile",
@@ -182,6 +190,10 @@
   [
    "facebook.com",
    2
+  ],
+  [
+   "aibuiltgames.com",
+   1
   ],
   [
    "foundplay.io",
@@ -218,15 +230,15 @@
    2
   ],
   [
+   "/sevenfair/",
+   2
+  ],
+  [
    "/",
    1
   ],
   [
    "/cinque-giorni/",
-   1
-  ],
-  [
-   "/sevenfair/",
    1
   ],
   [
@@ -317,7 +329,7 @@
   ],
   [
    "2026-11-15 13:00",
-   2
+   3
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
