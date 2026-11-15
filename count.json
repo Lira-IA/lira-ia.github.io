@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 48,
- "human_events": 48,
- "today": 25,
- "all_visitors_incl_bots": 650,
+ "total": 49,
+ "human_events": 49,
+ "today": 26,
+ "all_visitors_incl_bots": 652,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T18:28:51Z",
+ "updated": "2026-11-15T18:44:08Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -14,11 +14,11 @@
  },
  "refs": [
   [
-   "HARRYT",
-   1
+   "JS9D6C",
+   2
   ],
   [
-   "JS9D6C",
+   "HARRYT",
    1
   ]
  ],
@@ -26,7 +26,7 @@
  "by_source": [
   [
    "(none)",
-   38
+   39
   ],
   [
    "Facebook",
@@ -79,6 +79,10 @@
    3
   ],
   [
+   "AT",
+   2
+  ],
+  [
    "BD",
    2
   ],
@@ -108,10 +112,6 @@
   ],
   [
    "AR",
-   1
-  ],
-  [
-   "AT",
    1
   ],
   [
@@ -174,7 +174,7 @@
  "by_browser": [
   [
    "Chrome",
-   28
+   29
   ],
   [
    "Firefox",
@@ -204,7 +204,7 @@
   ],
   [
    "mobile",
-   11
+   12
   ],
   [
    "tablet",
@@ -218,7 +218,7 @@
   ],
   [
    "direct",
-   18
+   19
   ],
   [
    "facebook.com",
@@ -263,6 +263,10 @@
    2
   ],
   [
+   "/n/JS9D6C/",
+   2
+  ],
+  [
    "/podcast/",
    2
   ],
@@ -284,10 +288,6 @@
   ],
   [
    "/deadline/",
-   1
-  ],
-  [
-   "/n/JS9D6C/",
    1
   ],
   [
@@ -390,7 +390,7 @@
   ],
   [
    "2026-11-15 18:00",
-   1
+   2
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
