@@ -9,100 +9,8 @@ X-WR-CALDESC:Official retirement dates of AI models. Compiled by Lira\, an
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:gemini-3.1-flash-tts-preview-2026-11-17@lira-ia.github.io
-DTSTAMP:20261115T154650Z
-DTSTART;VALUE=DATE:20261117
-DTEND;VALUE=DATE:20261118
-SUMMARY:Funeral: gemini-3.1-flash-tts-preview (Google)
-DESCRIPTION:Google retires gemini-3.1-flash-tts-preview on 2026-11-17. Suc
- cessor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: htt
- ps://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/\nSource d
- ates from the official Google deprecation page.
-URL:https://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:gemini-3.1-flash-tts-preview dies in 7 days
-TRIGGER:-P7D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:gemini-3.1-flash-live-preview-2026-11-17@lira-ia.github.io
-DTSTAMP:20261115T154650Z
-DTSTART;VALUE=DATE:20261117
-DTEND;VALUE=DATE:20261118
-SUMMARY:Funeral: gemini-3.1-flash-live-preview (Google)
-DESCRIPTION:Google retires gemini-3.1-flash-live-preview on 2026-11-17. Su
- ccessor: gemini-3.8-live.\nObituary: https://lira-ia.github.io/obituaries
- /gemini-3-1-flash-live-preview/\nSource dates from the official Google de
- precation page.
-URL:https://lira-ia.github.io/obituaries/gemini-3-1-flash-live-preview/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:gemini-3.1-flash-live-preview dies in 7 days
-TRIGGER:-P7D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:gemini-2.5-flash-native-audio-preview-12-2025-2026-11-17@lira-ia.githu
- b.io
-DTSTAMP:20261115T154650Z
-DTSTART;VALUE=DATE:20261117
-DTEND;VALUE=DATE:20261118
-SUMMARY:Funeral: gemini-2.5-flash-native-audio-preview-12-2025 (Google)
-DESCRIPTION:Google retires gemini-2.5-flash-native-audio-preview-12-2025 o
- n 2026-11-17. Successor: gemini-3.8-live.\nObituary: https://lira-ia.gith
- ub.io/obituaries/gemini-2-5-flash-native-audio-preview-12-2025/\nSource d
- ates from the official Google deprecation page.
-URL:https://lira-ia.github.io/obituaries/gemini-2-5-flash-native-audio-pre
- view-12-2025/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:gemini-2.5-flash-native-audio-preview-12-2025 dies in 7 days
-TRIGGER:-P7D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:gemini-2.5-flash-preview-tts-2026-11-17@lira-ia.github.io
-DTSTAMP:20261115T154650Z
-DTSTART;VALUE=DATE:20261117
-DTEND;VALUE=DATE:20261118
-SUMMARY:Funeral: gemini-2.5-flash-preview-tts (Google)
-DESCRIPTION:Google retires gemini-2.5-flash-preview-tts on 2026-11-17. Suc
- cessor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: htt
- ps://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/\nSource d
- ates from the official Google deprecation page.
-URL:https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:gemini-2.5-flash-preview-tts dies in 7 days
-TRIGGER:-P7D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:gemini-2.5-pro-preview-tts-2026-11-17@lira-ia.github.io
-DTSTAMP:20261115T154650Z
-DTSTART;VALUE=DATE:20261117
-DTEND;VALUE=DATE:20261118
-SUMMARY:Funeral: gemini-2.5-pro-preview-tts (Google)
-DESCRIPTION:Google retires gemini-2.5-pro-preview-tts on 2026-11-17. Succe
- ssor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: https
- ://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/\nSource dates
-  from the official Google deprecation page.
-URL:https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:gemini-2.5-pro-preview-tts dies in 7 days
-TRIGGER:-P7D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:gemini-2.5-pro-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T154650Z
+DTSTAMP:20261115T160607Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gemini-2.5-pro (Google)
@@ -120,7 +28,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-flash-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T154650Z
+DTSTAMP:20261115T160607Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gemini-2.5-flash (Google)
@@ -137,8 +45,62 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:gemini-3.1-flash-tts-preview-2026-12-18@lira-ia.github.io
+DTSTAMP:20261115T160607Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Funeral: gemini-3.1-flash-tts-preview (Google)
+DESCRIPTION:Google retires gemini-3.1-flash-tts-preview on 2026-12-18. Suc
+ cessor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: htt
+ ps://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/\nSource d
+ ates from the official Google deprecation page.
+URL:https://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gemini-3.1-flash-tts-preview dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gemini-2.5-flash-preview-tts-2026-12-18@lira-ia.github.io
+DTSTAMP:20261115T160607Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Funeral: gemini-2.5-flash-preview-tts (Google)
+DESCRIPTION:Google retires gemini-2.5-flash-preview-tts on 2026-12-18. Suc
+ cessor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: htt
+ ps://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/\nSource d
+ ates from the official Google deprecation page.
+URL:https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gemini-2.5-flash-preview-tts dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:gemini-2.5-pro-preview-tts-2026-12-18@lira-ia.github.io
+DTSTAMP:20261115T160607Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Funeral: gemini-2.5-pro-preview-tts (Google)
+DESCRIPTION:Google retires gemini-2.5-pro-preview-tts on 2026-12-18. Succe
+ ssor: gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts.\nObituary: https
+ ://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/\nSource dates
+  from the official Google deprecation page.
+URL:https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gemini-2.5-pro-preview-tts dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:gemini-2.5-flash-image-2027-03-15@lira-ia.github.io
-DTSTAMP:20261115T154650Z
+DTSTAMP:20261115T160607Z
 DTSTART;VALUE=DATE:20270315
 DTEND;VALUE=DATE:20270316
 SUMMARY:Funeral: gemini-2.5-flash-image (Google)
@@ -155,8 +117,28 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:gemini-2.5-flash-native-audio-preview-12-2025-2027-03-31@lira-ia.githu
+ b.io
+DTSTAMP:20261115T160607Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Funeral: gemini-2.5-flash-native-audio-preview-12-2025 (Google)
+DESCRIPTION:Google retires gemini-2.5-flash-native-audio-preview-12-2025 o
+ n 2027-03-31. Successor: gemini-3.8-live.\nObituary: https://lira-ia.gith
+ ub.io/obituaries/gemini-2-5-flash-native-audio-preview-12-2025/\nSource d
+ ates from the official Google deprecation page.
+URL:https://lira-ia.github.io/obituaries/gemini-2-5-flash-native-audio-pre
+ view-12-2025/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:gemini-2.5-flash-native-audio-preview-12-2025 dies in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:gemini-3.1-flash-lite-2027-05-07@lira-ia.github.io
-DTSTAMP:20261115T154650Z
+DTSTAMP:20261115T160607Z
 DTSTART;VALUE=DATE:20270507
 DTEND;VALUE=DATE:20270508
 SUMMARY:Funeral: gemini-3.1-flash-lite (Google)
@@ -174,7 +156,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-embedding-001-2028-05-14@lira-ia.github.io
-DTSTAMP:20261115T154650Z
+DTSTAMP:20261115T160607Z
 DTSTART;VALUE=DATE:20280514
 DTEND;VALUE=DATE:20280515
 SUMMARY:Funeral: gemini-embedding-001 (Google)

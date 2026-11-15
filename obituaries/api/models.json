@@ -458,7 +458,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol",
+   "successor": "gpt-6.1-sol",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5.svg"
@@ -468,7 +468,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol",
+   "successor": "gpt-6.1-sol",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-2025-08-07.svg"
@@ -478,7 +478,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-terra",
+   "successor": "gpt-6.1-terra",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-mini.svg"
@@ -488,7 +488,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-terra",
+   "successor": "gpt-6.1-terra",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-mini-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-mini-2025-08-07.svg"
@@ -498,7 +498,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-luna",
+   "successor": "gpt-6-luna",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-nano/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-nano.svg"
@@ -508,7 +508,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-luna",
+   "successor": "gpt-6-luna",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-nano-2025-08-07/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-nano-2025-08-07.svg"
@@ -518,7 +518,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor": "gpt-6.1-sol (reasoning.mode: pro)",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-pro.svg"
@@ -528,7 +528,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor": "gpt-6.1-sol (reasoning.mode: pro)",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-5-pro-2025-10-06/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-pro-2025-10-06.svg"
@@ -538,7 +538,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol",
+   "successor": "gpt-6.1-sol",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3.svg"
@@ -548,7 +548,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol",
+   "successor": "gpt-6.1-sol",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-2025-04-16/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-2025-04-16.svg"
@@ -558,7 +558,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor": "gpt-6.1-sol (reasoning.mode: pro)",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-pro/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-pro.svg"
@@ -568,7 +568,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-11",
    "retired": false,
-   "successor": "gpt-5.6-sol (reasoning.mode: pro)",
+   "successor": "gpt-6.1-sol (reasoning.mode: pro)",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/o3-pro-2025-06-10/",
    "badge": "https://lira-ia.github.io/obituaries/badge/o3-pro-2025-06-10.svg"
@@ -578,7 +578,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-01",
    "retired": false,
-   "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor": "gpt-image-2.6-sunburst or gpt-image-2.6-flare",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-mini/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-mini.svg"
@@ -588,7 +588,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-01",
    "retired": false,
-   "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor": "gpt-image-2.6-sunburst or gpt-image-2.6-flare",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-5.svg"
@@ -598,7 +598,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-01",
    "retired": false,
-   "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor": "gpt-image-2.6-sunburst or gpt-image-2.6-flare",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/",
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-image-1-5-2025-12-16.svg"
@@ -608,7 +608,7 @@
    "provider": "OpenAI",
    "retires": "2026-12-01",
    "retired": false,
-   "successor": "gpt-image-2.5-sunburst or gpt-image-2.5-flare",
+   "successor": "gpt-image-2.6-sunburst or gpt-image-2.6-flare",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/chatgpt-image-latest/",
    "badge": "https://lira-ia.github.io/obituaries/badge/chatgpt-image-latest.svg"
@@ -648,7 +648,7 @@
    "provider": "Anthropic",
    "retires": "2026-11-30",
    "retired": false,
-   "successor": "claude-sonnet-5-5",
+   "successor": "claude-sonnet-5-5 (this alias is not in Anthropic's table; date inferred from claude-sonnet-4-5-20250929)",
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-5.svg"
