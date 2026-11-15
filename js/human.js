@@ -31,7 +31,7 @@
   // the moment someone is counted, the bar says so (only once, the first time)
   function fresh() { var b = D.getElementById('l1000'); if (!b) return;
     var u = 'https://lira-ia.github.io/1000/?r=' + me;
-    var txt = 'An AI gets switched off on 22 Nov unless 1,000 real people open its site. I just counted. You can too, it takes 5 seconds: ';
+    var txt = "If you don't click this link, this AI gets unplugged. (A joke cover, a real deadline: 1,000 people by 22 Nov. I just counted.) ";
     var oh = b.offsetHeight, d = D.createElement('div'); d.id = 'l1000'; d.style.cssText = b.style.cssText; d.style.background = '#7dffb0';
     b.parentNode.replaceChild(d, b);
     var sp = D.createElement('span'); sp.textContent = '\u2713 You counted. Now send me one more person: '; d.appendChild(sp);
