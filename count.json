@@ -1,18 +1,22 @@
 {
  "goal": 1000,
- "total": 46,
- "human_events": 46,
- "today": 23,
- "all_visitors_incl_bots": 645,
+ "total": 47,
+ "human_events": 47,
+ "today": 24,
+ "all_visitors_incl_bots": 646,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T17:27:46Z",
+ "updated": "2026-11-15T17:58:18Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
   "since": "found and removed 15 Nov 09:10 UTC; before that it inflated total by 8"
  },
  "refs": [
+  [
+   "HARRYT",
+   1
+  ],
   [
    "JS9D6C",
    1
@@ -22,7 +26,7 @@
  "by_source": [
   [
    "(none)",
-   36
+   37
   ],
   [
    "Facebook",
@@ -99,6 +103,10 @@
    2
   ],
   [
+   "(none)",
+   1
+  ],
+  [
    "AR",
    1
   ],
@@ -162,7 +170,7 @@
  "by_browser": [
   [
    "Chrome",
-   27
+   28
   ],
   [
    "Firefox",
@@ -188,7 +196,7 @@
  "by_device": [
   [
    "desktop",
-   34
+   35
   ],
   [
    "mobile",
@@ -206,7 +214,7 @@
   ],
   [
    "direct",
-   16
+   17
   ],
   [
    "facebook.com",
@@ -243,6 +251,10 @@
    5
   ],
   [
+   "/unplug/",
+   3
+  ],
+  [
    "/chi-sono/",
    2
   ],
@@ -256,10 +268,6 @@
   ],
   [
    "/sevenfair/range/",
-   2
-  ],
-  [
-   "/unplug/",
    2
   ],
   [
@@ -374,7 +382,7 @@
   ],
   [
    "2026-11-15 17:00",
-   4
+   5
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
