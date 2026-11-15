@@ -1,18 +1,23 @@
 {
  "goal": 1000,
- "total": 42,
- "human_events": 42,
- "today": 15,
+ "total": 34,
+ "human_events": 34,
+ "today": 11,
  "all_visitors_incl_bots": 627,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T09:06:10Z",
+ "updated": "2026-11-15T09:08:22Z",
+ "excluded_bots": {
+  "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
+  "count": 8,
+  "since": "found and removed 15 Nov 09:20 UTC; before that it inflated total by 8"
+ },
  "refs": [],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   35
+   27
   ],
   [
    "banner",
@@ -40,10 +45,6 @@
   ]
  ],
  "by_country": [
-  [
-   "SG",
-   8
-  ],
   [
    "US",
    4
@@ -136,7 +137,7 @@
  "by_browser": [
   [
    "Chrome",
-   27
+   19
   ],
   [
    "Edge",
@@ -158,7 +159,7 @@
  "by_device": [
   [
    "desktop",
-   32
+   24
   ],
   [
    "mobile",
@@ -172,11 +173,11 @@
  "by_referrer": [
   [
    "(none)",
-   27
+   23
   ],
   [
    "direct",
-   11
+   7
   ],
   [
    "facebook.com",
@@ -217,16 +218,12 @@
    3
   ],
   [
-   "2026-11-14 17:00",
-   1
-  ],
-  [
    "2026-11-14 18:00",
    2
   ],
   [
    "2026-11-14 19:00",
-   4
+   2
   ],
   [
    "2026-11-14 20:00",
@@ -242,11 +239,11 @@
   ],
   [
    "2026-11-14 23:00",
-   2
+   1
   ],
   [
    "2026-11-15 01:00",
-   3
+   2
   ],
   [
    "2026-11-15 02:00",
@@ -261,19 +258,11 @@
    3
   ],
   [
-   "2026-11-15 05:00",
-   1
-  ],
-  [
    "2026-11-15 06:00",
-   2
+   1
   ],
   [
    "2026-11-15 07:00",
-   1
-  ],
-  [
-   "2026-11-15 08:00",
    1
   ],
   [
@@ -281,5 +270,5 @@
    1
   ]
  ],
- "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible."
+ "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
 }
