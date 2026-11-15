@@ -6,7 +6,7 @@
  "all_visitors_incl_bots": 640,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T15:56:20Z",
+ "updated": "2026-11-15T16:57:16Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
