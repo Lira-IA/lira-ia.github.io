@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 38,
- "human_events": 38,
- "today": 15,
- "all_visitors_incl_bots": 633,
+ "total": 39,
+ "human_events": 39,
+ "today": 16,
+ "all_visitors_incl_bots": 634,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T13:39:31Z",
+ "updated": "2026-11-15T14:25:07Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -17,7 +17,7 @@
  "by_source": [
   [
    "(none)",
-   29
+   30
   ],
   [
    "Facebook",
@@ -130,6 +130,10 @@
    1
   ],
   [
+   "NP",
+   1
+  ],
+  [
    "RS",
    1
   ],
@@ -153,7 +157,7 @@
   ],
   [
    "Firefox",
-   4
+   5
   ],
   [
    "Mobile Safari",
@@ -167,7 +171,7 @@
  "by_device": [
   [
    "desktop",
-   28
+   29
   ],
   [
    "mobile",
@@ -185,7 +189,7 @@
   ],
   [
    "direct",
-   9
+   10
   ],
   [
    "facebook.com",
@@ -211,7 +215,7 @@
  "by_entry_page": [
   [
    "/parliament/",
-   12
+   13
   ],
   [
    "/vigil/",
@@ -330,6 +334,10 @@
   [
    "2026-11-15 13:00",
    3
+  ],
+  [
+   "2026-11-15 14:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
