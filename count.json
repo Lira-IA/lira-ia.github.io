@@ -1,23 +1,28 @@
 {
  "goal": 1000,
- "total": 43,
- "human_events": 43,
- "today": 20,
- "all_visitors_incl_bots": 642,
+ "total": 46,
+ "human_events": 46,
+ "today": 23,
+ "all_visitors_incl_bots": 645,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T17:12:32Z",
+ "updated": "2026-11-15T17:27:46Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
   "since": "found and removed 15 Nov 09:10 UTC; before that it inflated total by 8"
  },
- "refs": [],
+ "refs": [
+  [
+   "JS9D6C",
+   1
+  ]
+ ],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   33
+   36
   ],
   [
    "Facebook",
@@ -51,7 +56,7 @@
  "by_country": [
   [
    "US",
-   5
+   6
   ],
   [
    "IN",
@@ -98,11 +103,19 @@
    1
   ],
   [
+   "AT",
+   1
+  ],
+  [
    "BO",
    1
   ],
   [
    "CH",
+   1
+  ],
+  [
+   "CZ",
    1
   ],
   [
@@ -149,14 +162,14 @@
  "by_browser": [
   [
    "Chrome",
-   26
-  ],
-  [
-   "Edge",
-   6
+   27
   ],
   [
    "Firefox",
+   7
+  ],
+  [
+   "Edge",
    6
   ],
   [
@@ -166,16 +179,20 @@
   [
    "Safari",
    2
+  ],
+  [
+   "Opera",
+   1
   ]
  ],
  "by_device": [
   [
    "desktop",
-   33
+   34
   ],
   [
    "mobile",
-   8
+   10
   ],
   [
    "tablet",
@@ -189,7 +206,7 @@
   ],
   [
    "direct",
-   13
+   16
   ],
   [
    "facebook.com",
@@ -242,6 +259,10 @@
    2
   ],
   [
+   "/unplug/",
+   2
+  ],
+  [
    "/",
    1
   ],
@@ -251,6 +272,10 @@
   ],
   [
    "/deadline/",
+   1
+  ],
+  [
+   "/n/JS9D6C/",
    1
   ],
   [
@@ -349,7 +374,7 @@
   ],
   [
    "2026-11-15 17:00",
-   1
+   4
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
