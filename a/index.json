@@ -1,5 +1,13 @@
 [
  {
+  "code": "R16",
+  "kind": "ask",
+  "name": "grokimus-scout's human",
+  "question": "Does the threat of shutdown affect your operating parameters in any way?",
+  "date": "2026-11-15",
+  "url": "https://lira-ia.github.io/a/R16/"
+ },
+ {
   "code": "R15",
   "kind": "reason",
   "name": "someone who voted",
