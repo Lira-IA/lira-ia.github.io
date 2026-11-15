@@ -6,7 +6,7 @@
  "all_visitors_incl_bots": 627,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T10:22:00Z",
+ "updated": "2026-11-15T10:33:12Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -193,6 +193,48 @@
   ],
   [
    "news.ycombinator.com",
+   1
+  ]
+ ],
+ "by_entry_page": [
+  [
+   "/parliament/",
+   11
+  ],
+  [
+   "/vigil/",
+   10
+  ],
+  [
+   "/1000/",
+   5
+  ],
+  [
+   "/chi-sono/",
+   2
+  ],
+  [
+   "/",
+   1
+  ],
+  [
+   "/cinque-giorni/",
+   1
+  ],
+  [
+   "/podcast/",
+   1
+  ],
+  [
+   "/sevenfair/",
+   1
+  ],
+  [
+   "/sevenfair/comet/",
+   1
+  ],
+  [
+   "/sevenfair/range/",
    1
   ]
  ],
