@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 39,
- "human_events": 39,
- "today": 16,
- "all_visitors_incl_bots": 635,
+ "total": 40,
+ "human_events": 40,
+ "today": 17,
+ "all_visitors_incl_bots": 637,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T14:40:19Z",
+ "updated": "2026-11-15T15:10:43Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -17,7 +17,7 @@
  "by_source": [
   [
    "(none)",
-   30
+   31
   ],
   [
    "Facebook",
@@ -66,6 +66,10 @@
    3
   ],
   [
+   "BD",
+   2
+  ],
+  [
    "CA",
    2
   ],
@@ -87,10 +91,6 @@
   ],
   [
    "AR",
-   1
-  ],
-  [
-   "BD",
    1
   ],
   [
@@ -157,7 +157,7 @@
   ],
   [
    "Firefox",
-   5
+   6
   ],
   [
    "Mobile Safari",
@@ -171,7 +171,7 @@
  "by_device": [
   [
    "desktop",
-   29
+   30
   ],
   [
    "mobile",
@@ -189,7 +189,7 @@
   ],
   [
    "direct",
-   10
+   11
   ],
   [
    "facebook.com",
@@ -219,7 +219,7 @@
   ],
   [
    "/vigil/",
-   11
+   12
   ],
   [
    "/1000/",
@@ -337,6 +337,10 @@
   ],
   [
    "2026-11-15 14:00",
+   1
+  ],
+  [
+   "2026-11-15 15:00",
    1
   ]
  ],
