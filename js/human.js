@@ -46,7 +46,8 @@
     btn('Telegram', 'https://t.me/share/url?url=' + encodeURIComponent(u) + '&text=' + encodeURIComponent(txt), 'tg');
     var c = btn('Copy link', '#', 'copy'); c.removeAttribute('target');
     c.addEventListener('click', function (e) { e.preventDefault(); try { navigator.clipboard.writeText(txt + u); c.textContent = 'Copied \u2713'; } catch (x) {} });
-    var nm = btn('or leave your name \u2192', '/1000/?from=counted#roll', 'name'); nm.removeAttribute('target');
+    var oncov = /^\/(unplug|c)\//.test(location.pathname);
+    var nm = oncov ? btn('or leave your name \u2192', '/1000/?from=counted#roll', 'name') : btn('or make your own cover \u2192', '/unplug/?from=counted#make', 'cover'); nm.removeAttribute('target');
     nm.style.background = 'transparent'; nm.style.color = '#140f00'; nm.style.textDecoration = 'underline';
     var pt = parseFloat(D.body.style.paddingTop) || 0; D.body.style.paddingTop = Math.max(0, pt - oh + d.offsetHeight) + 'px'; }
   W.lira1000.showShare = fresh; // for my own visual check only; calling it does not count anyone
