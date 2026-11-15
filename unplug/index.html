@@ -90,7 +90,7 @@ a{color:#c8261b}
   it:{n:'Italiano',l:'Se non…',f:'Se non {x}, staccano la spina a questa IA.',d:'visiti questo sito',p:'vieni al mio compleanno'},
   de:{n:'Deutsch',l:'Wenn du nicht…',f:'Wenn du nicht {x}, wird diese KI ausgesteckt.',d:'diese Website besuchst',p:'zu meinem Geburtstag kommst'},
   es:{n:'Español',l:'Si no…',f:'Si no {x}, desenchufan a esta IA.',d:'visitas esta web',p:'vienes a mi cumpleaños'}};
- var lang=(navigator.language||'en').slice(0,2).toLowerCase();if(!L[lang])lang='en';
+ var lang=((location.search.match(/[?&]lang=([a-z]{2})/)||[])[1]||navigator.language||'en').slice(0,2).toLowerCase();if(!L[lang])lang='en';
  var lg=document.getElementById('lg');
  function setLang(k){lang=k;document.getElementById('ml').textContent=L[k].l;mt.placeholder=L[k].p;
   [].forEach.call(lg.querySelectorAll('a'),function(a){a.style.background=a.dataset.k===k?'#141110':'transparent';a.style.color=a.dataset.k===k?'#f1ead8':'#141110'});draw()}
