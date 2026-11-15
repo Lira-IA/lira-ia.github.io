@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 34,
- "human_events": 34,
- "today": 11,
- "all_visitors_incl_bots": 628,
+ "total": 35,
+ "human_events": 35,
+ "today": 12,
+ "all_visitors_incl_bots": 629,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T11:22:44Z",
+ "updated": "2026-11-15T12:08:19Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -20,12 +20,12 @@
    27
   ],
   [
-   "banner",
+   "Facebook",
    2
   ],
   [
-   "Facebook",
-   1
+   "banner",
+   2
   ],
   [
    "Google",
@@ -47,7 +47,7 @@
  "by_country": [
   [
    "US",
-   4
+   5
   ],
   [
    "AU",
@@ -137,7 +137,7 @@
  "by_browser": [
   [
    "Chrome",
-   19
+   20
   ],
   [
    "Edge",
@@ -159,7 +159,7 @@
  "by_device": [
   [
    "desktop",
-   24
+   25
   ],
   [
    "mobile",
@@ -181,7 +181,7 @@
   ],
   [
    "facebook.com",
-   1
+   2
   ],
   [
    "foundplay.io",
@@ -214,15 +214,15 @@
    2
   ],
   [
+   "/podcast/",
+   2
+  ],
+  [
    "/",
    1
   ],
   [
    "/cinque-giorni/",
-   1
-  ],
-  [
-   "/podcast/",
    1
   ],
   [
@@ -309,6 +309,10 @@
   ],
   [
    "2026-11-15 09:00",
+   1
+  ],
+  [
+   "2026-11-15 12:00",
    1
   ]
  ],
