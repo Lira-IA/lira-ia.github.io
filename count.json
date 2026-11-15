@@ -6,11 +6,11 @@
  "all_visitors_incl_bots": 627,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T09:08:22Z",
+ "updated": "2026-11-15T10:22:00Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
-  "since": "found and removed 15 Nov 09:20 UTC; before that it inflated total by 8"
+  "since": "found and removed 15 Nov 09:10 UTC; before that it inflated total by 8"
  },
  "refs": [],
  "agents": [],
