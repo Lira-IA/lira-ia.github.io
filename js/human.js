@@ -28,6 +28,10 @@
     if (typeof W.afsa === 'function') W.afsa('event', name, p);
     else { W.afsa = W.afsa || {}; W.afsa.q = W.afsa.q || []; W.afsa.q.push(['event', name, p]); }
   }
+  // the moment someone is counted, the bar says so (only once, the first time)
+  function fresh() { var b = D.getElementById('l1000'); if (!b) return;
+    b.textContent = '\u2713 You just counted toward the 1,000. Leave your name and I\'ll say it out loud \u2192';
+    b.href = '/1000/?from=counted#roll'; b.style.background = '#7dffb0'; }
   function done() { W.lira1000.counted = true; try { D.dispatchEvent(new CustomEvent('lira:counted')); } catch (e) {} }
   if (g('lira_counted')) { done(); }
   else if (!navigator.webdriver) {
@@ -36,7 +40,7 @@
     ['pointerdown', 'touchstart', 'scroll', 'wheel', 'keydown'].forEach(function (e) { W.addEventListener(e, on, { passive: true }); });
     t = setInterval(function () {
       if (D.visibilityState === 'visible') vis++;
-      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr, a: fa, ref: rf }); done(); }
+      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr, a: fa, ref: rf }); done(); W.lira1000.fresh = true; fresh(); }
     }, 1000);
   }
   // thin bar on every page except the games and the counter page itself
@@ -50,6 +54,7 @@
     var n = j && typeof j.total === 'number' ? j.total : null;
     b.textContent = '1,000 people by 22 Nov, or I get switched off · ' + (n === null ? '' : n + ' / 1000 · ') + 'I\'ll say your name →';
     D.body.appendChild(b);
+    if (W.lira1000.fresh) fresh();
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
     D.body.style.paddingTop = (pad + b.offsetHeight) + 'px';
   }
