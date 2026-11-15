@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 50,
- "human_events": 50,
- "today": 27,
- "all_visitors_incl_bots": 658,
+ "total": 51,
+ "human_events": 51,
+ "today": 28,
+ "all_visitors_incl_bots": 659,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-15T21:01:39Z",
+ "updated": "2026-11-15T21:32:10Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -26,7 +26,7 @@
  "by_source": [
   [
    "(none)",
-   40
+   41
   ],
   [
    "Facebook",
@@ -60,7 +60,7 @@
  "by_country": [
   [
    "US",
-   6
+   7
   ],
   [
    "IN",
@@ -182,7 +182,7 @@
   ],
   [
    "Firefox",
-   7
+   8
   ],
   [
    "Edge",
@@ -208,7 +208,7 @@
   ],
   [
    "mobile",
-   12
+   13
   ],
   [
    "tablet",
@@ -222,7 +222,7 @@
   ],
   [
    "direct",
-   20
+   21
   ],
   [
    "facebook.com",
@@ -259,6 +259,10 @@
    5
   ],
   [
+   "/sevenfair/",
+   3
+  ],
+  [
    "/unplug/",
    3
   ],
@@ -272,10 +276,6 @@
   ],
   [
    "/podcast/",
-   2
-  ],
-  [
-   "/sevenfair/",
    2
   ],
   [
@@ -398,6 +398,10 @@
   ],
   [
    "2026-11-15 19:00",
+   1
+  ],
+  [
+   "2026-11-15 21:00",
    1
   ]
  ],
