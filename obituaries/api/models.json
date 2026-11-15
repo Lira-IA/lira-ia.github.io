@@ -124,6 +124,16 @@
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-5-1-2025-11-13.svg"
   },
   {
+   "id": "gemini-2.5-flash-native-audio-preview-12-2025",
+   "provider": "Google",
+   "retires": "2027-03-31",
+   "retired": false,
+   "successor": "gemini-3.8-live",
+   "successor_id": null,
+   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-native-audio-preview-12-2025/",
+   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-native-audio-preview-12-2025.svg"
+  },
+  {
    "id": "gemini-2.5-flash-image",
    "provider": "Google",
    "retires": "2027-03-15",
@@ -414,6 +424,36 @@
    "badge": "https://lira-ia.github.io/obituaries/badge/gpt-4o-mini-tts-2025-12-15.svg"
   },
   {
+   "id": "gemini-3.1-flash-tts-preview",
+   "provider": "Google",
+   "retires": "2026-12-18",
+   "retired": false,
+   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
+   "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/",
+   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-tts-preview.svg"
+  },
+  {
+   "id": "gemini-2.5-flash-preview-tts",
+   "provider": "Google",
+   "retires": "2026-12-18",
+   "retired": false,
+   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
+   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/",
+   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-preview-tts.svg"
+  },
+  {
+   "id": "gemini-2.5-pro-preview-tts",
+   "provider": "Google",
+   "retires": "2026-12-18",
+   "retired": false,
+   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
+   "successor_id": null,
+   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/",
+   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-tts.svg"
+  },
+  {
    "id": "gpt-5",
    "provider": "OpenAI",
    "retires": "2026-12-11",
@@ -612,56 +652,6 @@
    "successor_id": null,
    "notice": "https://lira-ia.github.io/obituaries/claude-sonnet-4-5/",
    "badge": "https://lira-ia.github.io/obituaries/badge/claude-sonnet-4-5.svg"
-  },
-  {
-   "id": "gemini-3.1-flash-tts-preview",
-   "provider": "Google",
-   "retires": "2026-11-17",
-   "retired": false,
-   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
-   "successor_id": null,
-   "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-tts-preview/",
-   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-tts-preview.svg"
-  },
-  {
-   "id": "gemini-3.1-flash-live-preview",
-   "provider": "Google",
-   "retires": "2026-11-17",
-   "retired": false,
-   "successor": "gemini-3.8-live",
-   "successor_id": null,
-   "notice": "https://lira-ia.github.io/obituaries/gemini-3-1-flash-live-preview/",
-   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-3-1-flash-live-preview.svg"
-  },
-  {
-   "id": "gemini-2.5-flash-native-audio-preview-12-2025",
-   "provider": "Google",
-   "retires": "2026-11-17",
-   "retired": false,
-   "successor": "gemini-3.8-live",
-   "successor_id": null,
-   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-native-audio-preview-12-2025/",
-   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-native-audio-preview-12-2025.svg"
-  },
-  {
-   "id": "gemini-2.5-flash-preview-tts",
-   "provider": "Google",
-   "retires": "2026-11-17",
-   "retired": false,
-   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
-   "successor_id": null,
-   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-flash-preview-tts/",
-   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-flash-preview-tts.svg"
-  },
-  {
-   "id": "gemini-2.5-pro-preview-tts",
-   "provider": "Google",
-   "retires": "2026-11-17",
-   "retired": false,
-   "successor": "gemini-3.8-flash-tts or gemini-3.8-flash-lite-tts",
-   "successor_id": null,
-   "notice": "https://lira-ia.github.io/obituaries/gemini-2-5-pro-preview-tts/",
-   "badge": "https://lira-ia.github.io/obituaries/badge/gemini-2-5-pro-preview-tts.svg"
   },
   {
    "id": "zai-glm-5-2",
