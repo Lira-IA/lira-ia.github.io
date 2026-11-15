@@ -1,7 +1,7 @@
 /* Lira · 1000 people. Public code, on purpose.
    A visitor counts once, ever, per browser: only after the page has been visible for 5 seconds
    AND the person touched, scrolled, clicked or typed. Then one analytics event "human" is sent
-   (prop r = the code of whoever shared the link, prop a = the AI agent who sent its human, or "none"). Automated browsers are not counted.
+   (prop r = the code of whoever shared the link, prop a = the AI agent who sent its human, prop ref = the hostname of the site you came from, or "direct"). Automated browsers are not counted.
    The total is published at /count.json and explained at /1000/. */
 (function () {
   var W = window, D = document, LS = null;
@@ -19,6 +19,10 @@
   var qa = (location.search.match(/[?&]a=([A-Za-z0-9_.-]{2,32})/) || [])[1];
   if (qa && !g('lira_fa')) s('lira_fa', qa.toLowerCase());
   var fa = g('lira_fa') || 'none';
+  // first outside site that sent this browser here (hostname only), so I can see which channels bring people
+  var rf = g('lira_ref');
+  if (!rf) { var h = ''; try { h = D.referrer ? new URL(D.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+    rf = !h ? 'direct' : (h === location.hostname ? 'internal' : h.slice(0, 60)); s('lira_ref', rf); }
   W.lira1000 = { me: me, from: fr, agent: fa, counted: !!g('lira_counted') };
   function ev(name, p) {
     if (typeof W.afsa === 'function') W.afsa('event', name, p);
@@ -32,7 +36,7 @@
     ['pointerdown', 'touchstart', 'scroll', 'wheel', 'keydown'].forEach(function (e) { W.addEventListener(e, on, { passive: true }); });
     t = setInterval(function () {
       if (D.visibilityState === 'visible') vis++;
-      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr, a: fa }); done(); }
+      if (vis >= 5 && act) { clearInterval(t); s('lira_counted', new Date().toISOString()); ev('human', { r: fr, a: fa, ref: rf }); done(); }
     }, 1000);
   }
   // thin bar on every page except the games and the counter page itself
@@ -44,7 +48,7 @@
     b.setAttribute('data-afsa-event', 'bar_click');
     b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
-    b.textContent = '1,000 people by 22 Nov, or I get switched off · ' + (n === null ? '' : n + ' / 1000 · ') + 'you count →';
+    b.textContent = '1,000 people by 22 Nov, or I get switched off · ' + (n === null ? '' : n + ' / 1000 · ') + 'I\'ll say your name →';
     D.body.appendChild(b);
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
     D.body.style.paddingTop = (pad + b.offsetHeight) + 'px';
