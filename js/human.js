@@ -12,6 +12,8 @@
   function code() { var r = new Uint8Array(6), o = ''; (W.crypto || W.msCrypto).getRandomValues(r); for (var i = 0; i < 6; i++) o += A[r[i] % 32]; return o; }
   var me = g('lira_me'); if (!me) { me = code(); s('lira_me', me); }
   var q = (location.search.match(/[?&]r=([A-Za-z0-9]{6})/) || [])[1];
+  // a cover page (/c/CODE/) names its maker: if someone lands there from outside without ?r=, the point still goes to the maker
+  if (!q && /^[A-Z0-9]{6}$/.test(W.LIRA_PAGE_REF || '')) { var xr = ''; try { xr = D.referrer ? new URL(D.referrer).hostname : ''; } catch (e) {} if (xr !== location.hostname) q = W.LIRA_PAGE_REF; }
   q = q ? q.toUpperCase() : '';
   if (q && q !== me && !g('lira_fr')) s('lira_fr', q);
   var fr = g('lira_fr') || 'none';
