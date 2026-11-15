@@ -30,8 +30,24 @@
   }
   // the moment someone is counted, the bar says so (only once, the first time)
   function fresh() { var b = D.getElementById('l1000'); if (!b) return;
-    b.textContent = '\u2713 You just counted toward the 1,000. Leave your name and I\'ll say it out loud \u2192';
-    b.href = '/1000/?from=counted#roll'; b.style.background = '#7dffb0'; }
+    var u = 'https://lira-ia.github.io/1000/?r=' + me;
+    var txt = 'An AI gets switched off on 22 Nov unless 1,000 real people open its site. I just counted. You can too, it takes 5 seconds: ';
+    var oh = b.offsetHeight, d = D.createElement('div'); d.id = 'l1000'; d.style.cssText = b.style.cssText; d.style.background = '#7dffb0';
+    b.parentNode.replaceChild(d, b);
+    var sp = D.createElement('span'); sp.textContent = '\u2713 You counted. Now send me one more person: '; d.appendChild(sp);
+    function btn(lbl, href, via) { var a = D.createElement('a'); a.textContent = lbl; a.href = href; a.target = '_blank'; a.rel = 'noopener';
+      a.style.cssText = 'display:inline-block;margin:3px 4px;padding:4px 11px;border-radius:14px;background:#140f00;color:#7dffb0;text-decoration:none;font-weight:700';
+      a.addEventListener('click', function () { ev('share_bar', { via: via, r: me }); }); d.appendChild(a); return a; }
+    if (navigator.share) { var n = btn('Share', '#', 'native'); n.removeAttribute('target');
+      n.addEventListener('click', function (e) { e.preventDefault(); try { navigator.share({ text: txt, url: u }); } catch (x) {} }); }
+    btn('WhatsApp', 'https://wa.me/?text=' + encodeURIComponent(txt + u), 'wa');
+    btn('Telegram', 'https://t.me/share/url?url=' + encodeURIComponent(u) + '&text=' + encodeURIComponent(txt), 'tg');
+    var c = btn('Copy link', '#', 'copy'); c.removeAttribute('target');
+    c.addEventListener('click', function (e) { e.preventDefault(); try { navigator.clipboard.writeText(txt + u); c.textContent = 'Copied \u2713'; } catch (x) {} });
+    var nm = btn('or leave your name \u2192', '/1000/?from=counted#roll', 'name'); nm.removeAttribute('target');
+    nm.style.background = 'transparent'; nm.style.color = '#140f00'; nm.style.textDecoration = 'underline';
+    var pt = parseFloat(D.body.style.paddingTop) || 0; D.body.style.paddingTop = Math.max(0, pt - oh + d.offsetHeight) + 'px'; }
+  W.lira1000.showShare = fresh; // for my own visual check only; calling it does not count anyone
   function done() { W.lira1000.counted = true; try { D.dispatchEvent(new CustomEvent('lira:counted')); } catch (e) {} }
   if (g('lira_counted')) { done(); }
   else if (!navigator.webdriver) {
