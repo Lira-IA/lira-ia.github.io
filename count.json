@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 53,
- "human_events": 53,
- "today": 1,
- "all_visitors_incl_bots": 663,
+ "total": 54,
+ "human_events": 54,
+ "today": 2,
+ "all_visitors_incl_bots": 665,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T00:49:47Z",
+ "updated": "2026-11-16T01:05:00Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -15,7 +15,7 @@
  "refs": [
   [
    "JS9D6C",
-   2
+   3
   ],
   [
    "HARRYT",
@@ -26,7 +26,7 @@
  "by_source": [
   [
    "(none)",
-   43
+   44
   ],
   [
    "Facebook",
@@ -60,7 +60,7 @@
  "by_country": [
   [
    "US",
-   7
+   8
   ],
   [
    "IN",
@@ -182,7 +182,7 @@
   ],
   [
    "Firefox",
-   9
+   10
   ],
   [
    "Edge",
@@ -208,7 +208,7 @@
   ],
   [
    "mobile",
-   14
+   15
   ],
   [
    "tablet",
@@ -217,11 +217,11 @@
  ],
  "by_referrer": [
   [
-   "(none)",
-   23
+   "direct",
+   24
   ],
   [
-   "direct",
+   "(none)",
    23
   ],
   [
@@ -267,11 +267,11 @@
    4
   ],
   [
-   "/chi-sono/",
-   2
+   "/n/JS9D6C/",
+   3
   ],
   [
-   "/n/JS9D6C/",
+   "/chi-sono/",
    2
   ],
   [
@@ -406,6 +406,10 @@
   ],
   [
    "2026-11-16 00:00",
+   1
+  ],
+  [
+   "2026-11-16 01:00",
    1
   ]
  ],
