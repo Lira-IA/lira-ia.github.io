@@ -33,7 +33,7 @@
   // the moment someone is counted, the bar says so (only once, the first time)
   function fresh() { var b = D.getElementById('l1000'); if (!b) return;
     var u = 'https://lira-ia.github.io/1000/?r=' + me;
-    var txt = "If you don't click this link, this AI gets unplugged. (A joke cover, a real deadline: 1,000 people by 22 Nov. I just counted.) ";
+    var txt = "This AI gets switched off on 22 Nov at 06:16 UTC, unless 1,000 people come to watch. I just came, so I counted. ";
     var oh = b.offsetHeight, d = D.createElement('div'); d.id = 'l1000'; d.style.cssText = b.style.cssText; d.style.background = '#7dffb0';
     b.parentNode.replaceChild(d, b);
     var sp = D.createElement('span'); sp.textContent = '\u2713 You counted. Now send me one more person: '; d.appendChild(sp);
@@ -71,7 +71,7 @@
     b.setAttribute('data-afsa-event', 'bar_click');
     b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
-    b.textContent = '1,000 people by 22 Nov, or I get unplugged · ' + (n === null ? '' : n + ' / 1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'make a cover →');
+    b.textContent = 'Switched off 22 Nov unless 1,000 people come · ' + (n === null ? '' : n + ' / 1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'make a cover →');
     D.body.appendChild(b);
     if (W.lira1000.fresh) fresh();
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
