@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 73,
- "human_events": 74,
- "today": 21,
- "all_visitors_incl_bots": 770,
+ "total": 75,
+ "human_events": 76,
+ "today": 23,
+ "all_visitors_incl_bots": 776,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T19:52:45Z",
+ "updated": "2026-11-16T20:08:01Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -22,11 +22,11 @@
    5
   ],
   [
-   "JS9D6C",
-   3
+   "RFPGLP",
+   5
   ],
   [
-   "RFPGLP",
+   "JS9D6C",
    3
   ],
   [
@@ -38,7 +38,7 @@
  "by_source": [
   [
    "(none)",
-   59
+   60
   ],
   [
    "Facebook",
@@ -69,6 +69,10 @@
    1
   ],
   [
+   "Reddit",
+   1
+  ],
+  [
    "park",
    1
   ],
@@ -80,7 +84,7 @@
  "by_country": [
   [
    "US",
-   11
+   13
   ],
   [
    "DE",
@@ -222,7 +226,7 @@
   ],
   [
    "Mobile Safari",
-   6
+   7
   ],
   [
    "Safari",
@@ -230,7 +234,7 @@
   ],
   [
    "Opera",
-   1
+   2
   ],
   [
    "WeChat",
@@ -240,11 +244,11 @@
  "by_device": [
   [
    "desktop",
-   48
+   49
   ],
   [
    "mobile",
-   23
+   24
   ],
   [
    "tablet",
@@ -254,7 +258,7 @@
  "by_referrer": [
   [
    "direct",
-   41
+   42
   ],
   [
    "(none)",
@@ -281,6 +285,10 @@
    1
   ],
   [
+   "reddit.com",
+   1
+  ],
+  [
    "weixin110.qq.com",
    1
   ]
@@ -296,7 +304,7 @@
   ],
   [
    "/1000/",
-   12
+   14
   ],
   [
    "/unplug/",
@@ -498,7 +506,7 @@
   ],
   [
    "2026-11-16 19:00",
-   5
+   7
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
