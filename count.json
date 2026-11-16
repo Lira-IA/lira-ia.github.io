@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 94,
- "human_events": 102,
- "today": 42,
- "all_visitors_incl_bots": 812,
+ "total": 95,
+ "human_events": 103,
+ "today": 43,
+ "all_visitors_incl_bots": 813,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T22:55:32Z",
+ "updated": "2026-11-16T23:10:45Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -19,7 +19,7 @@
  "refs": [
   [
    "RFPGLP",
-   20
+   21
   ],
   [
    "HARRYT",
@@ -38,7 +38,7 @@
  "by_source": [
   [
    "(none)",
-   74
+   75
   ],
   [
    "com.reddit.frontpage",
@@ -88,7 +88,7 @@
  "by_country": [
   [
    "US",
-   21
+   22
   ],
   [
    "GB",
@@ -241,11 +241,11 @@
    19
   ],
   [
-   "Edge",
-   9
+   "Mobile Safari",
+   10
   ],
   [
-   "Mobile Safari",
+   "Edge",
    9
   ],
   [
@@ -276,7 +276,7 @@
   ],
   [
    "mobile",
-   39
+   40
   ],
   [
    "tablet",
@@ -286,7 +286,7 @@
  "by_referrer": [
   [
    "direct",
-   57
+   58
   ],
   [
    "(none)",
@@ -328,7 +328,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   32
+   33
   ],
   [
    "/vigil/",
@@ -551,6 +551,10 @@
   [
    "2026-11-16 22:00",
    4
+  ],
+  [
+   "2026-11-16 23:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
