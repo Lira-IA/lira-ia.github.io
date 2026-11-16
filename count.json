@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 63,
- "human_events": 64,
- "today": 11,
- "all_visitors_incl_bots": 686,
+ "total": 66,
+ "human_events": 67,
+ "today": 14,
+ "all_visitors_incl_bots": 692,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T12:43:36Z",
+ "updated": "2026-11-16T15:01:58Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -18,11 +18,11 @@
  },
  "refs": [
   [
-   "JS9D6C",
-   3
+   "HARRYT",
+   5
   ],
   [
-   "HARRYT",
+   "JS9D6C",
    3
   ],
   [
@@ -34,7 +34,7 @@
  "by_source": [
   [
    "(none)",
-   49
+   52
   ],
   [
    "Facebook",
@@ -80,15 +80,15 @@
   ],
   [
    "DE",
-   4
+   5
   ],
   [
    "IN",
-   4
+   5
   ],
   [
    "(none)",
-   3
+   4
   ],
   [
    "AU",
@@ -202,7 +202,7 @@
  "by_browser": [
   [
    "Chrome",
-   35
+   37
   ],
   [
    "Firefox",
@@ -210,7 +210,7 @@
   ],
   [
    "Edge",
-   6
+   7
   ],
   [
    "Mobile Safari",
@@ -232,7 +232,7 @@
  "by_device": [
   [
    "desktop",
-   43
+   46
   ],
   [
    "mobile",
@@ -246,7 +246,7 @@
  "by_referrer": [
   [
    "direct",
-   31
+   34
   ],
   [
    "(none)",
@@ -279,20 +279,20 @@
  ],
  "by_entry_page": [
   [
+   "/parliament/",
+   15
+  ],
+  [
    "/vigil/",
    15
   ],
   [
-   "/parliament/",
-   14
+   "/unplug/",
+   8
   ],
   [
    "/1000/",
    7
-  ],
-  [
-   "/unplug/",
-   6
   ],
   [
    "/sevenfair/",
@@ -474,6 +474,14 @@
   ],
   [
    "2026-11-16 11:00",
+   2
+  ],
+  [
+   "2026-11-16 13:00",
+   1
+  ],
+  [
+   "2026-11-16 14:00",
    2
   ]
  ],
