@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 56,
- "human_events": 57,
- "today": 4,
- "all_visitors_incl_bots": 674,
+ "total": 63,
+ "human_events": 64,
+ "today": 11,
+ "all_visitors_incl_bots": 684,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T05:38:30Z",
+ "updated": "2026-11-16T12:39:06Z",
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
@@ -19,17 +19,29 @@
   ],
   [
    "HARRYT",
-   2
+   3
+  ],
+  [
+   "EM46SU",
+   1
   ]
  ],
  "agents": [],
  "by_source": [
   [
    "(none)",
-   46
+   49
   ],
   [
    "Facebook",
+   2
+  ],
+  [
+   "Hacker News",
+   2
+  ],
+  [
+   "aibuiltgames",
    2
   ],
   [
@@ -41,30 +53,38 @@
    2
   ],
   [
+   "1000",
+   1
+  ],
+  [
    "Google",
    1
   ],
   [
-   "Hacker News",
-   1
-  ],
-  [
-   "aibuiltgames",
-   1
-  ],
-  [
    "park",
+   1
+  ],
+  [
+   "weixin110.qq.com",
    1
   ]
  ],
  "by_country": [
   [
    "US",
-   8
+   9
+  ],
+  [
+   "DE",
+   4
   ],
   [
    "IN",
    4
+  ],
+  [
+   "(none)",
+   3
   ],
   [
    "AU",
@@ -83,10 +103,6 @@
    3
   ],
   [
-   "(none)",
-   2
-  ],
-  [
    "AT",
    2
   ],
@@ -95,11 +111,11 @@
    2
   ],
   [
-   "CZ",
+   "CN",
    2
   ],
   [
-   "DE",
+   "CZ",
    2
   ],
   [
@@ -115,6 +131,10 @@
    2
   ],
   [
+   "MX",
+   2
+  ],
+  [
    "AR",
    1
   ],
@@ -127,7 +147,7 @@
    1
   ],
   [
-   "CN",
+   "DK",
    1
   ],
   [
@@ -148,10 +168,6 @@
   ],
   [
    "LU",
-   1
-  ],
-  [
-   "MX",
    1
   ],
   [
@@ -182,11 +198,11 @@
  "by_browser": [
   [
    "Chrome",
-   33
+   35
   ],
   [
    "Firefox",
-   10
+   13
   ],
   [
    "Edge",
@@ -198,21 +214,25 @@
   ],
   [
    "Safari",
-   2
+   3
   ],
   [
    "Opera",
+   1
+  ],
+  [
+   "WeChat",
    1
   ]
  ],
  "by_device": [
   [
    "desktop",
-   39
+   43
   ],
   [
    "mobile",
-   15
+   18
   ],
   [
    "tablet",
@@ -222,7 +242,7 @@
  "by_referrer": [
   [
    "direct",
-   26
+   31
   ],
   [
    "(none)",
@@ -237,6 +257,10 @@
    2
   ],
   [
+   "news.ycombinator.com",
+   2
+  ],
+  [
    "aibuiltgames.com",
    1
   ],
@@ -245,34 +269,38 @@
    1
   ],
   [
-   "news.ycombinator.com",
+   "weixin110.qq.com",
    1
   ]
  ],
  "by_entry_page": [
   [
+   "/vigil/",
+   15
+  ],
+  [
    "/parliament/",
    14
   ],
   [
-   "/vigil/",
-   14
-  ],
-  [
    "/1000/",
-   5
+   7
   ],
   [
    "/unplug/",
-   5
+   6
   ],
   [
    "/sevenfair/",
-   4
+   5
   ],
   [
    "/n/JS9D6C/",
    3
+  ],
+  [
+   "/",
+   2
   ],
   [
    "/chi-sono/",
@@ -287,11 +315,11 @@
    2
   ],
   [
-   "/",
+   "/agents/",
    1
   ],
   [
-   "/agents/",
+   "/c/HDG56F/",
    1
   ],
   [
@@ -427,6 +455,22 @@
   [
    "2026-11-16 03:00",
    1
+  ],
+  [
+   "2026-11-16 08:00",
+   2
+  ],
+  [
+   "2026-11-16 09:00",
+   2
+  ],
+  [
+   "2026-11-16 10:00",
+   1
+  ],
+  [
+   "2026-11-16 11:00",
+   2
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
