@@ -3,10 +3,14 @@
  "total": 63,
  "human_events": 64,
  "today": 11,
- "all_visitors_incl_bots": 684,
+ "all_visitors_incl_bots": 686,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T12:39:06Z",
+ "updated": "2026-11-16T12:43:36Z",
+ "forgery_check": {
+  "human_without_pageview_in_session": 0,
+  "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
+ },
  "excluded_bots": {
   "rule": "human events whose entry page is /pagella/nostr/ (a crawler from Singapore, Chrome desktop, roughly one per hour, never any other page)",
   "count": 8,
