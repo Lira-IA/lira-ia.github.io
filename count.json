@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 91,
- "human_events": 97,
- "today": 39,
- "all_visitors_incl_bots": 804,
+ "total": 94,
+ "human_events": 102,
+ "today": 42,
+ "all_visitors_incl_bots": 807,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T21:54:39Z",
+ "updated": "2026-11-16T22:25:06Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -19,7 +19,7 @@
  "refs": [
   [
    "RFPGLP",
-   17
+   20
   ],
   [
    "HARRYT",
@@ -38,11 +38,15 @@
  "by_source": [
   [
    "(none)",
-   73
+   74
   ],
   [
    "com.reddit.frontpage",
-   2
+   3
+  ],
+  [
+   "Reddit",
+   3
   ],
   [
    "Facebook",
@@ -50,10 +54,6 @@
   ],
   [
    "Hacker News",
-   2
-  ],
-  [
-   "Reddit",
    2
   ],
   [
@@ -88,7 +88,7 @@
  "by_country": [
   [
    "US",
-   18
+   21
   ],
   [
    "GB",
@@ -234,11 +234,11 @@
  "by_browser": [
   [
    "Chrome",
-   47
+   48
   ],
   [
    "Firefox",
-   17
+   19
   ],
   [
    "Edge",
@@ -272,11 +272,11 @@
  "by_device": [
   [
    "desktop",
-   52
+   53
   ],
   [
    "mobile",
-   37
+   39
   ],
   [
    "tablet",
@@ -286,7 +286,7 @@
  "by_referrer": [
   [
    "direct",
-   56
+   57
   ],
   [
    "(none)",
@@ -294,7 +294,11 @@
   ],
   [
    "com.reddit.frontpage",
-   2
+   3
+  ],
+  [
+   "reddit.com",
+   3
   ],
   [
    "facebook.com",
@@ -306,10 +310,6 @@
   ],
   [
    "news.ycombinator.com",
-   2
-  ],
-  [
-   "reddit.com",
    2
   ],
   [
@@ -328,7 +328,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   29
+   32
   ],
   [
    "/vigil/",
@@ -546,6 +546,10 @@
   ],
   [
    "2026-11-16 21:00",
+   4
+  ],
+  [
+   "2026-11-16 22:00",
    4
   ]
  ],
