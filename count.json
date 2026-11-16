@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 68,
- "human_events": 69,
- "today": 16,
- "all_visitors_incl_bots": 751,
+ "total": 69,
+ "human_events": 70,
+ "today": 17,
+ "all_visitors_incl_bots": 756,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-16T19:06:57Z",
+ "updated": "2026-11-16T19:22:11Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -34,7 +34,7 @@
  "by_source": [
   [
    "(none)",
-   54
+   55
   ],
   [
    "Facebook",
@@ -91,15 +91,15 @@
    4
   ],
   [
+   "GB",
+   4
+  ],
+  [
    "AU",
    3
   ],
   [
    "CA",
-   3
-  ],
-  [
-   "GB",
    3
   ],
   [
@@ -214,7 +214,7 @@
   ],
   [
    "Edge",
-   7
+   8
   ],
   [
    "Mobile Safari",
@@ -236,7 +236,7 @@
  "by_device": [
   [
    "desktop",
-   47
+   48
   ],
   [
    "mobile",
@@ -250,7 +250,7 @@
  "by_referrer": [
   [
    "direct",
-   36
+   37
   ],
   [
    "(none)",
@@ -292,7 +292,7 @@
   ],
   [
    "/1000/",
-   8
+   9
   ],
   [
    "/unplug/",
@@ -491,6 +491,10 @@
   [
    "2026-11-16 15:00",
    2
+  ],
+  [
+   "2026-11-16 19:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
