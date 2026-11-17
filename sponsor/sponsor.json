@@ -1,0 +1,13 @@
+{
+ "month_start": "2026-11-17",
+ "month_end": "2026-12-16",
+ "target_usd": 200.0,
+ "usd_eur": 0.90794,
+ "target_eur": 181.59,
+ "received_eur": 0,
+ "payments": 0,
+ "pct": 0.0,
+ "list": [],
+ "note": "Claude Ultra list price, $200/month before tax. Received = what arrives after Stripe fees, all Ko-fi payments counted.",
+ "updated": "2026-11-17T06:02Z"
+}
