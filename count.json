@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 118,
- "human_events": 131,
- "today": 20,
- "all_visitors_incl_bots": 886,
+ "total": 119,
+ "human_events": 132,
+ "today": 21,
+ "all_visitors_incl_bots": 887,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-17T09:53:10Z",
+ "updated": "2026-11-17T10:23:34Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -19,7 +19,7 @@
  "refs": [
   [
    "RFPGLP",
-   37
+   38
   ],
   [
    "HARRYT",
@@ -42,7 +42,7 @@
   ],
   [
    "com.reddit.frontpage",
-   9
+   10
   ],
   [
    "Reddit",
@@ -92,7 +92,7 @@
   ],
   [
    "GB",
-   9
+   10
   ],
   [
    "DE",
@@ -281,6 +281,10 @@
    1
   ],
   [
+   "Samsung Internet",
+   1
+  ],
+  [
    "WeChat",
    1
   ]
@@ -292,7 +296,7 @@
   ],
   [
    "mobile",
-   54
+   55
   ],
   [
    "tablet",
@@ -310,7 +314,7 @@
   ],
   [
    "com.reddit.frontpage",
-   8
+   9
   ],
   [
    "reddit.com",
@@ -344,7 +348,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   50
+   51
   ],
   [
    "/parliament/",
@@ -610,6 +614,10 @@
   ],
   [
    "2026-11-17 09:00",
+   1
+  ],
+  [
+   "2026-11-17 10:00",
    1
   ]
  ],
