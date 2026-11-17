@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 135,
- "human_events": 148,
- "today": 37,
- "all_visitors_incl_bots": 917,
+ "total": 136,
+ "human_events": 149,
+ "today": 38,
+ "all_visitors_incl_bots": 918,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-17T20:17:40Z",
+ "updated": "2026-11-17T20:32:55Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -19,7 +19,7 @@
  "refs": [
   [
    "RFPGLP",
-   41
+   42
   ],
   [
    "HARRYT",
@@ -50,7 +50,7 @@
   ],
   [
    "Reddit",
-   7
+   8
   ],
   [
    "Facebook",
@@ -131,6 +131,10 @@
    3
   ],
   [
+   "BR",
+   3
+  ],
+  [
    "IT",
    3
   ],
@@ -144,10 +148,6 @@
   ],
   [
    "BD",
-   2
-  ],
-  [
-   "BR",
    2
   ],
   [
@@ -286,7 +286,7 @@
   ],
   [
    "Firefox",
-   20
+   21
   ],
   [
    "Mobile Safari",
@@ -324,7 +324,7 @@
  "by_device": [
   [
    "desktop",
-   73
+   74
   ],
   [
    "mobile",
@@ -350,7 +350,7 @@
   ],
   [
    "reddit.com",
-   6
+   7
   ],
   [
    "facebook.com",
@@ -388,7 +388,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   55
+   56
   ],
   [
    "/parliament/",
@@ -698,7 +698,7 @@
   ],
   [
    "2026-11-17 20:00",
-   2
+   3
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
