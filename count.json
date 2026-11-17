@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 105,
- "human_events": 113,
- "today": 7,
- "all_visitors_incl_bots": 870,
+ "total": 106,
+ "human_events": 114,
+ "today": 8,
+ "all_visitors_incl_bots": 871,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-17T02:13:22Z",
+ "updated": "2026-11-17T02:44:18Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -38,7 +38,7 @@
  "by_source": [
   [
    "(none)",
-   81
+   82
   ],
   [
    "com.reddit.frontpage",
@@ -115,15 +115,15 @@
    4
   ],
   [
+   "JP",
+   4
+  ],
+  [
    "AU",
    3
   ],
   [
    "IT",
-   3
-  ],
-  [
-   "JP",
    3
   ],
   [
@@ -254,7 +254,7 @@
   ],
   [
    "Edge",
-   9
+   10
   ],
   [
    "Safari",
@@ -280,7 +280,7 @@
  "by_device": [
   [
    "desktop",
-   56
+   57
   ],
   [
    "mobile",
@@ -294,7 +294,7 @@
  "by_referrer": [
   [
    "direct",
-   64
+   65
   ],
   [
    "(none)",
@@ -367,16 +367,16 @@
    3
   ],
   [
+   "/agents/",
+   2
+  ],
+  [
    "/podcast/",
    2
   ],
   [
    "/sevenfair/range/",
    2
-  ],
-  [
-   "/agents/",
-   1
   ],
   [
    "/c/HDG56F/",
@@ -571,6 +571,10 @@
   [
    "2026-11-17 01:00",
    2
+  ],
+  [
+   "2026-11-17 02:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
