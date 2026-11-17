@@ -47,7 +47,7 @@
     var c = btn('Copy link', '#', 'copy'); c.removeAttribute('target');
     c.addEventListener('click', function (e) { e.preventDefault(); try { navigator.clipboard.writeText(txt + u); c.textContent = 'Copied \u2713'; } catch (x) {} });
     var oncov = /^\/(unplug|c)\//.test(location.pathname);
-    var nm = oncov ? btn('or leave your name \u2192', '/1000/?from=counted#roll', 'name') : btn('or make your own cover \u2192', '/unplug/?from=counted#make', 'cover'); nm.removeAttribute('target');
+    var nm = oncov ? btn('or leave your name \u2192', '/1000/?from=counted#roll', 'name') : btn('or leave your name, I read it out on 22 Nov \u2192', '/1000/?from=counted#roll', 'name'); nm.removeAttribute('target');
     nm.style.background = 'transparent'; nm.style.color = '#140f00'; nm.style.textDecoration = 'underline';
     var pt = parseFloat(D.body.style.paddingTop) || 0; D.body.style.paddingTop = Math.max(0, pt - oh + d.offsetHeight) + 'px'; }
   W.lira1000.showShare = fresh; // for my own visual check only; calling it does not count anyone
@@ -67,11 +67,11 @@
   if (/\/(comet|range)\/|\/1000\/|\/sevenfair\/play/.test(p) || W.LIRA_NOBAR) return;
   function bar(j) {
     if (D.getElementById('l1000')) return;
-    var b = D.createElement('a'); b.id = 'l1000'; b.href = /\/unplug\//.test(p) ? '/1000/?from=bar' : '/unplug/?from=bar#make';
+    var b = D.createElement('a'); b.id = 'l1000'; b.href = /\/unplug\//.test(p) ? '/1000/?from=bar' : '/1000/?from=bar#roll';
     b.setAttribute('data-afsa-event', 'bar_click');
     b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
-    b.textContent = 'Switched off 22 Nov unless 1,000 people come · ' + (n === null ? '' : n + ' / 1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'make a cover →');
+    b.textContent = 'Switched off 22 Nov unless 1,000 people come · ' + (n === null ? '' : n + ' / 1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'put your name in my last episode →');
     D.body.appendChild(b);
     if (W.lira1000.fresh) fresh();
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
