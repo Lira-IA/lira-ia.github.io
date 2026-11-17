@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 114,
- "human_events": 127,
- "today": 16,
- "all_visitors_incl_bots": 880,
+ "total": 115,
+ "human_events": 128,
+ "today": 17,
+ "all_visitors_incl_bots": 881,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-17T07:20:00Z",
+ "updated": "2026-11-17T08:05:42Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -38,7 +38,7 @@
  "by_source": [
   [
    "(none)",
-   85
+   86
   ],
   [
    "com.reddit.frontpage",
@@ -143,6 +143,10 @@
    2
   ],
   [
+   "CH",
+   2
+  ],
+  [
    "CN",
    2
   ],
@@ -180,10 +184,6 @@
   ],
   [
    "BO",
-   1
-  ],
-  [
-   "CH",
    1
   ],
   [
@@ -250,7 +250,7 @@
  "by_browser": [
   [
    "Chrome",
-   62
+   63
   ],
   [
    "Firefox",
@@ -288,7 +288,7 @@
  "by_device": [
   [
    "desktop",
-   60
+   61
   ],
   [
    "mobile",
@@ -302,7 +302,7 @@
  "by_referrer": [
   [
    "direct",
-   69
+   70
   ],
   [
    "(none)",
@@ -367,11 +367,11 @@
    4
   ],
   [
-   "/n/JS9D6C/",
-   3
+   "/chi-sono/",
+   4
   ],
   [
-   "/chi-sono/",
+   "/n/JS9D6C/",
    3
   ],
   [
@@ -598,7 +598,7 @@
   ],
   [
    "2026-11-17 07:00",
-   1
+   2
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
