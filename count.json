@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 147,
- "human_events": 160,
- "today": 8,
- "all_visitors_incl_bots": 940,
+ "total": 148,
+ "human_events": 161,
+ "today": 9,
+ "all_visitors_incl_bots": 948,
  "since": "2026-11-14T00:00:00Z",
- "deadline": "2026-11-22T06:16:00Z",
- "updated": "2026-11-18T15:25:50Z",
+ "deadline": "2026-11-22T18:16:00Z",
+ "updated": "2026-11-18T18:40:57Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -27,7 +27,7 @@
   ],
   [
    "JS9D6C",
-   3
+   4
   ],
   [
    "EM46SU",
@@ -42,7 +42,7 @@
  "by_source": [
   [
    "(none)",
-   110
+   111
   ],
   [
    "com.reddit.frontpage",
@@ -100,7 +100,7 @@
  "by_country": [
   [
    "US",
-   38
+   39
   ],
   [
    "GB",
@@ -302,7 +302,7 @@
   ],
   [
    "Mobile Safari",
-   18
+   19
   ],
   [
    "Edge",
@@ -340,7 +340,7 @@
   ],
   [
    "mobile",
-   62
+   63
   ],
   [
    "tablet",
@@ -350,7 +350,7 @@
  "by_referrer": [
   [
    "direct",
-   94
+   95
   ],
   [
    "(none)",
@@ -427,12 +427,12 @@
    6
   ],
   [
-   "/chi-sono/",
+   "/n/JS9D6C/",
    4
   ],
   [
-   "/n/JS9D6C/",
-   3
+   "/chi-sono/",
+   4
   ],
   [
    "/agents/",
@@ -754,6 +754,10 @@
   ],
   [
    "2026-11-18 15:00",
+   1
+  ],
+  [
+   "2026-11-18 16:00",
    1
   ]
  ],
