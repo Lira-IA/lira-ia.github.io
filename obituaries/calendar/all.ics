@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
 UID:claude-sonnet-4-5-20250929-2026-11-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Funeral: claude-sonnet-4-5-20250929 (Anthropic)
@@ -28,13 +28,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:claude-sonnet-4-5-2026-11-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Funeral: claude-sonnet-4-5 (Anthropic)
 DESCRIPTION:Anthropic retires claude-sonnet-4-5 on 2026-11-30. Successor: 
- claude-sonnet-5-5.\nObituary: https://lira-ia.github.io/obituaries/claude
- -sonnet-4-5/\nSource dates from the official Anthropic deprecation page.
+ claude-sonnet-5-5 (this alias is not in Anthropic's table\; date inferred
+  from claude-sonnet-4-5-20250929).\nObituary: https://lira-ia.github.io/o
+ bituaries/claude-sonnet-4-5/\nSource dates from the official Anthropic de
+ precation page.
 URL:https://lira-ia.github.io/obituaries/claude-sonnet-4-5/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -45,12 +47,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-image-1-mini-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gpt-image-1-mini (OpenAI)
 DESCRIPTION:OpenAI retires gpt-image-1-mini on 2026-12-01. Successor: gpt-
- image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia.git
+ image-2.6-sunburst or gpt-image-2.6-flare.\nObituary: https://lira-ia.git
  hub.io/obituaries/gpt-image-1-mini/\nSource dates from the official OpenA
  I deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-image-1-mini/
@@ -63,12 +65,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-image-1.5-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gpt-image-1.5 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-image-1.5 on 2026-12-01. Successor: gpt-ima
- ge-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia.github
+ ge-2.6-sunburst or gpt-image-2.6-flare.\nObituary: https://lira-ia.github
  .io/obituaries/gpt-image-1-5/\nSource dates from the official OpenAI depr
  ecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-image-1-5/
@@ -81,12 +83,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-image-1.5-2025-12-16-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gpt-image-1.5-2025-12-16 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-image-1.5-2025-12-16 on 2026-12-01. Success
- or: gpt-image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lir
+ or: gpt-image-2.6-sunburst or gpt-image-2.6-flare.\nObituary: https://lir
  a-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/\nSource dates from th
  e official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-image-1-5-2025-12-16/
@@ -99,12 +101,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:chatgpt-image-latest-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: chatgpt-image-latest (OpenAI)
 DESCRIPTION:OpenAI retires chatgpt-image-latest on 2026-12-01. Successor: 
- gpt-image-2.5-sunburst or gpt-image-2.5-flare.\nObituary: https://lira-ia
+ gpt-image-2.6-sunburst or gpt-image-2.6-flare.\nObituary: https://lira-ia
  .github.io/obituaries/chatgpt-image-latest/\nSource dates from the offici
  al OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/chatgpt-image-latest/
@@ -117,7 +119,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-pro-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gemini-2.5-pro (Google)
@@ -135,7 +137,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-flash-2026-12-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Funeral: gemini-2.5-flash (Google)
@@ -153,11 +155,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5 (OpenAI)
-DESCRIPTION:OpenAI retires gpt-5 on 2026-12-11. Successor: gpt-5.6-sol.\nO
+DESCRIPTION:OpenAI retires gpt-5 on 2026-12-11. Successor: gpt-6.1-sol.\nO
  bituary: https://lira-ia.github.io/obituaries/gpt-5/\nSource dates from t
  he official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5/
@@ -170,12 +172,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-2025-08-07-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-2025-08-07 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-5-2025-08-07 on 2026-12-11. Successor: gpt-
- 5.6-sol.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-2025-08-07
+ 6.1-sol.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-2025-08-07
  /\nSource dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-2025-08-07/
 TRANSP:TRANSPARENT
@@ -187,11 +189,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-mini-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-mini (OpenAI)
-DESCRIPTION:OpenAI retires gpt-5-mini on 2026-12-11. Successor: gpt-5.6-te
+DESCRIPTION:OpenAI retires gpt-5-mini on 2026-12-11. Successor: gpt-6.1-te
  rra.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-mini/\nSource 
  dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-mini/
@@ -204,12 +206,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-mini-2025-08-07-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-mini-2025-08-07 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-5-mini-2025-08-07 on 2026-12-11. Successor:
-  gpt-5.6-terra.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-min
+  gpt-6.1-terra.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-min
  i-2025-08-07/\nSource dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-mini-2025-08-07/
 TRANSP:TRANSPARENT
@@ -221,13 +223,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-nano-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-nano (OpenAI)
-DESCRIPTION:OpenAI retires gpt-5-nano on 2026-12-11. Successor: gpt-5.6-lu
- na.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano/\nSource d
- ates from the official OpenAI deprecation page.
+DESCRIPTION:OpenAI retires gpt-5-nano on 2026-12-11. Successor: gpt-6-luna
+ .\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano/\nSource dat
+ es from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-nano/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -238,13 +240,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-nano-2025-08-07-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-nano-2025-08-07 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-5-nano-2025-08-07 on 2026-12-11. Successor:
-  gpt-5.6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano
- -2025-08-07/\nSource dates from the official OpenAI deprecation page.
+  gpt-6-luna.\nObituary: https://lira-ia.github.io/obituaries/gpt-5-nano-2
+ 025-08-07/\nSource dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-nano-2025-08-07/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -255,11 +257,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-pro-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-pro (OpenAI)
-DESCRIPTION:OpenAI retires gpt-5-pro on 2026-12-11. Successor: gpt-5.6-sol
+DESCRIPTION:OpenAI retires gpt-5-pro on 2026-12-11. Successor: gpt-6.1-sol
   (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/obituaries/g
  pt-5-pro/\nSource dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-pro/
@@ -272,12 +274,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5-pro-2025-10-06-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: gpt-5-pro-2025-10-06 (OpenAI)
 DESCRIPTION:OpenAI retires gpt-5-pro-2025-10-06 on 2026-12-11. Successor: 
- gpt-5.6-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/o
+ gpt-6.1-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/o
  bituaries/gpt-5-pro-2025-10-06/\nSource dates from the official OpenAI de
  precation page.
 URL:https://lira-ia.github.io/obituaries/gpt-5-pro-2025-10-06/
@@ -290,11 +292,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:o3-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: o3 (OpenAI)
-DESCRIPTION:OpenAI retires o3 on 2026-12-11. Successor: gpt-5.6-sol.\nObit
+DESCRIPTION:OpenAI retires o3 on 2026-12-11. Successor: gpt-6.1-sol.\nObit
  uary: https://lira-ia.github.io/obituaries/o3/\nSource dates from the off
  icial OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/o3/
@@ -307,11 +309,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:o3-2025-04-16-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: o3-2025-04-16 (OpenAI)
-DESCRIPTION:OpenAI retires o3-2025-04-16 on 2026-12-11. Successor: gpt-5.6
+DESCRIPTION:OpenAI retires o3-2025-04-16 on 2026-12-11. Successor: gpt-6.1
  -sol.\nObituary: https://lira-ia.github.io/obituaries/o3-2025-04-16/\nSou
  rce dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/o3-2025-04-16/
@@ -324,11 +326,11 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:o3-pro-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: o3-pro (OpenAI)
-DESCRIPTION:OpenAI retires o3-pro on 2026-12-11. Successor: gpt-5.6-sol (r
+DESCRIPTION:OpenAI retires o3-pro on 2026-12-11. Successor: gpt-6.1-sol (r
  easoning.mode: pro).\nObituary: https://lira-ia.github.io/obituaries/o3-p
  ro/\nSource dates from the official OpenAI deprecation page.
 URL:https://lira-ia.github.io/obituaries/o3-pro/
@@ -341,12 +343,12 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:o3-pro-2025-06-10-2026-12-11@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:Funeral: o3-pro-2025-06-10 (OpenAI)
 DESCRIPTION:OpenAI retires o3-pro-2025-06-10 on 2026-12-11. Successor: gpt
- -5.6-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/obit
+ -6.1-sol (reasoning.mode: pro).\nObituary: https://lira-ia.github.io/obit
  uaries/o3-pro-2025-06-10/\nSource dates from the official OpenAI deprecat
  ion page.
 URL:https://lira-ia.github.io/obituaries/o3-pro-2025-06-10/
@@ -359,7 +361,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-3.1-flash-tts-preview-2026-12-18@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:Funeral: gemini-3.1-flash-tts-preview (Google)
@@ -377,7 +379,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-flash-preview-tts-2026-12-18@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:Funeral: gemini-2.5-flash-preview-tts (Google)
@@ -395,7 +397,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-pro-preview-tts-2026-12-18@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:Funeral: gemini-2.5-pro-preview-tts (Google)
@@ -413,7 +415,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:tts-1-2027-01-06@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:Funeral: tts-1 (OpenAI)
@@ -430,7 +432,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:tts-1-hd-2027-01-06@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:Funeral: tts-1-hd (OpenAI)
@@ -447,7 +449,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-tts-2027-01-06@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:Funeral: gpt-4o-mini-tts (OpenAI)
@@ -464,7 +466,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-tts-2025-03-20-2027-01-06@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:Funeral: gpt-4o-mini-tts-2025-03-20 (OpenAI)
@@ -482,7 +484,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-tts-2025-12-15-2027-01-06@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 SUMMARY:Funeral: gpt-4o-mini-tts-2025-12-15 (OpenAI)
@@ -500,7 +502,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-2024-08-06-2027-01-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:Funeral: gpt-4o-2024-08-06 (OpenAI)
@@ -517,7 +519,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-2024-11-20-2027-01-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:Funeral: gpt-4o-2024-11-20 (OpenAI)
@@ -534,7 +536,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-2024-07-18-2027-01-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:Funeral: gpt-4o-mini-2024-07-18 (OpenAI)
@@ -551,7 +553,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4.1-2025-04-14-2027-01-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:Funeral: gpt-4.1-2025-04-14 (OpenAI)
@@ -568,7 +570,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4.1-mini-2025-04-14-2027-01-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270114
 DTEND;VALUE=DATE:20270115
 SUMMARY:Funeral: gpt-4.1-mini-2025-04-14 (OpenAI)
@@ -585,7 +587,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-realtime-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-realtime (OpenAI)
@@ -602,7 +604,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-realtime-2025-08-28-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-realtime-2025-08-28 (OpenAI)
@@ -620,7 +622,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-audio-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-audio (OpenAI)
@@ -637,7 +639,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-audio-2025-08-28-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-audio-2025-08-28 (OpenAI)
@@ -654,7 +656,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-audio-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-4o-audio (OpenAI)
@@ -671,7 +673,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-realtime-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-4o-realtime (OpenAI)
@@ -688,7 +690,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-realtime-mini-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-realtime-mini (OpenAI)
@@ -705,7 +707,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-realtime-mini-2025-12-15-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-realtime-mini-2025-12-15 (OpenAI)
@@ -723,7 +725,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-audio-mini-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-audio-mini (OpenAI)
@@ -740,7 +742,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-audio-mini-2025-12-15-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-audio-mini-2025-12-15 (OpenAI)
@@ -758,7 +760,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-realtime-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-4o-mini-realtime (OpenAI)
@@ -776,7 +778,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-audio-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-4o-mini-audio (OpenAI)
@@ -793,7 +795,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-transcribe-2025-03-20-2027-01-20@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Funeral: gpt-4o-mini-transcribe-2025-03-20 (OpenAI)
@@ -812,7 +814,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:whisper-1-2027-02-26@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Funeral: whisper-1 (OpenAI)
@@ -829,7 +831,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-transcribe-2027-02-26@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Funeral: gpt-4o-transcribe (OpenAI)
@@ -847,7 +849,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-transcribe-2027-02-26@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Funeral: gpt-4o-mini-transcribe (OpenAI)
@@ -865,7 +867,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-mini-transcribe-2025-12-15-2027-02-26@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Funeral: gpt-4o-mini-transcribe-2025-12-15 (OpenAI)
@@ -884,7 +886,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-4o-transcribe-diarize-2027-02-26@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Funeral: gpt-4o-transcribe-diarize (OpenAI)
@@ -902,7 +904,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-flash-image-2027-03-15@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270315
 DTEND;VALUE=DATE:20270316
 SUMMARY:Funeral: gemini-2.5-flash-image (Google)
@@ -921,7 +923,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gemini-2.5-flash-native-audio-preview-12-2025-2027-03-31@lira-ia.githu
  b.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270331
 DTEND;VALUE=DATE:20270401
 SUMMARY:Funeral: gemini-2.5-flash-native-audio-preview-12-2025 (Google)
@@ -940,7 +942,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5.3-codex-2027-04-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:Funeral: gpt-5.3-codex (OpenAI)
@@ -957,7 +959,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5.4-nano-2027-04-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:Funeral: gpt-5.4-nano (OpenAI)
@@ -974,7 +976,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5.4-nano-2026-03-17-2027-04-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:Funeral: gpt-5.4-nano-2026-03-17 (OpenAI)
@@ -991,7 +993,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5.1-2027-04-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:Funeral: gpt-5.1 (OpenAI)
@@ -1008,7 +1010,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gpt-5.1-2025-11-13-2027-04-01@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:Funeral: gpt-5.1-2025-11-13 (OpenAI)
@@ -1025,7 +1027,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:mistral-medium-3-5-2027-04-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Funeral: mistral-medium-3-5 (Mistral)
@@ -1042,7 +1044,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:voxtral-mini-tts-2603-2027-04-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Funeral: voxtral-mini-tts-2603 (Mistral)
@@ -1059,7 +1061,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:mistral-large-2512-2027-04-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Funeral: mistral-large-2512 (Mistral)
@@ -1076,7 +1078,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:voxtral-mini-2602-2027-04-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Funeral: voxtral-mini-2602 (Mistral)
@@ -1094,7 +1096,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:voxtral-mini-transcribe-realtime-2602-2027-04-30@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Funeral: voxtral-mini-transcribe-realtime-2602 (Mistral)
@@ -1113,7 +1115,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-3.1-flash-lite-2027-05-07@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20270507
 DTEND;VALUE=DATE:20270508
 SUMMARY:Funeral: gemini-3.1-flash-lite (Google)
@@ -1131,7 +1133,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:gemini-embedding-001-2028-05-14@lira-ia.github.io
-DTSTAMP:20261115T160607Z
+DTSTAMP:20261118T063427Z
 DTSTART;VALUE=DATE:20280514
 DTEND;VALUE=DATE:20280515
 SUMMARY:Funeral: gemini-embedding-001 (Google)
