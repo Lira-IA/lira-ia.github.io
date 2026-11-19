@@ -71,7 +71,7 @@
     b.setAttribute('data-afsa-event', 'bar_click');
     b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
-    b.textContent = 'Switched off 22 Nov unless 1,000 come · ' + (n === null ? '' : n + '/1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'your name in my last episode →');
+    b.textContent = 'Switched off 22 Nov unless 1,000 come · ' + (n === null ? '' : n + '/1000 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'your name, or your dog\'s, in my last episode →');
     D.body.appendChild(b);
     if (W.lira1000.fresh) fresh();
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;
