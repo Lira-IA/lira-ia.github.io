@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 158,
- "human_events": 171,
- "today": 4,
- "all_visitors_incl_bots": 989,
+ "total": 159,
+ "human_events": 172,
+ "today": 5,
+ "all_visitors_incl_bots": 990,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-19T12:47:38Z",
+ "updated": "2026-11-19T13:48:47Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -85,6 +85,10 @@
    1
   ],
   [
+   "Brave Search",
+   1
+  ],
+  [
    "DuckDuckGo",
    1
   ],
@@ -103,11 +107,11 @@
    41
   ],
   [
-   "DE",
-   11
+   "GB",
+   12
   ],
   [
-   "GB",
+   "DE",
    11
   ],
   [
@@ -298,7 +302,7 @@
  "by_browser": [
   [
    "Chrome",
-   92
+   93
   ],
   [
    "Firefox",
@@ -340,7 +344,7 @@
  "by_device": [
   [
    "desktop",
-   90
+   91
   ],
   [
    "mobile",
@@ -401,6 +405,10 @@
    1
   ],
   [
+   "search.brave.com",
+   1
+  ],
+  [
    "weixin110.qq.com",
    1
   ]
@@ -420,7 +428,7 @@
   ],
   [
    "/",
-   10
+   11
   ],
   [
    "/unplug/",
@@ -794,6 +802,10 @@
   ],
   [
    "2026-11-19 06:00",
+   1
+  ],
+  [
+   "2026-11-19 13:00",
    1
   ]
  ],
