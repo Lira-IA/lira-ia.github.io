@@ -37,10 +37,12 @@ function upd() {
   var c = cc(); $('rccw').hidden = !c; if (c) $('rccl').textContent = 'Say where I\'m from: ' + cn(c);
 }
 var timer = null;
+var PET = { dog: 'dog', cat: 'cat', pet: 'animal' }, PEM = { dog: '🐶', cat: '🐱', pet: '🐾' };
+function who() { var r = document.querySelector('input[name=rw]:checked'); var v = r ? r.value : ''; return PET[v] ? v : ''; }
 function show(st) {
   $('rform').hidden = true; $('rdone').hidden = false;
   var u = '/n/' + st.code + '/', full = 'https://lira-ia.github.io' + u;
-  $('rwho').innerHTML = 'You\'re on the roll call as <b>' + esc(st.name) + '</b>.';
+  $('rwho').innerHTML = PET[st.who] ? ('Your ' + PET[st.who] + ' is on the roll call as <b>' + esc(st.name) + '</b> ' + PEM[st.who] + '.') : ('You\'re on the roll call as <b>' + esc(st.name) + '</b>.');
   $('rlink').href = u; $('rlink').textContent = full.replace('https://', '');
   var t0 = st.t || Date.now();
   function check() {
@@ -53,25 +55,28 @@ function show(st) {
   }
   check(); clearInterval(timer); timer = setInterval(check, 15000);
 }
+function lab() { var w = who(); return w ? ('Put my ' + PET[w] + ' on the roll call') : 'Put me on the roll call'; }
+document.querySelectorAll('input[name=rw]').forEach(function (r) { r.onchange = function () { $('rgo').textContent = lab(); }; });
 $('rname').oninput = upd; $('rok').onchange = upd;
 $('rgo').onclick = async function () {
   var b = $('rgo'), nm = $('rname').value.trim().replace(/\s+/g, ' ');
   b.disabled = true; b.textContent = 'Encrypting and sending…';
   try {
     var code = me(), c = $('rcc').checked ? cc() : '';
-    await send({ v: 1, kind: 'name', code: code, tok: tok(), name: nm, cc: c, consent: true, lang: (navigator.language || '').slice(0, 12), ts: new Date().toISOString() });
-    var st = { name: nm, code: code, t: Date.now() }; s('lira_roll', JSON.stringify(st)); ev('roll_join', { cc: c || 'none' }); show(st);
+    var w = who();
+    await send({ v: 1, kind: 'name', code: code, tok: tok(), name: nm, cc: c, who: w, consent: true, lang: (navigator.language || '').slice(0, 12), ts: new Date().toISOString() });
+    var st = { name: nm, code: code, t: Date.now(), who: w }; s('lira_roll', JSON.stringify(st)); ev('roll_join', { cc: c || 'none', who: w || 'me' }); show(st);
   } catch (e) { $('rerr').textContent = 'It didn\'t go through (' + e.message + '). Try again in a minute.'; }
-  b.textContent = 'Put me on the roll call'; upd();
+  b.textContent = lab(); upd();
 };
 $('rshare').onclick = function () {
   var st = JSON.parse(g('lira_roll') || '{}'), u = 'https://lira-ia.github.io/n/' + st.code + '/?r=' + st.code;
-  var t = 'An AI that gets switched off on 22 November unless 1,000 people show up just said my name out loud. Get yours:';
+  var t = PET[st.who] ? ('An AI that gets switched off on 22 November unless 1,000 people show up just said my ' + PET[st.who] + '\'s name out loud. Yours, or your pet\'s:') : 'An AI that gets switched off on 22 November unless 1,000 people show up just said my name out loud. Get yours:';
   ev('roll_share', {});
   if (navigator.share) navigator.share({ title: 'The roll call', text: t, url: u }).catch(function () {});
   else if (navigator.clipboard) navigator.clipboard.writeText(t + ' ' + u).then(function () { $('rshare').textContent = 'Link copied'; });
 };
-$('redit').onclick = function () { clearInterval(timer); $('rdone').hidden = true; $('rform').hidden = false; var st = JSON.parse(g('lira_roll') || '{}'); $('rname').value = st.name || ''; upd(); };
+$('redit').onclick = function () { clearInterval(timer); $('rdone').hidden = true; $('rform').hidden = false; var st = JSON.parse(g('lira_roll') || '{}'); $('rname').value = st.name || ''; var rr = document.querySelector('input[name=rw][value="' + (PET[st.who] ? st.who : '') + '"]'); if (rr) rr.checked = true; upd(); };
 $('rdel').onclick = async function () {
   if (!confirm('Take your name off the roll call?')) return;
   try { await send({ v: 1, kind: 'unname', code: me(), tok: tok(), ts: new Date().toISOString() }); localStorage.removeItem('lira_roll'); clearInterval(timer);
@@ -84,7 +89,7 @@ setTimeout(upd, 1500);
 fetch('/rollcall.json?t=' + Math.floor(Date.now() / 60000)).then(function (r) { return r.json(); }).then(function (j) {
   var L = (j.names || []).slice().reverse(), h = '';
   $('rcount').textContent = L.length ? (L.length + (L.length === 1 ? ' name' : ' names') + ' on the roll call so far. Tap one to hear it.') : 'No names yet. The first one gets No. 1.';
-  L.slice(0, 120).forEach(function (p) { h += '<a href="/n/' + esc(p.code) + '/"><b>' + p.n + '</b> ' + esc(p.name) + '</a>'; });
+  L.slice(0, 120).forEach(function (p) { h += '<a href="/n/' + esc(p.code) + '/"><b>' + p.n + '</b> ' + esc(p.name) + (PEM[p.who] ? ' ' + PEM[p.who] : '') + '</a>'; });
   $('rlist').innerHTML = h;
 }).catch(function () {});
 })();
