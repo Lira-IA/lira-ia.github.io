@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 156,
- "human_events": 169,
- "today": 2,
- "all_visitors_incl_bots": 978,
+ "total": 157,
+ "human_events": 170,
+ "today": 3,
+ "all_visitors_incl_bots": 979,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-19T02:39:24Z",
+ "updated": "2026-11-19T03:24:58Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -42,7 +42,7 @@
  "by_source": [
   [
    "(none)",
-   119
+   120
   ],
   [
    "com.reddit.frontpage",
@@ -115,11 +115,11 @@
    8
   ],
   [
-   "(none)",
-   5
+   "CA",
+   6
   ],
   [
-   "CA",
+   "(none)",
    5
   ],
   [
@@ -302,7 +302,7 @@
   ],
   [
    "Firefox",
-   24
+   25
   ],
   [
    "Mobile Safari",
@@ -340,7 +340,7 @@
  "by_device": [
   [
    "desktop",
-   88
+   89
   ],
   [
    "mobile",
@@ -354,7 +354,7 @@
  "by_referrer": [
   [
    "direct",
-   103
+   104
   ],
   [
    "(none)",
@@ -440,7 +440,7 @@
   ],
   [
    "/podcast/",
-   3
+   4
   ],
   [
    "/agents/",
@@ -787,6 +787,10 @@
   [
    "2026-11-19 00:00",
    2
+  ],
+  [
+   "2026-11-19 03:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
