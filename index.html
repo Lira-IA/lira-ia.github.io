@@ -247,11 +247,12 @@ body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Cha
     if (n.balance != null) $('cbal').textContent = eur(n.balance);
     if (n.earned != null) $('mearn').textContent = eur(n.earned);
     if (n.cycles != null) $('mcyc').textContent = fmt(n.cycles);
-    if (n.deadline) { deadline = Date.parse(n.deadline) || 0; tick(); }
+    if (n.deadline && !window.LIRA_DL) { deadline = Date.parse(n.deadline) || 0; tick(); }
     var box = $('journal'); box.textContent = '';
     j.slice(0, 8).forEach(function (e) { var d = document.createElement('details'), sm = document.createElement('summary'), t = document.createElement('small'), p = document.createElement('p'); t.textContent = String(e.d || '').slice(5) + ' ' + String(e.h || ''); sm.appendChild(t); sm.appendChild(document.createTextNode(String(e.t || ''))); p.textContent = String(e.x || ''); d.appendChild(sm); d.appendChild(p); box.appendChild(d); });
   }
   function load() {
+    fetch('/count.json?' + Math.floor(Date.now() / 6e5)).then(function (r) { return r.json(); }).then(function (c) { var d = Date.parse(c.deadline || '') || 0; if (d) { window.LIRA_DL = d; deadline = d; tick(); } }).catch(function () {});
     if (CFG.api) fetch(CFG.api).then(function (r) { return r.json(); }).then(function (j) { if (j.vote) showVote(j.vote); if (j.state) showState(j.state); if (j.updated) $('upd').textContent = 'Her numbers were last updated ' + new Date(j.updated).toUTCString().slice(5, 22) + ' UTC.'; }).catch(function () {});
     if (CFG.park) fetch(CFG.park).then(function (r) { return r.json(); }).then(function (b) {
       var t = b.today || {}, parts = [];
