@@ -44,6 +44,7 @@ function show(st) {
   var u = '/n/' + st.code + '/', full = 'https://lira-ia.github.io' + u;
   $('rwho').innerHTML = PET[st.who] ? ('Your ' + PET[st.who] + ' is on the roll call as <b>' + esc(st.name) + '</b> ' + PEM[st.who] + '.') : ('You\'re on the roll call as <b>' + esc(st.name) + '</b>.');
   $('rlink').href = u; $('rlink').textContent = full.replace('https://', '');
+  $('rshare').textContent = PET[st.who] ? ('Send it to whoever else loves ' + st.name) : 'Share my page';
   var t0 = st.t || Date.now();
   function check() {
     fetch(u + 'name.mp3', { method: 'HEAD', cache: 'no-store' }).then(function (r) {
