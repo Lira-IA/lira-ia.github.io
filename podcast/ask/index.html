@@ -61,7 +61,7 @@ details{margin-top:8px} summary{cursor:pointer;color:var(--dim)}
 <div><div id="t">0:00 / 1:30</div><div id="hint">Tap to start. Tap again to stop.</div></div></div>
 <audio id="prev" controls></audio>
 <div class="or">or type it, and I read it out in my voice</div>
-<textarea id="txt" maxlength="600" placeholder="Your question (any language)"></textarea>
+<textarea id="txt" maxlength="600" placeholder="Your question (any language)"></textarea><script>(function(){var q=new URLSearchParams(location.search).get('q');if(q&&/^[^<>]{1,200}$/.test(q)){var t=document.getElementById('txt');t.value=q;try{t.dispatchEvent(new Event('input'))}catch(e){}}})()</script>
 <div class="lab" style="margin-top:16px">2 · YOUR NAME ON AIR</div>
 <input type="text" id="nm" maxlength="40" placeholder="Optional. Empty = anonymous listener">
 <details style="margin:12px 0 0"><summary>Want a guaranteed, longer answer? (€5, optional)</summary>
