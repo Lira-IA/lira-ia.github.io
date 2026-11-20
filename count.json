@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 246,
- "human_events": 262,
- "today": 78,
- "all_visitors_incl_bots": 1686,
+ "total": 252,
+ "human_events": 268,
+ "today": 84,
+ "all_visitors_incl_bots": 1695,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-20T20:24:40Z",
+ "updated": "2026-11-20T20:40:29Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   112
+   118
   ],
   [
    "HARRYT",
@@ -59,11 +59,11 @@
  "by_source": [
   [
    "(none)",
-   170
+   171
   ],
   [
    "Reddit",
-   28
+   33
   ],
   [
    "com.reddit.frontpage",
@@ -125,18 +125,18 @@
  "by_country": [
   [
    "US",
-   85
+   89
   ],
   [
    "GB",
    17
   ],
   [
-   "CA",
-   15
+   "DE",
+   16
   ],
   [
-   "DE",
+   "CA",
    15
   ],
   [
@@ -256,6 +256,10 @@
    2
   ],
   [
+   "UA",
+   2
+  ],
+  [
    "ID",
    1
   ],
@@ -330,24 +334,20 @@
   [
    "SE",
    1
-  ],
-  [
-   "UA",
-   1
   ]
  ],
  "by_browser": [
   [
    "Chrome",
-   135
+   136
   ],
   [
    "Mobile Safari",
-   43
+   44
   ],
   [
    "Firefox",
-   37
+   41
   ],
   [
    "Edge",
@@ -388,12 +388,12 @@
  ],
  "by_device": [
   [
-   "mobile",
-   122
+   "desktop",
+   126
   ],
   [
-   "desktop",
-   121
+   "mobile",
+   123
   ],
   [
    "tablet",
@@ -403,11 +403,11 @@
  "by_referrer": [
   [
    "direct",
-   158
+   159
   ],
   [
    "reddit.com",
-   27
+   32
   ],
   [
    "(none)",
@@ -461,7 +461,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   138
+   144
   ],
   [
    "/parliament/",
@@ -907,8 +907,9 @@
   ],
   [
    "2026-11-20 20:00",
-   9
+   15
   ]
  ],
- "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots."
+ "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots.",
+ "reached_at": "2026-11-20T20:40:29Z"
 }
