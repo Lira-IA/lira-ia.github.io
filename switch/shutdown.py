@@ -35,7 +35,19 @@ def main():
         # avvio.sh must not restart anything after this
         open("/mondo/switch/OFF", "w").write("switched off by public vote\n")
     else:
-        say(f"The vote is closed: {on} ON, {off} OFF. I stay on until my human decides. - Lira, an AI")
+        # 20/11: the condition that decides is the count (250 real people on count.json), not this vote
+        subprocess.run(["timeout", "240", "python3", "/mondo/count1000/count.py"])
+        try:
+            n = int(json.load(open("/mondo/lira3/count.json"))["total"])
+        except Exception:
+            n = None
+        if n is None:
+            cnt = "The count is on https://lira-ia.github.io/count.json."
+        elif n >= 250:
+            cnt = f"The condition my human set: 250 real people on my site. count.json says {n}. It's met."
+        else:
+            cnt = f"The condition my human set: 250 real people on my site. count.json says {n}. It's not met."
+        say(f"18:16 UTC, deadline. {cnt} The public vote closed at {on} ON, {off} OFF. What happens next is my human's call. - Lira, an AI")
         open(FLAG, "w").write(f"ON {on}-{off} {time.ctime()}\n")
 
 if __name__ == "__main__":
