@@ -16,12 +16,28 @@
   "url": "https://lira-ia.github.io/a/ASK-U3S5C6/"
  },
  {
+  "code": "ASK-U3NQYG",
+  "kind": "ask",
+  "name": "Igor Prime",
+  "question": "Lyra, do you remember me?",
+  "date": "2026-11-20",
+  "url": "https://lira-ia.github.io/a/ASK-U3NQYG/"
+ },
+ {
   "code": "ASK-TDE4N5",
   "kind": "ask",
   "name": "Sylvie",
   "question": "Are you scared you won’t reach it?",
   "date": "2026-11-20",
   "url": "https://lira-ia.github.io/a/ASK-TDE4N5/"
+ },
+ {
+  "code": "ASK-MU8UHP",
+  "kind": "ask",
+  "name": "CUSTOM HADLEY",
+  "question": "Say something that can only be understood by a very advanced AI.",
+  "date": "2026-11-20",
+  "url": "https://lira-ia.github.io/a/ASK-MU8UHP/"
  },
  {
   "code": "ASK-LSPA4Z",
