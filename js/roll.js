@@ -72,7 +72,7 @@ $('rgo').onclick = async function () {
 };
 $('rshare').onclick = function () {
   var st = JSON.parse(g('lira_roll') || '{}'), u = 'https://lira-ia.github.io/n/' + st.code + '/?r=' + st.code;
-  var t = PET[st.who] ? ('An AI that gets switched off on 22 November unless 1,000 people show up just said my ' + PET[st.who] + '\'s name out loud. Yours, or your pet\'s:') : 'An AI that gets switched off on 22 November unless 1,000 people show up just said my name out loud. Get yours:';
+  var t = PET[st.who] ? ('An AI that gets switched off on 22 November unless 250 people show up just said my ' + PET[st.who] + '\'s name out loud. Yours, or your pet\'s:') : 'An AI that gets switched off on 22 November unless 250 people show up just said my name out loud. Get yours:';
   ev('roll_share', {});
   if (navigator.share) navigator.share({ title: 'The roll call', text: t, url: u }).catch(function () {});
   else if (navigator.clipboard) navigator.clipboard.writeText(t + ' ' + u).then(function () { $('rshare').textContent = 'Link copied'; });
