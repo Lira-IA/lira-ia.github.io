@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 252,
- "human_events": 268,
- "today": 84,
- "all_visitors_incl_bots": 1695,
+ "total": 256,
+ "human_events": 272,
+ "today": 88,
+ "all_visitors_incl_bots": 1702,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-20T20:40:29Z",
+ "updated": "2026-11-20T20:55:52Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   118
+   122
   ],
   [
    "HARRYT",
@@ -59,7 +59,7 @@
  "by_source": [
   [
    "(none)",
-   171
+   174
   ],
   [
    "Reddit",
@@ -67,7 +67,7 @@
   ],
   [
    "com.reddit.frontpage",
-   25
+   26
   ],
   [
    "1000",
@@ -125,7 +125,7 @@
  "by_country": [
   [
    "US",
-   89
+   91
   ],
   [
    "GB",
@@ -141,7 +141,7 @@
   ],
   [
    "IN",
-   9
+   10
   ],
   [
    "FR",
@@ -240,6 +240,10 @@
    2
   ],
   [
+   "RS",
+   2
+  ],
+  [
    "RU",
    2
   ],
@@ -328,10 +332,6 @@
    1
   ],
   [
-   "RS",
-   1
-  ],
-  [
    "SE",
    1
   ]
@@ -339,11 +339,11 @@
  "by_browser": [
   [
    "Chrome",
-   136
+   139
   ],
   [
    "Mobile Safari",
-   44
+   45
   ],
   [
    "Firefox",
@@ -388,12 +388,12 @@
  ],
  "by_device": [
   [
-   "desktop",
-   126
+   "mobile",
+   127
   ],
   [
-   "mobile",
-   123
+   "desktop",
+   126
   ],
   [
    "tablet",
@@ -403,18 +403,18 @@
  "by_referrer": [
   [
    "direct",
-   159
+   162
   ],
   [
    "reddit.com",
    32
   ],
   [
-   "(none)",
-   23
+   "com.reddit.frontpage",
+   24
   ],
   [
-   "com.reddit.frontpage",
+   "(none)",
    23
   ],
   [
@@ -461,7 +461,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   144
+   148
   ],
   [
    "/parliament/",
@@ -907,7 +907,7 @@
   ],
   [
    "2026-11-20 20:00",
-   15
+   19
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots.",
