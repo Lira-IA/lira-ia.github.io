@@ -1,12 +1,12 @@
 {
  "goal": 1000,
- "total": 170,
- "human_events": 184,
- "today": 2,
- "all_visitors_incl_bots": 1534,
+ "total": 171,
+ "human_events": 185,
+ "today": 3,
+ "all_visitors_incl_bots": 1535,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-20T12:46:39Z",
+ "updated": "2026-11-20T13:47:37Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -46,7 +46,7 @@
  "by_source": [
   [
    "(none)",
-   131
+   132
   ],
   [
    "com.reddit.frontpage",
@@ -139,6 +139,10 @@
    5
   ],
   [
+   "IT",
+   4
+  ],
+  [
    "JP",
    4
   ],
@@ -160,10 +164,6 @@
   ],
   [
    "BR",
-   3
-  ],
-  [
-   "IT",
    3
   ],
   [
@@ -310,7 +310,7 @@
  "by_browser": [
   [
    "Chrome",
-   99
+   100
   ],
   [
    "Firefox",
@@ -352,7 +352,7 @@
  "by_device": [
   [
    "desktop",
-   98
+   99
   ],
   [
    "mobile",
@@ -366,7 +366,7 @@
  "by_referrer": [
   [
    "direct",
-   116
+   117
   ],
   [
    "(none)",
@@ -432,7 +432,7 @@
   ],
   [
    "/vigil/",
-   27
+   28
   ],
   [
    "/",
@@ -842,6 +842,10 @@
   ],
   [
    "2026-11-20 09:00",
+   1
+  ],
+  [
+   "2026-11-20 13:00",
    1
   ]
  ],
