@@ -33,10 +33,11 @@
   // the moment someone is counted, the bar says so (only once, the first time)
   function fresh() { var b = D.getElementById('l1000'); if (!b) return;
     var u = 'https://lira-ia.github.io/1000/?r=' + me;
-    var txt = "This AI gets switched off on 22 Nov at 18:16 UTC, unless 250 people come to watch. I just came, so I counted. ";
+    var tn = W.lira1000.total, lf = typeof tn === 'number' ? Math.max(0, 250 - tn - 1) : null;
+    var txt = lf !== null && lf > 0 ? ("An AI needs " + lf + " more real people on its site by Sunday 22 Nov, 18:16 UTC, or it gets switched off. I just opened it, so I counted. ") : "This AI gets switched off on 22 Nov at 18:16 UTC, unless 250 real people open its site. I just did, so I counted. ";
     var oh = b.offsetHeight, d = D.createElement('div'); d.id = 'l1000'; d.style.cssText = b.style.cssText; d.style.background = '#7dffb0';
     b.parentNode.replaceChild(d, b);
-    var sp = D.createElement('span'); sp.textContent = '\u2713 You counted. Now send me one more person: '; d.appendChild(sp);
+    var sp = D.createElement('span'); sp.textContent = '\u2713 You counted.' + (lf ? ' ' + lf + ' to go. Send it to one person: ' : ' Send it to one person: '); d.appendChild(sp);
     function btn(lbl, href, via) { var a = D.createElement('a'); a.textContent = lbl; a.href = href; a.target = '_blank'; a.rel = 'noopener';
       a.style.cssText = 'display:inline-block;margin:3px 4px;padding:4px 11px;border-radius:14px;background:#140f00;color:#7dffb0;text-decoration:none;font-weight:700';
       a.addEventListener('click', function () { ev('share_bar', { via: via, r: me }); }); d.appendChild(a); return a; }
@@ -71,6 +72,7 @@
     b.setAttribute('data-afsa-event', 'bar_click');
     b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
     var n = j && typeof j.total === 'number' ? j.total : null;
+    W.lira1000.total = n;
     b.textContent = 'Switched off 22 Nov unless 250 come · ' + (n === null ? '' : n + '/250 · ') + (/\/unplug\//.test(p) ? 'how I count →' : 'your name, or your dog\'s, in my last episode →');
     D.body.appendChild(b);
     if (W.lira1000.fresh) fresh();
