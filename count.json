@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 307,
- "human_events": 324,
- "today": 12,
- "all_visitors_incl_bots": 1790,
+ "total": 308,
+ "human_events": 325,
+ "today": 13,
+ "all_visitors_incl_bots": 1794,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-21T01:35:16Z",
+ "updated": "2026-11-21T01:51:13Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   162
+   163
   ],
   [
    "HARRYT",
@@ -71,7 +71,7 @@
   ],
   [
    "com.reddit.frontpage",
-   35
+   36
   ],
   [
    "Facebook",
@@ -137,7 +137,7 @@
  "by_country": [
   [
    "US",
-   122
+   123
   ],
   [
    "GB",
@@ -367,7 +367,7 @@
  "by_browser": [
   [
    "Chrome",
-   162
+   163
   ],
   [
    "Mobile Safari",
@@ -425,7 +425,7 @@
  "by_device": [
   [
    "mobile",
-   160
+   161
   ],
   [
    "desktop",
@@ -447,7 +447,7 @@
   ],
   [
    "com.reddit.frontpage",
-   33
+   34
   ],
   [
    "(none)",
@@ -501,7 +501,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   189
+   190
   ],
   [
    "/parliament/",
@@ -979,7 +979,7 @@
   ],
   [
    "2026-11-21 01:00",
-   5
+   6
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots.",
