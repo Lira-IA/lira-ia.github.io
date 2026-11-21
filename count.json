@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 340,
- "human_events": 358,
- "today": 45,
- "all_visitors_incl_bots": 1871,
+ "total": 342,
+ "human_events": 360,
+ "today": 47,
+ "all_visitors_incl_bots": 1873,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-21T08:13:59Z",
+ "updated": "2026-11-21T08:29:13Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   193
+   194
   ],
   [
    "HARRYT",
@@ -63,7 +63,7 @@
  "by_source": [
   [
    "(none)",
-   219
+   221
   ],
   [
    "Reddit",
@@ -137,11 +137,11 @@
  "by_country": [
   [
    "US",
-   139
+   140
   ],
   [
    "GB",
-   21
+   22
   ],
   [
    "CA",
@@ -379,11 +379,11 @@
  "by_browser": [
   [
    "Chrome",
-   178
+   179
   ],
   [
    "Mobile Safari",
-   68
+   69
   ],
   [
    "Firefox",
@@ -437,11 +437,11 @@
  "by_device": [
   [
    "mobile",
-   187
+   188
   ],
   [
    "desktop",
-   149
+   150
   ],
   [
    "tablet",
@@ -451,7 +451,7 @@
  "by_referrer": [
   [
    "direct",
-   209
+   211
   ],
   [
    "reddit.com",
@@ -513,7 +513,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   222
+   223
   ],
   [
    "/parliament/",
@@ -536,11 +536,11 @@
    6
   ],
   [
-   "/n/JS9D6C/",
-   4
+   "/chi-sono/",
+   5
   ],
   [
-   "/chi-sono/",
+   "/n/JS9D6C/",
    4
   ],
   [
@@ -1016,6 +1016,10 @@
   [
    "2026-11-21 07:00",
    3
+  ],
+  [
+   "2026-11-21 08:00",
+   2
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots.",
