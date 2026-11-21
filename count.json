@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 295,
- "human_events": 312,
- "today": 0,
- "all_visitors_incl_bots": 1765,
+ "total": 296,
+ "human_events": 313,
+ "today": 1,
+ "all_visitors_incl_bots": 1766,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-21T00:02:54Z",
+ "updated": "2026-11-21T00:18:09Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   151
+   152
   ],
   [
    "HARRYT",
@@ -59,7 +59,7 @@
  "by_source": [
   [
    "(none)",
-   195
+   196
   ],
   [
    "Reddit",
@@ -133,7 +133,7 @@
  "by_country": [
   [
    "US",
-   111
+   112
   ],
   [
    "GB",
@@ -363,7 +363,7 @@
  "by_browser": [
   [
    "Chrome",
-   155
+   156
   ],
   [
    "Mobile Safari",
@@ -421,7 +421,7 @@
  "by_device": [
   [
    "mobile",
-   153
+   154
   ],
   [
    "desktop",
@@ -435,7 +435,7 @@
  "by_referrer": [
   [
    "direct",
-   184
+   185
   ],
   [
    "reddit.com",
@@ -497,7 +497,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   177
+   178
   ],
   [
    "/parliament/",
@@ -968,6 +968,10 @@
   [
    "2026-11-20 23:00",
    11
+  ],
+  [
+   "2026-11-21 00:00",
+   1
   ]
  ],
  "method": "Unique visitors who sent the analytics event \"human\" since 14 Nov 00:00 UTC. A browser sends it once, ever, after 5 s visible plus a touch/scroll/click/key; automated browsers (navigator.webdriver) never send it. Source: analytics.agentfirststack.com. Code: /js/human.js. Honest limit: this counts browsers that behaved like a person, not proven distinct people (one person on two devices counts twice). by_* and by_hour_utc are published so that any burst from one source is visible. Excluded: see excluded_bots.",
