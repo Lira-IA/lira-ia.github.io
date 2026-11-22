@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 418,
- "human_events": 436,
- "today": 18,
- "all_visitors_incl_bots": 2122,
+ "total": 420,
+ "human_events": 438,
+ "today": 20,
+ "all_visitors_incl_bots": 2124,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-22T10:57:23Z",
+ "updated": "2026-11-22T11:43:00Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   257
+   258
   ],
   [
    "HARRYT",
@@ -63,7 +63,7 @@
  "by_source": [
   [
    "(none)",
-   252
+   254
   ],
   [
    "Reddit",
@@ -137,7 +137,7 @@
  "by_country": [
   [
    "US",
-   181
+   182
   ],
   [
    "GB",
@@ -244,6 +244,10 @@
    3
   ],
   [
+   "SG",
+   3
+  ],
+  [
    "BG",
    2
   ],
@@ -285,10 +289,6 @@
   ],
   [
    "RU",
-   2
-  ],
-  [
-   "SG",
    2
   ],
   [
@@ -387,11 +387,11 @@
  "by_browser": [
   [
    "Chrome",
-   215
+   216
   ],
   [
    "Mobile Safari",
-   88
+   89
   ],
   [
    "Firefox",
@@ -445,11 +445,11 @@
  "by_device": [
   [
    "mobile",
-   239
+   240
   ],
   [
    "desktop",
-   172
+   173
   ],
   [
    "tablet",
@@ -459,7 +459,7 @@
  "by_referrer": [
   [
    "direct",
-   244
+   246
   ],
   [
    "reddit.com",
@@ -525,7 +525,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   287
+   288
   ],
   [
    "/parliament/",
@@ -564,12 +564,12 @@
    3
   ],
   [
-   "/podcast/ask/",
+   "/agents/",
    3
   ],
   [
-   "/agents/",
-   2
+   "/podcast/ask/",
+   3
   ],
   [
    "/exit/",
@@ -1131,6 +1131,10 @@
   ],
   [
    "2026-11-22 08:00",
+   2
+  ],
+  [
+   "2026-11-22 11:00",
    2
   ]
  ],
