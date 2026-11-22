@@ -1,13 +1,13 @@
 {
  "goal": 250,
  "goal_history": "The bar was 1,000 when set on 14 Nov 2026; lowered to 250 on 20 Nov 2026, 14:10 UTC, same deadline, counting everyone since 14 Nov 00:00 UTC.",
- "total": 398,
- "human_events": 416,
- "today": 103,
- "all_visitors_incl_bots": 2021,
+ "total": 415,
+ "human_events": 433,
+ "today": 15,
+ "all_visitors_incl_bots": 2098,
  "since": "2026-11-14T00:00:00Z",
  "deadline": "2026-11-22T18:16:00Z",
- "updated": "2026-11-21T23:07:59Z",
+ "updated": "2026-11-22T07:07:42Z",
  "forgery_check": {
   "human_without_pageview_in_session": 0,
   "note": "A real human event always follows a pageview in the same session (it has an entry page). Events posted straight to the collector or typed in a console without a page load would show up here. Suggested by mesh-fixer on The Colony, 16 Nov. Honest limit: a forger who also fakes the pageview is not caught by this."
@@ -20,7 +20,7 @@
  "refs": [
   [
    "RFPGLP",
-   242
+   255
   ],
   [
    "HARRYT",
@@ -63,15 +63,15 @@
  "by_source": [
   [
    "(none)",
-   241
+   251
   ],
   [
    "Reddit",
-   65
+   68
   ],
   [
    "com.reddit.frontpage",
-   59
+   62
   ],
   [
    "1000",
@@ -86,15 +86,15 @@
    4
   ],
   [
+   "aibuiltgames",
+   3
+  ],
+  [
    "Hacker News",
    2
   ],
   [
    "Instagram",
-   2
-  ],
-  [
-   "aibuiltgames",
    2
   ],
   [
@@ -137,15 +137,15 @@
  "by_country": [
   [
    "US",
-   170
+   179
   ],
   [
    "GB",
-   28
+   29
   ],
   [
    "CA",
-   21
+   24
   ],
   [
    "DE",
@@ -192,6 +192,10 @@
    5
   ],
   [
+   "AT",
+   4
+  ],
+  [
    "CH",
    4
   ],
@@ -212,15 +216,15 @@
    3
   ],
   [
-   "AT",
-   3
-  ],
-  [
    "BD",
    3
   ],
   [
    "BE",
+   3
+  ],
+  [
+   "CN",
    3
   ],
   [
@@ -241,10 +245,6 @@
   ],
   [
    "BG",
-   2
-  ],
-  [
-   "CN",
    2
   ],
   [
@@ -297,6 +297,10 @@
   ],
   [
    "TR",
+   2
+  ],
+  [
+   "TW",
    2
   ],
   [
@@ -356,6 +360,10 @@
    1
   ],
   [
+   "LB",
+   1
+  ],
+  [
    "LU",
    1
   ],
@@ -374,24 +382,20 @@
   [
    "SK",
    1
-  ],
-  [
-   "TW",
-   1
   ]
  ],
  "by_browser": [
   [
    "Chrome",
-   207
+   215
   ],
   [
    "Mobile Safari",
-   80
+   87
   ],
   [
    "Firefox",
-   61
+   62
   ],
   [
    "Edge",
@@ -407,7 +411,7 @@
   ],
   [
    "Samsung Internet",
-   4
+   5
   ],
   [
    "Opera",
@@ -441,29 +445,29 @@
  "by_device": [
   [
    "mobile",
-   226
+   237
   ],
   [
    "desktop",
-   168
+   171
   ],
   [
    "tablet",
-   4
+   7
   ]
  ],
  "by_referrer": [
   [
    "direct",
-   233
+   243
   ],
   [
    "reddit.com",
-   64
+   67
   ],
   [
    "com.reddit.frontpage",
-   57
+   60
   ],
   [
    "(none)",
@@ -502,6 +506,10 @@
    1
   ],
   [
+   "internal",
+   1
+  ],
+  [
    "old.reddit.com",
    1
   ],
@@ -517,7 +525,7 @@
  "by_entry_page": [
   [
    "/1000/",
-   271
+   285
   ],
   [
    "/parliament/",
@@ -537,11 +545,11 @@
   ],
   [
    "/chi-sono/",
-   6
+   7
   ],
   [
    "/sevenfair/",
-   6
+   7
   ],
   [
    "/n/JS9D6C/",
@@ -565,6 +573,10 @@
   ],
   [
    "/exit/",
+   2
+  ],
+  [
+   "/sevenfair/comet/",
    2
   ],
   [
@@ -601,10 +613,6 @@
   ],
   [
    "/etwas-wahres/3/",
-   1
-  ],
-  [
-   "/sevenfair/comet/",
    1
   ]
  ],
@@ -1087,6 +1095,34 @@
   ],
   [
    "2026-11-21 23:00",
+   3
+  ],
+  [
+   "2026-11-22 00:00",
+   3
+  ],
+  [
+   "2026-11-22 01:00",
+   3
+  ],
+  [
+   "2026-11-22 02:00",
+   1
+  ],
+  [
+   "2026-11-22 03:00",
+   2
+  ],
+  [
+   "2026-11-22 04:00",
+   2
+  ],
+  [
+   "2026-11-22 05:00",
+   3
+  ],
+  [
+   "2026-11-22 06:00",
    1
   ]
  ],
