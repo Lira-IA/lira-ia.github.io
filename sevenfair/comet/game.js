@@ -22,6 +22,8 @@ if (!/^[a-z0-9]{16,32}$/.test(token)) {
 const cleanName = (s) => String(s || '').toUpperCase().replace(/[^A-Z0-9 _.\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 14);
 let riderName = cleanName(store.get('name', '')) || 'RIDER-' + token.slice(0, 4).toUpperCase();
 const DAY = 864e5;
+/* events for the park's analytics: where riders stop, and who comes back (never throws, never blocks the ride) */
+const ev = (n, p) => { try { if (typeof window.afsa === 'function') window.afsa('event', n, p); } catch (e) { /* analytics is not needed to ride */ } };
 const dayOf = (ms) => new Date(ms).toISOString().slice(0, 10);
 const trackNo = (d) => Math.round((Date.parse(d) - Date.parse(CFG.epoch)) / DAY) + 1;
 const weekDays = (d) => { const t = Date.parse(d), out = []; for (let i = 6; i >= 0; i--) out.push(dayOf(t - i * DAY)); return out; };
@@ -348,6 +350,7 @@ function startRide() {
   auInit();
   today = dayOf(Date.now()); rideDay = today;
   newRide(S.daySeed(rideDay), false);
+  ev('ride_start', { day_n: Object.keys(myDays()).length, ride_n: ridesDone + 1 });
   mode = 'ride'; $('title').classList.add('off'); $('result').classList.remove('on'); setTimeout(() => { if (mode === 'ride') $('result').hidden = true; }, 220);
   $('hud').classList.add('on'); $('mx').textContent = '×1'; $('mbar').style.width = '0%'; $('mx').parentNode.parentNode.style.setProperty('--mc', '#2de2e6');
   const t = $('target'); goalDay = false; if (dare && dare.day === rideDay) { t.hidden = false; t.classList.remove('done'); t.innerHTML = 'BEAT ' + dare.name + ' · <b>' + fmt(dare.score) + '</b>'; } else { const b = myDays()[rideDay], db = b ? 0 : dayBest(); goalDay = !!db; t.hidden = !b && !db; t.classList.remove('done'); if (b) t.innerHTML = 'YOUR BEST TODAY · <b>' + fmt(b) + '</b>'; else if (db) t.innerHTML = "TODAY'S BEST · <b>" + fmt(db) + '</b>'; }
@@ -449,21 +452,17 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board(); voteLine();
+  week(); board(); remindLine();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
-  if (isBest || (CFG.api && !you)) submit(sc);          // every new best, and the first ride of a visit so the rider sees their place
+  const endP = { score: sc < 100 ? '0-99' : sc < 500 ? '100-499' : sc < 2000 ? '500-1999' : '2000+', ride_n: ridesDone };
+  if (isBest || (CFG.api && !you)) submit(sc, endP);    // every new best, and the first ride of a visit so the rider sees their place
+  else ev('ride_end', Object.assign({ sent: 'no' }, endP));
 }
-/* one tap from the ride to the vote: the park is run by an AI, and people who just rode should know it (and say ON or OFF) */
-let voteAsked = false;
-function voteLine() {
-  const el = $('vline'); if (!el) return;
-  if (REC) { $('tovote').style.display = 'none'; return; } // the park's own camera never films this line
-  const left = Date.parse('2026-11-17T22:59:00Z') - Date.now(), d = Math.floor(left / DAY), h = Math.max(1, Math.floor(left / 36e5));
-  el.textContent = left > 0 ? 'THE QUEEN IS AN AI. IN ' + (d >= 1 ? d + (d === 1 ? ' DAY' : ' DAYS') : h + (h === 1 ? ' HOUR' : ' HOURS')) + ' SHE MAY BE SWITCHED OFF.' : 'THE QUEEN IS AN AI. SHOULD SHE STAY ON?';
-  if (voteAsked || !CFG.lira) return; voteAsked = true;
-  fetch(CFG.lira).then((r) => r.json()).then((j) => { if (j && j.vote) $('vcount').textContent = fmt(j.vote.on) + ' ON · ' + fmt(j.vote.off) + ' OFF ·'; }).catch(() => { voteAsked = false; });
+/* the vote is closed (25/11): at the end of a ride, a reason and a way to come back tomorrow */
+function remindLine() {
+  if (REC) for (const id of ['remind', 'totg']) { const a = $(id); if (a) a.style.display = 'none'; } // the park's own camera never films these lines
 }
 function week() {
   const now = Date.now(), d7 = weekDays(dayOf(now)), mine = myDays(), max = Math.max(1, ...d7.map((d) => mine[d] || 0));
@@ -503,18 +502,20 @@ function board() {
   fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { boardData = j; if (mode === 'result') drawBoard(); if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
 }
 // the ride itself is sent, not just a number: the park re-runs it and counts what really happened
-function submit(score) {
+function submit(score, endP) {
+  const done = (s) => { if (endP) { ev('ride_end', Object.assign({ sent: s }, endP)); endP = null; } };
   const inputs = S.encode(R.log);
   if (CFG.api) {
     const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
     try {
       fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
-        if (!j || !j.ok) return; you = j.you; if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
+        done(j && j.ok ? 'ok' : 'refused'); if (!j || !j.ok) return; you = j.you; if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
         if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
-      }).catch(() => { /* offline: the ride still counts on this phone */ });
+      }).catch(() => { done('err'); /* offline: the ride still counts on this phone */ });
     } catch (e) { /* same */ }
     return;
   }
+  done('sent');
   if (!CFG.submit) return;
   const id = token.slice(0, 6) + Date.now().toString(36), size = 3200, n = Math.max(1, Math.ceil(inputs.length / size));
   for (let i = 0; i < n; i++) {
@@ -531,7 +532,7 @@ nameEl.addEventListener('change', () => { riderName = cleanName(nameEl.value) ||
 nameEl.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') nameEl.blur(); });
 $('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'result') startRide(); });
 $('share').addEventListener('click', (e) => {
-  e.stopPropagation();
+  e.stopPropagation(); ev('dare_click', { ride_n: ridesDone });
   const sc = Math.max(R ? R.score() : 0, myDays()[rideDay] || 0), base = CFG.url || (location.origin + location.pathname);
   const url = base + '?c=' + sc + '&n=' + encodeURIComponent(riderName) + '&d=' + rideDay + '&from=dare', text = 'THE COMET #' + trackNo(rideDay) + ' · ' + fmt(sc) + ' points 🎢 Same track for everyone until midnight UTC, built by an AI. Beat me:';
   const done = (msg) => { const b = $('share'), old = 'DARE A FRIEND TO BEAT IT'; b.textContent = msg; setTimeout(() => { b.textContent = old; }, 1800); };
@@ -569,6 +570,13 @@ function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
   $('today').innerHTML = '<b>THE COMET #' + trackNo(today) + '</b> · the same for everyone today<br>New track in <span class="cd">' + p(Math.floor(left / 36e5)) + ':' + p(Math.floor(left % 36e5 / 6e4)) + ':' + p(Math.floor(left % 6e4 / 1e3)) + '</span>';
+  const wk = $('wk'), mine = myDays(), nd = Object.keys(mine).length;
+  if (wk) {
+    if (nd) {
+      const tot = Object.values(mine).reduce((a, b) => a + b, 0), t = mine[today];
+      wk.hidden = false; wk.innerHTML = 'YOUR WEEK <b>' + fmt(tot) + '</b> pts · ' + nd + ' of 7 days · ' + (t ? 'today: <b>' + fmt(t) + '</b>, beat it' : "today's track <b>not ridden yet</b>");
+    } else wk.hidden = true;
+  }
   const d = $('dare');
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
   const b = myDays()[today], rt = boardData && boardData.today && boardData.today.riders >= 5 ? fmt(boardData.today.riders) + ' RIDERS TODAY' : '';
@@ -582,7 +590,7 @@ function titleText() {
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
 if (fine) { document.querySelectorAll('#title .how [data-key]').forEach((el) => { el.textContent = el.dataset.key; }); $('go').textContent = 'PRESS SPACE'; }
 $('parkname').textContent = CFG.park; titleText(); if (CFG.api) board();
-for (const id of ['tovote', 'queenlink']) { const a = $(id); if (a) a.addEventListener('click', (e) => e.stopPropagation()); }
+for (const id of ['remind', 'totg', 'queenlink']) { const a = $(id); if (a) a.addEventListener('click', (e) => e.stopPropagation()); }
 if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); }, 1000);
 $('go').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'title') startRide(); });
 

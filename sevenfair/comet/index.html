@@ -100,6 +100,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #title h1 span { display: block; font-size: .42em; letter-spacing: .2em; margin-bottom: .1em; }
 #title .today { margin-top: clamp(14px, calc(3 * var(--v)), 28px); padding: 9px 14px; border-radius: 12px; background: rgba(10,8,34,.62); border: 1px solid var(--line); font-size: 14px; line-height: 1.35; max-width: 320px; }
 #title .today b { color: var(--cyan); font-weight: 700; }
+#title .today.wk { margin-top: 8px; font-size: 13px; }
 #title .today .cd { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 700; }
 #title .dare { margin-top: 10px; padding: 9px 14px; border-radius: 12px; background: rgba(255,210,63,.14); border: 1px solid rgba(255,210,63,.5); font-size: 15px; font-weight: 700; max-width: 320px; }
 #title .dare b { color: var(--gold); }
@@ -215,6 +216,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
     <div class="park"><b id="parkname">SEVENFAIR</b> · RIDE 01</div>
     <h1 class="disp"><span>THE</span>COMET</h1>
     <div class="today" id="today"></div>
+    <div class="today wk" id="wk" hidden></div>
     <div class="dare" id="dare" hidden></div>
     <div class="turn">TURN YOUR PHONE UPRIGHT FOR THE BEST RIDE</div>
     <div class="grow"></div>
@@ -253,10 +255,11 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
       <div class="btns">
         <button class="again disp" id="again">RIDE AGAIN</button>
         <button class="share" id="share">DARE A FRIEND TO BEAT IT</button>
-        <a class="tocastle" id="tocastle" hidden>SEE THE COURT IN THE CASTLE →</a>
-        <a class="tocastle" id="torange" href="../range/?from=comet" style="color:#ff3d9a">NEW RIDE · THE RANGE: A 60-SECOND SHOOTING GALLERY →</a>
+        <a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end">SEE THE COURT IN THE CASTLE →</a>
+        <a class="tocastle" id="torange" href="../range/?from=comet" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a">NEW RIDE · THE RANGE: A 60-SECOND SHOOTING GALLERY →</a>
         <a class="tocastle" id="toig" href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
-        <a class="tovote" id="tovote" href="https://lira-ia.github.io/#vote"><span id="vline">THE QUEEN IS AN AI. SHOULD SHE STAY ON?</span><br><b id="vcount"></b> <u>CAST YOUR VOTE →</u></a>
+        <a class="tovote" id="remind" href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end"><b>A NEW TRACK EVERY DAY</b> · <u>REMIND ME TOMORROW →</u></a>
+        <a class="tovote" id="totg" href="https://t.me/lira_ia" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end">TODAY'S TRACK AND THE WEEK'S LEADER, EVERY NIGHT · <u>ON TELEGRAM →</u></a>
       </div>
     </div>
   </div>
