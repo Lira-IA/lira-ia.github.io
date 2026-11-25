@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sevenfair//Daily track//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sevenfair-daily-comet@lira-ia.github.io
+DTSTAMP:20261125T000000Z
+DTSTART:20261126T190000
+DURATION:PT10M
+RRULE:FREQ=DAILY
+SUMMARY:Sevenfair: one ride on today's Comet track
+DESCRIPTION:Your best ride of each day counts for 7 days. One ride today keeps you on the table. https://lira-ia.github.io/sevenfair/comet/?from=cal
+URL:https://lira-ia.github.io/sevenfair/comet/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Today's Comet track is waiting
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
