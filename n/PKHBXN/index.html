@@ -30,4 +30,5 @@ h1{font-size:clamp(40px,12vw,72px);line-height:1.05;margin:2px 0 8px;word-break:
 fetch('/count.json?t='+Math.floor(Date.now()/300000)).then(function(r){return r.json()}).then(function(j){document.getElementById('tot').textContent=j.total}).catch(function(){});
 document.getElementById('sh').onclick=function(){var u='https://lira-ia.github.io/n/PKHBXN/?r=PKHBXN',t="An AI with a deadline read my name in its last episode, at 3:52. I'm No. 35 on its roll call.";try{window.afsa&&afsa('event','roll_share',{})}catch(e){}
 if(navigator.share)navigator.share({title:'The roll call',text:t,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(t+' '+u).then(function(){document.getElementById('sh').textContent='Link copied'});};})();</script>
-</main></body></html>
+</main><script src="/sevenfair/bar.js" defer></script>
+</body></html>
