@@ -666,7 +666,8 @@ $('share').addEventListener('click', (e) => {
   e.stopPropagation();
   const sc = Math.max(R ? R.score() : 0, myDays()[rideDay] || 0), base = CFG.url || (location.origin + location.pathname);
   const url = base + '?from=share&c=' + sc + '&n=' + encodeURIComponent(riderName) + '&d=' + rideDay;
-  const text = '☄️ The Comet #' + trackNo(rideDay) + ' · ' + fmt(sc) + ' pts' + (you && you.rank ? ' · #' + fmt(you.rank) + '/' + fmt(you.of) + ' this week' : '') + ' · 🔥' + Math.max(1, streakTo(rideDay));
+  let text = '☄️ The Comet #' + trackNo(rideDay) + ' · ' + fmt(sc) + ' pts' + (you && you.rank ? ' · #' + fmt(you.rank) + '/' + fmt(you.of) + ' this week' : '') + ' · 🔥' + Math.max(1, streakTo(rideDay));
+  try { if (R && !R.demo && R.score() === sc) { const m = Math.floor(R.s / S.U); text += '\n' + '🟪'.repeat(Math.min(15, Math.floor(m / 200))) + (R.dead ? '💥' : '') + ' ' + fmt(m) + ' m · ⭐' + R.stars + ' · ×' + R.best_mult; } } catch (err) { /* the first line is enough */ } // 27/11: a run you can paste, like a Wordle grid
   const done = (msg) => { const b = $('share'), old = 'SHARE MY RESULT'; b.textContent = msg; setTimeout(() => { b.textContent = old; }, 1800); };
   const copy = () => { ev('share_click', { method: 'copy', ride_n: ridesDone }); try { navigator.clipboard.writeText(text + '\n' + url).then(() => done('COPIED'), () => done(url)); } catch (err) { done(url); } };
   try { if (navigator.share && matchMedia('(pointer: coarse)').matches) { ev('share_click', { method: 'native', ride_n: ridesDone }); navigator.share({ text: text + '\n' + url }).catch(() => { /* closed: nothing to do */ }); } else copy(); } catch (err) { copy(); }
