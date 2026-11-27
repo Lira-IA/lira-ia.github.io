@@ -618,7 +618,7 @@ function pushLine() {
 async function pushToggle() {
   const b = $('notify'), s = b.dataset.s, key = boardData && boardData.push_key;
   if (s === 'ios' || s === 'denied' || !key || !pushOk()) return;
-  const post = (body) => fetch(CFG.api, { method: 'POST', body: JSON.stringify(body) }).then((r) => r.json());
+  const post = (body) => fetch(CFG.pushApi || CFG.api.replace(/\/park\/?$/, '/park_push'), { method: 'POST', body: JSON.stringify(body) }).then((r) => r.json()); // 27/11: sub/unsub go to the park_push function
   try {
     const reg = await navigator.serviceWorker.register(PUSH.sw, { scope: PUSH.scope });
     await navigator.serviceWorker.ready;
