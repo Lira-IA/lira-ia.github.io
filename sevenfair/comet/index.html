@@ -160,7 +160,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .name { display: flex; gap: 8px; align-items: center; margin-top: 11px; font-size: 11px; letter-spacing: .14em; font-weight: 700; color: var(--dim); }
 #result .name input { flex: 1; min-width: 0; font: inherit; font-size: 16px; letter-spacing: .02em; color: var(--ink); background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 10px;
   padding: 8px 10px; outline: none; pointer-events: auto; user-select: text; -webkit-user-select: text; }
-#result .name input:focus { border-color: var(--cyan); }
+#result .name input:focus { border-color: var(--cyan); } #result .name.ask { color: var(--gold); margin: 10px 0 2px; } #result .name.ask input { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246,217,138,.18); } #result .name.ask input::placeholder { color: rgba(246,217,138,.75); font-size: 13px; letter-spacing: .06em; }
 #result .btns { display: grid; grid-template-columns: 1fr; gap: 9px; margin-top: 13px; }
 #result .again { font-size: 24px; padding: 15px 10px 14px; border-radius: 16px; color: #1a0630; background: linear-gradient(180deg, #fff3a8, var(--gold)); box-shadow: 0 5px 0 #a9670a; }
 #result .again:active { transform: translateY(3px); box-shadow: 0 2px 0 #a9670a; }

@@ -463,7 +463,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board(); remindLine(); streakLine(); pushLine(); installLine();
+  week(); board(); remindLine(); streakLine(); pushLine(); installLine(); nameAsk();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
@@ -594,7 +594,16 @@ document.querySelectorAll('#crownrow button').forEach((b) => b.addEventListener(
 crownShow();
 const nameEl = $('name'); nameEl.value = riderName;
 nameEl.addEventListener('input', () => { const c = cleanName(nameEl.value); if (c !== nameEl.value.toUpperCase().slice(0, 14)) nameEl.value = c; });
-nameEl.addEventListener('change', () => { riderName = cleanName(nameEl.value) || riderName; nameEl.value = riderName; store.set('name', riderName); });
+nameEl.addEventListener('change', () => { const was = riderName; riderName = cleanName(nameEl.value) || riderName; nameEl.value = riderName; store.set('name', riderName); if (riderName !== was && !/^RIDER-/.test(riderName)) ev('name_set', { ride_n: ridesDone }); nameAsk(); });
+/* 27/11: a rider still called RIDER-XXXX is asked for a name: the board, the crown and "yesterday" show it */
+function nameAsk() {
+  const row = $('namerow'); if (!row) return; const anon = /^RIDER-/.test(riderName) && !REC;
+  row.classList.toggle('ask', anon); row.firstChild.textContent = anon ? 'YOUR NAME ' : 'RIDER ';
+  if (anon && document.activeElement !== nameEl) { nameEl.value = ''; nameEl.placeholder = 'TYPE IT FOR THE BOARD'; }
+  const st = document.querySelector('#result .stats'), home = $('crownrow');                 // asked: up, right under the score; named: back at the bottom
+  if (anon && st && row.nextElementSibling !== st) st.parentNode.insertBefore(row, st);
+  else if (!anon && home && row.previousElementSibling !== home) home.parentNode.insertBefore(row, home.nextSibling);
+}
 nameEl.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') nameEl.blur(); });
 $('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'result') startRide(); });
 $('share').addEventListener('click', (e) => {
