@@ -167,7 +167,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .share { font-weight: 700; letter-spacing: .1em; font-size: 14px; padding: 12px 10px; border-radius: 14px; border: 1px solid rgba(45,226,230,.6); color: var(--cyan); background: rgba(45,226,230,.08); }
 #result .tocastle { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--gold); text-decoration: none; padding: 4px 0 0; pointer-events: auto; }
 #result .tovote { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: .09em; line-height: 1.5; color: var(--dim); text-decoration: none; padding: 2px 0 0; pointer-events: auto; }
-#result .tovote b { color: #fff; font-weight: 700; } #result .tovote u { text-decoration: none; color: var(--cyan); }
+#result button.tovote { background: none; border: 0; font-family: inherit; cursor: pointer; } #result .notify { color: #fff; font-size: 12px; } #result .tovote b { color: #fff; font-weight: 700; } #result .tovote u { text-decoration: none; color: var(--cyan); }
 @media (max-height: 520px) { #result .tovote { display: none; } }
 #paused { display: grid; place-items: center; text-align: center; background: rgba(4,3,18,.6); pointer-events: auto; }
 #paused div { font-size: 34px; } #paused small { display: block; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: .16em; color: var(--dim); margin-top: 8px; font-weight: 700; }
@@ -259,6 +259,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
       <div class="btns">
         <button class="again disp" id="again">RIDE AGAIN</button>
         <button class="share" id="share">SHARE MY RESULT</button>
+        <button class="tovote notify" id="notify" hidden></button>
         <a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end">SEE THE COURT IN THE CASTLE →</a>
         <a class="tocastle" id="torange" href="../range/?from=comet" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a">NEW RIDE · THE RANGE: A 60-SECOND SHOOTING GALLERY →</a>
         <a class="tocastle" id="toig" href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>

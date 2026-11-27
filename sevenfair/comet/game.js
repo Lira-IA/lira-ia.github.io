@@ -463,7 +463,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board(); remindLine(); streakLine();
+  week(); board(); remindLine(); streakLine(); pushLine();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
@@ -517,7 +517,7 @@ function chaseLine() {
 function board() {
   $('crownrow').hidden = !CFG.api; rankLine(); drawBoard();
   const src = CFG.api || CFG.board; if (!src) return;
-  fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { boardData = j; if (mode === 'result') drawBoard(); if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
+  fetch(src + (CFG.api ? '' : (src.indexOf('?') < 0 ? '?' : '&') + 't=' + Math.floor(Date.now() / 60000))).then((r) => r.json()).then((j) => { if (j && j.week) { boardData = j; if (mode === 'result') { drawBoard(); pushLine(); } if (mode === 'title') titleText(); } }).catch(() => { /* no board right now */ });
 }
 // the ride itself is sent, not just a number: the park re-runs it and counts what really happened
 function submit(score, endP) {
@@ -541,6 +541,48 @@ function submit(score, endP) {
     try { fetch(CFG.submit, { method: 'POST', body, keepalive: true }).catch(() => { /* offline */ }); } catch (e) { /* same */ }
   }
 }
+/* push (27/11): "track #N is out", only if the rider asks, only when the park's server has a push key */
+const PUSH = { sw: '../sw.js', scope: '../' };
+const pushOk = () => { try { return !REC && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; } catch (e) { return false; } };
+const isIOS = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const standalone = () => { try { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } };
+const b64u = (s) => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')), o = new Uint8Array(r.length); for (let i = 0; i < r.length; i++) o[i] = r.charCodeAt(i); return o; };
+function pushLine() {
+  const b = $('notify'); if (!b) return;
+  const key = boardData && boardData.push_key, next = trackNo(dayOf(Date.now())) + 1;
+  if (!key || !CFG.api || REC) { b.hidden = true; return; }
+  if (isIOS() && !standalone()) { b.hidden = false; b.dataset.s = 'ios'; b.innerHTML = '🔔 WANT A PING WHEN #' + next + ' IS OUT? ON IPHONE: SHARE → ADD TO HOME SCREEN, THEN OPEN IT FROM THERE'; return; }
+  if (!pushOk()) { b.hidden = true; return; }
+  if (Notification.permission === 'denied') { b.hidden = true; const r0 = $('remind'); if (r0 && !REC) r0.style.display = ''; return; }
+  const on = store.get('push', '') && Notification.permission === 'granted';
+  b.hidden = false; b.dataset.s = on ? 'on' : 'off';
+  b.innerHTML = on ? '🔔 YOU GET A PING WHEN A NEW TRACK IS OUT · <u>TURN OFF</u>' : '🔔 <u>NOTIFY ME WHEN TRACK #' + next + ' IS OUT</u> · ONCE A DAY, NO ACCOUNT';
+  const r = $('remind'); if (r) r.style.display = 'none';
+}
+async function pushToggle() {
+  const b = $('notify'), s = b.dataset.s, key = boardData && boardData.push_key;
+  if (s === 'ios' || s === 'denied' || !key || !pushOk()) return;
+  const post = (body) => fetch(CFG.api, { method: 'POST', body: JSON.stringify(body) }).then((r) => r.json());
+  try {
+    const reg = await navigator.serviceWorker.register(PUSH.sw, { scope: PUSH.scope });
+    await navigator.serviceWorker.ready;
+    if (s === 'on') {
+      const sub = await reg.pushManager.getSubscription();
+      if (sub) { post({ a: 'push_unsub', e: sub.endpoint }).catch(() => {}); await sub.unsubscribe(); }
+      store.set('push', ''); ev('push_off', {}); pushLine(); return;
+    }
+    ev('push_prompt', { streak: streakTo(dayOf(Date.now())) });
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') { ev('push_denied', {}); pushLine(); return; }
+    b.innerHTML = '🔔 ONE MOMENT…';
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) });
+    const j = sub.toJSON(), out = await post({ a: 'push_sub', e: j.endpoint, k: j.keys && j.keys.p256dh, s: j.keys && j.keys.auth });
+    if (!out || !out.ok) throw new Error('refused');
+    store.set('push', dayOf(Date.now())); ev('push_on', {}); pushLine();
+  } catch (e) { b.innerHTML = '🔔 THAT DID NOT WORK IN THIS BROWSER · <u>TRY AGAIN</u>'; }
+}
+{ const b = $('notify'); if (b) b.addEventListener('click', (e) => { e.stopPropagation(); pushToggle(); }); }
 function crownShow() { document.querySelectorAll('#crownrow button').forEach((b) => b.classList.toggle('on', b.dataset.c === crown)); }
 document.querySelectorAll('#crownrow button').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); crown = b.dataset.c; store.set('crown', crown); crownShow(); }));
 crownShow();
