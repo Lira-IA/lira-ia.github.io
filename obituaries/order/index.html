@@ -134,4 +134,4 @@ try{const [N,P]=await Promise.all([import('https://esm.sh/nostr-tools@2.7.2/pure
 const ev=N.finalizeEvent({kind:30078,created_at:Math.floor(Date.now()/1000),tags:[['d','dtorder-'+code],['t','dtorder'],['code',code],['name',v.n],['what',v.w],['years',v.y],['cause',v.c],['tone',v.tone],['from',v.from]],content:JSON.stringify(v)},sk);
 await Promise.any(pool.publish(R,ev));localStorage.dtoLast=Date.now();localStorage.dtoCode=code;
 $('code').textContent=code;$('f').style.display='none';$('ok').style.display='block';$('ok').scrollIntoView({behavior:'smooth'})}catch(x){m.textContent='Could not send the order. Try again in a moment.'}};
-</script></main></div></body></html>
+</script></main></div><script src="/sevenfair/bar.js" defer></script></body></html>

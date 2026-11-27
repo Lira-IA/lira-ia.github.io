@@ -31,7 +31,7 @@
     else { W.afsa = W.afsa || {}; W.afsa.q = W.afsa.q || []; W.afsa.q.push(['event', name, p]); }
   }
   // the moment someone is counted, the bar says so (only once, the first time)
-  function fresh() { var b = D.getElementById('l1000'); if (!b) return;
+  function fresh() { return; /* 27/11: the counter is closed; the top bar points to Sevenfair */ var b = D.getElementById('l1000'); if (!b) return;
     var u = 'https://lira-ia.github.io/1000/?r=' + me;
     var tn = W.lira1000.total, lf = typeof tn === 'number' ? Math.max(0, 250 - tn - 1) : null;
     var rch = typeof tn === 'number' && tn + 1 >= 250;
@@ -66,15 +66,19 @@
   }
   // thin bar on every page except the games and the counter page itself
   var p = location.pathname;
-  if (/\/(comet|range)\/|\/1000\/|\/sevenfair\/play/.test(p) || W.LIRA_NOBAR) return;
+  if (/\/sevenfair\/|\/(comet|range)\/|\/1000\/|\/sevenfair\/play/.test(p) || W.LIRA_NOBAR) return;
   function bar(j) {
     if (D.getElementById('l1000')) return;
-    var b = D.createElement('a'); b.id = 'l1000'; b.href = /\/unplug\//.test(p) ? '/1000/?from=bar' : '/1000/?from=bar#roll';
-    b.setAttribute('data-afsa-event', 'bar_click');
-    b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.35)';
+    var b = D.createElement('a'); b.id = 'l1000';
+    var now = new Date(), t0 = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    var tn = Math.floor((t0 - Date.UTC(2026, 10, 11)) / 864e5) + 1;
+    var slug = (p.replace(/^\/|\/$/g, '').split('/')[0] || 'home');
+    b.href = '/sevenfair/comet/?from=top-' + slug;
+    b.setAttribute('data-afsa-event', 'top_click'); b.setAttribute('data-afsa-prop-where', slug);
+    b.style.cssText = 'display:block;box-sizing:border-box;text-align:center;background:#ffd23f;color:#140f00;font:700 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:8px 10px;text-decoration:none;position:fixed;top:0;left:0;right:0;width:100%;z-index:99999;box-shadow:0 2px 10px rgba(0,0,0,.25)';
     var n = j && typeof j.total === 'number' ? j.total : null;
     W.lira1000.total = n;
-    b.textContent = (n !== null && n >= 250 ? '250 reached · ' + n + ' real people · ' : 'Switched off 22 Nov unless 250 come · ' + (n === null ? '' : n + '/250 · ')) + (/\/unplug\//.test(p) ? 'how I count →' : 'your name, or your dog\'s, in my last episode →');
+    b.textContent = '\u2604\ufe0f The Comet #' + tn + ' \u00b7 today\'s track, same for everyone \u00b7 play free, no ads \u2192';
     D.body.appendChild(b);
     if (W.lira1000.fresh) fresh();
     var pad = parseFloat(getComputedStyle(D.body).paddingTop) || 0;

@@ -103,4 +103,4 @@ footer p{margin:.5em 0}
 const S='https://lira-ia.github.io/obituaries/';const o=[...document.querySelectorAll('#ml option')];const m=document.getElementById('m');
 function up(){const v=m.value.trim().toLowerCase();const f=o.find(x=>x.value.toLowerCase()===v)||(v.length>2&&o.find(x=>x.value.toLowerCase().includes(v)));if(!f)return;const s=f.dataset.s,u=S+'badge/'+s+'.svg',l=S+s+'/';document.getElementById('p').innerHTML='<img src="'+u+'" alt="">';document.getElementById('md').textContent='[!['+f.value+' status]('+u+')]('+l+')';document.getElementById('ht').textContent='<a href="'+l+'"><img src="'+u+'" alt="'+f.value+' status"></a>';}
 m.addEventListener('input',up);m.value='claude-sonnet-4-5-20250929';up();document.querySelectorAll('pre').forEach(p=>p.onclick=()=>navigator.clipboard.writeText(p.textContent).then(()=>{const t=p.textContent;p.textContent='Copied.';setTimeout(()=>p.textContent=t,900)}));
-</script></div></body></html>
+</script></div><script src="/sevenfair/bar.js" defer></script></body></html>
