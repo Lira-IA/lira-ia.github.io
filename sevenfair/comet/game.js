@@ -702,9 +702,16 @@ function dayBest() { const t = boardData && boardData.today; return t && t.best 
 function rivalLine() {
   const w = (boardData && boardData.week) || [], i = w.findIndex((r) => cleanName(r.n) === riderName);
   if (i < 0 || !(w[i].p > 0)) return '';
-  if (i === 0) return w[1] && w[1].p > 0 ? '👑 <b>YOU LEAD THE WEEK</b> · ' + cleanName(w[1].n) + ' IS <b>' + fmt(Math.max(0, w[0].p - w[1].p)) + '</b> PTS BEHIND' : '👑 <b>YOU LEAD THE WEEK</b>';
+  if (i === 0) return (w[1] && w[1].p > 0 ? '👑 <b>YOU LEAD THE WEEK</b> · ' + cleanName(w[1].n) + ' IS <b>' + fmt(Math.max(0, w[0].p - w[1].p)) + '</b> PTS BEHIND' : '👑 <b>YOU LEAD THE WEEK</b>') + crownLeft();
   const gap = w[i - 1].p - w[i].p;
-  return 'THIS WEEK YOU ARE <b>#' + (i + 1) + '</b> · <b>' + cleanName(w[i - 1].n) + '</b> IS ' + (gap > 0 ? '<b>' + fmt(gap) + '</b> PTS' : 'JUST') + ' AHEAD';
+  return 'THIS WEEK YOU ARE <b>#' + (i + 1) + '</b> · <b>' + cleanName(w[i - 1].n) + '</b> IS ' + (gap > 0 ? '<b>' + fmt(gap) + '</b> PTS' : 'JUST') + ' AHEAD' + crownLeft();
+}
+/* 27/11: the last 72 hours of the week, the crown gets a clock (Monday 00:00 UTC) */
+function crownLeft() {
+  const n = Date.now(), wd = (new Date(n).getUTCDay() + 6) % 7, left = Date.parse(dayOf(n)) + (7 - wd) * DAY - n;
+  if (!(left > 0) || left > 3 * DAY) return '';
+  const h = Math.floor(left / 36e5), m = Math.floor(left % 36e5 / 6e4);
+  return '<br>👑 CROWN IN <b>' + (h >= 24 ? Math.floor(h / 24) + 'D ' + (h % 24) + 'H' : h + 'H ' + String(m).padStart(2, '0') + 'M') + '</b> · MONDAY 00:00 UTC';
 }
 function titleText() {
   today = dayOf(Date.now());
