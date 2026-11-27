@@ -490,6 +490,18 @@ function trackFacts(day, M) {
   }
   return o;
 }
+/* title, for a rider who comes back: what changed on today's track since yesterday (the peek they saw at the end of their last ride) */
+let tvyMemo = null;
+function todayVsYesterday() {
+  if (tvyMemo && tvyMemo.d === today) return tvyMemo.t;
+  let t = '';
+  try {
+    const a = trackFacts(today, 1000), b = trackFacts(yesterday(today), 1000), lab = { jump: 'JUMPS', slide: 'SLIDES', dbl: 'DOUBLE GATES' };
+    const k = ['jump', 'slide', 'dbl'].sort((x, y) => Math.abs(a[y] - b[y]) - Math.abs(a[x] - b[x]))[0], v = a[k] - b[k];
+    if (v) t = 'NEW ON #' + trackNo(today) + ': <b>' + a[k] + ' ' + lab[k] + '</b> IN THE FIRST 1,000 M (#' + (trackNo(today) - 1) + ' HAD ' + b[k] + ')';
+  } catch (e) { t = ''; }
+  tvyMemo = { d: today, t }; return t;
+}
 function nextLine() {
   const el = $('rnext'); if (!el) return;
   if (REC) { el.hidden = true; return; }
@@ -700,6 +712,8 @@ function titleText() {
     const out = [], l = store.get('last', null), ridden = played().indexOf(today) >= 0, y = streakTo(yesterday(today));
     const yd = boardData && boardData.yesterday, yt = yd && yd.day === yesterday(today) && yd.top && yd.top[0];
     if (yt && yt.p > 0) { const me = yd.top.findIndex((x) => cleanName(x.n) === riderName); out.push('YESTERDAY #' + trackNo(yd.day) + ': <b>' + cleanName(yt.n) + '</b> WON WITH <b>' + fmt(yt.p) + '</b>' + (me > 0 ? ' · YOU CAME <b>#' + (me + 1) + '</b>' : me === 0 ? ' · THAT WAS YOU' : yd.riders > 1 ? ' · ' + fmt(yd.riders) + ' RIDERS' : '')); }
+    const back = played().some((d) => d < today);
+    if (back && !ridden) { const c = todayVsYesterday(); if (c) out.push(c); }
     if (l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
     if (!ridden && y >= 2) out.push('🔥 <b>' + y + '-DAY STREAK</b>, RIDE TODAY TO KEEP IT');
     else if (!ridden && y === 1) out.push('🔥 RIDE TODAY TO START A <b>2-DAY STREAK</b>');
