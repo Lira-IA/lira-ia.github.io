@@ -698,6 +698,14 @@ window.__scoreCard = scoreCard;
 // ---------- title ----------
 /* today's best ride on today's track, from the park's server (0 if nobody rode yet or no board) */
 function dayBest() { const t = boardData && boardData.today; return t && t.best > 0 ? Math.floor(t.best) : 0; }
+/* the rival (27/11): who is right above you in this week's table, and by how much. Only for riders already on the table */
+function rivalLine() {
+  const w = (boardData && boardData.week) || [], i = w.findIndex((r) => cleanName(r.n) === riderName);
+  if (i < 0 || !(w[i].p > 0)) return '';
+  if (i === 0) return w[1] && w[1].p > 0 ? '👑 <b>YOU LEAD THE WEEK</b> · ' + cleanName(w[1].n) + ' IS <b>' + fmt(Math.max(0, w[0].p - w[1].p)) + '</b> PTS BEHIND' : '👑 <b>YOU LEAD THE WEEK</b>';
+  const gap = w[i - 1].p - w[i].p;
+  return 'THIS WEEK YOU ARE <b>#' + (i + 1) + '</b> · <b>' + cleanName(w[i - 1].n) + '</b> IS ' + (gap > 0 ? '<b>' + fmt(gap) + '</b> PTS' : 'JUST') + ' AHEAD';
+}
 function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
@@ -716,7 +724,9 @@ function titleText() {
     if (yt && yt.p > 0) { const me = yd.top.findIndex((x) => cleanName(x.n) === riderName); out.push('YESTERDAY #' + trackNo(yd.day) + ': <b>' + cleanName(yt.n) + '</b> WON WITH <b>' + fmt(yt.p) + '</b>' + (me > 0 ? ' · YOU CAME <b>#' + (me + 1) + '</b>' : me === 0 ? ' · THAT WAS YOU' : yd.riders > 1 ? ' · ' + fmt(yd.riders) + ' RIDERS' : '')); }
     const back = played().some((d) => d < today);
     if (back && !ridden) { const c = todayVsYesterday(); if (c) out.push(c); }
-    if (l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
+    const rv = rivalLine();
+    if (!rv && l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
+    if (rv) out.push(rv);
     if (!ridden && y >= 2) out.push('🔥 <b>' + y + '-DAY STREAK</b>, RIDE TODAY TO KEEP IT');
     else if (!ridden && y === 1) out.push('🔥 RIDE TODAY TO START A <b>2-DAY STREAK</b>');
     else if (ridden && streakTo(today) >= 2) out.push('🔥 <b>' + streakTo(today) + '-DAY STREAK</b> · COME BACK TOMORROW');
