@@ -706,6 +706,17 @@ function rivalLine() {
   const gap = w[i - 1].p - w[i].p;
   return 'THIS WEEK YOU ARE <b>#' + (i + 1) + '</b> · <b>' + cleanName(w[i - 1].n) + '</b> IS ' + (gap > 0 ? '<b>' + fmt(gap) + '</b> PTS' : 'JUST') + ' AHEAD' + crownLeft();
 }
+/* 27/11: who wears the crown right now (royal in the park's GET), so a newcomer sees there is a person to dethrone */
+function royalLine() {
+  const r = boardData && boardData.royal;
+  if (!r || !r.n || !(r.p > 0)) return '';
+  const nm = cleanName(r.n), me = nm === riderName, fresh = r.since === dayOf(Date.now());
+  const who = /NICK/i.test(nm) ? 'TAKEN' : '<b>' + nm + '</b>';
+  if (me) return '👑 <b>YOU WEAR THE CROWN</b>' + (fresh ? ' · SINCE TODAY' : '');
+  if (fresh) return '👑 NEW CROWN TODAY: ' + who + ' WITH <b>' + fmt(r.p) + '</b> PTS';
+  const sd = r.since ? new Date(r.since + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }).toUpperCase() : '';
+  return '👑 CROWN: ' + who + ' · <b>' + fmt(r.p) + '</b> PTS' + (sd ? ' · SINCE ' + sd : '');
+}
 /* 27/11: the last 72 hours of the week, the crown gets a clock (Monday 00:00 UTC) */
 function crownLeft() {
   const n = Date.now(), wd = (new Date(n).getUTCDay() + 6) % 7, left = Date.parse(dayOf(n)) + (7 - wd) * DAY - n;
@@ -731,7 +742,8 @@ function titleText() {
     if (yt && yt.p > 0) { const me = yd.top.findIndex((x) => cleanName(x.n) === riderName); out.push('YESTERDAY #' + trackNo(yd.day) + ': <b>' + cleanName(yt.n) + '</b> WON WITH <b>' + fmt(yt.p) + '</b>' + (me > 0 ? ' · YOU CAME <b>#' + (me + 1) + '</b>' : me === 0 ? ' · THAT WAS YOU' : yd.riders > 1 ? ' · ' + fmt(yd.riders) + ' RIDERS' : '')); }
     const back = played().some((d) => d < today);
     if (back && !ridden) { const c = todayVsYesterday(); if (c) out.push(c); }
-    const rv = rivalLine();
+    const rv = rivalLine(), ry = royalLine();
+    if (ry && (!rv || ry.indexOf('NEW CROWN') >= 0 || ry.indexOf('YOU WEAR') >= 0)) out.unshift(ry);
     if (!rv && l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
     if (rv) { out.push(rv); if (!titleText.rv) { titleText.rv = 1; ev('rival_seen', { rank: rv.indexOf('LEAD') > 0 ? 1 : 2 }); } }
     if (!ridden && y >= 2) out.push('🔥 <b>' + y + '-DAY STREAK</b>, RIDE TODAY TO KEEP IT');
