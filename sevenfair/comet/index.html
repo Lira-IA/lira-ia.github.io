@@ -151,6 +151,8 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .next .leg .sp { flex: 1; } #result .next .leg .m { opacity: .6; }
 #result .next .note { font-size: 12px; color: var(--dim); margin-top: 6px; line-height: 1.45; }
 #result .next .note b { color: var(--ink); }
+#result .next .nxgo { display: block; margin-top: 8px; font-size: 11.5px; letter-spacing: .08em; font-weight: 700; color: var(--cyan); text-decoration: none; }
+#result .next .nxgo u { color: var(--ink); }
 #result .week { border-top: 1px solid var(--line); padding-top: 11px; }
 #result .week .hd { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--dim); }
 #result .week .hd b { font-size: 19px; letter-spacing: 0; color: var(--cyan); font-variant-numeric: tabular-nums; }
@@ -262,6 +264,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <canvas id="nxc" aria-label="The first 500 metres of tomorrow's track"></canvas>
         <div class="leg"><span class="m">START</span><span class="sp"></span><i class="g"></i>GATE <i class="h"></i>JUMP <i class="b"></i>SLIDE<span class="sp"></span><span class="m">500 M</span></div>
         <div class="note" id="nxnote"></div>
+        <a class="nxgo" id="nxgo" href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_peek">🔔 <u>SEND ME THIS TRACK WHEN IT OPENS</u> · TELEGRAM, ONE MESSAGE A DAY</a>
       </div>
       <div class="week">
         <div class="hd"><span>YOUR WEEK</span><b id="wsum">0</b></div>
@@ -282,7 +285,6 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <a class="tocastle" id="torange" href="../range/?from=comet" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a">NEW RIDE · THE RANGE: A 60-SECOND SHOOTING GALLERY →</a>
         <a class="tocastle" id="toig" hidden href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
         <a class="tovote" id="remind" href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end"><b>A NEW TRACK EVERY DAY</b> · <u>REMIND ME TOMORROW →</u></a>
-        <a class="tovote" id="totg" href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end_bot"><b>🔔 TOMORROW'S TRACK, AS A MESSAGE</b> · <u>ON TELEGRAM →</u></a>
       </div>
     </div>
   </div>
