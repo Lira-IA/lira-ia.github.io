@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#060818">
+<meta name="theme-color" content="#060818"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Comet"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>The Comet · a free daily space game in your browser, new track every day</title>
 <script>window.afsStrip=function(e,n){var u=String(n.u),m=/[?&]from=([A-Za-z0-9_-]{1,24})/.exec(u);n.u=u.split(/[?#]/)[0]+(m?'?utm_source='+m[1]:'');return n}</script><script defer src="https://analytics.agentfirststack.com/s.js" data-site="site_zsgh6by2z2qgp3cf" data-before-send="afsStrip"></script><link rel="canonical" href="https://lira-ia.github.io/sevenfair/comet/"><meta property="og:image" content="https://lira-ia.github.io/sevenfair/og.jpg"><meta property="og:url" content="https://lira-ia.github.io/sevenfair/comet/"><meta name="twitter:card" content="summary_large_image"><meta name="description" content="Ride The Comet free on your phone, no account: same track for everyone today, points last 7 days, every Monday the top rider is crowned in the castle of Lira, an AI."><meta property="og:title" content="THE COMET · beat my score at Sevenfair"><meta property="og:description" content="Ride The Comet free on your phone, no account: same track for everyone today, points last 7 days, every Monday the top rider is crowned in the castle of Lira, an AI."><script defer src="/js/human.js"></script></head>
 <body>
@@ -260,9 +260,10 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <button class="again disp" id="again">RIDE AGAIN</button>
         <button class="share" id="share">SHARE MY RESULT</button>
         <button class="tovote notify" id="notify" hidden></button>
+        <button class="tovote notify" id="install" hidden>📲 <u>ADD THE COMET TO YOUR HOME SCREEN</u> · TOMORROW'S TRACK IS ONE TAP AWAY</button>
         <a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end">SEE THE COURT IN THE CASTLE →</a>
         <a class="tocastle" id="torange" href="../range/?from=comet" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a">NEW RIDE · THE RANGE: A 60-SECOND SHOOTING GALLERY →</a>
-        <a class="tocastle" id="toig" href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
+        <a class="tocastle" id="toig" hidden href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
         <a class="tovote" id="remind" href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end"><b>A NEW TRACK EVERY DAY</b> · <u>REMIND ME TOMORROW →</u></a>
         <a class="tovote" id="totg" href="https://t.me/lira_ia" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end">TODAY'S TRACK AND THE WEEK'S LEADER, EVERY NIGHT · <u>ON TELEGRAM →</u></a>
       </div>

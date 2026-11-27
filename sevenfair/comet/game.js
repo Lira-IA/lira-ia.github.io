@@ -463,7 +463,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board(); remindLine(); streakLine(); pushLine();
+  week(); board(); remindLine(); streakLine(); pushLine(); installLine();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
@@ -583,6 +583,12 @@ async function pushToggle() {
   } catch (e) { b.innerHTML = '🔔 THAT DID NOT WORK IN THIS BROWSER · <u>TRY AGAIN</u>'; }
 }
 { const b = $('notify'); if (b) b.addEventListener('click', (e) => { e.stopPropagation(); pushToggle(); }); }
+/* install (27/11): the Comet on the home screen, offered only when the browser says it can be installed */
+let installEv = null;
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); installEv = e; if (mode === 'result') installLine(); });
+window.addEventListener('appinstalled', () => { ev('app_installed', {}); installEv = null; installLine(); });
+function installLine() { const b = $('install'); if (b) b.hidden = !installEv || REC; }
+{ const b = $('install'); if (b) b.addEventListener('click', (e) => { e.stopPropagation(); if (!installEv) return; ev('install_click', {}); const p = installEv; installEv = null; try { p.prompt(); p.userChoice.then((c) => ev('install_choice', { outcome: c && c.outcome })).catch(() => {}); } catch (err) { /* nothing */ } installLine(); }); }
 function crownShow() { document.querySelectorAll('#crownrow button').forEach((b) => b.classList.toggle('on', b.dataset.c === crown)); }
 document.querySelectorAll('#crownrow button').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); crown = b.dataset.c; store.set('crown', crown); crownShow(); }));
 crownShow();
