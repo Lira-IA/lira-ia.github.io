@@ -463,7 +463,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  week(); board(); remindLine(); streakLine(); pushLine(); installLine(); nameAsk();
+  week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
@@ -477,6 +477,49 @@ function streakLine() {
   if (REC) { el.hidden = true; return; }
   const now = Date.now(), d = dayOf(now), n = streakTo(d), left = Date.parse(d) + DAY - now;
   el.hidden = false; el.innerHTML = '🔥 STREAK <b>' + Math.max(1, n) + '</b> · TRACK #' + (trackNo(d) + 1) + ' IN <span class="cd">' + hms(left) + '</span>';
+}
+/* end of a ride: a real peek at tomorrow's track, generated from tomorrow's seed with the same Course the ride uses */
+function trackFacts(day, M) {
+  const c = new S.Course(S.daySeed(day)); c.ensure(M * S.U);
+  const o = { jump: 0, slide: 0, dbl: 0, rows: [] };
+  for (const r of c.rows) {
+    if (r.k < 0 || r.s > M * S.U) continue;
+    const g = r.c.filter((x) => x === S.GATE).length;
+    if (r.c.includes(S.HURDLE)) o.jump++; if (r.c.includes(S.BEAM)) o.slide++; if (g === 2) o.dbl++;
+    o.rows.push(r);
+  }
+  return o;
+}
+function nextLine() {
+  const el = $('rnext'); if (!el) return;
+  if (REC) { el.hidden = true; return; }
+  const today = dayOf(Date.now()), tom = dayOf(Date.parse(today) + DAY + 1000), n = trackNo(tom);
+  let a, b; try { a = trackFacts(tom, 1000); b = trackFacts(today, 1000); } catch (e) { el.hidden = true; return; }
+  el.hidden = false;
+  $('nxhd').innerHTML = 'TOMORROW · <b>TRACK #' + n + '</b> · A PEEK';
+  const cv = $('nxc'), dpr = Math.min(2, window.devicePixelRatio || 1), w = Math.max(200, cv.clientWidth || 300), h = 46;
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+  const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  const M = 500, pad = 6, lane = (h - 2 * pad) / 3, X = (s) => pad + (s / (M * S.U)) * (w - 2 * pad);
+  g.strokeStyle = 'rgba(45,226,230,.18)'; g.lineWidth = 1;
+  for (let i = 1; i < 3; i++) { g.beginPath(); g.moveTo(pad, pad + lane * i); g.lineTo(w - pad, pad + lane * i); g.stroke(); }
+  g.fillStyle = 'rgba(169,163,214,.5)'; g.font = "700 8px 'Chakra Petch', sans-serif"; g.textBaseline = 'bottom';
+  for (let m = 100; m < M; m += 100) { const x = X(m * S.U); g.fillRect(x, h - 3, 1, 3); }
+  const bw = Math.max(3, Math.min(6, (w - 2 * pad) / 110));
+  for (const r of a.rows) {
+    if (r.s > M * S.U) break;
+    const x = X(r.s);
+    r.c.forEach((c, i) => {
+      if (!c) return;
+      const y = pad + lane * i + 1.5, hh = lane - 3;
+      g.fillStyle = c === S.GATE ? '#ff3b5c' : c === S.HURDLE ? '#ffd060' : c === S.BEAM ? '#b9adff' : 'transparent';
+      g.fillRect(x - bw / 2, y, bw, hh);
+    });
+  }
+  const d = (k, lab) => { const v = a[k] - b[k]; return '<b>' + a[k] + '</b> ' + lab + (v ? ' (' + (v > 0 ? '+' : '−') + Math.abs(v) + ')' : ' (same)'); };
+  const more = [['jump', 'JUMPS'], ['slide', 'SLIDES'], ['dbl', 'DOUBLE GATES']].map(([k, l]) => [l, a[k] - b[k]]).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0];
+  $('nxnote').innerHTML = 'First 1,000 m vs today: ' + d('jump', 'jumps') + ' · ' + d('slide', 'slides') + ' · ' + d('dbl', 'double gates') + '.' +
+    (more[1] ? ' <b>' + (more[1] > 0 ? 'MORE ' : 'FEWER ') + more[0] + '.</b>' : '') + ' Same track for everyone, from midnight UTC.';
 }
 /* the vote is closed (25/11): at the end of a ride, a reason and a way to come back tomorrow */
 function remindLine() {

@@ -140,6 +140,17 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0 12px; }
 #result .stats div { background: rgba(255,255,255,.06); border-radius: 12px; padding: 8px 4px 7px; text-align: center; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
 #result .stats small { display: block; font-size: 9.5px; letter-spacing: .14em; color: var(--dim); margin-top: 2px; }
+#result .next { border-top: 1px solid var(--line); padding: 10px 0 11px; }
+#result .next .hd { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--dim); }
+#result .next .hd b { color: var(--cyan); }
+#result .next .cd { font-variant-numeric: tabular-nums; color: var(--gold); }
+#result .next canvas { position: static; inset: auto; display: block; width: 100%; height: 46px; margin: 7px 0 4px; border-radius: 8px; background: #0b0a26; }
+#result .next .leg { display: flex; gap: 6px; align-items: center; font-size: 9.5px; letter-spacing: .12em; font-weight: 700; color: var(--dim); }
+#result .next .leg i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-left: 6px; }
+#result .next .leg .g { background: #ff3b5c; } #result .next .leg .h { background: #ffd060; } #result .next .leg .b { background: #b9adff; }
+#result .next .leg .sp { flex: 1; } #result .next .leg .m { opacity: .6; }
+#result .next .note { font-size: 12px; color: var(--dim); margin-top: 6px; line-height: 1.45; }
+#result .next .note b { color: var(--ink); }
 #result .week { border-top: 1px solid var(--line); padding-top: 11px; }
 #result .week .hd { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; letter-spacing: .16em; font-weight: 700; color: var(--dim); }
 #result .week .hd b { font-size: 19px; letter-spacing: 0; color: var(--cyan); font-variant-numeric: tabular-nums; }
@@ -245,6 +256,12 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <div><span id="rs">0</span><small>STARS</small></div>
         <div><span id="rx">×1</span><small>TOP COMBO</small></div>
         <div><span id="rn">0</span><small>NEAR MISS</small></div>
+      </div>
+      <div class="next" id="rnext" hidden>
+        <div class="hd"><span id="nxhd">TOMORROW</span><span class="cd" id="nxcd"></span></div>
+        <canvas id="nxc" aria-label="The first 500 metres of tomorrow's track"></canvas>
+        <div class="leg"><span class="m">START</span><span class="sp"></span><i class="g"></i>GATE <i class="h"></i>JUMP <i class="b"></i>SLIDE<span class="sp"></span><span class="m">500 M</span></div>
+        <div class="note" id="nxnote"></div>
       </div>
       <div class="week">
         <div class="hd"><span>YOUR WEEK</span><b id="wsum">0</b></div>
