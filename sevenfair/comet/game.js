@@ -531,6 +531,7 @@ function nextLine() {
   const d = (k, lab) => { const v = a[k] - b[k]; return '<b>' + a[k] + '</b> ' + lab + (v ? ' (' + (v > 0 ? '+' : '−') + Math.abs(v) + ')' : ' (same)'); };
   const more = [['jump', 'JUMPS'], ['slide', 'SLIDES'], ['dbl', 'DOUBLE GATES']].map(([k, l]) => [l, a[k] - b[k]]).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0];
   const go = $('nxgo'); if (go) go.innerHTML = '🔔 <u>SEND ME TRACK #' + n + ' WHEN IT OPENS</u> · TELEGRAM, ONE MESSAGE A DAY';
+  const rh = $('rmhd'); if (rh) rh.textContent = '🔔 TRACK #' + n + ' OPENS AT MIDNIGHT UTC';
   $('nxnote').innerHTML = 'First 1,000 m vs today: ' + d('jump', 'jumps') + ' · ' + d('slide', 'slides') + ' · ' + d('dbl', 'double gates') + '.' +
     (more[1] ? ' <b>' + (more[1] > 0 ? 'MORE ' : 'FEWER ') + more[0] + '.</b>' : '') + ' Same track for everyone, from midnight UTC.';
 }
