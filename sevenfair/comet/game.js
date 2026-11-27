@@ -559,7 +559,24 @@ function drawBoard() {
 function rankLine() {
   const el = $('rrank'); if (!you) { el.hidden = true; return; }
   el.hidden = false; el.classList.toggle('court', you.rank <= 5);
-  el.innerHTML = 'YOU ARE <b>#' + fmt(you.rank) + '</b> OF ' + fmt(you.of) + ' THIS WEEK' + (you.rank === 1 ? ' · THE CROWN IS YOURS ON MONDAY' : you.rank <= 5 ? ' · IN THE QUEEN\'S COURT' : '') + chaseLine();
+  el.innerHTML = 'YOU ARE <b>#' + fmt(you.rank) + '</b> OF ' + fmt(you.of) + ' THIS WEEK' + (you.rank === 1 ? ' · THE CROWN IS YOURS ON MONDAY' : you.rank <= 5 ? ' · IN THE QUEEN\'S COURT' : '') + chaseLine() + crownChase();
+}
+/* 27/11: the weekend before the crown, the top 5 see how far #1 is and how long is left (last 72h of the week) */
+function crownClock() {
+  const n = Date.now(), wd = (new Date(n).getUTCDay() + 6) % 7, left = Date.parse(dayOf(n)) + (7 - wd) * DAY - n;
+  if (!(left > 0) || left > 3 * DAY) return '';
+  const h = Math.floor(left / 36e5), m = Math.floor(left % 36e5 / 6e4);
+  return h >= 24 ? Math.floor(h / 24) + 'D ' + (h % 24) + 'H' : h + 'H ' + String(m).padStart(2, '0') + 'M';
+}
+function crownChase() {
+  try {
+    const c = crownClock(); if (!c || !you || !(you.rank <= 5) || !(you.p > 0)) return '';
+    if (you.rank === 1) return '<br>👑 CROWN IN <b>' + c + '</b> · MONDAY 00:00 UTC';
+    const top = ((boardData && boardData.week) || []).filter((r) => r && r.p > 0 && cleanName(r.n) !== cleanName(you.n)).sort((x, y) => y.p - x.p)[0];
+    if (!top || !(top.p >= you.p)) return '';
+    if (!crownChase.seen) { crownChase.seen = 1; ev('crown_chase_seen', { rank: you.rank }); }
+    return '<br>👑 ' + (you.rank === 2 ? 'PASS THEM' : '<b>' + fmt(top.p - you.p + 1) + '</b> PTS TO #1') + ' BEFORE THE CROWN (<b>' + c + '</b>)';
+  } catch (e) { return ''; }
 }
 /* the rider right above you (or right behind, if you lead): the number that makes people ride again */
 function chaseLine() {
