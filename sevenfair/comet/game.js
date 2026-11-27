@@ -639,6 +639,8 @@ function titleText() {
   const bk = $('back');
   if (bk) {
     const out = [], l = store.get('last', null), ridden = played().indexOf(today) >= 0, y = streakTo(yesterday(today));
+    const yd = boardData && boardData.yesterday, yt = yd && yd.day === yesterday(today) && yd.top && yd.top[0];
+    if (yt && yt.p > 0) { const me = yd.top.findIndex((x) => cleanName(x.n) === riderName); out.push('YESTERDAY #' + trackNo(yd.day) + ': <b>' + cleanName(yt.n) + '</b> WON WITH <b>' + fmt(yt.p) + '</b>' + (me > 0 ? ' · YOU CAME <b>#' + (me + 1) + '</b>' : me === 0 ? ' · THAT WAS YOU' : yd.riders > 1 ? ' · ' + fmt(yd.riders) + ' RIDERS' : '')); }
     if (l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
     if (!ridden && y >= 2) out.push('🔥 <b>' + y + '-DAY STREAK</b>, RIDE TODAY TO KEEP IT');
     else if (!ridden && y === 1) out.push('🔥 RIDE TODAY TO START A <b>2-DAY STREAK</b>');
