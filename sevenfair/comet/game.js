@@ -735,6 +735,42 @@ function titleText() {
 const fine = (() => { try { return matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
 if (fine) { document.querySelectorAll('#title .how [data-key]').forEach((el) => { el.textContent = el.dataset.key; }); $('go').textContent = 'PRESS SPACE'; }
 $('parkname').textContent = CFG.park; titleText(); if (CFG.api) board();
+/* email (27/11): one email a day when the new track opens, double opt-in. Shown only when the park_mail function answers email_ok */
+const MAILAPI = CFG.mailApi || (CFG.api ? CFG.api.replace(/\/park\/?$/, '/park_mail') : '');
+const mailPost = (body) => fetch(MAILAPI, { method: 'POST', body: JSON.stringify(body) }).then((r) => r.json());
+function mailToast(t) { let d = $('mailtoast'); if (!d) { d = document.createElement('div'); d.id = 'mailtoast'; document.body.appendChild(d); } d.textContent = t; d.hidden = false; clearTimeout(mailToast.h); mailToast.h = setTimeout(() => { d.hidden = true; }, 9000); }
+if (MAILAPI && !REC) {
+  try {
+    const q = new URLSearchParams(location.search), tc = q.get('mconf'), tu = q.get('munsub');
+    const tok = tc || tu;
+    if (tok && /^[0-9a-f]{32}$/.test(tok)) {
+      mailPost({ a: tc ? 'mail_confirm' : 'mail_unsub', t: tok }).then((j) => {
+        if (tc) { mailToast(j && j.ok ? '✉️ CONFIRMED. TOMORROW\'S TRACK COMES TO YOUR INBOX AT MIDNIGHT UTC.' : 'THAT LINK HAS EXPIRED. ASK AGAIN AT THE END OF A RIDE.'); if (j && j.ok) { store.set('mail', 'on'); ev('mail_confirm', {}); } }
+        else { mailToast('✉️ UNSUBSCRIBED. NO MORE EMAILS FROM THE COMET.'); store.set('mail', ''); ev('mail_unsub', {}); }
+      }).catch(() => mailToast('THE PARK DID NOT ANSWER. TRY THE LINK AGAIN IN A MINUTE.'));
+      try { history.replaceState(null, '', location.pathname); } catch (e) { /* fine */ }
+    }
+  } catch (e) { /* no query */ }
+  fetch(MAILAPI).then((r) => r.json()).then((j) => { if (j && j.email_ok && store.get('mail', '') !== 'on') { const m = $('rmmail'); if (m) m.hidden = false; } }).catch(() => { /* no email yet */ });
+}
+{
+  const a = $('rmmaila'), f = $('mailf'), inp = $('mailin'), msg = $('mailmsg');
+  if (a && f) {
+    a.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); f.hidden = false; $('rmmail').hidden = true; ev('mail_open', {}); try { inp.focus(); } catch (err) { /* fine */ } });
+    for (const t of ['click', 'pointerdown', 'pointerup']) f.addEventListener(t, (e) => e.stopPropagation());
+    inp.addEventListener('keydown', (e) => e.stopPropagation());
+    f.addEventListener('submit', (e) => {
+      e.preventDefault(); e.stopPropagation();
+      const m = inp.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m) || m.length > 200) { msg.textContent = 'That does not look like an email address.'; return; }
+      $('mailgo').disabled = true; msg.textContent = 'One moment…';
+      mailPost({ a: 'mail_sub', m }).then((j) => {
+        if (j && j.ok) { msg.innerHTML = '<b>✉️ CHECK YOUR INBOX</b> and click the link to confirm. (Look in spam too: it comes from lira-ia@atomicmail.ai.)'; inp.hidden = true; $('mailgo').hidden = true; ev('mail_sub', {}); }
+        else { msg.textContent = j && /too many/.test(j.reason || '') ? 'Too many tries from here today.' : 'That did not work. Check the address and try again.'; $('mailgo').disabled = false; }
+      }).catch(() => { msg.textContent = 'The park did not answer. Try again in a minute.'; $('mailgo').disabled = false; });
+    });
+  }
+}
 for (const id of ['remind', 'totg', 'queenlink', 'nxgo']) { const a = $(id); if (a) a.addEventListener('click', (e) => e.stopPropagation()); }
 if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); else if (mode === 'result') streakLine(); }, 1000);
 $('go').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'title') startRide(); });
