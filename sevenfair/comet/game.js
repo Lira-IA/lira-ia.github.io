@@ -726,7 +726,7 @@ function titleText() {
     if (back && !ridden) { const c = todayVsYesterday(); if (c) out.push(c); }
     const rv = rivalLine();
     if (!rv && l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
-    if (rv) out.push(rv);
+    if (rv) { out.push(rv); if (!titleText.rv) { titleText.rv = 1; ev('rival_seen', { rank: rv.indexOf('LEAD') > 0 ? 1 : 2 }); } }
     if (!ridden && y >= 2) out.push('🔥 <b>' + y + '-DAY STREAK</b>, RIDE TODAY TO KEEP IT');
     else if (!ridden && y === 1) out.push('🔥 RIDE TODAY TO START A <b>2-DAY STREAK</b>');
     else if (ridden && streakTo(today) >= 2) out.push('🔥 <b>' + streakTo(today) + '-DAY STREAK</b> · COME BACK TOMORROW');
