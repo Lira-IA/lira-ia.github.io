@@ -342,4 +342,43 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') leave(); });
 })();
 </script>
+<!-- Lira 28/11: serie di giorni al parco (Cometa o Range) sul titolo e a fine giro -->
+<style>
+.rstreak { margin: 10px auto 0; max-width: 30em; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--dim, #9aa); line-height: 1.5; }
+.rstreak b { color: #ff9a3d; }
+@media (max-height: 430px) { .rstreak { margin-top: 5px; font-size: 10px; } }
+</style>
+<script>
+(function () {
+  var get = function (k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } };
+  var D = function (o) { return new Date(Date.now() + o * 864e5).toISOString().slice(0, 10); };
+  var played = function (d) { var r = get('range.days'), c = get('comet.days'); return (r[d] != null) || (c[d] != null); };
+  var streak = function () { var o = played(D(0)) ? 0 : -1, n = 0; while (n < 400 && played(D(o - n))) n++; return { n: n, today: o === 0 }; };
+  var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
+  var line = function (where) {
+    var s = streak(), t;
+    if (s.today) t = s.n > 1 ? '🔥 <b>DAY ' + s.n + ' IN A ROW</b> AT SEVENFAIR · COME BACK TOMORROW FOR DAY ' + (s.n + 1) : '🔥 <b>DAY 1</b> AT SEVENFAIR · COME BACK TOMORROW TO START A STREAK';
+    else if (s.n > 0) t = '🔥 <b>' + s.n + '-DAY STREAK</b> AT SEVENFAIR · SHOOT TODAY TO KEEP IT';
+    else return null;
+    return { html: t, n: s.n, today: s.today };
+  };
+  var tb = document.getElementById('tbest'), tl = document.createElement('div'); tl.className = 'rstreak'; tl.id = 'rstreak_t';
+  if (tb) tb.parentNode.insertBefore(tl, tb.nextSibling);
+  var rb = document.getElementById('rbest'), ol = document.createElement('div'); ol.className = 'rstreak'; ol.id = 'rstreak_o';
+  if (rb) rb.parentNode.insertBefore(ol, rb.nextSibling);
+  var paint = function (el, where) { var L = line(where); el.innerHTML = L ? L.html : ''; el.hidden = !L; return L; };
+  var T = paint(tl, 'title'); if (T && T.n > 0) ev('range_streak_seen', { where: 'title', n: T.n, today: T.today ? 1 : 0 });
+  var last = document.body.dataset.mode;
+  var mark = function () {
+    var d = D(0), r = get('range.days'), sc = parseInt(((document.getElementById('rscore') || {}).textContent || '').replace(/\D/g, ''), 10) || 0;
+    r[d] = Math.max(r[d] || 0, sc); try { localStorage.setItem('range.days', JSON.stringify(r)); } catch (e) {}
+  };
+  var on = function () {
+    var m = document.body.dataset.mode; if (m === last) return; last = m;
+    if (m === 'over') { mark(); var L = paint(ol, 'over'); if (L) ev('range_streak_seen', { where: 'over', n: L.n, today: 1 }); setTimeout(mark, 3000); }
+    if (m === 'title') paint(tl, 'title');
+  };
+  if (window.MutationObserver) new MutationObserver(on).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
+})();
+</script>
 </body></html>
