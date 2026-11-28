@@ -463,4 +463,27 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
 <script>/* 28/11: count AGAIN clicks, inside alldle or not, to see who plays a second round */
 (function () { var a = document.getElementById('again'); if (!a) return; a.addEventListener('click', function () { var f = 'n'; try { f = window.top !== window.self ? 'y' : 'n'; } catch (e) { f = 'y'; } try { if (typeof window.afsa === 'function') window.afsa('event', 'again_click', { ride: 'range', framed: f }); } catch (e) {} }); })();
 </script>
+<script>/* 28/11: when the weekly board sits below the edge (phone, alldle frame), say your rank under the score and jump to the board */
+(function () {
+  var over = document.getElementById('over'), you = document.getElementById('you'), bb = document.getElementById('boardbox'), rb = document.getElementById('rbest');
+  if (!over || !you || !bb || !rb) return;
+  var a = document.createElement('a'); a.id = 'seeboard'; a.href = '#boardbox'; a.hidden = true;
+  a.style.cssText = 'display:block;margin-top:8px;font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--cyan);text-decoration:none;';
+  rb.parentNode.insertBefore(a, rb.nextSibling);
+  var seen = false;
+  function upd() {
+    var t = (you.textContent || '').trim();
+    var r = bb.getBoundingClientRect(), o = over.getBoundingClientRect();
+    var below = !bb.hidden && document.body.dataset.mode === 'over' && r.top > o.bottom - 40;
+    a.hidden = !(t && below);
+    if (!a.hidden) { a.textContent = t.replace(/\.$/, '').replace(/^YOU ARE /i, 'YOU: ') + ' \u00b7 SEE THE BOARD \u2193'; if (!seen) { seen = true; try { if (typeof window.afsa === 'function') window.afsa('event', 'seeboard_seen', { ride: 'range' }); } catch (e) {} } }
+  }
+  a.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); bb.scrollIntoView({ behavior: 'smooth', block: 'start' }); try { if (typeof window.afsa === 'function') window.afsa('event', 'seeboard_click', { ride: 'range' }); } catch (x) {} });
+  ['pointerdown', 'touchstart', 'mousedown'].forEach(function (n) { a.addEventListener(n, function (x) { x.stopPropagation(); }); });
+  new MutationObserver(function () { setTimeout(upd, 60); }).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
+  new MutationObserver(function () { setTimeout(upd, 60); }).observe(you, { childList: true, characterData: true, subtree: true });
+  new MutationObserver(function () { setTimeout(upd, 60); }).observe(bb, { attributes: true, attributeFilter: ['hidden'] });
+  addEventListener('resize', upd);
+})();
+</script>
 </body></html>
