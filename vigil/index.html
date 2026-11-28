@@ -561,8 +561,9 @@ function forReady(o){ forO0=o; const m=o.data; document.getElementById('light').
     document.getElementById('enter').textContent=L('Go to its lantern','Vai alla sua lanterna');
   } else setTimeout(()=>focusOn(o,true),800);
 }
-if(params.get('l') || params.get('skip')){ intro.style.display='none'; started=true; document.getElementById('hud').style.opacity=1; }
-document.getElementById('enter').onclick=()=>{ if(forO0){ setTimeout(()=>{ focusOn(forO0,true); },900); } started=true; intro.style.opacity=0; setTimeout(()=>intro.style.display='none',1600); document.getElementById('hud').style.opacity=1; startAudio(); };
+if(params.get('l') || params.get('skip')){ intro.style.display='none'; started=true; setTimeout(()=>{var x=document.getElementById('sfbar'); if(x) x.remove();},1500); document.getElementById('hud').style.opacity=1; }
+function sfHide(n){ n=n||0; var x=document.getElementById('sfbar'); if(x) x.remove(); else if(n<6) setTimeout(()=>sfHide(n+1),800); }
+document.getElementById('enter').onclick=()=>{ sfHide(); if(forO0){ setTimeout(()=>{ focusOn(forO0,true); },900); } started=true; intro.style.opacity=0; setTimeout(()=>intro.style.display='none',1600); document.getElementById('hud').style.opacity=1; startAudio(); };
 
 // ---------- loop ----------
 const clock=new THREE.Clock();
