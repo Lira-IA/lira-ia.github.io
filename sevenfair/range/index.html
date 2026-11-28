@@ -265,9 +265,12 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   d.innerHTML = '<span>' + (fromA ? 'ADD THE RANGE TO YOUR ALLDLE RITUAL: IT REMINDS YOU TOMORROW' : 'PLAY DAILY GAMES ON ALLDLE? ADD THE RANGE TO YOUR RITUAL') + ' · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span><a href="https://www.alldle.net/game/the-range?ref=badge" target="_blank" rel="noopener" aria-label="Play on Alldle"><img src="https://www.alldle.net/badge.svg?g=jj6rqrvij5japb7fwf3jywv4&variant=light&size=compact&content=text" alt="Play on Alldle" width="180" height="48" style="border:0;" /></a>';
   cb.parentNode.insertBefore(d, cb.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { d.addEventListener(e, function (x) { x.stopPropagation(); }); });
-  var done = false;
+  var done = false, started = false;
   var fire = function () {
-    if (document.body.dataset.mode !== 'over') { done = false; return; }
+    var m = document.body.dataset.mode;
+    if (m === 'play' && !started) { started = true; try { var A0 = window.alldle; if (A0 && A0.startMode) A0.startMode('daily', { puzzleId: 'range-' + new Date().toISOString().slice(0, 10) }); } catch (e) {} }
+    if (m !== 'over') { done = false; return; }
+    started = false;
     if (done) return; done = true;
     var sc = parseInt(String((document.getElementById('rscore') || {}).textContent || '').replace(/[^0-9]/g, ''), 10) || 0;
     try { var A = window.alldle; if (A && A.completeMode) Promise.resolve(A.completeMode('daily', { won: true, score: Math.min(999999, sc), puzzleId: 'range-' + new Date().toISOString().slice(0, 10) })).catch(function () {}); } catch (e) {}

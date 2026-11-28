@@ -361,6 +361,7 @@ function startRide() {
   today = dayOf(Date.now()); rideDay = today;
   newRide(S.daySeed(rideDay), false);
   ev('ride_start', { day_n: Object.keys(myDays()).length, ride_n: ridesDone + 1, streak: streakNow(rideDay) });
+  if (!REC) try { const A = window.alldle; if (A && A.startMode) A.startMode('daily', { puzzleId: 'comet-' + trackNo(rideDay) }); } catch (err) { /* alldle is optional */ } // 28/11: alldle measures time per round and abandoned rounds
   mode = 'ride'; $('title').classList.add('off'); $('result').classList.remove('on'); setTimeout(() => { if (mode === 'ride') $('result').hidden = true; }, 220);
   $('hud').classList.add('on'); $('mx').textContent = '×1'; $('mbar').style.width = '0%'; $('mx').parentNode.parentNode.style.setProperty('--mc', '#2de2e6');
   const t = $('target'); goalDay = false; if (dare && dare.day === rideDay) { t.hidden = false; t.classList.remove('done'); t.innerHTML = 'BEAT ' + dare.name + ' · <b>' + fmt(dare.score) + '</b>'; } else { const b = myDays()[rideDay], db = b ? 0 : dayBest(); goalDay = !!db; t.hidden = !b && !db; t.classList.remove('done'); if (b) t.innerHTML = 'YOUR BEST TODAY · <b>' + fmt(b) + '</b>'; else if (db) t.innerHTML = "TODAY'S BEST · <b>" + fmt(db) + '</b>'; }
