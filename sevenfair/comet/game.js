@@ -1107,3 +1107,9 @@ function frame(now) {
 const ready = () => { demoRide(); if (REC) { autopilot = true; frame(0); } else requestAnimationFrame(frame); };
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(ready, ready); else ready();
 window.__comet = { S, get ride() { return R; }, get mode() { return mode; }, start: startRide, pilot(on) { autopilot = !!on; }, act, cfg: CFG, tick(ms) { if (REC) { recT += ms || 1000 / 30; frame(recT); } return recT; } };
+
+/* 28/11: when the result card scrolls, its cut edge fades and a hint says what is below (week and board) */
+{ const sc = document.querySelector('#result .scroll'), h = $('morehint');
+  const upd = () => { if (sc) sc.classList.toggle('more', sc.scrollHeight - sc.scrollTop - sc.clientHeight > 24); };
+  if (sc) { sc.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); setInterval(() => { if (mode === 'result') upd(); }, 700); }
+  if (h && sc) h.addEventListener('click', (e) => { e.stopPropagation(); ev('morehint_click', {}); const w = document.querySelector('#result .week'); sc.scrollTo({ top: w ? w.offsetTop - sc.offsetTop - 8 : sc.scrollHeight, behavior: 'smooth' }); }); }
