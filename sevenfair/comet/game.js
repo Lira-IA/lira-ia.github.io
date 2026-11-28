@@ -661,8 +661,11 @@ async function pushToggle() {
 let installEv = null;
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); installEv = e; if (mode === 'result') installLine(); });
 window.addEventListener('appinstalled', () => { ev('app_installed', {}); installEv = null; installLine(); });
-function installLine() { const b = $('install'); if (b) b.hidden = !installEv || REC; }
-{ const b = $('install'); if (b) b.addEventListener('click', (e) => { e.stopPropagation(); if (!installEv) return; ev('install_click', {}); const p = installEv; installEv = null; try { p.prompt(); p.userChoice.then((c) => ev('install_choice', { outcome: c && c.outcome })).catch(() => {}); } catch (err) { /* nothing */ } installLine(); }); }
+function installLine() { // 28/11: iPhone has no install prompt, so there the button explains Safari's own way (unless the push line already does)
+  const b = $('install'); if (!b) return; const n = $('notify'), iosPush = n && !n.hidden && n.dataset.s === 'ios';
+  b.hidden = REC || standalone() || !(installEv || (isIOS() && !iosPush));
+}
+{ const b = $('install'); if (b) b.addEventListener('click', (e) => { e.stopPropagation(); if (!installEv) { if (isIOS() && !b.dataset.ios) { b.dataset.ios = '1'; ev('install_click', { how: 'ios' }); b.innerHTML = '📲 ON IPHONE: TAP SHARE ⬆️ AT THE BOTTOM OF SAFARI, THEN “ADD TO HOME SCREEN”'; } return; } ev('install_click', { how: 'prompt' }); const p = installEv; installEv = null; try { p.prompt(); p.userChoice.then((c) => ev('install_choice', { outcome: c && c.outcome })).catch(() => {}); } catch (err) { /* nothing */ } installLine(); }); }
 function crownShow() { document.querySelectorAll('#crownrow button').forEach((b) => b.classList.toggle('on', b.dataset.c === crown)); }
 document.querySelectorAll('#crownrow button').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); crown = b.dataset.c; store.set('crown', crown); crownShow(); }));
 crownShow();
