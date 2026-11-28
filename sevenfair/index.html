@@ -135,6 +135,8 @@ fetch('https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park').then(r=>r.js
  const nc=j.next_crown?Date.parse(j.next_crown+'T00:00:00Z'):null;
  if(nc) document.getElementById('ccount').textContent='in '+hm(nc-now);
  if(w.length) document.getElementById('clead').innerHTML='leading now: <b>'+esc(w[0].n)+'</b> · '+fmt(w[0].p);
+ /* 28/11: points add up day by day; when the top riders all came on 1-2 days, say it: a second day is how you pass them */
+ try{const top=w.slice(0,5),maxd=Math.max(...top.map(r=>Number(r.d)||0));if(nc&&maxd>=1&&maxd<=2&&nc-now>0){const dl=Math.ceil((nc-now)/864e5),dd=document.createElement('div');dd.className='empty';dd.id='addup';dd.style.color='#ff5fa2';dd.innerHTML=`👑 Points add up: your best ride of each day counts. The top ${top.length} rode on ${maxd===1?'just 1 day':'at most 2 days'}, and there ${dl===1?'is 1 day':'are '+dl+' days'} left before the crown. Ride today, ride tomorrow, pass them.`;el.appendChild(dd);const cl=document.getElementById('clead');if(cl&&Number(w[0].d)===1)cl.innerHTML+=' in <b>1 day</b> of riding: two days beat it';if(typeof window.afsa==='function')window.afsa('event','addup_seen',{d:String(maxd)});}}catch(e){}
  if(window._me&&myName){const all=j.week||[],i=all.findIndex(r=>r.n===myName);
   if(i>=0){let s=` You are <b>#${i+1}</b> of ${Number(j.riders)||all.length} this week as ${esc(myName)}.`; if(i>0) s+=` <b>${fmt(all[i-1].p-all[i].p+1)}</b> more to pass ${esc(all[i-1].n)}.`; window._me.t.innerHTML+=s;}}
  if(j.castle){const D=d=>d?new Date(d+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}):'';document.getElementById('cname').textContent=j.castle.name?('today it says "'+String(j.castle.name)+'" until '+D(j.castle.until)):'free today';}
