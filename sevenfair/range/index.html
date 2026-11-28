@@ -263,8 +263,9 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
 (function () {
   var cb = document.getElementById('tomorrow') || document.getElementById('comeback'); if (!cb) return;
   var fromA = false; try { var q = new URLSearchParams(location.search).get('from') || ''; var anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; fromA = /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) {}
-  var d = document.createElement('div'); d.id = 'alldlebox'; if (fromA) d.className = 'top';
-  d.innerHTML = '<span>' + (fromA ? 'ADD THE RANGE TO YOUR ALLDLE RITUAL: IT REMINDS YOU TOMORROW' : 'PLAY DAILY GAMES ON ALLDLE? ADD THE RANGE TO YOUR RITUAL') + ' · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span><a href="https://www.alldle.net/game/the-range?ref=badge" target="_blank" rel="noopener" aria-label="Play on Alldle"><img src="https://www.alldle.net/badge.svg?g=jj6rqrvij5japb7fwf3jywv4&variant=light&size=compact&content=text" alt="Play on Alldle" width="180" height="48" style="border:0;" /></a>';
+  var inA = false; try { inA = window.top !== window.self && /alldle\.net/.test((location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : '') + ' ' + document.referrer); } catch (e) {}
+  var d = document.createElement('div'); d.id = 'alldlebox'; if (fromA || inA) d.className = 'top';
+  d.innerHTML = inA ? '<span>👇 TAP “ADD TO RITUAL” UNDER THE GAME: ALLDLE BRINGS YOU BACK FOR TOMORROW’S COURSE · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span>' : '<span>' + (fromA ? 'ADD THE RANGE TO YOUR ALLDLE RITUAL: IT REMINDS YOU TOMORROW' : 'PLAY DAILY GAMES ON ALLDLE? ADD THE RANGE TO YOUR RITUAL') + ' · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span><a href="https://www.alldle.net/game/the-range?ref=badge" target="_blank" rel="noopener" aria-label="Play on Alldle"><img src="https://www.alldle.net/badge.svg?g=jj6rqrvij5japb7fwf3jywv4&variant=light&size=compact&content=text" alt="Play on Alldle" width="180" height="48" style="border:0;" /></a>';
   cb.parentNode.insertBefore(d, cb.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { d.addEventListener(e, function (x) { x.stopPropagation(); }); });
   var done = false, started = false;
@@ -276,7 +277,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
     if (done) return; done = true;
     var sc = parseInt(String((document.getElementById('rscore') || {}).textContent || '').replace(/[^0-9]/g, ''), 10) || 0;
     try { var A = window.alldle; if (A && A.completeMode) Promise.resolve(A.completeMode('daily', { won: true, score: Math.min(999999, sc), puzzleId: 'range-' + new Date().toISOString().slice(0, 10) })).catch(function () {}); } catch (e) {}
-    if (fromA) try { if (typeof window.afsa === 'function') window.afsa('event', 'ritual_seen', { ride: 'range' }); } catch (e) {}
+    if (fromA || inA) try { if (typeof window.afsa === 'function') window.afsa('event', 'ritual_seen', { ride: 'range', framed: inA ? 'y' : 'n' }); } catch (e) {}
   };
   if (window.MutationObserver) new MutationObserver(fire).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
 })();

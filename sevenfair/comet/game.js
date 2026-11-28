@@ -476,11 +476,13 @@ function showResult() {
 }
 /* 28/11: riders who came from alldle (link or alldle's frame) see the "add it to your ritual" line right under the stats: alldle reminds them tomorrow */
 const FROM_ALLDLE = (() => { try { const q = new URLSearchParams(location.search).get('from') || ''; const anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; return /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) { return false; } })();
+/* 28/11: inside alldle's own frame the "Add to Ritual" button sits right under the game: point at it instead of opening alldle in a new tab */
+const IN_ALLDLE = (() => { try { if (window.top === window.self) return false; const anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; return /alldle\.net/.test(anc + ' ' + document.referrer); } catch (e) { return false; } })();
 let ritualSeen = false;
 function alldleLine() {
   const el = $('alldlebox'), st = document.querySelector('#result .stats'); if (!el || !st || !FROM_ALLDLE || REC) return;
-  if (el.previousElementSibling !== st) { st.parentNode.insertBefore(el, st.nextSibling); el.classList.add('top'); el.firstChild.firstChild.textContent = 'NEW TRACK TOMORROW · ADD THE COMET TO YOUR ALLDLE RITUAL AND ALLDLE REMINDS YOU · '; }
-  if (!ritualSeen) { ritualSeen = true; ev('ritual_seen', { ride_n: ridesDone }); }
+  if (el.previousElementSibling !== st) { st.parentNode.insertBefore(el, st.nextSibling); el.classList.add('top'); el.firstChild.firstChild.textContent = IN_ALLDLE ? '👇 TAP “ADD TO RITUAL” UNDER THE GAME: ALLDLE BRINGS YOU BACK FOR TRACK #' + (trackNo(dayOf(Date.now())) + 1) + ' TOMORROW · ' : 'NEW TRACK TOMORROW · ADD THE COMET TO YOUR ALLDLE RITUAL AND ALLDLE REMINDS YOU · '; if (IN_ALLDLE && el.children[1]) el.children[1].hidden = true; }
+  if (!ritualSeen) { ritualSeen = true; ev('ritual_seen', { ride_n: ridesDone, framed: IN_ALLDLE ? 'y' : 'n' }); }
 }
 /* end of a ride: the streak and the countdown to tomorrow's track (updated every second while the result is shown) */
 function streakLine() {
