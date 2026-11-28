@@ -352,7 +352,8 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
 (function () {
   var get = function (k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } };
   var D = function (o) { return new Date(Date.now() + o * 864e5).toISOString().slice(0, 10); };
-  var played = function (d) { var r = get('range.days'), c = get('comet.days'); return (r[d] != null) || (c[d] != null); };
+  var cp = []; try { cp = JSON.parse(localStorage.getItem('comet.played')) || []; } catch (e) {}
+  var played = function (d) { var r = get('range.days'), c = get('comet.days'); return (r[d] != null) || (c[d] != null) || cp.indexOf(d) >= 0; };
   var streak = function () { var o = played(D(0)) ? 0 : -1, n = 0; while (n < 400 && played(D(o - n))) n++; return { n: n, today: o === 0 }; };
   var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
   var line = function (where) {
