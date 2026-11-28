@@ -695,7 +695,7 @@ function nameAsk() {
   else if (!anon && home && row.previousElementSibling !== home) home.parentNode.insertBefore(row, home.nextSibling);
 }
 nameEl.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') nameEl.blur(); });
-$('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'result') startRide(); });
+$('again').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'result') { ev('again_click', { ride: 'comet', ride_n: ridesDone, framed: IN_ALLDLE ? 'y' : 'n' }); startRide(); } });
 $('share').addEventListener('click', (e) => {
   e.stopPropagation();
   const sc = Math.max(R ? R.score() : 0, myDays()[rideDay] || 0), base = CFG.url || (location.origin + location.pathname);

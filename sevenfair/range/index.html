@@ -458,4 +458,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   }).catch(function () {});
 })();
 </script>
+<script>/* 28/11: count AGAIN clicks, inside alldle or not, to see who plays a second round */
+(function () { var a = document.getElementById('again'); if (!a) return; a.addEventListener('click', function () { var f = 'n'; try { f = window.top !== window.self ? 'y' : 'n'; } catch (e) { f = 'y'; } try { if (typeof window.afsa === 'function') window.afsa('event', 'again_click', { ride: 'range', framed: f }); } catch (e) {} }); })();
+</script>
 </body></html>
