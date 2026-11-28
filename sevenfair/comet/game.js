@@ -467,6 +467,7 @@ function showResult() {
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
   week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
   alldleLine();
+  setTimeout(askCount, 1500);
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
@@ -544,11 +545,22 @@ function nextLine() {
   const d = (k, lab) => { const v = a[k] - b[k]; return '<b>' + a[k] + '</b> ' + lab + (v ? ' (' + (v > 0 ? '+' : '−') + Math.abs(v) + ')' : ' (same)'); };
   const more = [['jump', 'JUMPS'], ['slide', 'SLIDES'], ['dbl', 'DOUBLE GATES']].map(([k, l]) => [l, a[k] - b[k]]).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0];
   const go = $('nxgo'); if (go) go.innerHTML = '🔔 <u>SEND ME TRACK #' + n + ' WHEN IT OPENS</u> · TELEGRAM, ONE MESSAGE A DAY';
-  const rh = $('rmhd'); if (rh) rh.textContent = '🔔 REMIND ME WHEN TRACK #' + n + ' OPENS';
+  askHead();
   $('nxnote').innerHTML = 'First 1,000 m vs today: ' + d('jump', 'jumps') + ' · ' + d('slide', 'slides') + ' · ' + d('dbl', 'double gates') + '.' +
     (more[1] ? ' <b>' + (more[1] > 0 ? 'MORE ' : 'FEWER ') + more[0] + '.</b>' : '') + ' Same track for everyone, from midnight UTC.';
 }
 /* the vote is closed (25/11): at the end of a ride, a reason and a way to come back tomorrow */
+/* 28/11: one ask for tomorrow, right under RIDE AGAIN, with the time left: the same ask was in the peek and at the bottom */
+function askHead() {
+  const rh = $('rmhd'); if (!rh) return; const now = Date.now(), left = Date.parse(dayOf(now)) + DAY - now, n = trackNo(dayOf(now)) + 1;
+  rh.textContent = '🔔 TRACK #' + n + ' IN ' + Math.floor(left / 36e5) + 'H ' + String(Math.floor(left % 36e5 / 6e4)).padStart(2, '0') + 'M · WANT A NUDGE?';
+}
+let askSeen = '';
+function askCount() { // counted once per result screen: which ask was shown, to a first-day rider or not
+  if (REC) return; const r = $('remind'), nb = $('notify'), kind = nb && !nb.hidden ? 'push-' + nb.dataset.s : r && r.style.display !== 'none' && r.offsetParent ? 'remind' : 'none';
+  const k = ridesDone + kind; if (askSeen === k) return; askSeen = k;
+  ev('ask_seen', { kind, first: Object.keys(myDays()).length <= 1 ? 'y' : 'n', framed: IN_ALLDLE ? 'y' : 'n' });
+}
 function remindLine() {
   if (REC) for (const id of ['remind', 'totg']) { const a = $(id); if (a) a.style.display = 'none'; } // the park's own camera never films these lines
 }
@@ -873,7 +885,7 @@ if (MAILAPI && !REC) {
   }
 }
 for (const id of ['remind', 'totg', 'queenlink', 'nxgo']) { const a = $(id); if (a) a.addEventListener('click', (e) => e.stopPropagation()); }
-if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); else if (mode === 'result') streakLine(); }, 1000);
+if (CFG.castle) { const t = $('tocastle'); t.hidden = false; t.href = CFG.castle; t.addEventListener('click', (e) => e.stopPropagation()); } setInterval(() => { if (mode === 'title') titleText(); else if (mode === 'result') { streakLine(); askHead(); } }, 1000);
 $('go').addEventListener('click', (e) => { e.stopPropagation(); if (mode === 'title') startRide(); });
 
 // ---------- input ----------

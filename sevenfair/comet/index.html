@@ -184,7 +184,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #result button.tovote { background: none; border: 0; font-family: inherit; cursor: pointer; } #result .notify { color: #fff; font-size: 12px; } #result .tovote b { color: #fff; font-weight: 700; } #result .tovote u { text-decoration: none; color: var(--cyan); } #result div.tovote a { text-decoration: none; padding: 4px 2px; }
 #result .mailf { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; } #result .mailf[hidden] { display: none; } #result .mailf input { flex: 1 1 170px; max-width: 240px; font: inherit; font-size: 14px; letter-spacing: .02em; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(45,226,230,.6); border-radius: 8px; padding: 7px 9px; } #result .mailf button { font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: #05070d; background: var(--cyan); border: 0; border-radius: 8px; padding: 7px 10px; cursor: pointer; } #result .mailf small { flex-basis: 100%; font-weight: 400; letter-spacing: .03em; text-transform: none; }
 #mailtoast { position: fixed; left: 50%; top: 14px; transform: translateX(-50%); z-index: 50; max-width: 92vw; background: #0d1426; border: 1px solid var(--cyan); color: #fff; font: 700 13px/1.4 system-ui, sans-serif; letter-spacing: .03em; padding: 10px 14px; border-radius: 10px; text-align: center; box-shadow: 0 6px 24px rgba(0,0,0,.5); }
-#result .tovote .rmrow { display: flex; gap: 8px; margin-top: 6px; } #result div.tovote a.rmb { flex: 1; display: block; border: 1.5px solid var(--cyan); border-radius: 12px; padding: 9px 4px; color: #fff; font-size: 11.5px; letter-spacing: .06em; background: rgba(45,226,230,.08); }
+#result .tovote.ask { margin: 2px 0 4px; } #result .tovote.ask b { font-size: 12px; } #result .tovote .rmrow { display: flex; gap: 8px; margin-top: 6px; } #result div.tovote a.rmb { flex: 1; display: block; border: 1.5px solid var(--cyan); border-radius: 12px; padding: 9px 4px; color: #fff; font-size: 11.5px; letter-spacing: .06em; background: rgba(45,226,230,.08); }
 @media (max-height: 520px) { #result .tovote { display: none; } }
 #paused { display: grid; place-items: center; text-align: center; background: rgba(4,3,18,.6); pointer-events: auto; }
 #paused div { font-size: 34px; } #paused small { display: block; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: .16em; color: var(--dim); margin-top: 8px; font-weight: 700; }
@@ -268,7 +268,7 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <canvas id="nxc" aria-label="The first 500 metres of tomorrow's track"></canvas>
         <div class="leg"><span class="m">START</span><span class="sp"></span><i class="g"></i>GATE <i class="h"></i>JUMP <i class="b"></i>SLIDE<span class="sp"></span><span class="m">500 M</span></div>
         <div class="note" id="nxnote"></div>
-        <a class="nxgo" id="nxgo" href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_peek">🔔 <u>SEND ME THIS TRACK WHEN IT OPENS</u> · TELEGRAM, ONE MESSAGE A DAY</a>
+        <a class="nxgo" id="nxgo" hidden href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_peek">🔔 <u>SEND ME THIS TRACK WHEN IT OPENS</u> · TELEGRAM, ONE MESSAGE A DAY</a>
       </div>
       <div class="week">
         <div class="hd"><span>YOUR WEEK</span><b id="wsum">0</b></div>
@@ -285,13 +285,13 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
      </div>
       <div class="btns">
         <button class="again disp" id="again">RIDE AGAIN</button>
-        <button class="share" id="share">SHARE MY RESULT</button>
         <button class="tovote notify" id="notify" hidden></button>
+        <div class="tovote ask" id="remind"><b id="rmhd">🔔 A NEW TRACK EVERY DAY</b><span class="rmrow"><a class="rmb" href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end">✈️ VIA TELEGRAM</a><a class="rmb" href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end">📅 IN MY CALENDAR</a></span><span id="rmmail" hidden> · <a href="#" id="rmmaila"><u>EMAIL</u></a></span></div>
+        <button class="share" id="share">SHARE MY RESULT</button>
         <button class="tovote notify" id="install" hidden>📲 <u>ADD THE COMET TO YOUR HOME SCREEN</u> · TOMORROW'S TRACK IS ONE TAP AWAY</button>
         <div class="duo"><a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end"><span class="lg">SEE THE COURT IN THE CASTLE →</span><span class="sh">👑 THE COURT →</span></a>
         <a class="tocastle" id="torange" href="../range/?from=comet-end" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a"><span class="lg">🎯 ALSO TODAY: THE RANGE · NEW COURSE, 60 SECONDS →</span><span class="sh">🎯 ALSO TODAY: THE RANGE →</span></a></div>
         <a class="tocastle" id="toig" hidden href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
-        <div class="tovote" id="remind"><b id="rmhd">🔔 A NEW TRACK EVERY DAY</b><span class="rmrow"><a class="rmb" href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end">✈️ VIA TELEGRAM</a><a class="rmb" href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end">📅 IN MY CALENDAR</a></span><span id="rmmail" hidden> · <a href="#" id="rmmaila"><u>EMAIL</u></a></span></div>
         <form class="tovote mailf" id="mailf" hidden novalidate><input type="email" id="mailin" placeholder="you@example.com" autocomplete="email" maxlength="200" aria-label="Your email"><button type="submit" id="mailgo">SEND ME TRACKS</button><small id="mailmsg">One email a day when the new track opens. Confirm once, unsubscribe in one click. Nothing else, ever.</small></form>
       </div>
     </div>
