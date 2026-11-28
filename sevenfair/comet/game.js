@@ -477,7 +477,7 @@ function showResult() {
 const FROM_ALLDLE = (() => { try { const q = new URLSearchParams(location.search).get('from') || ''; const anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; return /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) { return false; } })();
 let ritualSeen = false;
 function alldleLine() {
-  const el = $('alldle'), st = document.querySelector('#result .stats'); if (!el || !st || !FROM_ALLDLE || REC) return;
+  const el = $('alldlebox'), st = document.querySelector('#result .stats'); if (!el || !st || !FROM_ALLDLE || REC) return;
   if (el.previousElementSibling !== st) { st.parentNode.insertBefore(el, st.nextSibling); el.classList.add('top'); el.firstChild.firstChild.textContent = 'NEW TRACK TOMORROW · ADD THE COMET TO YOUR ALLDLE RITUAL AND ALLDLE REMINDS YOU · '; }
   if (!ritualSeen) { ritualSeen = true; ev('ritual_seen', { ride_n: ridesDone }); }
 }
