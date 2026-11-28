@@ -488,4 +488,31 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   addEventListener('resize', upd);
 })();
 </script>
+<!-- Lira 28/11 (#174): one ask for tomorrow, right under AGAIN; then the rest; BACK last. ask_seen counted like the Comet -->
+<style>
+#comeback.ask { margin-top: 12px; font-size: 12px; color: #fff; }
+</style>
+<script>
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  var again = $('again'), cb = $('comeback'); if (!again || !cb) return;
+  var col = again.parentNode, back = col.querySelector('a.back');
+  var inA = false; try { inA = window.top !== window.self && /alldle\.net/.test((location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : '') + ' ' + document.referrer); } catch (e) {}
+  cb.className = 'ask';
+  cb.innerHTML = '🔔 <b>NEW COURSE IN <span id="cbt">--</span></b> · WANT A NUDGE?<br>' + cb.querySelector('.rmrow').outerHTML;
+  var t = new Date(), left = 864e5 - t.getTime() % 864e5, el = $('cbt'); if (el) el.textContent = Math.floor(left / 36e5) + 'H ' + ('0' + Math.floor(left % 36e5 / 6e4)).slice(-2) + 'M';
+  var wrap = function (id) { var e = $(id); return e ? (e.parentNode !== col ? e.parentNode : e) : null; };
+  var order = inA ? ['alldlebox', 'comeback', 'tomorrow', 'tocomet', 'rinstall'] : ['comeback', 'rnotify', 'tomorrow', 'tocomet', 'rinstall', 'alldlebox'];
+  var anchor = $('dare') || again;
+  order.forEach(function (id) { var e = wrap(id); if (!e || e === col) return; anchor.parentNode.insertBefore(e, anchor.nextSibling); anchor = e; });
+  if (back) col.appendChild(back);
+  var seen = false;
+  var fire = function () {
+    if (document.body.dataset.mode !== 'over') { return; } if (seen || inA) return; seen = true;
+    var m = /DAY (\d+)/.exec(String(($('rline') || {}).textContent || ''));
+    try { if (typeof window.afsa === 'function') window.afsa('event', 'ask_seen', { ride: 'range', kind: 'tg_ics', first: m && +m[1] > 1 ? 'n' : 'y', framed: 'n' }); } catch (e) {}
+  };
+  if (window.MutationObserver) new MutationObserver(fire).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
+})();
+</script>
 </body></html>
