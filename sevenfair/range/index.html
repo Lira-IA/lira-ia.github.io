@@ -406,7 +406,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   ['pointerdown', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (x) { x.stopPropagation(); }); });
 })();
 </script>
-<!-- Lira 28/11 (#131): al cambio di settimana 'last week you finished #N of the Range' (come nella Cometa) -->
+<!-- Lira 28/11 (#131): la classifica della Range è una finestra mobile di 7 giorni (non si azzera il lunedì). Sul titolo: quando il tuo punteggio sta per uscire, o quando è uscito -->
 <style>
 #rlastwk { margin: 10px auto 0; max-width: 30em; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--gold, #ffd166); line-height: 1.5; }
 #rlastwk b { color: #fff; }
@@ -415,23 +415,46 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
 <script>
 (function () {
   var DAY = 864e5, dayOf = function (n) { return new Date(n).toISOString().slice(0, 10); };
-  var weekEnd = function (n) { var wd = (new Date(n).getUTCDay() + 6) % 7; return dayOf(Date.parse(dayOf(n)) + (7 - wd) * DAY); };
   var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
+  var dm = function (d) { var t = new Date(d + 'T12:00:00Z'); return t.getUTCDate() + ' ' + ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'][t.getUTCMonth()]; };
   var cl = function (s) { return String(s || '').toUpperCase().replace(/[^A-Z0-9 _.\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 14); };
   var J = function (k, d) { try { var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } };
+  var S = function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+  var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
+  // remember the best score of each day (only for this line; the board is the server's)
+  var last = document.body.dataset.mode;
+  if (window.MutationObserver) new MutationObserver(function () {
+    var m = document.body.dataset.mode; if (m === last) return; last = m; if (m !== 'over') return;
+    setTimeout(function () {
+      var sc = parseInt(((document.getElementById('rscore') || {}).textContent || '').replace(/\D/g, ''), 10) || 0; if (!(sc > 0)) return;
+      var o = J('range.sc', {}), d = dayOf(Date.now()); if (!o || typeof o !== 'object' || Array.isArray(o)) o = {};
+      o[d] = Math.max(o[d] || 0, sc); Object.keys(o).sort().slice(0, -30).forEach(function (k) { delete o[k]; }); S('range.sc', o);
+    }, 500);
+  }).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
   var tok = J('comet.token', ''), me = cl(J('comet.name', '')) || (typeof tok === 'string' && tok ? 'SHOOTER-' + tok.slice(0, 4).toUpperCase() : '');
-  var tb = document.getElementById('tbest'); if (!tb || !window.fetch) return;
+  var tb = document.getElementById('tbest'); if (!tb || !window.fetch || !me) return;
   fetch('https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park').then(function (r) { return r.json(); }).then(function (j) {
     var rg = j && j.range; if (!rg) return;
-    var w = rg.week || [], cur = weekEnd(Date.now()), i = -1;
-    for (var k = 0; k < w.length; k++) if (me && cl(w[k].n) === me) { i = k; break; }
-    if (i >= 0 && w[i].p > 0) { try { localStorage.setItem('range.wkr', JSON.stringify({ w: cur, r: i + 1, of: Number(rg.players) || w.length, p: w[i].p })); } catch (e) {} return; }
-    var s = J('range.wkr', null);
-    if (!s || s.w !== dayOf(Date.parse(cur) - 7 * DAY) || !(s.r > 0)) return;
-    var d = document.createElement('div'); d.id = 'rlastwk';
-    d.innerHTML = 'LAST WEEK YOU FINISHED <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' AT THE RANGE WITH <b>' + fmt(s.p) + '</b> PTS<br>NEW WEEK: EVERYONE STARTS AT 0 · ' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b>' : 'YOUR FIRST ROUND TAKES <b>#1</b>');
+    var w = rg.week || [], today = dayOf(Date.now()), i = -1, html = '', kind = '';
+    for (var k = 0; k < w.length; k++) if (cl(w[k].n) === me) { i = k; break; }
+    var sc = J('range.sc', {}) || {};
+    if (i >= 0 && w[i].p > 0) {
+      S('range.wkr', { r: i + 1, of: Number(rg.players) || w.length, p: w[i].p, d: today });
+      var bd = Object.keys(sc).filter(function (d) { return sc[d] === w[i].p && d > dayOf(Date.now() - 7 * DAY); }).sort().pop();
+      if (bd) {
+        var left = Math.round((Date.parse(bd) + 7 * DAY - Date.parse(today)) / DAY);
+        if (left >= 1 && left <= 3) { kind = 'expiring'; html = 'YOUR <b>' + fmt(w[i].p) + '</b> (#' + (i + 1) + ') FROM ' + dm(bd) + ' LEAVES THE 7-DAY BOARD ' + (left === 1 ? '<b>AT MIDNIGHT UTC</b>' : 'IN <b>' + left + ' DAYS</b>') + '<br>A NEW ROUND KEEPS YOU ON IT'; }
+      }
+    } else {
+      var s = J('range.wkr', null);
+      if (s && s.r > 0 && s.d && s.d < today && s.d > dayOf(Date.now() - 21 * DAY)) {
+        kind = 'gone'; html = 'YOUR <b>' + fmt(s.p) + '</b> HAS LEFT THE 7-DAY BOARD · YOU WERE <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + '<br>' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b> · ONE ROUND PUTS YOU BACK ON' : 'THE BOARD IS EMPTY: YOUR NEXT ROUND TAKES <b>#1</b>');
+      }
+    }
+    if (!html) return;
+    var d = document.createElement('div'); d.id = 'rlastwk'; d.innerHTML = html;
     var st = document.getElementById('rstreak_t'); tb.parentNode.insertBefore(d, (st && st.parentNode === tb.parentNode ? st : tb).nextSibling);
-    try { if (typeof window.afsa === 'function') window.afsa('event', 'lastweek_seen', { where: 'range', rank: String(s.r), empty: w.length ? 0 : 1 }); } catch (e) {}
+    ev('lastweek_seen', { where: 'range', kind: kind, rank: String(i >= 0 ? i + 1 : (J('range.wkr', {}) || {}).r) });
   }).catch(function () {});
 })();
 </script>
