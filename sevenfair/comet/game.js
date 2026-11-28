@@ -614,7 +614,7 @@ function submit(score, endP) {
     const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
     try {
       fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
-        done(j && j.ok ? 'ok' : 'refused'); if (!j || !j.ok) return; you = j.you; try { const l = store.get('last', {}); if (you && you.rank && l.d === rideDay) store.set('last', Object.assign(l, { r: you.rank, of: you.of })); } catch (e) { /* no memory */ } if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
+        done(j && j.ok ? 'ok' : 'refused'); if (!j || !j.ok) return; you = j.you; try { const l = store.get('last', {}); if (you && you.rank && l.d === rideDay) store.set('last', Object.assign(l, { r: you.rank, of: you.of })); if (you && you.rank && you.p > 0) store.set('wkr', { w: weekEnd(Date.now()), r: you.rank, of: you.of, p: you.p }); } catch (e) { /* no memory */ } if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
         if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
       }).catch(() => { done('err'); /* offline: the ride still counts on this phone */ });
     } catch (e) { /* same */ }
@@ -757,6 +757,18 @@ function crownLeft() {
   const h = Math.floor(left / 36e5), m = Math.floor(left % 36e5 / 6e4);
   return '<br>👑 CROWN IN <b>' + (h >= 24 ? Math.floor(h / 24) + 'D ' + (h % 24) + 'H' : h + 'H ' + String(m).padStart(2, '0') + 'M') + '</b> · MONDAY 00:00 UTC';
 }
+/* 28/11: the crown week resets on Monday. Remember where you stood, so on the new week you see "last week you finished #N" and that everyone starts at 0 */
+function weekEnd(n) { const wd = (new Date(n).getUTCDay() + 6) % 7; return dayOf(Date.parse(dayOf(n)) + (7 - wd) * DAY); }
+function lastWeekLine() {
+  const w = (boardData && boardData.week) || [], cur = weekEnd(Date.now());
+  if (!boardData) return '';
+  const i = w.findIndex((r) => cleanName(r.n) === riderName);
+  if (i >= 0 && w[i].p > 0) { store.set('wkr', { w: cur, r: i + 1, of: Number(boardData.riders) || w.length, p: w[i].p }); return ''; }
+  const s = store.get('wkr', null);
+  if (!s || s.w !== dayOf(Date.parse(cur) - 7 * DAY) || !(s.r > 0)) return '';
+  if (!lastWeekLine.ev) { lastWeekLine.ev = 1; ev('lastweek_seen', { where: 'title', rank: s.r, empty: w.length ? 0 : 1 }); }
+  return 'LAST WEEK YOU FINISHED <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' WITH <b>' + fmt(s.p) + '</b> PTS<br>NEW WEEK: EVERYONE STARTS AT 0 · ' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b>' : 'YOUR FIRST RIDE TAKES <b>#1</b>');
+}
 function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
@@ -776,6 +788,7 @@ function titleText() {
     const back = played().some((d) => d < today);
     if (back && !ridden) { const c = todayVsYesterday(); if (c) out.push(c); }
     const rv = rivalLine(), ry = royalLine();
+    const lw = lastWeekLine(); if (lw) out.push(lw);
     if (ry && (!rv || ry.indexOf('NEW CROWN') >= 0 || ry.indexOf('YOU WEAR') >= 0)) out.unshift(ry);
     if (!rv && l && l.d && l.d < today && l.s > 0) out.push('LAST TIME: <b>#' + trackNo(l.d) + '</b> · ' + fmt(l.s) + ' pts' + (l.r ? ' · #' + fmt(l.r) + ' of ' + fmt(l.of) : ''));  // the box above already names today's track
     if (rv) { out.push(rv); if (!titleText.rv) { titleText.rv = 1; ev('rival_seen', { rank: rv.indexOf('LEAD') > 0 ? 1 : 2 }); } }
