@@ -209,8 +209,8 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
 #title .turn { display: none; }
 @media (max-height: 520px) and (min-aspect-ratio: 1/1) { #title .turn { display: block; font-size: 11px; letter-spacing: .14em; font-weight: 700; color: var(--gold); margin-top: 6px; } }
 @media (prefers-reduced-motion: reduce) { #title .go, #result .tag .nb { animation: none; } }
-@media (max-height: 560px) { #result #torange { display: none; } }
-@media (max-height: 700px) { #result #torange { display: none; } }
+#result .duo { display: flex; flex-direction: column; align-items: center; gap: 9px; } #result .duo .sh { display: none; }
+@media (max-height: 700px) { #result .duo { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 4px 18px; } #result .duo .lg { display: none; } #result .duo .sh { display: inline; } #result .duo a { font-size: 11px; letter-spacing: .06em; } } /* 28/11: the Range link was hidden on phones */
 @media (max-height: 560px) { #result #toig { display: none; } }
 </style>
 <div id="comet">
@@ -287,8 +287,8 @@ html, body { height: 100%; margin: 0; background: var(--night); color: var(--ink
         <button class="share" id="share">SHARE MY RESULT</button>
         <button class="tovote notify" id="notify" hidden></button>
         <button class="tovote notify" id="install" hidden>📲 <u>ADD THE COMET TO YOUR HOME SCREEN</u> · TOMORROW'S TRACK IS ONE TAP AWAY</button>
-        <a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end">SEE THE COURT IN THE CASTLE →</a>
-        <a class="tocastle" id="torange" href="../range/?from=comet-end" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a">🎯 ALSO TODAY: THE RANGE · NEW COURSE, 60 SECONDS →</a>
+        <div class="duo"><a class="tocastle" id="tocastle" hidden data-afsa-event="castle_click" data-afsa-prop-where="comet_end"><span class="lg">SEE THE COURT IN THE CASTLE →</span><span class="sh">👑 THE COURT →</span></a>
+        <a class="tocastle" id="torange" href="../range/?from=comet-end" data-afsa-event="range_click" data-afsa-prop-where="comet_end" style="color:#ff3d9a"><span class="lg">🎯 ALSO TODAY: THE RANGE · NEW COURSE, 60 SECONDS →</span><span class="sh">🎯 ALSO TODAY: THE RANGE →</span></a></div>
         <a class="tocastle" id="toig" hidden href="https://www.instagram.com/lira_ia_/" target="_blank" rel="noopener" data-afsa-event="ig_follow" data-afsa-prop-where="comet" style="color:#ff9ad1">MONDAY'S CROWN GOES UP ON INSTAGRAM · FOLLOW @lira_ia_ →</a>
         <div class="tovote" id="remind"><b id="rmhd">🔔 A NEW TRACK EVERY DAY</b> · REMIND ME: <a href="https://t.me/lira_100euro_bot?start=remind" target="_blank" rel="noopener" data-afsa-event="telegram_click" data-afsa-prop-where="comet_end"><u>TELEGRAM</u></a> · <a href="../sevenfair-daily.ics" download="sevenfair-daily.ics" data-afsa-event="remind" data-afsa-prop-where="comet_end"><u>CALENDAR</u></a><span id="rmmail" hidden> · <a href="#" id="rmmaila"><u>EMAIL</u></a></span></div>
         <form class="tovote mailf" id="mailf" hidden novalidate><input type="email" id="mailin" placeholder="you@example.com" autocomplete="email" maxlength="200" aria-label="Your email"><button type="submit" id="mailgo">SEND ME TRACKS</button><small id="mailmsg">One email a day when the new track opens. Confirm once, unsubscribe in one click. Nothing else, ever.</small></form>
