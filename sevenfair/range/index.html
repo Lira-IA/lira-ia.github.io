@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>The Range · free daily shooting gallery game in your browser, 60 seconds</title>
 <meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards, a new course every day. Sixty seconds.">
-<meta name="theme-color" content="#05070d"><meta name="alldle-verify" content="vBEifCAXEo8xOuBvQC_hCDeaXc2gkx6O"><script defer src="https://www.alldle.net/sdk/0.3.6/sdk.js" integrity="sha384-cjDKISf/afLaP9e2vVz93b/6uap3jmQIGIC8fVvqKIMjqgUMWOEVGMhcGA0TIUy9" crossorigin="anonymous" data-game="the-range" data-autocapture="false"></script><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Range"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05070d"><meta name="alldle-verify" content="vBEifCAXEo8xOuBvQC_hCDeaXc2gkx6O"><script defer src="https://www.alldle.net/sdk/0.3.6/sdk.js" integrity="sha384-cjDKISf/afLaP9e2vVz93b/6uap3jmQIGIC8fVvqKIMjqgUMWOEVGMhcGA0TIUy9" crossorigin="anonymous" data-game="the-range"></script><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Range"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -102,10 +102,10 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
    <span class="only-mouse">Click to shoot, <b>right button</b> or <b>Shift</b> to aim, <b>WASD</b> to walk, <b>R</b> to reload. Stand still to shoot straight.</span><span class="only-touch">Left thumb walks, right thumb looks. <b>Tap</b> or press <b>FIRE</b> to shoot, <b>AIM</b> to look down the sights. <span class="tall">Turn the phone sideways to see more.</span></span></p>
   <button class="go disp" id="go">START</button><div id="tbest"></div><a class="back" id="home" href="../">← BACK TO THE PARK</a>
  </div></div>
- <div class="layer" id="over"><div class="cols">
+ <div class="layer" id="over" data-alldle-seen="over"><div class="cols">
   <div>
    <div class="kick">TIME</div><div class="disp" id="rscore">0</div><div class="disp" id="rrank"></div><div id="rline"></div><div id="rbest"></div>
-   <button class="go disp" id="again">AGAIN</button><br><a class="back" href="../">← BACK TO THE PARK</a>
+   <button class="go disp" id="again" data-alldle-click="again">AGAIN</button><br><a class="back" href="../">← BACK TO THE PARK</a>
   </div>
   <div id="boardbox" hidden>
    <div class="kick">THE BEST ROUNDS OF THE WEEK</div><ol id="board"></ol><div id="you"></div>
@@ -266,13 +266,14 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var cb = document.getElementById('tomorrow') || document.getElementById('comeback'); if (!cb) return;
   var fromA = false; try { var q = new URLSearchParams(location.search).get('from') || ''; var anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; fromA = /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) {}
   var inA = false; try { inA = window.top !== window.self && /alldle\.net/.test((location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : '') + ' ' + document.referrer); } catch (e) {}
-  var d = document.createElement('div'); d.id = 'alldlebox'; if (fromA || inA) d.className = 'top';
+  var d = document.createElement('div'); d.id = 'alldlebox'; d.setAttribute('data-alldle-seen', 'ritual'); if (fromA || inA) d.className = 'top';
   d.innerHTML = inA ? '<span>👇 TAP “ADD TO RITUAL” UNDER THE GAME: ALLDLE BRINGS YOU BACK FOR TOMORROW’S COURSE · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span>' : '<span>' + (fromA ? 'ADD THE RANGE TO YOUR ALLDLE RITUAL: IT REMINDS YOU TOMORROW' : 'PLAY DAILY GAMES ON ALLDLE? ADD THE RANGE TO YOUR RITUAL') + ' · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span><a href="https://www.alldle.net/game/the-range?ref=badge" target="_blank" rel="noopener" aria-label="Play on Alldle"><img src="https://www.alldle.net/badge.svg?g=jj6rqrvij5japb7fwf3jywv4&variant=light&size=compact&content=text" alt="Play on Alldle" width="180" height="48" style="border:0;" /></a>';
   cb.parentNode.insertBefore(d, cb.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { d.addEventListener(e, function (x) { x.stopPropagation(); }); });
-  var done = false, started = false;
+  var done = false, started = false, lastM = '';
   var fire = function () {
     var m = document.body.dataset.mode;
+    try { var AS = window.alldle; if (AS && AS.screen && m && m !== lastM) AS.screen(m); } catch (e) {} lastM = m;
     if (m === 'play' && !started) { started = true; try { var A0 = window.alldle; if (A0 && A0.startMode) A0.startMode('daily', { puzzleId: 'range-' + new Date().toISOString().slice(0, 10) }); } catch (e) {} }
     if (m !== 'over') { done = false; return; }
     started = false;
