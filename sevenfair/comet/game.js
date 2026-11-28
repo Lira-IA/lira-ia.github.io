@@ -614,7 +614,7 @@ function submit(score, endP) {
     const body = JSON.stringify({ v: 1, r: 'comet', d: rideDay, n: riderName, t: token, s: score, c: crown, i: inputs });
     try {
       fetch(CFG.api, { method: 'POST', body, keepalive: body.length < 60000 }).then((r) => r.json()).then((j) => {
-        done(j && j.ok ? 'ok' : 'refused'); if (!j || !j.ok) return; you = j.you; try { const l = store.get('last', {}); if (you && you.rank && l.d === rideDay) store.set('last', Object.assign(l, { r: you.rank, of: you.of })); if (you && you.rank && you.p > 0) store.set('wkr', { w: weekEnd(Date.now()), r: you.rank, of: you.of, p: you.p }); } catch (e) { /* no memory */ } if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
+        done(j && j.ok ? 'ok' : 'refused'); if (!j || !j.ok) return; you = j.you; try { const l = store.get('last', {}); if (you && you.rank && l.d === rideDay) store.set('last', Object.assign(l, { r: you.rank, of: you.of })); if (you && you.rank && you.p > 0) store.set('wkr', { d: dayOf(Date.now()), r: you.rank, of: you.of, p: you.p }); } catch (e) { /* no memory */ } if (you && you.n && cleanName(you.n) !== riderName) { nameEl.value = ''; nameEl.placeholder = 'NAME NOT ALLOWED · PICK ANOTHER'; } boardData = Object.assign(boardData || {}, { week: (j.week || []) });
         if (mode === 'result') { rankLine(); drawBoard(); if (you && you.rank <= 5) SFX.best(); }
       }).catch(() => { done('err'); /* offline: the ride still counts on this phone */ });
     } catch (e) { /* same */ }
@@ -757,17 +757,25 @@ function crownLeft() {
   const h = Math.floor(left / 36e5), m = Math.floor(left % 36e5 / 6e4);
   return '<br>👑 CROWN IN <b>' + (h >= 24 ? Math.floor(h / 24) + 'D ' + (h % 24) + 'H' : h + 'H ' + String(m).padStart(2, '0') + 'M') + '</b> · MONDAY 00:00 UTC';
 }
-/* 28/11: the crown week resets on Monday. Remember where you stood, so on the new week you see "last week you finished #N" and that everyone starts at 0 */
+/* 28/11: the board is a rolling 7 days (each day's best ride counts for 7 days, then drops off at midnight UTC; nothing resets on Monday).
+   Say it when your oldest points are about to drop, and when all of them have dropped */
 function weekEnd(n) { const wd = (new Date(n).getUTCDay() + 6) % 7; return dayOf(Date.parse(dayOf(n)) + (7 - wd) * DAY); }
 function lastWeekLine() {
-  const w = (boardData && boardData.week) || [], cur = weekEnd(Date.now());
   if (!boardData) return '';
-  const i = w.findIndex((r) => cleanName(r.n) === riderName);
-  if (i >= 0 && w[i].p > 0) { store.set('wkr', { w: cur, r: i + 1, of: Number(boardData.riders) || w.length, p: w[i].p }); return ''; }
+  const w = boardData.week || [], today = dayOf(Date.now()), i = w.findIndex((r) => cleanName(r.n) === riderName);
+  if (i >= 0 && w[i].p > 0) {
+    store.set('wkr', { d: today, r: i + 1, of: Number(boardData.riders) || w.length, p: w[i].p });
+    const mine = myDays(), ds = Object.keys(mine).sort(), od = ds[0];
+    if (!od || mine[today]) return '';  // rode today: nothing to warn about
+    const left = Math.round((Date.parse(od) + 7 * DAY - Date.parse(today)) / DAY);
+    if (left < 1 || left > 2) return '';
+    if (!lastWeekLine.ev) { lastWeekLine.ev = 1; ev('lastweek_seen', { where: 'title', kind: 'expiring', rank: i + 1 }); }
+    return 'YOUR <b>' + fmt(mine[od]) + '</b> PTS FROM #' + trackNo(od) + ' DROP OFF THE 7-DAY BOARD ' + (left === 1 ? '<b>AT MIDNIGHT UTC</b>' : 'IN <b>2 DAYS</b>') + '<br>A RIDE TODAY ADDS NEW POINTS';
+  }
   const s = store.get('wkr', null);
-  if (!s || s.w !== dayOf(Date.parse(cur) - 7 * DAY) || !(s.r > 0)) return '';
-  if (!lastWeekLine.ev) { lastWeekLine.ev = 1; ev('lastweek_seen', { where: 'title', rank: s.r, empty: w.length ? 0 : 1 }); }
-  return 'LAST WEEK YOU FINISHED <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' WITH <b>' + fmt(s.p) + '</b> PTS<br>NEW WEEK: EVERYONE STARTS AT 0 · ' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b>' : 'YOUR FIRST RIDE TAKES <b>#1</b>');
+  if (!s || !s.d || !(s.r > 0) || s.d >= today || s.d < dayOf(Date.now() - 21 * DAY)) return '';
+  if (!lastWeekLine.ev) { lastWeekLine.ev = 1; ev('lastweek_seen', { where: 'title', kind: 'gone', rank: s.r, empty: w.length ? 0 : 1 }); }
+  return 'YOUR POINTS HAVE LEFT THE 7-DAY BOARD · YOU WERE <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' WITH <b>' + fmt(s.p) + '</b><br>' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b> · ONE RIDE PUTS YOU BACK ON' : 'THE BOARD IS EMPTY: YOUR NEXT RIDE TAKES <b>#1</b>');
 }
 function titleText() {
   today = dayOf(Date.now());
