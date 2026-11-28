@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>The Range · free daily shooting gallery game in your browser, 60 seconds</title>
 <meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards, a new course every day. Sixty seconds.">
-<meta name="theme-color" content="#05070d">
+<meta name="theme-color" content="#05070d"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Range"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -220,6 +220,34 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var w = document.createElement('div'); w.appendChild(a);
   cb.parentNode.insertBefore(w, cb.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (ev) { ev.stopPropagation(); }); });
+})();
+</script>
+<!-- Lira 28/11: The Range sulla schermata Home (Chrome/Android: beforeinstallprompt; iPhone: come fare) -->
+<style>
+#rinstall { display: inline-block; margin-top: 10px; padding: 7px 12px 6px; border: 1px solid rgba(255,214,90,.55); border-radius: 6px; background: none; font: inherit; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--gold); cursor: pointer; }
+#rinstall[hidden] { display: none; }
+@media (max-height: 430px) { #rinstall { margin-top: 6px; padding: 5px 10px 4px; font-size: 10px; } }
+</style>
+<script>
+(function () {
+  var cb = document.getElementById('tocomet') || document.getElementById('comeback') || document.querySelector('#over a.back'); if (!cb) return;
+  var standalone = false; try { standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) {}
+  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var evt = null, ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
+  var b = document.createElement('button'); b.id = 'rinstall'; b.type = 'button'; b.hidden = true;
+  b.textContent = '📲 ADD THE RANGE TO YOUR HOME SCREEN · TOMORROW\'S COURSE IS ONE TAP AWAY';
+  var w = document.createElement('div'); w.appendChild(b);
+  var host = cb.id === 'tocomet' ? cb.parentNode : cb; host.parentNode.insertBefore(w, host.nextSibling);
+  ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (x) { x.stopPropagation(); }); });
+  var show = function () { b.hidden = standalone || !(evt || ios); };
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); evt = e; show(); });
+  window.addEventListener('appinstalled', function () { ev('app_installed', { ride: 'range' }); evt = null; standalone = true; show(); });
+  b.addEventListener('click', function () {
+    ev('install_click', { ride: 'range', how: evt ? 'prompt' : 'ios' });
+    if (evt) { var p = evt; evt = null; try { p.prompt(); p.userChoice.then(function (c) { ev('install_choice', { ride: 'range', outcome: c && c.outcome }); }).catch(function () {}); } catch (e) {} show(); }
+    else b.textContent = 'ON IPHONE: TAP SHARE ⬆️ AT THE BOTTOM, THEN \u201CADD TO HOME SCREEN\u201D';
+  });
+  show();
 })();
 </script>
 </body></html>

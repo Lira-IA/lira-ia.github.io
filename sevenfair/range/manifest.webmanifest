@@ -1,0 +1,16 @@
+{
+  "name": "The Range · Sevenfair",
+  "short_name": "The Range",
+  "description": "A sixty-second shooting gallery with a new course every day, the same for everyone. Free, no ads.",
+  "id": "/sevenfair/range/",
+  "start_url": "/sevenfair/range/?from=app",
+  "scope": "/sevenfair/range/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#05070d",
+  "theme_color": "#05070d",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
