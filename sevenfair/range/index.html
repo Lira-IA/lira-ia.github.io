@@ -323,4 +323,21 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   fetch(cfg.api + (cfg.api.indexOf('?') < 0 ? '?' : '&') + 'pk=' + Math.floor(Date.now() / 600000)).then(function (r) { return r.json(); }).then(function (j) { if (j && j.push_key) { key = j.push_key; line(); } }).catch(function () {});
 })();
 </script>
+<!-- Lira 28/11 (#106): where do players leave a round? range_half at 30 s left, range_quit if the page is left mid-round -->
+<script>
+(function () {
+  var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
+  var ctx = function () { var fr = 'n'; try { fr = window.self !== window.top ? 'y' : 'n'; } catch (e) { fr = 'y'; } return { frame: fr, lock: document.pointerLockElement ? 'y' : 'n', touch: ('ontouchstart' in window) ? 'y' : 'n' }; };
+  var half = false, quit = false;
+  var tl = function () { return parseInt(((document.getElementById('time') || {}).textContent || ''), 10); };
+  setInterval(function () {
+    var m = document.body.dataset.mode;
+    if (m !== 'play') { if (m === 'over') { half = false; quit = false; } return; }
+    var t = tl(); if (!half && t > 0 && t <= 30) { half = true; ev('range_half', ctx()); }
+  }, 1000);
+  var leave = function () { if (quit || document.body.dataset.mode !== 'play') return; quit = true; var c = ctx(); c.left = String(Math.round((tl() || 0) / 10) * 10); ev('range_quit', c); };
+  window.addEventListener('pagehide', leave);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') leave(); });
+})();
+</script>
 </body></html>
