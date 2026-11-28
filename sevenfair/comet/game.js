@@ -435,14 +435,14 @@ function hud() {
     const ob = rows[i];
     if (ob) {
       const eta = (ob.s - R.s) / S.speedAt(R.s), li = R.lane + 1, c = ob.c[li];
-      if (eta < 62 && eta > 3) {
+      if (eta < (c === S.GATE ? 62 : 100) && eta > 3) {
         if (c === S.GATE) { const l = li > 0 ? ob.c[li - 1] : S.GATE, r = li < 2 ? ob.c[li + 1] : S.GATE; h = l === S.EMPTY ? 'L' : r === S.EMPTY ? 'R' : l !== S.GATE ? 'L' : 'R'; }
         else if (c === S.HURDLE && !R.airborne() && R.jumpT === 0) h = 'U';
         else if (c === S.BEAM && !R.sliding()) h = 'D';
       }
     }
   }
-  if (h !== hintOn) { hintOn = h; const el = $('hint'); el.classList.toggle('on', !!h); if (h) { el.dataset.d = h; $('hintt').textContent = fine ? (h === 'U' ? 'UP ARROW' : h === 'D' ? 'DOWN ARROW' : h === 'L' ? 'LEFT ARROW' : 'RIGHT ARROW') : (h === 'U' ? 'SWIPE UP' : h === 'D' ? 'SWIPE DOWN' : 'SWIPE'); } }
+  if (h !== hintOn) { hintOn = h; const el = $('hint'); el.classList.toggle('on', !!h); if (h) { el.dataset.d = h; $('hintt').textContent = fine ? (h === 'U' ? 'UP ARROW' : h === 'D' ? 'DOWN ARROW' : h === 'L' ? 'LEFT ARROW' : 'RIGHT ARROW') : (h === 'U' ? 'SWIPE UP · JUMP' : h === 'D' ? 'SWIPE DOWN · SLIDE' : 'SWIPE'); } }
 }
 
 // ---------- crash and result ----------
@@ -467,6 +467,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
+  if (ridesDone <= 3 && (R.cause === S.HURDLE || R.cause === S.BEAM)) sub.innerHTML += '<br><b>' + (R.cause === S.HURDLE ? '💥 A wall: swipe ↑ to jump it' : '💥 A beam: swipe ↓ to slide under') + '</b>'; // 28/11: say what killed a new rider
   week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
   alldleLine();
   setTimeout(askCount, 1500);
@@ -916,6 +917,7 @@ function up(id, x, y, ts) {
   if (!g || g.id !== id) return;
   const q = g; g = null;
   if (mode !== 'ride' || q.moved || ts - q.t > 350 || Math.abs(x - q.x0) > 12 || Math.abs(y - q.y0) > 12) return;
+  if (hintOn === 'U' || hintOn === 'D') { ev('hint_tap', { d: hintOn, ride_n: ridesDone + 1 }); act(hintOn); return; } // 28/11: first rides, a plain tap does what the hint shows (tappers died at the first wall, 12 s in)
   const r = area.getBoundingClientRect(); act(x < r.left + r.width / 2 ? 'L' : 'R');
 }
 // Only what is on screen right now counts as a button. The title's big button sits at the bottom of the screen and, once
