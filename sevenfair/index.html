@@ -152,7 +152,7 @@ fetch('https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park').then(r=>r.js
  if(!gw.length){rt.innerHTML='<div class="empty">Nobody has shot yet this week. The first round takes the top spot.</div>';document.getElementById('rbeat').textContent='nobody has a score this week: the first round tops the table';}
  else{rt.innerHTML=gw.map((r,i)=>`<div class="row"><span><span class="k">${i+1}</span><span class="n">${esc(r.n)}</span></span><span class="p">${fmt(r.p)}</span></div>`).join('')+`<div class="empty">${gp} shooter${gp==1?'':'s'} this week · today's best ${g.today&&g.today.best?fmt(g.today.best):'nobody yet'} · live</div>`;
   document.getElementById('rbeat').innerHTML='score to beat: <b>'+fmt(gw[0].p)+'</b> by '+esc(gw[0].n);}
- const c=j.royal; if(c&&c.n){document.getElementById('seat').textContent='👑';document.getElementById('crown').innerHTML=`<b>${esc(c.n)}</b> sits next to the queen, crowned on ${esc(c.since||'')} with ${fmt(c.p)} points.`;}
+ const c=j.royal; if(c&&c.n){document.getElementById('seat').textContent='👑';document.getElementById('crown').innerHTML=`<b>${esc(c.n)}</b> sits next to the queen, crowned on ${c.since?new Date(c.since+'T12:00:00Z').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short',timeZone:'UTC'}):''} with ${fmt(c.p)} points.`;}
 }).catch(()=>{document.getElementById('table').innerHTML='<div class="empty">Table not available right now.</div>';document.getElementById('rtable').innerHTML='<div class="empty">Table not available right now.</div>'});
 </script>
 </body></html>
