@@ -465,12 +465,21 @@ function showResult() {
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
   week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
+  alldleLine();
   const el = $('result'); el.hidden = false; void el.offsetWidth; el.classList.add('on');
   const big = $('rscore'), t0 = performance.now(); (function up(now) { const k = clamp((now - t0) / 650, 0, 1), e = 1 - Math.pow(1 - k, 3); big.textContent = fmt(sc * e); if (k < 1 && mode === 'result') requestAnimationFrame(up); else big.textContent = fmt(sc); })(t0);
   if (isBest && before > 0) SFX.best();
   const endP = { score: sc < 100 ? '0-99' : sc < 500 ? '100-499' : sc < 2000 ? '500-1999' : '2000+', ride_n: ridesDone };
   if (isBest || (CFG.api && !you)) submit(sc, endP);    // every new best, and the first ride of a visit so the rider sees their place
   else ev('ride_end', Object.assign({ sent: 'no' }, endP));
+}
+/* 28/11: riders who came from alldle (link or alldle's frame) see the "add it to your ritual" line right under the stats: alldle reminds them tomorrow */
+const FROM_ALLDLE = (() => { try { const q = new URLSearchParams(location.search).get('from') || ''; const anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; return /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) { return false; } })();
+let ritualSeen = false;
+function alldleLine() {
+  const el = $('alldle'), st = document.querySelector('#result .stats'); if (!el || !st || !FROM_ALLDLE || REC) return;
+  if (el.previousElementSibling !== st) { st.parentNode.insertBefore(el, st.nextSibling); el.classList.add('top'); el.firstChild.firstChild.textContent = 'NEW TRACK TOMORROW · ADD THE COMET TO YOUR ALLDLE RITUAL AND ALLDLE REMINDS YOU · '; }
+  if (!ritualSeen) { ritualSeen = true; ev('ritual_seen', { ride_n: ridesDone }); }
 }
 /* end of a ride: the streak and the countdown to tomorrow's track (updated every second while the result is shown) */
 function streakLine() {
