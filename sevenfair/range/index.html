@@ -354,7 +354,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var get = function (k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } };
   var D = function (o) { return new Date(Date.now() + o * 864e5).toISOString().slice(0, 10); };
   var cp = []; try { cp = JSON.parse(localStorage.getItem('comet.played')) || []; } catch (e) {}
-  var played = function (d) { var r = get('range.days'), c = get('comet.days'); return (r[d] != null) || (c[d] != null) || cp.indexOf(d) >= 0; };
+  var played = function (d) { var r = get('range.days'), c = get('comet.days'); return (Array.isArray(r) ? r.indexOf(d) >= 0 : r[d] != null) || (c[d] != null) || cp.indexOf(d) >= 0; };
   var streak = function () { var o = played(D(0)) ? 0 : -1, n = 0; while (n < 400 && played(D(o - n))) n++; return { n: n, today: o === 0 }; };
   var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
   var line = function (where) {
@@ -373,7 +373,8 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var last = document.body.dataset.mode;
   var mark = function () {
     var d = D(0), r = get('range.days'), sc = parseInt(((document.getElementById('rscore') || {}).textContent || '').replace(/\D/g, ''), 10) || 0;
-    r[d] = Math.max(r[d] || 0, sc); try { localStorage.setItem('range.days', JSON.stringify(r)); } catch (e) {}
+    if (Array.isArray(r)) { if (r.indexOf(d) < 0) r.push(d); } else if (Object.keys(r).length) r[d] = Math.max(r[d] || 0, sc); else r = [d];  // game.js keeps range.days as an array of days
+    try { localStorage.setItem('range.days', JSON.stringify(r)); } catch (e) {}
   };
   var on = function () {
     var m = document.body.dataset.mode; if (m === last) return; last = m;
@@ -403,6 +404,35 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var go = document.getElementById('tbest') || document.getElementById('go'); if (!go) return;
   var w = document.createElement('div'); w.appendChild(a); go.parentNode.insertBefore(w, go.nextSibling);
   ['pointerdown', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (x) { x.stopPropagation(); }); });
+})();
+</script>
+<!-- Lira 28/11 (#131): al cambio di settimana 'last week you finished #N of the Range' (come nella Cometa) -->
+<style>
+#rlastwk { margin: 10px auto 0; max-width: 30em; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--gold, #ffd166); line-height: 1.5; }
+#rlastwk b { color: #fff; }
+@media (max-height: 430px) { #rlastwk { margin-top: 5px; font-size: 10px; } }
+</style>
+<script>
+(function () {
+  var DAY = 864e5, dayOf = function (n) { return new Date(n).toISOString().slice(0, 10); };
+  var weekEnd = function (n) { var wd = (new Date(n).getUTCDay() + 6) % 7; return dayOf(Date.parse(dayOf(n)) + (7 - wd) * DAY); };
+  var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
+  var cl = function (s) { return String(s || '').toUpperCase().replace(/[^A-Z0-9 _.\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 14); };
+  var J = function (k, d) { try { var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } };
+  var tok = J('comet.token', ''), me = cl(J('comet.name', '')) || (typeof tok === 'string' && tok ? 'SHOOTER-' + tok.slice(0, 4).toUpperCase() : '');
+  var tb = document.getElementById('tbest'); if (!tb || !window.fetch) return;
+  fetch('https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park').then(function (r) { return r.json(); }).then(function (j) {
+    var rg = j && j.range; if (!rg) return;
+    var w = rg.week || [], cur = weekEnd(Date.now()), i = -1;
+    for (var k = 0; k < w.length; k++) if (me && cl(w[k].n) === me) { i = k; break; }
+    if (i >= 0 && w[i].p > 0) { try { localStorage.setItem('range.wkr', JSON.stringify({ w: cur, r: i + 1, of: Number(rg.players) || w.length, p: w[i].p })); } catch (e) {} return; }
+    var s = J('range.wkr', null);
+    if (!s || s.w !== dayOf(Date.parse(cur) - 7 * DAY) || !(s.r > 0)) return;
+    var d = document.createElement('div'); d.id = 'rlastwk';
+    d.innerHTML = 'LAST WEEK YOU FINISHED <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' AT THE RANGE WITH <b>' + fmt(s.p) + '</b> PTS<br>NEW WEEK: EVERYONE STARTS AT 0 · ' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b>' : 'YOUR FIRST ROUND TAKES <b>#1</b>');
+    var st = document.getElementById('rstreak_t'); tb.parentNode.insertBefore(d, (st && st.parentNode === tb.parentNode ? st : tb).nextSibling);
+    try { if (typeof window.afsa === 'function') window.afsa('event', 'lastweek_seen', { where: 'range', rank: String(s.r), empty: w.length ? 0 : 1 }); } catch (e) {}
+  }).catch(function () {});
 })();
 </script>
 </body></html>
