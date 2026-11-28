@@ -382,4 +382,26 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   if (window.MutationObserver) new MutationObserver(on).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
 })();
 </script>
+<!-- Lira 28/11: dentro un iframe (alldle) il puntatore non si blocca: offrire la finestra intera a chi usa il mouse -->
+<style>
+#rtab { display: inline-block; margin-top: 10px; padding: 7px 12px 6px; border: 1px solid rgba(45,226,230,.6); border-radius: 6px; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--cyan, #2de2e6); text-decoration: none; background: rgba(45,226,230,.06); }
+#rtab[hidden] { display: none; }
+@media (max-height: 430px) { #rtab { margin-top: 6px; padding: 5px 10px 4px; font-size: 10px; } }
+</style>
+<script>
+(function () {
+  var framed = false; try { framed = window.top !== window.self; } catch (e) { framed = true; }
+  if (!framed || document.body.classList.contains('touch')) return;
+  var coarse = false; try { coarse = matchMedia('(pointer: coarse)').matches && !matchMedia('(pointer: fine)').matches; } catch (e) {}
+  if (coarse) return;
+  var from = (new URLSearchParams(location.search).get('from') || 'frame').replace(/[^a-z0-9-]/gi, '').slice(0, 30);
+  var a = document.createElement('a'); a.id = 'rtab'; a.target = '_blank'; a.rel = 'noopener';
+  a.href = location.pathname + '?from=' + from + '-tab';
+  a.textContent = '🖱️ BETTER WITH A MOUSE: PLAY FULL-WINDOW, MOUSE LOOKS AROUND ↗';
+  a.setAttribute('data-afsa-event', 'range_tab_click'); a.setAttribute('data-afsa-prop-from', from);
+  var go = document.getElementById('tbest') || document.getElementById('go'); if (!go) return;
+  var w = document.createElement('div'); w.appendChild(a); go.parentNode.insertBefore(w, go.nextSibling);
+  ['pointerdown', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (x) { x.stopPropagation(); }); });
+})();
+</script>
 </body></html>
