@@ -467,7 +467,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  if (ridesDone <= 3 && (R.cause === S.HURDLE || R.cause === S.BEAM)) sub.innerHTML += '<br><b>' + (R.cause === S.HURDLE ? '💥 A wall: swipe ↑ to jump it' : '💥 A beam: swipe ↓ to slide under') + '</b>'; // 28/11: say what killed a new rider
+  if (ridesDone <= 3 && (R.cause === S.HURDLE || R.cause === S.BEAM)) sub.innerHTML += '<br><b>' + (R.cause === S.HURDLE ? '💥 A wall: ' + (fine ? 'press ↑' : 'swipe ↑') + ' to jump it' : '💥 A beam: ' + (fine ? 'press ↓' : 'swipe ↓') + ' to slide under') + '</b>'; // 28/11: say what killed a new rider
   week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
   alldleLine();
   setTimeout(askCount, 1500);
