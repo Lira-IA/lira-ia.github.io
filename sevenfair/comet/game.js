@@ -777,6 +777,21 @@ function lastWeekLine() {
   if (!lastWeekLine.ev) { lastWeekLine.ev = 1; ev('lastweek_seen', { where: 'title', kind: 'gone', rank: s.r, empty: w.length ? 0 : 1 }); }
   return 'YOUR POINTS HAVE LEFT THE 7-DAY BOARD · YOU WERE <b>#' + fmt(s.r) + '</b> OF ' + fmt(s.of) + ' WITH <b>' + fmt(s.p) + '</b><br>' + (w.length ? 'TOP NOW: <b>' + fmt(w[0].p) + '</b> · ONE RIDE PUTS YOU BACK ON' : 'THE BOARD IS EMPTY: YOUR NEXT RIDE TAKES <b>#1</b>');
 }
+/* 28/11: in small frames (alldle on a phone is 356x478) a returning rider got so many lines that TAP TO RIDE fell below the edge.
+   Keep the lines that make people ride today, drop the rest until the button fits */
+function fitTitle(bk, out, wk) {
+  const go = $('go'); if (!go || bk.hidden || mode !== 'title') return;
+  const fits = () => go.getBoundingClientRect().bottom <= innerHeight - 6;
+  if (fits()) return;
+  const rank = (h) => /DROP OFF|LEFT THE 7-DAY|YOU WEAR|NEW CROWN/.test(h) ? 6 : /THIS WEEK YOU|LEAD/.test(h) ? 5 : /STREAK/.test(h) ? 4 : /YESTERDAY #/.test(h) ? 3 : /LAST TIME/.test(h) ? 2 : 1;
+  let items = out.map((h, i) => ({ h, i, r: rank(h) })), dropped = 0;
+  while (items.length > 1 && !fits()) {
+    let lo = 0; for (let k = 1; k < items.length; k++) if (items[k].r < items[lo].r || (items[k].r === items[lo].r && items[k].i > items[lo].i)) lo = k;
+    items.splice(lo, 1); dropped++; bk.innerHTML = items.map((x) => x.h).join('<br>');
+  }
+  if (!fits() && wk && !wk.hidden) { wk.hidden = true; dropped++; }
+  if (dropped && !fitTitle.ev) { fitTitle.ev = 1; let fr = 'n'; try { fr = IN_ALLDLE ? 'y' : 'n'; } catch (e) { /* not set yet */ } ev('title_fit', { dropped, h: innerHeight, framed: fr }); }
+}
 function titleText() {
   today = dayOf(Date.now());
   const left = Date.parse(today) + DAY - Date.now(), p = (n) => String(n).padStart(2, '0');
@@ -804,6 +819,7 @@ function titleText() {
     else if (!ridden && y === 1) out.push('🔥 RIDE TODAY TO START A <b>2-DAY STREAK</b>');
     else if (ridden && streakTo(today) >= 2) out.push('🔥 <b>' + streakTo(today) + '-DAY STREAK</b> · COME BACK TOMORROW');
     bk.hidden = REC || !out.length; bk.innerHTML = out.join('<br>');
+    fitTitle(bk, out, wk);
   }
   const d = $('dare');
   if (dare) { d.hidden = false; d.innerHTML = dare.day === today ? dare.name + ' scored <b>' + fmt(dare.score) + '</b> on this track. Beat it.' : dare.name + '\'s dare was on an older track. Set a new one.'; }
