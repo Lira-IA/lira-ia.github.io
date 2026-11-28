@@ -135,7 +135,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   }
   var again = $('again'); if (!again) return;
   var LABEL = 'DARE A FRIEND TO BEAT THIS';
-  var b = document.createElement('button'); b.id = 'dare'; b.type = 'button'; b.textContent = LABEL;
+  var b = document.createElement('button'); b.id = 'dare'; b.type = 'button'; b.textContent = LABEL; b.setAttribute('data-afsa-event', 'share_click'); b.setAttribute('data-afsa-prop-where', 'range_dare');
   var br = document.createElement('br');
   again.parentNode.insertBefore(br, again.nextSibling); again.parentNode.insertBefore(b, br.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown'].forEach(function (e) { b.addEventListener(e, function (ev) { ev.stopPropagation(); }); });
@@ -145,7 +145,7 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
     if (s <= 0) { b.textContent = 'HIT SOMETHING FIRST'; setTimeout(function () { b.textContent = LABEL; }, 2000); return; }
     var nm = clean(($('name') || {}).value);
     var u = 'https://lira-ia.github.io/sevenfair/range/?from=dare&c=' + s + (nm ? '&n=' + encodeURIComponent(nm) : '') + '&d=' + new Date().toISOString().slice(0, 10);
-    var txt = 'I scored ' + s.toLocaleString('en-US') + ' at The Range, a 60-second shooting gallery in a park run by an AI. Same course for everyone today. Beat it:';
+    var rk = /#(\d+) OF (\d+)/.exec(String(($('you') || {}).textContent || '')); var txt = 'I scored ' + s.toLocaleString('en-US') + (rk ? ' (#' + rk[1] + ' of ' + rk[2] + ' this week)' : '') + ' at The Range, a 60-second shooting gallery in a park run by an AI. Same course for everyone today. Beat it:';
     var done = function () { b.textContent = 'LINK COPIED · SEND IT TO A FRIEND'; setTimeout(function () { b.textContent = LABEL; }, 2600); };
     if (navigator.share) { navigator.share({ text: txt, url: u }).catch(function () {}); }
     else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt + ' ' + u).then(done, function () { window.prompt('Copy this link', u); }); }
