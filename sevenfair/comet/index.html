@@ -311,5 +311,25 @@ window.addEventListener('error', function (e) { var t = e.target; if (t && t !==
 <script>window.COMET_CONFIG = {"park": "SEVENFAIR", "api": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/park", "url": "https://lira-ia.github.io/sevenfair/comet/", "castle": "../castle/", "lira": "https://jefsufmyacuemgizbzxl.supabase.co/functions/v1/lira", "epoch": "2026-11-11"};</script>
 <script src="sim.js"></script>
 <script type="module" src="game.js"></script>
+<!-- Lira 28/11 #101: the Range link says whether today's course is still unshot, or your best today -->
+<script>
+(function () {
+  function upd() {
+    var a = document.getElementById('torange'); if (!a) return;
+    var day = new Date().toISOString().slice(0, 10), last = null;
+    try { last = JSON.parse(localStorage.getItem('range.last') || 'null'); } catch (e) {}
+    var lg = a.querySelector('.lg'), sh = a.querySelector('.sh'); if (!lg || !sh) return;
+    if (last && last.d === day && last.s >= 0) {
+      var s = Number(last.s).toLocaleString('en-US');
+      lg.textContent = '🎯 THE RANGE: YOUR BEST TODAY ' + s + ' · BEAT IT →'; sh.textContent = '🎯 RANGE: BEST TODAY ' + s + ' →';
+      a.setAttribute('data-afsa-prop-state', 'played');
+    } else {
+      lg.textContent = '🎯 THE RANGE: TODAY\'S COURSE NOT SHOT YET →'; sh.textContent = '🎯 RANGE: NOT SHOT TODAY →';
+      a.setAttribute('data-afsa-prop-state', 'fresh');
+    }
+  }
+  upd(); addEventListener('pageshow', upd); addEventListener('focus', upd);
+})();
+</script>
 </body>
 </html>

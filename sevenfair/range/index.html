@@ -215,8 +215,8 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   var day = new Date().toISOString().slice(0, 10), n = Math.round((Date.parse(day + 'T00:00:00Z') - Date.parse('2026-11-11T00:00:00Z')) / 864e5) + 1;
   var days = {}; try { days = JSON.parse(localStorage.getItem('comet.days')) || {}; } catch (e) {}
   var a = document.createElement('a'); a.id = 'tocomet'; a.href = '../comet/?from=range-end';
-  a.setAttribute('data-afsa-event', 'comet_click'); a.setAttribute('data-afsa-prop-where', 'range_end');
-  a.textContent = days[day] > 0 ? '☄️ THE COMET #' + n + ': YOUR BEST TODAY ' + Number(days[day]).toLocaleString('en-US') + ' · BEAT IT →' : '☄️ ALSO TODAY: THE COMET #' + n + ' · ONE THUMB, NEW TRACK →';
+  a.setAttribute('data-afsa-event', 'comet_click'); a.setAttribute('data-afsa-prop-where', 'range_end'); a.setAttribute('data-afsa-prop-state', days[day] > 0 ? 'played' : 'fresh');
+  a.textContent = days[day] > 0 ? '☄️ THE COMET #' + n + ': YOUR BEST TODAY ' + Number(days[day]).toLocaleString('en-US') + ' · BEAT IT →' : '☄️ THE COMET #' + n + ': NOT RIDDEN YET TODAY · ONE THUMB →';
   var w = document.createElement('div'); w.appendChild(a);
   cb.parentNode.insertBefore(w, cb.nextSibling);
   ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (ev) { ev.stopPropagation(); }); });
