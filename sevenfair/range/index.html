@@ -37,6 +37,8 @@ body:not([data-mode="title"]) #title, body:not([data-mode="over"]) #over, body:n
 #namerow { display: block; margin-top: 8px; font-size: 10px; letter-spacing: .26em; font-weight: 700; color: var(--dim); }
 #name { display: block; margin-top: 4px; width: 100%; box-sizing: border-box; padding: 8px 10px; font: 700 15px 'Chakra Petch', sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.25); border-radius: 4px; user-select: text; -webkit-user-select: text; }
 @media (max-height: 430px) { #over .go { margin-top: 12px; padding: 10px 30px 8px; font-size: 18px; } #rscore { font-size: clamp(44px, 11vw, 80px); } #board { font-size: 12px; } #board li { padding: 1px 0; } #over .back { margin-top: 10px; } }
+/* 28/11: in small frames (alldle phone 356x478) the weekly board fell below the edge with no way to reach it: the end screen now scrolls */
+#over { display: flex; flex-direction: column; overflow-y: auto; touch-action: pan-y; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; } #over > .cols { margin: auto; }
 #rline { margin-top: 6px; font-size: 16px; color: var(--ink); } #rbest { margin-top: 8px; min-height: 1.2em; font-size: 12px; letter-spacing: .26em; font-weight: 700; color: var(--cyan); }
 .hud { position: absolute; pointer-events: none; font-variant-numeric: tabular-nums; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
 #top { top: max(14px, env(safe-area-inset-top)); left: 0; right: 0; display: flex; justify-content: center; gap: 34px; align-items: baseline; }
