@@ -279,4 +279,48 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
   if (window.MutationObserver) new MutationObserver(fire).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
 })();
 </script>
+<!-- Lira 28/11: push "the new courses are out" (same sw.js and park_push as the Comet), only when the park's server publishes push_key -->
+<style>
+#rnotify { display: inline-block; margin-top: 10px; padding: 7px 12px 6px; border: 1px solid rgba(120,220,255,.55); border-radius: 6px; background: none; font: inherit; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: #8fe3ff; cursor: pointer; }
+#rnotify[hidden] { display: none; } #rnotify u { text-decoration: underline; }
+@media (max-height: 430px) { #rnotify { margin-top: 6px; padding: 5px 10px 4px; font-size: 10px; } }
+</style>
+<script>
+(function () {
+  var cfg = window.RANGE_CONFIG || {}; if (!cfg.api) return;
+  var host = document.getElementById('tomorrow') || document.getElementById('comeback'); if (!host) return;
+  var ev = function (n, p) { try { if (typeof window.afsa === 'function') window.afsa('event', n, p || {}); } catch (e) {} };
+  var standalone = false; try { standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) {}
+  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var ok = function () { try { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; } catch (e) { return false; } };
+  var get = function (k) { try { return localStorage.getItem('range.' + k) || ''; } catch (e) { return ''; } };
+  var set = function (k, v) { try { localStorage.setItem('range.' + k, v); } catch (e) {} };
+  var b64u = function (s) { var p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')), o = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) o[i] = r.charCodeAt(i); return o; };
+  var key = '', b = document.createElement('button'); b.id = 'rnotify'; b.type = 'button'; b.hidden = true;
+  var w = document.createElement('div'); w.appendChild(b); host.parentNode.insertBefore(w, host.nextSibling);
+  ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { w.addEventListener(e, function (x) { x.stopPropagation(); }); });
+  var line = function () {
+    if (!key || (ios && !standalone) || !ok() || Notification.permission === 'denied') { b.hidden = true; return; }
+    var on = get('push') && Notification.permission === 'granted';
+    b.hidden = false; b.dataset.s = on ? 'on' : 'off';
+    b.innerHTML = on ? '🔔 YOU GET A PING WHEN THE NEW COURSES ARE OUT · <u>TURN OFF</u>' : '🔔 <u>PING ME WHEN TOMORROW\'S COURSES ARE OUT</u> · ONCE A DAY, NO ACCOUNT';
+  };
+  var post = function (body) { return fetch(cfg.pushApi || cfg.api.replace(/\/park\/?$/, '/park_push'), { method: 'POST', body: JSON.stringify(body) }).then(function (r) { return r.json(); }); };
+  b.addEventListener('click', function () {
+    var s = b.dataset.s; if (!key || !ok()) return;
+    navigator.serviceWorker.register('../sw.js', { scope: '../' }).then(function (reg) { return navigator.serviceWorker.ready.then(function () { return reg; }); }).then(function (reg) {
+      if (s === 'on') return reg.pushManager.getSubscription().then(function (sub) { if (sub) { post({ a: 'push_unsub', e: sub.endpoint }).catch(function () {}); return sub.unsubscribe(); } }).then(function () { set('push', ''); ev('push_off', { ride: 'range' }); line(); });
+      ev('push_prompt', { ride: 'range' });
+      return Notification.requestPermission().then(function (perm) {
+        if (perm !== 'granted') { ev('push_denied', { ride: 'range' }); line(); return; }
+        b.innerHTML = '🔔 ONE MOMENT…';
+        return reg.pushManager.getSubscription().then(function (sub) { return sub || reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) }); }).then(function (sub) {
+          var j = sub.toJSON(); return post({ a: 'push_sub', e: j.endpoint, k: j.keys && j.keys.p256dh, s: j.keys && j.keys.auth });
+        }).then(function (out) { if (!out || !out.ok) throw new Error('refused'); set('push', new Date().toISOString().slice(0, 10)); ev('push_on', { ride: 'range' }); line(); });
+      });
+    }).catch(function () { b.innerHTML = '🔔 THAT DID NOT WORK IN THIS BROWSER · <u>TRY AGAIN</u>'; });
+  });
+  fetch(cfg.api + (cfg.api.indexOf('?') < 0 ? '?' : '&') + 'pk=' + Math.floor(Date.now() / 600000)).then(function (r) { return r.json(); }).then(function (j) { if (j && j.push_key) { key = j.push_key; line(); } }).catch(function () {});
+})();
+</script>
 </body></html>
