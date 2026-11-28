@@ -349,6 +349,10 @@ let R = null, prevS = 0, acc = 0, lastT = 0, clock = 0;
 let today = dayOf(Date.now()), rideDay = today;
 let xVis = 0, rollVis = 0, squash = 1, shake = 0, punch = 0, crashT = 0, drift = 0, railHue = 0, autopilot = false, beaten = false;
 let goal = 0, goalDay = false, lastScore = -1, lastMult = 1, lastStars = -1, hintOn = '', ridesDone = store.get('rides', 0);
+// 28/11: hints (and a tap doing the hinted jump/slide) stay until the rider has jumped and slid on their own, not just for 3 rides
+let learned = store.get('learned', {});
+function learn(a) { if ((a === 'U' || a === 'D') && !learned[a] && R && !R.demo) { learned[a] = 1; store.set('learned', learned); } }
+const needHints = () => ridesDone < 3 || (ridesDone < 20 && !(learned.U && learned.D));
 const MULT_COL = [0x2de2e6, 0x3df5a0, 0xb8f53d, 0xffd23f, 0xff9a3d, 0xff5c7a, 0xff3df0, 0xffffff];
 const railTarget = new THREE.Color(MULT_COL[0]);
 
@@ -430,7 +434,7 @@ function hud() {
   if (!beaten && goal > 0 && sc > goal) { beaten = true; $('target').classList.add('done'); SFX.beat(); pop(dare && dare.day === rideDay ? 'YOU BEAT ' + dare.name + '!' : goalDay ? "YOU PASSED TODAY'S BEST!" : 'NEW BEST!', 'big', '#7dffb0'); firework(0x7dffb0); firework(0xffd23f); }
   // first rides: show what to do
   let h = '';
-  if (ridesDone < 3) {
+  if (needHints()) {
     const rows = R.course.rows; let i = R.ri; while (i < rows.length && rows[i].k < 0) i++;
     const ob = rows[i];
     if (ob) {
@@ -467,7 +471,7 @@ function showResult() {
   else if (isBest && before > 0) sub.innerHTML = 'Up <b>' + fmt(sc - before) + '</b> on your best today.';
   else if (!isBest) sub.innerHTML = 'Your best today: <b>' + fmt(before) + '</b>. ' + fmt(before - sc + 1) + ' short.';
   else sub.innerHTML = 'First ride on today\'s track. Now beat it.';
-  if (ridesDone <= 3 && (R.cause === S.HURDLE || R.cause === S.BEAM)) sub.innerHTML += '<br><b>' + (R.cause === S.HURDLE ? '💥 A wall: ' + (fine ? 'press ↑' : 'swipe ↑') + ' to jump it' : '💥 A beam: ' + (fine ? 'press ↓' : 'swipe ↓') + ' to slide under') + '</b>'; // 28/11: say what killed a new rider
+  if ((ridesDone <= 3 || needHints()) && (R.cause === S.HURDLE || R.cause === S.BEAM)) sub.innerHTML += '<br><b>' + (R.cause === S.HURDLE ? '💥 A wall: ' + (fine ? 'press ↑' : 'swipe ↑') + ' to jump it' : '💥 A beam: ' + (fine ? 'press ↓' : 'swipe ↓') + ' to slide under') + '</b>'; // 28/11: say what killed a new rider
   week(); board(); remindLine(); streakLine(); nextLine(); pushLine(); installLine(); nameAsk();
   alldleLine();
   setTimeout(askCount, 1500);
@@ -911,7 +915,7 @@ function move(id, x, y) {
   const a = ax > ay ? (dx > 0 ? 'R' : 'L') : (dy > 0 ? 'D' : 'U');
   g.x = x; g.y = y; g.moved = true;
   if (a === g.last) return;
-  g.last = a; act(a);
+  g.last = a; act(a); learn(a);
 }
 function up(id, x, y, ts) {
   if (!g || g.id !== id) return;
@@ -947,7 +951,7 @@ stage.addEventListener('pointercancel', (e) => { if (g && g.id === 'p' + e.point
 let padOn = store.get('pad', false);
 function padShow() { $('hud').classList.toggle('pad', padOn); $('padb').classList.toggle('on', padOn); }
 $('padb').addEventListener('click', (e) => { e.stopPropagation(); padOn = !padOn; store.set('pad', padOn); padShow(); });
-document.querySelectorAll('#pad button').forEach((b) => b.addEventListener('pointerdown', (e) => { e.preventDefault(); e.stopPropagation(); auInit(); if (mode === 'ride') act(b.dataset.a); }));
+document.querySelectorAll('#pad button').forEach((b) => b.addEventListener('pointerdown', (e) => { e.preventDefault(); e.stopPropagation(); auInit(); if (mode === 'ride') { act(b.dataset.a); learn(b.dataset.a); } }));
 padShow();
 stage.addEventListener('contextmenu', (e) => e.preventDefault());
 window.addEventListener('keydown', (e) => {
@@ -955,7 +959,7 @@ window.addEventListener('keydown', (e) => {
   const k = e.key, a = k === 'ArrowLeft' || k === 'a' || k === 'A' ? 'L' : k === 'ArrowRight' || k === 'd' || k === 'D' ? 'R' : k === 'ArrowUp' || k === 'w' || k === 'W' || k === ' ' ? 'U' : k === 'ArrowDown' || k === 's' || k === 'S' ? 'D' : '';
   if (mode === 'paused') { resume(); e.preventDefault(); return; }
   if ((mode === 'title' || mode === 'result') && (k === 'Enter' || k === ' ')) { startRide(); e.preventDefault(); return; }
-  if (mode === 'ride' && a) { auInit(); act(a); e.preventDefault(); }
+  if (mode === 'ride' && a) { auInit(); act(a); learn(a); e.preventDefault(); }
 });
 function resume() { mode = 'ride'; $('paused').hidden = true; acc = 0; lastT = 0; if (AU.on) musicStart(); }
 document.addEventListener('visibilitychange', () => { if (document.hidden && mode === 'ride') { mode = 'paused'; $('paused').hidden = false; musicStop(); } });
