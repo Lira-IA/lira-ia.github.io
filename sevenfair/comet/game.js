@@ -630,6 +630,8 @@ function submit(score, endP) {
 }
 /* push (27/11): "track #N is out", only if the rider asks, only when the park's server has a push key */
 const PUSH = { sw: '../sw.js', scope: '../' };
+/* 28/11: the same worker keeps a spare copy of the ride, so the Comet on the home screen opens without a network (not inside other sites' frames) */
+try { if (!REC && 'serviceWorker' in navigator && window.top === window.self) { const go = () => navigator.serviceWorker.register(PUSH.sw, { scope: PUSH.scope }).catch(() => {}); if (document.readyState === 'complete') go(); else window.addEventListener('load', go); } } catch (e) { /* no worker here */ }
 const pushOk = () => { try { return !REC && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; } catch (e) { return false; } };
 const isIOS = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 const standalone = () => { try { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } };
