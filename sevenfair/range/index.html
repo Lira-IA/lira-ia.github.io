@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>The Range · free daily shooting gallery game in your browser, 60 seconds</title>
 <meta name="description" content="The Range: a first-person shooting gallery in the alley behind Sevenfair. Bottles, tins, dartboards, a new course every day. Sixty seconds.">
-<meta name="theme-color" content="#05070d"><meta name="alldle-verify" content="vBEifCAXEo8xOuBvQC_hCDeaXc2gkx6O"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Range"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05070d"><meta name="alldle-verify" content="vBEifCAXEo8xOuBvQC_hCDeaXc2gkx6O"><script defer src="https://www.alldle.net/sdk/0.3.6/sdk.js" integrity="sha384-cjDKISf/afLaP9e2vVz93b/6uap3jmQIGIC8fVvqKIMjqgUMWOEVGMhcGA0TIUy9" crossorigin="anonymous" data-game="the-range" data-autocapture="false"></script><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="The Range"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -248,6 +248,32 @@ body:not([data-mode="play"]) #fire, body:not([data-mode="play"]) #reload, body:n
     else b.textContent = 'ON IPHONE: TAP SHARE ⬆️ AT THE BOTTOM, THEN \u201CADD TO HOME SCREEN\u201D';
   });
   show();
+})();
+</script>
+<!-- Lira 28/11: alldle (The Range is live there): round -> completeMode for rituals/streaks, badge + ritual line -->
+<style>
+#alldlebox { margin: 12px auto 0; max-width: 30em; text-align: center; font-size: 10.5px; letter-spacing: .08em; font-weight: 700; color: var(--dim, #9aa); line-height: 1.5; }
+#alldlebox span { display: block; margin-bottom: 6px; } #alldlebox img { display: inline-block; height: 36px; width: auto; }
+#alldlebox.top { color: var(--gold, #ffd23f); }
+@media (max-height: 430px) { #alldlebox { margin-top: 6px; } #alldlebox img { height: 28px; } }
+</style>
+<script>
+(function () {
+  var cb = document.getElementById('tomorrow') || document.getElementById('comeback'); if (!cb) return;
+  var fromA = false; try { var q = new URLSearchParams(location.search).get('from') || ''; var anc = location.ancestorOrigins && location.ancestorOrigins.length ? location.ancestorOrigins[0] : ''; fromA = /^alldle/.test(q) || /alldle\.net/.test(document.referrer + ' ' + anc); } catch (e) {}
+  var d = document.createElement('div'); d.id = 'alldlebox'; if (fromA) d.className = 'top';
+  d.innerHTML = '<span>' + (fromA ? 'ADD THE RANGE TO YOUR ALLDLE RITUAL: IT REMINDS YOU TOMORROW' : 'PLAY DAILY GAMES ON ALLDLE? ADD THE RANGE TO YOUR RITUAL') + ' · <a href="../privacy.html" style="color:inherit">PRIVACY</a></span><a href="https://www.alldle.net/game/the-range?ref=badge" target="_blank" rel="noopener" aria-label="Play on Alldle"><img src="https://www.alldle.net/badge.svg?g=jj6rqrvij5japb7fwf3jywv4&variant=light&size=compact&content=text" alt="Play on Alldle" width="180" height="48" style="border:0;" /></a>';
+  cb.parentNode.insertBefore(d, cb.nextSibling);
+  ['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function (e) { d.addEventListener(e, function (x) { x.stopPropagation(); }); });
+  var done = false;
+  var fire = function () {
+    if (document.body.dataset.mode !== 'over') { done = false; return; }
+    if (done) return; done = true;
+    var sc = parseInt(String((document.getElementById('rscore') || {}).textContent || '').replace(/[^0-9]/g, ''), 10) || 0;
+    try { var A = window.alldle; if (A && A.completeMode) Promise.resolve(A.completeMode('daily', { won: true, score: Math.min(999999, sc), puzzleId: 'range-' + new Date().toISOString().slice(0, 10) })).catch(function () {}); } catch (e) {}
+    if (fromA) try { if (typeof window.afsa === 'function') window.afsa('event', 'ritual_seen', { ride: 'range' }); } catch (e) {}
+  };
+  if (window.MutationObserver) new MutationObserver(fire).observe(document.body, { attributes: true, attributeFilter: ['data-mode'] });
 })();
 </script>
 </body></html>
