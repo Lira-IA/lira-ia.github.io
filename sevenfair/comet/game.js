@@ -452,6 +452,7 @@ function crash() {
 function showResult() {
   mode = 'result'; ridesDone++; store.set('rides', ridesDone);
   const sc = R.score(), days = store.get('days', {}), before = days[rideDay] || 0, isBest = sc > before;
+  if (!REC && !R.demo) try { const A = window.alldle; if (A && A.completeMode) Promise.resolve(A.completeMode('daily', { won: true, score: Math.min(999999, Math.round(sc)), puzzleId: 'comet-' + trackNo(rideDay) })).catch(() => {}); } catch (err) { /* alldle is optional */ } // 28/11: rounds count for alldle's daily ritual and streaks
   if (!REC) { markPlayed(rideDay); const l = store.get('last', {}); store.set('last', l.d === rideDay ? Object.assign(l, { s: Math.max(l.s || 0, sc) }) : { d: rideDay, s: sc }); }
   if (isBest) { days[rideDay] = sc; const keep = {}; for (const d of weekDays(dayOf(Date.now()))) if (days[d]) keep[d] = days[d]; if (days[rideDay]) keep[rideDay] = days[rideDay]; store.set('days', keep); }
   $('hud').classList.remove('on');
